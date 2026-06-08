@@ -5,6 +5,8 @@ import UIKit
 @_exported import SDDSThemeCore
 
 public extension ColorToken {
+
+
     static var backgroundDarkPrimary: Self {
         let base = Self(
             id: Colors.backgroundDarkPrimary.rawValue,
@@ -13,6 +15,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundDarkSecondary: Self {
         let base = Self(
             id: Colors.backgroundDarkSecondary.rawValue,
@@ -21,6 +25,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundDarkTertiary: Self {
         let base = Self(
             id: Colors.backgroundDarkTertiary.rawValue,
@@ -29,6 +35,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundDefaultPrimary: Self {
         let base = Self(
             id: Colors.backgroundDefaultPrimary.rawValue,
@@ -37,6 +45,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundDefaultSecondary: Self {
         let base = Self(
             id: Colors.backgroundDefaultSecondary.rawValue,
@@ -45,6 +55,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundDefaultTertiary: Self {
         let base = Self(
             id: Colors.backgroundDefaultTertiary.rawValue,
@@ -53,6 +65,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundInversePrimary: Self {
         let base = Self(
             id: Colors.backgroundInversePrimary.rawValue,
@@ -61,6 +75,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundInverseSecondary: Self {
         let base = Self(
             id: Colors.backgroundInverseSecondary.rawValue,
@@ -69,6 +85,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundInverseTertiary: Self {
         let base = Self(
             id: Colors.backgroundInverseTertiary.rawValue,
@@ -77,6 +95,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundLightPrimary: Self {
         let base = Self(
             id: Colors.backgroundLightPrimary.rawValue,
@@ -85,6 +105,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundLightSecondary: Self {
         let base = Self(
             id: Colors.backgroundLightSecondary.rawValue,
@@ -93,6 +115,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var backgroundLightTertiary: Self {
         let base = Self(
             id: Colors.backgroundLightTertiary.rawValue,
@@ -101,6 +125,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataDefaultYellow: Self {
         let base = Self(
             id: Colors.dataDefaultYellow.rawValue,
@@ -109,6 +135,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataDefaultYellowMinor: Self {
         let base = Self(
             id: Colors.dataDefaultYellowMinor.rawValue,
@@ -117,6 +145,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataDefaultYellowTransparent: Self {
         let base = Self(
             id: Colors.dataDefaultYellowTransparent.rawValue,
@@ -125,6 +155,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataInverseYellow: Self {
         let base = Self(
             id: Colors.dataInverseYellow.rawValue,
@@ -133,6 +165,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataInverseYellowMinor: Self {
         let base = Self(
             id: Colors.dataInverseYellowMinor.rawValue,
@@ -141,6 +175,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataInverseYellowTransparent: Self {
         let base = Self(
             id: Colors.dataInverseYellowTransparent.rawValue,
@@ -149,6 +185,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataOnDarkYellow: Self {
         let base = Self(
             id: Colors.dataOnDarkYellow.rawValue,
@@ -157,6 +195,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataOnDarkYellowMinor: Self {
         let base = Self(
             id: Colors.dataOnDarkYellowMinor.rawValue,
@@ -165,6 +205,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataOnDarkYellowTransparent: Self {
         let base = Self(
             id: Colors.dataOnDarkYellowTransparent.rawValue,
@@ -173,6 +215,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataOnLightYellow: Self {
         let base = Self(
             id: Colors.dataOnLightYellow.rawValue,
@@ -181,6 +225,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataOnLightYellowMinor: Self {
         let base = Self(
             id: Colors.dataOnLightYellowMinor.rawValue,
@@ -189,6 +235,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var dataOnLightYellowTransparent: Self {
         let base = Self(
             id: Colors.dataOnLightYellowTransparent.rawValue,
@@ -197,6 +245,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultAccent: Self {
         let base = Self(
             id: Colors.outlineDefaultAccent.rawValue,
@@ -205,6 +255,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultAccentActive: Self {
         let base = Self(
             id: Colors.outlineDefaultAccentActive.rawValue,
@@ -213,6 +265,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultAccentHover: Self {
         let base = Self(
             id: Colors.outlineDefaultAccentHover.rawValue,
@@ -221,6 +275,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultAccentMinor: Self {
         let base = Self(
             id: Colors.outlineDefaultAccentMinor.rawValue,
@@ -229,6 +285,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultAccentMinorActive: Self {
         let base = Self(
             id: Colors.outlineDefaultAccentMinorActive.rawValue,
@@ -237,6 +295,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultAccentMinorHover: Self {
         let base = Self(
             id: Colors.outlineDefaultAccentMinorHover.rawValue,
@@ -245,6 +305,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultClear: Self {
         let base = Self(
             id: Colors.outlineDefaultClear.rawValue,
@@ -253,6 +315,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultClearActive: Self {
         let base = Self(
             id: Colors.outlineDefaultClearActive.rawValue,
@@ -261,6 +325,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultClearHover: Self {
         let base = Self(
             id: Colors.outlineDefaultClearHover.rawValue,
@@ -269,6 +335,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultInfo: Self {
         let base = Self(
             id: Colors.outlineDefaultInfo.rawValue,
@@ -277,6 +345,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultInfoActive: Self {
         let base = Self(
             id: Colors.outlineDefaultInfoActive.rawValue,
@@ -285,6 +355,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultInfoHover: Self {
         let base = Self(
             id: Colors.outlineDefaultInfoHover.rawValue,
@@ -293,6 +365,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultInfoMinor: Self {
         let base = Self(
             id: Colors.outlineDefaultInfoMinor.rawValue,
@@ -301,6 +375,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultInfoMinorActive: Self {
         let base = Self(
             id: Colors.outlineDefaultInfoMinorActive.rawValue,
@@ -309,6 +385,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultInfoMinorHover: Self {
         let base = Self(
             id: Colors.outlineDefaultInfoMinorHover.rawValue,
@@ -317,6 +395,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultNegative: Self {
         let base = Self(
             id: Colors.outlineDefaultNegative.rawValue,
@@ -325,6 +405,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultNegativeActive: Self {
         let base = Self(
             id: Colors.outlineDefaultNegativeActive.rawValue,
@@ -333,6 +415,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultNegativeHover: Self {
         let base = Self(
             id: Colors.outlineDefaultNegativeHover.rawValue,
@@ -341,6 +425,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultNegativeMinor: Self {
         let base = Self(
             id: Colors.outlineDefaultNegativeMinor.rawValue,
@@ -349,6 +435,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultNegativeMinorActive: Self {
         let base = Self(
             id: Colors.outlineDefaultNegativeMinorActive.rawValue,
@@ -357,6 +445,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultNegativeMinorHover: Self {
         let base = Self(
             id: Colors.outlineDefaultNegativeMinorHover.rawValue,
@@ -365,6 +455,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPositive: Self {
         let base = Self(
             id: Colors.outlineDefaultPositive.rawValue,
@@ -373,6 +465,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPositiveActive: Self {
         let base = Self(
             id: Colors.outlineDefaultPositiveActive.rawValue,
@@ -381,6 +475,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPositiveHover: Self {
         let base = Self(
             id: Colors.outlineDefaultPositiveHover.rawValue,
@@ -389,6 +485,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPositiveMinor: Self {
         let base = Self(
             id: Colors.outlineDefaultPositiveMinor.rawValue,
@@ -397,6 +495,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPositiveMinorActive: Self {
         let base = Self(
             id: Colors.outlineDefaultPositiveMinorActive.rawValue,
@@ -405,6 +505,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPositiveMinorHover: Self {
         let base = Self(
             id: Colors.outlineDefaultPositiveMinorHover.rawValue,
@@ -413,6 +515,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPromo: Self {
         let base = Self(
             id: Colors.outlineDefaultPromo.rawValue,
@@ -421,6 +525,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPromoActive: Self {
         let base = Self(
             id: Colors.outlineDefaultPromoActive.rawValue,
@@ -429,6 +535,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPromoHover: Self {
         let base = Self(
             id: Colors.outlineDefaultPromoHover.rawValue,
@@ -437,6 +545,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPromoMinor: Self {
         let base = Self(
             id: Colors.outlineDefaultPromoMinor.rawValue,
@@ -445,6 +555,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPromoMinorActive: Self {
         let base = Self(
             id: Colors.outlineDefaultPromoMinorActive.rawValue,
@@ -453,6 +565,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultPromoMinorHover: Self {
         let base = Self(
             id: Colors.outlineDefaultPromoMinorHover.rawValue,
@@ -461,6 +575,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidDefault: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidDefault.rawValue,
@@ -469,6 +585,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidDefaultActive: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidDefaultActive.rawValue,
@@ -477,6 +595,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidDefaultHover: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidDefaultHover.rawValue,
@@ -485,6 +605,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidPrimary: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidPrimary.rawValue,
@@ -493,6 +615,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidPrimaryActive: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidPrimaryActive.rawValue,
@@ -501,6 +625,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidPrimaryHover: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidPrimaryHover.rawValue,
@@ -509,6 +635,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidSecondary: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidSecondary.rawValue,
@@ -517,6 +645,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidSecondaryActive: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidSecondaryActive.rawValue,
@@ -525,6 +655,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidSecondaryHover: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidSecondaryHover.rawValue,
@@ -533,6 +665,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidTertiary: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidTertiary.rawValue,
@@ -541,6 +675,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidTertiaryActive: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidTertiaryActive.rawValue,
@@ -549,6 +685,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultSolidTertiaryHover: Self {
         let base = Self(
             id: Colors.outlineDefaultSolidTertiaryHover.rawValue,
@@ -557,6 +695,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentAccent: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentAccent.rawValue,
@@ -565,6 +705,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentAccentActive: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentAccentActive.rawValue,
@@ -573,6 +715,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentAccentHover: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentAccentHover.rawValue,
@@ -581,6 +725,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentInfo: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentInfo.rawValue,
@@ -589,6 +735,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentInfoActive: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentInfoActive.rawValue,
@@ -597,6 +745,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentInfoHover: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentInfoHover.rawValue,
@@ -605,6 +755,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentNegative: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentNegative.rawValue,
@@ -613,6 +765,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentNegativeActive: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentNegativeActive.rawValue,
@@ -621,6 +775,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentNegativeHover: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentNegativeHover.rawValue,
@@ -629,6 +785,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentPositive: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentPositive.rawValue,
@@ -637,6 +795,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentPositiveActive: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentPositiveActive.rawValue,
@@ -645,6 +805,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentPositiveHover: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentPositiveHover.rawValue,
@@ -653,6 +815,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentPrimary: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentPrimary.rawValue,
@@ -661,6 +825,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentPrimaryActive: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentPrimaryActive.rawValue,
@@ -669,6 +835,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentPrimaryHover: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentPrimaryHover.rawValue,
@@ -677,6 +845,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentSecondary: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentSecondary.rawValue,
@@ -685,6 +855,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentSecondaryActive: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentSecondaryActive.rawValue,
@@ -693,6 +865,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentSecondaryHover: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentSecondaryHover.rawValue,
@@ -701,6 +875,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentTertiary: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentTertiary.rawValue,
@@ -709,6 +885,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentTertiaryActive: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentTertiaryActive.rawValue,
@@ -717,6 +895,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentTertiaryHover: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentTertiaryHover.rawValue,
@@ -725,6 +905,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentWarning: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentWarning.rawValue,
@@ -733,6 +915,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentWarningActive: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentWarningActive.rawValue,
@@ -741,6 +925,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultTransparentWarningHover: Self {
         let base = Self(
             id: Colors.outlineDefaultTransparentWarningHover.rawValue,
@@ -749,6 +935,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultWarning: Self {
         let base = Self(
             id: Colors.outlineDefaultWarning.rawValue,
@@ -757,6 +945,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultWarningActive: Self {
         let base = Self(
             id: Colors.outlineDefaultWarningActive.rawValue,
@@ -765,6 +955,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultWarningHover: Self {
         let base = Self(
             id: Colors.outlineDefaultWarningHover.rawValue,
@@ -773,6 +965,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultWarningMinor: Self {
         let base = Self(
             id: Colors.outlineDefaultWarningMinor.rawValue,
@@ -781,6 +975,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultWarningMinorActive: Self {
         let base = Self(
             id: Colors.outlineDefaultWarningMinorActive.rawValue,
@@ -789,6 +985,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineDefaultWarningMinorHover: Self {
         let base = Self(
             id: Colors.outlineDefaultWarningMinorHover.rawValue,
@@ -797,6 +995,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseAccent: Self {
         let base = Self(
             id: Colors.outlineInverseAccent.rawValue,
@@ -805,6 +1005,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseAccentActive: Self {
         let base = Self(
             id: Colors.outlineInverseAccentActive.rawValue,
@@ -813,6 +1015,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseAccentHover: Self {
         let base = Self(
             id: Colors.outlineInverseAccentHover.rawValue,
@@ -821,6 +1025,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseAccentMinor: Self {
         let base = Self(
             id: Colors.outlineInverseAccentMinor.rawValue,
@@ -829,6 +1035,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseAccentMinorActive: Self {
         let base = Self(
             id: Colors.outlineInverseAccentMinorActive.rawValue,
@@ -837,6 +1045,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseAccentMinorHover: Self {
         let base = Self(
             id: Colors.outlineInverseAccentMinorHover.rawValue,
@@ -845,6 +1055,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseClear: Self {
         let base = Self(
             id: Colors.outlineInverseClear.rawValue,
@@ -853,6 +1065,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseClearActive: Self {
         let base = Self(
             id: Colors.outlineInverseClearActive.rawValue,
@@ -861,6 +1075,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseClearHover: Self {
         let base = Self(
             id: Colors.outlineInverseClearHover.rawValue,
@@ -869,6 +1085,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseInfo: Self {
         let base = Self(
             id: Colors.outlineInverseInfo.rawValue,
@@ -877,6 +1095,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseInfoActive: Self {
         let base = Self(
             id: Colors.outlineInverseInfoActive.rawValue,
@@ -885,6 +1105,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseInfoHover: Self {
         let base = Self(
             id: Colors.outlineInverseInfoHover.rawValue,
@@ -893,6 +1115,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseInfoMinor: Self {
         let base = Self(
             id: Colors.outlineInverseInfoMinor.rawValue,
@@ -901,6 +1125,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseInfoMinorActive: Self {
         let base = Self(
             id: Colors.outlineInverseInfoMinorActive.rawValue,
@@ -909,6 +1135,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseInfoMinorHover: Self {
         let base = Self(
             id: Colors.outlineInverseInfoMinorHover.rawValue,
@@ -917,6 +1145,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseNegative: Self {
         let base = Self(
             id: Colors.outlineInverseNegative.rawValue,
@@ -925,6 +1155,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseNegativeActive: Self {
         let base = Self(
             id: Colors.outlineInverseNegativeActive.rawValue,
@@ -933,6 +1165,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseNegativeHover: Self {
         let base = Self(
             id: Colors.outlineInverseNegativeHover.rawValue,
@@ -941,6 +1175,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseNegativeMinor: Self {
         let base = Self(
             id: Colors.outlineInverseNegativeMinor.rawValue,
@@ -949,6 +1185,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseNegativeMinorActive: Self {
         let base = Self(
             id: Colors.outlineInverseNegativeMinorActive.rawValue,
@@ -957,6 +1195,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseNegativeMinorHover: Self {
         let base = Self(
             id: Colors.outlineInverseNegativeMinorHover.rawValue,
@@ -965,6 +1205,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePositive: Self {
         let base = Self(
             id: Colors.outlineInversePositive.rawValue,
@@ -973,6 +1215,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePositiveActive: Self {
         let base = Self(
             id: Colors.outlineInversePositiveActive.rawValue,
@@ -981,6 +1225,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePositiveHover: Self {
         let base = Self(
             id: Colors.outlineInversePositiveHover.rawValue,
@@ -989,6 +1235,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePositiveMinor: Self {
         let base = Self(
             id: Colors.outlineInversePositiveMinor.rawValue,
@@ -997,6 +1245,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePositiveMinorActive: Self {
         let base = Self(
             id: Colors.outlineInversePositiveMinorActive.rawValue,
@@ -1005,6 +1255,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePositiveMinorHover: Self {
         let base = Self(
             id: Colors.outlineInversePositiveMinorHover.rawValue,
@@ -1013,6 +1265,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePromo: Self {
         let base = Self(
             id: Colors.outlineInversePromo.rawValue,
@@ -1021,6 +1275,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePromoActive: Self {
         let base = Self(
             id: Colors.outlineInversePromoActive.rawValue,
@@ -1029,6 +1285,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePromoHover: Self {
         let base = Self(
             id: Colors.outlineInversePromoHover.rawValue,
@@ -1037,6 +1295,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePromoMinor: Self {
         let base = Self(
             id: Colors.outlineInversePromoMinor.rawValue,
@@ -1045,6 +1305,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePromoMinorActive: Self {
         let base = Self(
             id: Colors.outlineInversePromoMinorActive.rawValue,
@@ -1053,6 +1315,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInversePromoMinorHover: Self {
         let base = Self(
             id: Colors.outlineInversePromoMinorHover.rawValue,
@@ -1061,6 +1325,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidDefault: Self {
         let base = Self(
             id: Colors.outlineInverseSolidDefault.rawValue,
@@ -1069,6 +1335,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidDefaultActive: Self {
         let base = Self(
             id: Colors.outlineInverseSolidDefaultActive.rawValue,
@@ -1077,6 +1345,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidDefaultHover: Self {
         let base = Self(
             id: Colors.outlineInverseSolidDefaultHover.rawValue,
@@ -1085,6 +1355,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidPrimary: Self {
         let base = Self(
             id: Colors.outlineInverseSolidPrimary.rawValue,
@@ -1093,6 +1365,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidPrimaryActive: Self {
         let base = Self(
             id: Colors.outlineInverseSolidPrimaryActive.rawValue,
@@ -1101,6 +1375,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidPrimaryHover: Self {
         let base = Self(
             id: Colors.outlineInverseSolidPrimaryHover.rawValue,
@@ -1109,6 +1385,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidSecondary: Self {
         let base = Self(
             id: Colors.outlineInverseSolidSecondary.rawValue,
@@ -1117,6 +1395,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidSecondaryActive: Self {
         let base = Self(
             id: Colors.outlineInverseSolidSecondaryActive.rawValue,
@@ -1125,6 +1405,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidSecondaryHover: Self {
         let base = Self(
             id: Colors.outlineInverseSolidSecondaryHover.rawValue,
@@ -1133,6 +1415,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidTertiary: Self {
         let base = Self(
             id: Colors.outlineInverseSolidTertiary.rawValue,
@@ -1141,6 +1425,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidTertiaryActive: Self {
         let base = Self(
             id: Colors.outlineInverseSolidTertiaryActive.rawValue,
@@ -1149,6 +1435,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseSolidTertiaryHover: Self {
         let base = Self(
             id: Colors.outlineInverseSolidTertiaryHover.rawValue,
@@ -1157,6 +1445,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentAccent: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentAccent.rawValue,
@@ -1165,6 +1455,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentAccentActive: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentAccentActive.rawValue,
@@ -1173,6 +1465,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentAccentHover: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentAccentHover.rawValue,
@@ -1181,6 +1475,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentInfo: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentInfo.rawValue,
@@ -1189,6 +1485,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentInfoActive: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentInfoActive.rawValue,
@@ -1197,6 +1495,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentInfoHover: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentInfoHover.rawValue,
@@ -1205,6 +1505,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentNegative: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentNegative.rawValue,
@@ -1213,6 +1515,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentNegativeActive: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentNegativeActive.rawValue,
@@ -1221,6 +1525,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentNegativeHover: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentNegativeHover.rawValue,
@@ -1229,6 +1535,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentPositive: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentPositive.rawValue,
@@ -1237,6 +1545,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentPositiveActive: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentPositiveActive.rawValue,
@@ -1245,6 +1555,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentPositiveHover: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentPositiveHover.rawValue,
@@ -1253,6 +1565,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentPrimary: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentPrimary.rawValue,
@@ -1261,6 +1575,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentPrimaryActive: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentPrimaryActive.rawValue,
@@ -1269,6 +1585,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentPrimaryHover: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentPrimaryHover.rawValue,
@@ -1277,6 +1595,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentSecondary: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentSecondary.rawValue,
@@ -1285,6 +1605,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentSecondaryActive: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentSecondaryActive.rawValue,
@@ -1293,6 +1615,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentSecondaryHover: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentSecondaryHover.rawValue,
@@ -1301,6 +1625,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentTertiary: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentTertiary.rawValue,
@@ -1309,6 +1635,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentTertiaryActive: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentTertiaryActive.rawValue,
@@ -1317,6 +1645,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentTertiaryHover: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentTertiaryHover.rawValue,
@@ -1325,6 +1655,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentWarning: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentWarning.rawValue,
@@ -1333,6 +1665,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentWarningActive: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentWarningActive.rawValue,
@@ -1341,6 +1675,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseTransparentWarningHover: Self {
         let base = Self(
             id: Colors.outlineInverseTransparentWarningHover.rawValue,
@@ -1349,6 +1685,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseWarning: Self {
         let base = Self(
             id: Colors.outlineInverseWarning.rawValue,
@@ -1357,6 +1695,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseWarningActive: Self {
         let base = Self(
             id: Colors.outlineInverseWarningActive.rawValue,
@@ -1365,6 +1705,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseWarningHover: Self {
         let base = Self(
             id: Colors.outlineInverseWarningHover.rawValue,
@@ -1373,6 +1715,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseWarningMinor: Self {
         let base = Self(
             id: Colors.outlineInverseWarningMinor.rawValue,
@@ -1381,6 +1725,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseWarningMinorActive: Self {
         let base = Self(
             id: Colors.outlineInverseWarningMinorActive.rawValue,
@@ -1389,6 +1735,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineInverseWarningMinorHover: Self {
         let base = Self(
             id: Colors.outlineInverseWarningMinorHover.rawValue,
@@ -1397,6 +1745,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkAccent: Self {
         let base = Self(
             id: Colors.outlineOnDarkAccent.rawValue,
@@ -1405,6 +1755,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkAccentActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkAccentActive.rawValue,
@@ -1413,6 +1765,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkAccentHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkAccentHover.rawValue,
@@ -1421,6 +1775,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkAccentMinor: Self {
         let base = Self(
             id: Colors.outlineOnDarkAccentMinor.rawValue,
@@ -1429,6 +1785,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkAccentMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkAccentMinorActive.rawValue,
@@ -1437,6 +1795,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkAccentMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkAccentMinorHover.rawValue,
@@ -1445,6 +1805,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkClear: Self {
         let base = Self(
             id: Colors.outlineOnDarkClear.rawValue,
@@ -1453,6 +1815,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkClearActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkClearActive.rawValue,
@@ -1461,6 +1825,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkClearHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkClearHover.rawValue,
@@ -1469,6 +1835,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkInfo: Self {
         let base = Self(
             id: Colors.outlineOnDarkInfo.rawValue,
@@ -1477,6 +1845,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkInfoActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkInfoActive.rawValue,
@@ -1485,6 +1855,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkInfoHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkInfoHover.rawValue,
@@ -1493,6 +1865,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkInfoMinor: Self {
         let base = Self(
             id: Colors.outlineOnDarkInfoMinor.rawValue,
@@ -1501,6 +1875,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkInfoMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkInfoMinorActive.rawValue,
@@ -1509,6 +1885,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkInfoMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkInfoMinorHover.rawValue,
@@ -1517,6 +1895,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkNegative: Self {
         let base = Self(
             id: Colors.outlineOnDarkNegative.rawValue,
@@ -1525,6 +1905,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkNegativeActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkNegativeActive.rawValue,
@@ -1533,6 +1915,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkNegativeHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkNegativeHover.rawValue,
@@ -1541,6 +1925,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkNegativeMinor: Self {
         let base = Self(
             id: Colors.outlineOnDarkNegativeMinor.rawValue,
@@ -1549,6 +1935,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkNegativeMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkNegativeMinorActive.rawValue,
@@ -1557,6 +1945,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkNegativeMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkNegativeMinorHover.rawValue,
@@ -1565,6 +1955,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPositive: Self {
         let base = Self(
             id: Colors.outlineOnDarkPositive.rawValue,
@@ -1573,6 +1965,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPositiveActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkPositiveActive.rawValue,
@@ -1581,6 +1975,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPositiveHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkPositiveHover.rawValue,
@@ -1589,6 +1985,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPositiveMinor: Self {
         let base = Self(
             id: Colors.outlineOnDarkPositiveMinor.rawValue,
@@ -1597,6 +1995,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPositiveMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkPositiveMinorActive.rawValue,
@@ -1605,6 +2005,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPositiveMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkPositiveMinorHover.rawValue,
@@ -1613,6 +2015,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPromo: Self {
         let base = Self(
             id: Colors.outlineOnDarkPromo.rawValue,
@@ -1621,6 +2025,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPromoActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkPromoActive.rawValue,
@@ -1629,6 +2035,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPromoHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkPromoHover.rawValue,
@@ -1637,6 +2045,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPromoMinor: Self {
         let base = Self(
             id: Colors.outlineOnDarkPromoMinor.rawValue,
@@ -1645,6 +2055,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPromoMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkPromoMinorActive.rawValue,
@@ -1653,6 +2065,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkPromoMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkPromoMinorHover.rawValue,
@@ -1661,6 +2075,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidDefault: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidDefault.rawValue,
@@ -1669,6 +2085,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidDefaultActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidDefaultActive.rawValue,
@@ -1677,6 +2095,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidDefaultHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidDefaultHover.rawValue,
@@ -1685,6 +2105,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidPrimary: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidPrimary.rawValue,
@@ -1693,6 +2115,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidPrimaryActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidPrimaryActive.rawValue,
@@ -1701,6 +2125,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidPrimaryHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidPrimaryHover.rawValue,
@@ -1709,6 +2135,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidSecondary: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidSecondary.rawValue,
@@ -1717,6 +2145,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidSecondaryActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidSecondaryActive.rawValue,
@@ -1725,6 +2155,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidSecondaryHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidSecondaryHover.rawValue,
@@ -1733,6 +2165,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidTertiary: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidTertiary.rawValue,
@@ -1741,6 +2175,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidTertiaryActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidTertiaryActive.rawValue,
@@ -1749,6 +2185,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkSolidTertiaryHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkSolidTertiaryHover.rawValue,
@@ -1757,6 +2195,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentAccent: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentAccent.rawValue,
@@ -1765,6 +2205,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentAccentActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentAccentActive.rawValue,
@@ -1773,6 +2215,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentAccentHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentAccentHover.rawValue,
@@ -1781,6 +2225,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentInfo: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentInfo.rawValue,
@@ -1789,6 +2235,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentInfoActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentInfoActive.rawValue,
@@ -1797,6 +2245,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentInfoHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentInfoHover.rawValue,
@@ -1805,6 +2255,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentNegative: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentNegative.rawValue,
@@ -1813,6 +2265,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentNegativeActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentNegativeActive.rawValue,
@@ -1821,6 +2275,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentNegativeHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentNegativeHover.rawValue,
@@ -1829,6 +2285,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentPositive: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentPositive.rawValue,
@@ -1837,6 +2295,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentPositiveActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentPositiveActive.rawValue,
@@ -1845,6 +2305,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentPositiveHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentPositiveHover.rawValue,
@@ -1853,6 +2315,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentPrimary: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentPrimary.rawValue,
@@ -1861,6 +2325,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentPrimaryActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentPrimaryActive.rawValue,
@@ -1869,6 +2335,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentPrimaryHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentPrimaryHover.rawValue,
@@ -1877,6 +2345,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentSecondary: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentSecondary.rawValue,
@@ -1885,6 +2355,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentSecondaryActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentSecondaryActive.rawValue,
@@ -1893,6 +2365,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentSecondaryHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentSecondaryHover.rawValue,
@@ -1901,6 +2375,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentTertiary: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentTertiary.rawValue,
@@ -1909,6 +2385,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentTertiaryActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentTertiaryActive.rawValue,
@@ -1917,6 +2395,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentTertiaryHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentTertiaryHover.rawValue,
@@ -1925,6 +2405,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentWarning: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentWarning.rawValue,
@@ -1933,6 +2415,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentWarningActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentWarningActive.rawValue,
@@ -1941,6 +2425,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkTransparentWarningHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkTransparentWarningHover.rawValue,
@@ -1949,6 +2435,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkWarning: Self {
         let base = Self(
             id: Colors.outlineOnDarkWarning.rawValue,
@@ -1957,6 +2445,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkWarningActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkWarningActive.rawValue,
@@ -1965,6 +2455,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkWarningHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkWarningHover.rawValue,
@@ -1973,6 +2465,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkWarningMinor: Self {
         let base = Self(
             id: Colors.outlineOnDarkWarningMinor.rawValue,
@@ -1981,6 +2475,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkWarningMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnDarkWarningMinorActive.rawValue,
@@ -1989,6 +2485,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnDarkWarningMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnDarkWarningMinorHover.rawValue,
@@ -1997,6 +2495,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightAccent: Self {
         let base = Self(
             id: Colors.outlineOnLightAccent.rawValue,
@@ -2005,6 +2505,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightAccentActive: Self {
         let base = Self(
             id: Colors.outlineOnLightAccentActive.rawValue,
@@ -2013,6 +2515,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightAccentHover: Self {
         let base = Self(
             id: Colors.outlineOnLightAccentHover.rawValue,
@@ -2021,6 +2525,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightAccentMinor: Self {
         let base = Self(
             id: Colors.outlineOnLightAccentMinor.rawValue,
@@ -2029,6 +2535,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightAccentMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnLightAccentMinorActive.rawValue,
@@ -2037,6 +2545,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightAccentMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnLightAccentMinorHover.rawValue,
@@ -2045,6 +2555,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightClear: Self {
         let base = Self(
             id: Colors.outlineOnLightClear.rawValue,
@@ -2053,6 +2565,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightClearActive: Self {
         let base = Self(
             id: Colors.outlineOnLightClearActive.rawValue,
@@ -2061,6 +2575,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightClearHover: Self {
         let base = Self(
             id: Colors.outlineOnLightClearHover.rawValue,
@@ -2069,6 +2585,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightInfo: Self {
         let base = Self(
             id: Colors.outlineOnLightInfo.rawValue,
@@ -2077,6 +2595,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightInfoActive: Self {
         let base = Self(
             id: Colors.outlineOnLightInfoActive.rawValue,
@@ -2085,6 +2605,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightInfoHover: Self {
         let base = Self(
             id: Colors.outlineOnLightInfoHover.rawValue,
@@ -2093,6 +2615,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightInfoMinor: Self {
         let base = Self(
             id: Colors.outlineOnLightInfoMinor.rawValue,
@@ -2101,6 +2625,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightInfoMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnLightInfoMinorActive.rawValue,
@@ -2109,6 +2635,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightInfoMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnLightInfoMinorHover.rawValue,
@@ -2117,6 +2645,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightNegative: Self {
         let base = Self(
             id: Colors.outlineOnLightNegative.rawValue,
@@ -2125,6 +2655,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightNegativeActive: Self {
         let base = Self(
             id: Colors.outlineOnLightNegativeActive.rawValue,
@@ -2133,6 +2665,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightNegativeHover: Self {
         let base = Self(
             id: Colors.outlineOnLightNegativeHover.rawValue,
@@ -2141,6 +2675,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightNegativeMinor: Self {
         let base = Self(
             id: Colors.outlineOnLightNegativeMinor.rawValue,
@@ -2149,6 +2685,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightNegativeMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnLightNegativeMinorActive.rawValue,
@@ -2157,6 +2695,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightNegativeMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnLightNegativeMinorHover.rawValue,
@@ -2165,6 +2705,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPositive: Self {
         let base = Self(
             id: Colors.outlineOnLightPositive.rawValue,
@@ -2173,6 +2715,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPositiveActive: Self {
         let base = Self(
             id: Colors.outlineOnLightPositiveActive.rawValue,
@@ -2181,6 +2725,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPositiveHover: Self {
         let base = Self(
             id: Colors.outlineOnLightPositiveHover.rawValue,
@@ -2189,6 +2735,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPositiveMinor: Self {
         let base = Self(
             id: Colors.outlineOnLightPositiveMinor.rawValue,
@@ -2197,6 +2745,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPositiveMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnLightPositiveMinorActive.rawValue,
@@ -2205,6 +2755,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPositiveMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnLightPositiveMinorHover.rawValue,
@@ -2213,6 +2765,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPromo: Self {
         let base = Self(
             id: Colors.outlineOnLightPromo.rawValue,
@@ -2221,6 +2775,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPromoActive: Self {
         let base = Self(
             id: Colors.outlineOnLightPromoActive.rawValue,
@@ -2229,6 +2785,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPromoHover: Self {
         let base = Self(
             id: Colors.outlineOnLightPromoHover.rawValue,
@@ -2237,6 +2795,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPromoMinor: Self {
         let base = Self(
             id: Colors.outlineOnLightPromoMinor.rawValue,
@@ -2245,6 +2805,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPromoMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnLightPromoMinorActive.rawValue,
@@ -2253,6 +2815,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightPromoMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnLightPromoMinorHover.rawValue,
@@ -2261,6 +2825,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidDefault: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidDefault.rawValue,
@@ -2269,6 +2835,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidDefaultActive: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidDefaultActive.rawValue,
@@ -2277,6 +2845,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidDefaultHover: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidDefaultHover.rawValue,
@@ -2285,6 +2855,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidPrimary: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidPrimary.rawValue,
@@ -2293,6 +2865,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidPrimaryActive: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidPrimaryActive.rawValue,
@@ -2301,6 +2875,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidPrimaryHover: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidPrimaryHover.rawValue,
@@ -2309,6 +2885,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidSecondary: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidSecondary.rawValue,
@@ -2317,6 +2895,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidSecondaryActive: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidSecondaryActive.rawValue,
@@ -2325,6 +2905,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidSecondaryHover: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidSecondaryHover.rawValue,
@@ -2333,6 +2915,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidTertiary: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidTertiary.rawValue,
@@ -2341,6 +2925,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidTertiaryActive: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidTertiaryActive.rawValue,
@@ -2349,6 +2935,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightSolidTertiaryHover: Self {
         let base = Self(
             id: Colors.outlineOnLightSolidTertiaryHover.rawValue,
@@ -2357,6 +2945,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentAccent: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentAccent.rawValue,
@@ -2365,6 +2955,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentAccentActive: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentAccentActive.rawValue,
@@ -2373,6 +2965,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentAccentHover: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentAccentHover.rawValue,
@@ -2381,6 +2975,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentInfo: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentInfo.rawValue,
@@ -2389,6 +2985,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentInfoActive: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentInfoActive.rawValue,
@@ -2397,6 +2995,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentInfoHover: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentInfoHover.rawValue,
@@ -2405,6 +3005,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentNegative: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentNegative.rawValue,
@@ -2413,6 +3015,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentNegativeActive: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentNegativeActive.rawValue,
@@ -2421,6 +3025,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentNegativeHover: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentNegativeHover.rawValue,
@@ -2429,6 +3035,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentPositive: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentPositive.rawValue,
@@ -2437,6 +3045,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentPositiveActive: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentPositiveActive.rawValue,
@@ -2445,6 +3055,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentPositiveHover: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentPositiveHover.rawValue,
@@ -2453,6 +3065,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentPrimary: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentPrimary.rawValue,
@@ -2461,6 +3075,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentPrimaryActive: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentPrimaryActive.rawValue,
@@ -2469,6 +3085,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentPrimaryHover: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentPrimaryHover.rawValue,
@@ -2477,6 +3095,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentSecondary: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentSecondary.rawValue,
@@ -2485,6 +3105,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentSecondaryActive: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentSecondaryActive.rawValue,
@@ -2493,6 +3115,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentSecondaryHover: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentSecondaryHover.rawValue,
@@ -2501,6 +3125,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentTertiary: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentTertiary.rawValue,
@@ -2509,6 +3135,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentTertiaryActive: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentTertiaryActive.rawValue,
@@ -2517,6 +3145,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentTertiaryHover: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentTertiaryHover.rawValue,
@@ -2525,6 +3155,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentWarning: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentWarning.rawValue,
@@ -2533,6 +3165,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentWarningActive: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentWarningActive.rawValue,
@@ -2541,6 +3175,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightTransparentWarningHover: Self {
         let base = Self(
             id: Colors.outlineOnLightTransparentWarningHover.rawValue,
@@ -2549,6 +3185,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightWarning: Self {
         let base = Self(
             id: Colors.outlineOnLightWarning.rawValue,
@@ -2557,6 +3195,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightWarningActive: Self {
         let base = Self(
             id: Colors.outlineOnLightWarningActive.rawValue,
@@ -2565,6 +3205,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightWarningHover: Self {
         let base = Self(
             id: Colors.outlineOnLightWarningHover.rawValue,
@@ -2573,6 +3215,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightWarningMinor: Self {
         let base = Self(
             id: Colors.outlineOnLightWarningMinor.rawValue,
@@ -2581,6 +3225,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightWarningMinorActive: Self {
         let base = Self(
             id: Colors.outlineOnLightWarningMinorActive.rawValue,
@@ -2589,6 +3235,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var outlineOnLightWarningMinorHover: Self {
         let base = Self(
             id: Colors.outlineOnLightWarningMinorHover.rawValue,
@@ -2597,6 +3245,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayDefaultBlur: Self {
         let base = Self(
             id: Colors.overlayDefaultBlur.rawValue,
@@ -2605,6 +3255,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayDefaultHard: Self {
         let base = Self(
             id: Colors.overlayDefaultHard.rawValue,
@@ -2613,6 +3265,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayDefaultSoft: Self {
         let base = Self(
             id: Colors.overlayDefaultSoft.rawValue,
@@ -2621,6 +3275,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayInverseBlur: Self {
         let base = Self(
             id: Colors.overlayInverseBlur.rawValue,
@@ -2629,6 +3285,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayInverseHard: Self {
         let base = Self(
             id: Colors.overlayInverseHard.rawValue,
@@ -2637,6 +3295,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayInverseSoft: Self {
         let base = Self(
             id: Colors.overlayInverseSoft.rawValue,
@@ -2645,6 +3305,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayOnDarkBlur: Self {
         let base = Self(
             id: Colors.overlayOnDarkBlur.rawValue,
@@ -2653,6 +3315,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayOnDarkHard: Self {
         let base = Self(
             id: Colors.overlayOnDarkHard.rawValue,
@@ -2661,6 +3325,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayOnDarkSoft: Self {
         let base = Self(
             id: Colors.overlayOnDarkSoft.rawValue,
@@ -2669,6 +3335,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayOnLightBlur: Self {
         let base = Self(
             id: Colors.overlayOnLightBlur.rawValue,
@@ -2677,6 +3345,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayOnLightHard: Self {
         let base = Self(
             id: Colors.overlayOnLightHard.rawValue,
@@ -2685,6 +3355,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var overlayOnLightSoft: Self {
         let base = Self(
             id: Colors.overlayOnLightSoft.rawValue,
@@ -2693,6 +3365,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultAccent: Self {
         let base = Self(
             id: Colors.surfaceDefaultAccent.rawValue,
@@ -2701,6 +3375,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultAccentActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultAccentActive.rawValue,
@@ -2709,6 +3385,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultAccentHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultAccentHover.rawValue,
@@ -2717,6 +3395,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultAccentMinor: Self {
         let base = Self(
             id: Colors.surfaceDefaultAccentMinor.rawValue,
@@ -2725,6 +3405,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultAccentMinorActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultAccentMinorActive.rawValue,
@@ -2733,6 +3415,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultAccentMinorHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultAccentMinorHover.rawValue,
@@ -2741,6 +3425,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultClear: Self {
         let base = Self(
             id: Colors.surfaceDefaultClear.rawValue,
@@ -2749,6 +3435,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultClearActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultClearActive.rawValue,
@@ -2757,6 +3445,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultClearHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultClearHover.rawValue,
@@ -2765,6 +3455,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultInfo: Self {
         let base = Self(
             id: Colors.surfaceDefaultInfo.rawValue,
@@ -2773,6 +3465,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultInfoActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultInfoActive.rawValue,
@@ -2781,6 +3475,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultInfoHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultInfoHover.rawValue,
@@ -2789,6 +3485,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultInfoMinor: Self {
         let base = Self(
             id: Colors.surfaceDefaultInfoMinor.rawValue,
@@ -2797,6 +3495,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultInfoMinorActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultInfoMinorActive.rawValue,
@@ -2805,6 +3505,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultInfoMinorHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultInfoMinorHover.rawValue,
@@ -2813,6 +3515,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultNegative: Self {
         let base = Self(
             id: Colors.surfaceDefaultNegative.rawValue,
@@ -2821,6 +3525,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultNegativeActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultNegativeActive.rawValue,
@@ -2829,6 +3535,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultNegativeHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultNegativeHover.rawValue,
@@ -2837,6 +3545,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultNegativeMinor: Self {
         let base = Self(
             id: Colors.surfaceDefaultNegativeMinor.rawValue,
@@ -2845,6 +3555,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultNegativeMinorActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultNegativeMinorActive.rawValue,
@@ -2853,6 +3565,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultNegativeMinorHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultNegativeMinorHover.rawValue,
@@ -2861,6 +3575,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPositive: Self {
         let base = Self(
             id: Colors.surfaceDefaultPositive.rawValue,
@@ -2869,6 +3585,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPositiveActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultPositiveActive.rawValue,
@@ -2877,6 +3595,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPositiveHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultPositiveHover.rawValue,
@@ -2885,6 +3605,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPositiveMinor: Self {
         let base = Self(
             id: Colors.surfaceDefaultPositiveMinor.rawValue,
@@ -2893,6 +3615,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPositiveMinorActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultPositiveMinorActive.rawValue,
@@ -2901,6 +3625,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPositiveMinorHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultPositiveMinorHover.rawValue,
@@ -2909,6 +3635,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPromo: Self {
         let base = Self(
             id: Colors.surfaceDefaultPromo.rawValue,
@@ -2917,6 +3645,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPromoActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultPromoActive.rawValue,
@@ -2925,6 +3655,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPromoHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultPromoHover.rawValue,
@@ -2933,6 +3665,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPromoMinor: Self {
         let base = Self(
             id: Colors.surfaceDefaultPromoMinor.rawValue,
@@ -2941,6 +3675,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPromoMinorActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultPromoMinorActive.rawValue,
@@ -2949,6 +3685,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultPromoMinorHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultPromoMinorHover.rawValue,
@@ -2957,6 +3695,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidCard: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidCard.rawValue,
@@ -2965,6 +3705,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidCardActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidCardActive.rawValue,
@@ -2973,6 +3715,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidCardBrightness: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidCardBrightness.rawValue,
@@ -2981,6 +3725,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidCardHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidCardHover.rawValue,
@@ -2989,6 +3735,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidDefault: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidDefault.rawValue,
@@ -2997,6 +3745,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidDefaultActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidDefaultActive.rawValue,
@@ -3005,6 +3755,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidDefaultHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidDefaultHover.rawValue,
@@ -3013,6 +3765,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidPrimary: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidPrimary.rawValue,
@@ -3021,6 +3775,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidPrimaryActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidPrimaryActive.rawValue,
@@ -3029,6 +3785,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidPrimaryBrightness: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidPrimaryBrightness.rawValue,
@@ -3037,6 +3795,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidPrimaryHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidPrimaryHover.rawValue,
@@ -3045,6 +3805,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidSecondary: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidSecondary.rawValue,
@@ -3053,6 +3815,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidSecondaryActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidSecondaryActive.rawValue,
@@ -3061,6 +3825,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidSecondaryHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidSecondaryHover.rawValue,
@@ -3069,6 +3835,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidTertiary: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidTertiary.rawValue,
@@ -3077,6 +3845,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidTertiaryActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidTertiaryActive.rawValue,
@@ -3085,6 +3855,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultSolidTertiaryHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultSolidTertiaryHover.rawValue,
@@ -3093,6 +3865,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentAccent: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentAccent.rawValue,
@@ -3101,6 +3875,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentAccentActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentAccentActive.rawValue,
@@ -3109,6 +3885,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentAccentHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentAccentHover.rawValue,
@@ -3117,6 +3895,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentCard: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentCard.rawValue,
@@ -3125,6 +3905,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentCardActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentCardActive.rawValue,
@@ -3133,6 +3915,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentCardBrightness: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentCardBrightness.rawValue,
@@ -3141,6 +3925,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentCardHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentCardHover.rawValue,
@@ -3149,6 +3935,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentDeep: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentDeep.rawValue,
@@ -3157,6 +3945,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentDeepActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentDeepActive.rawValue,
@@ -3165,6 +3955,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentDeepHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentDeepHover.rawValue,
@@ -3173,6 +3965,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentInfo: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentInfo.rawValue,
@@ -3181,6 +3975,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentInfoActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentInfoActive.rawValue,
@@ -3189,6 +3985,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentInfoHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentInfoHover.rawValue,
@@ -3197,6 +3995,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentNegative: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentNegative.rawValue,
@@ -3205,6 +4005,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentNegativeActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentNegativeActive.rawValue,
@@ -3213,6 +4015,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentNegativeHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentNegativeHover.rawValue,
@@ -3221,6 +4025,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentPositive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentPositive.rawValue,
@@ -3229,6 +4035,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentPositiveActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentPositiveActive.rawValue,
@@ -3237,6 +4045,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentPositiveHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentPositiveHover.rawValue,
@@ -3245,6 +4055,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentPrimary: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentPrimary.rawValue,
@@ -3253,6 +4065,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentPrimaryActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentPrimaryActive.rawValue,
@@ -3261,6 +4075,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentPrimaryHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentPrimaryHover.rawValue,
@@ -3269,6 +4085,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentPromo: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentPromo.rawValue,
@@ -3277,6 +4095,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentPromoActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentPromoActive.rawValue,
@@ -3285,6 +4105,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentPromoHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentPromoHover.rawValue,
@@ -3293,6 +4115,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentSecondary: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentSecondary.rawValue,
@@ -3301,6 +4125,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentSecondaryActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentSecondaryActive.rawValue,
@@ -3309,6 +4135,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentSecondaryHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentSecondaryHover.rawValue,
@@ -3317,6 +4145,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentTertiary: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentTertiary.rawValue,
@@ -3325,6 +4155,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentTertiaryActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentTertiaryActive.rawValue,
@@ -3333,6 +4165,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentTertiaryHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentTertiaryHover.rawValue,
@@ -3341,6 +4175,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentWarning: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentWarning.rawValue,
@@ -3349,6 +4185,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentWarningActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentWarningActive.rawValue,
@@ -3357,6 +4195,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultTransparentWarningHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultTransparentWarningHover.rawValue,
@@ -3365,6 +4205,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultWarning: Self {
         let base = Self(
             id: Colors.surfaceDefaultWarning.rawValue,
@@ -3373,6 +4215,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultWarningActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultWarningActive.rawValue,
@@ -3381,6 +4225,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultWarningHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultWarningHover.rawValue,
@@ -3389,6 +4235,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultWarningMinor: Self {
         let base = Self(
             id: Colors.surfaceDefaultWarningMinor.rawValue,
@@ -3397,6 +4245,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultWarningMinorActive: Self {
         let base = Self(
             id: Colors.surfaceDefaultWarningMinorActive.rawValue,
@@ -3405,6 +4255,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceDefaultWarningMinorHover: Self {
         let base = Self(
             id: Colors.surfaceDefaultWarningMinorHover.rawValue,
@@ -3413,6 +4265,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseAccent: Self {
         let base = Self(
             id: Colors.surfaceInverseAccent.rawValue,
@@ -3421,6 +4275,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseAccentActive: Self {
         let base = Self(
             id: Colors.surfaceInverseAccentActive.rawValue,
@@ -3429,6 +4285,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseAccentHover: Self {
         let base = Self(
             id: Colors.surfaceInverseAccentHover.rawValue,
@@ -3437,6 +4295,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseAccentMinor: Self {
         let base = Self(
             id: Colors.surfaceInverseAccentMinor.rawValue,
@@ -3445,6 +4305,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseAccentMinorActive: Self {
         let base = Self(
             id: Colors.surfaceInverseAccentMinorActive.rawValue,
@@ -3453,6 +4315,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseAccentMinorHover: Self {
         let base = Self(
             id: Colors.surfaceInverseAccentMinorHover.rawValue,
@@ -3461,6 +4325,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseClear: Self {
         let base = Self(
             id: Colors.surfaceInverseClear.rawValue,
@@ -3469,6 +4335,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseClearActive: Self {
         let base = Self(
             id: Colors.surfaceInverseClearActive.rawValue,
@@ -3477,6 +4345,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseClearHover: Self {
         let base = Self(
             id: Colors.surfaceInverseClearHover.rawValue,
@@ -3485,6 +4355,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseInfo: Self {
         let base = Self(
             id: Colors.surfaceInverseInfo.rawValue,
@@ -3493,6 +4365,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseInfoActive: Self {
         let base = Self(
             id: Colors.surfaceInverseInfoActive.rawValue,
@@ -3501,6 +4375,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseInfoHover: Self {
         let base = Self(
             id: Colors.surfaceInverseInfoHover.rawValue,
@@ -3509,6 +4385,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseInfoMinor: Self {
         let base = Self(
             id: Colors.surfaceInverseInfoMinor.rawValue,
@@ -3517,6 +4395,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseInfoMinorActive: Self {
         let base = Self(
             id: Colors.surfaceInverseInfoMinorActive.rawValue,
@@ -3525,6 +4405,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseInfoMinorHover: Self {
         let base = Self(
             id: Colors.surfaceInverseInfoMinorHover.rawValue,
@@ -3533,6 +4415,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseNegative: Self {
         let base = Self(
             id: Colors.surfaceInverseNegative.rawValue,
@@ -3541,6 +4425,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseNegativeActive: Self {
         let base = Self(
             id: Colors.surfaceInverseNegativeActive.rawValue,
@@ -3549,6 +4435,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseNegativeHover: Self {
         let base = Self(
             id: Colors.surfaceInverseNegativeHover.rawValue,
@@ -3557,6 +4445,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseNegativeMinor: Self {
         let base = Self(
             id: Colors.surfaceInverseNegativeMinor.rawValue,
@@ -3565,6 +4455,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseNegativeMinorActive: Self {
         let base = Self(
             id: Colors.surfaceInverseNegativeMinorActive.rawValue,
@@ -3573,6 +4465,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseNegativeMinorHover: Self {
         let base = Self(
             id: Colors.surfaceInverseNegativeMinorHover.rawValue,
@@ -3581,6 +4475,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePositive: Self {
         let base = Self(
             id: Colors.surfaceInversePositive.rawValue,
@@ -3589,6 +4485,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePositiveActive: Self {
         let base = Self(
             id: Colors.surfaceInversePositiveActive.rawValue,
@@ -3597,6 +4495,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePositiveHover: Self {
         let base = Self(
             id: Colors.surfaceInversePositiveHover.rawValue,
@@ -3605,6 +4505,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePositiveMinor: Self {
         let base = Self(
             id: Colors.surfaceInversePositiveMinor.rawValue,
@@ -3613,6 +4515,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePositiveMinorActive: Self {
         let base = Self(
             id: Colors.surfaceInversePositiveMinorActive.rawValue,
@@ -3621,6 +4525,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePositiveMinorHover: Self {
         let base = Self(
             id: Colors.surfaceInversePositiveMinorHover.rawValue,
@@ -3629,6 +4535,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePromo: Self {
         let base = Self(
             id: Colors.surfaceInversePromo.rawValue,
@@ -3637,6 +4545,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePromoActive: Self {
         let base = Self(
             id: Colors.surfaceInversePromoActive.rawValue,
@@ -3645,6 +4555,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePromoHover: Self {
         let base = Self(
             id: Colors.surfaceInversePromoHover.rawValue,
@@ -3653,6 +4565,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePromoMinor: Self {
         let base = Self(
             id: Colors.surfaceInversePromoMinor.rawValue,
@@ -3661,6 +4575,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePromoMinorActive: Self {
         let base = Self(
             id: Colors.surfaceInversePromoMinorActive.rawValue,
@@ -3669,6 +4585,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInversePromoMinorHover: Self {
         let base = Self(
             id: Colors.surfaceInversePromoMinorHover.rawValue,
@@ -3677,6 +4595,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidCard: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidCard.rawValue,
@@ -3685,6 +4605,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidCardActive: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidCardActive.rawValue,
@@ -3693,6 +4615,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidCardBrightness: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidCardBrightness.rawValue,
@@ -3701,6 +4625,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidCardHover: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidCardHover.rawValue,
@@ -3709,6 +4635,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidDefault: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidDefault.rawValue,
@@ -3717,6 +4645,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidDefaultActive: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidDefaultActive.rawValue,
@@ -3725,6 +4655,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidDefaultHover: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidDefaultHover.rawValue,
@@ -3733,6 +4665,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidPrimary: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidPrimary.rawValue,
@@ -3741,6 +4675,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidPrimaryActive: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidPrimaryActive.rawValue,
@@ -3749,6 +4685,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidPrimaryBrightness: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidPrimaryBrightness.rawValue,
@@ -3757,6 +4695,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidPrimaryHover: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidPrimaryHover.rawValue,
@@ -3765,6 +4705,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidSecondary: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidSecondary.rawValue,
@@ -3773,6 +4715,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidSecondaryActive: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidSecondaryActive.rawValue,
@@ -3781,6 +4725,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidSecondaryHover: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidSecondaryHover.rawValue,
@@ -3789,6 +4735,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidTertiary: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidTertiary.rawValue,
@@ -3797,6 +4745,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidTertiaryActive: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidTertiaryActive.rawValue,
@@ -3805,6 +4755,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseSolidTertiaryHover: Self {
         let base = Self(
             id: Colors.surfaceInverseSolidTertiaryHover.rawValue,
@@ -3813,6 +4765,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentAccent: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentAccent.rawValue,
@@ -3821,6 +4775,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentAccentActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentAccentActive.rawValue,
@@ -3829,6 +4785,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentAccentHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentAccentHover.rawValue,
@@ -3837,6 +4795,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentCard: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentCard.rawValue,
@@ -3845,6 +4805,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentCardActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentCardActive.rawValue,
@@ -3853,6 +4815,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentCardBrightness: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentCardBrightness.rawValue,
@@ -3861,6 +4825,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentCardHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentCardHover.rawValue,
@@ -3869,6 +4835,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentDeep: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentDeep.rawValue,
@@ -3877,6 +4845,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentDeepActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentDeepActive.rawValue,
@@ -3885,6 +4855,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentDeepHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentDeepHover.rawValue,
@@ -3893,6 +4865,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentInfo: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentInfo.rawValue,
@@ -3901,6 +4875,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentInfoActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentInfoActive.rawValue,
@@ -3909,6 +4885,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentInfoHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentInfoHover.rawValue,
@@ -3917,6 +4895,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentNegative: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentNegative.rawValue,
@@ -3925,6 +4905,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentNegativeActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentNegativeActive.rawValue,
@@ -3933,6 +4915,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentNegativeHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentNegativeHover.rawValue,
@@ -3941,6 +4925,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentPositive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentPositive.rawValue,
@@ -3949,6 +4935,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentPositiveActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentPositiveActive.rawValue,
@@ -3957,6 +4945,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentPositiveHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentPositiveHover.rawValue,
@@ -3965,6 +4955,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentPrimary: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentPrimary.rawValue,
@@ -3973,6 +4965,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentPrimaryActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentPrimaryActive.rawValue,
@@ -3981,6 +4975,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentPrimaryHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentPrimaryHover.rawValue,
@@ -3989,6 +4985,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentPromo: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentPromo.rawValue,
@@ -3997,6 +4995,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentPromoActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentPromoActive.rawValue,
@@ -4005,6 +5005,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentPromoHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentPromoHover.rawValue,
@@ -4013,6 +5015,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentSecondary: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentSecondary.rawValue,
@@ -4021,6 +5025,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentSecondaryActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentSecondaryActive.rawValue,
@@ -4029,6 +5035,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentSecondaryHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentSecondaryHover.rawValue,
@@ -4037,6 +5045,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentTertiary: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentTertiary.rawValue,
@@ -4045,6 +5055,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentTertiaryActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentTertiaryActive.rawValue,
@@ -4053,6 +5065,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentTertiaryHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentTertiaryHover.rawValue,
@@ -4061,6 +5075,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentWarning: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentWarning.rawValue,
@@ -4069,6 +5085,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentWarningActive: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentWarningActive.rawValue,
@@ -4077,6 +5095,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseTransparentWarningHover: Self {
         let base = Self(
             id: Colors.surfaceInverseTransparentWarningHover.rawValue,
@@ -4085,6 +5105,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseWarning: Self {
         let base = Self(
             id: Colors.surfaceInverseWarning.rawValue,
@@ -4093,6 +5115,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseWarningActive: Self {
         let base = Self(
             id: Colors.surfaceInverseWarningActive.rawValue,
@@ -4101,6 +5125,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseWarningHover: Self {
         let base = Self(
             id: Colors.surfaceInverseWarningHover.rawValue,
@@ -4109,6 +5135,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseWarningMinor: Self {
         let base = Self(
             id: Colors.surfaceInverseWarningMinor.rawValue,
@@ -4117,6 +5145,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseWarningMinorActive: Self {
         let base = Self(
             id: Colors.surfaceInverseWarningMinorActive.rawValue,
@@ -4125,6 +5155,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceInverseWarningMinorHover: Self {
         let base = Self(
             id: Colors.surfaceInverseWarningMinorHover.rawValue,
@@ -4133,6 +5165,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkAccent: Self {
         let base = Self(
             id: Colors.surfaceOnDarkAccent.rawValue,
@@ -4141,6 +5175,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkAccentActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkAccentActive.rawValue,
@@ -4149,6 +5185,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkAccentHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkAccentHover.rawValue,
@@ -4157,6 +5195,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkAccentMinor: Self {
         let base = Self(
             id: Colors.surfaceOnDarkAccentMinor.rawValue,
@@ -4165,6 +5205,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkAccentMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkAccentMinorActive.rawValue,
@@ -4173,6 +5215,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkAccentMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkAccentMinorHover.rawValue,
@@ -4181,6 +5225,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkClear: Self {
         let base = Self(
             id: Colors.surfaceOnDarkClear.rawValue,
@@ -4189,6 +5235,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkClearActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkClearActive.rawValue,
@@ -4197,6 +5245,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkClearHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkClearHover.rawValue,
@@ -4205,6 +5255,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkInfo: Self {
         let base = Self(
             id: Colors.surfaceOnDarkInfo.rawValue,
@@ -4213,6 +5265,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkInfoActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkInfoActive.rawValue,
@@ -4221,6 +5275,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkInfoHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkInfoHover.rawValue,
@@ -4229,6 +5285,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkInfoMinor: Self {
         let base = Self(
             id: Colors.surfaceOnDarkInfoMinor.rawValue,
@@ -4237,6 +5295,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkInfoMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkInfoMinorActive.rawValue,
@@ -4245,6 +5305,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkInfoMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkInfoMinorHover.rawValue,
@@ -4253,6 +5315,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkNegative: Self {
         let base = Self(
             id: Colors.surfaceOnDarkNegative.rawValue,
@@ -4261,6 +5325,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkNegativeActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkNegativeActive.rawValue,
@@ -4269,6 +5335,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkNegativeHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkNegativeHover.rawValue,
@@ -4277,6 +5345,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkNegativeMinor: Self {
         let base = Self(
             id: Colors.surfaceOnDarkNegativeMinor.rawValue,
@@ -4285,6 +5355,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkNegativeMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkNegativeMinorActive.rawValue,
@@ -4293,6 +5365,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkNegativeMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkNegativeMinorHover.rawValue,
@@ -4301,6 +5375,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPositive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPositive.rawValue,
@@ -4309,6 +5385,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPositiveActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPositiveActive.rawValue,
@@ -4317,6 +5395,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPositiveHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPositiveHover.rawValue,
@@ -4325,6 +5405,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPositiveMinor: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPositiveMinor.rawValue,
@@ -4333,6 +5415,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPositiveMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPositiveMinorActive.rawValue,
@@ -4341,6 +5425,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPositiveMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPositiveMinorHover.rawValue,
@@ -4349,6 +5435,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPromo: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPromo.rawValue,
@@ -4357,6 +5445,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPromoActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPromoActive.rawValue,
@@ -4365,6 +5455,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPromoHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPromoHover.rawValue,
@@ -4373,6 +5465,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPromoMinor: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPromoMinor.rawValue,
@@ -4381,6 +5475,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPromoMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPromoMinorActive.rawValue,
@@ -4389,6 +5485,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkPromoMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkPromoMinorHover.rawValue,
@@ -4397,6 +5495,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidCard: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidCard.rawValue,
@@ -4405,6 +5505,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidCardActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidCardActive.rawValue,
@@ -4413,6 +5515,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidCardBrightness: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidCardBrightness.rawValue,
@@ -4421,6 +5525,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidCardHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidCardHover.rawValue,
@@ -4429,6 +5535,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidDefault: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidDefault.rawValue,
@@ -4437,6 +5545,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidDefaultActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidDefaultActive.rawValue,
@@ -4445,6 +5555,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidDefaultHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidDefaultHover.rawValue,
@@ -4453,6 +5565,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidPrimary: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidPrimary.rawValue,
@@ -4461,6 +5575,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidPrimaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidPrimaryActive.rawValue,
@@ -4469,6 +5585,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidPrimaryBrightness: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidPrimaryBrightness.rawValue,
@@ -4477,6 +5595,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidPrimaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidPrimaryHover.rawValue,
@@ -4485,6 +5605,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidSecondary: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidSecondary.rawValue,
@@ -4493,6 +5615,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidSecondaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidSecondaryActive.rawValue,
@@ -4501,6 +5625,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidSecondaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidSecondaryHover.rawValue,
@@ -4509,6 +5635,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidTertiary: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidTertiary.rawValue,
@@ -4517,6 +5645,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidTertiaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidTertiaryActive.rawValue,
@@ -4525,6 +5655,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkSolidTertiaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkSolidTertiaryHover.rawValue,
@@ -4533,6 +5665,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentAccent: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentAccent.rawValue,
@@ -4541,6 +5675,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentAccentActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentAccentActive.rawValue,
@@ -4549,6 +5685,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentAccentHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentAccentHover.rawValue,
@@ -4557,6 +5695,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentCard: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentCard.rawValue,
@@ -4565,6 +5705,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentCardActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentCardActive.rawValue,
@@ -4573,6 +5715,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentCardBrightness: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentCardBrightness.rawValue,
@@ -4581,6 +5725,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentCardHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentCardHover.rawValue,
@@ -4589,6 +5735,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentDeep: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentDeep.rawValue,
@@ -4597,6 +5745,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentDeepActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentDeepActive.rawValue,
@@ -4605,6 +5755,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentDeepHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentDeepHover.rawValue,
@@ -4613,6 +5765,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentInfo: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentInfo.rawValue,
@@ -4621,6 +5775,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentInfoActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentInfoActive.rawValue,
@@ -4629,6 +5785,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentInfoHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentInfoHover.rawValue,
@@ -4637,6 +5795,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentNegative: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentNegative.rawValue,
@@ -4645,6 +5805,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentNegativeActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentNegativeActive.rawValue,
@@ -4653,6 +5815,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentNegativeHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentNegativeHover.rawValue,
@@ -4661,6 +5825,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentPositive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentPositive.rawValue,
@@ -4669,6 +5835,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentPositiveActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentPositiveActive.rawValue,
@@ -4677,6 +5845,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentPositiveHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentPositiveHover.rawValue,
@@ -4685,6 +5855,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentPrimary: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentPrimary.rawValue,
@@ -4693,6 +5865,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentPrimaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentPrimaryActive.rawValue,
@@ -4701,6 +5875,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentPrimaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentPrimaryHover.rawValue,
@@ -4709,6 +5885,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentPromo: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentPromo.rawValue,
@@ -4717,6 +5895,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentPromoActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentPromoActive.rawValue,
@@ -4725,6 +5905,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentPromoHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentPromoHover.rawValue,
@@ -4733,6 +5915,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentSecondary: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentSecondary.rawValue,
@@ -4741,6 +5925,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentSecondaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentSecondaryActive.rawValue,
@@ -4749,6 +5935,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentSecondaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentSecondaryHover.rawValue,
@@ -4757,6 +5945,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentTertiary: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentTertiary.rawValue,
@@ -4765,6 +5955,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentTertiaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentTertiaryActive.rawValue,
@@ -4773,6 +5965,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentTertiaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentTertiaryHover.rawValue,
@@ -4781,6 +5975,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentWarning: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentWarning.rawValue,
@@ -4789,6 +5985,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentWarningActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentWarningActive.rawValue,
@@ -4797,6 +5995,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkTransparentWarningHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkTransparentWarningHover.rawValue,
@@ -4805,6 +6005,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkWarning: Self {
         let base = Self(
             id: Colors.surfaceOnDarkWarning.rawValue,
@@ -4813,6 +6015,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkWarningActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkWarningActive.rawValue,
@@ -4821,6 +6025,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkWarningHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkWarningHover.rawValue,
@@ -4829,6 +6035,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkWarningMinor: Self {
         let base = Self(
             id: Colors.surfaceOnDarkWarningMinor.rawValue,
@@ -4837,6 +6045,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkWarningMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnDarkWarningMinorActive.rawValue,
@@ -4845,6 +6055,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnDarkWarningMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnDarkWarningMinorHover.rawValue,
@@ -4853,6 +6065,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightAccent: Self {
         let base = Self(
             id: Colors.surfaceOnLightAccent.rawValue,
@@ -4861,6 +6075,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightAccentActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightAccentActive.rawValue,
@@ -4869,6 +6085,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightAccentHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightAccentHover.rawValue,
@@ -4877,6 +6095,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightAccentMinor: Self {
         let base = Self(
             id: Colors.surfaceOnLightAccentMinor.rawValue,
@@ -4885,6 +6105,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightAccentMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightAccentMinorActive.rawValue,
@@ -4893,6 +6115,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightAccentMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightAccentMinorHover.rawValue,
@@ -4901,6 +6125,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightClear: Self {
         let base = Self(
             id: Colors.surfaceOnLightClear.rawValue,
@@ -4909,6 +6135,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightClearActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightClearActive.rawValue,
@@ -4917,6 +6145,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightClearHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightClearHover.rawValue,
@@ -4925,6 +6155,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightInfo: Self {
         let base = Self(
             id: Colors.surfaceOnLightInfo.rawValue,
@@ -4933,6 +6165,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightInfoActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightInfoActive.rawValue,
@@ -4941,6 +6175,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightInfoHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightInfoHover.rawValue,
@@ -4949,6 +6185,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightInfoMinor: Self {
         let base = Self(
             id: Colors.surfaceOnLightInfoMinor.rawValue,
@@ -4957,6 +6195,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightInfoMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightInfoMinorActive.rawValue,
@@ -4965,6 +6205,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightInfoMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightInfoMinorHover.rawValue,
@@ -4973,6 +6215,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightNegative: Self {
         let base = Self(
             id: Colors.surfaceOnLightNegative.rawValue,
@@ -4981,6 +6225,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightNegativeActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightNegativeActive.rawValue,
@@ -4989,6 +6235,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightNegativeHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightNegativeHover.rawValue,
@@ -4997,6 +6245,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightNegativeMinor: Self {
         let base = Self(
             id: Colors.surfaceOnLightNegativeMinor.rawValue,
@@ -5005,6 +6255,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightNegativeMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightNegativeMinorActive.rawValue,
@@ -5013,6 +6265,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightNegativeMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightNegativeMinorHover.rawValue,
@@ -5021,6 +6275,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPositive: Self {
         let base = Self(
             id: Colors.surfaceOnLightPositive.rawValue,
@@ -5029,6 +6285,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPositiveActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightPositiveActive.rawValue,
@@ -5037,6 +6295,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPositiveHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightPositiveHover.rawValue,
@@ -5045,6 +6305,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPositiveMinor: Self {
         let base = Self(
             id: Colors.surfaceOnLightPositiveMinor.rawValue,
@@ -5053,6 +6315,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPositiveMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightPositiveMinorActive.rawValue,
@@ -5061,6 +6325,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPositiveMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightPositiveMinorHover.rawValue,
@@ -5069,6 +6335,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPromo: Self {
         let base = Self(
             id: Colors.surfaceOnLightPromo.rawValue,
@@ -5077,6 +6345,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPromoActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightPromoActive.rawValue,
@@ -5085,6 +6355,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPromoHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightPromoHover.rawValue,
@@ -5093,6 +6365,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPromoMinor: Self {
         let base = Self(
             id: Colors.surfaceOnLightPromoMinor.rawValue,
@@ -5101,6 +6375,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPromoMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightPromoMinorActive.rawValue,
@@ -5109,6 +6385,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightPromoMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightPromoMinorHover.rawValue,
@@ -5117,6 +6395,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidCard: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidCard.rawValue,
@@ -5125,6 +6405,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidCardActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidCardActive.rawValue,
@@ -5133,6 +6415,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidCardBrightness: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidCardBrightness.rawValue,
@@ -5141,6 +6425,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidCardHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidCardHover.rawValue,
@@ -5149,6 +6435,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidDefault: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidDefault.rawValue,
@@ -5157,6 +6445,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidDefaultActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidDefaultActive.rawValue,
@@ -5165,6 +6455,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidDefaultHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidDefaultHover.rawValue,
@@ -5173,6 +6465,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidPrimary: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidPrimary.rawValue,
@@ -5181,6 +6475,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidPrimaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidPrimaryActive.rawValue,
@@ -5189,6 +6485,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidPrimaryBrightness: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidPrimaryBrightness.rawValue,
@@ -5197,6 +6495,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidPrimaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidPrimaryHover.rawValue,
@@ -5205,6 +6505,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidSecondary: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidSecondary.rawValue,
@@ -5213,6 +6515,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidSecondaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidSecondaryActive.rawValue,
@@ -5221,6 +6525,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidSecondaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidSecondaryHover.rawValue,
@@ -5229,6 +6535,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidTertiary: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidTertiary.rawValue,
@@ -5237,6 +6545,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidTertiaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidTertiaryActive.rawValue,
@@ -5245,6 +6555,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightSolidTertiaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightSolidTertiaryHover.rawValue,
@@ -5253,6 +6565,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentAccent: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentAccent.rawValue,
@@ -5261,6 +6575,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentAccentActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentAccentActive.rawValue,
@@ -5269,6 +6585,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentAccentHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentAccentHover.rawValue,
@@ -5277,6 +6595,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentCard: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentCard.rawValue,
@@ -5285,6 +6605,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentCardActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentCardActive.rawValue,
@@ -5293,6 +6615,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentCardBrightness: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentCardBrightness.rawValue,
@@ -5301,6 +6625,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentCardHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentCardHover.rawValue,
@@ -5309,6 +6635,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentDeep: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentDeep.rawValue,
@@ -5317,6 +6645,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentDeepActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentDeepActive.rawValue,
@@ -5325,6 +6655,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentDeepHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentDeepHover.rawValue,
@@ -5333,6 +6665,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentInfo: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentInfo.rawValue,
@@ -5341,6 +6675,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentInfoActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentInfoActive.rawValue,
@@ -5349,6 +6685,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentInfoHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentInfoHover.rawValue,
@@ -5357,6 +6695,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentNegative: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentNegative.rawValue,
@@ -5365,6 +6705,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentNegativeActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentNegativeActive.rawValue,
@@ -5373,6 +6715,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentNegativeHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentNegativeHover.rawValue,
@@ -5381,6 +6725,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentPositive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentPositive.rawValue,
@@ -5389,6 +6735,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentPositiveActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentPositiveActive.rawValue,
@@ -5397,6 +6745,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentPositiveHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentPositiveHover.rawValue,
@@ -5405,6 +6755,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentPrimary: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentPrimary.rawValue,
@@ -5413,6 +6765,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentPrimaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentPrimaryActive.rawValue,
@@ -5421,6 +6775,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentPrimaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentPrimaryHover.rawValue,
@@ -5429,6 +6785,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentPromo: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentPromo.rawValue,
@@ -5437,6 +6795,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentPromoActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentPromoActive.rawValue,
@@ -5445,6 +6805,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentPromoHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentPromoHover.rawValue,
@@ -5453,6 +6815,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentSecondary: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentSecondary.rawValue,
@@ -5461,6 +6825,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentSecondaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentSecondaryActive.rawValue,
@@ -5469,6 +6835,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentSecondaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentSecondaryHover.rawValue,
@@ -5477,6 +6845,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentTertiary: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentTertiary.rawValue,
@@ -5485,6 +6855,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentTertiaryActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentTertiaryActive.rawValue,
@@ -5493,6 +6865,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentTertiaryHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentTertiaryHover.rawValue,
@@ -5501,6 +6875,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentWarning: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentWarning.rawValue,
@@ -5509,6 +6885,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentWarningActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentWarningActive.rawValue,
@@ -5517,6 +6895,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightTransparentWarningHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightTransparentWarningHover.rawValue,
@@ -5525,6 +6905,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightWarning: Self {
         let base = Self(
             id: Colors.surfaceOnLightWarning.rawValue,
@@ -5533,6 +6915,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightWarningActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightWarningActive.rawValue,
@@ -5541,6 +6925,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightWarningHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightWarningHover.rawValue,
@@ -5549,6 +6935,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightWarningMinor: Self {
         let base = Self(
             id: Colors.surfaceOnLightWarningMinor.rawValue,
@@ -5557,6 +6945,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightWarningMinorActive: Self {
         let base = Self(
             id: Colors.surfaceOnLightWarningMinorActive.rawValue,
@@ -5565,6 +6955,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var surfaceOnLightWarningMinorHover: Self {
         let base = Self(
             id: Colors.surfaceOnLightWarningMinorHover.rawValue,
@@ -5573,6 +6965,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultAccent: Self {
         let base = Self(
             id: Colors.textDefaultAccent.rawValue,
@@ -5581,6 +6975,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultAccentActive: Self {
         let base = Self(
             id: Colors.textDefaultAccentActive.rawValue,
@@ -5589,6 +6985,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultAccentHover: Self {
         let base = Self(
             id: Colors.textDefaultAccentHover.rawValue,
@@ -5597,6 +6995,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultAccentMinor: Self {
         let base = Self(
             id: Colors.textDefaultAccentMinor.rawValue,
@@ -5605,6 +7005,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultAccentMinorActive: Self {
         let base = Self(
             id: Colors.textDefaultAccentMinorActive.rawValue,
@@ -5613,6 +7015,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultAccentMinorHover: Self {
         let base = Self(
             id: Colors.textDefaultAccentMinorHover.rawValue,
@@ -5621,6 +7025,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultInfo: Self {
         let base = Self(
             id: Colors.textDefaultInfo.rawValue,
@@ -5629,6 +7035,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultInfoActive: Self {
         let base = Self(
             id: Colors.textDefaultInfoActive.rawValue,
@@ -5637,6 +7045,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultInfoHover: Self {
         let base = Self(
             id: Colors.textDefaultInfoHover.rawValue,
@@ -5645,6 +7055,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultInfoMinor: Self {
         let base = Self(
             id: Colors.textDefaultInfoMinor.rawValue,
@@ -5653,6 +7065,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultInfoMinorActive: Self {
         let base = Self(
             id: Colors.textDefaultInfoMinorActive.rawValue,
@@ -5661,6 +7075,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultInfoMinorHover: Self {
         let base = Self(
             id: Colors.textDefaultInfoMinorHover.rawValue,
@@ -5669,6 +7085,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultNegative: Self {
         let base = Self(
             id: Colors.textDefaultNegative.rawValue,
@@ -5677,6 +7095,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultNegativeActive: Self {
         let base = Self(
             id: Colors.textDefaultNegativeActive.rawValue,
@@ -5685,6 +7105,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultNegativeHover: Self {
         let base = Self(
             id: Colors.textDefaultNegativeHover.rawValue,
@@ -5693,6 +7115,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultNegativeMinor: Self {
         let base = Self(
             id: Colors.textDefaultNegativeMinor.rawValue,
@@ -5701,6 +7125,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultNegativeMinorActive: Self {
         let base = Self(
             id: Colors.textDefaultNegativeMinorActive.rawValue,
@@ -5709,6 +7135,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultNegativeMinorHover: Self {
         let base = Self(
             id: Colors.textDefaultNegativeMinorHover.rawValue,
@@ -5717,6 +7145,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultParagraph: Self {
         let base = Self(
             id: Colors.textDefaultParagraph.rawValue,
@@ -5725,6 +7155,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultParagraphActive: Self {
         let base = Self(
             id: Colors.textDefaultParagraphActive.rawValue,
@@ -5733,6 +7165,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultParagraphHover: Self {
         let base = Self(
             id: Colors.textDefaultParagraphHover.rawValue,
@@ -5741,6 +7175,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPositive: Self {
         let base = Self(
             id: Colors.textDefaultPositive.rawValue,
@@ -5749,6 +7185,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPositiveActive: Self {
         let base = Self(
             id: Colors.textDefaultPositiveActive.rawValue,
@@ -5757,6 +7195,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPositiveHover: Self {
         let base = Self(
             id: Colors.textDefaultPositiveHover.rawValue,
@@ -5765,6 +7205,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPositiveMinor: Self {
         let base = Self(
             id: Colors.textDefaultPositiveMinor.rawValue,
@@ -5773,6 +7215,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPositiveMinorActive: Self {
         let base = Self(
             id: Colors.textDefaultPositiveMinorActive.rawValue,
@@ -5781,6 +7225,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPositiveMinorHover: Self {
         let base = Self(
             id: Colors.textDefaultPositiveMinorHover.rawValue,
@@ -5789,6 +7235,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPrimary: Self {
         let base = Self(
             id: Colors.textDefaultPrimary.rawValue,
@@ -5797,6 +7245,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPrimaryActive: Self {
         let base = Self(
             id: Colors.textDefaultPrimaryActive.rawValue,
@@ -5805,6 +7255,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPrimaryBrightness: Self {
         let base = Self(
             id: Colors.textDefaultPrimaryBrightness.rawValue,
@@ -5813,6 +7265,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPrimaryHover: Self {
         let base = Self(
             id: Colors.textDefaultPrimaryHover.rawValue,
@@ -5821,6 +7275,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPromo: Self {
         let base = Self(
             id: Colors.textDefaultPromo.rawValue,
@@ -5829,6 +7285,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPromoActive: Self {
         let base = Self(
             id: Colors.textDefaultPromoActive.rawValue,
@@ -5837,6 +7295,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPromoHover: Self {
         let base = Self(
             id: Colors.textDefaultPromoHover.rawValue,
@@ -5845,6 +7305,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPromoMinor: Self {
         let base = Self(
             id: Colors.textDefaultPromoMinor.rawValue,
@@ -5853,6 +7315,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPromoMinorActive: Self {
         let base = Self(
             id: Colors.textDefaultPromoMinorActive.rawValue,
@@ -5861,6 +7325,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultPromoMinorHover: Self {
         let base = Self(
             id: Colors.textDefaultPromoMinorHover.rawValue,
@@ -5869,6 +7335,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultSecondary: Self {
         let base = Self(
             id: Colors.textDefaultSecondary.rawValue,
@@ -5877,6 +7345,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultSecondaryActive: Self {
         let base = Self(
             id: Colors.textDefaultSecondaryActive.rawValue,
@@ -5885,6 +7355,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultSecondaryHover: Self {
         let base = Self(
             id: Colors.textDefaultSecondaryHover.rawValue,
@@ -5893,6 +7365,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultTertiary: Self {
         let base = Self(
             id: Colors.textDefaultTertiary.rawValue,
@@ -5901,6 +7375,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultTertiaryActive: Self {
         let base = Self(
             id: Colors.textDefaultTertiaryActive.rawValue,
@@ -5909,6 +7385,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultTertiaryHover: Self {
         let base = Self(
             id: Colors.textDefaultTertiaryHover.rawValue,
@@ -5917,6 +7395,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultWarning: Self {
         let base = Self(
             id: Colors.textDefaultWarning.rawValue,
@@ -5925,6 +7405,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultWarningActive: Self {
         let base = Self(
             id: Colors.textDefaultWarningActive.rawValue,
@@ -5933,6 +7415,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultWarningHover: Self {
         let base = Self(
             id: Colors.textDefaultWarningHover.rawValue,
@@ -5941,6 +7425,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultWarningMinor: Self {
         let base = Self(
             id: Colors.textDefaultWarningMinor.rawValue,
@@ -5949,6 +7435,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultWarningMinorActive: Self {
         let base = Self(
             id: Colors.textDefaultWarningMinorActive.rawValue,
@@ -5957,6 +7445,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textDefaultWarningMinorHover: Self {
         let base = Self(
             id: Colors.textDefaultWarningMinorHover.rawValue,
@@ -5965,6 +7455,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseAccent: Self {
         let base = Self(
             id: Colors.textInverseAccent.rawValue,
@@ -5973,6 +7465,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseAccentActive: Self {
         let base = Self(
             id: Colors.textInverseAccentActive.rawValue,
@@ -5981,6 +7475,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseAccentHover: Self {
         let base = Self(
             id: Colors.textInverseAccentHover.rawValue,
@@ -5989,6 +7485,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseAccentMinor: Self {
         let base = Self(
             id: Colors.textInverseAccentMinor.rawValue,
@@ -5997,6 +7495,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseAccentMinorActive: Self {
         let base = Self(
             id: Colors.textInverseAccentMinorActive.rawValue,
@@ -6005,6 +7505,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseAccentMinorHover: Self {
         let base = Self(
             id: Colors.textInverseAccentMinorHover.rawValue,
@@ -6013,6 +7515,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseInfo: Self {
         let base = Self(
             id: Colors.textInverseInfo.rawValue,
@@ -6021,6 +7525,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseInfoActive: Self {
         let base = Self(
             id: Colors.textInverseInfoActive.rawValue,
@@ -6029,6 +7535,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseInfoHover: Self {
         let base = Self(
             id: Colors.textInverseInfoHover.rawValue,
@@ -6037,6 +7545,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseInfoMinor: Self {
         let base = Self(
             id: Colors.textInverseInfoMinor.rawValue,
@@ -6045,6 +7555,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseInfoMinorActive: Self {
         let base = Self(
             id: Colors.textInverseInfoMinorActive.rawValue,
@@ -6053,6 +7565,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseInfoMinorHover: Self {
         let base = Self(
             id: Colors.textInverseInfoMinorHover.rawValue,
@@ -6061,6 +7575,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseNegative: Self {
         let base = Self(
             id: Colors.textInverseNegative.rawValue,
@@ -6069,6 +7585,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseNegativeActive: Self {
         let base = Self(
             id: Colors.textInverseNegativeActive.rawValue,
@@ -6077,6 +7595,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseNegativeHover: Self {
         let base = Self(
             id: Colors.textInverseNegativeHover.rawValue,
@@ -6085,6 +7605,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseNegativeMinor: Self {
         let base = Self(
             id: Colors.textInverseNegativeMinor.rawValue,
@@ -6093,6 +7615,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseNegativeMinorActive: Self {
         let base = Self(
             id: Colors.textInverseNegativeMinorActive.rawValue,
@@ -6101,6 +7625,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseNegativeMinorHover: Self {
         let base = Self(
             id: Colors.textInverseNegativeMinorHover.rawValue,
@@ -6109,6 +7635,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseParagraph: Self {
         let base = Self(
             id: Colors.textInverseParagraph.rawValue,
@@ -6117,6 +7645,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseParagraphActive: Self {
         let base = Self(
             id: Colors.textInverseParagraphActive.rawValue,
@@ -6125,6 +7655,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseParagraphHover: Self {
         let base = Self(
             id: Colors.textInverseParagraphHover.rawValue,
@@ -6133,6 +7665,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePositive: Self {
         let base = Self(
             id: Colors.textInversePositive.rawValue,
@@ -6141,6 +7675,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePositiveActive: Self {
         let base = Self(
             id: Colors.textInversePositiveActive.rawValue,
@@ -6149,6 +7685,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePositiveHover: Self {
         let base = Self(
             id: Colors.textInversePositiveHover.rawValue,
@@ -6157,6 +7695,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePositiveMinor: Self {
         let base = Self(
             id: Colors.textInversePositiveMinor.rawValue,
@@ -6165,6 +7705,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePositiveMinorActive: Self {
         let base = Self(
             id: Colors.textInversePositiveMinorActive.rawValue,
@@ -6173,6 +7715,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePositiveMinorHover: Self {
         let base = Self(
             id: Colors.textInversePositiveMinorHover.rawValue,
@@ -6181,6 +7725,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePrimary: Self {
         let base = Self(
             id: Colors.textInversePrimary.rawValue,
@@ -6189,6 +7735,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePrimaryActive: Self {
         let base = Self(
             id: Colors.textInversePrimaryActive.rawValue,
@@ -6197,6 +7745,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePrimaryBrightness: Self {
         let base = Self(
             id: Colors.textInversePrimaryBrightness.rawValue,
@@ -6205,6 +7755,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePrimaryHover: Self {
         let base = Self(
             id: Colors.textInversePrimaryHover.rawValue,
@@ -6213,6 +7765,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePromo: Self {
         let base = Self(
             id: Colors.textInversePromo.rawValue,
@@ -6221,6 +7775,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePromoActive: Self {
         let base = Self(
             id: Colors.textInversePromoActive.rawValue,
@@ -6229,6 +7785,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePromoHover: Self {
         let base = Self(
             id: Colors.textInversePromoHover.rawValue,
@@ -6237,6 +7795,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePromoMinor: Self {
         let base = Self(
             id: Colors.textInversePromoMinor.rawValue,
@@ -6245,6 +7805,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePromoMinorActive: Self {
         let base = Self(
             id: Colors.textInversePromoMinorActive.rawValue,
@@ -6253,6 +7815,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInversePromoMinorHover: Self {
         let base = Self(
             id: Colors.textInversePromoMinorHover.rawValue,
@@ -6261,6 +7825,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseSecondary: Self {
         let base = Self(
             id: Colors.textInverseSecondary.rawValue,
@@ -6269,6 +7835,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseSecondaryActive: Self {
         let base = Self(
             id: Colors.textInverseSecondaryActive.rawValue,
@@ -6277,6 +7845,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseSecondaryHover: Self {
         let base = Self(
             id: Colors.textInverseSecondaryHover.rawValue,
@@ -6285,6 +7855,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseTertiary: Self {
         let base = Self(
             id: Colors.textInverseTertiary.rawValue,
@@ -6293,6 +7865,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseTertiaryActive: Self {
         let base = Self(
             id: Colors.textInverseTertiaryActive.rawValue,
@@ -6301,6 +7875,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseTertiaryHover: Self {
         let base = Self(
             id: Colors.textInverseTertiaryHover.rawValue,
@@ -6309,6 +7885,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseWarning: Self {
         let base = Self(
             id: Colors.textInverseWarning.rawValue,
@@ -6317,6 +7895,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseWarningActive: Self {
         let base = Self(
             id: Colors.textInverseWarningActive.rawValue,
@@ -6325,6 +7905,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseWarningHover: Self {
         let base = Self(
             id: Colors.textInverseWarningHover.rawValue,
@@ -6333,6 +7915,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseWarningMinor: Self {
         let base = Self(
             id: Colors.textInverseWarningMinor.rawValue,
@@ -6341,6 +7925,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseWarningMinorActive: Self {
         let base = Self(
             id: Colors.textInverseWarningMinorActive.rawValue,
@@ -6349,6 +7935,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textInverseWarningMinorHover: Self {
         let base = Self(
             id: Colors.textInverseWarningMinorHover.rawValue,
@@ -6357,6 +7945,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkAccent: Self {
         let base = Self(
             id: Colors.textOnDarkAccent.rawValue,
@@ -6365,6 +7955,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkAccentActive: Self {
         let base = Self(
             id: Colors.textOnDarkAccentActive.rawValue,
@@ -6373,6 +7965,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkAccentHover: Self {
         let base = Self(
             id: Colors.textOnDarkAccentHover.rawValue,
@@ -6381,6 +7975,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkAccentMinor: Self {
         let base = Self(
             id: Colors.textOnDarkAccentMinor.rawValue,
@@ -6389,6 +7985,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkAccentMinorActive: Self {
         let base = Self(
             id: Colors.textOnDarkAccentMinorActive.rawValue,
@@ -6397,6 +7995,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkAccentMinorHover: Self {
         let base = Self(
             id: Colors.textOnDarkAccentMinorHover.rawValue,
@@ -6405,6 +8005,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkInfo: Self {
         let base = Self(
             id: Colors.textOnDarkInfo.rawValue,
@@ -6413,6 +8015,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkInfoActive: Self {
         let base = Self(
             id: Colors.textOnDarkInfoActive.rawValue,
@@ -6421,6 +8025,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkInfoHover: Self {
         let base = Self(
             id: Colors.textOnDarkInfoHover.rawValue,
@@ -6429,6 +8035,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkInfoMinor: Self {
         let base = Self(
             id: Colors.textOnDarkInfoMinor.rawValue,
@@ -6437,6 +8045,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkInfoMinorActive: Self {
         let base = Self(
             id: Colors.textOnDarkInfoMinorActive.rawValue,
@@ -6445,6 +8055,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkInfoMinorHover: Self {
         let base = Self(
             id: Colors.textOnDarkInfoMinorHover.rawValue,
@@ -6453,6 +8065,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkNegative: Self {
         let base = Self(
             id: Colors.textOnDarkNegative.rawValue,
@@ -6461,6 +8075,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkNegativeActive: Self {
         let base = Self(
             id: Colors.textOnDarkNegativeActive.rawValue,
@@ -6469,6 +8085,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkNegativeHover: Self {
         let base = Self(
             id: Colors.textOnDarkNegativeHover.rawValue,
@@ -6477,6 +8095,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkNegativeMinor: Self {
         let base = Self(
             id: Colors.textOnDarkNegativeMinor.rawValue,
@@ -6485,6 +8105,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkNegativeMinorActive: Self {
         let base = Self(
             id: Colors.textOnDarkNegativeMinorActive.rawValue,
@@ -6493,6 +8115,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkNegativeMinorHover: Self {
         let base = Self(
             id: Colors.textOnDarkNegativeMinorHover.rawValue,
@@ -6501,6 +8125,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkParagraph: Self {
         let base = Self(
             id: Colors.textOnDarkParagraph.rawValue,
@@ -6509,6 +8135,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkParagraphActive: Self {
         let base = Self(
             id: Colors.textOnDarkParagraphActive.rawValue,
@@ -6517,6 +8145,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkParagraphHover: Self {
         let base = Self(
             id: Colors.textOnDarkParagraphHover.rawValue,
@@ -6525,6 +8155,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPositive: Self {
         let base = Self(
             id: Colors.textOnDarkPositive.rawValue,
@@ -6533,6 +8165,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPositiveActive: Self {
         let base = Self(
             id: Colors.textOnDarkPositiveActive.rawValue,
@@ -6541,6 +8175,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPositiveHover: Self {
         let base = Self(
             id: Colors.textOnDarkPositiveHover.rawValue,
@@ -6549,6 +8185,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPositiveMinor: Self {
         let base = Self(
             id: Colors.textOnDarkPositiveMinor.rawValue,
@@ -6557,6 +8195,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPositiveMinorActive: Self {
         let base = Self(
             id: Colors.textOnDarkPositiveMinorActive.rawValue,
@@ -6565,6 +8205,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPositiveMinorHover: Self {
         let base = Self(
             id: Colors.textOnDarkPositiveMinorHover.rawValue,
@@ -6573,6 +8215,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPrimary: Self {
         let base = Self(
             id: Colors.textOnDarkPrimary.rawValue,
@@ -6581,6 +8225,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPrimaryActive: Self {
         let base = Self(
             id: Colors.textOnDarkPrimaryActive.rawValue,
@@ -6589,6 +8235,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPrimaryBrightness: Self {
         let base = Self(
             id: Colors.textOnDarkPrimaryBrightness.rawValue,
@@ -6597,6 +8245,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPrimaryHover: Self {
         let base = Self(
             id: Colors.textOnDarkPrimaryHover.rawValue,
@@ -6605,6 +8255,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPromo: Self {
         let base = Self(
             id: Colors.textOnDarkPromo.rawValue,
@@ -6613,6 +8265,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPromoActive: Self {
         let base = Self(
             id: Colors.textOnDarkPromoActive.rawValue,
@@ -6621,6 +8275,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPromoHover: Self {
         let base = Self(
             id: Colors.textOnDarkPromoHover.rawValue,
@@ -6629,6 +8285,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPromoMinor: Self {
         let base = Self(
             id: Colors.textOnDarkPromoMinor.rawValue,
@@ -6637,6 +8295,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPromoMinorActive: Self {
         let base = Self(
             id: Colors.textOnDarkPromoMinorActive.rawValue,
@@ -6645,6 +8305,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkPromoMinorHover: Self {
         let base = Self(
             id: Colors.textOnDarkPromoMinorHover.rawValue,
@@ -6653,6 +8315,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkSecondary: Self {
         let base = Self(
             id: Colors.textOnDarkSecondary.rawValue,
@@ -6661,6 +8325,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkSecondaryActive: Self {
         let base = Self(
             id: Colors.textOnDarkSecondaryActive.rawValue,
@@ -6669,6 +8335,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkSecondaryHover: Self {
         let base = Self(
             id: Colors.textOnDarkSecondaryHover.rawValue,
@@ -6677,6 +8345,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkTertiary: Self {
         let base = Self(
             id: Colors.textOnDarkTertiary.rawValue,
@@ -6685,6 +8355,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkTertiaryActive: Self {
         let base = Self(
             id: Colors.textOnDarkTertiaryActive.rawValue,
@@ -6693,6 +8365,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkTertiaryHover: Self {
         let base = Self(
             id: Colors.textOnDarkTertiaryHover.rawValue,
@@ -6701,6 +8375,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkWarning: Self {
         let base = Self(
             id: Colors.textOnDarkWarning.rawValue,
@@ -6709,6 +8385,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkWarningActive: Self {
         let base = Self(
             id: Colors.textOnDarkWarningActive.rawValue,
@@ -6717,6 +8395,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkWarningHover: Self {
         let base = Self(
             id: Colors.textOnDarkWarningHover.rawValue,
@@ -6725,6 +8405,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkWarningMinor: Self {
         let base = Self(
             id: Colors.textOnDarkWarningMinor.rawValue,
@@ -6733,6 +8415,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkWarningMinorActive: Self {
         let base = Self(
             id: Colors.textOnDarkWarningMinorActive.rawValue,
@@ -6741,6 +8425,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnDarkWarningMinorHover: Self {
         let base = Self(
             id: Colors.textOnDarkWarningMinorHover.rawValue,
@@ -6749,6 +8435,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightAccent: Self {
         let base = Self(
             id: Colors.textOnLightAccent.rawValue,
@@ -6757,6 +8445,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightAccentActive: Self {
         let base = Self(
             id: Colors.textOnLightAccentActive.rawValue,
@@ -6765,6 +8455,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightAccentHover: Self {
         let base = Self(
             id: Colors.textOnLightAccentHover.rawValue,
@@ -6773,6 +8465,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightAccentMinor: Self {
         let base = Self(
             id: Colors.textOnLightAccentMinor.rawValue,
@@ -6781,6 +8475,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightAccentMinorActive: Self {
         let base = Self(
             id: Colors.textOnLightAccentMinorActive.rawValue,
@@ -6789,6 +8485,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightAccentMinorHover: Self {
         let base = Self(
             id: Colors.textOnLightAccentMinorHover.rawValue,
@@ -6797,6 +8495,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightInfo: Self {
         let base = Self(
             id: Colors.textOnLightInfo.rawValue,
@@ -6805,6 +8505,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightInfoActive: Self {
         let base = Self(
             id: Colors.textOnLightInfoActive.rawValue,
@@ -6813,6 +8515,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightInfoHover: Self {
         let base = Self(
             id: Colors.textOnLightInfoHover.rawValue,
@@ -6821,6 +8525,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightInfoMinor: Self {
         let base = Self(
             id: Colors.textOnLightInfoMinor.rawValue,
@@ -6829,6 +8535,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightInfoMinorActive: Self {
         let base = Self(
             id: Colors.textOnLightInfoMinorActive.rawValue,
@@ -6837,6 +8545,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightInfoMinorHover: Self {
         let base = Self(
             id: Colors.textOnLightInfoMinorHover.rawValue,
@@ -6845,6 +8555,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightNegative: Self {
         let base = Self(
             id: Colors.textOnLightNegative.rawValue,
@@ -6853,6 +8565,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightNegativeActive: Self {
         let base = Self(
             id: Colors.textOnLightNegativeActive.rawValue,
@@ -6861,6 +8575,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightNegativeHover: Self {
         let base = Self(
             id: Colors.textOnLightNegativeHover.rawValue,
@@ -6869,6 +8585,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightNegativeMinor: Self {
         let base = Self(
             id: Colors.textOnLightNegativeMinor.rawValue,
@@ -6877,6 +8595,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightNegativeMinorActive: Self {
         let base = Self(
             id: Colors.textOnLightNegativeMinorActive.rawValue,
@@ -6885,6 +8605,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightNegativeMinorHover: Self {
         let base = Self(
             id: Colors.textOnLightNegativeMinorHover.rawValue,
@@ -6893,6 +8615,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightParagraph: Self {
         let base = Self(
             id: Colors.textOnLightParagraph.rawValue,
@@ -6901,6 +8625,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightParagraphActive: Self {
         let base = Self(
             id: Colors.textOnLightParagraphActive.rawValue,
@@ -6909,6 +8635,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightParagraphHover: Self {
         let base = Self(
             id: Colors.textOnLightParagraphHover.rawValue,
@@ -6917,6 +8645,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPositive: Self {
         let base = Self(
             id: Colors.textOnLightPositive.rawValue,
@@ -6925,6 +8655,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPositiveActive: Self {
         let base = Self(
             id: Colors.textOnLightPositiveActive.rawValue,
@@ -6933,6 +8665,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPositiveHover: Self {
         let base = Self(
             id: Colors.textOnLightPositiveHover.rawValue,
@@ -6941,6 +8675,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPositiveMinor: Self {
         let base = Self(
             id: Colors.textOnLightPositiveMinor.rawValue,
@@ -6949,6 +8685,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPositiveMinorActive: Self {
         let base = Self(
             id: Colors.textOnLightPositiveMinorActive.rawValue,
@@ -6957,6 +8695,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPositiveMinorHover: Self {
         let base = Self(
             id: Colors.textOnLightPositiveMinorHover.rawValue,
@@ -6965,6 +8705,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPrimary: Self {
         let base = Self(
             id: Colors.textOnLightPrimary.rawValue,
@@ -6973,6 +8715,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPrimaryActive: Self {
         let base = Self(
             id: Colors.textOnLightPrimaryActive.rawValue,
@@ -6981,6 +8725,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPrimaryBrightness: Self {
         let base = Self(
             id: Colors.textOnLightPrimaryBrightness.rawValue,
@@ -6989,6 +8735,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPrimaryHover: Self {
         let base = Self(
             id: Colors.textOnLightPrimaryHover.rawValue,
@@ -6997,6 +8745,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPromo: Self {
         let base = Self(
             id: Colors.textOnLightPromo.rawValue,
@@ -7005,6 +8755,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPromoActive: Self {
         let base = Self(
             id: Colors.textOnLightPromoActive.rawValue,
@@ -7013,6 +8765,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPromoHover: Self {
         let base = Self(
             id: Colors.textOnLightPromoHover.rawValue,
@@ -7021,6 +8775,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPromoMinor: Self {
         let base = Self(
             id: Colors.textOnLightPromoMinor.rawValue,
@@ -7029,6 +8785,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPromoMinorActive: Self {
         let base = Self(
             id: Colors.textOnLightPromoMinorActive.rawValue,
@@ -7037,6 +8795,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightPromoMinorHover: Self {
         let base = Self(
             id: Colors.textOnLightPromoMinorHover.rawValue,
@@ -7045,6 +8805,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightSecondary: Self {
         let base = Self(
             id: Colors.textOnLightSecondary.rawValue,
@@ -7053,6 +8815,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightSecondaryActive: Self {
         let base = Self(
             id: Colors.textOnLightSecondaryActive.rawValue,
@@ -7061,6 +8825,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightSecondaryHover: Self {
         let base = Self(
             id: Colors.textOnLightSecondaryHover.rawValue,
@@ -7069,6 +8835,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightTertiary: Self {
         let base = Self(
             id: Colors.textOnLightTertiary.rawValue,
@@ -7077,6 +8845,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightTertiaryActive: Self {
         let base = Self(
             id: Colors.textOnLightTertiaryActive.rawValue,
@@ -7085,6 +8855,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightTertiaryHover: Self {
         let base = Self(
             id: Colors.textOnLightTertiaryHover.rawValue,
@@ -7093,6 +8865,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightWarning: Self {
         let base = Self(
             id: Colors.textOnLightWarning.rawValue,
@@ -7101,6 +8875,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightWarningActive: Self {
         let base = Self(
             id: Colors.textOnLightWarningActive.rawValue,
@@ -7109,6 +8885,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightWarningHover: Self {
         let base = Self(
             id: Colors.textOnLightWarningHover.rawValue,
@@ -7117,6 +8895,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightWarningMinor: Self {
         let base = Self(
             id: Colors.textOnLightWarningMinor.rawValue,
@@ -7125,6 +8905,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightWarningMinorActive: Self {
         let base = Self(
             id: Colors.textOnLightWarningMinorActive.rawValue,
@@ -7133,6 +8915,8 @@ public extension ColorToken {
         )
         return ThemeTenantRegistry.shared.resolveColor(theme: "PlasmaHomeDS", id: base.id, base: base)
     }
+
+
     static var textOnLightWarningMinorHover: Self {
         let base = Self(
             id: Colors.textOnLightWarningMinorHover.rawValue,

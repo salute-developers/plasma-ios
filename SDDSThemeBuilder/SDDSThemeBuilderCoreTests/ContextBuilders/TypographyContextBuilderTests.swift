@@ -310,6 +310,124 @@ final class TypographyContextBuilderTests: XCTestCase {
         }
     }
 
+    // MARK: - FontFamilyOverride
+
+    func testBuildContext_FontFamilyOverride_systemSFPro_replacesFontName() {
+        // given
+        let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
+        let scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
+        let builder = TypographyContextBuilder(
+            fontFamiliesContainer: mockFontFamiliesContainer,
+            metaScheme: scheme,
+            fontFamilyOverride: .systemSFPro
+        )
+
+        let jsonData = """
+        {
+            "screen-s.header.h1.bold": {
+                "fontFamilyRef": "font-family.display",
+                "weight": "light",
+                "style": "normal",
+                "size": 28,
+                "lineHeight": 34,
+                "kerning": 0
+            }
+        }
+        """.data(using: .utf8)!
+
+        // when
+        let result = builder.buildContext(from: jsonData)
+
+        // then
+        switch result {
+        case .dictionary(let context):
+            guard let json = context["json"] as? [String: Any],
+                  let header = json["headerH1Bold"] as? [String: Any],
+                  let small = header["small"] as? [String: Any] else {
+                XCTFail("Expected token tree shape")
+                return
+            }
+            XCTAssertEqual(small["fontName"] as? String, "SF Pro",
+                "override must replace resolved upstream font name with system sentinel")
+            // Остальные поля токена должны сохраниться без изменений.
+            XCTAssertEqual(small["size"] as? Int, 28)
+            XCTAssertEqual(small["lineHeight"] as? Int, 34)
+            XCTAssertEqual(small["weight"] as? String, "light")
+            XCTAssertEqual(small["style"] as? String, "normal")
+        default:
+            XCTFail("Expected successful context build")
+        }
+    }
+
+    func testBuildContext_FontFamilyOverride_none_preservesFontName() {
+        // given — builder из setUp использует .none по умолчанию.
+
+        let jsonData = """
+        {
+            "screen-s.header.h1.bold": {
+                "fontFamilyRef": "font-family.display",
+                "weight": "light",
+                "style": "normal",
+                "size": 28,
+                "lineHeight": 34,
+                "kerning": 0
+            }
+        }
+        """.data(using: .utf8)!
+
+        // when
+        let result = typographyContextBuilder.buildContext(from: jsonData)
+
+        // then — sentinel SF Pro не подставляется, upstream имя сохраняется.
+        switch result {
+        case .dictionary(let context):
+            guard let json = context["json"] as? [String: Any],
+                  let header = json["headerH1Bold"] as? [String: Any],
+                  let small = header["small"] as? [String: Any] else {
+                XCTFail("Expected token tree shape")
+                return
+            }
+            XCTAssertEqual(small["fontName"] as? String, "SBSansDisplay-Bold")
+        default:
+            XCTFail("Expected successful context build")
+        }
+    }
+
+    func testBuildContext_FontFamilyOverride_systemSFPro_failsLoudOnMissingUpstreamFont() {
+        // given — override не должен скрывать дрейф upstream-схемы.
+        // Контейнер шрифтов есть, но не содержит запрашиваемых weight/style →
+        // findFont вернёт nil → токен молча пропускается. Это тот fail-loud,
+        // который мы намеренно сохраняем.
+        let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
+        let scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
+        let builder = TypographyContextBuilder(
+            fontFamiliesContainer: mockFontFamiliesContainer,
+            metaScheme: scheme,
+            fontFamilyOverride: .systemSFPro
+        )
+
+        // mock содержит только weight = .light, запросим .bold.
+        let jsonData = """
+        {
+            "screen-s.header.h1.bold": {
+                "fontFamilyRef": "font-family.display",
+                "weight": "bold",
+                "style": "normal",
+                "size": 28,
+                "lineHeight": 34,
+                "kerning": 0
+            }
+        }
+        """.data(using: .utf8)!
+
+        // when
+        let result = builder.buildContext(from: jsonData)
+
+        // then — populateMissingScreenSizes падает, потому что токен пропущен.
+        XCTAssertTrue(result.isError,
+            "override must NOT mask upstream font lookup failure — that's the validation we keep")
+    }
+
     func testBuildContext_NoAvailableSizes() {
         // given
         let jsonData = """

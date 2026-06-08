@@ -4,6 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+
 public enum Gradients: String {
     case outlineDefaultAccentGradient
     case outlineDefaultAccentGradientActive
@@ -657,3 +658,4 @@ public extension GradientToken {
         return gradient.token
     }
 }
+

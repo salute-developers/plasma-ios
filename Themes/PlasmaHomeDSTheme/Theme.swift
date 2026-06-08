@@ -7,6 +7,16 @@ public class Theme {
     
     public class func initialize(onComplete: @escaping () -> Void = {}) {
         EnvironmentValueProvider.shared.setDefaultValues()
+        // HomeDS использует системный SF Pro: `FontsManifest.fonts` пустой,
+        // потому что typography-токены подменяются sentinel'ом "SF Pro" в
+        // `SDDSThemeBuilder`. В этом случае ни одна сетевая загрузка не нужна —
+        // сразу сообщаем о готовности темы. `DispatchQueue.main.async` сохраняет
+        // асинхронный контракт `onComplete` (тестовые `XCTestExpectation`
+        // ожидают именно асинхронный callback).
+        guard !FontsManifest.fonts.isEmpty else {
+            DispatchQueue.main.async { onComplete() }
+            return
+        }
         let fonts = FontsManifest.fonts.map { fontInfo in
             SDDSThemeCore.FontInfo(url: fontInfo.url, weight: fontInfo.weight, style: fontInfo.style, filename: fontInfo.filename)
         }
