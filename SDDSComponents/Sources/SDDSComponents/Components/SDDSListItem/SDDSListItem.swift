@@ -148,15 +148,26 @@ public struct SDDSListItem<RightContent: View>: View {
     
     @ViewBuilder var disclosure: some View {
         if let disclosureIcon = appearance.disclosureIcon {
-            disclosureIcon
+            let icon = disclosureIcon
                 .renderingMode(.template)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+            // When the row has a fixed height the icon is bounded by it via `.fit`.
+            // When the size declares no height (e.g. numbered lists, height == 0) the
+            // row is content-sized, so a resizable icon would expand without bound —
+            // constrain it to its natural size in that case.
+            if appearance.size.height > 0 {
+                icon
+            } else {
+                icon.frame(width: fallbackDisclosureIconSize, height: fallbackDisclosureIconSize)
+            }
         } else {
             rightContent
         }
 
     }
+
+    private var fallbackDisclosureIconSize: CGFloat { 24 }
     
     var appearance: ListItemAppearance {
         _appearance ?? environmentAppearance

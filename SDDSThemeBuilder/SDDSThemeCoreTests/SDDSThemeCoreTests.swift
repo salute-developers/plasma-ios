@@ -7,12 +7,91 @@
 
 import XCTest
 import SwiftUI
+import UIKit
 @testable import SDDSThemeCore
 
 final class SDDSThemeCoreTests: XCTestCase {
 
     func testExample() throws {
         // Placeholder smoke test.
+    }
+}
+
+// MARK: - TypographyToken system-font weight wiring
+//
+// Sentinel `fontName == "SF Pro"` транслируется в `.system(...)` /
+// `UIFont.systemFont(ofSize:weight:)`. До правки в TypographyToken+Extensions
+// этот путь игнорировал TypographyToken.weight — все размеры рендерились
+// одним весом. Эти тесты фиксируют, что weight теперь применяется.
+
+final class TypographyTokenSystemFontTests: XCTestCase {
+
+    private func token(weight: TypographyToken.Weight, size: CGFloat = 16) -> TypographyToken {
+        TypographyToken(
+            fontName: "SF Pro",
+            weight: weight,
+            style: .normal,
+            size: size,
+            lineHeight: 20,
+            kerning: 0
+        )
+    }
+
+    private func customToken(weight: TypographyToken.Weight, size: CGFloat = 16) -> TypographyToken {
+        TypographyToken(
+            fontName: "SBSansDisplay-Regular",
+            weight: weight,
+            style: .normal,
+            size: size,
+            lineHeight: 20,
+            kerning: 0
+        )
+    }
+
+    /// Извлекает `UIFont.Weight` из дескриптора. У системных шрифтов он
+    /// сохраняется в `traits[.weight]`.
+    private func weight(of font: UIFont) -> UIFont.Weight? {
+        let traits = font.fontDescriptor.object(forKey: .traits) as? [UIFontDescriptor.TraitKey: Any]
+        guard let raw = traits?[.weight] as? CGFloat else { return nil }
+        return UIFont.Weight(rawValue: raw)
+    }
+
+    func test_uiFont_systemFont_appliesWeight_semibold() {
+        let font = token(weight: .semibold).uiFont
+        XCTAssertEqual(font.pointSize, 16)
+        XCTAssertEqual(weight(of: font), .semibold,
+            "system-font sentinel must propagate TypographyToken.weight to UIFont")
+    }
+
+    func test_uiFont_systemFont_appliesWeight_regular() {
+        let font = token(weight: .regular).uiFont
+        XCTAssertEqual(weight(of: font), .regular)
+    }
+
+    func test_uiFont_systemFont_normalIsRegular() {
+        // `.normal` (типографическая «обычная» нотация) маппится в `.regular`.
+        let font = token(weight: .normal).uiFont
+        XCTAssertEqual(weight(of: font), .regular)
+    }
+
+    func test_uiFont_systemFont_appliesWeight_ultraLight() {
+        let font = token(weight: .ultraLight).uiFont
+        XCTAssertEqual(weight(of: font), .ultraLight)
+    }
+
+    func test_uiFont_systemFont_pointSize_preserved() {
+        let font = token(weight: .medium, size: 24).uiFont
+        XCTAssertEqual(font.pointSize, 24)
+    }
+
+    func test_uiFont_customFont_unchanged_whenNotInstalled() {
+        // SBSansDisplay-Regular не зарегистрирован в тесте → fallback на
+        // systemFont(ofSize:weight:). Это сохранение существующего поведения:
+        // до правки на fallback тоже шли — но теперь fallback тоже weighted.
+        let font = customToken(weight: .bold).uiFont
+        XCTAssertEqual(font.pointSize, 16)
+        XCTAssertEqual(weight(of: font), .bold,
+            "fallback to system font on missing custom font must also respect weight")
     }
 }
 

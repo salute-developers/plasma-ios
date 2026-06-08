@@ -7,21 +7,39 @@ final class InstallFontsCommand: Command, FileWriter {
     private let registerFontsScriptURL: URL
     private let sddsThemeBuilderXcodeProjectURL: URL
     private let themePlistURL: URL
-    
-    init(fontFamiliesContainer: FontFamiliesContainer, fontsURL: URL, copyFontsScriptURL: URL, registerFontsScriptURL: URL, sddsThemeBuilderXcodeProjectURL: URL, themePlistURL: URL) {
+    private let fontFamilyOverride: ThemeBuilderConfiguration.FontFamilyOverride
+
+    init(
+        fontFamiliesContainer: FontFamiliesContainer,
+        fontsURL: URL,
+        copyFontsScriptURL: URL,
+        registerFontsScriptURL: URL,
+        sddsThemeBuilderXcodeProjectURL: URL,
+        themePlistURL: URL,
+        fontFamilyOverride: ThemeBuilderConfiguration.FontFamilyOverride = .none
+    ) {
         self.fontFamiliesContainer = fontFamiliesContainer
         self.fontsURL = fontsURL
         self.copyFontsScriptURL = copyFontsScriptURL
         self.registerFontsScriptURL = registerFontsScriptURL
         self.sddsThemeBuilderXcodeProjectURL = sddsThemeBuilderXcodeProjectURL
         self.themePlistURL = themePlistURL
-        
+        self.fontFamilyOverride = fontFamilyOverride
+
         super.init(name: "Create Fonts Manifest")
     }
-    
+
     @discardableResult override func run() -> CommandResult {
         super.run()
-        
+
+        // При override темы на системный шрифт ни валидация upstream-URL'ов
+        // шрифтов, ни их включение в `FontsManifest` не имеют смысла —
+        // приложение не будет ничего скачивать на runtime. Сразу выпускаем
+        // пустой manifest.
+        if fontFamilyOverride == .systemSFPro {
+            return createFontsManifest()
+        }
+
         var result: CommandResult = .empty
         for command in [ {self.validatateFonts()}, {self.createFontsManifest()} ] {
             result = command()
@@ -55,22 +73,27 @@ final class InstallFontsCommand: Command, FileWriter {
     // MARK: - Create Manifest
     private func createFontsManifest() -> CommandResult {
         var fontEntries: [String] = []
-        
-        for key in FontFamily.Key.allCases {
-            guard let fontFamily = fontFamiliesContainer.items[key] else {
-                continue
-            }
-            
-            let fonts = fontFamily.fonts
-            for font in fonts {
-                let escapedURL = font.link.absoluteString.replacingOccurrences(of: "\"", with: "\\\"")
-                let entry = """
-                    FontInfo(url: "\(escapedURL)", weight: "\(font.weight.rawValue)", style: "\(font.style.rawValue)", filename: "\(font.link.lastPathComponent)")
-                """
-                fontEntries.append(entry)
+
+        // Под override на системный шрифт manifest должен быть пустым: ни одна
+        // запись об upstream-URL шрифта (включая sberdevices.ru-ссылки) не
+        // должна попасть в сгенерированный Swift-файл.
+        if fontFamilyOverride != .systemSFPro {
+            for key in FontFamily.Key.allCases {
+                guard let fontFamily = fontFamiliesContainer.items[key] else {
+                    continue
+                }
+
+                let fonts = fontFamily.fonts
+                for font in fonts {
+                    let escapedURL = font.link.absoluteString.replacingOccurrences(of: "\"", with: "\\\"")
+                    let entry = """
+                        FontInfo(url: "\(escapedURL)", weight: "\(font.weight.rawValue)", style: "\(font.style.rawValue)", filename: "\(font.link.lastPathComponent)")
+                    """
+                    fontEntries.append(entry)
+                }
             }
         }
-        
+
         let swiftContent = """
 import Foundation
 

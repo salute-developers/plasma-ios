@@ -7,7 +7,7 @@ public extension AdaptiveTypographyToken {
     static var bodyLBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -15,7 +15,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -23,7 +23,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -36,7 +36,7 @@ public extension AdaptiveTypographyToken {
     static var bodyLMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -44,7 +44,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -52,7 +52,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -65,7 +65,7 @@ public extension AdaptiveTypographyToken {
     static var bodyLNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -73,7 +73,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -81,7 +81,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -94,7 +94,7 @@ public extension AdaptiveTypographyToken {
     static var bodyMBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 16.0,
@@ -102,7 +102,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 16.0,
@@ -110,7 +110,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 16.0,
@@ -123,7 +123,7 @@ public extension AdaptiveTypographyToken {
     static var bodyMMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 16.0,
@@ -131,7 +131,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 16.0,
@@ -139,7 +139,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 16.0,
@@ -152,7 +152,7 @@ public extension AdaptiveTypographyToken {
     static var bodyMNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 16.0,
@@ -160,7 +160,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 16.0,
@@ -168,7 +168,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 16.0,
@@ -181,7 +181,7 @@ public extension AdaptiveTypographyToken {
     static var bodySBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -189,7 +189,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -197,7 +197,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -210,7 +210,7 @@ public extension AdaptiveTypographyToken {
     static var bodySMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -218,7 +218,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -226,7 +226,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -239,7 +239,7 @@ public extension AdaptiveTypographyToken {
     static var bodySNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -247,7 +247,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -255,7 +255,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -268,7 +268,7 @@ public extension AdaptiveTypographyToken {
     static var bodyXsBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -276,7 +276,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -284,7 +284,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -297,7 +297,7 @@ public extension AdaptiveTypographyToken {
     static var bodyXsMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -305,7 +305,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -313,7 +313,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -326,7 +326,7 @@ public extension AdaptiveTypographyToken {
     static var bodyXsNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -334,7 +334,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -342,7 +342,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -355,7 +355,7 @@ public extension AdaptiveTypographyToken {
     static var bodyXxsBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 10.0,
@@ -363,7 +363,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 10.0,
@@ -371,7 +371,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 10.0,
@@ -384,7 +384,7 @@ public extension AdaptiveTypographyToken {
     static var bodyXxsMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 10.0,
@@ -392,7 +392,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 10.0,
@@ -400,7 +400,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 10.0,
@@ -413,7 +413,7 @@ public extension AdaptiveTypographyToken {
     static var bodyXxsNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 10.0,
@@ -421,7 +421,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 10.0,
@@ -429,7 +429,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 10.0,
@@ -442,23 +442,23 @@ public extension AdaptiveTypographyToken {
     static var displayLBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 88.0,
-                lineHeight: 92.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 112.0,
-                lineHeight: 112.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 128.0,
@@ -471,23 +471,23 @@ public extension AdaptiveTypographyToken {
     static var displayLMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 88.0,
-                lineHeight: 92.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 112.0,
-                lineHeight: 112.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 128.0,
@@ -500,23 +500,23 @@ public extension AdaptiveTypographyToken {
     static var displayLNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 88.0,
-                lineHeight: 92.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 112.0,
-                lineHeight: 112.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
                 size: 128.0,
@@ -529,23 +529,23 @@ public extension AdaptiveTypographyToken {
     static var displayMBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 56.0,
-                lineHeight: 60.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 72.0,
-                lineHeight: 76.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 88.0,
@@ -558,23 +558,23 @@ public extension AdaptiveTypographyToken {
     static var displayMMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 56.0,
-                lineHeight: 60.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 72.0,
-                lineHeight: 76.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 88.0,
@@ -587,23 +587,23 @@ public extension AdaptiveTypographyToken {
     static var displayMNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 56.0,
-                lineHeight: 60.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 72.0,
-                lineHeight: 76.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
                 size: 88.0,
@@ -616,23 +616,23 @@ public extension AdaptiveTypographyToken {
     static var displaySBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 48.0,
-                lineHeight: 52.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 64.0,
@@ -645,23 +645,23 @@ public extension AdaptiveTypographyToken {
     static var displaySMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 48.0,
-                lineHeight: 52.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 64.0,
@@ -674,23 +674,23 @@ public extension AdaptiveTypographyToken {
     static var displaySNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 48.0,
-                lineHeight: 52.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
                 size: 64.0,
@@ -703,23 +703,23 @@ public extension AdaptiveTypographyToken {
     static var headerH1Bold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 32.0,
-                lineHeight: 36.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 48.0,
@@ -732,23 +732,23 @@ public extension AdaptiveTypographyToken {
     static var headerH1Medium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 32.0,
-                lineHeight: 36.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 48.0,
@@ -761,23 +761,23 @@ public extension AdaptiveTypographyToken {
     static var headerH1Normal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 32.0,
-                lineHeight: 36.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 48.0,
@@ -790,23 +790,23 @@ public extension AdaptiveTypographyToken {
     static var headerH2Bold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 24.0,
-                lineHeight: 30.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 28.0,
-                lineHeight: 34.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 32.0,
@@ -819,23 +819,23 @@ public extension AdaptiveTypographyToken {
     static var headerH2Medium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 24.0,
-                lineHeight: 30.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 28.0,
-                lineHeight: 34.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 32.0,
@@ -848,23 +848,23 @@ public extension AdaptiveTypographyToken {
     static var headerH2Normal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 24.0,
-                lineHeight: 30.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 28.0,
-                lineHeight: 34.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 32.0,
@@ -877,23 +877,23 @@ public extension AdaptiveTypographyToken {
     static var headerH3Bold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 24.0,
@@ -906,23 +906,23 @@ public extension AdaptiveTypographyToken {
     static var headerH3Medium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 24.0,
@@ -935,23 +935,23 @@ public extension AdaptiveTypographyToken {
     static var headerH3Normal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 24.0,
@@ -964,23 +964,23 @@ public extension AdaptiveTypographyToken {
     static var headerH4Bold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 20.0,
@@ -993,23 +993,23 @@ public extension AdaptiveTypographyToken {
     static var headerH4Medium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 20.0,
@@ -1022,23 +1022,23 @@ public extension AdaptiveTypographyToken {
     static var headerH4Normal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 20.0,
@@ -1051,23 +1051,23 @@ public extension AdaptiveTypographyToken {
     static var headerH5Bold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -1080,23 +1080,23 @@ public extension AdaptiveTypographyToken {
     static var headerH5Medium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -1109,23 +1109,23 @@ public extension AdaptiveTypographyToken {
     static var headerH5Normal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -1138,23 +1138,23 @@ public extension AdaptiveTypographyToken {
     static var headerH6Bold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -1167,23 +1167,23 @@ public extension AdaptiveTypographyToken {
     static var headerH6Medium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -1196,23 +1196,23 @@ public extension AdaptiveTypographyToken {
     static var headerH6Normal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -1225,23 +1225,23 @@ public extension AdaptiveTypographyToken {
     static var textLBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 28.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 24.0,
@@ -1254,23 +1254,23 @@ public extension AdaptiveTypographyToken {
     static var textLMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 28.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 24.0,
@@ -1283,23 +1283,23 @@ public extension AdaptiveTypographyToken {
     static var textLNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 28.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 24.0,
@@ -1312,23 +1312,23 @@ public extension AdaptiveTypographyToken {
     static var textMBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -1341,23 +1341,23 @@ public extension AdaptiveTypographyToken {
     static var textMMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -1370,23 +1370,23 @@ public extension AdaptiveTypographyToken {
     static var textMNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -1399,7 +1399,7 @@ public extension AdaptiveTypographyToken {
     static var textSBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -1407,7 +1407,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -1415,7 +1415,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -1428,7 +1428,7 @@ public extension AdaptiveTypographyToken {
     static var textSMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -1436,7 +1436,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -1444,7 +1444,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -1457,7 +1457,7 @@ public extension AdaptiveTypographyToken {
     static var textSNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -1465,7 +1465,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -1473,7 +1473,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -1486,7 +1486,7 @@ public extension AdaptiveTypographyToken {
     static var textXsBold: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -1494,7 +1494,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -1502,7 +1502,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -1515,7 +1515,7 @@ public extension AdaptiveTypographyToken {
     static var textXsMedium: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -1523,7 +1523,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -1531,7 +1531,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -1544,7 +1544,7 @@ public extension AdaptiveTypographyToken {
     static var textXsNormal: Self {
         let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -1552,7 +1552,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -1560,7 +1560,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,

@@ -24,21 +24,52 @@ public struct ThemeBuilderConfiguration: Codable {
         case stylesSalute = "StylesSalute"
     }
     
+    /// Sentinel-флаг подмены семейства шрифтов на этапе генерации темы.
+    /// Используется, когда тема не должна тянуть проприетарный шрифт из
+    /// upstream-схемы (например, по compliance-причинам — санкционные риски,
+    /// отсутствие лицензии). Применяется в `TypographyContextBuilder` и
+    /// `InstallFontsCommand`.
+    public enum FontFamilyOverride: String, Codable {
+        /// Шрифт темы берётся из upstream `ios_fontFamily.json` как есть.
+        case none
+        /// Все `fontName` в сгенерированных typography-токенах заменяются на
+        /// `"SF Pro"` (sentinel, который `SDDSThemeCore` транслирует в
+        /// `.system(...)`). `FontsManifest` выпускается пустым — ничего не
+        /// скачивается на runtime.
+        case systemSFPro
+    }
+
     public struct ThemeConfiguration: Codable {
         public let name: String
         public let url: URL
         public let tenants: [Tenant]
+        public let fontFamilyOverride: FontFamilyOverride
+        /// Относительный (от корня репо) путь к локальному snapshot-ZIP'у схемы.
+        /// Если указан, `SDDSThemeBuilder` использует `file://`-URL вместо
+        /// `url` и не делает HTTP-запросов к внешнему репозиторию схем.
+        /// Применяется для build-time изоляции отдельных тем.
+        public let localSchemePath: String?
 
         private enum CodingKeys: String, CodingKey {
             case name
             case url
             case tenants
+            case fontFamilyOverride
+            case localSchemePath
         }
 
-        public init(name: String, url: String, tenants: [Tenant] = []) {
+        public init(
+            name: String,
+            url: String,
+            tenants: [Tenant] = [],
+            fontFamilyOverride: FontFamilyOverride = .none,
+            localSchemePath: String? = nil
+        ) {
             self.name = name
             self.url = URL(string: url)!
             self.tenants = tenants
+            self.fontFamilyOverride = fontFamilyOverride
+            self.localSchemePath = localSchemePath
         }
 
         public init(from decoder: Decoder) throws {
@@ -46,6 +77,8 @@ public struct ThemeBuilderConfiguration: Codable {
             self.name = try container.decode(String.self, forKey: .name)
             self.url = try container.decode(URL.self, forKey: .url)
             self.tenants = try container.decodeIfPresent([Tenant].self, forKey: .tenants) ?? []
+            self.fontFamilyOverride = try container.decodeIfPresent(FontFamilyOverride.self, forKey: .fontFamilyOverride) ?? .none
+            self.localSchemePath = try container.decodeIfPresent(String.self, forKey: .localSchemePath)
         }
     }
 
@@ -92,7 +125,16 @@ public extension ThemeBuilderConfiguration.Theme {
         case .plasmaWeb:
             .init(name: self.rawValue, url: themeURL(name: "plasma_web"))
         case .plasmaHomeDS:
-            .init(name: self.rawValue, url: themeURL(name: "plasma_homeds"))
+            // HomeDS изолирована от upstream salute-developers/theme-converter и
+            // SBSans-шрифта: схема читается из локального snapshot-ZIP'а,
+            // typography fontName подменяется на системный SF Pro, FontsManifest
+            // выпускается пустым (никаких runtime-обращений к sberdevices.ru).
+            .init(
+                name: self.rawValue,
+                url: themeURL(name: "plasma_homeds"),
+                fontFamilyOverride: .systemSFPro,
+                localSchemePath: "SDDSThemeBuilder/LocalSchemes/plasma_homeds/latest.zip"
+            )
         case .sberHealth:
             .init(name: self.rawValue, url: themeURL(name: "sberHealth"))
         case .sbermarket:

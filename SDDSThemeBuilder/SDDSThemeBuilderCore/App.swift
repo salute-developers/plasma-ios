@@ -16,7 +16,7 @@ public final class App {
             outputDirectoryURL: outputDirectoryURL(config: themeConfig),
             themeURL: themeURL(config: themeConfig)
         ).run()
-        DownloadCommand(fileURL: themeConfig.url, outputURL: schemeZipLocalURL(themeConfig: themeConfig)).run()
+        DownloadCommand(fileURL: effectiveSchemeURL(themeConfig: themeConfig), outputURL: schemeZipLocalURL(themeConfig: themeConfig)).run()
         DownloadCommand(fileURL: config.paletteURL, outputURL: paletteLocalURL(config: config, themeConfig: themeConfig)).run()
         
         guard let schemeDirectory = UnpackThemeCommand(schemeURL: schemeZipLocalURL(themeConfig: themeConfig), outputDirectoryURL: outputDirectoryURL(config: themeConfig))
@@ -47,7 +47,8 @@ public final class App {
                 copyFontsScriptURL: copyFontsScriptURL,
                 registerFontsScriptURL: registerFontsScriptURL,
                 sddsThemeBuilderXcodeProjectURL: xcodeProjectURL,
-                themePlistURL: themePlistURL(config: themeConfig)
+                themePlistURL: themePlistURL(config: themeConfig),
+                fontFamilyOverride: themeConfig.fontFamilyOverride
             ),
             GenerateTokensCommand(
                 name: "Generate Color Tokens",
@@ -109,8 +110,9 @@ public final class App {
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
                 templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: TypographyContextBuilder(
-                    fontFamiliesContainer: fontFamiliesContainer, 
-                    metaScheme: metaScheme
+                    fontFamiliesContainer: fontFamiliesContainer,
+                    metaScheme: metaScheme,
+                    fontFamilyOverride: themeConfig.fontFamilyOverride
                 ),
             themeName: themeConfig.name
             ),
@@ -257,7 +259,8 @@ public final class App {
                 templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: TypographyContextBuilder(
                     fontFamiliesContainer: tenantFontFamiliesContainer,
-                    metaScheme: tenantMetaScheme
+                    metaScheme: tenantMetaScheme,
+                    fontFamilyOverride: themeConfig.fontFamilyOverride
                 ),
                 themeName: themeConfig.name,
             tenantSuffix: tenantSuffix
@@ -298,6 +301,24 @@ extension App {
             .deletingLastPathComponent()
             .deletingLastPathComponent()
         return path
+    }
+
+    /// Корень репозитория (`plasma-ios`). Используется для резолва
+    /// `ThemeConfiguration.localSchemePath`, который хранится как путь
+    /// относительно корня репо.
+    private var repoRootURL: URL {
+        themeBuilderURL.deletingLastPathComponent()
+    }
+
+    /// URL, который `DownloadCommand` использует для получения схемы темы:
+    /// либо `file://`-URL локального snapshot'а (если у темы задан
+    /// `localSchemePath`), либо upstream-URL из конфига. Это позволяет
+    /// отдельным темам собираться без сетевых обращений к стороннему репо схем.
+    private func effectiveSchemeURL(themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+        if let relative = themeConfig.localSchemePath, !relative.isEmpty {
+            return repoRootURL.appending(path: relative)
+        }
+        return themeConfig.url
     }
     
     private func outputDirectoryURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
