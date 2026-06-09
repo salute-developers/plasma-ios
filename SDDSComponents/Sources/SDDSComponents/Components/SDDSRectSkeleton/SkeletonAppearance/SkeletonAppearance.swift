@@ -23,14 +23,14 @@ import SwiftUI
  */
 public struct SkeletonAppearance {
     public var shape: PathDrawer
-    public var gradient: FillStyle
+    public var gradient: StatefulFillStyle
     public var size: SkeletonSizeConfiguration
     public var duration: Double
     public var textTypography: TypographyConfiguration
     
     public init(
         shape: PathDrawer = DefaultPathDrawer(),
-        gradient: FillStyle = .color(.clearColor),
+        gradient: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         size: SkeletonSizeConfiguration = ZeroSkeletonSizeConfiguration(),
         duration: Double = 5.0,
         textTypography: TypographyConfiguration = .default
@@ -40,6 +40,24 @@ public struct SkeletonAppearance {
         self.size = size
         self.duration = duration
         self.textTypography = textTypography
+    }
+
+    @available(*, deprecated, message: "FillStyle parameter is deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
+    public init(
+        shape: PathDrawer = DefaultPathDrawer(),
+        gradient: FillStyle = .color(.clearColor),
+        size: SkeletonSizeConfiguration = ZeroSkeletonSizeConfiguration(),
+        duration: Double = 5.0,
+        textTypography: TypographyConfiguration = .default
+    ) {
+        self.init(
+            shape: shape,
+            gradient: StatefulFillStyle(defaultValue: gradient, values: []),
+            size: size,
+            duration: duration,
+            textTypography: textTypography
+        )
     }
 }
 

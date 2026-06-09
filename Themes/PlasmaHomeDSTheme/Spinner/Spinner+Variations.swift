@@ -461,50 +461,50 @@ private extension SpinnerAppearance {
     
     var `default`: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = ColorToken.surfaceDefaultTransparentPrimary
-        appearance.startColor = ColorToken.surfaceDefaultSolidDefault
+        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPrimary), values: [])
+        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultSolidDefault), values: [])
         return appearance
     }
     
     var accent: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = ColorToken.surfaceDefaultTransparentAccent
-        appearance.startColor = ColorToken.surfaceDefaultAccent
+        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentAccent), values: [])
+        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccent), values: [])
         return appearance
     }
     
     var info: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = ColorToken.surfaceDefaultTransparentInfo
-        appearance.startColor = ColorToken.surfaceDefaultInfo
+        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentInfo), values: [])
+        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultInfo), values: [])
         return appearance
     }
     
     var negative: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = ColorToken.surfaceDefaultTransparentNegative
-        appearance.startColor = ColorToken.surfaceDefaultNegative
+        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentNegative), values: [])
+        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultNegative), values: [])
         return appearance
     }
     
     var positive: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = ColorToken.surfaceDefaultTransparentPositive
-        appearance.startColor = ColorToken.surfaceDefaultPositive
+        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPositive), values: [])
+        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultPositive), values: [])
         return appearance
     }
     
     var secondary: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = ColorToken.surfaceDefaultTransparentPrimary.withOpacity(0.32)
-        appearance.startColor = ColorToken.surfaceDefaultSolidDefault.withOpacity(0.32)
+        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPrimary.withOpacity(0.32)), values: [])
+        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultSolidDefault.withOpacity(0.32)), values: [])
         return appearance
     }
     
     var warning: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = ColorToken.surfaceDefaultTransparentWarning
-        appearance.startColor = ColorToken.surfaceDefaultWarning
+        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentWarning), values: [])
+        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultWarning), values: [])
         return appearance
     }
     

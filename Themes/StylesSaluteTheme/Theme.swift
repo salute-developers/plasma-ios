@@ -14,7 +14,14 @@ public class Theme {
             onComplete()
         }
     }
-    
+
+    public class func initialize(
+        tenant: Tenant,
+        onComplete: @escaping () -> Void = {}
+    ) {
+        initialize(onComplete: onComplete)
+    }
+
     public class func subtheme(_ subtheme: Subtheme) -> SubthemeData {
         .init(
             subtheme: subtheme,
@@ -37,4 +44,8 @@ public extension View {
         self
             .environment(\.subtheme, Theme.subtheme(subtheme))
     }
+}
+
+public extension Theme {
+    static var availableTenants: [Tenant] { [] }
 }

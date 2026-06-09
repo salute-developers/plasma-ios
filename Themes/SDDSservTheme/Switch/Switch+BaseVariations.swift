@@ -42,14 +42,16 @@ public struct Switch {
         )
     }
     
-    public static let all: [Variation<SwitchAppearance>] = [
-        Switch.l.variation,
-        Switch.l.toggleS.variation,
-        Switch.m.variation,
-        Switch.m.toggleS.variation,
-        Switch.s.variation,
-        Switch.s.toggleS.variation,
-    ]
+    public static var all: [Variation<SwitchAppearance>] {
+        [
+            Switch.l.variation,
+            Switch.l.toggleS.variation,
+            Switch.m.variation,
+            Switch.m.toggleS.variation,
+            Switch.s.variation,
+            Switch.s.toggleS.variation,
+        ]
+    }
 }
 
 public struct SwitchVariation {

@@ -799,9 +799,27 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
     }
     
     public var toolbarVerticalVariations: [Variation<ToolbarAppearance>] {
-        
+
             SDDSServTheme.ToolbarVertical.all
-        
+
+    }
+
+    public var availableTenants: [Tenant] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Theme.availableTenants
+        case .plasmaB2CTheme, .plasmaHomeDSTheme, .stylesSalute:
+            return []
+        }
+    }
+
+    public func initialize(tenant: Tenant, onComplete: @escaping () -> Void = {}) {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
+        case .plasmaB2CTheme, .plasmaHomeDSTheme, .stylesSalute:
+            onComplete()
+        }
     }
 }
 #endif

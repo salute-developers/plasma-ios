@@ -4,7 +4,21 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
-public enum Spacings {    
+{% if tenant %}
+public extension Spacings {
+    static func register{{ tenant }}() {
+        ThemeTenantRegistry.shared.registerSpacings(theme: "{{ themeName }}", tenant: Tenant(name: "{{ tenant }}")) { id in
+            switch id {
+            {%- for key, value in json %}
+            case "{{ key }}": return .{{ key }}{{ tenant }}
+            {%- endfor %}
+            default: return nil
+            }
+        }
+    }
+}
+{% else %}
+public enum Spacings {
     {%- for key, value in json %}
     case {{ key }}
     {%- endfor %}
@@ -13,8 +27,9 @@ public enum Spacings {
         switch self {
             {%- for key, value in json %}
         case .{{ key }}:
-            return .{{ key }}
+            return ThemeTenantRegistry.shared.resolveSpacing(theme: "{{ themeName }}", id: "{{ key }}", base: .{{ key }})
             {%- endfor %}
         }
     }
 }
+{% endif %}

@@ -66,7 +66,7 @@ struct ListView: View {
         #if SANDBOX_DS_PLASMA_HOME_DS || (!SANDBOX_DS_SERV && !SANDBOX_DS_PLASMA_B2C)
         if viewModel.theme == .plasmaHomeDSTheme {
             appearance.disclosureIcon = Asset.disclosureRightOutline24.image
-            appearance.disclosureIconColor = .textDefaultSecondary
+            appearance.disclosureIconColor = ColorToken.textDefaultSecondary.fill
         }
         #endif
         return appearance

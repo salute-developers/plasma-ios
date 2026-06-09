@@ -39,8 +39,8 @@ public extension AdaptiveTypographyToken {
     {% ensure_double_non_negative value.large.lineHeight %}
     {% endif %}
     
-    static var {{ key }}: Self {
-        Self(
+    static var {{ key }}{{ tenant }}: Self {
+        let base = Self(
             small: {%- if value.small %} TypographyToken(
                 fontName: "{{ value.small.fontName|ensure }}",
                 weight: .{{ value.small.weight|ensure }},
@@ -66,12 +66,18 @@ public extension AdaptiveTypographyToken {
                 kerning: {{ value.large.kerning|ensure }}
             ){% else %} nil {% endif %}
         )
+        {%- if tenant %}
+        return base
+        {%- else %}
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "{{ themeName }}", id: "{{ key }}", base: base)
+        {%- endif %}
     }
     {%- endfor %}
-    
+    {% if not tenant %}
     static var tokens: [Self] = [
         {%- for key in json %}
         {{ key }}{% if not forloop.last %}, {% endif %}
         {%- endfor %}
     ]
+    {% endif %}
 }

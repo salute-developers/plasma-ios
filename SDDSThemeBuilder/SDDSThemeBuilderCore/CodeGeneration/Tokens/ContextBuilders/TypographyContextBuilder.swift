@@ -4,10 +4,16 @@ import SwiftUI
 final class TypographyContextBuilder: ContexBuilder, SchemeTokenNameValidator {
     private let fontFamiliesContainer: FontFamiliesContainer
     private let metaScheme: Scheme
-    
-    init(fontFamiliesContainer: FontFamiliesContainer, metaScheme: Scheme) {
+    private let fontFamilyOverride: ThemeBuilderConfiguration.FontFamilyOverride
+
+    init(
+        fontFamiliesContainer: FontFamiliesContainer,
+        metaScheme: Scheme,
+        fontFamilyOverride: ThemeBuilderConfiguration.FontFamilyOverride = .none
+    ) {
         self.fontFamiliesContainer = fontFamiliesContainer
         self.metaScheme = metaScheme
+        self.fontFamilyOverride = fontFamilyOverride
     }
     
     func buildContext(from data: Data) -> CommandResult {
@@ -47,8 +53,17 @@ extension TypographyContextBuilder {
             guard let fontName = findFont(with: fontFamilyRef, weight: weight, style: style) else {
                 continue
             }
-            
-            tokenDictionary?["fontName"] = fontName
+
+            // Применяем sentinel font-family override (если задан темой). `findFont`
+            // выше намеренно вызывается даже под override — он валидирует, что
+            // upstream-схема содержит запрашиваемые weight/style. Это сохраняет
+            // fail-loud при дрейфе upstream JSON.
+            switch fontFamilyOverride {
+            case .none:
+                tokenDictionary?["fontName"] = fontName
+            case .systemSFPro:
+                tokenDictionary?["fontName"] = "SF Pro"
+            }
             
             // Transform the dictionary keys for code generation format
             var components = key.keyComponents

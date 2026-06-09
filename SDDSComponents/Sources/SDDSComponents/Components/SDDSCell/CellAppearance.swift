@@ -23,14 +23,14 @@ import SwiftUI
 public struct CellAppearance {
     public var size: CellSizeConfiguration
     public var labelTypography: TypographyConfiguration
-    public var labelColor: ColorToken
+    public var labelColor: StatefulFillStyle
     public var titleTypography: TypographyConfiguration
-    public var titleColor: ColorToken
+    public var titleColor: StatefulFillStyle
     public var subtitleTypography: TypographyConfiguration
-    public var subtitleColor: ColorToken
+    public var subtitleColor: StatefulFillStyle
     public var disclosureTextTypography: TypographyConfiguration
-    public var disclosureTextColor: ColorToken
-    public var disclosureImageColor: ColorToken
+    public var disclosureTextColor: StatefulFillStyle
+    public var disclosureImageColor: StatefulFillStyle
     public var disclosureImage: Image?
     public var avatarAppearance: AvatarAppearance
     public var buttonAppearance: ButtonAppearance
@@ -41,14 +41,14 @@ public struct CellAppearance {
     public init(
         size: CellSizeConfiguration = ZeroCellSize(),
         labelTypography: TypographyConfiguration = .default,
-        labelColor: ColorToken = .clearColor,
+        labelColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         titleTypography: TypographyConfiguration = .default,
-        titleColor: ColorToken = .clearColor,
+        titleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         subtitleTypography: TypographyConfiguration = .default,
-        subtitleColor: ColorToken = .clearColor,
+        subtitleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         disclosureTextTypography: TypographyConfiguration = .default,
-        disclosureTextColor: ColorToken = .clearColor,
-        disclosureImageColor: ColorToken = .clearColor,
+        disclosureTextColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        disclosureImageColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         disclosureImage: Image? = nil,
         avatarAppearance: AvatarAppearance = AvatarAppearance.defaultValue,
         buttonAppearance: ButtonAppearance = ButtonAppearance.defaultValue,
@@ -72,6 +72,46 @@ public struct CellAppearance {
         self.checkboxAppearance = checkboxAppearance
         self.radioboxAppearance = radioboxAppearance
         self.switchAppearance = switchAppearance
+    }
+
+    @available(*, deprecated, message: "ColorToken is deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
+    public init(
+        size: CellSizeConfiguration = ZeroCellSize(),
+        labelTypography: TypographyConfiguration = .default,
+        labelColor: ColorToken = .clearColor,
+        titleTypography: TypographyConfiguration = .default,
+        titleColor: ColorToken = .clearColor,
+        subtitleTypography: TypographyConfiguration = .default,
+        subtitleColor: ColorToken = .clearColor,
+        disclosureTextTypography: TypographyConfiguration = .default,
+        disclosureTextColor: ColorToken = .clearColor,
+        disclosureImageColor: ColorToken = .clearColor,
+        disclosureImage: Image? = nil,
+        avatarAppearance: AvatarAppearance = AvatarAppearance.defaultValue,
+        buttonAppearance: ButtonAppearance = ButtonAppearance.defaultValue,
+        checkboxAppearance: CheckboxAppearance = CheckboxAppearance.defaultValue,
+        radioboxAppearance: RadioboxAppearance = RadioboxAppearance.defaultValue,
+        switchAppearance: SwitchAppearance = SwitchAppearance.defaultValue
+    ) {
+        self.init(
+            size: size,
+            labelTypography: labelTypography,
+            labelColor: labelColor.statefulColor.statefulFillStyle,
+            titleTypography: titleTypography,
+            titleColor: titleColor.statefulColor.statefulFillStyle,
+            subtitleTypography: subtitleTypography,
+            subtitleColor: subtitleColor.statefulColor.statefulFillStyle,
+            disclosureTextTypography: disclosureTextTypography,
+            disclosureTextColor: disclosureTextColor.statefulColor.statefulFillStyle,
+            disclosureImageColor: disclosureImageColor.statefulColor.statefulFillStyle,
+            disclosureImage: disclosureImage,
+            avatarAppearance: avatarAppearance,
+            buttonAppearance: buttonAppearance,
+            checkboxAppearance: checkboxAppearance,
+            radioboxAppearance: radioboxAppearance,
+            switchAppearance: switchAppearance
+        )
     }
 }
 

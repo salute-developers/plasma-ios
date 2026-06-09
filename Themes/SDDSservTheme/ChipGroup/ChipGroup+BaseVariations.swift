@@ -24,15 +24,17 @@ public struct ChipGroup {
         )
     }
     
-    public static let all: [Variation<ChipGroupAppearance>] = [
-        dense,
-        wide
-    ].map {
-        Variation(
-            originalVariation: $0,
-            styles: [.init(name: $0.name, appearance: $0.appearance)],
-            name: $0.name,
-            appearance: $0.appearance
-        )
+    public static var all: [Variation<ChipGroupAppearance>] {
+        [
+            dense,
+            wide
+        ].map {
+            Variation(
+                originalVariation: $0,
+                styles: [.init(name: $0.name, appearance: $0.appearance)],
+                name: $0.name,
+                appearance: $0.appearance
+            )
+        }
     }
 }

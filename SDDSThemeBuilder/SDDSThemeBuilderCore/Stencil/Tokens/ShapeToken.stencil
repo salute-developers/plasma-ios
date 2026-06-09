@@ -10,11 +10,19 @@ public extension ShapeToken {
     {% ensure_value_exists value.cornerRadius %}
     {% ensure_value_exists value.kind %}
     
-    static var {{ key }}: Self {
+    static var {{ key }}{{ tenant }}: Self {
+        {%- if tenant %}
         Self(
             cornerRadius: {{ value.cornerRadius|ensure|ensure_double_non_negative }},
             kind: .{{ value.kind|ensure|ensure_shape_kind_in_range }}
         )
+        {%- else %}
+        let base = Self(
+            cornerRadius: {{ value.cornerRadius|ensure|ensure_double_non_negative }},
+            kind: .{{ value.kind|ensure|ensure_shape_kind_in_range }}
+        )
+        return ThemeTenantRegistry.shared.resolveShape(theme: "{{ themeName }}", id: "{{ key }}", base: base)
+        {%- endif %}
     }
     {%- endfor %}
 }

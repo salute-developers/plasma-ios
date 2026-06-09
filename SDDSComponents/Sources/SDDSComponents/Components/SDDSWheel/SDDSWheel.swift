@@ -255,14 +255,16 @@ public struct SDDSWheel: View {
             .onAppear {
                 scrollToSelected(wheelIndex: wheelIndex, proxy: proxy)
             }
-            .onChange(of: selection[wheelIndex]) { _ in
+            .onChange(of: selection) { newSelection in
+                guard wheelIndex < newSelection.count else { return }
                 handleSelectionChange(wheelIndex: wheelIndex, proxy: proxy)
             }
             
             if let description = wheel.description, 
                !description.isEmpty,
-               selection[wheelIndex] < wheel.items.count {
-                let selectedItem = wheel.items[selection[wheelIndex]]
+               wheelIndex < selection.count {
+                let selectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheel.items.count)
+                let selectedItem = wheel.items[selectedIndex]
                 let topPadding = calculateTopPaddingForStaticLayer(for: wheel, geometry: geometry)
                 
                 VStack(spacing: 0) {
@@ -271,7 +273,7 @@ public struct SDDSWheel: View {
                     wheelItemStatic(
                         item: selectedItem,
                         wheelIndex: wheelIndex,
-                        itemIndex: selection[wheelIndex],
+                        itemIndex: selectedIndex,
                         wheel: wheel,
                         geometry: geometry,
                         itemOpacity: 0.0,
@@ -350,13 +352,14 @@ public struct SDDSWheel: View {
         descriptionOpacity: Double
     ) -> some View {
         let alignment = getAlignment(for: wheelIndex)
-        let isCentralItem = itemIndex == selection[wheelIndex]
+        let selectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheel.items.count)
+        let isCentralItem = itemIndex == selectedIndex
         let itemHeight = getItemHeight()
         let frameAlignment = getTextAlignment(for: wheelIndex)
         
         let distance = calculateItemDistance(
             itemIndex: itemIndex,
-            selectedIndex: selection[wheelIndex],
+            selectedIndex: selectedIndex,
             wheel: wheel,
             geometry: geometry
         )
@@ -380,7 +383,7 @@ public struct SDDSWheel: View {
             }
             .scaleEffect(scale, anchor: scaleAnchor)
             .opacity(isCentralItem ? 1.0 : alpha)
-            .animation(.easeInOut(duration: 0.2), value: selection[wheelIndex])
+            .animation(.easeInOut(duration: 0.2), value: selectedIndex)
             .frame(maxWidth: .infinity, alignment: frameAlignment)
             .frame(height: itemHeight)
             
@@ -412,7 +415,8 @@ public struct SDDSWheel: View {
         itemOpacity: Double,
         descriptionOpacity: Double
     ) -> some View {
-        let isCentralItem = itemIndex == selection[wheelIndex]
+        let selectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheel.items.count)
+        let isCentralItem = itemIndex == selectedIndex
         let itemHeight = getItemHeight()
         let frameAlignment = getTextAlignment(for: wheelIndex)
         let scaleAnchor = getScaleAnchor(for: wheelIndex)
@@ -530,6 +534,15 @@ public struct SDDSWheel: View {
     
     // MARK: - Private Methods
     
+    private func safeSelectionIndex(for wheelIndex: Int, itemsCount: Int) -> Int {
+        guard wheelIndex < selection.count, itemsCount > 0 else {
+            return 0
+        }
+        
+        let index = selection[wheelIndex]
+        return min(max(index, 0), itemsCount - 1)
+    }
+    
     private func initializeScrollState() {
         scrollOffsets = Array(repeating: 0, count: wheels.count)
         isScrolling = Array(repeating: false, count: wheels.count)
@@ -582,7 +595,8 @@ public struct SDDSWheel: View {
     }
     
     private func scrollToSelected(wheelIndex: Int, proxy: ScrollViewProxy) {
-        let selectedIndex = selection[wheelIndex]
+        guard wheelIndex < wheels.count else { return }
+        let selectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheels[wheelIndex].items.count)
         let isFirstAppearance = wheelIndex < hasAppeared.count && !hasAppeared[wheelIndex]
         
         if isFirstAppearance {
@@ -600,8 +614,9 @@ public struct SDDSWheel: View {
     }
     
     private func snapToCenter(wheelIndex: Int, proxy: ScrollViewProxy) {
+        guard wheelIndex < wheels.count else { return }
         let wheel = wheels[wheelIndex]
-        let selectedIndex = selection[wheelIndex]
+        let selectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheel.items.count)
         
         let isOnFakeElement = wheelIndex < closestItemIndices.count && 
                              (closestItemIndices[wheelIndex] < 0 || closestItemIndices[wheelIndex] >= wheel.items.count)
@@ -654,11 +669,14 @@ public struct SDDSWheel: View {
     }
     
     private func handleSelectionChange(wheelIndex: Int, proxy: ScrollViewProxy) {
-        guard wheelIndex < isScrolling.count && !isScrolling[wheelIndex] else {
+        guard wheelIndex < wheels.count,
+              wheelIndex < selection.count,
+              wheelIndex < isScrolling.count,
+              !isScrolling[wheelIndex] else {
             return
         }
         
-        let selectedIndex = selection[wheelIndex]
+        let selectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheels[wheelIndex].items.count)
         withAnimation(.easeInOut(duration: 0.3)) {
             proxy.scrollTo("\(wheelIndex)-\(selectedIndex)", anchor: .center)
         }
@@ -673,7 +691,10 @@ public struct SDDSWheel: View {
     }
     
     private func updateSelectionFromItemPositions(wheelIndex: Int, positions: [ItemPosition], geometry: GeometryProxy) {
-        guard wheelIndex < isUpdatingFromButtons.count && !isUpdatingFromButtons[wheelIndex] else {
+        guard wheelIndex < wheels.count,
+              wheelIndex < selection.count,
+              wheelIndex < isUpdatingFromButtons.count,
+              !isUpdatingFromButtons[wheelIndex] else {
             return
         }
         
@@ -725,7 +746,8 @@ public struct SDDSWheel: View {
             scrollOffsets[wheelIndex] = CGFloat(newSelectedIndex)
         }
         
-        if newSelectedIndex >= 0 && newSelectedIndex < wheel.items.count && newSelectedIndex != selection[wheelIndex] {
+        let currentSelectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheel.items.count)
+        if newSelectedIndex >= 0 && newSelectedIndex < wheel.items.count && newSelectedIndex != currentSelectedIndex {
             selection[wheelIndex] = newSelectedIndex
 
             if wheelIndex < lastScrollUpdate.count {
@@ -735,43 +757,52 @@ public struct SDDSWheel: View {
     }
     
     private func finalizeScrollSelection(wheelIndex: Int) {
-        guard wheelIndex < scrollOffsets.count else { return }
+        guard wheelIndex < wheels.count,
+              wheelIndex < selection.count,
+              wheelIndex < scrollOffsets.count else { return }
         
         let wheel = wheels[wheelIndex]
         let finalIndex = Int(round(scrollOffsets[wheelIndex]))
+        let currentSelectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheel.items.count)
         
-        if finalIndex >= 0 && finalIndex < wheel.items.count && finalIndex != selection[wheelIndex] {
+        if finalIndex >= 0 && finalIndex < wheel.items.count && finalIndex != currentSelectedIndex {
             selection[wheelIndex] = finalIndex
         }
     }
     
     private func scrollUp(wheelIndex: Int) {
+        guard wheelIndex < wheels.count, wheelIndex < selection.count else { return }
+        
         if wheelIndex < lastButtonPress.count {
             let timeSinceLastPress = Date().timeIntervalSince(lastButtonPress[wheelIndex])
             guard timeSinceLastPress > 0.5 else { return }
             lastButtonPress[wheelIndex] = Date()
         }
         
-        if selection[wheelIndex] > 0 {
+        let currentSelectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheels[wheelIndex].items.count)
+        if currentSelectedIndex > 0 {
             if wheelIndex < isUpdatingFromButtons.count {
                 isUpdatingFromButtons[wheelIndex] = true
             }
-            selection[wheelIndex] -= 1
+            selection[wheelIndex] = currentSelectedIndex - 1
         }
     }
     
     private func scrollDown(wheelIndex: Int) {
+        guard wheelIndex < wheels.count, wheelIndex < selection.count else { return }
+        
         if wheelIndex < lastButtonPress.count {
             let timeSinceLastPress = Date().timeIntervalSince(lastButtonPress[wheelIndex])
             guard timeSinceLastPress > 0.5 else { return }
             lastButtonPress[wheelIndex] = Date()
         }
         
-        if selection[wheelIndex] < wheels[wheelIndex].items.count - 1 {
+        let currentSelectedIndex = safeSelectionIndex(for: wheelIndex, itemsCount: wheels[wheelIndex].items.count)
+        if currentSelectedIndex < wheels[wheelIndex].items.count - 1 {
             if wheelIndex < isUpdatingFromButtons.count {
                 isUpdatingFromButtons[wheelIndex] = true
             }
-            selection[wheelIndex] += 1
+            selection[wheelIndex] = currentSelectedIndex + 1
         }
     }
     

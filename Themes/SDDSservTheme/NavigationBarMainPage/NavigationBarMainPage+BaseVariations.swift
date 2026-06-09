@@ -26,14 +26,16 @@ public struct NavigationBarMainPage {
         )
     }
     
-    public static let all: [Variation<NavigationBarMainPageAppearance>] = [
-        NavigationBarMainPage.hasBackground.variation,
-        NavigationBarMainPage.hasBackground.rounded.variation,
-        NavigationBarMainPage.hasBackground.shadow.variation,
-        NavigationBarMainPage.hasBackground.shadow.rounded.variation,
-        NavigationBarMainPage.noBackground.variation,
-        NavigationBarMainPage.noBackground.rounded.variation,
-    ]
+    public static var all: [Variation<NavigationBarMainPageAppearance>] {
+        [
+            NavigationBarMainPage.hasBackground.variation,
+            NavigationBarMainPage.hasBackground.rounded.variation,
+            NavigationBarMainPage.hasBackground.shadow.variation,
+            NavigationBarMainPage.hasBackground.shadow.rounded.variation,
+            NavigationBarMainPage.noBackground.variation,
+            NavigationBarMainPage.noBackground.rounded.variation,
+        ]
+    }
 }
 
 public struct NavigationBarMainPageVariation {

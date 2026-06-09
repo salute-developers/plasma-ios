@@ -28,13 +28,13 @@ struct ListItemAppearance: CodeGenerationAppearance {
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.titleStyle?.value, id: id, component: component).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.subtitleStyle?.value, id: id, component: component).context
-        self.labelColor = ColorTokenContextBuilder(props.labelColor).context
-        self.titleColor = ColorTokenContextBuilder(props.titleColor).context
-        self.subtitleColor = ColorTokenContextBuilder(props.subtitleColor).context
-        self.disclosureIconColor = ColorTokenContextBuilder(props.disclosureIconColor).context
+        self.labelColor = StatefulFillStyleContextBuilder(props.labelColor).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.titleColor).context
+        self.subtitleColor = StatefulFillStyleContextBuilder(props.subtitleColor).context
+        self.disclosureIconColor = StatefulFillStyleContextBuilder(props.disclosureIconColor).context
         self.disclosureIcon = ImageContextBuilder(props.disclosureIcon?.value).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
-        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
         
         if let counterStyle = props.counterStyle?.value {
             self.counterAppearance = ComponentStyleContextBuilder(counterStyle).context

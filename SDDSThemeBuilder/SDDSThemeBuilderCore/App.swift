@@ -16,7 +16,7 @@ public final class App {
             outputDirectoryURL: outputDirectoryURL(config: themeConfig),
             themeURL: themeURL(config: themeConfig)
         ).run()
-        DownloadCommand(fileURL: themeConfig.url, outputURL: schemeZipLocalURL(themeConfig: themeConfig)).run()
+        DownloadCommand(fileURL: effectiveSchemeURL(themeConfig: themeConfig), outputURL: schemeZipLocalURL(themeConfig: themeConfig)).run()
         DownloadCommand(fileURL: config.paletteURL, outputURL: paletteLocalURL(config: config, themeConfig: themeConfig)).run()
         
         guard let schemeDirectory = UnpackThemeCommand(schemeURL: schemeZipLocalURL(themeConfig: themeConfig), outputDirectoryURL: outputDirectoryURL(config: themeConfig))
@@ -47,7 +47,8 @@ public final class App {
                 copyFontsScriptURL: copyFontsScriptURL,
                 registerFontsScriptURL: registerFontsScriptURL,
                 sddsThemeBuilderXcodeProjectURL: xcodeProjectURL,
-                themePlistURL: themePlistURL(config: themeConfig)
+                themePlistURL: themePlistURL(config: themeConfig),
+                fontFamilyOverride: themeConfig.fontFamilyOverride
             ),
             GenerateTokensCommand(
                 name: "Generate Color Tokens",
@@ -59,7 +60,8 @@ public final class App {
                 contextBuilder: ColorContextBuilder(
                     paletteURL: paletteLocalURL(config: config, themeConfig: themeConfig),
                     metaScheme: metaScheme
-                )
+                ),
+            themeName: themeConfig.name
             ),
             GenerateTokensCommand(
                 name: "Generate Shadow Tokens",
@@ -71,7 +73,8 @@ public final class App {
                 contextBuilder: GeneralContextBuilder(
                     kind: .shadow,
                     metaScheme: metaScheme
-                )
+                ),
+            themeName: themeConfig.name
             ),
             GenerateTokensCommand(
                 name: "Generate Spacing Tokens",
@@ -83,7 +86,8 @@ public final class App {
                 contextBuilder: GeneralContextBuilder(
                     kind: .spacing,
                     metaScheme: metaScheme
-                )
+                ),
+            themeName: themeConfig.name
             ),
             GenerateTokensCommand(
                 name: "Generate Shape Tokens",
@@ -95,7 +99,8 @@ public final class App {
                 contextBuilder: GeneralContextBuilder(
                     kind: .shape,
                     metaScheme: metaScheme
-                )
+                ),
+            themeName: themeConfig.name
             ),
             GenerateTokensCommand(
                 name: "Generate Typography Tokens",
@@ -105,9 +110,11 @@ public final class App {
                 generatedOutputURL: generatedTokensURL(config: themeConfig),
                 templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
                 contextBuilder: TypographyContextBuilder(
-                    fontFamiliesContainer: fontFamiliesContainer, 
-                    metaScheme: metaScheme
-                )
+                    fontFamiliesContainer: fontFamiliesContainer,
+                    metaScheme: metaScheme,
+                    fontFamilyOverride: themeConfig.fontFamilyOverride
+                ),
+            themeName: themeConfig.name
             ),
             GenerateTokensCommand(
                 name: "Generate Gradient Tokens",
@@ -119,11 +126,21 @@ public final class App {
                 contextBuilder: GradientContextBuilder(
                     paletteURL: paletteLocalURL(config: config, themeConfig: themeConfig),
                     metaScheme: metaScheme
-                )
+                ),
+            themeName: themeConfig.name
             )
         ]
         commands.append(contentsOf: generateComponentVariations(themeConfig: themeConfig))
-        
+
+        runCommands(commands)
+
+        for tenant in themeConfig.tenants {
+            Logger.printText("🎨 Generating tenant \(tenant.name) for \(themeConfig.name)...")
+            executeTenantCommands(config: config, themeConfig: themeConfig, tenant: tenant)
+        }
+    }
+
+    private func runCommands(_ commands: [Command]) {
         for command in commands {
             let result = command.run()
             switch result {
@@ -140,6 +157,131 @@ public final class App {
                 break
             }
         }
+    }
+
+    private func executeTenantCommands(
+        config: ThemeBuilderConfiguration,
+        themeConfig: ThemeBuilderConfiguration.ThemeConfiguration,
+        tenant: ThemeBuilderConfiguration.Tenant
+    ) {
+        let tenantOutputDirectory = self.tenantOutputDirectoryURL(config: themeConfig, tenant: tenant)
+        try? FileManager.default.createDirectory(at: tenantOutputDirectory, withIntermediateDirectories: true)
+
+        let tenantZipURL = tenantOutputDirectory.appending(component: tenant.url.lastPathComponent)
+        DownloadCommand(fileURL: tenant.url, outputURL: tenantZipURL).run()
+
+        guard let tenantSchemeDirectory = UnpackThemeCommand(schemeURL: tenantZipURL, outputDirectoryURL: tenantOutputDirectory)
+            .run()
+            .asSchemeDirectory else {
+            Logger.terminate("No scheme directory for tenant \(tenant.name)")
+            return
+        }
+
+        guard let tenantMetaScheme = DecodeCommand<Scheme>(url: tenantSchemeDirectory.url(for: .meta))
+            .run()
+            .asScheme else {
+            Logger.terminate("No scheme for tenant \(tenant.name)")
+            return
+        }
+
+        guard let tenantFontFamiliesContainer = DecodeCommand<FontFamiliesContainer>(url: tenantSchemeDirectory.url(for: .fontFamilies))
+            .run()
+            .asFontFamiliesContainer else {
+            Logger.terminate("No font family container for tenant \(tenant.name)")
+            return
+        }
+
+        let tenantSuffix = tenant.name
+
+        let commands: [Command] = [
+            GenerateTokensCommand(
+                name: "Generate Color Tokens (\(tenant.name))",
+                schemeURL: tenantSchemeDirectory.url(for: .colors),
+                themeURL: themeURL(config: themeConfig),
+                templates: [.colorToken, .colors],
+                generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
+                contextBuilder: ColorContextBuilder(
+                    paletteURL: paletteLocalURL(config: config, themeConfig: themeConfig),
+                    metaScheme: tenantMetaScheme
+                ),
+                themeName: themeConfig.name,
+            tenantSuffix: tenantSuffix
+            ),
+            GenerateTokensCommand(
+                name: "Generate Shadow Tokens (\(tenant.name))",
+                schemeURL: tenantSchemeDirectory.url(for: .shadows),
+                themeURL: themeURL(config: themeConfig),
+                templates: [.shadowToken, .shadows],
+                generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
+                contextBuilder: GeneralContextBuilder(
+                    kind: .shadow,
+                    metaScheme: tenantMetaScheme
+                ),
+                themeName: themeConfig.name,
+            tenantSuffix: tenantSuffix
+            ),
+            GenerateTokensCommand(
+                name: "Generate Spacing Tokens (\(tenant.name))",
+                schemeURL: tenantSchemeDirectory.url(for: .spacing),
+                themeURL: themeURL(config: themeConfig),
+                templates: [.spacingToken, .spacings],
+                generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
+                contextBuilder: GeneralContextBuilder(
+                    kind: .spacing,
+                    metaScheme: tenantMetaScheme
+                ),
+                themeName: themeConfig.name,
+            tenantSuffix: tenantSuffix
+            ),
+            GenerateTokensCommand(
+                name: "Generate Shape Tokens (\(tenant.name))",
+                schemeURL: tenantSchemeDirectory.url(for: .shapes),
+                themeURL: themeURL(config: themeConfig),
+                templates: [.shapeToken, .shapes],
+                generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
+                contextBuilder: GeneralContextBuilder(
+                    kind: .shape,
+                    metaScheme: tenantMetaScheme
+                ),
+                themeName: themeConfig.name,
+            tenantSuffix: tenantSuffix
+            ),
+            GenerateTokensCommand(
+                name: "Generate Typography Tokens (\(tenant.name))",
+                schemeURL: tenantSchemeDirectory.url(for: .typography),
+                themeURL: themeURL(config: themeConfig),
+                templates: [.typographyToken, .typographies],
+                generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
+                contextBuilder: TypographyContextBuilder(
+                    fontFamiliesContainer: tenantFontFamiliesContainer,
+                    metaScheme: tenantMetaScheme,
+                    fontFamilyOverride: themeConfig.fontFamilyOverride
+                ),
+                themeName: themeConfig.name,
+            tenantSuffix: tenantSuffix
+            ),
+            GenerateTokensCommand(
+                name: "Generate Gradient Tokens (\(tenant.name))",
+                schemeURL: tenantSchemeDirectory.url(for: .gradients),
+                themeURL: themeURL(config: themeConfig),
+                templates: [.gradientToken, .gradients],
+                generatedOutputURL: generatedTokensURL(config: themeConfig),
+                templateRender: TemplateRenderer(paletteMapper: PaletteMapper(paletteURL: config.paletteURL)),
+                contextBuilder: GradientContextBuilder(
+                    paletteURL: paletteLocalURL(config: config, themeConfig: themeConfig),
+                    metaScheme: tenantMetaScheme
+                ),
+                themeName: themeConfig.name,
+            tenantSuffix: tenantSuffix
+            )
+        ]
+
+        runCommands(commands)
     }
 }
 
@@ -160,11 +302,38 @@ extension App {
             .deletingLastPathComponent()
         return path
     }
+
+    /// Корень репозитория (`plasma-ios`). Используется для резолва
+    /// `ThemeConfiguration.localSchemePath`, который хранится как путь
+    /// относительно корня репо.
+    private var repoRootURL: URL {
+        themeBuilderURL.deletingLastPathComponent()
+    }
+
+    /// URL, который `DownloadCommand` использует для получения схемы темы:
+    /// либо `file://`-URL локального snapshot'а (если у темы задан
+    /// `localSchemePath`), либо upstream-URL из конфига. Это позволяет
+    /// отдельным темам собираться без сетевых обращений к стороннему репо схем.
+    private func effectiveSchemeURL(themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+        if let relative = themeConfig.localSchemePath, !relative.isEmpty {
+            return repoRootURL.appending(path: relative)
+        }
+        return themeConfig.url
+    }
     
     private func outputDirectoryURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
         themeBuilderURL
             .appending(component: "Output")
             .appending(component: config.name)
+    }
+
+    private func tenantOutputDirectoryURL(
+        config: ThemeBuilderConfiguration.ThemeConfiguration,
+        tenant: ThemeBuilderConfiguration.Tenant
+    ) -> URL {
+        outputDirectoryURL(config: config)
+            .appending(component: "tenants")
+            .appending(component: tenant.name)
     }
     
     private var xcodeProjectURL: URL {

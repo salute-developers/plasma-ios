@@ -33,11 +33,13 @@ public struct NotificationCompact {
         )
     }
     
-    public static let all: [Variation<NotificationAppearance>] = [
-        NotificationCompact.l.variation,
-        NotificationCompact.m.variation,
-        NotificationCompact.s.variation,
-    ]
+    public static var all: [Variation<NotificationAppearance>] {
+        [
+            NotificationCompact.l.variation,
+            NotificationCompact.m.variation,
+            NotificationCompact.s.variation,
+        ]
+    }
 }
 
 public struct NotificationCompactVariation {

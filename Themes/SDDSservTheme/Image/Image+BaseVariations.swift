@@ -47,15 +47,17 @@ public struct Image {
         return .init(name: "ratio_1_1", appearance: appearance)
     }
 
-    public static let all: [Variation<ImageAppearance>] = [
-        Image.ratio_1_2.variation,
-        Image.ratio_9_16.variation,
-        Image.ratio_3_4.variation,
-        Image.ratio_2_1.variation,
-        Image.ratio_16_9.variation,
-        Image.ratio_4_3.variation,
-        Image.ratio_1_1.variation
-    ]
+    public static var all: [Variation<ImageAppearance>] {
+        [
+            Image.ratio_1_2.variation,
+            Image.ratio_9_16.variation,
+            Image.ratio_3_4.variation,
+            Image.ratio_2_1.variation,
+            Image.ratio_16_9.variation,
+            Image.ratio_4_3.variation,
+            Image.ratio_1_1.variation
+        ]
+    }
 }
 
 public struct ImageVariation {

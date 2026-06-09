@@ -5,9 +5,9 @@ import Foundation
 
 public extension AdaptiveTypographyToken {
     static var bodyLBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -15,7 +15,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -23,7 +23,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -31,11 +31,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyLBold", base: base)
     }
     static var bodyLMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -43,7 +44,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -51,7 +52,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -59,11 +60,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyLMedium", base: base)
     }
     static var bodyLNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -71,7 +73,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -79,7 +81,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -87,11 +89,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyLNormal", base: base)
     }
     static var bodyMBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 16.0,
@@ -99,7 +102,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 16.0,
@@ -107,7 +110,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 16.0,
@@ -115,11 +118,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyMBold", base: base)
     }
     static var bodyMMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 16.0,
@@ -127,7 +131,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 16.0,
@@ -135,7 +139,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 16.0,
@@ -143,11 +147,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyMMedium", base: base)
     }
     static var bodyMNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 16.0,
@@ -155,7 +160,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 16.0,
@@ -163,7 +168,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 16.0,
@@ -171,11 +176,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyMNormal", base: base)
     }
     static var bodySBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -183,7 +189,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -191,7 +197,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -199,11 +205,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodySBold", base: base)
     }
     static var bodySMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -211,7 +218,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -219,7 +226,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -227,11 +234,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodySMedium", base: base)
     }
     static var bodySNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -239,7 +247,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -247,7 +255,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -255,11 +263,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodySNormal", base: base)
     }
     static var bodyXsBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -267,7 +276,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -275,7 +284,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -283,11 +292,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyXsBold", base: base)
     }
     static var bodyXsMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -295,7 +305,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -303,7 +313,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -311,11 +321,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyXsMedium", base: base)
     }
     static var bodyXsNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -323,7 +334,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -331,7 +342,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -339,11 +350,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyXsNormal", base: base)
     }
     static var bodyXxsBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 10.0,
@@ -351,7 +363,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 10.0,
@@ -359,7 +371,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 10.0,
@@ -367,11 +379,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyXxsBold", base: base)
     }
     static var bodyXxsMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 10.0,
@@ -379,7 +392,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 10.0,
@@ -387,7 +400,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 10.0,
@@ -395,11 +408,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyXxsMedium", base: base)
     }
     static var bodyXxsNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 10.0,
@@ -407,7 +421,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 10.0,
@@ -415,7 +429,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 10.0,
@@ -423,27 +437,28 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "bodyXxsNormal", base: base)
     }
     static var displayLBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 88.0,
-                lineHeight: 92.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 112.0,
-                lineHeight: 112.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 128.0,
@@ -451,27 +466,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "displayLBold", base: base)
     }
     static var displayLMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 88.0,
-                lineHeight: 92.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 112.0,
-                lineHeight: 112.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 128.0,
@@ -479,27 +495,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "displayLMedium", base: base)
     }
     static var displayLNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 88.0,
-                lineHeight: 92.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 112.0,
-                lineHeight: 112.0,
+                size: 128.0,
+                lineHeight: 128.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
                 size: 128.0,
@@ -507,27 +524,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "displayLNormal", base: base)
     }
     static var displayMBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 56.0,
-                lineHeight: 60.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 72.0,
-                lineHeight: 76.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 88.0,
@@ -535,27 +553,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "displayMBold", base: base)
     }
     static var displayMMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 56.0,
-                lineHeight: 60.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 72.0,
-                lineHeight: 76.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 88.0,
@@ -563,27 +582,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "displayMMedium", base: base)
     }
     static var displayMNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 56.0,
-                lineHeight: 60.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 72.0,
-                lineHeight: 76.0,
+                size: 88.0,
+                lineHeight: 92.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
                 size: 88.0,
@@ -591,27 +611,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "displayMNormal", base: base)
     }
     static var displaySBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 48.0,
-                lineHeight: 52.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 64.0,
@@ -619,27 +640,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "displaySBold", base: base)
     }
     static var displaySMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 48.0,
-                lineHeight: 52.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 64.0,
@@ -647,27 +669,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "displaySMedium", base: base)
     }
     static var displaySNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
-                size: 48.0,
-                lineHeight: 52.0,
+                size: 64.0,
+                lineHeight: 68.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Light",
+                fontName: "SF Pro",
                 weight: .light,
                 style: .normal,
                 size: 64.0,
@@ -675,27 +698,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "displaySNormal", base: base)
     }
     static var headerH1Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 32.0,
-                lineHeight: 36.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 48.0,
@@ -703,27 +727,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH1Bold", base: base)
     }
     static var headerH1Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 32.0,
-                lineHeight: 36.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 48.0,
@@ -731,27 +756,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH1Medium", base: base)
     }
     static var headerH1Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 32.0,
-                lineHeight: 36.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 40.0,
-                lineHeight: 44.0,
+                size: 48.0,
+                lineHeight: 52.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 48.0,
@@ -759,27 +785,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH1Normal", base: base)
     }
     static var headerH2Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 24.0,
-                lineHeight: 30.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 28.0,
-                lineHeight: 34.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 32.0,
@@ -787,27 +814,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH2Bold", base: base)
     }
     static var headerH2Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 24.0,
-                lineHeight: 30.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 28.0,
-                lineHeight: 34.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 32.0,
@@ -815,27 +843,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH2Medium", base: base)
     }
     static var headerH2Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 24.0,
-                lineHeight: 30.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 28.0,
-                lineHeight: 34.0,
+                size: 32.0,
+                lineHeight: 36.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 32.0,
@@ -843,27 +872,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH2Normal", base: base)
     }
     static var headerH3Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 24.0,
@@ -871,27 +901,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH3Bold", base: base)
     }
     static var headerH3Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 24.0,
@@ -899,27 +930,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH3Medium", base: base)
     }
     static var headerH3Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 30.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 24.0,
@@ -927,27 +959,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH3Normal", base: base)
     }
     static var headerH4Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 20.0,
@@ -955,27 +988,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH4Bold", base: base)
     }
     static var headerH4Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 20.0,
@@ -983,27 +1017,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH4Medium", base: base)
     }
     static var headerH4Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 24.0,
+                size: 20.0,
+                lineHeight: 26.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 20.0,
@@ -1011,27 +1046,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH4Normal", base: base)
     }
     static var headerH5Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -1039,27 +1075,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH5Bold", base: base)
     }
     static var headerH5Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -1067,27 +1104,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH5Medium", base: base)
     }
     static var headerH5Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 22.0,
+                size: 18.0,
+                lineHeight: 24.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -1095,27 +1133,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH5Normal", base: base)
     }
     static var headerH6Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -1123,27 +1162,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH6Bold", base: base)
     }
     static var headerH6Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -1151,27 +1191,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH6Medium", base: base)
     }
     static var headerH6Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 10.0,
-                lineHeight: 14.0,
+                size: 12.0,
+                lineHeight: 16.0,
                 kerning: 0
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -1179,27 +1220,28 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "headerH6Normal", base: base)
     }
     static var textLBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 28.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 24.0,
@@ -1207,27 +1249,28 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textLBold", base: base)
     }
     static var textLMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 28.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 24.0,
@@ -1235,27 +1278,28 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textLMedium", base: base)
     }
     static var textLNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 18.0,
-                lineHeight: 26.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 20.0,
-                lineHeight: 28.0,
+                size: 24.0,
+                lineHeight: 32.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 24.0,
@@ -1263,27 +1307,28 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textLNormal", base: base)
     }
     static var textMBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 18.0,
@@ -1291,27 +1336,28 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textMBold", base: base)
     }
     static var textMMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 18.0,
@@ -1319,27 +1365,28 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textMMedium", base: base)
     }
     static var textMNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
-                size: 16.0,
-                lineHeight: 24.0,
+                size: 18.0,
+                lineHeight: 26.0,
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 18.0,
@@ -1347,11 +1394,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textMNormal", base: base)
     }
     static var textSBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -1359,7 +1407,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -1367,7 +1415,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 14.0,
@@ -1375,11 +1423,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textSBold", base: base)
     }
     static var textSMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -1387,7 +1436,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -1395,7 +1444,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 14.0,
@@ -1403,11 +1452,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textSMedium", base: base)
     }
     static var textSNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -1415,7 +1465,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -1423,7 +1473,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 14.0,
@@ -1431,11 +1481,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textSNormal", base: base)
     }
     static var textXsBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -1443,7 +1494,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -1451,7 +1502,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Semibold",
+                fontName: "SF Pro",
                 weight: .semibold,
                 style: .normal,
                 size: 12.0,
@@ -1459,11 +1510,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textXsBold", base: base)
     }
     static var textXsMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -1471,7 +1523,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -1479,7 +1531,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Medium",
+                fontName: "SF Pro",
                 weight: .medium,
                 style: .normal,
                 size: 12.0,
@@ -1487,11 +1539,12 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textXsMedium", base: base)
     }
     static var textXsNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -1499,7 +1552,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             medium: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -1507,7 +1560,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             ),
             large: TypographyToken(
-                fontName: "SBSansDisplay-Regular",
+                fontName: "SF Pro",
                 weight: .regular,
                 style: .normal,
                 size: 12.0,
@@ -1515,6 +1568,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "PlasmaHomeDS", id: "textXsNormal", base: base)
     }
     static var tokens: [Self] = [
         bodyLBold, 

@@ -5,7 +5,7 @@ import Foundation
 
 public extension AdaptiveTypographyToken {
     static var bodyLBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Semibold",
                 weight: .semibold,
@@ -31,9 +31,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyLBold", base: base)
     }
     static var bodyLMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Medium",
                 weight: .medium,
@@ -59,9 +60,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyLMedium", base: base)
     }
     static var bodyLNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Regular",
                 weight: .regular,
@@ -87,9 +89,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyLNormal", base: base)
     }
     static var bodyMBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Semibold",
                 weight: .semibold,
@@ -115,9 +118,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyMBold", base: base)
     }
     static var bodyMMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Medium",
                 weight: .medium,
@@ -143,9 +147,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyMMedium", base: base)
     }
     static var bodyMNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Regular",
                 weight: .regular,
@@ -171,9 +176,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyMNormal", base: base)
     }
     static var bodySBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Semibold",
                 weight: .semibold,
@@ -199,9 +205,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodySBold", base: base)
     }
     static var bodySMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Medium",
                 weight: .medium,
@@ -227,9 +234,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodySMedium", base: base)
     }
     static var bodySNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Regular",
                 weight: .regular,
@@ -255,9 +263,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodySNormal", base: base)
     }
     static var bodyXsBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Semibold",
                 weight: .semibold,
@@ -283,9 +292,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyXsBold", base: base)
     }
     static var bodyXsMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Medium",
                 weight: .medium,
@@ -311,9 +321,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyXsMedium", base: base)
     }
     static var bodyXsNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Regular",
                 weight: .regular,
@@ -339,9 +350,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyXsNormal", base: base)
     }
     static var bodyXxsBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Semibold",
                 weight: .semibold,
@@ -367,9 +379,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyXxsBold", base: base)
     }
     static var bodyXxsMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Medium",
                 weight: .medium,
@@ -395,9 +408,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyXxsMedium", base: base)
     }
     static var bodyXxsNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Regular",
                 weight: .regular,
@@ -423,9 +437,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "bodyXxsNormal", base: base)
     }
     static var displayLBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
@@ -451,9 +466,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "displayLBold", base: base)
     }
     static var displayLMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
@@ -479,9 +495,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "displayLMedium", base: base)
     }
     static var displayLNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Light",
                 weight: .light,
@@ -507,9 +524,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "displayLNormal", base: base)
     }
     static var displayMBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
@@ -535,9 +553,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "displayMBold", base: base)
     }
     static var displayMMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
@@ -563,9 +582,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "displayMMedium", base: base)
     }
     static var displayMNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Light",
                 weight: .light,
@@ -591,9 +611,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "displayMNormal", base: base)
     }
     static var displaySBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
@@ -619,9 +640,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "displaySBold", base: base)
     }
     static var displaySMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
@@ -647,9 +669,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "displaySMedium", base: base)
     }
     static var displaySNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Light",
                 weight: .light,
@@ -675,9 +698,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "displaySNormal", base: base)
     }
     static var headerH1Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
@@ -703,9 +727,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH1Bold", base: base)
     }
     static var headerH1Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
@@ -731,9 +756,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH1Medium", base: base)
     }
     static var headerH1Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Regular",
                 weight: .regular,
@@ -759,9 +785,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH1Normal", base: base)
     }
     static var headerH2Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
@@ -787,9 +814,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH2Bold", base: base)
     }
     static var headerH2Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
@@ -815,9 +843,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH2Medium", base: base)
     }
     static var headerH2Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Regular",
                 weight: .regular,
@@ -843,9 +872,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH2Normal", base: base)
     }
     static var headerH3Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
@@ -871,9 +901,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH3Bold", base: base)
     }
     static var headerH3Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
@@ -899,9 +930,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH3Medium", base: base)
     }
     static var headerH3Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Regular",
                 weight: .regular,
@@ -927,9 +959,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH3Normal", base: base)
     }
     static var headerH4Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
@@ -955,9 +988,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH4Bold", base: base)
     }
     static var headerH4Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
@@ -983,9 +1017,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH4Medium", base: base)
     }
     static var headerH4Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Regular",
                 weight: .regular,
@@ -1011,9 +1046,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH4Normal", base: base)
     }
     static var headerH5Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
@@ -1039,9 +1075,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH5Bold", base: base)
     }
     static var headerH5Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
@@ -1067,9 +1104,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH5Medium", base: base)
     }
     static var headerH5Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Regular",
                 weight: .regular,
@@ -1095,9 +1133,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH5Normal", base: base)
     }
     static var headerH6Bold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Semibold",
                 weight: .semibold,
@@ -1123,9 +1162,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH6Bold", base: base)
     }
     static var headerH6Medium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Medium",
                 weight: .medium,
@@ -1151,9 +1191,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH6Medium", base: base)
     }
     static var headerH6Normal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansDisplay-Regular",
                 weight: .regular,
@@ -1179,9 +1220,10 @@ public extension AdaptiveTypographyToken {
                 kerning: 0
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "headerH6Normal", base: base)
     }
     static var textLBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Semibold",
                 weight: .semibold,
@@ -1207,9 +1249,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textLBold", base: base)
     }
     static var textLMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Medium",
                 weight: .medium,
@@ -1235,9 +1278,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textLMedium", base: base)
     }
     static var textLNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Regular",
                 weight: .regular,
@@ -1263,9 +1307,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textLNormal", base: base)
     }
     static var textMBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Semibold",
                 weight: .semibold,
@@ -1291,9 +1336,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textMBold", base: base)
     }
     static var textMMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Medium",
                 weight: .medium,
@@ -1319,9 +1365,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textMMedium", base: base)
     }
     static var textMNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Regular",
                 weight: .regular,
@@ -1347,9 +1394,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textMNormal", base: base)
     }
     static var textSBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Semibold",
                 weight: .semibold,
@@ -1375,9 +1423,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textSBold", base: base)
     }
     static var textSMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Medium",
                 weight: .medium,
@@ -1403,9 +1452,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textSMedium", base: base)
     }
     static var textSNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Regular",
                 weight: .regular,
@@ -1431,9 +1481,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textSNormal", base: base)
     }
     static var textXsBold: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Semibold",
                 weight: .semibold,
@@ -1459,9 +1510,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textXsBold", base: base)
     }
     static var textXsMedium: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Medium",
                 weight: .medium,
@@ -1487,9 +1539,10 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textXsMedium", base: base)
     }
     static var textXsNormal: Self {
-        Self(
+        let base = Self(
             small: TypographyToken(
                 fontName: "SBSansText-Regular",
                 weight: .regular,
@@ -1515,6 +1568,7 @@ public extension AdaptiveTypographyToken {
                 kerning: -0.02
             )
         )
+        return ThemeTenantRegistry.shared.resolveTypography(theme: "SDDSServ", id: "textXsNormal", base: base)
     }
     static var tokens: [Self] = [
         bodyLBold, 

@@ -52,7 +52,7 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
         let count = min(wheelsCount, sampleData.count)
         let previousSelection = selection
         
-        wheels = (0..<count).map { index in
+        let updatedWheels = (0..<count).map { index in
             let customLabel = index < wheelLabels.count ? wheelLabels[index] : ""
             let afterText = index < wheelTextAfter.count && !wheelTextAfter[index].isEmpty ? wheelTextAfter[index] : nil
             let items: [WheelItem]
@@ -69,10 +69,23 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
             )
         }
         
+        let updatedSelection: [Int]
         if count == previousSelection.count {
-            selection = previousSelection
+            updatedSelection = zip(previousSelection, updatedWheels).map { selectedIndex, wheel in
+                guard !wheel.items.isEmpty else { return 0 }
+                return min(max(selectedIndex, 0), wheel.items.count - 1)
+            }
         } else {
-            selection = Array(repeating: 0, count: count)
+            updatedSelection = Array(repeating: 0, count: count)
+        }
+        
+        // Keep wheels and selection in sync to avoid transient index-out-of-range crashes in SDDSWheel.
+        if count > previousSelection.count {
+            selection = updatedSelection
+            wheels = updatedWheels
+        } else {
+            wheels = updatedWheels
+            selection = updatedSelection
         }
     }
     

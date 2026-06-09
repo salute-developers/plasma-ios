@@ -17,9 +17,11 @@ public struct TextSkeleton {
         )
     }
     
-    public static let all: [Variation<SkeletonAppearance>] = [
-        TextSkeleton.default.variation,
-    ]
+    public static var all: [Variation<SkeletonAppearance>] {
+        [
+            TextSkeleton.default.variation,
+        ]
+    }
 }
 
 public struct TextSkeletonVariation {

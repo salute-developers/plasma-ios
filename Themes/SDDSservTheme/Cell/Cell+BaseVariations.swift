@@ -82,12 +82,14 @@ public struct Cell {
         )
     }
     
-    public static let all: [Variation<CellAppearance>] = [
-        Cell.l.variation,
-        Cell.m.variation,
-        Cell.s.variation,
-        Cell.xs.variation,
-    ]
+    public static var all: [Variation<CellAppearance>] {
+        [
+            Cell.l.variation,
+            Cell.m.variation,
+            Cell.s.variation,
+            Cell.xs.variation,
+        ]
+    }
 }
 
 public struct CellVariation {
@@ -100,11 +102,11 @@ public struct CellVariation {
 private extension CellAppearance {
     static var base: CellAppearance {
         var appearance = CellAppearance()
-        appearance.disclosureImageColor = ColorToken.textDefaultSecondary
-        appearance.disclosureTextColor = ColorToken.textDefaultSecondary
-        appearance.labelColor = ColorToken.textDefaultSecondary
-        appearance.subtitleColor = ColorToken.textDefaultSecondary
-        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.disclosureImageColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.disclosureTextColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.subtitleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
         return appearance
     }
 }

@@ -7,13 +7,12 @@ public struct ListItemAppearance: Hashable {
     public var labelTypography: TypographyConfiguration
     public var titleTypography: TypographyConfiguration
     public var subtitleTypography: TypographyConfiguration?
-    public var labelColor: ColorToken
-    public var titleColor: ColorToken
-    public var subtitleColor: ColorToken
-    public var disclosureIconColor: ColorToken
+    public var labelColor: StatefulFillStyle
+    public var titleColor: StatefulFillStyle
+    public var subtitleColor: StatefulFillStyle
+    public var disclosureIconColor: StatefulFillStyle
     public var disclosureIcon: Image?
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var backgroundColor: ButtonColor
+    public var backgroundColor: StatefulFillStyle
     public var disabledAlpha: CGFloat
     public var counterAppearance: CounterAppearance?
     public var size: ListItemSizeConfiguration
@@ -22,12 +21,12 @@ public struct ListItemAppearance: Hashable {
         labelTypography: TypographyConfiguration = .default,
         titleTypography: TypographyConfiguration = .default,
         subtitleTypography: TypographyConfiguration? = nil,
-        labelColor: ColorToken = .clearColor,
-        titleColor: ColorToken = .clearColor,
-        subtitleColor: ColorToken = .clearColor,
-        disclosureIconColor: ColorToken = .clearColor,
+        labelColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        titleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        subtitleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        disclosureIconColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         disclosureIcon: Image? = nil,
-        backgroundColor: ButtonColor = ButtonColor(),
+        backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         disabledAlpha: CGFloat = 0.4,
         counterAppearance: CounterAppearance? = nil,
         size: ListItemSizeConfiguration = ZeroListItemSize()
@@ -44,6 +43,38 @@ public struct ListItemAppearance: Hashable {
         self.disabledAlpha = disabledAlpha
         self.counterAppearance = counterAppearance
         self.size = size
+    }
+
+    @available(*, deprecated, message: "ColorToken/ButtonColor are deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
+    public init(
+        labelTypography: TypographyConfiguration = .default,
+        titleTypography: TypographyConfiguration = .default,
+        subtitleTypography: TypographyConfiguration? = nil,
+        labelColor: ColorToken = .clearColor,
+        titleColor: ColorToken = .clearColor,
+        subtitleColor: ColorToken = .clearColor,
+        disclosureIconColor: ColorToken = .clearColor,
+        disclosureIcon: Image? = nil,
+        backgroundColor: ButtonColor = ButtonColor(),
+        disabledAlpha: CGFloat = 0.4,
+        counterAppearance: CounterAppearance? = nil,
+        size: ListItemSizeConfiguration = ZeroListItemSize()
+    ) {
+        self.init(
+            labelTypography: labelTypography,
+            titleTypography: titleTypography,
+            subtitleTypography: subtitleTypography,
+            labelColor: labelColor.statefulColor.statefulFillStyle,
+            titleColor: titleColor.statefulColor.statefulFillStyle,
+            subtitleColor: subtitleColor.statefulColor.statefulFillStyle,
+            disclosureIconColor: disclosureIconColor.statefulColor.statefulFillStyle,
+            disclosureIcon: disclosureIcon,
+            backgroundColor: backgroundColor.statefulColor.statefulFillStyle,
+            disabledAlpha: disabledAlpha,
+            counterAppearance: counterAppearance,
+            size: size
+        )
     }
 
     

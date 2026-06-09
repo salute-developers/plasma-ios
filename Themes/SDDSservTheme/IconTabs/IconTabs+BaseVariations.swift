@@ -54,20 +54,22 @@ public struct IconTabs {
         )
     }
     
-    public static let all: [Variation<TabsAppearance>] = [
-        IconTabs.l.variation,
-        IconTabs.l.horizontal.variation,
-        IconTabs.l.vertical.variation,
-        IconTabs.m.variation,
-        IconTabs.m.horizontal.variation,
-        IconTabs.m.vertical.variation,
-        IconTabs.s.variation,
-        IconTabs.s.horizontal.variation,
-        IconTabs.s.vertical.variation,
-        IconTabs.xs.variation,
-        IconTabs.xs.horizontal.variation,
-        IconTabs.xs.vertical.variation,
-    ]
+    public static var all: [Variation<TabsAppearance>] {
+        [
+            IconTabs.l.variation,
+            IconTabs.l.horizontal.variation,
+            IconTabs.l.vertical.variation,
+            IconTabs.m.variation,
+            IconTabs.m.horizontal.variation,
+            IconTabs.m.vertical.variation,
+            IconTabs.s.variation,
+            IconTabs.s.horizontal.variation,
+            IconTabs.s.vertical.variation,
+            IconTabs.xs.variation,
+            IconTabs.xs.horizontal.variation,
+            IconTabs.xs.vertical.variation,
+        ]
+    }
 }
 
 public struct IconTabsVariation {

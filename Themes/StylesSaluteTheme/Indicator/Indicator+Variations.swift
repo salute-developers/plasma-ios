@@ -358,55 +358,55 @@ private extension IndicatorAppearance {
     
     var `default`: IndicatorAppearance {
         var appearance = self
-        appearance.backgroundColor = ColorToken.surfaceDefaultSolidDefault
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultSolidDefault), values: [])
         return appearance
     }
     
     var accent: IndicatorAppearance {
         var appearance = self
-        appearance.backgroundColor = ColorToken.surfaceDefaultAccentMain
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccentMain), values: [])
         return appearance
     }
     
     var black: IndicatorAppearance {
         var appearance = self
-        appearance.backgroundColor = ColorToken.surfaceOnLightSolidDefault
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnLightSolidDefault), values: [])
         return appearance
     }
     
     var dark: IndicatorAppearance {
         var appearance = self
-        appearance.backgroundColor = ColorToken.surfaceOnLightTransparentDeep
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnLightTransparentDeep), values: [])
         return appearance
     }
     
     var inactive: IndicatorAppearance {
         var appearance = self
-        appearance.backgroundColor = ColorToken.surfaceDefaultSolidTertiary
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultSolidTertiary), values: [])
         return appearance
     }
     
     var negative: IndicatorAppearance {
         var appearance = self
-        appearance.backgroundColor = ColorToken.surfaceDefaultNegative
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultNegative), values: [])
         return appearance
     }
     
     var positive: IndicatorAppearance {
         var appearance = self
-        appearance.backgroundColor = ColorToken.surfaceDefaultPositive
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultPositive), values: [])
         return appearance
     }
     
     var warning: IndicatorAppearance {
         var appearance = self
-        appearance.backgroundColor = ColorToken.surfaceDefaultWarning
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultWarning), values: [])
         return appearance
     }
     
     var white: IndicatorAppearance {
         var appearance = self
-        appearance.backgroundColor = ColorToken.surfaceOnDarkSolidDefault
+        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnDarkSolidDefault), values: [])
         return appearance
     }
     

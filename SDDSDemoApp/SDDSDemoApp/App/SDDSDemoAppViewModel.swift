@@ -29,17 +29,23 @@ final class SDDSDemoAppViewModel: ObservableObject {
         guard !isInitialized else { return }
 
         #if SANDBOX_DS_SERV
-        SDDSServTheme.Theme.initialize { [weak self] in
+        SDDSServTheme.Theme.initialize(
+            tenant: TenantStorage.shared.tenant(for: .sdddsServTheme)
+        ) { [weak self] in
             self?.isInitialized = true
         }
         return
         #elseif SANDBOX_DS_PLASMA_B2C
-        PlasmaB2CTheme.Theme.initialize { [weak self] in
+        PlasmaB2CTheme.Theme.initialize(
+            tenant: TenantStorage.shared.tenant(for: .plasmaB2CTheme)
+        ) { [weak self] in
             self?.isInitialized = true
         }
         return
         #elseif SANDBOX_DS_PLASMA_HOME_DS
-        PlasmaHomeDSTheme.Theme.initialize { [weak self] in
+        PlasmaHomeDSTheme.Theme.initialize(
+            tenant: TenantStorage.shared.tenant(for: .plasmaHomeDSTheme)
+        ) { [weak self] in
             self?.isInitialized = true
         }
         return
@@ -52,25 +58,33 @@ final class SDDSDemoAppViewModel: ObservableObject {
         }
 
         if profile.supportedThemes.contains(.sdddsServTheme) {
-            SDDSServTheme.Theme.initialize { [weak self] in
+            SDDSServTheme.Theme.initialize(
+                tenant: TenantStorage.shared.tenant(for: .sdddsServTheme)
+            ) { [weak self] in
                 self?.themeDidInitialize()
             }
         }
 
         if profile.supportedThemes.contains(.stylesSalute) {
-            StylesSaluteTheme.Theme.initialize { [weak self] in
+            StylesSaluteTheme.Theme.initialize(
+                tenant: TenantStorage.shared.tenant(for: .stylesSalute)
+            ) { [weak self] in
                 self?.themeDidInitialize()
             }
         }
 
         if profile.supportedThemes.contains(.plasmaB2CTheme) {
-            PlasmaB2CTheme.Theme.initialize { [weak self] in
+            PlasmaB2CTheme.Theme.initialize(
+                tenant: TenantStorage.shared.tenant(for: .plasmaB2CTheme)
+            ) { [weak self] in
                 self?.themeDidInitialize()
             }
         }
 
         if profile.supportedThemes.contains(.plasmaHomeDSTheme) {
-            PlasmaHomeDSTheme.Theme.initialize { [weak self] in
+            PlasmaHomeDSTheme.Theme.initialize(
+                tenant: TenantStorage.shared.tenant(for: .plasmaHomeDSTheme)
+            ) { [weak self] in
                 self?.themeDidInitialize()
             }
         }

@@ -45,13 +45,6 @@
       "releaseTag": "release-04-03-2026"
     },
     {
-      "name": "PlasmaHomeDSTheme",
-      "version": "0.10.0",
-      "assetFileName": "PlasmaHomeDSTheme.xcframework.zip",
-      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-04-03-2026/PlasmaHomeDSTheme.xcframework.zip",
-      "releaseTag": "release-04-03-2026"
-    },
-    {
       "name": "InputMask",
       "version": "1.0.1",
       "assetFileName": "InputMask.xcframework.zip",

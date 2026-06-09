@@ -39,11 +39,13 @@ public struct Radiobox {
         )
     }
     
-    public static let all: [Variation<RadioboxAppearance>] = [
-        Radiobox.l.variation,
-        Radiobox.m.variation,
-        Radiobox.s.variation,
-    ]
+    public static var all: [Variation<RadioboxAppearance>] {
+        [
+            Radiobox.l.variation,
+            Radiobox.m.variation,
+            Radiobox.s.variation,
+        ]
+    }
 }
 
 public struct RadioboxVariation {

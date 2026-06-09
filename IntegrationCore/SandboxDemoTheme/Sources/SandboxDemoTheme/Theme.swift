@@ -1601,4 +1601,30 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
+
+    public var availableTenants: [Tenant] {
+        switch self {
+        case .sdddsServTheme:
+            return SDDSServTheme.Theme.availableTenants
+        case .plasmaB2CTheme:
+            return PlasmaB2CTheme.Theme.availableTenants
+        case .plasmaHomeDSTheme:
+            return PlasmaHomeDSTheme.Theme.availableTenants
+        case .stylesSalute:
+            return StylesSaluteTheme.Theme.availableTenants
+        }
+    }
+
+    public func initialize(tenant: Tenant, onComplete: @escaping () -> Void = {}) {
+        switch self {
+        case .sdddsServTheme:
+            SDDSServTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
+        case .plasmaB2CTheme:
+            PlasmaB2CTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
+        case .plasmaHomeDSTheme:
+            PlasmaHomeDSTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
+        case .stylesSalute:
+            StylesSaluteTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
+        }
+    }
 }

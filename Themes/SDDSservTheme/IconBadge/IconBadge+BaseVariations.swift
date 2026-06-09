@@ -42,16 +42,18 @@ public struct IconBadge {
         )
     }
     
-    public static let all: [Variation<BadgeAppearance>] = [
-        IconBadge.l.variation,
-        IconBadge.l.pilled.variation,
-        IconBadge.m.variation,
-        IconBadge.m.pilled.variation,
-        IconBadge.s.variation,
-        IconBadge.s.pilled.variation,
-        IconBadge.xs.variation,
-        IconBadge.xs.pilled.variation,
-    ]
+    public static var all: [Variation<BadgeAppearance>] {
+        [
+            IconBadge.l.variation,
+            IconBadge.l.pilled.variation,
+            IconBadge.m.variation,
+            IconBadge.m.pilled.variation,
+            IconBadge.s.variation,
+            IconBadge.s.pilled.variation,
+            IconBadge.xs.variation,
+            IconBadge.xs.pilled.variation,
+        ]
+    }
 }
 
 public struct IconBadgeVariation {

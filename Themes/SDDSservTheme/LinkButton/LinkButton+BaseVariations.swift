@@ -66,14 +66,16 @@ public struct LinkButton {
         )
     }
     
-    public static let all: [Variation<ButtonAppearance>] = [
-        LinkButton.l.variation,
-        LinkButton.m.variation,
-        LinkButton.s.variation,
-        LinkButton.xl.variation,
-        LinkButton.xs.variation,
-        LinkButton.xxs.variation,
-    ]
+    public static var all: [Variation<ButtonAppearance>] {
+        [
+            LinkButton.l.variation,
+            LinkButton.m.variation,
+            LinkButton.s.variation,
+            LinkButton.xl.variation,
+            LinkButton.xs.variation,
+            LinkButton.xxs.variation,
+        ]
+    }
 }
 
 public struct LinkButtonVariation {

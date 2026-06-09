@@ -132,7 +132,7 @@ public struct SDDSList: View {
         .padding(.top, appearance.size.paddingTop)
         .padding(.bottom, appearance.size.paddingBottom)
         .id("SDDSList-\(items.count)")
-        .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
+        .fillBackground(appearance.backgroundColor.resolvedDefaultValue(), colorScheme: colorScheme, subtheme: subtheme)
         .shape(pathDrawer: appearance.size.shape)
         .background(
             GeometryReader { contentGeometry in

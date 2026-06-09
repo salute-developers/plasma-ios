@@ -28,12 +28,14 @@ public struct TabBarItemSolid {
         )
     }
     
-    public static let all: [Variation<TabBarItemAppearance>] = [
-        TabBarItemSolid.l.variation,
-        TabBarItemSolid.l.label.variation,
-        TabBarItemSolid.m.variation,
-        TabBarItemSolid.m.label.variation,
-    ]
+    public static var all: [Variation<TabBarItemAppearance>] {
+        [
+            TabBarItemSolid.l.variation,
+            TabBarItemSolid.l.label.variation,
+            TabBarItemSolid.m.variation,
+            TabBarItemSolid.m.label.variation,
+        ]
+    }
 }
 
 public struct TabBarItemSolidVariation {

@@ -57,12 +57,14 @@ public struct Avatar {
         )
     }
     
-    public static let all: [Variation<AvatarAppearance>] = [
-        Avatar.l.variation,
-        Avatar.m.variation,
-        Avatar.s.variation,
-        Avatar.xxl.variation,
-    ]
+    public static var all: [Variation<AvatarAppearance>] {
+        [
+            Avatar.l.variation,
+            Avatar.m.variation,
+            Avatar.s.variation,
+            Avatar.xxl.variation,
+        ]
+    }
 }
 
 public struct AvatarVariation {

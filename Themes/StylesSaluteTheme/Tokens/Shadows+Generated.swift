@@ -4,6 +4,7 @@ import SwiftUI
 import UIKit
 @_exported import SDDSThemeCore
 
+
 public enum Shadows {
     case downHardL
     case downHardM
@@ -21,29 +22,30 @@ public enum Shadows {
     public var token: ShadowToken {
         switch self {
         case .downHardL:
-            return .downHardL
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "downHardL", base: .downHardL)
         case .downHardM:
-            return .downHardM
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "downHardM", base: .downHardM)
         case .downHardS:
-            return .downHardS
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "downHardS", base: .downHardS)
         case .downSoftL:
-            return .downSoftL
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "downSoftL", base: .downSoftL)
         case .downSoftM:
-            return .downSoftM
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "downSoftM", base: .downSoftM)
         case .downSoftS:
-            return .downSoftS
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "downSoftS", base: .downSoftS)
         case .upHardL:
-            return .upHardL
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "upHardL", base: .upHardL)
         case .upHardM:
-            return .upHardM
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "upHardM", base: .upHardM)
         case .upHardS:
-            return .upHardS
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "upHardS", base: .upHardS)
         case .upSoftL:
-            return .upSoftL
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "upSoftL", base: .upSoftL)
         case .upSoftM:
-            return .upSoftM
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "upSoftM", base: .upSoftM)
         case .upSoftS:
-            return .upSoftS
+            return ThemeTenantRegistry.shared.resolveShadow(theme: "StylesSalute", id: "upSoftS", base: .upSoftS)
         }
     }
 }
+

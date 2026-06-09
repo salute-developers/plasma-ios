@@ -42,16 +42,18 @@ public struct ToolbarVertical {
         )
     }
     
-    public static let all: [Variation<ToolbarAppearance>] = [
-        ToolbarVertical.l.variation,
-        ToolbarVertical.l.hasShadow.variation,
-        ToolbarVertical.m.variation,
-        ToolbarVertical.m.hasShadow.variation,
-        ToolbarVertical.s.variation,
-        ToolbarVertical.s.hasShadow.variation,
-        ToolbarVertical.xs.variation,
-        ToolbarVertical.xs.hasShadow.variation,
-    ]
+    public static var all: [Variation<ToolbarAppearance>] {
+        [
+            ToolbarVertical.l.variation,
+            ToolbarVertical.l.hasShadow.variation,
+            ToolbarVertical.m.variation,
+            ToolbarVertical.m.hasShadow.variation,
+            ToolbarVertical.s.variation,
+            ToolbarVertical.s.hasShadow.variation,
+            ToolbarVertical.xs.variation,
+            ToolbarVertical.xs.hasShadow.variation,
+        ]
+    }
 }
 
 public struct ToolbarVerticalVariation {

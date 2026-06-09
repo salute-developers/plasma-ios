@@ -9,7 +9,7 @@ public extension GeneralAppearanceVariation<TextSkeleton, SkeletonAppearance, Te
     
     var `default`: AppearanceVariation<SkeletonAppearance> {
         var appearance = appearance
-        appearance.gradient = .gradient(GradientToken.surfaceDefaultSkeletonGradient)
+        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonGradient), values: [])
         
         return .init(
             name: "`default`",
@@ -18,7 +18,7 @@ public extension GeneralAppearanceVariation<TextSkeleton, SkeletonAppearance, Te
     }
     var lighter: AppearanceVariation<SkeletonAppearance> {
         var appearance = appearance
-        appearance.gradient = .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient)
+        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient), values: [])
         
         return .init(
             name: "lighter",
@@ -70,13 +70,13 @@ private extension SkeletonAppearance {
     
     var `default`: SkeletonAppearance {
         var appearance = self
-        appearance.gradient = .gradient(GradientToken.surfaceDefaultSkeletonGradient)
+        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonGradient), values: [])
         return appearance
     }
     
     var lighter: SkeletonAppearance {
         var appearance = self
-        appearance.gradient = .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient)
+        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient), values: [])
         return appearance
     }
     

@@ -4,7 +4,7 @@ import SDDSThemeCore
 
 public struct IndicatorAppearance {
     public var size: IndicatorSizeConfiguration = DefaultIndicatorSize()
-    public var backgroundColor: ColorToken = .clearColor
+    public var backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
     
     public init() {}
 }

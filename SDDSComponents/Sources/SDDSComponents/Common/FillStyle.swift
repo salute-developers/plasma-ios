@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import SDDSThemeCore
 
 public enum FillStyle: Hashable {
@@ -33,6 +34,17 @@ public extension FillStyle {
             return .color(colorToken.withOpacity(opacity))
         case .gradient(let gradientToken):
             return .gradient(gradientToken)
+        }
+    }
+
+    /// Возвращает репрезентативный сплошной цвет для контекстов, которые не умеют рисовать градиент
+    /// (например, цветовые стопы `AngularGradient`). Для градиента берётся его первый фоновый цвет.
+    func representativeColor(for colorScheme: ColorScheme, subtheme: SubthemeData = SubthemeData()) -> Color {
+        switch self {
+        case .color(let colorToken):
+            return colorToken.color(for: colorScheme, subtheme: subtheme)
+        case .gradient(let gradientToken):
+            return gradientToken.backgrounds(for: colorScheme).first ?? .clear
         }
     }
 }

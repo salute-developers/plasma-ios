@@ -252,8 +252,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 //            .selectItemMultipleNormal
 //            .paginationDotsVertical,
 //            .paginationDotsHorizontal,
-            .carousel,
-            .formItem,
+//            .carousel,
+//            .formItem,
+//            .collapsingNavigationBarInternalPage,
+//            .collapsingNavigationBarMainPage,
 //            .image
         ]
     }

@@ -6,7 +6,7 @@ import UIKit
 
 public extension GradientToken {
     static var surfaceDefaultAccentGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceDefaultAccentGradient",
             description: "surfaceDefaultAccentGradient",
             darkGradients: [
@@ -53,9 +53,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceDefaultAccentGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceDefaultAccentGradientActive",
             description: "surfaceDefaultAccentGradientActive",
             darkGradients: [
@@ -89,9 +90,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceDefaultAccentGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceDefaultAccentGradientHover",
             description: "surfaceDefaultAccentGradientHover",
             darkGradients: [
@@ -125,9 +127,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceDefaultSkeletonDeepGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceDefaultSkeletonDeepGradient",
             description: "surfaceDefaultSkeletonDeepGradient",
             darkGradients: [
@@ -205,9 +208,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceDefaultSkeletonDeepGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceDefaultSkeletonDeepGradientActive",
             description: "surfaceDefaultSkeletonDeepGradientActive",
             darkGradients: [
@@ -241,9 +245,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceDefaultSkeletonDeepGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceDefaultSkeletonDeepGradientHover",
             description: "surfaceDefaultSkeletonDeepGradientHover",
             darkGradients: [
@@ -277,9 +282,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceDefaultSkeletonGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceDefaultSkeletonGradient",
             description: "surfaceDefaultSkeletonGradient",
             darkGradients: [
@@ -357,9 +363,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceDefaultSkeletonGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceDefaultSkeletonGradientActive",
             description: "surfaceDefaultSkeletonGradientActive",
             darkGradients: [
@@ -393,9 +400,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceDefaultSkeletonGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceDefaultSkeletonGradientHover",
             description: "surfaceDefaultSkeletonGradientHover",
             darkGradients: [
@@ -429,9 +437,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceInverseAccentGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceInverseAccentGradient",
             description: "surfaceInverseAccentGradient",
             darkGradients: [
@@ -465,9 +474,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceInverseAccentGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceInverseAccentGradientActive",
             description: "surfaceInverseAccentGradientActive",
             darkGradients: [
@@ -501,9 +511,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceInverseAccentGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceInverseAccentGradientHover",
             description: "surfaceInverseAccentGradientHover",
             darkGradients: [
@@ -537,9 +548,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceInverseSkeletonDeepGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceInverseSkeletonDeepGradient",
             description: "surfaceInverseSkeletonDeepGradient",
             darkGradients: [
@@ -617,9 +629,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceInverseSkeletonDeepGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceInverseSkeletonDeepGradientActive",
             description: "surfaceInverseSkeletonDeepGradientActive",
             darkGradients: [
@@ -653,9 +666,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceInverseSkeletonDeepGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceInverseSkeletonDeepGradientHover",
             description: "surfaceInverseSkeletonDeepGradientHover",
             darkGradients: [
@@ -689,9 +703,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceInverseSkeletonGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceInverseSkeletonGradient",
             description: "surfaceInverseSkeletonGradient",
             darkGradients: [
@@ -769,9 +784,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceInverseSkeletonGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceInverseSkeletonGradientActive",
             description: "surfaceInverseSkeletonGradientActive",
             darkGradients: [
@@ -805,9 +821,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceInverseSkeletonGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceInverseSkeletonGradientHover",
             description: "surfaceInverseSkeletonGradientHover",
             darkGradients: [
@@ -841,9 +858,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnDarkAccentGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnDarkAccentGradient",
             description: "surfaceOnDarkAccentGradient",
             darkGradients: [
@@ -877,9 +895,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnDarkAccentGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnDarkAccentGradientActive",
             description: "surfaceOnDarkAccentGradientActive",
             darkGradients: [
@@ -913,9 +932,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnDarkAccentGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnDarkAccentGradientHover",
             description: "surfaceOnDarkAccentGradientHover",
             darkGradients: [
@@ -949,9 +969,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnDarkSkeletonDeepGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnDarkSkeletonDeepGradient",
             description: "surfaceOnDarkSkeletonDeepGradient",
             darkGradients: [
@@ -1029,9 +1050,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnDarkSkeletonDeepGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnDarkSkeletonDeepGradientActive",
             description: "surfaceOnDarkSkeletonDeepGradientActive",
             darkGradients: [
@@ -1065,9 +1087,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnDarkSkeletonDeepGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnDarkSkeletonDeepGradientHover",
             description: "surfaceOnDarkSkeletonDeepGradientHover",
             darkGradients: [
@@ -1101,9 +1124,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnDarkSkeletonGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnDarkSkeletonGradient",
             description: "surfaceOnDarkSkeletonGradient",
             darkGradients: [
@@ -1181,9 +1205,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnDarkSkeletonGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnDarkSkeletonGradientActive",
             description: "surfaceOnDarkSkeletonGradientActive",
             darkGradients: [
@@ -1217,9 +1242,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnDarkSkeletonGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnDarkSkeletonGradientHover",
             description: "surfaceOnDarkSkeletonGradientHover",
             darkGradients: [
@@ -1253,9 +1279,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnLightAccentGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnLightAccentGradient",
             description: "surfaceOnLightAccentGradient",
             darkGradients: [
@@ -1289,9 +1316,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnLightAccentGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnLightAccentGradientActive",
             description: "surfaceOnLightAccentGradientActive",
             darkGradients: [
@@ -1325,9 +1353,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnLightAccentGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnLightAccentGradientHover",
             description: "surfaceOnLightAccentGradientHover",
             darkGradients: [
@@ -1361,9 +1390,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnLightSkeletonDeepGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnLightSkeletonDeepGradient",
             description: "surfaceOnLightSkeletonDeepGradient",
             darkGradients: [
@@ -1441,9 +1471,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnLightSkeletonDeepGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnLightSkeletonDeepGradientActive",
             description: "surfaceOnLightSkeletonDeepGradientActive",
             darkGradients: [
@@ -1477,9 +1508,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnLightSkeletonDeepGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnLightSkeletonDeepGradientHover",
             description: "surfaceOnLightSkeletonDeepGradientHover",
             darkGradients: [
@@ -1513,9 +1545,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnLightSkeletonGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnLightSkeletonGradient",
             description: "surfaceOnLightSkeletonGradient",
             darkGradients: [
@@ -1593,9 +1626,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnLightSkeletonGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnLightSkeletonGradientActive",
             description: "surfaceOnLightSkeletonGradientActive",
             darkGradients: [
@@ -1629,9 +1663,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var surfaceOnLightSkeletonGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "surfaceOnLightSkeletonGradientHover",
             description: "surfaceOnLightSkeletonGradientHover",
             darkGradients: [
@@ -1665,9 +1700,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textDefaultAccentGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textDefaultAccentGradient",
             description: "textDefaultAccentGradient",
             darkGradients: [
@@ -1701,9 +1737,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textDefaultAccentGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textDefaultAccentGradientActive",
             description: "textDefaultAccentGradientActive",
             darkGradients: [
@@ -1737,9 +1774,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textDefaultAccentGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textDefaultAccentGradientHover",
             description: "textDefaultAccentGradientHover",
             darkGradients: [
@@ -1773,9 +1811,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textInverseAccentGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textInverseAccentGradient",
             description: "textInverseAccentGradient",
             darkGradients: [
@@ -1809,9 +1848,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textInverseAccentGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textInverseAccentGradientActive",
             description: "textInverseAccentGradientActive",
             darkGradients: [
@@ -1845,9 +1885,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textInverseAccentGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textInverseAccentGradientHover",
             description: "textInverseAccentGradientHover",
             darkGradients: [
@@ -1881,9 +1922,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textOnDarkAccentGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textOnDarkAccentGradient",
             description: "textOnDarkAccentGradient",
             darkGradients: [
@@ -1917,9 +1959,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textOnDarkAccentGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textOnDarkAccentGradientActive",
             description: "textOnDarkAccentGradientActive",
             darkGradients: [
@@ -1953,9 +1996,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textOnDarkAccentGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textOnDarkAccentGradientHover",
             description: "textOnDarkAccentGradientHover",
             darkGradients: [
@@ -1989,9 +2033,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textOnLightAccentGradient: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textOnLightAccentGradient",
             description: "textOnLightAccentGradient",
             darkGradients: [
@@ -2025,9 +2070,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textOnLightAccentGradientActive: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textOnLightAccentGradientActive",
             description: "textOnLightAccentGradientActive",
             darkGradients: [
@@ -2061,9 +2107,10 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var textOnLightAccentGradientHover: Self {
-        GradientToken(
+        let base = GradientToken(
             id: "textOnLightAccentGradientHover",
             description: "textOnLightAccentGradientHover",
             darkGradients: [
@@ -2097,6 +2144,7 @@ public extension GradientToken {
                 )
             ]
         )
+        return ThemeTenantRegistry.shared.resolveGradient(theme: "PlasmaB2C", id: base.id, base: base)
     }
     static var tokens: [Self] = [
         surfaceDefaultAccentGradient,
