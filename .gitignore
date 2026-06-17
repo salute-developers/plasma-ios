@@ -10,6 +10,10 @@
 ./SDDSThemeBuilder/Output/
 Output/
 
+## DS Builder CLI theme files
+## .sdds/config.json остаётся в гите; токены/палитра, выгруженные DS Builder CLI, — нет.
+**/.sdds/**/
+
 ## User settings
 xcuserdata/
 
@@ -92,6 +96,10 @@ fastlane/test_output
 
 # env
 deploy.env
+# Все локальные .env-файлы (могут содержать DSBUILDER_API_KEY и пр.) — в гит не попадают.
+.env
+.env.*
+.env.local
 
 # Code Injection
 #

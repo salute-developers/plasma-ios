@@ -77,17 +77,9 @@ final class UnpackThemeCommand: Command {
     }
     
     private func buildSchemeDirectory(url: URL) -> CommandResult {
-        let fileManager = FileManager.default
-        var result = SchemeDirectory()
-        for path in SchemeDirectory.Path.allCases {
-            let url = url.appending(component: path.jsonPath)
-            if fileManager.fileExists(atPath: url.path()) {
-                result.urls[path] = url
-            } else {
-                return .error(GeneralError.invalidSchemeDirectory)
-            }
+        guard let schemeDirectory = SchemeDirectory.make(fromUnpackedDirectory: url) else {
+            return .error(GeneralError.invalidSchemeDirectory)
         }
-        
-        return .schemeDirectory(result)
+        return .schemeDirectory(schemeDirectory)
     }
 }

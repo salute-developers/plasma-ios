@@ -22,6 +22,23 @@ extension SchemeDirectory {
         }
         return url
     }
+
+    /// Собирает `SchemeDirectory` из уже распакованной директории схемы:
+    /// резолвит `meta.json` и файлы `ios/ios_*.json`. Возвращает `nil`, если
+    /// какой-либо обязательный файл отсутствует. Используется как unzip-flow'ом
+    /// (`UnpackThemeCommand`), так и локальным `.sdds`-источником.
+    static func make(fromUnpackedDirectory directory: URL) -> SchemeDirectory? {
+        let fileManager = FileManager.default
+        var result = SchemeDirectory()
+        for path in Path.allCases {
+            let url = directory.appending(component: path.jsonPath)
+            guard fileManager.fileExists(atPath: url.path()) else {
+                return nil
+            }
+            result.urls[path] = url
+        }
+        return result
+    }
 }
 
 extension SchemeDirectory.Path {
