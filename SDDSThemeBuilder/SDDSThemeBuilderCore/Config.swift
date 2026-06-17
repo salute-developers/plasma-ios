@@ -49,6 +49,12 @@ public struct ThemeBuilderConfiguration: Codable {
         /// `url` и не делает HTTP-запросов к внешнему репозиторию схем.
         /// Применяется для build-time изоляции отдельных тем.
         public let localSchemePath: String?
+        /// Относительный (от корня репо) путь к `.sdds/config.json`, который
+        /// выгружает DS Builder CLI. Если файл существует и содержит валидные
+        /// данные, тема собирается из локальной `.sdds`-директории (без скачивания
+        /// и распаковки zip-схемы). Иначе используется fallback: `localSchemePath`
+        /// либо удалённый `url`.
+        public let sddsConfigPath: String?
 
         private enum CodingKeys: String, CodingKey {
             case name
@@ -56,6 +62,7 @@ public struct ThemeBuilderConfiguration: Codable {
             case tenants
             case fontFamilyOverride
             case localSchemePath
+            case sddsConfigPath
         }
 
         public init(
@@ -63,13 +70,15 @@ public struct ThemeBuilderConfiguration: Codable {
             url: String,
             tenants: [Tenant] = [],
             fontFamilyOverride: FontFamilyOverride = .none,
-            localSchemePath: String? = nil
+            localSchemePath: String? = nil,
+            sddsConfigPath: String? = nil
         ) {
             self.name = name
             self.url = URL(string: url)!
             self.tenants = tenants
             self.fontFamilyOverride = fontFamilyOverride
             self.localSchemePath = localSchemePath
+            self.sddsConfigPath = sddsConfigPath
         }
 
         public init(from decoder: Decoder) throws {
@@ -79,6 +88,7 @@ public struct ThemeBuilderConfiguration: Codable {
             self.tenants = try container.decodeIfPresent([Tenant].self, forKey: .tenants) ?? []
             self.fontFamilyOverride = try container.decodeIfPresent(FontFamilyOverride.self, forKey: .fontFamilyOverride) ?? .none
             self.localSchemePath = try container.decodeIfPresent(String.self, forKey: .localSchemePath)
+            self.sddsConfigPath = try container.decodeIfPresent(String.self, forKey: .sddsConfigPath)
         }
     }
 
@@ -126,14 +136,17 @@ public extension ThemeBuilderConfiguration.Theme {
             .init(name: self.rawValue, url: themeURL(name: "plasma_web"))
         case .plasmaHomeDS:
             // HomeDS изолирована от upstream salute-developers/theme-converter и
-            // SBSans-шрифта: схема читается из локального snapshot-ZIP'а,
-            // typography fontName подменяется на системный SF Pro, FontsManifest
-            // выпускается пустым (никаких runtime-обращений к sberdevices.ru).
+            // SBSans-шрифта: schema читается из локальной `.sdds`-директории,
+            // выгруженной DS Builder CLI (приоритетный источник), с откатом на
+            // локальный snapshot-ZIP, если `.sdds` не заполнен. typography fontName
+            // подменяется на системный SF Pro, FontsManifest выпускается пустым
+            // (никаких runtime-обращений к sberdevices.ru).
             .init(
                 name: self.rawValue,
                 url: themeURL(name: "plasma_homeds"),
                 fontFamilyOverride: .systemSFPro,
-                localSchemePath: "SDDSThemeBuilder/LocalSchemes/plasma_homeds/latest.zip"
+                localSchemePath: "SDDSThemeBuilder/LocalSchemes/plasma_homeds/latest.zip",
+                sddsConfigPath: "SDDSThemeBuilder/.sdds/config.json"
             )
         case .sberHealth:
             .init(name: self.rawValue, url: themeURL(name: "sberHealth"))

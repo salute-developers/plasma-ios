@@ -470,12 +470,15 @@
 		81FD6D532D6E274C002A6E51 /* IndicatorProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D522D6E2749002A6E51 /* IndicatorProps.swift */; };
 		81FD6D562D6E2779002A6E51 /* IndicatorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D552D6E2776002A6E51 /* IndicatorSize.swift */; };
 		81FD6D582D6E27BF002A6E51 /* IndicatorAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D572D6E27BA002A6E51 /* IndicatorAppearance.swift */; };
+		82E57762BE576B1A119539FC /* SddsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4A6AB36664D8B7F379AD80 /* SddsConfig.swift */; };
 		A12B00112F90ABCD005A0001 /* ImageProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B00102F90ABCD005A0001 /* ImageProps.swift */; };
 		A12B00132F90ABCD005A0001 /* ImageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B00122F90ABCD005A0001 /* ImageAppearance.swift */; };
 		A12B00152F90ABCD005A0001 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B00142F90ABCD005A0001 /* ImageSize.swift */; };
 		B12B00C72F90ABCD005A0001 /* CarouselProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00C62F90ABCD005A0001 /* CarouselProps.swift */; };
 		B12B00C92F90ABCD005A0001 /* CarouselAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00C82F90ABCD005A0001 /* CarouselAppearance.swift */; };
 		B12B00CB2F90ABCD005A0001 /* CarouselSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00CA2F90ABCD005A0001 /* CarouselSize.swift */; };
+		DA6705C207C20ABE81B6D54C /* SddsThemeSourceReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE43A9FC5FEC3B62258E9804 /* SddsThemeSourceReaderTests.swift */; };
+		E2F4D42538685AD389F37800 /* SddsThemeSourceReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174EEEEF7D7128A896F9E3E2 /* SddsThemeSourceReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -561,6 +564,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		174EEEEF7D7128A896F9E3E2 /* SddsThemeSourceReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SddsThemeSourceReader.swift; sourceTree = "<group>"; };
+		1B4A6AB36664D8B7F379AD80 /* SddsConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SddsConfig.swift; sourceTree = "<group>"; };
 		243C1D122C05D1D300C17C0F /* Colors.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.stencil; sourceTree = "<group>"; };
 		243C1D142C05D38600C17C0F /* Shapes.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Shapes.stencil; sourceTree = "<group>"; };
 		243C1D162C05D39E00C17C0F /* Shadows.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Shadows.stencil; sourceTree = "<group>"; };
@@ -1004,6 +1009,7 @@
 		B12B00C62F90ABCD005A0001 /* CarouselProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselProps.swift; sourceTree = "<group>"; };
 		B12B00C82F90ABCD005A0001 /* CarouselAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselAppearance.swift; sourceTree = "<group>"; };
 		B12B00CA2F90ABCD005A0001 /* CarouselSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSize.swift; sourceTree = "<group>"; };
+		BE43A9FC5FEC3B62258E9804 /* SddsThemeSourceReaderTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SddsThemeSourceReaderTests.swift; sourceTree = "<group>"; };
 		DD63CE858546033A3F29EDA6 /* FormItemSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormItemSize.swift; path = FormItem/FormItemSize.swift; sourceTree = "<group>"; };
 		EF856C3C56D98E1C7C96BBD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -1120,6 +1126,7 @@
 				81E1EE4D2BE3A63A00F86AE1 /* Scheme */,
 				812DB6F22D55E47700D3F4A3 /* ComponentConfiguration */,
 				812DB7982D59D83B00D3F4A3 /* Props */,
+				EB79BC645C84D2A077ADF46F /* Sdds */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1274,6 +1281,15 @@
 				69A8758B2DAF9E290074C1BD /* RadioboxGroupSize.swift */,
 			);
 			path = RadioboxGroup;
+			sourceTree = "<group>";
+		};
+		71EB0A22844FB8117F646E69 /* Sdds */ = {
+			isa = PBXGroup;
+			children = (
+				174EEEEF7D7128A896F9E3E2 /* SddsThemeSourceReader.swift */,
+			);
+			name = Sdds;
+			path = Sdds;
 			sourceTree = "<group>";
 		};
 		81090AC62E4393310086BB29 /* Spinner */ = {
@@ -1829,6 +1845,7 @@
 				81C1C3272D648B940041AB56 /* Config.swift */,
 				8175395A2BD0077200138866 /* SDDSThemeBuilderCore.h */,
 				8175395B2BD0077200138866 /* SDDSThemeBuilderCore.docc */,
+				71EB0A22844FB8117F646E69 /* Sdds */,
 			);
 			path = SDDSThemeBuilderCore;
 			sourceTree = "<group>";
@@ -1843,6 +1860,7 @@
 				817539942BD12ED400138866 /* DownloadCommandTests.swift */,
 				81E1EDE12BD6F2B700F86AE1 /* TemplateRendererTests.swift */,
 				81CB10032C258EB5003B1064 /* SchemeTokenNameValidatorTests.swift */,
+				BE43A9FC5FEC3B62258E9804 /* SddsThemeSourceReaderTests.swift */,
 			);
 			path = SDDSThemeBuilderCoreTests;
 			sourceTree = "<group>";
@@ -2404,6 +2422,15 @@
 				DD63CE858546033A3F29EDA6 /* FormItemSize.swift */,
 			);
 			name = FormItem;
+			sourceTree = "<group>";
+		};
+		EB79BC645C84D2A077ADF46F /* Sdds */ = {
+			isa = PBXGroup;
+			children = (
+				1B4A6AB36664D8B7F379AD80 /* SddsConfig.swift */,
+			);
+			name = Sdds;
+			path = Sdds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3109,6 +3136,8 @@
 				3613FCC6EC87AC637BB3D5B9 /* FormItemProps.swift in Sources */,
 				8093B5461F51AB3086F9873D /* FormItemAppearance.swift in Sources */,
 				6EFD3CB528CFC6FB45048DA6 /* FormItemSize.swift in Sources */,
+				82E57762BE576B1A119539FC /* SddsConfig.swift in Sources */,
+				E2F4D42538685AD389F37800 /* SddsThemeSourceReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3128,6 +3157,7 @@
 				813340122C063151005AD84F /* TypographyContextBuilderTests.swift in Sources */,
 				81CB10042C258EB5003B1064 /* SchemeTokenNameValidatorTests.swift in Sources */,
 				81E1EDDE2BD6D6E400F86AE1 /* GeneralContextBuilderTests.swift in Sources */,
+				DA6705C207C20ABE81B6D54C /* SddsThemeSourceReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
