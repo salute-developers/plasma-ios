@@ -4,10 +4,12 @@ import Stencil
 public final class App {
     let config: ThemeBuilderConfiguration
     let sourcePath: String
-    
-    public init(config: ThemeBuilderConfiguration, sourcePath: String) {
+    let outputPath: String?
+
+    public init(config: ThemeBuilderConfiguration, sourcePath: String, outputPath: String? = nil) {
         self.config = config
         self.sourcePath = sourcePath
+        self.outputPath = outputPath
     }
     
     private func executeCommands(config: ThemeBuilderConfiguration, themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) {
@@ -378,7 +380,11 @@ extension App {
     }
     
     private func themeURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
-        themeBuilderURL.appending(component: "../Themes/\(config.name)Theme")
+        if let outputPath = outputPath, !outputPath.isEmpty {
+            return URL(fileURLWithPath: outputPath, isDirectory: true)
+                .appending(component: "\(config.name)Theme")
+        }
+        return themeBuilderURL.appending(component: "../Themes/\(config.name)Theme")
     }
 }
 
