@@ -74,6 +74,7 @@ jobs:
 
       # Commit version changes
       - name: Commit version changes
+        id: commit_bump
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -81,6 +82,7 @@ jobs:
           # Check if there are any changes to commit
           if git diff --quiet; then
             echo "No version changes to commit"
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
           else
             # Prepare commit message
             COMMIT_MSG="chore: Bump versions for changed modules\n\nChanged modules: ${{ steps.changed_modules.outputs.modules }}"
@@ -89,9 +91,11 @@ jobs:
             git add .
             git commit -m "$COMMIT_MSG"
             git push origin ${{ steps.bump_branch.outputs.branch }}
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create PR to develop
+        if: steps.commit_bump.outputs.has_changes == 'true'
         run: |
           # Prepare PR body
           PR_BODY="Автоматический PR для обновления версий Swift-пакетов\n\nИзмененные модули: ${{ steps.changed_modules.outputs.modules }}"
@@ -103,6 +107,10 @@ jobs:
             --head ${{ steps.bump_branch.outputs.branch }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Skip PR to develop
+        if: steps.commit_bump.outputs.has_changes != 'true'
+        run: echo "No version changes detected, skipping PR to develop."
 
       - name: Build Changelog
         id: changelog
