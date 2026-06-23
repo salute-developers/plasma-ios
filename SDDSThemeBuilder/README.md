@@ -1,9 +1,11 @@
 # SDDSThemeBuilder
 
 CLI-утилита для генерации Swift-кода тем дизайн-системы (SDDS) под iOS.
-Скачивает scheme-архивы тем и палитру, распаковывает их, декодирует JSON и
-по Stencil-шаблонам генерирует токены (цвета, типографику, тени, формы,
-отступы, градиенты) и вариации компонентов в каталог `Themes/<Name>Theme`.
+Берёт схему темы и палитру (из локальной `.sdds`-директории DS Builder либо из
+удалённого/локального zip-архива), декодирует JSON и по Stencil-шаблонам
+генерирует токены (цвета, типографику, тени, формы, отступы, градиенты) и
+вариации компонентов в каталог `Themes/<Name>Theme`. Источник темы выбирается
+по приоритету — см. [«Источник темы»](#источник-темы-sdds-ds-builder-или-remotezip).
 
 - **Тип:** macOS command-line tool (target `SDDSThemeBuilder` внутри
   `SDDSThemeBuilder.xcodeproj`). Отдельного SwiftPM-манифеста у CLI нет —
@@ -143,6 +145,7 @@ build/themebuilder-dd/Build/Products/Release/SDDSThemeBuilder
       "name": "PlasmaHomeDS",
       "url": "https://github.com/salute-developers/theme-converter/raw/refs/heads/main/themes/plasma_homeds/latest.zip",
       "fontFamilyOverride": "systemSFPro",
+      "sddsConfigPath": "SDDSThemeBuilder/.sdds/config.json",
       "localSchemePath": "SDDSThemeBuilder/LocalSchemes/plasma_homeds/latest.zip"
     }
   ]
@@ -157,7 +160,8 @@ build/themebuilder-dd/Build/Products/Release/SDDSThemeBuilder
 | `url` | да | URL на ZIP-архив scheme темы (upstream `theme-converter`). |
 | `tenants` | нет | Доп. суб-темы: `[{ "name", "url" }]`. Генерируются поверх базовой. |
 | `fontFamilyOverride` | нет | `none` (по умолчанию) или `systemSFPro` — подменяет `fontName` в typography-токенах на системный SF Pro и выпускает пустой `FontsManifest` (без runtime-загрузки шрифтов). Применяется по compliance-причинам. |
-| `localSchemePath` | нет | Путь (от корня репо) к локальному snapshot-ZIP. Если задан — схема читается локально через `file://`, без обращений к upstream. |
+| `sddsConfigPath` | нет | Путь (от корня репо) к `.sdds/config.json` от DS Builder CLI. Если задан и `.sdds` валиден — тема собирается **из локальной `.sdds`-директории** напрямую, без скачивания/распаковки zip. Иначе — fallback на `localSchemePath`/`url`. См. раздел [«Источник темы»](#источник-темы-sdds-ds-builder-или-remotezip). |
+| `localSchemePath` | нет | Путь (от корня репо) к локальному snapshot-ZIP. Если задан — схема читается локально через `file://`, без обращений к upstream. Служит fallback'ом, когда `.sdds` недоступен. |
 
 Верхнеуровневые поля: `paletteURL` (URL палитры цветов) и `themes` (массив тем).
 
@@ -167,8 +171,73 @@ build/themebuilder-dd/Build/Products/Release/SDDSThemeBuilder
 > распарсился (нет поля, битый JSON, нечитаемый путь), CLI печатает ошибку и
 > **молча откатывается на встроенный default-конфиг** (4 темы). Признак отката
 > в логе — строка `❌ Using default configuration...`. Внутри `themes[]`
-> опциональные поля (`tenants`, `fontFamilyOverride`, `localSchemePath`) можно
-> опускать.
+> опциональные поля (`tenants`, `fontFamilyOverride`, `sddsConfigPath`,
+> `localSchemePath`) можно опускать.
+
+---
+
+## Источник темы: `.sdds` (DS Builder) или remote/zip
+
+Для каждой темы источник схемы выбирается по приоритету (порт android #815,
+семантика `explicit ?: sdds`):
+
+1. **`.sdds`-директория** — если у темы задан `sddsConfigPath` и `.sdds` валиден
+   (есть `config.json`, файлы схемы и палитра). Тема собирается **напрямую из
+   локальных файлов**, без скачивания и распаковки zip. В логе:
+   `📦 Using local .sdds source for <Theme>`.
+2. **`localSchemePath`** — локальный snapshot-ZIP (`file://`), если `.sdds` нет
+   или он неполон.
+3. **`url`** — удалённый zip из `theme-converter`.
+
+Если `.sdds` задан, но недоступен/неполон — происходит безопасный откат на
+шаг 2/3, в логе: `⚠️ .sdds недоступен для <Theme> — fallback на remote/zip`.
+
+Сейчас на `.sdds` сконфигурирована тема **PlasmaHomeDS**
+(`sddsConfigPath: "SDDSThemeBuilder/.sdds/config.json"`).
+
+### Что лежит в `.sdds`
+
+```
+SDDSThemeBuilder/.sdds/
+├── config.json                       # отслеживается в git
+└── tenants/
+    ├── palette.json                  # gitignored
+    └── <tenant>/
+        ├── meta.json                 # gitignored
+        └── ios/ios_*.json            # gitignored (CLI читает только ios/)
+```
+
+`config.json` (манифест DS Builder-проекта: `projectId`, `designSystemId`,
+`credential.name` = имя env-переменной с ключом, список `tenants`) — **трекается**.
+Сами токены и палитра — **под `.gitignore`** (`**/.sdds/**/`), их нужно
+выгружать локально перед сборкой.
+
+### Как наполнить `.sdds` (DS Builder CLI)
+
+```sh
+# 1. dsbuilder CLI должен быть в PATH, либо укажите путь к бинарю:
+export DSBUILDER_BIN=/path/to/dsbuilder
+
+# 2. API key — в .env в корне репо (файл в .gitignore) или в окружении:
+echo 'DSBUILDER_API_KEY=<ключ>' >> .env
+
+# 3. выгрузить токены/палитру в .sdds:
+scripts/fetch_sdds.sh        # под капотом: dsbuilder theme fetch
+
+# 4. собрать тему (PlasmaHomeDS пойдёт из .sdds):
+cd SDDSThemeBuilder && ./build/themebuilder/SDDSThemeBuilder --output /tmp/out
+```
+
+- `scripts/fetch_sdds.sh` сам подхватывает `.env`, при отсутствии `config.json`
+  делает `dsbuilder init` (нужны `DSBUILDER_PROJECT_ID` и
+  `DSBUILDER_DESIGN_SYSTEM_ID`), затем `dsbuilder theme fetch`.
+- Имя env-переменной с ключом задаётся в `.sdds/config.json` (`credential.name`).
+- Проверить доступ к проекту: `dsbuilder status` из каталога `SDDSThemeBuilder/`.
+- В CI наполнение делает workflow [`.github/workflows/fetch-sdds.yml`](../.github/workflows/fetch-sdds.yml)
+  (ключ — из секрета, идентификаторы — из repo variables).
+
+Если `.sdds` не наполнен, PlasmaHomeDS соберётся из `localSchemePath`-снапшота —
+сборка не падает, просто используется fallback-источник.
 
 ---
 
