@@ -3,13 +3,24 @@ import ArgumentParser
 import SDDSThemeBuilderCore
 
 struct ThemeBuilder: ParsableCommand {
-    @Argument var configArg: String?
-    
+    @Argument(help: "Путь или URL к JSON-конфигу. Если не указан — встроенный default-конфиг.")
+    var configArg: String?
+
+    @Option(name: [.customShort("o"), .long],
+            help: "Директория для сгенерированных тем (<name>Theme). Если не указана — пишется в <repo>/Themes, как раньше.")
+    var output: String?
+
     func run() throws {
         
         let config: ThemeBuilderConfiguration
         do {
-            if let configArg = configArg, let configURL = URL(string: configArg) {
+            if let configArg = configArg {
+                let configURL: URL
+                if let parsed = URL(string: configArg), parsed.scheme != nil {
+                    configURL = parsed
+                } else {
+                    configURL = URL(fileURLWithPath: configArg)
+                }
                 let jsonData = try Data(contentsOf: configURL)
                 config = try JSONDecoder().decode(ThemeBuilderConfiguration.self, from: jsonData)
                 print("✅ \(usingExternalConfigurationMessage)")
@@ -23,7 +34,7 @@ struct ThemeBuilder: ParsableCommand {
             config = ThemeBuilderConfiguration()
         }
         
-        let app = App(config: config, sourcePath: #file)
+        let app = App(config: config, sourcePath: #file, outputPath: output)
         app.run()
     }
     

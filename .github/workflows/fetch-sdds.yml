@@ -1,0 +1,45 @@
+name: Fetch .sdds (DS Builder)
+
+# Наполняет SDDSThemeBuilder/.sdds/ данными дизайн-системы через DS Builder CLI.
+# Ключ берётся из секрета DSBUILDER_API_KEY, идентификаторы проекта — из repo variables.
+#
+# Запуск вручную (workflow_dispatch) или как переиспользуемый job (workflow_call) перед
+# генерацией тем. Сам по себе ничего не коммитит: .sdds/ эфемерен и используется в рамках
+# того же прогона (например, последующим шагом запуска SDDSThemeBuilder).
+
+on:
+  workflow_dispatch: {}
+  workflow_call:
+    secrets:
+      DSBUILDER_API_KEY:
+        required: true
+
+jobs:
+  fetch-sdds:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # dsbuilder CLI собирается из salute-developers/design-system-builder-kt (Kotlin/Native).
+      # Если у вас есть готовый бинарь/release — замените этот шаг на скачивание и
+      # `echo "<dir>" >> "$GITHUB_PATH"` (быстрее, чем сборка из исходников).
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install dsbuilder CLI
+        run: |
+          git clone --depth 1 -b feature/dsbuilder-cli \
+            https://github.com/salute-developers/design-system-builder-kt.git /tmp/dsb
+          (cd /tmp/dsb/dsbuilder-frontend && ./install-local-cli.sh)
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Fetch .sdds
+        env:
+          DSBUILDER_API_KEY: ${{ secrets.DSBUILDER_API_KEY }}
+          # Идентификаторы PlasmaHomeDS (не секреты). Repo variable, если задан, переопределяет дефолт.
+          DSBUILDER_PROJECT_ID: ${{ vars.DSBUILDER_PROJECT_ID || '758d0697-3bc2-4021-9d5b-8e28bb0ed78e' }}
+          DSBUILDER_DESIGN_SYSTEM_ID: ${{ vars.DSBUILDER_DESIGN_SYSTEM_ID || 'bab8ceb1-8c62-4e03-bb1b-c5cc240555f1' }}
+        run: ./scripts/fetch_sdds.sh
