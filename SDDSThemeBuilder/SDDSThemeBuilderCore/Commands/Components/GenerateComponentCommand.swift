@@ -1,6 +1,13 @@
 import Foundation
 import Stencil
 
+/// Источник конфигов компонентов: если задан локальный каталог, конфиг берётся
+/// из него (`<filename>`), иначе — из удалённого theme-converter. Устанавливается
+/// один раз в `App.run()`.
+enum ComponentConfigSource {
+    static var localDirectory: URL?
+}
+
 final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: CodeGenerationAppearance, Size: CodeGenerationSize>: Command, FileWriter {
     private let outputDirectoryURL: URL
     private let templateRender: Renderable
@@ -22,11 +29,21 @@ final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: 
     @discardableResult override func run() -> CommandResult {
         super.run()
         
-        let baseURL = URL(string: ThemeBuilderConfiguration.Theme.baseURL)?
-            .deletingLastPathComponent()
-            .appending(component: "components")
-            .appending(component: themeConfig.url.deletingLastPathComponent().lastPathComponent)
-        guard let baseURL = baseURL, let jsonData = try? Data(contentsOf: component.url(baseURL: baseURL)) else {
+        // Приоритет — локальный конфиг рядом с ThemeBuilder, иначе удалённый.
+        var jsonData: Data?
+        if let localDirectory = ComponentConfigSource.localDirectory {
+            jsonData = try? Data(contentsOf: localDirectory.appending(component: component.configurationFilename))
+        }
+        if jsonData == nil {
+            let baseURL = URL(string: ThemeBuilderConfiguration.Theme.baseURL)?
+                .deletingLastPathComponent()
+                .appending(component: "components")
+                .appending(component: themeConfig.url.deletingLastPathComponent().lastPathComponent)
+            if let baseURL = baseURL {
+                jsonData = try? Data(contentsOf: component.url(baseURL: baseURL))
+            }
+        }
+        guard let jsonData = jsonData else {
             return .error(GeneralError.schemeNotFound)
         }
         

@@ -50,4 +50,26 @@ extension String {
         let result = variationPathComponents.joined()
         return result
     }
+
+    /// PascalCase-«codeName» значения binding-свойства:
+    /// `m` → `M`, `xs` → `Xs`, `default` → `Default`, `no-background` → `NoBackground`.
+    var codeName: String {
+        components(separatedBy: CharacterSet(charactersIn: "-_ ."))
+            .filter { !$0.isEmpty }
+            .map { $0.prefix(1).uppercased() + $0.dropFirst() }
+            .joined()
+    }
+
+    /// Экранирует Swift-ключевые слова для доступа к члену (`default` → `` `default` ``).
+    var memberAccessSafe: String {
+        let keywords: Set<String> = ["default", "self", "case", "class", "struct", "enum", "in", "for", "return", "public", "internal", "private", "true", "false", "nil"]
+        return keywords.contains(self) ? "`\(self)`" : self
+    }
+
+    /// lowerCamel-идентификатор с экранированием ключевых слов:
+    /// `FormItemXsDefault` → `formItemXsDefault`, `Default` → `` `default` ``.
+    var lowerCamelIdentifier: String {
+        guard let first = first else { return self }
+        return (String(first).lowercased() + dropFirst()).memberAccessSafe
+    }
 }
