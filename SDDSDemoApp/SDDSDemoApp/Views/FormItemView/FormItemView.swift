@@ -30,9 +30,21 @@ struct FormItemView: View {
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
 
-            Section {
+            if viewModel.showsBindingPickers {
+                Section("Стилизация") {
+                    SandboxThemeSubthemeSection(theme: $viewModel.theme, subtheme: $viewModel.subtheme)
+                    BindingConfiguratorView(
+                        properties: viewModel.bindingProperties,
+                        values: $viewModel.bindingValues
+                    )
+                }
+            } else {
+                // Темы без binding-матрицы (HomeDS и др.): исходный выбор
+                // Theme/Variation/Style/Subtheme — их родные стили FormItem.
                 VariationsView(viewModel: viewModel)
+            }
 
+            Section("Состояние") {
                 TextField("content", text: $viewModel.content, axis: .vertical)
                     .lineLimit(2...4)
                 TextField("title", text: $viewModel.title)

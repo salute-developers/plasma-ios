@@ -1,6 +1,32 @@
 import Foundation
 import Stencil
 
+/// Источник конфигов компонентов. Резолвит конфиг:
+/// 1) локальный файл рядом с ThemeBuilder (напр. `carousel_config.json`),
+/// 2) per-theme из theme-converter (`components/<scheme>/<file>`).
+/// Конфиги binding'ов (form_item и т.п.) берутся из theme-converter per-theme —
+/// у каждой темы там свой конфиг. `localDirectory` ставится в `App.run()`.
+enum ComponentConfigSource {
+    static var localDirectory: URL?
+
+    static func data(
+        for component: CodeGenerationComponent,
+        themeConfig: ThemeBuilderConfiguration.ThemeConfiguration
+    ) -> Data? {
+        if let localDirectory = localDirectory,
+           let data = try? Data(contentsOf: localDirectory.appending(component: component.configurationFilename)) {
+            return data
+        }
+        let scheme = themeConfig.url.deletingLastPathComponent().lastPathComponent
+        let remoteBase = URL(string: ThemeBuilderConfiguration.Theme.baseURL)?
+            .deletingLastPathComponent()
+            .appending(component: "components")
+            .appending(component: scheme)
+        guard let remoteBase = remoteBase else { return nil }
+        return try? Data(contentsOf: component.url(baseURL: remoteBase))
+    }
+}
+
 final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: CodeGenerationAppearance, Size: CodeGenerationSize>: Command, FileWriter {
     private let outputDirectoryURL: URL
     private let templateRender: Renderable
@@ -22,11 +48,8 @@ final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: 
     @discardableResult override func run() -> CommandResult {
         super.run()
         
-        let baseURL = URL(string: ThemeBuilderConfiguration.Theme.baseURL)?
-            .deletingLastPathComponent()
-            .appending(component: "components")
-            .appending(component: themeConfig.url.deletingLastPathComponent().lastPathComponent)
-        guard let baseURL = baseURL, let jsonData = try? Data(contentsOf: component.url(baseURL: baseURL)) else {
+        // Приоритет — per-theme локальный конфиг, затем общий локальный, иначе удалённый.
+        guard let jsonData = ComponentConfigSource.data(for: component, themeConfig: themeConfig) else {
             return .error(GeneralError.schemeNotFound)
         }
         

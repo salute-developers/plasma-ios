@@ -131,6 +131,7 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
 
     static var supportedComponents: [CodeGenerationComponent] {
         [
+            .formItem,
 //            .basicButton,
 //            .linkButton,
 //            .iconButton,
@@ -743,7 +744,28 @@ extension CodeGenerationComponent {
         }
     }
 
-    private var configurationFilename: String {
+    /// Kebab-ключ компонента для мета-файла: `FormItem` → `form-item`.
+    var kebabKey: String {
+        var result = ""
+        for (index, character) in rawValue.enumerated() {
+            if character.isUppercase && index != 0 { result += "-" }
+            result += character.lowercased()
+        }
+        return result
+    }
+
+    /// Компоненты, для которых генерируется binding API (их конфиг содержит
+    /// `bindings`). Конфиг берётся per-theme из theme-converter.
+    var supportsBinding: Bool {
+        switch self {
+        case .formItem:
+            true
+        default:
+            false
+        }
+    }
+
+    var configurationFilename: String {
         switch self {
         case .basicButton:
             "basic_button_config.json"
