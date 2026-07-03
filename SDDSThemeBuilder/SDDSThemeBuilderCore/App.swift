@@ -190,6 +190,59 @@ public final class App {
         commands.append(contentsOf: generateComponentVariations(themeConfig: themeConfig))
 
         runCommands(commands)
+
+        generateTokensMeta(
+            themeConfig: themeConfig,
+            schemeDirectory: schemeDirectory,
+            metaScheme: metaScheme,
+            paletteURL: paletteURL,
+            fontFamiliesContainer: fontFamiliesContainer
+        )
+    }
+
+    private func generateTokensMeta(
+        themeConfig: ThemeBuilderConfiguration.ThemeConfiguration,
+        schemeDirectory: SchemeDirectory,
+        metaScheme: Scheme,
+        paletteURL: URL,
+        fontFamiliesContainer: FontFamiliesContainer
+    ) {
+        let resolver = TokenMetaResolver(
+            namespace: "\(themeConfig.name)Theme",
+            colorJson: resolvedTokenJson(ColorContextBuilder(paletteURL: paletteURL, metaScheme: metaScheme), url: schemeDirectory.url(for: .colors)),
+            gradientJson: resolvedTokenJson(GradientContextBuilder(paletteURL: paletteURL, metaScheme: metaScheme), url: schemeDirectory.url(for: .gradients)),
+            typographyJson: resolvedTokenJson(
+                TypographyContextBuilder(fontFamiliesContainer: fontFamiliesContainer, metaScheme: metaScheme, fontFamilyOverride: themeConfig.fontFamilyOverride),
+                url: schemeDirectory.url(for: .typography)
+            ),
+            shadowJson: resolvedTokenJson(GeneralContextBuilder(kind: .shadow, metaScheme: metaScheme), url: schemeDirectory.url(for: .shadows)),
+            shapeJson: resolvedTokenJson(GeneralContextBuilder(kind: .shape, metaScheme: metaScheme), url: schemeDirectory.url(for: .shapes)),
+            spacingJson: resolvedTokenJson(GeneralContextBuilder(kind: .spacing, metaScheme: metaScheme), url: schemeDirectory.url(for: .spacing))
+        )
+
+        let file = TokensMetaFile(
+            name: metaScheme.name,
+            version: metaScheme.version,
+            tokens: resolver.entries(for: metaScheme.tokens)
+        )
+        writeTokensMeta(file)
+    }
+
+    private func resolvedTokenJson(_ builder: ContexBuilder, url: URL) -> [String: Any] {
+        guard let data = try? Data(contentsOf: url) else { return [:] }
+        return (builder.buildContext(from: data).asDictionary?["json"] as? [String: Any]) ?? [:]
+    }
+
+    private func writeTokensMeta(_ file: TokensMetaFile) {
+        let url = themeBuilderURL
+            .appending(component: ".sdds")
+            .appending(component: "config-info-tokens-ios.json")
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
+        guard let data = try? encoder.encode(file) else { return }
+        try? FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try? data.write(to: url)
+        Logger.printText("📝 tokens meta written: \(url.path()) (\(file.tokens.count) tokens)")
     }
 
     private func generateTenantTheme(
