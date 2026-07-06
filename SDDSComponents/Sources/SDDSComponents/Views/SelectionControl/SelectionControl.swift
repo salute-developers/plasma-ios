@@ -101,7 +101,6 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             case .images:
                 if let image = image {
                     toggleImage(image: image)
-                        .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
                 } else {
                     EmptyView()
                 }
@@ -111,6 +110,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         }
         .padding(appearance.size.togglePaddings)
         .frame(width: appearance.size.width, height: appearance.size.height)
+        .applyIf(!isEnabled) { $0.compositingGroup().opacity(appearance.disabledAlpha) }
     }
 
     @ViewBuilder
@@ -119,27 +119,22 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         switch state {
         case .selected:
             fillView
-                .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
             icon(
                 icon: selectionControlType == .checkbox ? CheckmarkDrawer(lineWidth: appearance.size.lineWidth) : CircleDrawer(),
                 iconColor: iconColor,
                 width: appearance.size.toggleCheckedIconWidth,
                 height: appearance.size.toggleCheckedIconHeight
             )
-            .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
         case .deselected:
             borderView
-                .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
         case .indeterminate:
             fillView
-                .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
             icon(
                 icon: IndeterminateDrawer(lineWidth: appearance.size.lineWidth),
                 iconColor: iconColor,
                 width: appearance.size.toggleIndeterminateIconWidth,
                 height: appearance.size.toggleIndeterminateIconHeight
             )
-            .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
         }
     }
     

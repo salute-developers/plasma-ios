@@ -37,7 +37,6 @@ struct SDDSToggle: View {
                     height: size.toggleTrackHeight
                 ))
             shapeFill(trackShape, style: trackColor)
-                .opacity(trackOpacity)
 
             let thumbShape = size.toggleThumbPathDrawer
                 .path(in: CGRect(
@@ -47,7 +46,6 @@ struct SDDSToggle: View {
                     height: size.toggleThumbHeight
                 ))
             shapeFill(thumbShape, style: thumbColor)
-                .opacity(trackOpacity)
                 .frame(
                     width: size.toggleThumbWidth,
                     height: size.toggleThumbHeight
@@ -61,6 +59,8 @@ struct SDDSToggle: View {
             width: size.toggleTrackWidth,
             height: size.toggleTrackHeight
         )
+        .compositingGroup()
+        .opacity(trackOpacity)
         .contentShape(Rectangle())
         .onTapGesture {
             withAnimation(.easeInOut(duration: 0.2)) {
