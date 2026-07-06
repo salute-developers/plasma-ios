@@ -126,6 +126,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                 width: appearance.size.toggleCheckedIconWidth,
                 height: appearance.size.toggleCheckedIconHeight
             )
+            .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
         case .deselected:
             borderView
                 .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
@@ -138,6 +139,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                 width: appearance.size.toggleIndeterminateIconWidth,
                 height: appearance.size.toggleIndeterminateIconHeight
             )
+            .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
         }
     }
     
