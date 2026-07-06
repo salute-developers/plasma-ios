@@ -9,19 +9,22 @@ struct SDDSToggle: View {
     var onColor: FillStyle
     var offColor: FillStyle
     var thumbColor: FillStyle
+    var trackOpacity: CGFloat
 
     init(
         isOn: Binding<Bool>,
         size: SwitchSizeConfiguration,
         onColor: FillStyle,
         offColor: FillStyle,
-        thumbColor: FillStyle
+        thumbColor: FillStyle,
+        trackOpacity: CGFloat = 1.0
     ) {
         self._isOn = isOn
         self.size = size
         self.onColor = onColor
         self.offColor = offColor
         self.thumbColor = thumbColor
+        self.trackOpacity = trackOpacity
     }
 
     public var body: some View {
@@ -34,6 +37,7 @@ struct SDDSToggle: View {
                     height: size.toggleTrackHeight
                 ))
             shapeFill(trackShape, style: trackColor)
+                .opacity(trackOpacity)
 
             let thumbShape = size.toggleThumbPathDrawer
                 .path(in: CGRect(
@@ -43,6 +47,7 @@ struct SDDSToggle: View {
                     height: size.toggleThumbHeight
                 ))
             shapeFill(thumbShape, style: thumbColor)
+                .opacity(trackOpacity)
                 .frame(
                     width: size.toggleThumbWidth,
                     height: size.toggleThumbHeight
