@@ -176,6 +176,7 @@
 		81D59FDA2ED8801A00156885 /* TabsHeader */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsHeader; sourceTree = "<group>"; };
 		81F0A1012F10000100AAA111 /* AutocompleteNormal */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteNormal; sourceTree = "<group>"; };
 		81F0A1022F10000100AAA111 /* AutocompleteTight */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AutocompleteTight; sourceTree = "<group>"; };
+		81F217762FFE875500B3E648 /* FormItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FormItem; sourceTree = "<group>"; };
 		A1B2C3D52F901002005A0001 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -198,6 +199,7 @@
 		0432B629B756AFEDB48A7E3A = {
 			isa = PBXGroup;
 			children = (
+				81F217762FFE875500B3E648 /* FormItem */,
 				818873732FA251B0004AA1A0 /* Carousel */,
 				81B03AAA2F7D468D005AD40F /* PaginationDotsHorizontal */,
 				81B03AAF2F7D468D005AD40F /* PaginationDotsVertical */,
@@ -530,6 +532,7 @@
 				81D59FDA2ED8801A00156885 /* TabsHeader */,
 				81F0A1012F10000100AAA111 /* AutocompleteNormal */,
 				81F0A1022F10000100AAA111 /* AutocompleteTight */,
+				81F217762FFE875500B3E648 /* FormItem */,
 				A1B2C3D52F901002005A0001 /* Image */,
 			);
 			name = SDDSServTheme;

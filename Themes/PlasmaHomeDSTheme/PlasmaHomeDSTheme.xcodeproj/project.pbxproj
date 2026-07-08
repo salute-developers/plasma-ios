@@ -11,7 +11,7 @@
 		810AFBC02D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810AFB452D93284F000B2A7A /* EnvironmentValueProvider+DefaultValues.swift */; };
 		815E68BC2EE9CACD001EA7C8 /* InputMask.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815E68BB2EE9CACD001EA7C8 /* InputMask.xcframework */; };
 		81BA173E2D8067F4008F0A59 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA173D2D8067F4008F0A59 /* SDDSIcons.xcframework */; };
-		81BBE2772D75A21000612681 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BBE2762D75A21000612681 /* SDDSComponents.xcframework */; };
+		81F212A82FFE841F00B3E648 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BBE2762D75A21000612681 /* SDDSComponents.xcframework */; };
 		A1475962183C339E7CE6BF0A /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9047DBBE21A8C9A933382C9C /* SDDSThemeCore.xcframework */; };
 		B6D24814392571A7045355D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4118B88704BA52412552A16 /* Foundation.framework */; };
 		F02D0037BC34DF591D183E0A /* SDDSTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A8EDA9D7C1C6EADE8CBB534 /* SDDSTheme.h */; };
@@ -77,8 +77,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CollapsingNavigationBarInternalPage; sourceTree = "<group>"; };
-		81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CollapsingNavigationBarMainPage; sourceTree = "<group>"; };
 		813BCC552EB29C4300E4E505 /* Avatar */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Avatar; sourceTree = "<group>"; };
 		813BCC5A2EB29C4300E4E505 /* AvatarGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AvatarGroup; sourceTree = "<group>"; };
 		813BCC5F2EB29C4300E4E505 /* Badge */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Badge; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		813BCCB62EB29C4300E4E505 /* IconBadgeTransparent */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconBadgeTransparent; sourceTree = "<group>"; };
 		813BCCBB2EB29C4300E4E505 /* IconButton */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconButton; sourceTree = "<group>"; };
 		813BCCC02EB29C4300E4E505 /* IconButtonGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconButtonGroup; sourceTree = "<group>"; };
-		A12BE0022EB29C4300E4E507 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
 		813BCCC52EB29C4300E4E505 /* Indicator */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Indicator; sourceTree = "<group>"; };
 		813BCCCA2EB29C4300E4E505 /* List */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = List; sourceTree = "<group>"; };
 		813BCCCF2EB29C4300E4E505 /* ListItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListItem; sourceTree = "<group>"; };
@@ -117,6 +114,10 @@
 		813BCD042EB29C4300E4E505 /* Tokens */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tokens; sourceTree = "<group>"; };
 		813BCD092EB29C4300E4E505 /* Tooltip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tooltip; sourceTree = "<group>"; };
 		8183C42E2EB2A71400610A9A /* Wheel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Wheel; sourceTree = "<group>"; };
+		81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CollapsingNavigationBarInternalPage; sourceTree = "<group>"; };
+		81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CollapsingNavigationBarMainPage; sourceTree = "<group>"; };
+		81F20FF32FFE81F900B3E648 /* FormItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FormItem; sourceTree = "<group>"; };
+		A12BE0022EB29C4300E4E507 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +127,9 @@
 			files = (
 				815E68BC2EE9CACD001EA7C8 /* InputMask.xcframework in Frameworks */,
 				B6D24814392571A7045355D1 /* Foundation.framework in Frameworks */,
+				81F212A82FFE841F00B3E648 /* SDDSComponents.xcframework in Frameworks */,
 				A1475962183C339E7CE6BF0A /* SDDSThemeCore.xcframework in Frameworks */,
 				81BA173E2D8067F4008F0A59 /* SDDSIcons.xcframework in Frameworks */,
-				81BBE2772D75A21000612681 /* SDDSComponents.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +209,7 @@
 		B30D10EF1B9A708790D4AADE = {
 			isa = PBXGroup;
 			children = (
+				81F20FF32FFE81F900B3E648 /* FormItem */,
 				81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */,
 				81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */,
 				8183C42E2EB2A71400610A9A /* Wheel */,
@@ -297,8 +299,6 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */,
-				81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */,
 				813BCC552EB29C4300E4E505 /* Avatar */,
 				813BCC5A2EB29C4300E4E505 /* AvatarGroup */,
 				813BCC5F2EB29C4300E4E505 /* Badge */,
@@ -322,7 +322,6 @@
 				813BCCB62EB29C4300E4E505 /* IconBadgeTransparent */,
 				813BCCBB2EB29C4300E4E505 /* IconButton */,
 				813BCCC02EB29C4300E4E505 /* IconButtonGroup */,
-				A12BE0022EB29C4300E4E507 /* Image */,
 				813BCCC52EB29C4300E4E505 /* Indicator */,
 				813BCCCA2EB29C4300E4E505 /* List */,
 				813BCCCF2EB29C4300E4E505 /* ListItem */,
@@ -337,6 +336,10 @@
 				813BCD042EB29C4300E4E505 /* Tokens */,
 				813BCD092EB29C4300E4E505 /* Tooltip */,
 				8183C42E2EB2A71400610A9A /* Wheel */,
+				81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */,
+				81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */,
+				81F20FF32FFE81F900B3E648 /* FormItem */,
+				A12BE0022EB29C4300E4E507 /* Image */,
 			);
 			name = PlasmaHomeDSTheme;
 			productName = PlasmaHomeDSTheme;

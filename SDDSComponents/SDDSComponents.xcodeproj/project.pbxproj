@@ -386,6 +386,7 @@
 		81ED2DF42E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DF02E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift */; };
 		81ED2DF72E71CF0B004DB74B /* NotificationContentButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */; };
 		81ED2DF82E71CF0B004DB74B /* NotificationContentIconPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DEF2E71CF0B004DB74B /* NotificationContentIconPlacement.swift */; };
+		81F20FFB2FFE825700B3E648 /* BindingProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F20FFA2FFE825700B3E648 /* BindingProperty.swift */; };
 		81F2AA9A2F20010100ABCD01 /* StatefulColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2AA992F20010100ABCD01 /* StatefulColor.swift */; };
 		81F63C032DBF7B4C003C8C26 /* AvatarPlacementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */; };
 		81F752E22CECD40A000156D9 /* BasicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F752E12CECD40A000156D9 /* BasicButton.swift */; };
@@ -1322,6 +1323,7 @@
 		81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentButtonLayout.swift; sourceTree = "<group>"; };
 		81ED2DEF2E71CF0B004DB74B /* NotificationContentIconPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentIconPlacement.swift; sourceTree = "<group>"; };
 		81ED2DF02E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentSizeConfiguration.swift; sourceTree = "<group>"; };
+		81F20FFA2FFE825700B3E648 /* BindingProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingProperty.swift; sourceTree = "<group>"; };
 		81F2AA992F20010100ABCD01 /* StatefulColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulColor.swift; sourceTree = "<group>"; };
 		81F63C022DBF7B4B003C8C26 /* AvatarPlacementContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPlacementContainer.swift; sourceTree = "<group>"; };
 		81F752E12CECD40A000156D9 /* BasicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButton.swift; sourceTree = "<group>"; };
@@ -2600,6 +2602,7 @@
 		818C03B32C418C3E002C6D0A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				81F20FFA2FFE825700B3E648 /* BindingProperty.swift */,
 				816CE0132EFEE4FC00446DEE /* OverlayContainerView.swift */,
 				81E9699D2ED78A2F00229705 /* View+Subthemes.swift */,
 				81E91FF72ED77FE200229705 /* ColorToken+Subtheme.swift */,
@@ -4990,6 +4993,7 @@
 				8178A0862DF2F6B5003F5041 /* ModalAppearance.swift in Sources */,
 				81368D6E2E018DBE00A1702A /* SkeletonLineWidthProvider.swift in Sources */,
 				8191DF082EAF97E9006E36F5 /* NoteCompactContentBeforeArrangement.swift in Sources */,
+				81F20FFB2FFE825700B3E648 /* BindingProperty.swift in Sources */,
 				8191DF092EAF97E9006E36F5 /* SDDSNote.swift in Sources */,
 				8191DF0A2EAF97E9006E36F5 /* NoteAppearance.swift in Sources */,
 				8191DF0B2EAF97E9006E36F5 /* NoteContentBeforeArrangement.swift in Sources */,
