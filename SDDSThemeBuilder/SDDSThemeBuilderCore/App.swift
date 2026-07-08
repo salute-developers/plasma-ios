@@ -190,6 +190,158 @@ public final class App {
         commands.append(contentsOf: generateComponentVariations(themeConfig: themeConfig))
 
         runCommands(commands)
+
+        generateTokensMeta(
+            themeConfig: themeConfig,
+            schemeDirectory: schemeDirectory,
+            metaScheme: metaScheme,
+            paletteURL: paletteURL,
+            fontFamiliesContainer: fontFamiliesContainer
+        )
+        generateBindingArtifacts(themeConfig: themeConfig, schemeDirectory: schemeDirectory)
+    }
+
+    private func generateTokensMeta(
+        themeConfig: ThemeBuilderConfiguration.ThemeConfiguration,
+        schemeDirectory: SchemeDirectory,
+        metaScheme: Scheme,
+        paletteURL: URL,
+        fontFamiliesContainer: FontFamiliesContainer
+    ) {
+        let resolver = TokenMetaResolver(
+            namespace: "\(themeConfig.name)Theme",
+            colorJson: resolvedTokenJson(ColorContextBuilder(paletteURL: paletteURL, metaScheme: metaScheme), url: schemeDirectory.url(for: .colors)),
+            gradientJson: resolvedTokenJson(GradientContextBuilder(paletteURL: paletteURL, metaScheme: metaScheme), url: schemeDirectory.url(for: .gradients)),
+            typographyJson: resolvedTokenJson(
+                TypographyContextBuilder(fontFamiliesContainer: fontFamiliesContainer, metaScheme: metaScheme, fontFamilyOverride: themeConfig.fontFamilyOverride),
+                url: schemeDirectory.url(for: .typography)
+            ),
+            shadowJson: resolvedTokenJson(GeneralContextBuilder(kind: .shadow, metaScheme: metaScheme), url: schemeDirectory.url(for: .shadows)),
+            shapeJson: resolvedTokenJson(GeneralContextBuilder(kind: .shape, metaScheme: metaScheme), url: schemeDirectory.url(for: .shapes)),
+            spacingJson: resolvedTokenJson(GeneralContextBuilder(kind: .spacing, metaScheme: metaScheme), url: schemeDirectory.url(for: .spacing))
+        )
+
+        let file = TokensMetaFile(
+            name: metaScheme.name,
+            version: metaScheme.version,
+            tokens: resolver.entries(for: metaScheme.tokens)
+        )
+        writeTokensMeta(file)
+    }
+
+    private func resolvedTokenJson(_ builder: ContexBuilder, url: URL) -> [String: Any] {
+        guard let data = try? Data(contentsOf: url) else { return [:] }
+        return (builder.buildContext(from: data).asDictionary?["json"] as? [String: Any]) ?? [:]
+    }
+
+    private func writeTokensMeta(_ file: TokensMetaFile) {
+        let url = themeBuilderURL
+            .appending(component: ".sdds")
+            .appending(component: "config-info-tokens-ios.json")
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
+        guard let data = try? encoder.encode(file) else { return }
+        try? FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try? data.write(to: url)
+        Logger.printText("📝 tokens meta written: \(url.path()) (\(file.tokens.count) tokens)")
+    }
+
+    // MARK: - Binding API (meta + styles collection)
+
+    /// Генерирует binding API: для каждого компонента с `bindings` в конфиге —
+    /// `<Component>+StylesCollection.swift`, и общий мета-файл `.sdds/config-info-ios.json`.
+    private func generateBindingArtifacts(
+        themeConfig: ThemeBuilderConfiguration.ThemeConfiguration,
+        schemeDirectory: SchemeDirectory
+    ) {
+        var componentMetas: [ConfigInfo.ComponentMeta] = []
+
+        // Компоненты с binding API (их конфиг содержит `bindings`). Конфиг темы
+        // берётся per-theme из theme-converter; темы без такого компонента дают
+        // 404 и просто пропускаются ниже.
+        let components = CodeGenerationComponent.allCases.filter { $0.supportsBinding }
+
+        for component in components {
+            guard let raw = rawComponentConfig(component: component, themeConfig: themeConfig),
+                  let bindings = raw.bindings, !bindings.isEmpty else {
+                continue
+            }
+            let resolver = ComponentBindingResolver(
+                component: component.rawValue,
+                key: component.kebabKey,
+                appearanceType: component.appearance,
+                bindings: bindings,
+                variations: (raw.variations ?? []).map {
+                    .init(id: $0.id, parent: $0.parent, binding: $0.binding ?? [])
+                }
+            )
+            guard let info = resolver.resolve(), !info.isEmpty else { continue }
+
+            let outputURL = generatedComponentsURL(component: component, config: themeConfig)
+            writeString(
+                info.stylesCollectionSource(),
+                to: outputURL,
+                filename: "\(component.rawValue)+StylesCollection.swift"
+            )
+            componentMetas.append(info.componentMeta())
+            Logger.printText("🔗 Binding API generated for \(component.rawValue) (\(info.styles.count) styles)")
+        }
+
+        let configInfo = ConfigInfo(
+            name: themeConfig.name,
+            packageName: themeConfig.name,
+            tokens: tokenMetas(metaURL: schemeDirectory.url(for: .meta)),
+            components: componentMetas
+        )
+        writeConfigInfo(configInfo)
+    }
+
+    /// Читает конфиг компонента только для binding-данных (per-theme резолв
+    /// через `ComponentConfigSource`).
+    private func rawComponentConfig(
+        component: CodeGenerationComponent,
+        themeConfig: ThemeBuilderConfiguration.ThemeConfiguration
+    ) -> RawComponentConfig? {
+        guard let data = ComponentConfigSource.data(for: component, themeConfig: themeConfig) else {
+            return nil
+        }
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return try? decoder.decode(RawComponentConfig.self, from: data)
+    }
+
+    private func tokenMetas(metaURL: URL) -> [ConfigInfo.TokenMeta] {
+        struct RawMeta: Codable {
+            struct Token: Codable {
+                let id: String?
+                let name: String
+                let type: String?
+                let tags: [String]?
+            }
+            let tokens: [Token]?
+        }
+        guard let data = try? Data(contentsOf: metaURL),
+              let meta = try? JSONDecoder().decode(RawMeta.self, from: data) else {
+            return []
+        }
+        return (meta.tokens ?? []).map { .init(id: $0.id, name: $0.name, type: $0.type, tags: $0.tags) }
+    }
+
+    private func writeString(_ content: String, to directory: URL, filename: String) {
+        try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        try? content.data(using: .utf8)?.write(to: directory.appending(component: filename))
+    }
+
+    private func writeConfigInfo(_ info: ConfigInfo) {
+        let url = themeBuilderURL
+            .appending(component: ".sdds")
+            .appending(component: "config-info-ios.json")
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
+        guard let data = try? encoder.encode(info) else { return }
+        try? FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try? data.write(to: url)
+        Logger.printText("📝 config-info written: \(url.path())")
     }
 
     private func generateTenantTheme(
@@ -455,6 +607,8 @@ extension App: Runnable {
         Logger.printLine()
         Logger.printText("⏰ Running SDDSThemeBuilder...")
         Logger.printLine()
+
+        ComponentConfigSource.localDirectory = themeBuilderURL
 
         for themeConfig in config.themes {
             Logger.printText("🚀 Generating code for theme \(themeConfig.name)...")

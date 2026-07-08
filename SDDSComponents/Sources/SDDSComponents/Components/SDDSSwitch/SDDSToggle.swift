@@ -9,19 +9,22 @@ struct SDDSToggle: View {
     var onColor: FillStyle
     var offColor: FillStyle
     var thumbColor: FillStyle
+    var trackOpacity: CGFloat
 
     init(
         isOn: Binding<Bool>,
         size: SwitchSizeConfiguration,
         onColor: FillStyle,
         offColor: FillStyle,
-        thumbColor: FillStyle
+        thumbColor: FillStyle,
+        trackOpacity: CGFloat = 1.0
     ) {
         self._isOn = isOn
         self.size = size
         self.onColor = onColor
         self.offColor = offColor
         self.thumbColor = thumbColor
+        self.trackOpacity = trackOpacity
     }
 
     public var body: some View {
@@ -56,6 +59,8 @@ struct SDDSToggle: View {
             width: size.toggleTrackWidth,
             height: size.toggleTrackHeight
         )
+        .compositingGroup()
+        .opacity(trackOpacity)
         .contentShape(Rectangle())
         .onTapGesture {
             withAnimation(.easeInOut(duration: 0.2)) {
