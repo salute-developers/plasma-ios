@@ -89,9 +89,9 @@ public struct SDDSSwitch: View {
                     size: appearance.size,
                     onColor: appearance.toggleTrackStatefulColor.resolvedValue(for: Set([InteractiveState.checked])),
                     offColor: appearance.toggleTrackStatefulColor.resolvedValue(for: Set<InteractiveState>()),
-                    thumbColor: appearance.toggleThumbColor.resolvedDefaultValue()
+                    thumbColor: appearance.toggleThumbColor.resolvedDefaultValue(),
+                    trackOpacity: isEnabled ? 1.0 : appearance.disabledAlpha
                 )
-                .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
                 .overlay(switchBorder)
                 .accessibilityLabel(Text(switchAccessibility.toggleLabel))
                 .accessibilityValue(Text(isOn ? "On" : "Off"))

@@ -98,7 +98,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     private var controlView: some View {
         ZStack {
             switch selectionControlToggle {
-            case .images(let selectionControlStateImages):
+            case .images:
                 if let image = image {
                     toggleImage(image: image)
                 } else {
@@ -110,9 +110,9 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         }
         .padding(appearance.size.togglePaddings)
         .frame(width: appearance.size.width, height: appearance.size.height)
-        .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
+        .applyIf(!isEnabled) { $0.compositingGroup().opacity(appearance.disabledAlpha) }
     }
-    
+
     @ViewBuilder
     private var pathDrawerView: some View {
         let iconColor = resolvedFillStyle(for: state == .indeterminate ? appearance.toggleColorIndeterminate : appearance.toggleColorChecked)
