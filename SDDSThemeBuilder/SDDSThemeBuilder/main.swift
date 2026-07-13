@@ -10,6 +10,10 @@ struct ThemeBuilder: ParsableCommand {
             help: "Директория для сгенерированных тем (<name>Theme). Если не указана — пишется в <repo>/Themes, как раньше.")
     var output: String?
 
+    @Flag(name: .long,
+          help: "Собрать self-contained плоскую папку исходников токенов (<name>ThemeSources): токены + вендоренный SDDSThemeCore + Theme.swift, без линковки библиотек.")
+    var standalone: Bool = false
+
     func run() throws {
         
         let config: ThemeBuilderConfiguration
@@ -34,7 +38,7 @@ struct ThemeBuilder: ParsableCommand {
             config = ThemeBuilderConfiguration()
         }
         
-        let app = App(config: config, sourcePath: #file, outputPath: output)
+        let app = App(config: config, sourcePath: #file, outputPath: output, standalone: standalone)
         app.run()
     }
     

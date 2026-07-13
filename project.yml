@@ -1,0 +1,53 @@
+# project.yml — контракт переносимости для AI-агентной инфры plasma-ios.
+# Описывает пакеты и источники знаний. Без deploy/Docker/labels: проект локальный,
+# без бэкенда, CI и issue-трекера.
+
+name: plasma-ios
+description: >-
+  Адаптация дизайн-системы SDDS под iOS: библиотека компонентов (SwiftUI + UIKit),
+  рантайм-ядро токенов и CLI-генератор тем.
+
+packages:
+  - dir: SDDSComponents
+    type: swift-library            # SwiftPM + Xcode project
+    build: "xcodebuild -project SDDSComponents/SDDSComponents.xcodeproj -scheme SDDSComponents -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.6' build"
+    test: "xcodebuild -project SDDSComponents/SDDSComponents.xcodeproj -scheme SDDSComponents -destination 'platform=iOS Simulator,name=iPhone 16 Pro Max' test"
+    lint: "./lint.sh"
+
+  - dir: SDDSThemeBuilder
+    type: swift-cli                # macOS command-line tool (генератор тем)
+    build: "cd SDDSThemeBuilder && ./build_cli.sh"
+    test: "ruby scripts/run_tests.rb"   # SDDSThemeBuilderCoreTests (macOS)
+    lint: "./lint.sh"
+
+  - dir: SDDSThemeBuilder/SDDSThemeCore
+    type: swift-library            # портируемое рантайм-ядро токенов
+    lint: "./lint.sh"
+
+  - dir: SDDSDemoApp
+    type: ios-app                  # демо/песочница компонентов
+    build: "cd SDDSDemoApp && xcodebuild -scheme SDDSDemoApp -destination 'generic/platform=iOS Simulator' build"
+    lint: "./lint.sh"
+
+  - dir: SDDSIcons
+    type: swift-library            # asset-бандл иконок (swiftgen)
+    lint: "./lint.sh"
+
+  - dir: Themes
+    type: generated                # сгенерированные пакеты тем (не править руками)
+
+  - dir: IntegrationCore
+    type: swift-library            # SandboxCore / SandboxDemoTheme / SandboxSwiftUI
+    test: "swift test --package-path IntegrationCore/SandboxCore"
+    lint: "./lint.sh"
+
+  - dir: SDDSComponentsFixtures
+    type: swift-library            # тестовые фикстуры компонентов
+    lint: "./lint.sh"
+
+  - dir: scripts
+    type: tooling                  # Ruby/Bash: сборка, релиз, генерация
+
+knowledge:
+  graph_mcp: serena                # граф-навигация по коду (см. .mcp.json)
+  memory: .claude/memory           # память команды (индекс + факты)
