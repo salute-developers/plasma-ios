@@ -45,3 +45,27 @@ xcodebuild -project SDDSDemoApp.xcodeproj -scheme SDDSDemoApp -destination 'plat
 ```
 
 Вместо `iPhone 16,OS=18.6` укажите доступный симулятор из списка `xcodebuild -destination 'platform=iOS Simulator' -showdestinations`.
+
+## AI-агентная инфра
+
+В репозитории развёрнута локальная инфраструктура для работы с AI-агентом (Claude Code).
+Работает **в интерактивном режиме в рамках подписки** — без метерного API, без GitHub
+Actions, без issue-трекера.
+
+**Что где лежит:**
+- Карта для агента: корневой [CLAUDE.md](CLAUDE.md) + по одному `CLAUDE.md` в значимых
+  пакетах (читаются вместо `grep`).
+- Контракт пакетов/знаний: [project.yml](project.yml).
+- Граф-навигация по коду (MCP Serena): [.mcp.json](.mcp.json).
+- Память команды: [.claude/memory/](.claude/memory/) (индекс `MEMORY.md`, правила биллинга,
+  ключевые решения).
+- Процесс: [docs/LOCAL_WORKFLOW.md](docs/LOCAL_WORKFLOW.md),
+  [docs/TASK_GUIDE.md](docs/TASK_GUIDE.md), локальный [docs/BACKLOG.md](docs/BACKLOG.md).
+- Spec-driven workflow для фич: **OpenSpec** (`/opsx:*`, спеки в `openspec/`).
+
+**Правила биллинга (важно):** держать `ANTHROPIC_API_KEY` **unset**; не использовать
+`claude -p`/headless (метерно); проверка результата — локально + просмотр владельцем. Детали —
+[.claude/memory/local-mode-billing.md](.claude/memory/local-mode-billing.md).
+
+**Ручная доустановка инструментов** (OpenSpec, superpowers, claude-mem, проверка Serena) —
+см. [docs/LOCAL_WORKFLOW.md](docs/LOCAL_WORKFLOW.md) и подсказки при первом запуске сессии.
