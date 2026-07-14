@@ -69,7 +69,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
@@ -89,7 +89,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
@@ -305,7 +305,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
@@ -523,7 +523,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
@@ -757,7 +757,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
@@ -777,7 +777,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
@@ -993,7 +993,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
@@ -1211,7 +1211,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
@@ -1445,7 +1445,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
@@ -1465,7 +1465,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
@@ -1681,7 +1681,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
@@ -1899,7 +1899,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
