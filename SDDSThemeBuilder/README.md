@@ -91,6 +91,12 @@ build/themebuilder-dd/Build/Products/Release/SDDSThemeBuilder
 | --- | --- |
 | `[config]` (позиционный, необязательный) | Путь или URL к JSON-конфигу. Принимается как обычный путь в ФС (абсолютный или относительный от текущей директории), так и URL со схемой (`file://`, `http(s)://`). Если не передан или файл не читается — используется встроенный default-конфиг из [`Config.swift`](SDDSThemeBuilderCore/Config.swift). |
 | `-o, --output <dir>` | Директория для сгенерированных тем. Если задана — каждая тема пишется в `<dir>/<ThemeName>Theme`. Если не задана — поведение прежнее (`<repo>/Themes`). |
+| `--standalone` | Собрать **автономный** бандл темы (`<ThemeName>ThemeSources`) — плоскую папку `.swift`, компилируемую одним модулем без линковки наших библиотек. См. [«Автономные исходники»](#автономные-исходники-standalone). |
+| `--components` | Аддитивно к `--standalone`: включить в бандл слой компонентов (иначе — только токены). |
+| `--standalone-output <dir>` | Куда класть автономный бандл. По умолчанию — `SDDSThemeBuilder/build/standalone`. |
+| `--external-dependencies` | Вендорить исходники внешних зависимостей (`InputMask`) в бандл. По умолчанию они **не** копируются — `import InputMask` сохранён, клиент линкует модуль сам. |
+| `--core-sources <dir>` | Путь к исходникам `SDDSThemeCore` для встраивания в бандл. По умолчанию — от `--sources-root`. |
+| `--sources-root <dir>` | Корень вендоримых исходников (библиотеки + пакет темы). По умолчанию — корень репозитория. Позволяет запускать CLI **вне** plasma-ios, указав распакованную копию исходников (напр. артефакт релиза). |
 
 ### Куда пишется результат
 
@@ -121,6 +127,121 @@ build/themebuilder-dd/Build/Products/Release/SDDSThemeBuilder
 
 ---
 
+## Автономные исходники (standalone)
+
+Режим `--standalone` собирает тему как **плоскую папку `.swift`**
+(`<ThemeName>ThemeSources`), которую можно подключить к чужому проекту **без
+линковки наших библиотек** (`SDDSThemeCore`, `SDDSComponents`, `SDDSIcons`) и
+обфусцировать своими средствами. Вся папка компилируется как **один модуль**.
+
+Два уровня:
+
+- **Только токены** (`--standalone`): сгенерированные токены + вендоренный
+  `SDDSThemeCore` + сгенерированный `Theme.swift`. Лёгкий вариант, без ресурсов и
+  без внешних зависимостей.
+- **Токены + компоненты** (`--standalone --components`): дополнительно —
+  вендоренные `SDDSComponents` / `SDDSIcons` (исходник `Asset` + каталоги
+  `Assets.xcassets`), вариации компонентов темы и регистрация дефолтных appearance.
+  Сторонняя `InputMask` (маскирование ввода в текстовых полях) по умолчанию
+  **остаётся внешней зависимостью** — см. [«InputMask»](#inputmask-внешняя-зависимость).
+
+```sh
+cd SDDSThemeBuilder
+./build_cli.sh
+
+# Только токены выбранной темы → build/standalone/<ThemeName>ThemeSources
+./build/themebuilder/SDDSThemeBuilder file:///path/to/config.json --standalone
+
+# Токены + компоненты
+./build/themebuilder/SDDSThemeBuilder file:///path/to/config.json --standalone --components
+
+# В свою директорию
+./build/themebuilder/SDDSThemeBuilder file:///path/to/config.json --standalone --components \
+  --standalone-output /path/to/out
+# → /path/to/out/<ThemeName>ThemeSources
+
+# Токены + компоненты, InputMask вендорится в бандл (полностью автономно)
+./build/themebuilder/SDDSThemeBuilder file:///path/to/config.json --standalone --components \
+  --external-dependencies
+```
+
+**Куда пишется:** `--standalone-output <dir>` (по умолчанию
+`SDDSThemeBuilder/build/standalone`), внутри — папка `<ThemeName>ThemeSources` на
+каждую тему из конфига. `build/` в `.gitignore`. Промежуточная генерация токенов
+в standalone-режиме без `-o` идёт в `build/standalone-work` и **не перезаписывает**
+закоммиченные `Themes/*`.
+
+**Подключение у клиента:** положить папку (вместе с `.xcassets` для уровня с
+компонентами) в свой target и вызвать `Theme.initialize(tenant:)`; токены доступны
+напрямую (`Colors.<token>` и т.д.), для уровня с компонентами — `View.subtheme(_:)`.
+Для уровня с компонентами (без `--external-dependencies`) клиент дополнительно
+подключает `InputMask` как зависимость (см. ниже).
+
+> Каждый `.swift` бандла начинается с шапки `// Code generated … DO NOT EDIT`:
+> файлы перегенерируются при обновлении, ручные правки перетрутся.
+
+### Откуда берутся исходники (запуск вне репозитория)
+
+Вендоримые исходники (ядро, компоненты, иконки, `InputMask`) и **пакет темы**
+(`Themes/<Name>Theme` — вариации компонентов + `DefaultValues`) берутся от
+`--sources-root` (по умолчанию — корень репозитория). Чтобы запускать CLI **вне**
+plasma-ios, укажите `--sources-root <dir>` на распакованную копию исходников
+(напр. артефакт релиза с тем же деревом путей); `--core-sources` при необходимости
+переопределяет только корень `SDDSThemeCore`.
+
+> Планируется: публикация версионированного артефакта исходников на релизе и
+> `--sources-version` для загрузки нужной версии — тогда завязка на репозиторий
+> исчезает полностью, а клиент сможет обновлять исходники на конкретную версию.
+
+### InputMask (внешняя зависимость)
+
+`InputMask` (RedMadRobot, MIT, ноль зависимостей) нужен компонентам маскированного
+ввода в текстовых полях. Это единственная **сторонняя** зависимость слоя компонентов,
+поэтому по умолчанию она **не вендорится** в бандл: `import InputMask` в исходниках
+сохраняется, а клиент подключает `InputMask` сам (SPM/CocoaPods). Так клиент не тащит
+и не обфусцирует чужой код.
+
+Флаг `--external-dependencies` **встраивает** исходники `InputMask` в бандл — тогда
+папка полностью самодостаточна (никаких внешних зависимостей), ценой копии стороннего
+кода внутри.
+
+**Ограничения:**
+
+- Уровень с компонентами (`--components`) доступен для тем, у которых есть
+  закоммиченный пакет `Themes/<Name>Theme` (вариации компонентов взаимозависимы —
+  нужен полный пакет). Уровень токенов — для любой темы.
+- Слияние модулей в один разводит совпадения имён (namespace вариаций vs типы
+  `SDDSComponents`/SwiftUI) **автоматически**; на неразрешённый конфликт или
+  «утёкшую» зависимость сборка бандла **падает сразу** (guard полноты), а не у
+  клиента.
+
+**Проверить компиляцию бандла.** С `--external-dependencies` (или уровень только
+токенов) — папка самодостаточна, компилируется как есть:
+
+```sh
+SDK=$(xcrun --sdk iphonesimulator --show-sdk-path)
+cd build/standalone/<ThemeName>ThemeSources
+xcrun swiftc -sdk "$SDK" -target arm64-apple-ios16.0-simulator -typecheck *.swift
+```
+
+Уровень с компонентами по умолчанию (InputMask внешний): собираем `InputMask`
+отдельным модулем и type-check'аем бандл против него — как это будет у клиента,
+подключившего зависимость:
+
+```sh
+SDK=$(xcrun --sdk iphonesimulator --show-sdk-path)
+TGT=arm64-apple-ios16.0-simulator
+# 1. InputMask → .swiftmodule (исходники в репо, в бандл не попадают)
+xcrun swiftc -sdk "$SDK" -target "$TGT" -emit-module -module-name InputMask \
+  -emit-module-path /tmp/im/InputMask.swiftmodule \
+  Vendor/InputMask/Source/InputMask/InputMask/Classes/*.swift
+# 2. type-check бандла, подсунув модуль через -I
+cd build/standalone/<ThemeName>ThemeSources
+xcrun swiftc -sdk "$SDK" -target "$TGT" -typecheck -I /tmp/im *.swift
+```
+
+---
+
 ## Конфигурация
 
 Формат JSON соответствует `ThemeBuilderConfiguration`
@@ -145,7 +266,7 @@ build/themebuilder-dd/Build/Products/Release/SDDSThemeBuilder
       "name": "PlasmaHomeDS",
       "url": "https://github.com/salute-developers/theme-converter/raw/refs/heads/main/themes/plasma_homeds/latest.zip",
       "fontFamilyOverride": "systemSFPro",
-      "sddsConfigPath": "SDDSThemeBuilder/.sdds/config.json",
+      "sddsConfigPath": "Themes/PlasmaHomeDSTheme/.sdds/config.json",
       "localSchemePath": "SDDSThemeBuilder/LocalSchemes/plasma_homeds/latest.zip"
     }
   ]
@@ -193,13 +314,19 @@ build/themebuilder-dd/Build/Products/Release/SDDSThemeBuilder
 шаг 2/3, в логе: `⚠️ .sdds недоступен для <Theme> — fallback на remote/zip`.
 
 Сейчас на `.sdds` сконфигурирована тема **PlasmaHomeDS**
-(`sddsConfigPath: "SDDSThemeBuilder/.sdds/config.json"`).
+(`sddsConfigPath: "Themes/PlasmaHomeDSTheme/.sdds/config.json"`).
 
 ### Что лежит в `.sdds`
 
+`.sdds` — **per-theme**: одна папка на тему, рядом с её пакетом
+(`Themes/<Name>Theme/.sdds/`). Держит и вход DS Builder (`config.json` +
+токены), и метаданные генерации (`config-info-*.json`).
+
 ```
-SDDSThemeBuilder/.sdds/
-├── config.json                       # отслеживается в git
+Themes/PlasmaHomeDSTheme/.sdds/
+├── config.json                       # вход DS Builder — отслеживается в git
+├── config-info-ios.json              # мета компонентов/биндингов — генерируется, трекается
+├── config-info-tokens-ios.json       # мета токенов — генерируется, трекается
 └── tenants/
     ├── palette.json                  # gitignored
     └── <tenant>/
@@ -208,9 +335,12 @@ SDDSThemeBuilder/.sdds/
 ```
 
 `config.json` (манифест DS Builder-проекта: `projectId`, `designSystemId`,
-`credential.name` = имя env-переменной с ключом, список `tenants`) — **трекается**.
-Сами токены и палитра — **под `.gitignore`** (`**/.sdds/**/`), их нужно
-выгружать локально перед сборкой.
+`credential.name` = имя env-переменной с ключом, список `tenants`) и
+`config-info-*.json` (метаданные сгенерированного кода) — **трекаются**. Сами
+токены и палитра — **под `.gitignore`** (`**/.sdds/**/`), их нужно выгружать
+локально перед сборкой. Метаданные пишутся в `.sdds` рядом с генерируемой темой:
+без `--output` — в `Themes/<Name>Theme/.sdds/`, с `--output <dir>` — в
+`<dir>/<Name>Theme/.sdds/`.
 
 ### Как наполнить `.sdds` (DS Builder CLI)
 

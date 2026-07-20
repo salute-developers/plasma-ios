@@ -14,6 +14,26 @@ struct ThemeBuilder: ParsableCommand {
           help: "Собрать self-contained плоскую папку исходников токенов (<name>ThemeSources): токены + вендоренный SDDSThemeCore + Theme.swift, без линковки библиотек.")
     var standalone: Bool = false
 
+    @Option(name: .long,
+            help: "Путь к исходникам SDDSThemeCore для встраивания в standalone-бандл. Если не указан — repo-relative от бинаря.")
+    var coreSources: String?
+
+    @Flag(name: .long,
+          help: "Аддитивно к --standalone встроить компонентный слой (вариации компонентов + вендоренные SDDSComponents/InputMask/SDDSIcons).")
+    var components: Bool = false
+
+    @Option(name: .long,
+            help: "Директория для автономного бандла (<name>ThemeSources). Если не указана — SDDSThemeBuilder/build/standalone.")
+    var standaloneOutput: String?
+
+    @Flag(name: .long,
+          help: "Вендорить исходники внешних зависимостей (InputMask) в бандл. По умолчанию они остаются внешними (import сохранён, клиент линкует сам).")
+    var externalDependencies: Bool = false
+
+    @Option(name: .long,
+            help: "Корень вендоримых исходников (библиотеки + пакет темы) для standalone. Если не указан — корень репозитория. Позволяет запускать вне репо, указав распакованную копию исходников.")
+    var sourcesRoot: String?
+
     func run() throws {
         
         let config: ThemeBuilderConfiguration
@@ -38,7 +58,7 @@ struct ThemeBuilder: ParsableCommand {
             config = ThemeBuilderConfiguration()
         }
         
-        let app = App(config: config, sourcePath: #file, outputPath: output, standalone: standalone)
+        let app = App(config: config, sourcePath: #file, outputPath: output, standalone: standalone, coreSourcesPath: coreSources, includeComponents: components, standaloneOutputPath: standaloneOutput, vendorExternalDependencies: externalDependencies, sourcesRootPath: sourcesRoot)
         app.run()
     }
     
