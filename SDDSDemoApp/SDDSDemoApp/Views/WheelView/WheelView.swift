@@ -8,11 +8,11 @@ import SandboxSwiftUI
 struct WheelView: View {
     @ObservedObject private var viewModel: WheelViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: WheelViewModel = WheelViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
