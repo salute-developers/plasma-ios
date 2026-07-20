@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 #
-# Наполняет SDDSThemeBuilder/.sdds/ данными дизайн-системы через DS Builder CLI.
+# Наполняет per-theme .sdds/ данными дизайн-системы через DS Builder CLI.
+# По умолчанию — .sdds темы PlasmaHomeDS (Themes/PlasmaHomeDSTheme/.sdds/); для другой
+# темы задайте SDDS_PARENT=<путь к пакету темы>.
 #
 # Идентификаторы и ключ читаются из окружения (в CI — из GitHub Secrets/Variables):
 #   DSBUILDER_API_KEY          (secret, обязателен)   — project API key; CLI читает его сам из env
 #   DSBUILDER_PROJECT_ID       (нужен для init)       — id проекта DS Builder
 #   DSBUILDER_DESIGN_SYSTEM_ID (нужен для init)       — id дизайн-системы внутри проекта
 #   DSBUILDER_BIN              (опционально)          — путь к бинарю dsbuilder (по умолчанию из PATH)
+#   SDDS_PARENT                (опционально)          — родитель папки .sdds (по умолчанию пакет темы PlasmaHomeDS)
 #
 # Что делает:
 #   1. Если .sdds/config.json отсутствует — выполняет `dsbuilder init` (создаёт config с
@@ -23,7 +26,8 @@ DSBUILDER_BIN="${DSBUILDER_BIN:-dsbuilder}"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-SDDS_PARENT="$REPO_ROOT/SDDSThemeBuilder"
+# Родитель папки .sdds — пакет темы (per-theme .sdds); переопределяется через SDDS_PARENT.
+SDDS_PARENT="${SDDS_PARENT:-$REPO_ROOT/Themes/PlasmaHomeDSTheme}"
 CONFIG="$SDDS_PARENT/.sdds/config.json"
 
 # Локальный .env (если есть) — удобно для запуска вне CI. В CI переменные приходят из workflow,
