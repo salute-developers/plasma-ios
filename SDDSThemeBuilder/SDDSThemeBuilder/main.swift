@@ -23,7 +23,7 @@ struct ThemeBuilder: ParsableCommand {
     var components: Bool = false
 
     @Option(name: .long,
-            help: "Директория для автономного бандла (<name>ThemeSources). Если не указана — SDDSThemeBuilder/build/standalone.")
+            help: "Директория для автономного бандла (<name>ThemeSources). Если не указана — ./SDDSStandalone в текущей рабочей директории.")
     var standaloneOutput: String?
 
     @Flag(name: .long,

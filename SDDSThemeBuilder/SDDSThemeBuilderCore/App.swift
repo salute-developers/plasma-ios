@@ -227,9 +227,11 @@ public final class App {
             paletteURL: paletteURL,
             tenantSuffix: nil
         ))
-        // Обычный режим и standalone с компонентами генерят вариации компонентов;
-        // standalone без компонентов (только токены) — пропускает их.
-        if !standalone || includeComponents {
+        // Вариации компонентов генерит только обычный режим. Standalone их не генерит:
+        // компонентный слой бандла берётся из готового пакета темы (`themePackageDir`),
+        // а свежая генерация здесь всё равно не использовалась бы и тянула бы
+        // `ComponentConfigSource` от compile-time пути (ломает запуск вне репо).
+        if !standalone {
             commands.append(contentsOf: generateComponentVariations(themeConfig: themeConfig))
         }
 
@@ -587,8 +589,15 @@ extension App {
         return themeConfig.url
     }
 
+    /// Портируемый рабочий корень для скрэтча и промежуточных артефактов. НЕ зависит от
+    /// compile-time пути (`#file`), поэтому бинарь работает на любой машине (в т.ч. у клиента),
+    /// а не только в дереве сборки. Лежит в системном temp.
+    private var workRootURL: URL {
+        FileManager.default.temporaryDirectory.appending(path: "SDDSThemeBuilder")
+    }
+
     private func outputDirectoryURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
-        themeBuilderURL
+        workRootURL
             .appending(component: "Output")
             .appending(component: config.name)
     }
@@ -649,10 +658,10 @@ extension App {
                 .appending(component: "\(config.name)Theme")
         }
         // В standalone-режиме без -o токены — промежуточный артефакт для сборки бандла,
-        // поэтому пишем в build-scratch, а не перезаписываем закоммиченные Themes/*.
+        // поэтому пишем в портируемый work-scratch (а не в Themes/* и не в baked-путь).
         if standalone {
-            return themeBuilderURL
-                .appending(path: "build/standalone-work")
+            return workRootURL
+                .appending(path: "standalone-work")
                 .appending(component: "\(config.name)Theme")
         }
         return themeBuilderURL.appending(component: "../Themes/\(config.name)Theme")
@@ -677,13 +686,15 @@ extension App {
         return sourcesRootURL.appending(path: "SDDSThemeBuilder/SDDSThemeCore/Sources/SDDSThemeCore")
     }
 
-    /// Базовая директория для автономных бандлов: `--standalone-output` либо дефолт
-    /// `SDDSThemeBuilder/build/standalone`.
+    /// Базовая директория для автономных бандлов: `--standalone-output` либо дефолт —
+    /// текущая рабочая директория запуска (портируемо: клиент получает бандл рядом,
+    /// а не в baked-пути сборки).
     private var standaloneOutputBaseURL: URL {
         if let standaloneOutputPath = standaloneOutputPath, !standaloneOutputPath.isEmpty {
             return URL(fileURLWithPath: standaloneOutputPath, isDirectory: true)
         }
-        return themeBuilderURL.appending(path: "build/standalone")
+        return URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true)
+            .appending(path: "SDDSStandalone")
     }
 
     /// Папка автономных исходников темы (`<base>/<Name>ThemeSources`). Не зависит от
