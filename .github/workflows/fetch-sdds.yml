@@ -1,6 +1,6 @@
 name: Fetch .sdds (DS Builder)
 
-# Наполняет SDDSThemeBuilder/.sdds/ данными дизайн-системы через DS Builder CLI.
+# Наполняет per-theme .sdds/ (по умолчанию Themes/PlasmaHomeDSTheme/.sdds/) данными дизайн-системы через DS Builder CLI.
 # Ключ берётся из секрета DSBUILDER_API_KEY, идентификаторы проекта — из repo variables.
 #
 # Запуск вручную (workflow_dispatch) или как переиспользуемый job (workflow_call) перед

@@ -6,12 +6,17 @@
 
 ## Где лежит результат
 
+Мета-файл — **per-theme**, в `.sdds` рядом с пакетом темы:
+
 ```
-SDDSThemeBuilder/.sdds/config-info-tokens-ios.json
+Themes/<Name>Theme/.sdds/config-info-tokens-ios.json
 ```
 
+Например, для PlasmaHomeDS — `Themes/PlasmaHomeDSTheme/.sdds/config-info-tokens-ios.json`.
+С `--output <dir>` пишется в `<dir>/<Name>Theme/.sdds/`.
+
 Файл трекается в git (как `.sdds/config.json`); данные токенов внутри `.sdds/tenants/**` —
-нет. Перезаписывается при каждой генерации темы.
+нет. Перезаписывается при каждой генерации этой темы.
 
 ## Как это работает
 
@@ -86,12 +91,12 @@ cd SDDSThemeBuilder
 
 Признак успеха в логе:
 ```
-📝 tokens meta written: .../SDDSThemeBuilder/.sdds/config-info-tokens-ios.json (N tokens)
+📝 tokens meta written: /tmp/out/<Name>Theme/.sdds/config-info-tokens-ios.json (N tokens)
 ```
 
 Быстрый просмотр:
 ```sh
-python3 -m json.tool SDDSThemeBuilder/.sdds/config-info-tokens-ios.json | head -40
+python3 -m json.tool Themes/PlasmaHomeDSTheme/.sdds/config-info-tokens-ios.json | head -40
 ```
 
 ## Автотесты

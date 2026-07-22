@@ -382,6 +382,7 @@
 		81E9C1CC2ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1C22ED79000229705 /* CollapsingNavigationBarScrollBehavior.swift */; };
 		81E9C1CD2ED79000229705 /* SDDSCollapsingNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9C1D02ED79000229705 /* SDDSCollapsingNavigationBar.swift */; };
 		81E9FA8F2C92B13E0041B5FF /* SDDSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */; };
+		81EBE3EA300E969800D74625 /* WheelColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBE3E9300E969800D74625 /* WheelColumnView.swift */; };
 		81ED2DF32E71CF0B004DB74B /* NotificationContentAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DED2E71CF0B004DB74B /* NotificationContentAppearance.swift */; };
 		81ED2DF42E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DF02E71CF0B004DB74B /* NotificationContentSizeConfiguration.swift */; };
 		81ED2DF72E71CF0B004DB74B /* NotificationContentButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */; };
@@ -1319,6 +1320,7 @@
 		81E9C1D12ED79000229705 /* CollapsingNavigationBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarAppearance.swift; sourceTree = "<group>"; };
 		81E9C1D32ED79000229705 /* CollapsingNavigationBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsingNavigationBarSizeConfiguration.swift; sourceTree = "<group>"; };
 		81E9FA8E2C92B13E0041B5FF /* SDDSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTextField.swift; sourceTree = "<group>"; };
+		81EBE3E9300E969800D74625 /* WheelColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelColumnView.swift; sourceTree = "<group>"; };
 		81ED2DED2E71CF0B004DB74B /* NotificationContentAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentAppearance.swift; sourceTree = "<group>"; };
 		81ED2DEE2E71CF0B004DB74B /* NotificationContentButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentButtonLayout.swift; sourceTree = "<group>"; };
 		81ED2DEF2E71CF0B004DB74B /* NotificationContentIconPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentIconPlacement.swift; sourceTree = "<group>"; };
@@ -2492,6 +2494,7 @@
 		8183DDB42EB2AB3100610A9A /* SDDSWheel */ = {
 			isa = PBXGroup;
 			children = (
+				81EBE3E9300E969800D74625 /* WheelColumnView.swift */,
 				8183DDB22EB2AB3100610A9A /* WheelAppearance */,
 				8183DDB32EB2AB3100610A9A /* SDDSWheel.swift */,
 			);
@@ -4938,6 +4941,7 @@
 				8119DF5F2DF6FB8800D1CA9F /* NotificationAppearance.swift in Sources */,
 				8119DF602DF6FB8800D1CA9F /* ZeroNotificationSize.swift in Sources */,
 				8119DF612DF6FB8800D1CA9F /* NotificationSizeConfiguration.swift in Sources */,
+				81EBE3EA300E969800D74625 /* WheelColumnView.swift in Sources */,
 				8119DF622DF6FB8800D1CA9F /* View+Notification.swift in Sources */,
 				816D0EE62DF856F40086C35C /* ToasContentEndPosition.swift in Sources */,
 				819C47332EBCF39A0081066C /* TabsOrientation.swift in Sources */,
@@ -5419,7 +5423,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.39.0;
+				MARKETING_VERSION = 0.40.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;
@@ -5452,7 +5456,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.39.0;
+				MARKETING_VERSION = 0.40.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSComponents;

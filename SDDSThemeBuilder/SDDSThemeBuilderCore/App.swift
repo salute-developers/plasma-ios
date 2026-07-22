@@ -5,11 +5,47 @@ public final class App {
     let config: ThemeBuilderConfiguration
     let sourcePath: String
     let outputPath: String?
+    /// Автономный режим: собрать плоскую папку исходников токенов (`<Name>ThemeSources`)
+    /// без линковки библиотек (см. `StandaloneBundle`).
+    let standalone: Bool
+    /// Путь к исходникам `SDDSThemeCore` для встраивания (флаг `--core-sources`);
+    /// `nil` → repo-relative от `#file`.
+    let coreSourcesPath: String?
+    /// Дополнительно встроить компонентный слой (`--components`) — вариации
+    /// компонентов темы + вендоренные `SDDSComponents`/`InputMask`/`SDDSIcons`.
+    let includeComponents: Bool
+    /// Директория для автономного бандла (`--standalone-output`); `nil` → дефолт
+    /// `SDDSThemeBuilder/build/standalone`.
+    let standaloneOutputPath: String?
+    /// Вендорить исходники внешних зависимостей (InputMask) в бандл (`--external-dependencies`).
+    /// По умолчанию `false` — InputMask остаётся внешним (не копируется, `import` сохранён,
+    /// клиент линкует модуль сам).
+    let vendorExternalDependencies: Bool
+    /// Корень, относительно которого standalone берёт вендоримые исходники библиотек и
+    /// пакет темы (`--sources-root`); `nil` → корень репозитория (запуск внутри plasma-ios).
+    /// Позволяет запускать CLI вне репозитория, указав распакованную копию исходников.
+    let sourcesRootPath: String?
 
-    public init(config: ThemeBuilderConfiguration, sourcePath: String, outputPath: String? = nil) {
+    public init(
+        config: ThemeBuilderConfiguration,
+        sourcePath: String,
+        outputPath: String? = nil,
+        standalone: Bool = false,
+        coreSourcesPath: String? = nil,
+        includeComponents: Bool = false,
+        standaloneOutputPath: String? = nil,
+        vendorExternalDependencies: Bool = false,
+        sourcesRootPath: String? = nil
+    ) {
         self.config = config
         self.sourcePath = sourcePath
         self.outputPath = outputPath
+        self.standalone = standalone
+        self.coreSourcesPath = coreSourcesPath
+        self.includeComponents = includeComponents
+        self.standaloneOutputPath = standaloneOutputPath
+        self.vendorExternalDependencies = vendorExternalDependencies
+        self.sourcesRootPath = sourcesRootPath
     }
 
     /// Разрешённый источник темы. Зеркалит Android `ThemeSourceResolver`:
@@ -31,6 +67,10 @@ public final class App {
             executeSddsCommands(config: config, themeConfig: themeConfig, sddsSource: sddsSource)
         case .explicit:
             executeRemoteCommands(config: config, themeConfig: themeConfig)
+        }
+
+        if standalone {
+            emitStandaloneBundle(themeConfig: themeConfig)
         }
     }
 
@@ -187,9 +227,15 @@ public final class App {
             paletteURL: paletteURL,
             tenantSuffix: nil
         ))
-        commands.append(contentsOf: generateComponentVariations(themeConfig: themeConfig))
+        // Обычный режим и standalone с компонентами генерят вариации компонентов;
+        // standalone без компонентов (только токены) — пропускает их.
+        if !standalone || includeComponents {
+            commands.append(contentsOf: generateComponentVariations(themeConfig: themeConfig))
+        }
 
         runCommands(commands)
+
+        guard !standalone else { return }
 
         generateTokensMeta(
             themeConfig: themeConfig,
@@ -226,7 +272,7 @@ public final class App {
             version: metaScheme.version,
             tokens: resolver.entries(for: metaScheme.tokens)
         )
-        writeTokensMeta(file)
+        writeTokensMeta(file, themeConfig: themeConfig)
     }
 
     private func resolvedTokenJson(_ builder: ContexBuilder, url: URL) -> [String: Any] {
@@ -234,9 +280,15 @@ public final class App {
         return (builder.buildContext(from: data).asDictionary?["json"] as? [String: Any]) ?? [:]
     }
 
-    private func writeTokensMeta(_ file: TokensMetaFile) {
-        let url = themeBuilderURL
-            .appending(component: ".sdds")
+    /// Директория метаданных генерации темы — per-theme `.sdds`, рядом с пакетом темы
+    /// (`Themes/<Name>Theme/.sdds` либо `<output>/<Name>Theme/.sdds`). Раньше писалось в
+    /// общую `SDDSThemeBuilder/.sdds` и перезаписывалось на каждую тему.
+    private func themeSddsURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+        themeURL(config: config).appending(component: ".sdds")
+    }
+
+    private func writeTokensMeta(_ file: TokensMetaFile, themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) {
+        let url = themeSddsURL(config: themeConfig)
             .appending(component: "config-info-tokens-ios.json")
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
@@ -293,7 +345,7 @@ public final class App {
             tokens: tokenMetas(metaURL: schemeDirectory.url(for: .meta)),
             components: componentMetas
         )
-        writeConfigInfo(configInfo)
+        writeConfigInfo(configInfo, themeConfig: themeConfig)
     }
 
     /// Читает конфиг компонента только для binding-данных (per-theme резолв
@@ -332,9 +384,8 @@ public final class App {
         try? content.data(using: .utf8)?.write(to: directory.appending(component: filename))
     }
 
-    private func writeConfigInfo(_ info: ConfigInfo) {
-        let url = themeBuilderURL
-            .appending(component: ".sdds")
+    private func writeConfigInfo(_ info: ConfigInfo, themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) {
+        let url = themeSddsURL(config: themeConfig)
             .appending(component: "config-info-ios.json")
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
@@ -597,7 +648,112 @@ extension App {
             return URL(fileURLWithPath: outputPath, isDirectory: true)
                 .appending(component: "\(config.name)Theme")
         }
+        // В standalone-режиме без -o токены — промежуточный артефакт для сборки бандла,
+        // поэтому пишем в build-scratch, а не перезаписываем закоммиченные Themes/*.
+        if standalone {
+            return themeBuilderURL
+                .appending(path: "build/standalone-work")
+                .appending(component: "\(config.name)Theme")
+        }
         return themeBuilderURL.appending(component: "../Themes/\(config.name)Theme")
+    }
+
+    /// Корень вендоримых исходников: `--sources-root` либо корень репозитория. От него
+    /// резолвятся исходники библиотек и пакет темы. Позволяет запускать CLI вне репо,
+    /// указав распакованную копию исходников (напр. артефакт релиза).
+    private var sourcesRootURL: URL {
+        if let sourcesRootPath = sourcesRootPath, !sourcesRootPath.isEmpty {
+            return URL(fileURLWithPath: sourcesRootPath, isDirectory: true)
+        }
+        return repoRootURL
+    }
+
+    /// Исходники `SDDSThemeCore` для встраивания: путь из `--core-sources`, иначе — от
+    /// `sourcesRootURL` (по умолчанию корень репо).
+    private var themeCoreSourcesURL: URL {
+        if let coreSourcesPath = coreSourcesPath, !coreSourcesPath.isEmpty {
+            return URL(fileURLWithPath: coreSourcesPath, isDirectory: true)
+        }
+        return sourcesRootURL.appending(path: "SDDSThemeBuilder/SDDSThemeCore/Sources/SDDSThemeCore")
+    }
+
+    /// Базовая директория для автономных бандлов: `--standalone-output` либо дефолт
+    /// `SDDSThemeBuilder/build/standalone`.
+    private var standaloneOutputBaseURL: URL {
+        if let standaloneOutputPath = standaloneOutputPath, !standaloneOutputPath.isEmpty {
+            return URL(fileURLWithPath: standaloneOutputPath, isDirectory: true)
+        }
+        return themeBuilderURL.appending(path: "build/standalone")
+    }
+
+    /// Папка автономных исходников темы (`<base>/<Name>ThemeSources`). Не зависит от
+    /// `-o`: место бандла задаётся `--standalone-output` (по умолчанию `build/standalone`).
+    private func standaloneBundleURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+        standaloneOutputBaseURL.appending(component: "\(config.name)ThemeSources")
+    }
+
+    /// Исходники `SDDSComponents` (от `sourcesRootURL`; для компонентного слоя).
+    private var componentsSourcesURL: URL {
+        sourcesRootURL.appending(path: "SDDSComponents/Sources/SDDSComponents")
+    }
+
+    /// Библиотечные исходники `InputMask` (от `sourcesRootURL`; для компонентного слоя).
+    private var inputMaskSourcesURL: URL {
+        sourcesRootURL.appending(path: "Vendor/InputMask/Source/InputMask/InputMask/Classes")
+    }
+
+    /// Сгенерированный swiftgen `Asset` иконок (от `sourcesRootURL`; для компонентного слоя).
+    private var iconsAssetsSwiftURL: URL {
+        sourcesRootURL.appending(path: "SDDSIcons/Generated/Assets.swift")
+    }
+
+    /// Каталоги `Assets.xcassets`, копируемые в компонентный слой (иконки + ресурсы компонентов).
+    private var componentXcassetsDirs: [URL] {
+        [
+            sourcesRootURL.appending(path: "SDDSIcons/SDDSIcons/Assets.xcassets"),
+            sourcesRootURL.appending(path: "SDDSComponents/Assets.xcassets")
+        ]
+    }
+
+    /// Пакет темы (`Themes/<Name>Theme`) — источник вариаций компонентов и `DefaultValues`
+    /// для компонентного слоя. Берётся от `sourcesRootURL` (по умолчанию — из репозитория).
+    private func themePackageDir(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+        sourcesRootURL.appending(path: "Themes/\(config.name)Theme")
+    }
+
+    /// `EnvironmentValueProvider+DefaultValues.swift` из пакета темы.
+    private func defaultValuesURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+        themePackageDir(config: config).appending(component: "EnvironmentValueProvider+DefaultValues.swift")
+    }
+
+    /// Собирает автономную плоскую папку исходников темы рядом с `themeURL`.
+    /// Без компонентов — только токены; с `includeComponents` — плюс компонентный слой.
+    private func emitStandaloneBundle(themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) {
+        let bundleDir = standaloneBundleURL(config: themeConfig)
+        var bundle = StandaloneBundle(
+            bundleDir: bundleDir,
+            tokensDir: generatedTokensURL(config: themeConfig),
+            fontsManifestURL: fontsURL(config: themeConfig).appending(component: "FontsManifest.swift"),
+            coreSourcesURL: themeCoreSourcesURL,
+            themeName: "\(themeConfig.name)Theme",
+            registryKey: themeConfig.name
+        )
+        if includeComponents {
+            bundle.includeComponents = true
+            bundle.vendorExternalDependencies = vendorExternalDependencies
+            bundle.componentsSourcesURL = componentsSourcesURL
+            bundle.inputMaskSourcesURL = inputMaskSourcesURL
+            bundle.iconsAssetsSwiftURL = iconsAssetsSwiftURL
+            bundle.xcassetsDirs = componentXcassetsDirs
+            // Полный набор взаимозависимых вариаций компонентов + регистрация appearance —
+            // из готового пакета темы. Совпадения имён namespace вариаций с типами
+            // SDDSComponents разводит StandaloneBundle (themeRenames).
+            bundle.componentThemeDir = themePackageDir(config: themeConfig)
+            bundle.defaultValuesURL = defaultValuesURL(config: themeConfig)
+        }
+        let count = bundle.emit()
+        let level = includeComponents ? "токены + компоненты" : "только токены"
+        Logger.printText("📦 Standalone sources [\(level)]: \(bundleDir.path()) (\(count) files)")
     }
 }
 

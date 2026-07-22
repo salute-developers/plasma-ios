@@ -146,7 +146,7 @@ public extension ThemeBuilderConfiguration.Theme {
                 url: themeURL(name: "plasma_homeds"),
                 fontFamilyOverride: .systemSFPro,
                 localSchemePath: "SDDSThemeBuilder/LocalSchemes/plasma_homeds/latest.zip",
-                sddsConfigPath: "SDDSThemeBuilder/.sdds/config.json"
+                sddsConfigPath: "Themes/PlasmaHomeDSTheme/.sdds/config.json"
             )
         case .sberHealth:
             .init(name: self.rawValue, url: themeURL(name: "sberHealth"))
