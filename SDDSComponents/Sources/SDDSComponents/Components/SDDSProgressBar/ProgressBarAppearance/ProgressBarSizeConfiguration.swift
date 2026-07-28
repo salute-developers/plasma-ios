@@ -12,6 +12,7 @@ import SwiftUI
  - indicatorCornerRadius: Радиус скругления углов индикатора прогресса.
  */
 public protocol ProgressBarSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    // sdds:apiName=backgroundHeight
     var height: CGFloat { get }
     var indicatorHeight: CGFloat { get }
     var indicatorPathDrawer: PathDrawer { get }

@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `NavigationBarMainPageAppearance` определяет внешний вид компонента NavigationBarMainPage.
  */
+// sdds:apiInfo
 public struct NavigationBarMainPageAppearance {
     // Цвета
     public var actionStartColor: ColorToken

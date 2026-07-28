@@ -2,10 +2,12 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+// sdds:apiInfo
 public struct CounterAppearance: Modifiable {
     public typealias ModifiableType = Self
     
     public var size: CounterSizeConfiguration
+    // sdds:apiName=labelStyle
     public var textTypography: TypographyConfiguration
     public var textColor: StatefulFillStyle
     public var backgroundColor: StatefulFillStyle

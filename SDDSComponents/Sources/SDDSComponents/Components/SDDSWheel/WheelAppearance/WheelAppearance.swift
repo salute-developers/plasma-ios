@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `WheelAppearance` определяет внешний вид компонента Wheel.
  */
+// sdds:apiInfo
 public struct WheelAppearance {    
     // Цвета текста
     public var itemTextColor: ColorToken

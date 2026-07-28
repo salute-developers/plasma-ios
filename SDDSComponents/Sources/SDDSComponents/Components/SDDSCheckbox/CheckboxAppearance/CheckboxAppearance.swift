@@ -2,12 +2,17 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+// sdds:apiInfo
 public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
     public var size: SelectionControlSizeConfiguration
+    // sdds:apiName=labelStyle
     public var titleTypography: TypographyConfiguration
+    // sdds:apiName=descriptionStyle
     public var subtitleTypography: TypographyConfiguration
+    // sdds:apiName=labelColor
     public var titleColor: StatefulFillStyle
+    // sdds:apiName=descriptionColor
     public var subtitleColor: StatefulFillStyle
     public var disabledAlpha: CGFloat
     @available(*, deprecated, message: "use 'toggleColor' instead")
@@ -15,8 +20,10 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     public var toggleColor: StatefulFillStyle
     public var toggleColorChecked: StatefulFillStyle
     public var toggleColorIndeterminate: StatefulFillStyle
+    // sdds:apiName=toggleBorderColor
     public var borderColor: StatefulFillStyle
     public var checkedIcon: PathDrawer?
+    // sdds:apiName=toggleIconColor
     public var checkedIconColor: StatefulFillStyle
     public var toggleIndeterminateIcon: PathDrawer?
     public var toggleIndeterminateIconColor: StatefulFillStyle

@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `NoteCompactAppearance` определяет внешний вид компонента NoteCompact.
  */
+// sdds:apiInfo
 public struct NoteCompactAppearance {
     public var backgroundColor: ColorToken
     public var iconColor: ColorToken

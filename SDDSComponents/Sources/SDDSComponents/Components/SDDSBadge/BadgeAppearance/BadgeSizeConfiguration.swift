@@ -7,9 +7,12 @@ public protocol BadgeSizeConfiguration {
     var startPadding: CGFloat { get }
     var endPadding: CGFloat { get }
     var startContentSize: CGSize { get }
+    // sdds:apiName=startContentMargin
     var startContentPadding: CGFloat { get }
     var endContentSize: CGSize { get }
+    // sdds:apiName=endContentMargin
     var endContentPadding: CGFloat { get }
+    // sdds:apiName=shape
     var cornerRadius: CGFloat { get }
 }
 

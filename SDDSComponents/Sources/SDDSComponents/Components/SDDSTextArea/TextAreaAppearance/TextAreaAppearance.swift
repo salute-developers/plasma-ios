@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct TextAreaAppearance {
     public var id = UUID()
     public var size: TextAreaSizeConfiguration

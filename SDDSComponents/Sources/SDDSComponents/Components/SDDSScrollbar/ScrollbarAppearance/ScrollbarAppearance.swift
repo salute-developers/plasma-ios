@@ -11,6 +11,7 @@ import SDDSThemeCore
     - trackColor: Цвет трека скроллбара.
     - shape: Форма скроллбара.
  */
+// sdds:apiInfo
 public struct ScrollbarAppearance: Hashable {
     let id = UUID()
     public var size: ScrollbarSizeConfiguration

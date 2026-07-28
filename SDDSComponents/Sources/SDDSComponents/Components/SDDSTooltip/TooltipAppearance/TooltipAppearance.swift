@@ -26,6 +26,7 @@ import SwiftUI
  )
  ```
  */
+// sdds:apiInfo
 public struct TooltipAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

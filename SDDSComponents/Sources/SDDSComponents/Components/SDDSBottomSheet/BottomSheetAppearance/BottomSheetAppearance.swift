@@ -2,6 +2,7 @@ import SwiftUI
 import Foundation
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct BottomSheetAppearance {
     public var size: BottomSheetSizeConfiguration
     public var backgroundColor: ColorToken

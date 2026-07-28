@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct TextFieldAppearance {
     let id = UUID()
     public var size: TextFieldSizeConfiguration
@@ -26,13 +27,17 @@ public struct TextFieldAppearance {
     public var inputTextAlignment: TextAlignment
     public var innerTitleTextAlignment: TextAlignment
     public var innerTitleTypography: TypographyConfiguration
+    // sdds:apiName=dividerColor
     public var lineColor: ColorToken
     public var lineColorFocused: ColorToken
+    // sdds:apiName=dividerColorReadOnly
     public var lineColorReadOnly: ColorToken
+    // sdds:apiName=optionalColor
     public var optionalTitleColor: ColorToken
     public var placeholderColor: ColorToken
     public var placeholderColorFocused: ColorToken
     public var placeholderColorReadOnly: ColorToken?
+    // sdds:apiName=indicatorColor
     public var requiredIndicatorColor: ColorToken
     public var startContentColor: ColorToken
     public var startContentColorFocused: ColorToken
@@ -41,12 +46,17 @@ public struct TextFieldAppearance {
     public var textAfterTypography: TypographyConfiguration
     public var textBeforeColor: ColorToken
     public var textBeforeTypography: TypographyConfiguration
+    // sdds:apiName=valueColor
     public var textColor: ColorToken
     public var textColorFocused: ColorToken
+    // sdds:apiName=valueColorReadOnly
     public var textColorReadOnly: ColorToken?
+    // sdds:apiName=valueStyle
     public var textTypography: TypographyConfiguration
+    // sdds:apiName=labelColor
     public var titleColor: ColorToken
     public var titleTextAlignment: TextAlignment
+    // sdds:apiName=labelStyle
     public var titleTypography: TypographyConfiguration
     
     public init(

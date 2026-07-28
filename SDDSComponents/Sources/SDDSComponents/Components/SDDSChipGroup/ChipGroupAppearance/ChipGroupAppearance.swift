@@ -9,6 +9,7 @@ import SwiftUI
     - chipAppearance: Внешний вид отдельных чипов в группе (цвета, шрифты, скругления).
     - gap: Отступ между чипами в группе.
  */
+// sdds:apiInfo
 public struct ChipGroupAppearance {
     public var size: ChipGroupSizeConfiguration
     public var chipAppearance: ChipAppearance

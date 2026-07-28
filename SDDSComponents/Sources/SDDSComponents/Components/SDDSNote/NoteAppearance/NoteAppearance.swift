@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `NoteAppearance` определяет внешний вид компонента Note.
  */
+// sdds:apiInfo
 public struct NoteAppearance {
     public var backgroundColor: ColorToken
     public var iconColor: ColorToken

@@ -13,13 +13,19 @@ import SwiftUI
     - subtitleColor: Цвет подзаголовка, когда переключатель включен.
     - tintColor: Цвет переключателя, когда он включен.
  */
+// sdds:apiInfo
 public struct SwitchAppearance: Hashable {
     let id = UUID()
     public var size: SwitchSizeConfiguration
+    // sdds:apiName=labelStyle
     public var titleTypography: TypographyConfiguration
+    // sdds:apiName=descriptionStyle
     public var subtitleTypography: TypographyConfiguration
+    // sdds:apiName=labelColor
     public var titleColor: StatefulFillStyle
+    // sdds:apiName=descriptionColor
     public var subtitleColor: StatefulFillStyle
+    // sdds:apiName=backgroundColor
     public var toggleTrackColor: StatefulFillStyle
     public var toggleTrackColorChecked: StatefulFillStyle
     public var toggleTrackBorderColor: StatefulFillStyle

@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `DrawerAppearance` определяет внешний вид компонента Drawer.
  */
+// sdds:apiInfo
 public struct DrawerAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

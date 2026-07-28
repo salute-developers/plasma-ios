@@ -2,6 +2,7 @@ import SwiftUI
 import Foundation
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct IndicatorAppearance {
     public var size: IndicatorSizeConfiguration = DefaultIndicatorSize()
     public var backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])

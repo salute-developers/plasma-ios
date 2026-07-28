@@ -18,6 +18,7 @@ import SDDSThemeCore
     - actionIcon: Иконка действия
     - indicatorColor: Цвет индикатора выбора (опционально, если nil - берется из TabsAppearance)
  */
+// sdds:apiInfo
 public struct TabItemAppearance: Hashable {
     let id = UUID()
     public var size: TabItemSizeConfiguration

@@ -19,6 +19,7 @@ import SDDSThemeCore
     - disclosureTextTypography: Типографика текста disclosure
     - disclosureIcon: Иконка disclosure (для IconTabs)
  */
+// sdds:apiInfo
 public struct TabsAppearance: Hashable {
     let id = UUID()
     public var size: TabsSizeConfiguration

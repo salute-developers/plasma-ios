@@ -7,6 +7,7 @@ public enum SelectItemType: String, CaseIterable {
     case multiple
 }
 
+// sdds:apiInfo
 public struct SelectItemAppearance {
     public var itemType: SelectItemType
     public var iconColor: ColorToken

@@ -3,16 +3,26 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 public protocol SelectionControlSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    // sdds:apiName=toggleHeight
     var height: CGFloat { get }
+    // sdds:apiName=toggleWidth
     var width: CGFloat { get }
+    // sdds:apiName=textPadding
     var horizontalGap: CGFloat { get }
+    // sdds:apiName=descriptionPadding
     var verticalGap: CGFloat { get }
     var togglePathDrawer: PathDrawer { get }
+    // sdds:apiName=toggleBorderWidth
     var lineWidth: CGFloat { get }
+    // sdds:apiName=toggleIconWidth
     var toggleCheckedIconWidth: CGFloat { get }
+    // sdds:apiName=toggleIconHeight
     var toggleCheckedIconHeight: CGFloat { get }
+    // sdds:apiName=toggleIndeterminateWidth
     var toggleIndeterminateIconWidth: CGFloat { get }
+    // sdds:apiName=toggleIndeterminateHeight
     var toggleIndeterminateIconHeight: CGFloat { get }
+    // sdds:apiName=togglePadding
     var togglePaddings: CGFloat { get }
 }
 

@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+// sdds:apiInfo
 public struct PopoverAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

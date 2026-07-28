@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `CodeInputAppearance` определяет внешний вид компонента CodeInput.
  */
+// sdds:apiInfo
 public struct CodeInputAppearance {
     public var codeColor: ColorToken
     public var codeColorError: ColorToken

@@ -2,9 +2,11 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+// sdds:apiInfo
 public struct EditableAppearance {
     public var textColorDefault: ColorToken
     public var textColorReadonly: ColorToken
+    // sdds:apiName=iconColor
     public var iconColorDefault: ColorToken
     public var iconColorReadonly: ColorToken
     public var cursorColor: ColorToken

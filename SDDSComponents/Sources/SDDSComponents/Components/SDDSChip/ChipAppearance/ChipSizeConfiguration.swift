@@ -14,13 +14,18 @@ import Foundation
     - height: Высота чипа.
  */
 public protocol ChipSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    // sdds:apiName=contentStartSize
     var iconImageSize: CGSize { get }
+    // sdds:apiName=contentEndSize
     var buttonImageSize: CGSize { get }
+    // sdds:apiName=paddingStart
     var leadingInset: CGFloat { get }
+    // sdds:apiName=paddingEnd
     var trailingInset: CGFloat { get }
     var contentStartPadding: CGFloat { get }
     var contentEndPadding: CGFloat { get }
     var height: CGFloat { get }
+    // sdds:apiName=shape
     var cornerRadius: CGFloat { get }
 }
 

@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct SelectAppearance {
     public var dropdownAppearance: DropdownMenuAppearance
     public var textFieldAppearance: TextFieldAppearance
