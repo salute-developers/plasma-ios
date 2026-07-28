@@ -11,6 +11,7 @@ import SDDSThemeCore
     - tabBarItemAppearance: Стиль элементов таб-бара
     - size: Конфигурация размеров и отступов островка таб-бара
  */
+// sdds:apiInfo
 public struct TabBarIslandAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

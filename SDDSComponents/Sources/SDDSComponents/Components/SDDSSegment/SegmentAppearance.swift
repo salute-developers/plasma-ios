@@ -13,6 +13,7 @@ import SwiftUI
  - Methods:
     - init: Инициализирует стили сегмента с заданными параметрами.
  */
+// sdds:apiInfo
 public struct SegmentAppearance {
     public var size: SegmentSizeConfiguration
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")

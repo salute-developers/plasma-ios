@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `CodeFieldAppearance` определяет внешний вид компонента CodeField.
  */
+// sdds:apiInfo
 public struct CodeFieldAppearance {
     public var valueColor: ColorToken
     public var valueColorError: ColorToken

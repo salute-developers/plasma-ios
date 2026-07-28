@@ -2,6 +2,7 @@ import SwiftUI
 import Foundation
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct CardAppearance {
     public var size: CardSizeConfiguration
     public var backgroundColor: ColorToken

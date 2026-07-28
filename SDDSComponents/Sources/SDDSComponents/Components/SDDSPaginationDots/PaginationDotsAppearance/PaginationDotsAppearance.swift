@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct PaginationDotsAppearance {
     public var size: PaginationDotsSizeConfiguration = DefaultPaginationDotsSize()
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")

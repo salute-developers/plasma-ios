@@ -43,11 +43,13 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
     /**
      Горизонтальный промежуток между иконкой и текстом кнопки.
      */
+    // sdds:apiName=iconMargin
     var iconHorizontalGap: CGFloat { get }
     
     /**
      Горизонтальный промежуток между заголовком и подзаголовком кнопки.
      */
+    // sdds:apiName=valueMargin
     var titleHorizontalGap: CGFloat { get }
     
 }

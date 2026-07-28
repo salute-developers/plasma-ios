@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+// sdds:apiInfo
 public struct RadioboxGroupAppearance {
     public var size: RadioboxGroupSizeConfiguration
     public var radioboxAppearance: RadioboxAppearance

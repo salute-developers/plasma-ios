@@ -13,13 +13,16 @@ import SDDSThemeCore
     - offlineStatusColor: Цвет индикатора статуса "оффлайн".
     - textTypography: Типографика текста.
  */
+// sdds:apiInfo
 public struct AvatarAppearance: Hashable {
     let id = UUID()
     public var size: AvatarSizeConfiguration
     public var textFillStyle: FillStyle
     public var backgroundFillStyle: FillStyle
     public var backgroundOpacity: CGFloat
+    // sdds:apiName=activeStatusColor
     public var onlineStatusColor: ColorToken
+    // sdds:apiName=inactiveStatusColor
     public var offlineStatusColor: ColorToken
     public var textTypography: TypographyConfiguration
     public var counterAppearance: CounterAppearance

@@ -3,6 +3,7 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 /// Внешний вид карусели: индикатор (точки), стили и иконки кнопок навигации, размеры.
+// sdds:apiInfo
 public struct CarouselAppearance {
     public var size: CarouselSizeConfiguration
     public var indicatorAppearance: PaginationDotsAppearance

@@ -14,12 +14,17 @@ import SwiftUI
     - backgroundColor: Цвет чипа.
     - disabledAlpha: Прозрачность чипа в выключенном состоянии.
  */
+// sdds:apiInfo
 public struct ChipAppearance: Hashable {
     let id = UUID()
     public var size: ChipSizeConfiguration
+    // sdds:apiName=labelColor
     public var titleColor: StatefulFillStyle
+    // sdds:apiName=labelStyle
     public var titleTypography: TypographyConfiguration
+    // sdds:apiName=contentStartColor
     public var imageTintColor: StatefulFillStyle
+    // sdds:apiName=contentEndColor
     public var buttonTintColor: StatefulFillStyle
     public var backgroundColor: StatefulFillStyle
     public var disabledAlpha: CGFloat

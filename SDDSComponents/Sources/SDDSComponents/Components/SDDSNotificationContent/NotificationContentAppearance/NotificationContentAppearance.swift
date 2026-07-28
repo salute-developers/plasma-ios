@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `NotificationContentAppearance` определяет внешний вид компонента NotificationContent.
  */
+// sdds:apiInfo
 public struct NotificationContentAppearance {
     public var iconColor: ColorToken
     public var titleColor: ColorToken

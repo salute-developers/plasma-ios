@@ -15,6 +15,7 @@ import SDDSThemeCore
     - shadow: Тень меню
     - size: Конфигурация размеров меню
  */
+// sdds:apiInfo
 public struct DropdownMenuAppearance: Hashable {
     let id = UUID()
     public var listAppearance: ListAppearance

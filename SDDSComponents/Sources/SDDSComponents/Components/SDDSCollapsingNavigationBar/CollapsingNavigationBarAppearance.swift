@@ -6,6 +6,7 @@ import SwiftUI
  `CollapsingNavigationBarAppearance` определяет внешний вид компонента SDDSCollapsingNavigationBar.
  Кнопка «назад» отображается, когда задан `backIcon`.
  */
+// sdds:apiInfo
 public struct CollapsingNavigationBarAppearance {
     // Цвета
     public var backIconColor: ColorToken

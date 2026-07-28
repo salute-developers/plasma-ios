@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct FormItemAppearance {
     public var size: FormItemSizeConfiguration
     public var disableAlpha: CGFloat
@@ -25,6 +26,7 @@ public struct FormItemAppearance {
     public var counterColor: StatefulColor
     public var counterTypography: TypographyConfiguration
 
+    // sdds:apiName=formItemType
     public var formType: FormType
     public var topTextAlignment: FormTextAlignment
     public var bottomTextAlignment: FormTextAlignment

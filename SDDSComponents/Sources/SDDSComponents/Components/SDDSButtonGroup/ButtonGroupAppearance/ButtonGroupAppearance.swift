@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `ButtonGroupAppearance` определяет внешний вид компонента ButtonGroup.
  */
+// sdds:apiInfo
 public struct ButtonGroupAppearance {
     public var buttonAppearance: ButtonAppearance?
     public var size: ButtonGroupSizeConfiguration

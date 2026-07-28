@@ -21,6 +21,7 @@ import SwiftUI
  - Methods:
     - init: Инициализирует стили кнопки с заданными параметрами.
  */
+// sdds:apiInfo
 public struct ButtonAppearance {
     /**
      Конфигурация размеров кнопки, определяемая `ButtonSizeConfiguration`.
@@ -35,21 +36,25 @@ public struct ButtonAppearance {
     /**
      Типографика для текста заголовка кнопки, определяемая `TypographyConfiguration`.
      */
+    // sdds:apiName=labelStyle
     public var titleTypography: TypographyConfiguration
 
     /**
      Стиль заливки текста заголовка кнопки для различных состояний, определяемый `StatefulFillStyle`.
      */
+    // sdds:apiName=labelColor
     public var titleColor: StatefulFillStyle
 
     /**
      Типографика для текста подзаголовка кнопки, определяемая `TypographyConfiguration`.
      */
+    // sdds:apiName=valueStyle
     public var subtitleTypography: TypographyConfiguration
 
     /**
      Стиль заливки текста подзаголовка кнопки для различных состояний, определяемый `StatefulFillStyle`.
      */
+    // sdds:apiName=valueColor
     public var subtitleColor: StatefulFillStyle
 
     /**

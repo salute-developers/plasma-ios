@@ -18,6 +18,7 @@ import SwiftUI
  )
  ```
  */
+// sdds:apiInfo
 public struct ModalAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

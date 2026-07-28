@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `ToolbarAppearance` определяет внешний вид компонента Toolbar.
  */
+// sdds:apiInfo
 public struct ToolbarAppearance: Hashable {
     private let id = UUID()
     

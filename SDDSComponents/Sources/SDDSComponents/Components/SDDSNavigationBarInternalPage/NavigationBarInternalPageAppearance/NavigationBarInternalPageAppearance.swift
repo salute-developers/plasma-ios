@@ -5,6 +5,7 @@ import SwiftUI
 /**
  `NavigationBarInternalPageAppearance` определяет внешний вид компонента NavigationBarInternalPage.
  */
+// sdds:apiInfo
 public struct NavigationBarInternalPageAppearance {
     // Цвета
     public var backIconColor: ColorToken

@@ -14,6 +14,7 @@ import SDDSThemeCore
     - indicatorAppearance: Стиль индикатора
     - size: Конфигурация размеров и отступов элемента
  */
+// sdds:apiInfo
 public struct TabBarItemAppearance: Hashable {
     let id = UUID()
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")

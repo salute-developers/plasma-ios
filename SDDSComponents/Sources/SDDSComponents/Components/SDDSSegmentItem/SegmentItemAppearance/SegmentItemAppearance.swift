@@ -2,12 +2,15 @@ import Foundation
 import SwiftUI
 @_exported import SDDSThemeCore
 
+// sdds:apiInfo
 public struct SegmentItemAppearance {
     public var size: SegmentItemSizeConfiguration
     public var shapeStyle: ComponentShapeStyle
+    // sdds:apiName=labelStyle
     public var titleTypography: TypographyConfiguration
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var titleColor: ButtonColor
+    // sdds:apiName=valueStyle
     public var subtitleTypography: TypographyConfiguration
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var subtitleColor: ButtonColor

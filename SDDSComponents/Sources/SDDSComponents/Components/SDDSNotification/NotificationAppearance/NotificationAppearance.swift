@@ -17,6 +17,7 @@ import SwiftUI
  )
  ```
  */
+// sdds:apiInfo
 public struct NotificationAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

@@ -20,6 +20,7 @@ import SwiftUI
  - switchStyle: Стиль компонента Switch.
  - radioBoxStyle: Стиль компонента RadioBox.
  */
+// sdds:apiInfo
 public struct CellAppearance {
     public var size: CellSizeConfiguration
     public var labelTypography: TypographyConfiguration
@@ -30,9 +31,12 @@ public struct CellAppearance {
     public var subtitleColor: StatefulFillStyle
     public var disclosureTextTypography: TypographyConfiguration
     public var disclosureTextColor: StatefulFillStyle
+    // sdds:apiName=disclosureIconColor
     public var disclosureImageColor: StatefulFillStyle
+    // sdds:apiName=disclosureIcon
     public var disclosureImage: Image?
     public var avatarAppearance: AvatarAppearance
+    // sdds:apiName=iconButtonStyle
     public var buttonAppearance: ButtonAppearance
     public var checkboxAppearance: CheckboxAppearance
     public var radioboxAppearance: RadioboxAppearance

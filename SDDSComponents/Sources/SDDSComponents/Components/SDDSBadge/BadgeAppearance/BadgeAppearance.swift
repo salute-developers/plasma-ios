@@ -2,6 +2,7 @@ import SwiftUI
 import Foundation
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct BadgeAppearance {
     public var size: BadgeSizeConfiguration = DefaultBadgeSize()
     public var backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])

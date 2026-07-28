@@ -29,7 +29,9 @@ public enum CheckboxGroupBehaviour {
     - verticalSpacing: Вертикальный отступ между элементами.
  */
 public protocol CheckboxGroupSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    // sdds:apiName=itemOffset
     var horizontalIndent: CGFloat { get }
+    // sdds:apiName=itemSpacing
     var verticalSpacing: CGFloat { get }
 }
 

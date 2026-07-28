@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSThemeCore
 
+// sdds:apiInfo
 public struct AccordionAppearance: Hashable {
     let id = UUID()
     public var accordionItemAppearance: AccordionItemAppearance

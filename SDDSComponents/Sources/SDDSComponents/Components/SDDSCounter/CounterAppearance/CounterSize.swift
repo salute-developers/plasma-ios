@@ -13,7 +13,9 @@ public struct DefaultCounterSize: CounterSizeConfiguration {
 }
 
 public protocol CounterSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    // sdds:apiName=minHeight
     var height: CGFloat { get }
+    // sdds:apiName=minWidth
     var width: CGFloat { get }
     var paddings: EdgeInsets { get }
 }

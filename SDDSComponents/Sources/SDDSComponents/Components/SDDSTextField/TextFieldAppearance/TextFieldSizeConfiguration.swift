@@ -3,17 +3,27 @@ import SwiftUI
 
 /// Определяет конфигурацию размеров текстового поля.
 public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
+    // sdds:apiName=labelPadding
     var titleBottomPadding: CGFloat { get }
     var titleInnerPadding: CGFloat { get }
+    // sdds:apiName=boxPaddingStart
     var boxLeadingPadding: CGFloat { get }
+    // sdds:apiName=boxPaddingEnd
     var boxTrailingPadding: CGFloat { get }
+    // sdds:apiName=helperTextPadding
     var captionTopPadding: CGFloat { get }
     var optionalPadding: CGFloat { get }
+    // sdds:apiName=shape
     var cornerRadius: CGFloat { get }
+    // sdds:apiName=startContentPadding
     var iconPadding: CGFloat { get }
+    // sdds:apiName=endContentPadding
     var iconActionPadding: CGFloat { get }
+    // sdds:apiName=boxMinHeight
     var fieldHeight: CGFloat { get }
+    // sdds:apiName=startContentSize
     var iconSize: CGSize { get }
+    // sdds:apiName=endContentSize
     var iconActionSize: CGSize { get }
     var chipContainerHorizontalPadding: CGFloat { get }
     var dividerHeight: CGFloat { get }

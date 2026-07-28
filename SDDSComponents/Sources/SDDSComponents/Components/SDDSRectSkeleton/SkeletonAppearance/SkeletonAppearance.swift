@@ -21,6 +21,7 @@ import SwiftUI
  )
  ```
  */
+// sdds:apiInfo
 public struct SkeletonAppearance {
     public var shape: PathDrawer
     public var gradient: StatefulFillStyle

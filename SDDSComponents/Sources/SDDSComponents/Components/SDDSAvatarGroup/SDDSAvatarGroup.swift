@@ -129,6 +129,8 @@ public struct SDDSAvatarGroup: View {
     - spacing: Расстояние между аватарами.
  */
 public protocol AvatarGroupSizeConfiguration {
+    // sdds:apiName=itemSpacing
     var borderWidth: CGFloat { get }
+    // sdds:apiName=itemOffset
     var spacing: CGFloat { get }
 }

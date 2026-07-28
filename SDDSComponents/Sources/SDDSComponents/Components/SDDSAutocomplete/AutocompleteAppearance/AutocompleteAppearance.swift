@@ -12,6 +12,7 @@ import SDDSThemeCore
     - textFieldAppearance: Настройки внешнего вида текстового поля
     - size: Конфигурация размеров компонента
  */
+// sdds:apiInfo
 public struct AutocompleteAppearance: Hashable {
     let id = UUID()
     public var dropdownAppearance: DropdownMenuAppearance
