@@ -56,18 +56,20 @@ public struct Segment {
         )
     }
     
-    public static let all: [Variation<SegmentAppearance>] = [
-        Segment.l.variation,
-        Segment.l.pilled.variation,
-        Segment.m.variation,
-        Segment.m.pilled.variation,
-        Segment.s.variation,
-        Segment.s.pilled.variation,
-        Segment.xl.variation,
-        Segment.xl.pilled.variation,
-        Segment.xs.variation,
-        Segment.xs.pilled.variation,
-    ]
+    public static var all: [Variation<SegmentAppearance>] {
+        [
+            Segment.l.variation,
+            Segment.l.pilled.variation,
+            Segment.m.variation,
+            Segment.m.pilled.variation,
+            Segment.s.variation,
+            Segment.s.pilled.variation,
+            Segment.xl.variation,
+            Segment.xl.pilled.variation,
+            Segment.xs.variation,
+            Segment.xs.pilled.variation,
+        ]
+    }
 }
 
 public struct SegmentVariation {
@@ -86,7 +88,7 @@ public struct SegmentVariation {
 private extension SegmentAppearance {
     static var base: SegmentAppearance {
         var appearance = SegmentAppearance()
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultTransparentSecondary, highlightedColor: ColorToken.surfaceDefaultTransparentSecondary, hoveredColor: ColorToken.surfaceDefaultTransparentSecondary, selectedColor: ColorToken.surfaceDefaultTransparentSecondary)
+        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultTransparentSecondary, values: []))
         appearance.disabledAlpha = CGFloat(0)
         return appearance
     }

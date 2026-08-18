@@ -26,10 +26,12 @@ public struct CheckboxGroup {
         )
     }
     
-    public static let all: [Variation<CheckboxGroupAppearance>] = [
-        CheckboxGroup.m.variation,
-        CheckboxGroup.s.variation,
-    ]
+    public static var all: [Variation<CheckboxGroupAppearance>] {
+        [
+            CheckboxGroup.m.variation,
+            CheckboxGroup.s.variation,
+        ]
+    }
 }
 
 public struct CheckboxGroupVariation {

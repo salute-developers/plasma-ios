@@ -1,39 +1,52 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
 /// Определяет конфигурацию размеров текстового поля.
 public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
-    // sdds:apiName=labelPadding
+    @ApiName("labelPadding")
     var titleBottomPadding: CGFloat { get }
+    @ApiName("labelPadding")
     var titleInnerPadding: CGFloat { get }
-    // sdds:apiName=boxPaddingStart
+    @ApiName("boxPaddingStart")
     var boxLeadingPadding: CGFloat { get }
-    // sdds:apiName=boxPaddingEnd
+    @ApiName("boxPaddingEnd")
     var boxTrailingPadding: CGFloat { get }
-    // sdds:apiName=helperTextPadding
+    @ApiName("helperTextPadding")
     var captionTopPadding: CGFloat { get }
     var optionalPadding: CGFloat { get }
-    // sdds:apiName=shape
+    @ApiName("shape")
     var cornerRadius: CGFloat { get }
-    // sdds:apiName=startContentPadding
+    @ApiName("startContentPadding")
     var iconPadding: CGFloat { get }
-    // sdds:apiName=endContentPadding
+    @ApiName("endContentPadding")
     var iconActionPadding: CGFloat { get }
-    // sdds:apiName=boxMinHeight
+    @ApiName("boxMinHeight")
     var fieldHeight: CGFloat { get }
-    // sdds:apiName=startContentSize
+    @ApiName("startContentSize")
+    @ApiValue("size(startContentSize, startContentSize)")
     var iconSize: CGSize { get }
-    // sdds:apiName=endContentSize
+    @ApiName("endContentSize")
+    @ApiValue("size(endContentSize, endContentSize)")
     var iconActionSize: CGSize { get }
+    @ApiName("chipsPadding")
     var chipContainerHorizontalPadding: CGFloat { get }
+    @ApiValue("CGFloat(1.0)", zero: "CGFloat(0)")
     var dividerHeight: CGFloat { get }
+    @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
     var textBeforeLeadingPadding: CGFloat { get }
+    @ApiName("prefixPadding")
     var textBeforeTrailingPadding: CGFloat { get }
+    @ApiName("suffixPadding")
     var textAfterLeadingPadding: CGFloat { get }
+    @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
     var textAfterTrailingPadding: CGFloat { get }
     var chipsPadding: CGFloat { get }
+    @ApiValue("point(indicatorOffsetX, indicatorOffsetY)")
     var indicatorOffset: CGPoint { get }
+    @ApiValue("size(indicatorSize, indicatorSize)")
     var indicatorSize: CGSize { get }
+    @ApiName("boxPaddingBottom")
     var boxPaddingTop: CGFloat { get }
     var boxPaddingBottom: CGFloat { get }
 }

@@ -1,18 +1,23 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `CodeInputAppearance` определяет внешний вид компонента CodeInput.
  */
-// sdds:apiInfo
+@ApiInfo
 public struct CodeInputAppearance {
     public var codeColor: ColorToken
+    @ApiName("codeColor", state: .error)
     public var codeColorError: ColorToken
     public var captionColor: ColorToken
+    @ApiName("captionColor", state: .error)
     public var captionColorError: ColorToken
     public var strokeColor: ColorToken
+    @ApiName("strokeColor", state: .error)
     public var strokeColorError: ColorToken
+    @ApiName("strokeColor", state: .focused)
     public var strokeColorFocused: ColorToken
     public var fillColor: ColorToken
     public var fillColorError: ColorToken

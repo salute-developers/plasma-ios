@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -18,6 +19,7 @@ public protocol NoteCompactSizeConfiguration {
     var actionEndMargin: CGFloat { get }
     var closeStartMargin: CGFloat { get }
     var closeSize: CGFloat { get }
+    @ApiName("contentBeforeArrangement")
     var contentBeforeArrangement: NoteCompactContentBeforeArrangement { get }
 }
 

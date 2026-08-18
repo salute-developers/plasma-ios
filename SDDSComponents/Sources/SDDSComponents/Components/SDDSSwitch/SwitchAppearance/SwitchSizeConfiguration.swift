@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -9,7 +10,9 @@ import Foundation
     - verticalGap: Вертикальный зазор между элементами.
  */
 public protocol SwitchSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @ApiName("toggleTrackShape")
     var toggleTrackPathDrawer: PathDrawer { get }
+    @ApiName("toggleThumbShape")
     var toggleThumbPathDrawer: PathDrawer { get }
     var toggleTrackWidth: CGFloat { get }
     var toggleTrackHeight: CGFloat { get }
@@ -20,8 +23,10 @@ public protocol SwitchSizeConfiguration: SizeConfiguration, CustomDebugStringCon
     var textPadding: CGFloat { get }
     
     @available(*, deprecated, message: "Don't use it, public method will be removed")
+    @ApiValue("CGFloat?(0)", zero: "CGFloat?(0)")
     var width: CGFloat? { get }
     @available(*, deprecated, message: "Don't use it, public method will be removed")
+    @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
     var verticalGap: CGFloat { get }
 }
 

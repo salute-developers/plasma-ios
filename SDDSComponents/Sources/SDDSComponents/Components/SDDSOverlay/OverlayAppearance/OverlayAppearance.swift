@@ -1,7 +1,8 @@
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
-// sdds:apiInfo
+@ApiInfo
 public struct OverlayAppearance {
     public var backgroundColor: FillStyle
     public var blurRadius: CGFloat

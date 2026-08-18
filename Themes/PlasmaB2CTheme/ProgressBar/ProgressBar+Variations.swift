@@ -235,3 +235,28 @@ private extension ProgressBarAppearance {
     }
     
 }
+
+public extension ProgressBar {
+    static var accent: AppearanceVariation<ProgressBarAppearance> {
+        return ProgressBar.`default`.accent
+    }
+    static var gradient: AppearanceVariation<ProgressBarAppearance> {
+        return ProgressBar.`default`.gradient
+    }
+    static var info: AppearanceVariation<ProgressBarAppearance> {
+        return ProgressBar.`default`.info
+    }
+    static var negative: AppearanceVariation<ProgressBarAppearance> {
+        return ProgressBar.`default`.negative
+    }
+    static var positive: AppearanceVariation<ProgressBarAppearance> {
+        return ProgressBar.`default`.positive
+    }
+    static var secondary: AppearanceVariation<ProgressBarAppearance> {
+        return ProgressBar.`default`.secondary
+    }
+    static var warning: AppearanceVariation<ProgressBarAppearance> {
+        return ProgressBar.`default`.warning
+    }
+}
+

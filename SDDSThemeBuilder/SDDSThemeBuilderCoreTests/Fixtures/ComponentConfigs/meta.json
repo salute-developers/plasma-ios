@@ -1,0 +1,901 @@
+{
+    "name": "fixtures",
+    "components": [
+        {
+            "componentName": "accordion",
+            "styleName": "accordion-clear-action-end",
+            "config": "accordion_clear_action_end_config.json"
+        },
+        {
+            "componentName": "accordion",
+            "styleName": "accordion-clear-action-start",
+            "config": "accordion_clear_action_start_config.json"
+        },
+        {
+            "componentName": "accordion-item",
+            "styleName": "accordion-item-clear-action-end",
+            "config": "accordion_item_clear_action_end_config.json"
+        },
+        {
+            "componentName": "accordion-item",
+            "styleName": "accordion-item-clear-action-start",
+            "config": "accordion_item_clear_action_start_config.json"
+        },
+        {
+            "componentName": "accordion-item",
+            "styleName": "accordion-item-solid-action-end",
+            "config": "accordion_item_solid_action_end_config.json"
+        },
+        {
+            "componentName": "accordion-item",
+            "styleName": "accordion-item-solid-action-start",
+            "config": "accordion_item_solid_action_start_config.json"
+        },
+        {
+            "componentName": "accordion",
+            "styleName": "accordion-solid-action-end",
+            "config": "accordion_solid_action_end_config.json"
+        },
+        {
+            "componentName": "accordion",
+            "styleName": "accordion-solid-action-start",
+            "config": "accordion_solid_action_start_config.json"
+        },
+        {
+            "componentName": "ai-answer",
+            "styleName": "ai-answer",
+            "config": "ai_answer_config.json"
+        },
+        {
+            "componentName": "button-group",
+            "styleName": "ai-answer-basic-button-group",
+            "config": "ai_answer_basic_button_group_config.json"
+        },
+        {
+            "componentName": "chip-group",
+            "styleName": "ai-answer-chip-group",
+            "config": "ai_answer_chip_group_config.json"
+        },
+        {
+            "componentName": "button-group",
+            "styleName": "ai-answer-icon-button-group",
+            "config": "ai_answer_icon_button_group_config.json"
+        },
+        {
+            "componentName": "ai-header",
+            "styleName": "ai-header",
+            "config": "ai_header_config.json"
+        },
+        {
+            "componentName": "icon-button",
+            "styleName": "ai-header-embedded-icon-button",
+            "config": "ai_header_embedded_icon_button_config.json"
+        },
+        {
+            "componentName": "button-group",
+            "styleName": "ai-header-embedded-icon-button-group",
+            "config": "ai_header_embedded_icon_button_group_config.json"
+        },
+        {
+            "componentName": "ai-input",
+            "styleName": "ai-input-condensed",
+            "config": "ai_input_condensed_config.json"
+        },
+        {
+            "componentName": "ai-input",
+            "styleName": "ai-input-extended",
+            "config": "ai_input_extended_config.json"
+        },
+        {
+            "componentName": "file",
+            "styleName": "ai-input-file-circular-progress",
+            "config": "ai_input_file_circular_progress_config.json"
+        },
+        {
+            "componentName": "button-group",
+            "styleName": "ai-input-icon-button-group",
+            "config": "ai_input_icon_button_group_config.json"
+        },
+        {
+            "componentName": "ai-user-message",
+            "styleName": "ai-user-message",
+            "config": "ai_user_message_config.json"
+        },
+        {
+            "componentName": "editable",
+            "styleName": "ai-user-message-editable",
+            "config": "ai_user_message_editable_config.json"
+        },
+        {
+            "componentName": "button-group",
+            "styleName": "ai-user-message-embedded-icon-button-group",
+            "config": "ai_user_message_embedded_icon_button_group_config.json"
+        },
+        {
+            "componentName": "text-field",
+            "styleName": "alternative-field",
+            "config": "alternative_field_config.json"
+        },
+        {
+            "componentName": "autocomplete",
+            "styleName": "autocomplete-normal",
+            "config": "autocomplete_normal_config.json"
+        },
+        {
+            "componentName": "autocomplete",
+            "styleName": "autocomplete-tight",
+            "config": "autocomplete_tight_config.json"
+        },
+        {
+            "componentName": "avatar",
+            "styleName": "avatar",
+            "config": "avatar_config.json"
+        },
+        {
+            "componentName": "avatar-group",
+            "styleName": "avatar-group",
+            "config": "avatar_group_config.json"
+        },
+        {
+            "componentName": "indicator",
+            "styleName": "avatar-indicator",
+            "config": "avatar_indicator_config.json"
+        },
+        {
+            "componentName": "badge",
+            "styleName": "badge-clear",
+            "config": "badge_clear_config.json"
+        },
+        {
+            "componentName": "badge",
+            "styleName": "badge-solid",
+            "config": "badge_solid_config.json"
+        },
+        {
+            "componentName": "badge",
+            "styleName": "badge-transparent",
+            "config": "badge_transparent_config.json"
+        },
+        {
+            "componentName": "badge",
+            "styleName": "badge.transparent",
+            "config": "badge_transparent_config.json"
+        },
+        {
+            "componentName": "basic-button",
+            "styleName": "basic-button",
+            "config": "basic_button_config.json"
+        },
+        {
+            "componentName": "button-group",
+            "styleName": "basic-button-group",
+            "config": "basic_button_group_config.json"
+        },
+        {
+            "componentName": "card",
+            "styleName": "card",
+            "config": "card_config.json"
+        },
+        {
+            "componentName": "card",
+            "styleName": "card-clear",
+            "config": "card_clear_config.json"
+        },
+        {
+            "componentName": "card",
+            "styleName": "card-solid",
+            "config": "card_solid_config.json"
+        },
+        {
+            "componentName": "carousel",
+            "styleName": "carousel",
+            "config": "carousel_config.json"
+        },
+        {
+            "componentName": "cell",
+            "styleName": "cell",
+            "config": "cell_config.json"
+        },
+        {
+            "componentName": "cell",
+            "styleName": "cell-select",
+            "config": "cell_select_config.json"
+        },
+        {
+            "componentName": "check-box",
+            "styleName": "check-box",
+            "config": "checkbox_config.json"
+        },
+        {
+            "componentName": "check-box-group",
+            "styleName": "check-box-group",
+            "config": "checkbox_group_config.json"
+        },
+        {
+            "componentName": "chip",
+            "styleName": "chip",
+            "config": "chip_config.json"
+        },
+        {
+            "componentName": "chip-group",
+            "styleName": "chip-group",
+            "config": "chip_group_config.json"
+        },
+        {
+            "componentName": "chip-group",
+            "styleName": "chip-group-dense",
+            "config": "chip_group_dense_config.json"
+        },
+        {
+            "componentName": "chip-group",
+            "styleName": "chip-group-wide",
+            "config": "chip_group_wide_config.json"
+        },
+        {
+            "componentName": "circular-progress-bar",
+            "styleName": "circular-progress-bar",
+            "config": "circular_progress_bar_config.json"
+        },
+        {
+            "componentName": "code-field",
+            "styleName": "code-field",
+            "config": "code_field_config.json"
+        },
+        {
+            "componentName": "code-input",
+            "styleName": "code-input",
+            "config": "code_input_config.json"
+        },
+        {
+            "componentName": "collapsing-navigation-bar",
+            "styleName": "collapsing-navigation-bar-internal-page",
+            "config": "collapsing_navigation_bar_internal_page_config.json"
+        },
+        {
+            "componentName": "collapsing-navigation-bar",
+            "styleName": "collapsing-navigation-bar-main-page",
+            "config": "collapsing_navigation_bar_main_page_config.json"
+        },
+        {
+            "componentName": "combo-box",
+            "styleName": "combo-box-multiple-normal",
+            "config": "combo_box_multiple_normal_config.json"
+        },
+        {
+            "componentName": "combo-box",
+            "styleName": "combo-box-multiple-tight",
+            "config": "combo_box_multiple_tight_config.json"
+        },
+        {
+            "componentName": "combo-box",
+            "styleName": "combo-box-single-normal",
+            "config": "combo_box_single_normal_config.json"
+        },
+        {
+            "componentName": "combo-box",
+            "styleName": "combo-box-single-tight",
+            "config": "combo_box_single_tight_config.json"
+        },
+        {
+            "componentName": "counter",
+            "styleName": "counter",
+            "config": "counter_config.json"
+        },
+        {
+            "componentName": "divider",
+            "styleName": "divider",
+            "config": "divider_config.json"
+        },
+        {
+            "componentName": "drawer",
+            "styleName": "drawer",
+            "config": "drawer_config.json"
+        },
+        {
+            "componentName": "drawer",
+            "styleName": "drawer-close-inner",
+            "config": "drawer_close_inner_config.json"
+        },
+        {
+            "componentName": "drawer",
+            "styleName": "drawer-close-none",
+            "config": "drawer_close_none_config.json"
+        },
+        {
+            "componentName": "drawer",
+            "styleName": "drawer-close-outer",
+            "config": "drawer_close_outer_config.json"
+        },
+        {
+            "componentName": "drop-zone",
+            "styleName": "drop-zone",
+            "config": "drop_zone_config.json"
+        },
+        {
+            "componentName": "dropdown-empty-state",
+            "styleName": "dropdown-empty-state",
+            "config": "dropdown_empty_state_config.json"
+        },
+        {
+            "componentName": "dropdown-menu",
+            "styleName": "dropdown-menu",
+            "config": "dropdown_menu_config.json"
+        },
+        {
+            "componentName": "list-item",
+            "styleName": "dropdown-menu-item",
+            "config": "dropdown_menu_item_config.json"
+        },
+        {
+            "componentName": "list-item",
+            "styleName": "dropdown-menu-item-normal",
+            "config": "dropdown_menu_item_normal_config.json"
+        },
+        {
+            "componentName": "list-item",
+            "styleName": "dropdown-menu-item-tight",
+            "config": "dropdown_menu_item_tight_config.json"
+        },
+        {
+            "componentName": "list",
+            "styleName": "dropdown-menu-list",
+            "config": "dropdown_menu_list_config.json"
+        },
+        {
+            "componentName": "list",
+            "styleName": "dropdown-menu-list-normal",
+            "config": "dropdown_menu_list_normal_config.json"
+        },
+        {
+            "componentName": "list",
+            "styleName": "dropdown-menu-list-tight",
+            "config": "dropdown_menu_list_tight_config.json"
+        },
+        {
+            "componentName": "dropdown-menu",
+            "styleName": "dropdown-menu-normal",
+            "config": "dropdown_menu_normal_config.json"
+        },
+        {
+            "componentName": "dropdown-menu",
+            "styleName": "dropdown-menu-tight",
+            "config": "dropdown_menu_tight_config.json"
+        },
+        {
+            "componentName": "editable",
+            "styleName": "editable",
+            "config": "editable_config.json"
+        },
+        {
+            "componentName": "chip",
+            "styleName": "embedded-chip",
+            "config": "embedded_chip_config.json"
+        },
+        {
+            "componentName": "chip-group",
+            "styleName": "embedded-chip-group-dense",
+            "config": "embedded_chip_group_dense_config.json"
+        },
+        {
+            "componentName": "chip-group",
+            "styleName": "embedded-chip-group-wide",
+            "config": "embedded_chip_group_wide_config.json"
+        },
+        {
+            "componentName": "icon-button",
+            "styleName": "embedded-icon-button",
+            "config": "embedded_icon_button_config.json"
+        },
+        {
+            "componentName": "button-group",
+            "styleName": "embedded-icon-button-group",
+            "config": "embedded_icon_button_group_config.json"
+        },
+        {
+            "componentName": "file",
+            "styleName": "file-circular-progress",
+            "config": "file_circular_progress_config.json"
+        },
+        {
+            "componentName": "file",
+            "styleName": "file-linear-progress",
+            "config": "file_linear_progress_config.json"
+        },
+        {
+            "componentName": "form-item",
+            "styleName": "form-item",
+            "config": "form_item_config.json"
+        },
+        {
+            "componentName": "icon-badge",
+            "styleName": "icon-badge-clear",
+            "config": "icon_badge_clear_config.json"
+        },
+        {
+            "componentName": "icon-badge",
+            "styleName": "icon-badge-solid",
+            "config": "icon_badge_solid_config.json"
+        },
+        {
+            "componentName": "icon-badge",
+            "styleName": "icon-badge-transparent",
+            "config": "icon_badge_transparent_config.json"
+        },
+        {
+            "componentName": "icon-button",
+            "styleName": "icon-button",
+            "config": "icon_button_config.json"
+        },
+        {
+            "componentName": "button-group",
+            "styleName": "icon-button-group",
+            "config": "icon_button_group_config.json"
+        },
+        {
+            "componentName": "icon-tab-item",
+            "styleName": "icon-tab-item",
+            "config": "icon_tab_item_config.json"
+        },
+        {
+            "componentName": "tabs",
+            "styleName": "icon-tabs",
+            "config": "icon_tabs_config.json"
+        },
+        {
+            "componentName": "image",
+            "styleName": "image",
+            "config": "image_config.json"
+        },
+        {
+            "componentName": "indicator",
+            "styleName": "indicator",
+            "config": "indicator_config.json"
+        },
+        {
+            "componentName": "link-button",
+            "styleName": "link-button",
+            "config": "link_button_config.json"
+        },
+        {
+            "componentName": "list",
+            "styleName": "list",
+            "config": "list_config.json"
+        },
+        {
+            "componentName": "list-item",
+            "styleName": "list-item",
+            "config": "list_item_config.json"
+        },
+        {
+            "componentName": "list-item",
+            "styleName": "list-item-normal",
+            "config": "list_item_normal_config.json"
+        },
+        {
+            "componentName": "list-item",
+            "styleName": "list-item-tight",
+            "config": "list_item_tight_config.json"
+        },
+        {
+            "componentName": "list",
+            "styleName": "list-normal",
+            "config": "list_normal_config.json"
+        },
+        {
+            "componentName": "list",
+            "styleName": "list-numbered",
+            "config": "list_numbered_config.json"
+        },
+        {
+            "componentName": "list-item",
+            "styleName": "list-numbered-item",
+            "config": "list_numbered_item_config.json"
+        },
+        {
+            "componentName": "list",
+            "styleName": "list-tight",
+            "config": "list_tight_config.json"
+        },
+        {
+            "componentName": "loader",
+            "styleName": "loader",
+            "config": "loader_config.json"
+        },
+        {
+            "componentName": "icon-badge",
+            "styleName": "mention",
+            "config": "mention_config.json"
+        },
+        {
+            "componentName": "modal",
+            "styleName": "modal",
+            "config": "modal_config.json"
+        },
+        {
+            "componentName": "bottom-sheet",
+            "styleName": "modal-bottom-sheet",
+            "config": "bottom_sheet_config.json"
+        },
+        {
+            "componentName": "navigation-bar",
+            "styleName": "navigation-bar-internal-page",
+            "config": "navigation_bar_internal_page_config.json"
+        },
+        {
+            "componentName": "navigation-bar",
+            "styleName": "navigation-bar-main-page",
+            "config": "navigation_bar_main_page_config.json"
+        },
+        {
+            "componentName": "navigation-drawer",
+            "styleName": "navigation-drawer",
+            "config": "navigation_drawer_config.json"
+        },
+        {
+            "componentName": "navigation-drawer-item",
+            "styleName": "navigation-drawer-item",
+            "config": "navigation_drawer_item_config.json"
+        },
+        {
+            "componentName": "note",
+            "styleName": "note",
+            "config": "note_config.json"
+        },
+        {
+            "componentName": "note-compact",
+            "styleName": "note-compact",
+            "config": "note_compact_config.json"
+        },
+        {
+            "componentName": "notification",
+            "styleName": "notification-compact",
+            "config": "notification_compact_config.json"
+        },
+        {
+            "componentName": "notification-content",
+            "styleName": "notification-content",
+            "config": "notification_content_config.json"
+        },
+        {
+            "componentName": "notification",
+            "styleName": "notification-loose",
+            "config": "notification_loose_config.json"
+        },
+        {
+            "componentName": "overlay",
+            "styleName": "overlay",
+            "config": "overlay_config.json"
+        },
+        {
+            "componentName": "pagination-dots",
+            "styleName": "pagination-dots-horizontal",
+            "config": "pagination_dots_horizontal_config.json"
+        },
+        {
+            "componentName": "pagination-dots",
+            "styleName": "pagination-dots-vertical",
+            "config": "pagination_dots_vertical_config.json"
+        },
+        {
+            "componentName": "popover",
+            "styleName": "popover",
+            "config": "popover_config.json"
+        },
+        {
+            "componentName": "progress-bar",
+            "styleName": "progress-bar",
+            "config": "progress_bar_config.json"
+        },
+        {
+            "componentName": "radio-box",
+            "styleName": "radio-box",
+            "config": "radiobox_config.json"
+        },
+        {
+            "componentName": "radio-box-group",
+            "styleName": "radio-box-group",
+            "config": "radiobox_group_config.json"
+        },
+        {
+            "componentName": "rect-skeleton",
+            "styleName": "rect-skeleton",
+            "config": "rect_skeleton_config.json"
+        },
+        {
+            "componentName": "scroll-bar",
+            "styleName": "scroll-bar",
+            "config": "scroll_bar_config.json"
+        },
+        {
+            "componentName": "text-field",
+            "styleName": "search-bar",
+            "config": "search_bar_config.json"
+        },
+        {
+            "componentName": "segment",
+            "styleName": "segment",
+            "config": "segment_config.json"
+        },
+        {
+            "componentName": "segment-item",
+            "styleName": "segment-item",
+            "config": "segment_item_config.json"
+        },
+        {
+            "componentName": "counter",
+            "styleName": "segment-item-counter",
+            "config": "segment_item_counter_config.json"
+        },
+        {
+            "componentName": "select",
+            "styleName": "select",
+            "config": "select_config.json"
+        },
+        {
+            "componentName": "select-item",
+            "styleName": "select-item",
+            "config": "select_item_config.json"
+        },
+        {
+            "componentName": "select-item",
+            "styleName": "select-item-multiple-normal",
+            "config": "select_item_multiple_normal_config.json"
+        },
+        {
+            "componentName": "select-item",
+            "styleName": "select-item-multiple-tight",
+            "config": "select_item_multiple_tight_config.json"
+        },
+        {
+            "componentName": "select-item",
+            "styleName": "select-item-single-normal",
+            "config": "select_item_single_normal_config.json"
+        },
+        {
+            "componentName": "select-item",
+            "styleName": "select-item-single-tight",
+            "config": "select_item_single_tight_config.json"
+        },
+        {
+            "componentName": "select",
+            "styleName": "select-multiple-normal",
+            "config": "select_multiple_normal_config.json"
+        },
+        {
+            "componentName": "select",
+            "styleName": "select-multiple-tight",
+            "config": "select_multiple_tight_config.json"
+        },
+        {
+            "componentName": "select",
+            "styleName": "select-single-normal",
+            "config": "select_single_normal_config.json"
+        },
+        {
+            "componentName": "select",
+            "styleName": "select-single-tight",
+            "config": "select_single_tight_config.json"
+        },
+        {
+            "componentName": "slider",
+            "styleName": "slider-horizontal-label-inner",
+            "config": "slider_horizontal_label_inner_config.json"
+        },
+        {
+            "componentName": "slider",
+            "styleName": "slider-horizontal-label-outer",
+            "config": "slider_horizontal_label_outer_config.json"
+        },
+        {
+            "componentName": "slider",
+            "styleName": "slider-vertical-label-inner",
+            "config": "slider_vertical_label_inner_config.json"
+        },
+        {
+            "componentName": "slider",
+            "styleName": "slider-vertical-label-outer",
+            "config": "slider_vertical_label_outer_config.json"
+        },
+        {
+            "componentName": "spinner",
+            "styleName": "spinner",
+            "config": "spinner_config.json"
+        },
+        {
+            "componentName": "splitter",
+            "styleName": "splitter",
+            "config": "splitter_config.json"
+        },
+        {
+            "componentName": "switch",
+            "styleName": "switch",
+            "config": "switch_config.json"
+        },
+        {
+            "componentName": "tab-bar",
+            "styleName": "tab-bar",
+            "config": "tab_bar_config.json"
+        },
+        {
+            "componentName": "tab-bar",
+            "styleName": "tab-bar-clear",
+            "config": "tab_bar_clear_config.json"
+        },
+        {
+            "componentName": "counter",
+            "styleName": "tab-bar-counter",
+            "config": "tab_bar_counter_config.json"
+        },
+        {
+            "componentName": "tab-bar",
+            "styleName": "tab-bar-has-label-clear",
+            "config": "tab_bar_has_label_clear_config.json"
+        },
+        {
+            "componentName": "tab-bar",
+            "styleName": "tab-bar-has-label-solid",
+            "config": "tab_bar_has_label_solid_config.json"
+        },
+        {
+            "componentName": "tab-bar",
+            "styleName": "tab-bar-island-clear",
+            "config": "tab_bar_island_clear_config.json"
+        },
+        {
+            "componentName": "tab-bar",
+            "styleName": "tab-bar-island-has-label-clear",
+            "config": "tab_bar_island_has_label_clear_config.json"
+        },
+        {
+            "componentName": "tab-bar",
+            "styleName": "tab-bar-island-has-label-solid",
+            "config": "tab_bar_island_has_label_solid_config.json"
+        },
+        {
+            "componentName": "tab-bar",
+            "styleName": "tab-bar-island-solid",
+            "config": "tab_bar_island_solid_config.json"
+        },
+        {
+            "componentName": "tab-bar-item",
+            "styleName": "tab-bar-item",
+            "config": "tab_bar_item_config.json"
+        },
+        {
+            "componentName": "tab-bar-item",
+            "styleName": "tab-bar-item-clear",
+            "config": "tab_bar_item_clear_config.json"
+        },
+        {
+            "componentName": "tab-bar-item",
+            "styleName": "tab-bar-item-solid",
+            "config": "tab_bar_item_solid_config.json"
+        },
+        {
+            "componentName": "tab-bar",
+            "styleName": "tab-bar-solid",
+            "config": "tab_bar_solid_config.json"
+        },
+        {
+            "componentName": "tab-item",
+            "styleName": "tab-item-default",
+            "config": "tab_item_default_config.json"
+        },
+        {
+            "componentName": "tab-item",
+            "styleName": "tab-item-folder",
+            "config": "tab_item_folder_config.json"
+        },
+        {
+            "componentName": "counter",
+            "styleName": "tab-item-folder-counter",
+            "config": "tab_item_folder_counter_config.json"
+        },
+        {
+            "componentName": "tab-item",
+            "styleName": "tab-item-header",
+            "config": "tab_item_header_config.json"
+        },
+        {
+            "componentName": "tabs",
+            "styleName": "tabs-default",
+            "config": "tabs_default_config.json"
+        },
+        {
+            "componentName": "tabs",
+            "styleName": "tabs-folder",
+            "config": "tabs_folder_config.json"
+        },
+        {
+            "componentName": "tabs",
+            "styleName": "tabs-header",
+            "config": "tabs_header_config.json"
+        },
+        {
+            "componentName": "text-area",
+            "styleName": "text-area",
+            "config": "text_area_config.json"
+        },
+        {
+            "componentName": "text-area",
+            "styleName": "text-area-clear",
+            "config": "text_area_clear_config.json",
+            "excludePlatforms": [
+                "view-system"
+            ]
+        },
+        {
+            "componentName": "text-field",
+            "styleName": "text-field",
+            "config": "text_field_config.json"
+        },
+        {
+            "componentName": "text-field",
+            "styleName": "text-field-clear",
+            "config": "text_field_clear_config.json",
+            "excludePlatforms": [
+                "view-system"
+            ]
+        },
+        {
+            "componentName": "text-skeleton",
+            "styleName": "text-skeleton",
+            "config": "text_skeleton_config.json"
+        },
+        {
+            "componentName": "text-skeleton",
+            "styleName": "text-skeleton-body",
+            "config": "text_skeleton_body_config.json"
+        },
+        {
+            "componentName": "text-skeleton",
+            "styleName": "text-skeleton-display",
+            "config": "text_skeleton_display_config.json"
+        },
+        {
+            "componentName": "text-skeleton",
+            "styleName": "text-skeleton-header",
+            "config": "text_skeleton_header_config.json"
+        },
+        {
+            "componentName": "text-skeleton",
+            "styleName": "text-skeleton-text",
+            "config": "text_skeleton_text_config.json"
+        },
+        {
+            "componentName": "toast",
+            "styleName": "toast",
+            "config": "toast_config.json"
+        },
+        {
+            "componentName": "tool-bar",
+            "styleName": "tool-bar",
+            "config": "tool_bar_config.json"
+        },
+        {
+            "componentName": "tool-bar",
+            "styleName": "tool-bar-horizontal",
+            "config": "tool_bar_horizontal_config.json"
+        },
+        {
+            "componentName": "tool-bar",
+            "styleName": "tool-bar-vertical",
+            "config": "tool_bar_vertical_config.json"
+        },
+        {
+            "componentName": "tooltip",
+            "styleName": "tooltip",
+            "config": "tooltip_config.json"
+        },
+        {
+            "componentName": "icon-badge",
+            "styleName": "voice-chat-badge",
+            "config": "voice_chat_badge_config.json"
+        },
+        {
+            "componentName": "wheel",
+            "styleName": "wheel",
+            "config": "wheel_config.json"
+        }
+    ]
+}

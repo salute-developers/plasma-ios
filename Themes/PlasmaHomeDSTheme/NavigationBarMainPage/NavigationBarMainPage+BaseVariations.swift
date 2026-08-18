@@ -20,9 +20,11 @@ public struct NavigationBarMainPage {
         )
     }
     
-    public static let all: [Variation<NavigationBarMainPageAppearance>] = [
-        NavigationBarMainPage.default.variation,
-    ]
+    public static var all: [Variation<NavigationBarMainPageAppearance>] {
+        [
+            NavigationBarMainPage.default.variation,
+        ]
+    }
 }
 
 public struct NavigationBarMainPageVariation {

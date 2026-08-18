@@ -466,93 +466,94 @@ private extension CounterAppearance {
     
     var `default`: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultSolidDefault), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultSolidDefaultActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultSolidDefaultHover))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultSolidDefault), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
         ])
-        appearance.textColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textInversePrimary), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textInversePrimaryActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textInversePrimaryHover))
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textInversePrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textInversePrimaryHover))
         ])
         return appearance
     }
     
     var accent: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccentMain), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultAccentMainActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultAccentMainHover))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultAccentMain), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.surfaceDefaultAccentMainActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultAccentMainHover))
         ])
-        appearance.textColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
         ])
         return appearance
     }
     
     var black: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnLightSolidDefault), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceOnLightSolidDefaultActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceOnLightSolidDefaultHover))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceOnLightSolidDefault), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.surfaceOnLightSolidDefaultActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceOnLightSolidDefaultHover))
         ])
-        appearance.textColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
         ])
         return appearance
     }
     
     var negative: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultNegative), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultNegativeActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultNegativeHover))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultNegative), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.surfaceDefaultNegativeActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultNegativeHover))
         ])
-        appearance.textColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
         ])
         return appearance
     }
     
     var positive: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultPositive), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultPositiveActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultPositiveHover))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultPositive), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.surfaceDefaultPositiveActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultPositiveHover))
         ])
-        appearance.textColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
         ])
         return appearance
     }
     
     var warning: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultWarning), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceDefaultWarningActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultWarningHover))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultWarning), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.surfaceDefaultWarningActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultWarningHover))
         ])
-        appearance.textColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnDarkPrimaryActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnDarkPrimaryHover))
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
         ])
         return appearance
     }
     
     var white: CounterAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnDarkSolidDefault), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.surfaceOnDarkSolidDefaultActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceOnDarkSolidDefaultHover))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceOnDarkSolidDefault), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.surfaceOnDarkSolidDefaultActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceOnDarkSolidDefaultHover))
         ])
-        appearance.textColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnLightPrimary), values: [
-            .init(states: [InteractiveState.pressed], value: .color(ColorToken.textOnLightPrimaryActive)),
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.textOnLightPrimaryHover))
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textOnLightPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textOnLightPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textOnLightPrimaryHover))
         ])
         return appearance
     }
     
 }
+

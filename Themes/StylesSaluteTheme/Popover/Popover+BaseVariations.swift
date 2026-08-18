@@ -24,10 +24,12 @@ public struct Popover {
         )
     }
     
-    public static let all: [Variation<PopoverAppearance>] = [
-        Popover.m.variation,
-        Popover.s.variation,
-    ]
+    public static var all: [Variation<PopoverAppearance>] {
+        [
+            Popover.m.variation,
+            Popover.s.variation,
+        ]
+    }
 }
 
 public struct PopoverVariation {

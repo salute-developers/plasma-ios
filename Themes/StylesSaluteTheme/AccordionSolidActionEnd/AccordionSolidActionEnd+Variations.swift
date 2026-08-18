@@ -237,3 +237,4 @@ public extension ComponentAppearanceVariation<AccordionSolidActionEnd, Accordion
 private extension AccordionAppearance {
     
 }
+

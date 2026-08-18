@@ -195,20 +195,39 @@ private extension CheckboxAppearance {
     
     var `default`: CheckboxAppearance {
         var appearance = self
-        appearance.borderColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.outlineDefaultTransparentTertiary), values: [])
-        appearance.toggleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccent), values: [])
-        appearance.toggleColorChecked = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
-        appearance.toggleColorIndeterminate = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.borderColor = StatefulFillStyle(defaultValue: .color(.outlineDefaultTransparentTertiary), values: [
+            .init(states: [InteractiveState.focused, InteractiveState.checked], value: .color(.outlineDefaultAccent)),
+            .init(states: [InteractiveState.focused, InteractiveState.indeterminate], value: .color(.outlineDefaultAccent)),
+            .init(states: [InteractiveState.focused], value: .color(.outlineDefaultAccent)),
+            .init(states: [InteractiveState.checked], value: .color(.outlineDefaultClear)),
+            .init(states: [InteractiveState.indeterminate], value: .color(.outlineDefaultClear))
+        ])
+        appearance.toggleColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.checked], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.indeterminate], value: .color(.surfaceDefaultAccent))
+        ])
+        appearance.toggleColorChecked = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
+        appearance.toggleColorIndeterminate = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var negative: CheckboxAppearance {
         var appearance = self
-        appearance.borderColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.outlineDefaultNegative), values: [])
-        appearance.toggleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultNegative), values: [])
-        appearance.toggleColorChecked = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
-        appearance.toggleColorIndeterminate = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.borderColor = StatefulFillStyle(defaultValue: .color(.outlineDefaultNegative), values: [
+            .init(states: [InteractiveState.focused, InteractiveState.checked], value: .color(.outlineDefaultNegative)),
+            .init(states: [InteractiveState.focused, InteractiveState.indeterminate], value: .color(.outlineDefaultNegative)),
+            .init(states: [InteractiveState.focused], value: .color(.outlineDefaultNegative)),
+            .init(states: [InteractiveState.checked], value: .color(.outlineDefaultClear)),
+            .init(states: [InteractiveState.indeterminate], value: .color(.outlineDefaultClear))
+        ])
+        appearance.toggleColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.checked], value: .color(.surfaceDefaultNegative)),
+            .init(states: [InteractiveState.indeterminate], value: .color(.surfaceDefaultNegative))
+        ])
+        appearance.toggleColorChecked = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
+        appearance.toggleColorIndeterminate = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
         return appearance
     }
     
 }
+

@@ -4,11 +4,24 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct ListNumberedSize {
+    static let m = ListNumberedSizeM()
     static let s = ListNumberedSizeS()
 
     static let all: [ListSizeConfiguration] = [
+        ListNumberedSize.m,
         ListNumberedSize.s,
     ] 
+}
+struct ListNumberedSizeM: ListSizeConfiguration {
+    var gap = CGFloat(12.0)
+    var paddingBottom = CGFloat(0)
+    var paddingEnd = CGFloat(0)
+    var paddingStart = CGFloat(0)
+    var paddingTop = CGFloat(0)
+    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    public var debugDescription: String {
+        return "ListNumberedSize"
+    }
 }
 struct ListNumberedSizeS: ListSizeConfiguration {
     var gap = CGFloat(12.0)

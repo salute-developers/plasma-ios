@@ -24,20 +24,22 @@ public struct TabBarClear {
         )
     }
     
-    public static let all: [Variation<TabBarAppearance>] = [
-        TabBarClear.l.variation,
-        TabBarClear.l.divider.variation,
-        TabBarClear.l.divider.rounded.variation,
-        TabBarClear.l.rounded.variation,
-        TabBarClear.l.shadow.variation,
-        TabBarClear.l.shadow.rounded.variation,
-        TabBarClear.m.variation,
-        TabBarClear.m.divider.variation,
-        TabBarClear.m.divider.rounded.variation,
-        TabBarClear.m.rounded.variation,
-        TabBarClear.m.shadow.variation,
-        TabBarClear.m.shadow.rounded.variation,
-    ]
+    public static var all: [Variation<TabBarAppearance>] {
+        [
+            TabBarClear.l.variation,
+            TabBarClear.l.divider.variation,
+            TabBarClear.l.divider.rounded.variation,
+            TabBarClear.l.rounded.variation,
+            TabBarClear.l.shadow.variation,
+            TabBarClear.l.shadow.rounded.variation,
+            TabBarClear.m.variation,
+            TabBarClear.m.divider.variation,
+            TabBarClear.m.divider.rounded.variation,
+            TabBarClear.m.rounded.variation,
+            TabBarClear.m.shadow.variation,
+            TabBarClear.m.shadow.rounded.variation,
+        ]
+    }
 }
 
 public struct TabBarClearVariation {

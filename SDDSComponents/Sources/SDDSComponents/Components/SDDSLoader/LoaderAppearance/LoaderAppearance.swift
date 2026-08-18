@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -9,7 +10,7 @@ import SwiftUI
     - spinnerAppearance: Стиль компонента Spinner.
     - circularProgressAppearance: Стиль компонента CircularProgressBar.
  */
-// sdds:apiInfo
+@ApiInfo
 public struct LoaderAppearance: Hashable {
     let id = UUID()
     public var spinnerAppearance: SpinnerAppearance?

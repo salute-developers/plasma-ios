@@ -5,10 +5,23 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct ListNumberedItem {
+    public static var m: ComponentAppearanceVariation<ListNumberedItem, ListItemAppearance> {
+        var appearance = ListItemAppearance.base
+        appearance.size = ListNumberedItemSize.m
+        appearance.counterAppearance = Counter.s.secondary.appearance
+        appearance.subtitleTypography = ListNumberedItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.titleTypography = ListNumberedItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
     public static var s: ComponentAppearanceVariation<ListNumberedItem, ListItemAppearance> {
         var appearance = ListItemAppearance.base
         appearance.size = ListNumberedItemSize.s
-        appearance.counterAppearance = Counter.xs.secondary.appearance
+        appearance.counterAppearance = Counter.s.secondary.appearance
+        appearance.subtitleTypography = ListNumberedItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titleTypography = ListNumberedItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
@@ -17,12 +30,16 @@ public struct ListNumberedItem {
         )
     }
     
-    public static let all: [Variation<ListItemAppearance>] = [
-        ListNumberedItem.s.variation,
-    ]
+    public static var all: [Variation<ListItemAppearance>] {
+        [
+            ListNumberedItem.m.variation,
+            ListNumberedItem.s.variation,
+        ]
+    }
 }
 
 public struct ListNumberedItemVariation {
+    public struct M {}
     public struct S {}
 }
 
@@ -30,7 +47,7 @@ private extension ListItemAppearance {
     static var base: ListItemAppearance {
         var appearance = ListItemAppearance()
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         return appearance
     }
 }

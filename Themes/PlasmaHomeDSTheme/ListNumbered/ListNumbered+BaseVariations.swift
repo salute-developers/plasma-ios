@@ -5,6 +5,16 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct ListNumbered {
+    public static var m: ComponentAppearanceVariation<ListNumbered, ListAppearance> {
+        var appearance = ListAppearance.base
+        appearance.size = ListNumberedSize.m
+        appearance.listItemAppearance = ListNumberedItem.m.appearance
+
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
     public static var s: ComponentAppearanceVariation<ListNumbered, ListAppearance> {
         var appearance = ListAppearance.base
         appearance.size = ListNumberedSize.s
@@ -16,12 +26,16 @@ public struct ListNumbered {
         )
     }
     
-    public static let all: [Variation<ListAppearance>] = [
-        ListNumbered.s.variation,
-    ]
+    public static var all: [Variation<ListAppearance>] {
+        [
+            ListNumbered.m.variation,
+            ListNumbered.s.variation,
+        ]
+    }
 }
 
 public struct ListNumberedVariation {
+    public struct M {}
     public struct S {}
 }
 

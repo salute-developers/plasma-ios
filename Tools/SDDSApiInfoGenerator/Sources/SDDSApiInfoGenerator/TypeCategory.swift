@@ -60,6 +60,7 @@ enum TypeCategory {
     static func terminalCategory(simpleType: String) -> String? {
         if let exact = terminalExact[simpleType] { return exact }
         if let scalar = scalarExact[simpleType] { return scalar }
+        if simpleType.hasSuffix("SizeConfiguration") { return nil }
         for rule in keywordRules where simpleType.contains(rule.needle) {
             return rule.category
         }

@@ -4,11 +4,26 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct ListNumberedItemSize {
+    static let m = ListNumberedItemSizeM()
     static let s = ListNumberedItemSizeS()
 
     static let all: [ListItemSizeConfiguration] = [
+        ListNumberedItemSize.m,
         ListNumberedItemSize.s,
     ] 
+}
+struct ListNumberedItemSizeM: ListItemSizeConfiguration {
+    var contentPaddingEnd = CGFloat(0)
+    var contentPaddingStart = CGFloat(6.0)
+    var height = CGFloat(0)
+    var paddingBottom = CGFloat(0.0)
+    var paddingEnd = CGFloat(0.0)
+    var paddingStart = CGFloat(0.0)
+    var paddingTop = CGFloat(0.0)
+    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    public var debugDescription: String {
+        return "ListNumberedItemSize"
+    }
 }
 struct ListNumberedItemSizeS: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(0)

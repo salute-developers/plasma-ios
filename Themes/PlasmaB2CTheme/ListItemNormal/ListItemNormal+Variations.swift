@@ -10,6 +10,7 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
     var l: ComponentAppearanceVariation<ListItemNormal, ListItemAppearance> {
         var size =  ListItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(8.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.height = CGFloat(56.0)
         size.paddingBottom = CGFloat(16.0)
         size.paddingEnd = CGFloat(16.0)
@@ -47,6 +48,7 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
     var m: ComponentAppearanceVariation<ListItemNormal, ListItemAppearance> {
         var size =  ListItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(8.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.height = CGFloat(48.0)
         size.paddingBottom = CGFloat(12.0)
         size.paddingEnd = CGFloat(14.0)
@@ -84,6 +86,7 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
     var s: ComponentAppearanceVariation<ListItemNormal, ListItemAppearance> {
         var size =  ListItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(6.0)
+        size.contentPaddingStart = CGFloat(6.0)
         size.height = CGFloat(40.0)
         size.paddingBottom = CGFloat(11.0)
         size.paddingEnd = CGFloat(12.0)
@@ -121,6 +124,7 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
     var xl: ComponentAppearanceVariation<ListItemNormal, ListItemAppearance> {
         var size =  ListItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(8.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.height = CGFloat(64.0)
         size.paddingBottom = CGFloat(20.0)
         size.paddingEnd = CGFloat(18.0)
@@ -158,6 +162,7 @@ public extension GeneralAppearanceVariation<ListItemNormal, ListItemAppearance, 
     var xs: ComponentAppearanceVariation<ListItemNormal, ListItemAppearance> {
         var size =  ListItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(6.0)
+        size.contentPaddingStart = CGFloat(6.0)
         size.height = CGFloat(32.0)
         size.paddingBottom = CGFloat(8.0)
         size.paddingEnd = CGFloat(8.0)
@@ -206,3 +211,4 @@ public extension ComponentAppearanceVariation<ListItemNormal, ListItemAppearance
 private extension ListItemAppearance {
     
 }
+

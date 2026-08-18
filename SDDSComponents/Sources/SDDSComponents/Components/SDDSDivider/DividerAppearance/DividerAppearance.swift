@@ -1,7 +1,8 @@
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
-// sdds:apiInfo
+@ApiInfo
 public struct DividerAppearance: Hashable {
     let id = UUID()
     public var shape: PathDrawer

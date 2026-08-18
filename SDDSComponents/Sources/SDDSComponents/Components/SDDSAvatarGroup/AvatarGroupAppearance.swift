@@ -1,8 +1,9 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
-// sdds:apiInfo
+@ApiInfo
 public struct AvatarGroupAppearance {
     public var size: AvatarGroupSizeConfiguration
     public var avatarAppearance: AvatarAppearance

@@ -46,12 +46,14 @@ public struct EmbeddedChip {
         )
     }
     
-    public static let all: [Variation<ChipAppearance>] = [
-        EmbeddedChip.l.variation,
-        EmbeddedChip.m.variation,
-        EmbeddedChip.s.variation,
-        EmbeddedChip.xs.variation,
-    ]
+    public static var all: [Variation<ChipAppearance>] {
+        [
+            EmbeddedChip.l.variation,
+            EmbeddedChip.m.variation,
+            EmbeddedChip.s.variation,
+            EmbeddedChip.xs.variation,
+        ]
+    }
 }
 
 public struct EmbeddedChipVariation {

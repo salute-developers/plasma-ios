@@ -1,11 +1,12 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `NavigationBarMainPageAppearance` определяет внешний вид компонента NavigationBarMainPage.
  */
-// sdds:apiInfo
+@ApiInfo
 public struct NavigationBarMainPageAppearance {
     // Цвета
     public var actionStartColor: ColorToken

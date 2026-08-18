@@ -4,8 +4,6 @@ import SDDSComponents
 import SDDSThemeCore
 
 struct CarouselTypography: GeneralTypographyConfiguration {
-    typealias Size = CarouselSizeConfiguration
-
     var buttonsPlacementInner: TypographyToken?
     var buttonsPlacementOuter: TypographyToken?
     

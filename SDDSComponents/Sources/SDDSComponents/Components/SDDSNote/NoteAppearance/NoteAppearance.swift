@@ -1,11 +1,12 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `NoteAppearance` определяет внешний вид компонента Note.
  */
-// sdds:apiInfo
+@ApiInfo
 public struct NoteAppearance {
     public var backgroundColor: ColorToken
     public var iconColor: ColorToken

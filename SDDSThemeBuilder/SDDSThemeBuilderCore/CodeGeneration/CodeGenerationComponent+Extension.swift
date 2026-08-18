@@ -21,8 +21,10 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case iconBadgeClear = "IconBadgeClear"
     case iconBadgeTransparent = "IconBadgeTransparent"
     case indicator = "Indicator"
+    case avatarIndicator = "AvatarIndicator"
     case cell = "Cell"
     case counter = "Counter"
+    case segmentItemCounter = "SegmentItemCounter"
     case card = "Card"
     case cardSolid = "CardSolid"
     case cardClear = "CardClear"
@@ -130,142 +132,47 @@ enum CodeGenerationComponent: String, CaseIterable, Decodable {
     case formItem = "FormItem"
 
     static var supportedComponents: [CodeGenerationComponent] {
-        [
-            .formItem,
-//            .basicButton,
-//            .linkButton,
-//            .iconButton,
-//            .basicButtonGroup,
-//            .iconButtonGroup,
-//            .textField,
-//            .textFieldClear,
-//            .textArea,
-//            .textAreaClear,
-//            .overlay,
-//            .badge,
-//            .badgeClear,
-//            .badgeTransparent,
-//            .iconBadge,
-//            .iconBadgeClear,
-//            .iconBadgeTransparent,
-//            .indicator,
-//            .cell,     
-//            .counter,
-//            .card,
-//            .cardSolid,
-//            .cardClear,
-//            .segmentItem,
-//            .segment,
-//            .bottomSheet,
-//            .switch,
-//            .embeddedChip,
-//            .chip,
-//            .embeddedChipGroupDense,
-//            .embeddedChipGroupWide,
-//            .chipGroupDense,
-//            .chipGroupWide,
-//            .radiobox,
-//            .radioboxGroup,
-//            .checkbox,
-//            .checkboxGroup,
-//            .avatar,
-//            .avatarGroup,
-//            .circularProgressBar,
-//            .progressBar,
-//            .divider,
-//            .popover,
-//            .tooltip,
-//            .toast,
-//            .modal,
-//            .notificationLoose,
-//            .notificationCompact,
-//            .rectSkeleton,
-//            .textSkeleton,
-//            .textSkeletonBody,
-//            .textSkeletonText,
-//            .textSkeletonHeader,
-//            .textSkeletonDisplay,
-//            .listItem,
-//            .listItemNormal,
-//            .listItemTight,
-//            .dropdownMenuItemNormal,
-//            .dropdownMenuItemTight,
-//            .dropdownMenuListNormal,
-//            .dropdownMenuListTight,
-//            .dropdownMenuNormal,
-//            .dropdownMenuTight,
-//            .list,
-//            .listNormal,
-//            .listTight,
-//            .listNumbered,
-//            .listNumberedItem,
-//            .scrollbar,
-//            .accordionItemSolidActionStart,
-//            .accordionItemSolidActionEnd,
-//            .accordionItemClearActionStart,
-//            .accordionItemClearActionEnd,
-//            .accordionSolidActionStart,
-//            .accordionSolidActionEnd,
-//            .accordionClearActionStart,
-//            .accordionClearActionEnd,
-//            .spinner,
-//            .loader,
-//            .codeField,
-//            .tabBarItemSolid,
-//            .tabBarItem,
-//            .tabBarItemClear,
-//            .tabBarIslandSolid,
-//            .tabBarIslandClear,
-//            .tabBarIslandHasLabelSolid,
-//            .tabBarIslandHasLabelClear,
-//            .tabBarSolid,
-//            .tabBar,
-//            .tabBarClear,
-//            .tabBarHasLabelSolid,
-//            .tabBarHasLabelClear,
-//            .codeInput,
-//            .wheel,
-//            .navigationBarMainPage,
-//            .navigationBarInternalPage,
-//            .note,
-//            .noteCompact,
-//            .drawerCloseInner,
-//            .drawerCloseNone,
-//            .drawerCloseOuter,
-//            .toolbarHorizontal,
-//            .toolbarVertical,
-//            .autocompleteTight,
-//            .autocompleteNormal,
-//            .collapsingNavigationBarInternalPage,
-//            .collapsingNavigationBarMainPage,
-//            .autocompleteTight,
-//            .autocompleteNormal,
-////            .collapsingNavigationBarInternalPage,
-////            .collapsingNavigationBarMainPage,
-//            .editable,
-//            .selectSingleTight,
-//            .selectSingleNormal,
-//            .selectMultipleTight,
-//            .selectMultipleNormal,
-//            .selectItemSingleTight,
-//            .selectItemSingleNormal,
-//            .selectItemMultipleTight,
-//            .selectItemMultipleNormal
-//            .paginationDotsVertical,
-//            .paginationDotsHorizontal,
-//            .carousel,
-//            .formItem,
-//            .collapsingNavigationBarInternalPage,
-//            .collapsingNavigationBarMainPage,
-//            .image
-        ]
+        allCases
     }
-    
 }
 
 extension CodeGenerationComponent {
+    static var universalComponents: Set<CodeGenerationComponent> {
+        Set(CodeGenerationComponent.allCases.filter {
+            ApiMetaStore.shared.component($0.metaName) != nil
+        })
+    }
+
+    var usesUniversalGenerator: Bool {
+        UniversalRuntime.isEnabled
+            && Self.universalComponents.contains(self)
+            && ApiMetaStore.shared.component(metaName) != nil
+    }
+
     func command(outputURL: URL, themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> Command {
-        switch self {
+        usesUniversalGenerator
+            ? universalCommand(outputURL: outputURL, themeConfig: themeConfig)
+            : typedCommand(outputURL: outputURL, themeConfig: themeConfig)
+    }
+
+    func universalCommand(outputURL: URL, themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> Command {
+        UniversalRuntime.currentComponent = self
+        return GenerateComponentCommand<UniversalProps, UniversalAppearance, UniversalSize>(
+            component: self,
+            outputDirectoryURL: outputURL,
+            themeConfig: themeConfig
+        )
+    }
+
+    /// Устаревший путь: per-component `Props`/`Appearance`/`Size` из `Model/Components`,
+    /// вручную дублирующие то, что теперь читается из `ios-api-meta.json`. Держится только
+    /// как эталон для сверки паритета с универсальным генератором
+    /// (`UniversalGeneratorFileParityTests`) и как ручной откат через
+    /// `SDDS_TYPED_GENERATOR=1`. Удалить вместе с `Model/Components/**` после того, как
+    /// универсальный путь покроет все компоненты и надобность в сверке отпадёт.
+    @available(*, deprecated, message: "Только для сверки паритета с универсальным генератором, см. UniversalGeneratorFileParityTests")
+    func typedCommand(outputURL: URL, themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> Command {
+        return switch self {
         case .basicButton, .iconButton, .linkButton:
             GenerateComponentCommand<ButtonProps, ButtonAppearance, ButtonSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .textField, .textFieldClear:
@@ -278,11 +185,11 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<ChipGroupProps, ChipGroupAppearance, ChipGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
             GenerateComponentCommand<BadgeProps, BadgeAppearance, BadgeSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .indicator:
+        case .indicator, .avatarIndicator:
             GenerateComponentCommand<IndicatorProps, IndicatorAppearance, IndicatorSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .cell:
             GenerateComponentCommand<CellProps, CellAppearance, CellSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .counter:
+        case .counter, .segmentItemCounter:
             GenerateComponentCommand<CounterProps, CounterAppearance, CounterSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .cardSolid, .cardClear, .card:
             GenerateComponentCommand<CardProps, CardAppearance, CardSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
@@ -472,276 +379,30 @@ extension CodeGenerationComponent {
             )
         }
     }
-    /// Название структуры Appearance в `SDDSComponents`
-    var appearance: String {
-        switch self {
-        case .basicButton, .iconButton, .linkButton:
-            "ButtonAppearance"
-        case .textArea, .textAreaClear:
-            "TextAreaAppearance"
-        case .textField, .textFieldClear:
-            "TextFieldAppearance"
-        case .chip, .embeddedChip:
-            "ChipAppearance"
-        case .chipGroupDense, .chipGroupWide, .embeddedChipGroupDense, .embeddedChipGroupWide:
-            "ChipGroupAppearance"
-        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
-            "BadgeAppearance"
-        case .indicator:
-            "IndicatorAppearance"
-        case .cell:
-            "CellAppearance"
-        case .counter:
-            "CounterAppearance"
-        case .cardSolid, .cardClear, .card:
-            "CardAppearance"
-        case .segmentItem:
-            "SegmentItemAppearance"
-        case .segment:
-            "SegmentAppearance"
-        case .bottomSheet:
-            "BottomSheetAppearance"
-        case .switch:
-            "SwitchAppearance"
-        case .radiobox:
-            "RadioboxAppearance"
-        case .radioboxGroup:
-            "RadioboxGroupAppearance"
-        case .checkbox:
-            "CheckboxAppearance"
-        case .checkboxGroup:
-            "CheckboxGroupAppearance"
-        case .avatar:
-            "AvatarAppearance"
-        case .avatarGroup:
-            "AvatarGroupAppearance"
-        case .circularProgressBar:
-            "CircularProgressBarAppearance"
-        case .progressBar:
-            "ProgressBarAppearance"
-        case .divider:
-            "DividerAppearance"
-        case .overlay:
-             "OverlayAppearance"
-        case .popover:
-            "PopoverAppearance"
-        case .tooltip:
-            "TooltipAppearance"
-        case .toast:
-            "ToastAppearance"
-        case .modal:
-            "ModalAppearance"
-        case .notificationLoose, .notificationCompact:
-            "NotificationAppearance"
-        case .rectSkeleton, .textSkeleton, .textSkeletonBody, .textSkeletonDisplay, .textSkeletonHeader, .textSkeletonText:
-            "SkeletonAppearance"
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem, .listNumberedItem:
-            "ListItemAppearance"
-        case .dropdownMenuNormal, .dropdownMenuTight:
-            "DropdownMenuAppearance"
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list, .listNumbered:
-            "ListAppearance"
-        case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
-            "AccordionItemAppearance"
-        case .accordionSolidActionStart, .accordionSolidActionEnd, .accordionClearActionStart, .accordionClearActionEnd:
-            "AccordionAppearance"
-        case .scrollbar:
-            "ScrollbarAppearance"
-        case .spinner:
-            "SpinnerAppearance"
-        case .loader:
-            "LoaderAppearance"
-        case .codeField:
-            "CodeFieldAppearance"
-        case .editable:
-            "EditableAppearance"
-        case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
-            "TabBarItemAppearance"
-        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
-            "TabBarIslandAppearance"
-        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
-            "TabBarAppearance"
-        case .codeInput:
-            "CodeInputAppearance"
-        case .notificationContent:
-            "NotificationContentAppearance"
-        case .basicButtonGroup:
-            "ButtonGroupAppearance"
-        case .iconButtonGroup:
-            "ButtonGroupAppearance"
-        case .wheel:
-            "WheelAppearance"
-        case .navigationBarMainPage:
-            "NavigationBarMainPageAppearance"
-        case .navigationBarInternalPage:
-            "NavigationBarInternalPageAppearance"
-        case .note:
-            "NoteAppearance"
-        case .noteCompact:
-            "NoteCompactAppearance"
-        case .tabsDefault, .tabsHeader, .iconTabs:
-            "TabsAppearance"
-        case .tabItemDefault, .tabItemHeader, .iconTabItem:
-            "TabItemAppearance"
-        case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
-            "DrawerAppearance"
-        case .selectItemMultipleNormal, .selectItemMultipleTight, .selectItemSingleNormal, .selectItemSingleTight:
-            "SelectItemAppearance"
-        case .selectMultipleNormal, .selectMultipleTight, .selectSingleNormal, .selectSingleTight:
-            "SelectAppearance"
-        case .autocompleteNormal, .autocompleteTight:
-            "AutocompleteAppearance"
-        case .collapsingNavigationBarInternalPage:
-            "CollapsingNavigationBarInternalPageAppearance"
-        case .collapsingNavigationBarMainPage:
-            "CollapsingNavigationBarMainPageAppearance"
-        case .toolbarHorizontal, .toolbarVertical:
-            "ToolbarAppearance"
-        case .paginationDotsHorizontal, .paginationDotsVertical:
-            "PaginationDotsAppearance"
-        case .carousel:
-            "CarouselAppearance"
-        case .formItem:
-            "FormItemAppearance"
-        case .image:
-            "ImageAppearance"
-        }
+    /// Компонент → запись меты. Связка объявлена в самой библиотеке
+    /// (`@ApiInfo(components:)` на `*Appearance`) и приезжает в `ios-api-meta.json`,
+    /// потому что вывести её из данных нельзя: группировка DS другая — `badge` и
+    /// `icon-badge` там разные компоненты, а на iOS это один `BadgeAppearance`.
+    var metaName: String {
+        ApiMetaStore.shared.componentName(for: rawValue) ?? rawValue
     }
-    
-    /// Название протокола sizeConfiguration в `SDDSComponents`
-    var sizeConfiguration: String {
-        switch self {
-        case .basicButton, .iconButton, .linkButton:
-            "ButtonSizeConfiguration"
-        case .textArea, .textAreaClear:
-            "TextAreaSizeConfiguration"
-        case .textField, .textFieldClear:
-            "TextFieldSizeConfiguration"
-        case .chip, .embeddedChip:
-            "ChipSizeConfiguration"
-        case .chipGroupDense, .chipGroupWide, .embeddedChipGroupDense, .embeddedChipGroupWide:
-            "ChipGroupSizeConfiguration"
-        case .badge, .badgeClear, .badgeTransparent, .iconBadge, .iconBadgeClear, .iconBadgeTransparent:
-            "BadgeSizeConfiguration"
-        case .indicator:
-            "IndicatorSizeConfiguration"
-        case .cell:
-            "CellSizeConfiguration"
-        case .counter:
-            "CounterSizeConfiguration"
-        case .cardSolid, .cardClear, .card:
-            "CardSizeConfiguration"
-        case .segmentItem:
-            "SegmentItemSizeConfiguration"
-        case .segment:
-            "SegmentSizeConfiguration"
-        case .bottomSheet:
-            "BottomSheetSizeConfiguration"
-        case .switch:
-            "SwitchSizeConfiguration"
-        case .radiobox:
-            "SelectionControlSizeConfiguration"
-        case .radioboxGroup:
-            "RadioboxGroupSizeConfiguration"
-        case .checkbox:
-            "SelectionControlSizeConfiguration"
-        case .checkboxGroup:
-            "CheckboxGroupSizeConfiguration"
-        case .avatar:
-            "AvatarSizeConfiguration"
-        case .avatarGroup:
-            "AvatarGroupSizeConfiguration"
-        case .circularProgressBar:
-            "CircularProgressBarSizeConfiguration"
-        case .progressBar:
-            "ProgressBarSizeConfiguration"
-        case .divider:
-            "DividerSizeConfiguration"
-        case .overlay:
-             "OverlaySizeConfiguration"
-        case .popover:
-            "PopoverSizeConfiguration"
-        case .tooltip:
-            "TooltipSizeConfiguration"
-        case .toast:
-            "ToastSizeConfiguration"
-        case .modal:
-            "ModalSizeConfiguration"
-        case .notificationLoose, .notificationCompact:
-            "NotificationSizeConfiguration"
-        case .rectSkeleton, .textSkeleton, .textSkeletonBody, .textSkeletonDisplay, .textSkeletonHeader, .textSkeletonText:
-            "SkeletonSizeConfiguration"
-        case .listItemNormal, .listItemTight, .dropdownMenuItemNormal, .dropdownMenuItemTight, .listItem, .listNumberedItem:
-            "ListItemSizeConfiguration"
-        case .dropdownMenuNormal, .dropdownMenuTight:
-            "DropdownMenuSizeConfiguration"
-        case .listNormal, .listTight, .dropdownMenuListNormal, .dropdownMenuListTight, .list, .listNumbered:
-            "ListSizeConfiguration"
-        case .accordionItemSolidActionStart, .accordionItemSolidActionEnd, .accordionItemClearActionStart, .accordionItemClearActionEnd:
-            "AccordionItemSizeConfiguration"
-        case .accordionSolidActionStart, .accordionSolidActionEnd, .accordionClearActionStart, .accordionClearActionEnd:
-            "AccordionSizeConfiguration"
-        case .scrollbar:
-            "ScrollbarSizeConfiguration"
-        case .spinner:
-            "SpinnerSizeConfiguration"
-        case .loader:
-            "LoaderSizeConfiguration"
-        case .codeField:
-            "CodeFieldSizeConfiguration"
-        case .editable:
-            "EditableSizeConfiguration"
-        case .tabBarItemSolid, .tabBarItemClear, .tabBarItem:
-            "TabBarItemSizeConfiguration"
-        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
-            "TabBarIslandSizeConfiguration"
-        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
-            "TabBarSizeConfiguration"
-        case .codeInput:
-            "CodeInputSizeConfiguration"
-        case .notificationContent:
-            "NotificationContentSizeConfiguration"
-        case .basicButtonGroup:
-            "ButtonGroupSizeConfiguration"
-        case .iconButtonGroup:
-            "ButtonGroupSizeConfiguration"
-        case .wheel:
-            "WheelSizeConfiguration"
-        case .navigationBarMainPage:
-            "NavigationBarMainPageSizeConfiguration"
-        case .navigationBarInternalPage:
-            "NavigationBarInternalPageSizeConfiguration"
-        case .note:
-            "NoteSizeConfiguration"
-        case .noteCompact:
-            "NoteCompactSizeConfiguration"
-        case .tabsDefault, .tabsHeader, .iconTabs:
-            "TabsSizeConfiguration"
-        case .tabItemDefault, .tabItemHeader, .iconTabItem:
-            "TabItemSizeConfiguration"
-        case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:
-            "DrawerSizeConfiguration"
-        case .selectItemMultipleNormal, .selectItemMultipleTight, .selectItemSingleNormal, .selectItemSingleTight:
-            "SelectItemSizeConfiguration"
-        case .selectMultipleNormal, .selectMultipleTight, .selectSingleNormal, .selectSingleTight:
-            "SelectSizeConfiguration"
-        case .autocompleteNormal, .autocompleteTight:
-            "AutocompleteSizeConfiguration"
-        case .collapsingNavigationBarInternalPage:
-            "CollapsingNavigationBarInternalPageSizeConfiguration"
-        case .collapsingNavigationBarMainPage:
-            "CollapsingNavigationBarMainPageSizeConfiguration"
-        case .toolbarHorizontal, .toolbarVertical:
-            "ToolbarSizeConfiguration"
-        case .paginationDotsHorizontal, .paginationDotsVertical:
-            "PaginationDotsSizeConfiguration"
-        case .carousel:
-            "CarouselSizeConfiguration"
-        case .formItem:
-            "FormItemSizeConfiguration"
-        case .image:
-            "ImageSizeConfiguration"
+
+    private var meta: ApiMetaComponent {
+        guard let meta = ApiMetaStore.shared.component(metaName) else {
+            Logger.terminate("Component \(rawValue) is missing from ios-api-meta.json (looked up as \(metaName))")
         }
+        return meta
+    }
+
+    var appearance: String {
+        meta.appearanceType
+    }
+
+    var sizeConfiguration: String {
+        guard let size = meta.sizeType else {
+            Logger.terminate("Component \(metaName) has no size property in ios-api-meta.json")
+        }
+        return size
     }
 
     /// Kebab-ключ компонента для мета-файла: `FormItem` → `form-item`.
@@ -765,270 +426,22 @@ extension CodeGenerationComponent {
         }
     }
 
-    var configurationFilename: String {
-        switch self {
-        case .basicButton:
-            "basic_button_config.json"
-        case .iconButton:
-            "icon_button_config.json"
-        case .linkButton:
-            "link_button_config.json"
-        case .textField:
-            "text_field_config.json"
-        case .textFieldClear:
-            "text_field_clear_config.json"
-        case .textArea:
-            "text_area_config.json"
-        case .textAreaClear:
-            "text_area_clear_config.json"
-        case .chip:
-            "chip_config.json"
-        case .chipGroupDense:
-            "chip_group_dense_config.json"
-        case .chipGroupWide:
-            "chip_group_wide_config.json"
-        case .embeddedChipGroupDense:
-            "embedded_chip_group_dense_config.json"
-        case .embeddedChipGroupWide:
-            "embedded_chip_group_wide_config.json"
-        case .embeddedChip:
-            "embedded_chip_config.json"
-        case .badge:
-            "badge_solid_config.json"
-        case .badgeClear:
-            "badge_clear_config.json"
-        case .badgeTransparent:
-            "badge_transparent_config.json"
-        case .iconBadge:
-            "icon_badge_solid_config.json"
-        case .iconBadgeClear:
-            "icon_badge_clear_config.json"
-        case .iconBadgeTransparent:
-            "icon_badge_transparent_config.json"
-        case .indicator:
-            "indicator_config.json"
-        case .cell:
-            "cell_config.json"
-        case .counter:
-            "counter_config.json"
-        case .card:
-            "card_config.json"
-        case .cardSolid:
-            "card_solid_config.json"
-        case .cardClear:
-            "card_clear_config.json"
-        case .segmentItem:
-            "segment_item_config.json"
-        case .segment:
-            "segment_config.json"
-        case .bottomSheet:
-            "bottom_sheet_config.json"
-        case .switch:
-            "switch_config.json"
-        case .radiobox:
-            "radiobox_config.json"
-        case .radioboxGroup:
-            "radiobox_group_config.json"
-        case .checkbox:
-            "checkbox_config.json"
-        case .checkboxGroup:
-            "checkbox_group_config.json"
-        case .avatar:
-            "avatar_config.json"
-        case .avatarGroup:
-            "avatar_group_config.json"
-        case .circularProgressBar:
-            "circular_progress_bar_config.json"
-        case .progressBar:
-            "progress_bar_config.json"
-        case .divider:
-            "divider_config.json"
-        case .overlay:
-            "overlay_config.json"
-        case .popover:
-            "popover_config.json"
-        case .tooltip:
-            "tooltip_config.json"
-        case .toast:
-            "toast_config.json"
-        case .modal:
-            "modal_config.json"
-        case .notificationCompact:
-            "notification_compact_config.json"
-        case .notificationLoose:
-            "notification_loose_config.json"
-        case .rectSkeleton:
-            "rect_skeleton_config.json"
-        case .textSkeleton:
-            "text_skeleton_config.json"
-        case .textSkeletonBody:
-            "text_skeleton_body_config.json"
-        case .textSkeletonDisplay:
-            "text_skeleton_display_config.json"
-        case .textSkeletonHeader:
-            "text_skeleton_header_config.json"
-        case .textSkeletonText:
-            "text_skeleton_text_config.json"
-        case .listItemNormal:
-            "list_item_normal_config.json"
-        case .listItem:
-            "list_item_config.json"
-        case .listItemTight:
-            "list_item_tight_config.json"
-        case .dropdownMenuItemNormal:
-            "dropdown_menu_item_normal_config.json"
-        case .dropdownMenuItemTight:
-            "dropdown_menu_item_tight_config.json"
-        case .dropdownMenuListNormal:
-            "dropdown_menu_list_normal_config.json"
-        case .dropdownMenuListTight:
-            "dropdown_menu_list_tight_config.json"
-        case .dropdownMenuNormal:
-            "dropdown_menu_normal_config.json"
-        case .dropdownMenuTight:
-            "dropdown_menu_tight_config.json"
-        case .list:
-            "list_config.json"
-        case .listNormal:
-            "list_normal_config.json"
-        case .listTight:
-            "list_tight_config.json"
-        case .listNumbered:
-            "list_numbered_config.json"
-        case .listNumberedItem:
-            "list_numbered_item_config.json"
-        case .accordionItemSolidActionStart:
-            "accordion_item_solid_action_start_config.json"
-        case .accordionItemSolidActionEnd:
-            "accordion_item_solid_action_end_config.json"
-        case .accordionItemClearActionStart:
-            "accordion_item_clear_action_start_config.json"
-        case .accordionItemClearActionEnd:
-            "accordion_item_clear_action_end_config.json"
-        case .accordionSolidActionStart:
-            "accordion_solid_action_start_config.json"
-        case .accordionSolidActionEnd:
-            "accordion_solid_action_end_config.json"
-        case .accordionClearActionStart:
-            "accordion_clear_action_start_config.json"
-        case .accordionClearActionEnd:
-            "accordion_clear_action_end_config.json"
-        case .scrollbar:
-            "scroll_bar_config.json"
-        case .spinner:
-            "spinner_config.json"
-        case .loader:
-            "loader_config.json"
-        case .codeField:
-            "code_field_config.json"
-        case .editable:
-            "editable_config.json"
-        case .tabBarItemSolid:
-            "tab_bar_item_solid_config.json"
-        case .tabBarItem:
-            "tab_bar_item_config.json"
-        case .tabBarItemClear:
-            "tab_bar_item_clear_config.json"
-        case .tabBarIslandSolid:
-            "tab_bar_island_solid_config.json"
-        case .tabBarIslandClear:
-            "tab_bar_island_clear_config.json"
-        case .tabBarIslandHasLabelSolid:
-            "tab_bar_island_has_label_solid_config.json"
-        case .tabBarIslandHasLabelClear:
-            "tab_bar_island_has_label_clear_config.json"
-        case .tabBarSolid:
-            "tab_bar_solid_config.json"
-        case .tabBar:
-            "tab_bar_config.json"
-        case .tabBarClear:
-            "tab_bar_clear_config.json"
-        case .tabBarHasLabelSolid:
-            "tab_bar_has_label_solid_config.json"
-        case .tabBarHasLabelClear:
-            "tab_bar_has_label_clear_config.json"
-        case .codeInput:
-            "code_input_config.json"
-        case .notificationContent:
-            "notification_content_config.json"
-        case .basicButtonGroup:
-            "basic_button_group_config.json"
-        case .iconButtonGroup:
-            "icon_button_group_config.json"
-        case .wheel:
-            "wheel_config.json"
-        case .navigationBarMainPage:
-            "navigation_bar_main_page_config.json"
-        case .navigationBarInternalPage:
-            "navigation_bar_internal_page_config.json"
-        case .note:
-            "note_config.json"
-        case .noteCompact:
-            "note_compact_config.json"
-        case .tabsDefault:
-            "tabs_default_config.json"
-        case .tabsHeader:
-            "tabs_header_config.json"
-        case .iconTabs:
-            "icon_tabs_config.json"
-        case .tabItemDefault:
-            "tab_item_default_config.json"
-        case .tabItemHeader:
-            "tab_item_header_config.json"
-        case .iconTabItem:
-            "icon_tab_item_config.json"
-        case .drawerCloseInner:
-            "drawer_close_inner_config.json"
-        case .drawerCloseNone:
-            "drawer_close_none_config.json"
-        case .drawerCloseOuter:
-            "drawer_close_outer_config.json"
-        case .selectItemMultipleNormal:
-            "select_item_multiple_normal_config.json"
-        case .selectItemMultipleTight:
-            "select_item_multiple_tight_config.json"
-        case .selectItemSingleNormal:
-            "select_item_single_normal_config.json"
-        case .selectItemSingleTight:
-            "select_item_single_tight_config.json"
-        case .selectMultipleNormal:
-            "select_multiple_normal_config.json"
-        case .selectMultipleTight:
-            "select_multiple_tight_config.json"
-        case .selectSingleNormal:
-            "select_single_normal_config.json"
-        case .selectSingleTight:
-            "select_single_tight_config.json"
-        case .autocompleteNormal:
-            "autocomplete_normal_config.json"
-        case .autocompleteTight:
-            "autocomplete_tight_config.json"
-        case .collapsingNavigationBarInternalPage:
-            "collapsing_navigation_bar_internal_page_config.json"
-        case .collapsingNavigationBarMainPage:
-            "collapsing_navigation_bar_main_page_config.json"
-        case .toolbarHorizontal:
-            "toolbar_horizontal_config.json"
-        case .toolbarVertical:
-            "toolbar_vertical_config.json"
-        case .paginationDotsHorizontal:
-            "pagination_dots_horizontal_config.json"
-        case .paginationDotsVertical:
-            "pagination_dots_vertical_config.json"
-        case .carousel:
-            "carousel_config.json"
-        case .formItem:
-            "form_item_config.json"
-        case .image:
-            "image_config.json"
-        }
+    func configurationFilename(themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> String {
+        ComponentIndex.entry(for: self, themeConfig: themeConfig)?.config ?? configurationFilename
     }
 
-    func url(baseURL: URL) -> URL {
-        let result = baseURL
-            .appending(component: configurationFilename)
-        
-        return result
+    private static let configurationFilenames: [CodeGenerationComponent: String] = [
+        .badge: "badge_solid",
+        .iconBadge: "icon_badge_solid",
+        .tabBarHasLabelSolid: "tab_bar_has_label_solid",
+        .tabBarIslandHasLabelSolid: "tab_bar_island_has_label_solid",
+        .tabBarIslandSolid: "tab_bar_island_solid",
+        .toolbarHorizontal: "tool_bar_horizontal",
+        .toolbarVertical: "tool_bar_vertical"
+    ]
+
+    var configurationFilename: String {
+        "\(Self.configurationFilenames[self] ?? kebabKey.replacingOccurrences(of: "-", with: "_"))_config.json"
     }
 }
 

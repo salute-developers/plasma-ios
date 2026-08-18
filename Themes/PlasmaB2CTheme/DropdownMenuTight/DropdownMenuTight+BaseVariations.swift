@@ -56,13 +56,15 @@ public struct DropdownMenuTight {
         )
     }
     
-    public static let all: [Variation<DropdownMenuAppearance>] = [
-        DropdownMenuTight.l.variation,
-        DropdownMenuTight.m.variation,
-        DropdownMenuTight.s.variation,
-        DropdownMenuTight.xl.variation,
-        DropdownMenuTight.xs.variation,
-    ]
+    public static var all: [Variation<DropdownMenuAppearance>] {
+        [
+            DropdownMenuTight.l.variation,
+            DropdownMenuTight.m.variation,
+            DropdownMenuTight.s.variation,
+            DropdownMenuTight.xl.variation,
+            DropdownMenuTight.xs.variation,
+        ]
+    }
 }
 
 public struct DropdownMenuTightVariation {

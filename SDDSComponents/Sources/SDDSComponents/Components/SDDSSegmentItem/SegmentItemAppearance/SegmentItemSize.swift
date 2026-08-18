@@ -1,16 +1,27 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
 public protocol SegmentItemSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @ApiName("minHeight")
     var height: CGFloat { get }
+    @ApiName("minWidth")
     var width: CGFloat { get }
+    @ApiName("counterMargin")
     var counterPadding: CGFloat { get }
+    @ApiName("shape")
     var cornerRadius: CGFloat { get }
+    @ApiValue("size(startContentSize, startContentSize)")
     var iconSize: CGSize { get }
+    @ApiValue("size(startContentSize, startContentSize)")
     var startContentSize: CGSize { get }
+    @ApiValue("size(startContentSize, endContentSize)")
     var endContentSize: CGSize { get }
+    @ApiName("valueMargin")
     var titleHorizontalGap: CGFloat { get }
+    @ApiName("iconMargin")
     var iconHorizontalGap: CGFloat { get }
+    @ApiValue("insets(_, paddingStart, _, paddingEnd)")
     var paddings: EdgeInsets { get }
 }
 

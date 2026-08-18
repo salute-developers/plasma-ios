@@ -1488,3 +1488,4 @@ private extension NoteAppearance {
     }
     
 }
+

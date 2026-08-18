@@ -93,7 +93,7 @@ public extension GeneralAppearanceVariation<Cell, CellAppearance, CellVariation.
         appearance.avatarAppearance = Avatar.s.appearance
         appearance.buttonAppearance = IconButton.s.clear.appearance
         appearance.checkboxAppearance = Checkbox.s.default.appearance
-        appearance.disclosureImage = Asset.disclosureRightOutline16.image
+        appearance.disclosureImage = Asset.disclosureRightOutline24.image
         appearance.disclosureTextTypography = CellTypography(s: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelTypography = CellTypography(s: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.s.appearance
@@ -173,3 +173,4 @@ public extension ComponentAppearanceVariation<Cell, CellAppearance> {
 private extension CellAppearance {
     
 }
+

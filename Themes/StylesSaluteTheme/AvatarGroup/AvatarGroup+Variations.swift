@@ -50,3 +50,4 @@ public extension ComponentAppearanceVariation<AvatarGroup, AvatarGroupAppearance
 private extension AvatarGroupAppearance {
     
 }
+

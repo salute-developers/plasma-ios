@@ -70,7 +70,7 @@ public struct IconBadgeClearVariation {
 private extension BadgeAppearance {
     static var base: BadgeAppearance {
         var appearance = BadgeAppearance()
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultClear), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
         return appearance
     }
 }

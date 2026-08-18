@@ -17,7 +17,6 @@ public extension GeneralAppearanceVariation<BottomSheet, BottomSheetAppearance, 
         size.paddingEnd = CGFloat(16.0)
         size.paddingStart = CGFloat(16.0)
         size.paddingTop = CGFloat(16.0)
-        size.pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius) as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -60,3 +59,4 @@ public extension ComponentAppearanceVariation<BottomSheet, BottomSheetAppearance
 private extension BottomSheetAppearance {
     
 }
+

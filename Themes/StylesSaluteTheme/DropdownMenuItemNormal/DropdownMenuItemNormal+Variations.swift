@@ -267,20 +267,21 @@ private extension ListItemAppearance {
     
     var `default`: ListItemAppearance {
         var appearance = self
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         return appearance
     }
     
     var negative: ListItemAppearance {
         var appearance = self
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultNegative), values: [])
         return appearance
     }
     
     var positive: ListItemAppearance {
         var appearance = self
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPositive), values: [])
         return appearance
     }
     
 }
+

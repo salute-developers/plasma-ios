@@ -24,12 +24,14 @@ public struct NoteCompact {
         )
     }
     
-    public static let all: [Variation<NoteCompactAppearance>] = [
-        NoteCompact.contentBeforeFixed.variation,
-        NoteCompact.contentBeforeFixed.hasClose.variation,
-        NoteCompact.contentBeforeScalable.variation,
-        NoteCompact.contentBeforeScalable.hasClose.variation,
-    ]
+    public static var all: [Variation<NoteCompactAppearance>] {
+        [
+            NoteCompact.contentBeforeFixed.variation,
+            NoteCompact.contentBeforeFixed.hasClose.variation,
+            NoteCompact.contentBeforeScalable.variation,
+            NoteCompact.contentBeforeScalable.hasClose.variation,
+        ]
+    }
 }
 
 public struct NoteCompactVariation {
@@ -44,9 +46,9 @@ private extension NoteCompactAppearance {
         var appearance = NoteCompactAppearance()
         appearance.closeColor = ColorToken.textDefaultSecondary
         appearance.textColor = ColorToken.textDefaultPrimary
-        appearance.textTypography = NoteCompactTypography(oneSize: AdaptiveTypographyToken.textSNormal.typography).asContainer
+        appearance.textTypography = NoteCompactTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = NoteCompactTypography(oneSize: AdaptiveTypographyToken.textSBold.typography).asContainer
+        appearance.titleTypography = NoteCompactTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         return appearance
     }
 }

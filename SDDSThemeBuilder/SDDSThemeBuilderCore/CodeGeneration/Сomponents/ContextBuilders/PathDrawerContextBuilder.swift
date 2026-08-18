@@ -39,9 +39,9 @@ final class PathDrawerContextBuilder: CodeGenerationContextBuilder {
     
     var context: String? {
         guard let shape = shape, let value = shape.value else {
-            return nullify ? nil : PathDrawerContextBuilder.context(name: PathDrawerContextBuilder.defaultContext)
+            return nullify ? nil : PathDrawerContextBuilder.defaultContext
         }
-        
+
         if let recognizedType = PathDrawerSupportedType(rawValue: value) {
             return PathDrawerContextBuilder.context(name: recognizedType.name)
         } else {
@@ -51,8 +51,8 @@ final class PathDrawerContextBuilder: CodeGenerationContextBuilder {
                 var cornerRadius = ShapeTokenContextBuilder.init(shape: shape).context ?? ""
                 return PathDrawerContextBuilder.context(name: defaultType.applyArgument(argument: cornerRadius))
             }
-            
-            return PathDrawerContextBuilder.context(name: PathDrawerContextBuilder.defaultContext)
+
+            return PathDrawerContextBuilder.defaultContext
         }
     }
     

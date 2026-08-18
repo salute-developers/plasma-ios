@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import SDDSComponents
 import SDDSThemeCore
+import SDDSIcons
 
 
 public extension GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.L> {
@@ -745,3 +746,4 @@ public extension ComponentAppearanceVariation<Segment, SegmentAppearance> {
 private extension SegmentAppearance {
     
 }
+

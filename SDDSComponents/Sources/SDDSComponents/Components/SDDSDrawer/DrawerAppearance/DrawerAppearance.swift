@@ -1,11 +1,12 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `DrawerAppearance` определяет внешний вид компонента Drawer.
  */
-// sdds:apiInfo
+@ApiInfo(components: ["DrawerCloseInner", "DrawerCloseNone", "DrawerCloseOuter"])
 public struct DrawerAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

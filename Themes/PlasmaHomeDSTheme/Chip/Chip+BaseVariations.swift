@@ -56,18 +56,20 @@ public struct Chip {
         )
     }
     
-    public static let all: [Variation<ChipAppearance>] = [
-        Chip.l.variation,
-        Chip.l.pilled.variation,
-        Chip.m.variation,
-        Chip.m.pilled.variation,
-        Chip.s.variation,
-        Chip.s.pilled.variation,
-        Chip.xs.variation,
-        Chip.xs.pilled.variation,
-        Chip.xxs.variation,
-        Chip.xxs.pilled.variation,
-    ]
+    public static var all: [Variation<ChipAppearance>] {
+        [
+            Chip.l.variation,
+            Chip.l.pilled.variation,
+            Chip.m.variation,
+            Chip.m.pilled.variation,
+            Chip.s.variation,
+            Chip.s.pilled.variation,
+            Chip.xs.variation,
+            Chip.xs.pilled.variation,
+            Chip.xxs.variation,
+            Chip.xxs.pilled.variation,
+        ]
+    }
 }
 
 public struct ChipVariation {

@@ -747,51 +747,52 @@ private extension BadgeAppearance {
     
     var `default`: BadgeAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultSolidDefault), values: [])
-        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textInversePrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultSolidDefault), values: [])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textInversePrimary), values: [])
         return appearance
     }
     
     var accent: BadgeAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccent), values: [])
-        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultAccent), values: [])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var dark: BadgeAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnLightSolidDefault), values: [])
-        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceOnLightSolidDefault), values: [])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var light: BadgeAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnDarkSolidDefault), values: [])
-        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnLightPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceOnDarkSolidDefault), values: [])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textOnLightPrimary), values: [])
         return appearance
     }
     
     var negative: BadgeAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultNegative), values: [])
-        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultNegative), values: [])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var positive: BadgeAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultPositive), values: [])
-        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultPositive), values: [])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
         return appearance
     }
     
     var warning: BadgeAppearance {
         var appearance = self
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultWarning), values: [])
-        appearance.startContentColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultWarning), values: [])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
         return appearance
     }
     
 }
+

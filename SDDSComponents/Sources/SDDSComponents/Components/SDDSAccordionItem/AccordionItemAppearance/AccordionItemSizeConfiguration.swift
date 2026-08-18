@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 import SwiftUI
 @_exported import SDDSThemeCore
 
@@ -87,6 +88,7 @@ public struct ZeroAccordionItemSize: AccordionItemSizeConfiguration {
 }
 
 public enum AccordionItemPlacement: String, CaseIterable {
+    @ApiDefault
     case start
     case end
 } 

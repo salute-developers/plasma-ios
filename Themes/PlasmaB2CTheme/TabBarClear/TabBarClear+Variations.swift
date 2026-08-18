@@ -837,3 +837,4 @@ public extension ComponentAppearanceVariation<TabBarClear, TabBarAppearance> {
 private extension TabBarAppearance {
     
 }
+

@@ -5,6 +5,34 @@ import SDDSThemeCore
 import SDDSIcons
 
 
+public extension GeneralAppearanceVariation<ListNumbered, ListAppearance, ListNumberedVariation.M> {
+    
+    var m: ComponentAppearanceVariation<ListNumbered, ListAppearance> {
+        var size =  ListNumberedAnySize(size: appearance.size)
+        size.gap = CGFloat(12.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.listItemAppearance = ListNumberedItem.m.appearance
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<ListNumbered, ListAppearance, ListNumberedVariation.S> {
     
     var s: ComponentAppearanceVariation<ListNumbered, ListAppearance> {
@@ -49,3 +77,4 @@ public extension ComponentAppearanceVariation<ListNumbered, ListAppearance> {
 private extension ListAppearance {
     
 }
+

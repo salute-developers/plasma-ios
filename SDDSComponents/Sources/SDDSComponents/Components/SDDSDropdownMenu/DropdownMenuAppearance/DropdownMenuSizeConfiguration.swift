@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
 /**
  `DropdownMenuSizeConfiguration` определяет протокол для конфигурации размеров выпадающего меню.
@@ -13,6 +14,7 @@ import SwiftUI
     - width: Ширина меню
  */
 public protocol DropdownMenuSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @ApiAlwaysEmit
     var offset: CGFloat { get }
     var shape: PathDrawer { get }
     var width: CGFloat { get }

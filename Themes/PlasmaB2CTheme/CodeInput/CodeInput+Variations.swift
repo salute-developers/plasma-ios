@@ -126,3 +126,4 @@ public extension ComponentAppearanceVariation<CodeInput, CodeInputAppearance> {
 private extension CodeInputAppearance {
     
 }
+

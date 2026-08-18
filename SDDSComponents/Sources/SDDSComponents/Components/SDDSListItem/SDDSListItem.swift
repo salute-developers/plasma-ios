@@ -109,18 +109,20 @@ public struct SDDSListItem<RightContent: View>: View {
     public var body: some View {
         Group {
             HStack(spacing: 0) {
-                if let counterText, let counterAppearance = appearance.counterAppearance {
-                    SDDSCounter(
-                        text: counterText,
-                        appearance: counterAppearance,
-                        isAnimating: false,
-                        isHighlighted: isHighlighted,
-                        isHovered: isHovered,
-                        isSelected: false
-                    )
-                    .padding(.trailing, appearance.size.contentPaddingStart)
+                HStack(alignment: .firstTextBaseline, spacing: 0) {
+                    if let counterText, let counterAppearance = appearance.counterAppearance {
+                        SDDSCounter(
+                            text: counterText,
+                            appearance: counterAppearance,
+                            isAnimating: false,
+                            isHighlighted: isHighlighted,
+                            isHovered: isHovered,
+                            isSelected: false
+                        )
+                        .padding(.trailing, appearance.size.contentPaddingStart)
+                    }
+                    textContent
                 }
-                textContent
                 Spacer()
                 if rightContentEnabled {
                     disclosure

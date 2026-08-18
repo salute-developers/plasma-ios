@@ -28,14 +28,16 @@ public struct NotificationContent {
         )
     }
     
-    public static let all: [Variation<NotificationContentAppearance>] = [
-        NotificationContent.buttonStretch.variation,
-        NotificationContent.buttonStretch.iconStart.variation,
-        NotificationContent.buttonStretch.iconTop.variation,
-        NotificationContent.noButtonStretch.variation,
-        NotificationContent.noButtonStretch.iconStart.variation,
-        NotificationContent.noButtonStretch.iconTop.variation,
-    ]
+    public static var all: [Variation<NotificationContentAppearance>] {
+        [
+            NotificationContent.buttonStretch.variation,
+            NotificationContent.buttonStretch.iconStart.variation,
+            NotificationContent.buttonStretch.iconTop.variation,
+            NotificationContent.noButtonStretch.variation,
+            NotificationContent.noButtonStretch.iconStart.variation,
+            NotificationContent.noButtonStretch.iconTop.variation,
+        ]
+    }
 }
 
 public struct NotificationContentVariation {

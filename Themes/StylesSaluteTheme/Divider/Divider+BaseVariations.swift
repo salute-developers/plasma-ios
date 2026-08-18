@@ -18,9 +18,11 @@ public struct Divider {
         )
     }
     
-    public static let all: [Variation<DividerAppearance>] = [
-        Divider.default.variation,
-    ]
+    public static var all: [Variation<DividerAppearance>] {
+        [
+            Divider.default.variation,
+        ]
+    }
 }
 
 public struct DividerVariation {

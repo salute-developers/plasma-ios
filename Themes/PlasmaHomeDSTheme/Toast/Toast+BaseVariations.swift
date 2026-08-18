@@ -19,9 +19,11 @@ public struct Toast {
         )
     }
     
-    public static let all: [Variation<ToastAppearance>] = [
-        Toast.default.variation,
-    ]
+    public static var all: [Variation<ToastAppearance>] {
+        [
+            Toast.default.variation,
+        ]
+    }
 }
 
 public struct ToastVariation {

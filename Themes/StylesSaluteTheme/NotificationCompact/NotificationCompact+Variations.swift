@@ -117,3 +117,4 @@ public extension ComponentAppearanceVariation<NotificationCompact, NotificationA
 private extension NotificationAppearance {
     
 }
+

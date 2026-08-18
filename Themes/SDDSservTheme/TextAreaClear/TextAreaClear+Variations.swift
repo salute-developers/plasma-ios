@@ -39,6 +39,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         var appearance = appearance
         appearance.size = size
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(l: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
         return .init(
@@ -630,6 +631,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         var appearance = appearance
         appearance.size = size
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(m: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
         return .init(
@@ -1269,6 +1271,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         var appearance = appearance
         appearance.size = size
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(s: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
         return .init(
@@ -1860,6 +1863,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         var appearance = appearance
         appearance.size = size
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(xl: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
         return .init(
@@ -2433,6 +2437,7 @@ public extension GeneralAppearanceVariation<TextAreaClear, TextAreaAppearance, T
         var appearance = appearance
         appearance.size = size
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(xs: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
     
         return .init(
@@ -2838,3 +2843,4 @@ private extension TextAreaAppearance {
     }
     
 }
+

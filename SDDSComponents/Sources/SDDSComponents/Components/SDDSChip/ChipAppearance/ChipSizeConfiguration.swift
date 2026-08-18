@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 
 /**
  `ChipSizeConfiguration` определяет конфигурацию размеров для чипа.
@@ -14,18 +15,20 @@ import Foundation
     - height: Высота чипа.
  */
 public protocol ChipSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
-    // sdds:apiName=contentStartSize
+    @ApiName("contentStartSize")
+    @ApiValue("size(contentStartSize, contentStartSize)")
     var iconImageSize: CGSize { get }
-    // sdds:apiName=contentEndSize
+    @ApiName("contentEndSize")
+    @ApiValue("size(contentEndSize, contentEndSize)")
     var buttonImageSize: CGSize { get }
-    // sdds:apiName=paddingStart
+    @ApiName("paddingStart")
     var leadingInset: CGFloat { get }
-    // sdds:apiName=paddingEnd
+    @ApiName("paddingEnd")
     var trailingInset: CGFloat { get }
     var contentStartPadding: CGFloat { get }
     var contentEndPadding: CGFloat { get }
     var height: CGFloat { get }
-    // sdds:apiName=shape
+    @ApiName("shape")
     var cornerRadius: CGFloat { get }
 }
 

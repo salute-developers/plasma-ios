@@ -15,9 +15,11 @@ public struct CardClear {
         )
     }
     
-    public static let all: [Variation<CardAppearance>] = [
-        CardClear.default.variation,
-    ]
+    public static var all: [Variation<CardAppearance>] {
+        [
+            CardClear.default.variation,
+        ]
+    }
 }
 
 public struct CardClearVariation {

@@ -9,12 +9,32 @@ import Stencil
 enum ComponentConfigSource {
     static var localDirectory: URL?
 
+    private static var cache: [String: Data?] = [:]
+
     static func data(
         for component: CodeGenerationComponent,
         themeConfig: ThemeBuilderConfiguration.ThemeConfiguration
     ) -> Data? {
+        data(filename: component.configurationFilename(themeConfig: themeConfig), themeConfig: themeConfig)
+    }
+
+    static func data(
+        filename: String,
+        themeConfig: ThemeBuilderConfiguration.ThemeConfiguration
+    ) -> Data? {
+        let key = "\(themeConfig.name).\(filename)"
+        if let cached = cache[key] { return cached }
+        let data = load(filename: filename, themeConfig: themeConfig)
+        cache[key] = data
+        return data
+    }
+
+    private static func load(
+        filename: String,
+        themeConfig: ThemeBuilderConfiguration.ThemeConfiguration
+    ) -> Data? {
         if let localDirectory = localDirectory,
-           let data = try? Data(contentsOf: localDirectory.appending(component: component.configurationFilename)) {
+           let data = try? Data(contentsOf: localDirectory.appending(component: filename)) {
             return data
         }
         let scheme = themeConfig.url.deletingLastPathComponent().lastPathComponent
@@ -23,7 +43,7 @@ enum ComponentConfigSource {
             .appending(component: "components")
             .appending(component: scheme)
         guard let remoteBase = remoteBase else { return nil }
-        return try? Data(contentsOf: component.url(baseURL: remoteBase))
+        return try? Data(contentsOf: remoteBase.appending(component: filename))
     }
 }
 
@@ -47,7 +67,10 @@ final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: 
 
     @discardableResult override func run() -> CommandResult {
         super.run()
-        
+
+        UniversalRuntime.currentComponent = component
+        ComponentStyleCatalog.reset(themeConfig: themeConfig)
+
         // Приоритет — per-theme локальный конфиг, затем общий локальный, иначе удалённый.
         guard let jsonData = ComponentConfigSource.data(for: component, themeConfig: themeConfig) else {
             return .error(GeneralError.schemeNotFound)

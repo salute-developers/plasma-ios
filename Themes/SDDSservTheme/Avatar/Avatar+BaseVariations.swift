@@ -10,7 +10,7 @@ public struct Avatar {
         appearance.size = AvatarSize.l
         appearance.badgeAppearance = Badge.s.pilled.accent.appearance
         appearance.counterAppearance = Counter.s.negative.appearance
-        appearance.indicatorAppearance = Indicator.m.appearance
+        appearance.indicatorAppearance = AvatarIndicator.m.appearance
         appearance.textTypography = AvatarTypography(oneSize: AdaptiveTypographyToken.headerH4Bold.typography).asContainer
 
         return .init(
@@ -23,7 +23,7 @@ public struct Avatar {
         appearance.size = AvatarSize.m
         appearance.badgeAppearance = Badge.xs.pilled.accent.appearance
         appearance.counterAppearance = Counter.xs.negative.appearance
-        appearance.indicatorAppearance = Indicator.m.appearance
+        appearance.indicatorAppearance = AvatarIndicator.m.appearance
         appearance.textTypography = AvatarTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
 
         return .init(
@@ -35,7 +35,7 @@ public struct Avatar {
         var appearance = AvatarAppearance.base
         appearance.size = AvatarSize.s
         appearance.counterAppearance = Counter.xxs.negative.appearance
-        appearance.indicatorAppearance = Indicator.s.appearance
+        appearance.indicatorAppearance = AvatarIndicator.s.appearance
         appearance.textTypography = AvatarTypography(oneSize: AdaptiveTypographyToken.bodyXxsBold.typography).asContainer
 
         return .init(
@@ -48,7 +48,7 @@ public struct Avatar {
         appearance.size = AvatarSize.xxl
         appearance.badgeAppearance = Badge.l.pilled.accent.appearance
         appearance.counterAppearance = Counter.l.negative.appearance
-        appearance.indicatorAppearance = Indicator.l.appearance
+        appearance.indicatorAppearance = AvatarIndicator.l.appearance
         appearance.textTypography = AvatarTypography(oneSize: AdaptiveTypographyToken.headerH2Bold.typography).asContainer
 
         return .init(
@@ -79,8 +79,6 @@ private extension AvatarAppearance {
         var appearance = AvatarAppearance()
         appearance.backgroundFillStyle = .gradient(GradientToken.surfaceDefaultAccentGradient)
         appearance.backgroundOpacity = CGFloat(0.2)
-        appearance.offlineStatusColor = ColorToken.surfaceOnLightSolidTertiary
-        appearance.onlineStatusColor = ColorToken.surfaceDefaultPositive
         appearance.textFillStyle = .gradient(GradientToken.textDefaultAccentGradient)
         return appearance
     }

@@ -33,7 +33,6 @@ public extension GeneralAppearanceVariation<TabBarItemSolid, TabBarItemAppearanc
         size.labelPlacement = TabBarItemLabelPlacement.bottom
         size.paddingBottom = CGFloat(12.0)
         size.paddingTop = CGFloat(12.0)
-        size.shape = DefaultPathDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -85,7 +84,6 @@ public extension GeneralAppearanceVariation<TabBarItemSolid, TabBarItemAppearanc
         size.labelPlacement = TabBarItemLabelPlacement.bottom
         size.paddingBottom = CGFloat(12.0)
         size.paddingTop = CGFloat(12.0)
-        size.shape = DefaultPathDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -137,7 +135,6 @@ public extension GeneralAppearanceVariation<TabBarItemSolid, TabBarItemAppearanc
         size.labelPlacement = TabBarItemLabelPlacement.bottom
         size.paddingBottom = CGFloat(8.0)
         size.paddingTop = CGFloat(10.0)
-        size.shape = DefaultPathDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -209,7 +206,6 @@ public extension GeneralAppearanceVariation<TabBarItemSolid, TabBarItemAppearanc
         size.labelPlacement = TabBarItemLabelPlacement.bottom
         size.paddingBottom = CGFloat(8.0)
         size.paddingTop = CGFloat(10.0)
-        size.shape = DefaultPathDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -332,3 +328,4 @@ private extension TabBarItemAppearance {
     }
     
 }
+

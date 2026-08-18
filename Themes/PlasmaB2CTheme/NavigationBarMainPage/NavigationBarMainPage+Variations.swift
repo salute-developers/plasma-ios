@@ -235,3 +235,4 @@ public extension ComponentAppearanceVariation<NavigationBarMainPage, NavigationB
 private extension NavigationBarMainPageAppearance {
     
 }
+

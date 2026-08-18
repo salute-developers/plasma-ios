@@ -293,3 +293,4 @@ public extension ComponentAppearanceVariation<AccordionItemClearActionStart, Acc
 private extension AccordionItemAppearance {
     
 }
+

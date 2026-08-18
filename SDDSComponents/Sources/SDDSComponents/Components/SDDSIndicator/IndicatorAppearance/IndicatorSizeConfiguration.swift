@@ -1,10 +1,12 @@
 import SwiftUI
 import Foundation
 import SDDSThemeCore
+import SDDSApiInfo
 
 public protocol IndicatorSizeConfiguration {
     var height: CGFloat { get }
     var width: CGFloat { get }
+    @ApiName("shape")
     var pathDrawer: PathDrawer { get }
 }
 

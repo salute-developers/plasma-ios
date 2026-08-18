@@ -87,7 +87,7 @@ private extension SelectItemAppearance {
             .init(states: [InteractiveState.focused], value: ColorToken.surfaceDefaultTransparentSecondary)
         ]))
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.itemType = .multiple
+        appearance.itemType = SelectItemType.multiple
         return appearance
     }
 }

@@ -118,6 +118,8 @@ jobs:
           cd SDDSThemeBuilder/build
           rm -rf SDDSThemeBuilder-cli && mkdir -p SDDSThemeBuilder-cli
           cp -R themebuilder/SDDSThemeBuilder themebuilder/SDDSThemeBuilderCore.framework SDDSThemeBuilder-cli/
+          test -f ../.sdds/ios-api-meta.json || { echo "❌ styles API meta not generated"; exit 1; }
+          cp ../.sdds/ios-api-meta.json SDDSThemeBuilder-cli/
           ditto -c -k --sequesterRsrc --keepParent SDDSThemeBuilder-cli "SDDSThemeBuilder-cli-${TAG}.zip"
 
       - name: Upload ThemeBuilder CLI to release

@@ -77,47 +77,666 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		813BCC552EB29C4300E4E505 /* Avatar */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Avatar; sourceTree = "<group>"; };
-		813BCC5A2EB29C4300E4E505 /* AvatarGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AvatarGroup; sourceTree = "<group>"; };
-		813BCC5F2EB29C4300E4E505 /* Badge */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Badge; sourceTree = "<group>"; };
-		813BCC642EB29C4300E4E505 /* BadgeClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BadgeClear; sourceTree = "<group>"; };
-		813BCC692EB29C4300E4E505 /* BadgeTransparent */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BadgeTransparent; sourceTree = "<group>"; };
-		813BCC6E2EB29C4300E4E505 /* BasicButton */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BasicButton; sourceTree = "<group>"; };
-		813BCC732EB29C4300E4E505 /* BasicButtonGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BasicButtonGroup; sourceTree = "<group>"; };
-		813BCC782EB29C4300E4E505 /* Card */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Card; sourceTree = "<group>"; };
-		813BCC7D2EB29C4300E4E505 /* Cell */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Cell; sourceTree = "<group>"; };
-		813BCC822EB29C4300E4E505 /* Checkbox */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Checkbox; sourceTree = "<group>"; };
-		813BCC872EB29C4300E4E505 /* CheckboxGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheckboxGroup; sourceTree = "<group>"; };
-		813BCC8C2EB29C4300E4E505 /* Chip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Chip; sourceTree = "<group>"; };
-		813BCC912EB29C4300E4E505 /* ChipGroupDense */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ChipGroupDense; sourceTree = "<group>"; };
-		813BCC962EB29C4300E4E505 /* ChipGroupWide */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ChipGroupWide; sourceTree = "<group>"; };
-		813BCC9B2EB29C4300E4E505 /* CircularProgressBar */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CircularProgressBar; sourceTree = "<group>"; };
-		813BCCA02EB29C4300E4E505 /* Counter */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Counter; sourceTree = "<group>"; };
-		813BCCA52EB29C4300E4E505 /* Divider */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Divider; sourceTree = "<group>"; };
-		813BCCA72EB29C4300E4E505 /* Fonts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Fonts; sourceTree = "<group>"; };
-		813BCCAC2EB29C4300E4E505 /* IconBadge */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconBadge; sourceTree = "<group>"; };
-		813BCCB12EB29C4300E4E505 /* IconBadgeClear */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconBadgeClear; sourceTree = "<group>"; };
-		813BCCB62EB29C4300E4E505 /* IconBadgeTransparent */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconBadgeTransparent; sourceTree = "<group>"; };
-		813BCCBB2EB29C4300E4E505 /* IconButton */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconButton; sourceTree = "<group>"; };
-		813BCCC02EB29C4300E4E505 /* IconButtonGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IconButtonGroup; sourceTree = "<group>"; };
-		813BCCC52EB29C4300E4E505 /* Indicator */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Indicator; sourceTree = "<group>"; };
-		813BCCCA2EB29C4300E4E505 /* List */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = List; sourceTree = "<group>"; };
-		813BCCCF2EB29C4300E4E505 /* ListItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListItem; sourceTree = "<group>"; };
-		813BCCD42EB29C4300E4E505 /* Loader */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Loader; sourceTree = "<group>"; };
-		813BCCD92EB29C4300E4E505 /* Radiobox */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Radiobox; sourceTree = "<group>"; };
-		813BCCDE2EB29C4300E4E505 /* RadioboxGroup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RadioboxGroup; sourceTree = "<group>"; };
-		813BCCE32EB29C4300E4E505 /* Spinner */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Spinner; sourceTree = "<group>"; };
-		813BCCE82EB29C4300E4E505 /* Switch */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Switch; sourceTree = "<group>"; };
-		813BCCED2EB29C4300E4E505 /* TabBar */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBar; sourceTree = "<group>"; };
-		813BCCF22EB29C4300E4E505 /* TabBarItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarItem; sourceTree = "<group>"; };
-		813BCCF72EB29C4300E4E505 /* TextField */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextField; sourceTree = "<group>"; };
-		813BCD042EB29C4300E4E505 /* Tokens */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tokens; sourceTree = "<group>"; };
-		813BCD092EB29C4300E4E505 /* Tooltip */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tooltip; sourceTree = "<group>"; };
-		8183C42E2EB2A71400610A9A /* Wheel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Wheel; sourceTree = "<group>"; };
-		81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CollapsingNavigationBarInternalPage; sourceTree = "<group>"; };
-		81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CollapsingNavigationBarMainPage; sourceTree = "<group>"; };
-		81F20FF32FFE81F900B3E648 /* FormItem */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FormItem; sourceTree = "<group>"; };
-		A12BE0022EB29C4300E4E507 /* Image */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Image; sourceTree = "<group>"; };
+		0C200D741FCA5F9024448D94 /* ListNumbered */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ListNumbered;
+			sourceTree = "<group>";
+		};
+		11E4126A79DAC4FF1259C6CF /* Overlay */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
+		1997C132676745F20F47C0B4 /* AvatarIndicator */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = AvatarIndicator;
+			sourceTree = "<group>";
+		};
+		3498BE300D9BBACA6BCEBA02 /* BottomSheet */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		3C4595E570476BA2C6FBCD67 /* LinkButton */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = LinkButton;
+			sourceTree = "<group>";
+		};
+		47FC71F64F985420A72AF756 /* Editable */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Editable;
+			sourceTree = "<group>";
+		};
+		605077954D009C94C4EF1D49 /* NoteCompact */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = NoteCompact;
+			sourceTree = "<group>";
+		};
+		692FC4FAA44523646E87DD20 /* TextSkeletonText */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TextSkeletonText;
+			sourceTree = "<group>";
+		};
+		6989D03339F215A6D0F4C6AF /* TextSkeletonHeader */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TextSkeletonHeader;
+			sourceTree = "<group>";
+		};
+		6B3DE37BD3491D807F48F72E /* Note */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		78BFC055AF736CDA23DA67AD /* ListNumberedItem */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ListNumberedItem;
+			sourceTree = "<group>";
+		};
+		7B91F5EEA8032511FAFF6B80 /* Carousel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		813BCC552EB29C4300E4E505 /* Avatar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Avatar;
+			sourceTree = "<group>";
+		};
+		813BCC5A2EB29C4300E4E505 /* AvatarGroup */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = AvatarGroup;
+			sourceTree = "<group>";
+		};
+		813BCC5F2EB29C4300E4E505 /* Badge */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
+		813BCC642EB29C4300E4E505 /* BadgeClear */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = BadgeClear;
+			sourceTree = "<group>";
+		};
+		813BCC692EB29C4300E4E505 /* BadgeTransparent */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = BadgeTransparent;
+			sourceTree = "<group>";
+		};
+		813BCC6E2EB29C4300E4E505 /* BasicButton */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = BasicButton;
+			sourceTree = "<group>";
+		};
+		813BCC732EB29C4300E4E505 /* BasicButtonGroup */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = BasicButtonGroup;
+			sourceTree = "<group>";
+		};
+		813BCC782EB29C4300E4E505 /* Card */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		813BCC7D2EB29C4300E4E505 /* Cell */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		813BCC822EB29C4300E4E505 /* Checkbox */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Checkbox;
+			sourceTree = "<group>";
+		};
+		813BCC872EB29C4300E4E505 /* CheckboxGroup */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CheckboxGroup;
+			sourceTree = "<group>";
+		};
+		813BCC8C2EB29C4300E4E505 /* Chip */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Chip;
+			sourceTree = "<group>";
+		};
+		813BCC912EB29C4300E4E505 /* ChipGroupDense */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ChipGroupDense;
+			sourceTree = "<group>";
+		};
+		813BCC962EB29C4300E4E505 /* ChipGroupWide */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ChipGroupWide;
+			sourceTree = "<group>";
+		};
+		813BCC9B2EB29C4300E4E505 /* CircularProgressBar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CircularProgressBar;
+			sourceTree = "<group>";
+		};
+		813BCCA02EB29C4300E4E505 /* Counter */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		813BCCA52EB29C4300E4E505 /* Divider */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Divider;
+			sourceTree = "<group>";
+		};
+		813BCCA72EB29C4300E4E505 /* Fonts */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		813BCCAC2EB29C4300E4E505 /* IconBadge */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = IconBadge;
+			sourceTree = "<group>";
+		};
+		813BCCB12EB29C4300E4E505 /* IconBadgeClear */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = IconBadgeClear;
+			sourceTree = "<group>";
+		};
+		813BCCB62EB29C4300E4E505 /* IconBadgeTransparent */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = IconBadgeTransparent;
+			sourceTree = "<group>";
+		};
+		813BCCBB2EB29C4300E4E505 /* IconButton */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = IconButton;
+			sourceTree = "<group>";
+		};
+		813BCCC02EB29C4300E4E505 /* IconButtonGroup */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = IconButtonGroup;
+			sourceTree = "<group>";
+		};
+		813BCCC52EB29C4300E4E505 /* Indicator */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
+		813BCCCA2EB29C4300E4E505 /* List */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		813BCCCF2EB29C4300E4E505 /* ListItem */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ListItem;
+			sourceTree = "<group>";
+		};
+		813BCCD42EB29C4300E4E505 /* Loader */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		813BCCD92EB29C4300E4E505 /* Radiobox */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Radiobox;
+			sourceTree = "<group>";
+		};
+		813BCCDE2EB29C4300E4E505 /* RadioboxGroup */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = RadioboxGroup;
+			sourceTree = "<group>";
+		};
+		813BCCE32EB29C4300E4E505 /* Spinner */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Spinner;
+			sourceTree = "<group>";
+		};
+		813BCCE82EB29C4300E4E505 /* Switch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		813BCCED2EB29C4300E4E505 /* TabBar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		813BCCF22EB29C4300E4E505 /* TabBarItem */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TabBarItem;
+			sourceTree = "<group>";
+		};
+		813BCCF72EB29C4300E4E505 /* TextField */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		813BCD042EB29C4300E4E505 /* Tokens */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		813BCD092EB29C4300E4E505 /* Tooltip */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Tooltip;
+			sourceTree = "<group>";
+		};
+		8183C42E2EB2A71400610A9A /* Wheel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Wheel;
+			sourceTree = "<group>";
+		};
+		81F0A1212F10002100AAA111 /* CollapsingNavigationBarInternalPage */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CollapsingNavigationBarInternalPage;
+			sourceTree = "<group>";
+		};
+		81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CollapsingNavigationBarMainPage;
+			sourceTree = "<group>";
+		};
+		81F20FF32FFE81F900B3E648 /* FormItem */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = FormItem;
+			sourceTree = "<group>";
+		};
+		A0F6E69CED640FE44C45C910 /* RectSkeleton */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = RectSkeleton;
+			sourceTree = "<group>";
+		};
+		A12BE0022EB29C4300E4E507 /* Image */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		A7B62EE0860260684BFFA510 /* NavigationBarMainPage */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = NavigationBarMainPage;
+			sourceTree = "<group>";
+		};
+		AAB8F9E897F35645CF549DC0 /* TextSkeletonDisplay */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TextSkeletonDisplay;
+			sourceTree = "<group>";
+		};
+		C2D2D8FD1CAB57CB25F2E686 /* TextSkeleton */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TextSkeleton;
+			sourceTree = "<group>";
+		};
+		C9C90EE581C5E79B1A949FF7 /* Toast */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		CDF9041C05050A25E0F45F13 /* TextSkeletonBody */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TextSkeletonBody;
+			sourceTree = "<group>";
+		};
+		D3C3312D74F35168A0EB5570 /* NavigationBarInternalPage */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = NavigationBarInternalPage;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +876,25 @@
 				343400BC1F1F415B618C0730 /* Theme.swift */,
 				9047DBBE21A8C9A933382C9C /* SDDSThemeCore.xcframework */,
 				81FC47C62D93184400A83F87 /* Recovered References */,
+				3498BE300D9BBACA6BCEBA02 /* BottomSheet */,
+				47FC71F64F985420A72AF756 /* Editable */,
+				3C4595E570476BA2C6FBCD67 /* LinkButton */,
+				0C200D741FCA5F9024448D94 /* ListNumbered */,
+				78BFC055AF736CDA23DA67AD /* ListNumberedItem */,
+				D3C3312D74F35168A0EB5570 /* NavigationBarInternalPage */,
+				A7B62EE0860260684BFFA510 /* NavigationBarMainPage */,
+				6B3DE37BD3491D807F48F72E /* Note */,
+				605077954D009C94C4EF1D49 /* NoteCompact */,
+				11E4126A79DAC4FF1259C6CF /* Overlay */,
+				A0F6E69CED640FE44C45C910 /* RectSkeleton */,
+				C2D2D8FD1CAB57CB25F2E686 /* TextSkeleton */,
+				CDF9041C05050A25E0F45F13 /* TextSkeletonBody */,
+				AAB8F9E897F35645CF549DC0 /* TextSkeletonDisplay */,
+				6989D03339F215A6D0F4C6AF /* TextSkeletonHeader */,
+				692FC4FAA44523646E87DD20 /* TextSkeletonText */,
+				C9C90EE581C5E79B1A949FF7 /* Toast */,
+				1997C132676745F20F47C0B4 /* AvatarIndicator */,
+				7B91F5EEA8032511FAFF6B80 /* Carousel */,
 			);
 			sourceTree = "<group>";
 		};
@@ -340,6 +978,25 @@
 				81F0A1222F10002100AAA111 /* CollapsingNavigationBarMainPage */,
 				81F20FF32FFE81F900B3E648 /* FormItem */,
 				A12BE0022EB29C4300E4E507 /* Image */,
+				3498BE300D9BBACA6BCEBA02 /* BottomSheet */,
+				47FC71F64F985420A72AF756 /* Editable */,
+				3C4595E570476BA2C6FBCD67 /* LinkButton */,
+				0C200D741FCA5F9024448D94 /* ListNumbered */,
+				78BFC055AF736CDA23DA67AD /* ListNumberedItem */,
+				D3C3312D74F35168A0EB5570 /* NavigationBarInternalPage */,
+				A7B62EE0860260684BFFA510 /* NavigationBarMainPage */,
+				6B3DE37BD3491D807F48F72E /* Note */,
+				605077954D009C94C4EF1D49 /* NoteCompact */,
+				11E4126A79DAC4FF1259C6CF /* Overlay */,
+				A0F6E69CED640FE44C45C910 /* RectSkeleton */,
+				C2D2D8FD1CAB57CB25F2E686 /* TextSkeleton */,
+				CDF9041C05050A25E0F45F13 /* TextSkeletonBody */,
+				AAB8F9E897F35645CF549DC0 /* TextSkeletonDisplay */,
+				6989D03339F215A6D0F4C6AF /* TextSkeletonHeader */,
+				692FC4FAA44523646E87DD20 /* TextSkeletonText */,
+				C9C90EE581C5E79B1A949FF7 /* Toast */,
+				1997C132676745F20F47C0B4 /* AvatarIndicator */,
+				7B91F5EEA8032511FAFF6B80 /* Carousel */,
 			);
 			name = PlasmaHomeDSTheme;
 			productName = PlasmaHomeDSTheme;

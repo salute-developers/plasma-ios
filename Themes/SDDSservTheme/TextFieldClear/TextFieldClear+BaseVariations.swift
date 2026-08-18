@@ -9,6 +9,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
@@ -22,6 +23,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
@@ -35,6 +37,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
@@ -48,6 +51,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.xl
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
@@ -61,6 +65,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer

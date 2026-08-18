@@ -49,7 +49,7 @@ public struct Cell {
         appearance.avatarAppearance = Avatar.s.appearance
         appearance.buttonAppearance = IconButton.s.clear.appearance
         appearance.checkboxAppearance = Checkbox.s.default.appearance
-        appearance.disclosureImage = Asset.disclosureRightOutline16.image
+        appearance.disclosureImage = Asset.disclosureRightOutline24.image
         appearance.disclosureTextTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.labelTypography = CellTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.radioboxAppearance = Radiobox.s.appearance
@@ -82,12 +82,14 @@ public struct Cell {
         )
     }
     
-    public static let all: [Variation<CellAppearance>] = [
-        Cell.l.variation,
-        Cell.m.variation,
-        Cell.s.variation,
-        Cell.xs.variation,
-    ]
+    public static var all: [Variation<CellAppearance>] {
+        [
+            Cell.l.variation,
+            Cell.m.variation,
+            Cell.s.variation,
+            Cell.xs.variation,
+        ]
+    }
 }
 
 public struct CellVariation {
@@ -100,11 +102,11 @@ public struct CellVariation {
 private extension CellAppearance {
     static var base: CellAppearance {
         var appearance = CellAppearance()
-        appearance.disclosureImageColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.disclosureTextColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.subtitleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
+        appearance.disclosureImageColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.disclosureTextColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         return appearance
     }
 }

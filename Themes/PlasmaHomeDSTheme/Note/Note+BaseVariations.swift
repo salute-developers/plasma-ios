@@ -24,12 +24,14 @@ public struct Note {
         )
     }
     
-    public static let all: [Variation<NoteAppearance>] = [
-        Note.contentBeforeFixed.variation,
-        Note.contentBeforeFixed.hasClose.variation,
-        Note.contentBeforeScalable.variation,
-        Note.contentBeforeScalable.hasClose.variation,
-    ]
+    public static var all: [Variation<NoteAppearance>] {
+        [
+            Note.contentBeforeFixed.variation,
+            Note.contentBeforeFixed.hasClose.variation,
+            Note.contentBeforeScalable.variation,
+            Note.contentBeforeScalable.hasClose.variation,
+        ]
+    }
 }
 
 public struct NoteVariation {
@@ -44,9 +46,9 @@ private extension NoteAppearance {
         var appearance = NoteAppearance()
         appearance.closeColor = ColorToken.textDefaultSecondary
         appearance.textColor = ColorToken.textDefaultPrimary
-        appearance.textTypography = NoteTypography(oneSize: AdaptiveTypographyToken.textSNormal.typography).asContainer
+        appearance.textTypography = NoteTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = NoteTypography(oneSize: AdaptiveTypographyToken.textSBold.typography).asContainer
+        appearance.titleTypography = NoteTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         return appearance
     }
 }

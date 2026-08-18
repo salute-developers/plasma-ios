@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -13,6 +14,8 @@ public protocol DrawerSizeConfiguration: SizeConfiguration, CustomDebugStringCon
     var closeIconHeaderPadding: CGFloat { get }
     var closeIconOffsetX: CGFloat { get }
     var closeIconOffsetY: CGFloat { get }
+    @ApiType(.iconSize)
+    @ApiName("closeIcon")
     var closeIconSize: CGFloat { get }
     var closeIconPlacement: DrawerCloseIconPlacement { get }
 }

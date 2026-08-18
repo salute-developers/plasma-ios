@@ -13,6 +13,8 @@ Output/
 ## DS Builder CLI theme files
 ## .sdds/config.json остаётся в гите; токены/палитра, выгруженные DS Builder CLI, — нет.
 **/.sdds/**/
+## Мета API стилей — продукт сборки, генерится scripts/generate_api_meta.sh
+SDDSThemeBuilder/.sdds/ios-api-meta.json
 
 ## User settings
 xcuserdata/
@@ -112,7 +114,4 @@ iOSInjectionProject/
 .cursor/
 
 # Claude Code / AI-агентная инфра
-# Секреты и локальные оверрайды не коммитим; .claude/settings.json, .claude/skills,
-# .claude/memory — трекаются (командная конфигурация и память).
-.claude/settings.local.json
-.claude/worktrees/
+.claude/

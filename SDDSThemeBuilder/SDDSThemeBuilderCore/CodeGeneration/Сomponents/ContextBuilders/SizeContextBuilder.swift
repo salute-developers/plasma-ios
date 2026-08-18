@@ -19,7 +19,12 @@ final class SizeContextBuilder: CodeGenerationContextBuilder {
     }
     
     var context: String? {
-        guard let x = x, let y = y else {
+        // Конфиг задаёт координаты по отдельности и вторую часто опускает (у формы
+        // `indicatorOffsetX: 4` без `Y`). Раньше это теряло и заданную координату —
+        // смещение пропадало целиком. У смещения пропущенная координата = 0, а у
+        // размера отсутствие измерения значит «контента нет» — там нужны оба.
+        let hasEnough = style == .point ? (x != nil || y != nil) : (x != nil && y != nil)
+        guard hasEnough else {
             if nullify {
                 return nil
             }
@@ -30,7 +35,9 @@ final class SizeContextBuilder: CodeGenerationContextBuilder {
                 return "CGSize.zero"
             }
         }
-        
+        let x = self.x ?? 0
+        let y = self.y ?? 0
+
         switch style {
         case .point:
             return "CGPoint(x:\(x), y:\(y))"

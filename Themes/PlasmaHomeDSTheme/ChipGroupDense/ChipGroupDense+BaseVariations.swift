@@ -51,18 +51,20 @@ public struct ChipGroupDense {
         )
     }
     
-    public static let all: [Variation<ChipGroupAppearance>] = [
-        ChipGroupDense.l.variation,
-        ChipGroupDense.l.pilled.variation,
-        ChipGroupDense.m.variation,
-        ChipGroupDense.m.pilled.variation,
-        ChipGroupDense.s.variation,
-        ChipGroupDense.s.pilled.variation,
-        ChipGroupDense.xs.variation,
-        ChipGroupDense.xs.pilled.variation,
-        ChipGroupDense.xxs.variation,
-        ChipGroupDense.xxs.pilled.variation,
-    ]
+    public static var all: [Variation<ChipGroupAppearance>] {
+        [
+            ChipGroupDense.l.variation,
+            ChipGroupDense.l.pilled.variation,
+            ChipGroupDense.m.variation,
+            ChipGroupDense.m.pilled.variation,
+            ChipGroupDense.s.variation,
+            ChipGroupDense.s.pilled.variation,
+            ChipGroupDense.xs.variation,
+            ChipGroupDense.xs.pilled.variation,
+            ChipGroupDense.xxs.variation,
+            ChipGroupDense.xxs.pilled.variation,
+        ]
+    }
 }
 
 public struct ChipGroupDenseVariation {

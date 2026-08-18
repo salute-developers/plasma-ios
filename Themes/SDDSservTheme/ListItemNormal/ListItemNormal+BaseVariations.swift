@@ -93,14 +93,14 @@ public struct ListItemNormalVariation {
 private extension ListItemAppearance {
     static var base: ListItemAppearance {
         var appearance = ListItemAppearance()
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultClear), values: [
-            .init(states: [InteractiveState.hovered], value: .color(ColorToken.surfaceDefaultTransparentSecondary))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultTransparentSecondary))
         ])
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.disclosureIconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.labelColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.subtitleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
+        appearance.disclosureIconColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         return appearance
     }
 }

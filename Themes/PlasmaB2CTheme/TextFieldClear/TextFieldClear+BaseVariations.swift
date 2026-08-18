@@ -9,6 +9,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
@@ -22,6 +23,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
@@ -35,6 +37,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
@@ -48,6 +51,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.xl
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
@@ -61,6 +65,7 @@ public struct TextFieldClear {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldClearSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.textTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
@@ -71,50 +76,52 @@ public struct TextFieldClear {
         )
     }
     
-    public static let all: [Variation<TextFieldAppearance>] = [
-        TextFieldClear.l.variation,
-        TextFieldClear.l.innerLabel.variation,
-        TextFieldClear.l.innerLabel.requiredEnd.variation,
-        TextFieldClear.l.innerLabel.requiredStart.variation,
-        TextFieldClear.l.outerLabel.variation,
-        TextFieldClear.l.outerLabel.requiredEnd.variation,
-        TextFieldClear.l.outerLabel.requiredStart.variation,
-        TextFieldClear.l.requiredEnd.variation,
-        TextFieldClear.l.requiredStart.variation,
-        TextFieldClear.m.variation,
-        TextFieldClear.m.innerLabel.variation,
-        TextFieldClear.m.innerLabel.requiredEnd.variation,
-        TextFieldClear.m.innerLabel.requiredStart.variation,
-        TextFieldClear.m.outerLabel.variation,
-        TextFieldClear.m.outerLabel.requiredEnd.variation,
-        TextFieldClear.m.outerLabel.requiredStart.variation,
-        TextFieldClear.m.requiredEnd.variation,
-        TextFieldClear.m.requiredStart.variation,
-        TextFieldClear.s.variation,
-        TextFieldClear.s.innerLabel.variation,
-        TextFieldClear.s.innerLabel.requiredEnd.variation,
-        TextFieldClear.s.innerLabel.requiredStart.variation,
-        TextFieldClear.s.outerLabel.variation,
-        TextFieldClear.s.outerLabel.requiredEnd.variation,
-        TextFieldClear.s.outerLabel.requiredStart.variation,
-        TextFieldClear.s.requiredEnd.variation,
-        TextFieldClear.s.requiredStart.variation,
-        TextFieldClear.xl.variation,
-        TextFieldClear.xl.innerLabel.variation,
-        TextFieldClear.xl.innerLabel.requiredEnd.variation,
-        TextFieldClear.xl.innerLabel.requiredStart.variation,
-        TextFieldClear.xl.outerLabel.variation,
-        TextFieldClear.xl.outerLabel.requiredEnd.variation,
-        TextFieldClear.xl.outerLabel.requiredStart.variation,
-        TextFieldClear.xl.requiredEnd.variation,
-        TextFieldClear.xl.requiredStart.variation,
-        TextFieldClear.xs.variation,
-        TextFieldClear.xs.outerLabel.variation,
-        TextFieldClear.xs.outerLabel.requiredEnd.variation,
-        TextFieldClear.xs.outerLabel.requiredStart.variation,
-        TextFieldClear.xs.requiredEnd.variation,
-        TextFieldClear.xs.requiredStart.variation,
-    ]
+    public static var all: [Variation<TextFieldAppearance>] {
+        [
+            TextFieldClear.l.variation,
+            TextFieldClear.l.innerLabel.variation,
+            TextFieldClear.l.innerLabel.requiredEnd.variation,
+            TextFieldClear.l.innerLabel.requiredStart.variation,
+            TextFieldClear.l.outerLabel.variation,
+            TextFieldClear.l.outerLabel.requiredEnd.variation,
+            TextFieldClear.l.outerLabel.requiredStart.variation,
+            TextFieldClear.l.requiredEnd.variation,
+            TextFieldClear.l.requiredStart.variation,
+            TextFieldClear.m.variation,
+            TextFieldClear.m.innerLabel.variation,
+            TextFieldClear.m.innerLabel.requiredEnd.variation,
+            TextFieldClear.m.innerLabel.requiredStart.variation,
+            TextFieldClear.m.outerLabel.variation,
+            TextFieldClear.m.outerLabel.requiredEnd.variation,
+            TextFieldClear.m.outerLabel.requiredStart.variation,
+            TextFieldClear.m.requiredEnd.variation,
+            TextFieldClear.m.requiredStart.variation,
+            TextFieldClear.s.variation,
+            TextFieldClear.s.innerLabel.variation,
+            TextFieldClear.s.innerLabel.requiredEnd.variation,
+            TextFieldClear.s.innerLabel.requiredStart.variation,
+            TextFieldClear.s.outerLabel.variation,
+            TextFieldClear.s.outerLabel.requiredEnd.variation,
+            TextFieldClear.s.outerLabel.requiredStart.variation,
+            TextFieldClear.s.requiredEnd.variation,
+            TextFieldClear.s.requiredStart.variation,
+            TextFieldClear.xl.variation,
+            TextFieldClear.xl.innerLabel.variation,
+            TextFieldClear.xl.innerLabel.requiredEnd.variation,
+            TextFieldClear.xl.innerLabel.requiredStart.variation,
+            TextFieldClear.xl.outerLabel.variation,
+            TextFieldClear.xl.outerLabel.requiredEnd.variation,
+            TextFieldClear.xl.outerLabel.requiredStart.variation,
+            TextFieldClear.xl.requiredEnd.variation,
+            TextFieldClear.xl.requiredStart.variation,
+            TextFieldClear.xs.variation,
+            TextFieldClear.xs.outerLabel.variation,
+            TextFieldClear.xs.outerLabel.requiredEnd.variation,
+            TextFieldClear.xs.outerLabel.requiredStart.variation,
+            TextFieldClear.xs.requiredEnd.variation,
+            TextFieldClear.xs.requiredStart.variation,
+        ]
+    }
 }
 
 public struct TextFieldClearVariation {

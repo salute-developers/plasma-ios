@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  `TabBarAppearance` определяет внешний вид таб-бара, включая цвета, тени и стили элементов.
@@ -12,7 +13,7 @@ import SDDSThemeCore
     - tabBarItemAppearance: Стиль элементов таб-бара
     - size: Конфигурация размеров и отступов таб-бара
  */
-// sdds:apiInfo
+@ApiInfo(components: ["TabBarClear", "TabBarHasLabel", "TabBarHasLabelClear", "TabBarSolid"])
 public struct TabBarAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

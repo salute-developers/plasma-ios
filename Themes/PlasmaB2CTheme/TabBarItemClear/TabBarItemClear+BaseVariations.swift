@@ -28,12 +28,14 @@ public struct TabBarItemClear {
         )
     }
     
-    public static let all: [Variation<TabBarItemAppearance>] = [
-        TabBarItemClear.l.variation,
-        TabBarItemClear.l.label.variation,
-        TabBarItemClear.m.variation,
-        TabBarItemClear.m.label.variation,
-    ]
+    public static var all: [Variation<TabBarItemAppearance>] {
+        [
+            TabBarItemClear.l.variation,
+            TabBarItemClear.l.label.variation,
+            TabBarItemClear.m.variation,
+            TabBarItemClear.m.label.variation,
+        ]
+    }
 }
 
 public struct TabBarItemClearVariation {

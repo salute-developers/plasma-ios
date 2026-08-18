@@ -740,6 +740,78 @@ public enum Colors: String {
     case surfaceOnLightWarningMinor
     case surfaceOnLightWarningMinorActive
     case surfaceOnLightWarningMinorHover
+    case syntaxDefaultOrange
+    case syntaxDefaultOrangeActive
+    case syntaxDefaultOrangeHover
+    case syntaxDefaultPink
+    case syntaxDefaultPinkActive
+    case syntaxDefaultPinkHover
+    case syntaxDefaultRed
+    case syntaxDefaultRedActive
+    case syntaxDefaultRedHover
+    case syntaxDefaultSkyBlue
+    case syntaxDefaultSkyBlueActive
+    case syntaxDefaultSkyBlueHover
+    case syntaxDefaultSpring
+    case syntaxDefaultSpringActive
+    case syntaxDefaultSpringHover
+    case syntaxDefaultYellow
+    case syntaxDefaultYellowActive
+    case syntaxDefaultYellowHover
+    case syntaxInverseOrange
+    case syntaxInverseOrangeActive
+    case syntaxInverseOrangeHover
+    case syntaxInversePink
+    case syntaxInversePinkActive
+    case syntaxInversePinkHover
+    case syntaxInverseRed
+    case syntaxInverseRedActive
+    case syntaxInverseRedHover
+    case syntaxInverseSkyBlue
+    case syntaxInverseSkyBlueActive
+    case syntaxInverseSkyBlueHover
+    case syntaxInverseSpring
+    case syntaxInverseSpringActive
+    case syntaxInverseSpringHover
+    case syntaxInverseYellow
+    case syntaxInverseYellowActive
+    case syntaxInverseYellowHover
+    case syntaxOnDarkOrange
+    case syntaxOnDarkOrangeActive
+    case syntaxOnDarkOrangeHover
+    case syntaxOnDarkPink
+    case syntaxOnDarkPinkActive
+    case syntaxOnDarkPinkHover
+    case syntaxOnDarkRed
+    case syntaxOnDarkRedActive
+    case syntaxOnDarkRedHover
+    case syntaxOnDarkSkyBlue
+    case syntaxOnDarkSkyBlueActive
+    case syntaxOnDarkSkyBlueHover
+    case syntaxOnDarkSpring
+    case syntaxOnDarkSpringActive
+    case syntaxOnDarkSpringHover
+    case syntaxOnDarkYellow
+    case syntaxOnDarkYellowActive
+    case syntaxOnDarkYellowHover
+    case syntaxOnLightOrange
+    case syntaxOnLightOrangeActive
+    case syntaxOnLightOrangeHover
+    case syntaxOnLightPink
+    case syntaxOnLightPinkActive
+    case syntaxOnLightPinkHover
+    case syntaxOnLightRed
+    case syntaxOnLightRedActive
+    case syntaxOnLightRedHover
+    case syntaxOnLightSkyBlue
+    case syntaxOnLightSkyBlueActive
+    case syntaxOnLightSkyBlueHover
+    case syntaxOnLightSpring
+    case syntaxOnLightSpringActive
+    case syntaxOnLightSpringHover
+    case syntaxOnLightYellow
+    case syntaxOnLightYellowActive
+    case syntaxOnLightYellowHover
     case textDefaultAccent
     case textDefaultAccentActive
     case textDefaultAccentHover
@@ -2407,6 +2479,150 @@ public enum Colors: String {
             return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightWarningMinorActive)
         case .surfaceOnLightWarningMinorHover:
             return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .surfaceOnLightWarningMinorHover)
+        case .syntaxDefaultOrange:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultOrange)
+        case .syntaxDefaultOrangeActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultOrangeActive)
+        case .syntaxDefaultOrangeHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultOrangeHover)
+        case .syntaxDefaultPink:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultPink)
+        case .syntaxDefaultPinkActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultPinkActive)
+        case .syntaxDefaultPinkHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultPinkHover)
+        case .syntaxDefaultRed:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultRed)
+        case .syntaxDefaultRedActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultRedActive)
+        case .syntaxDefaultRedHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultRedHover)
+        case .syntaxDefaultSkyBlue:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultSkyBlue)
+        case .syntaxDefaultSkyBlueActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultSkyBlueActive)
+        case .syntaxDefaultSkyBlueHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultSkyBlueHover)
+        case .syntaxDefaultSpring:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultSpring)
+        case .syntaxDefaultSpringActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultSpringActive)
+        case .syntaxDefaultSpringHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultSpringHover)
+        case .syntaxDefaultYellow:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultYellow)
+        case .syntaxDefaultYellowActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultYellowActive)
+        case .syntaxDefaultYellowHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxDefaultYellowHover)
+        case .syntaxInverseOrange:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseOrange)
+        case .syntaxInverseOrangeActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseOrangeActive)
+        case .syntaxInverseOrangeHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseOrangeHover)
+        case .syntaxInversePink:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInversePink)
+        case .syntaxInversePinkActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInversePinkActive)
+        case .syntaxInversePinkHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInversePinkHover)
+        case .syntaxInverseRed:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseRed)
+        case .syntaxInverseRedActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseRedActive)
+        case .syntaxInverseRedHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseRedHover)
+        case .syntaxInverseSkyBlue:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseSkyBlue)
+        case .syntaxInverseSkyBlueActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseSkyBlueActive)
+        case .syntaxInverseSkyBlueHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseSkyBlueHover)
+        case .syntaxInverseSpring:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseSpring)
+        case .syntaxInverseSpringActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseSpringActive)
+        case .syntaxInverseSpringHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseSpringHover)
+        case .syntaxInverseYellow:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseYellow)
+        case .syntaxInverseYellowActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseYellowActive)
+        case .syntaxInverseYellowHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxInverseYellowHover)
+        case .syntaxOnDarkOrange:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkOrange)
+        case .syntaxOnDarkOrangeActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkOrangeActive)
+        case .syntaxOnDarkOrangeHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkOrangeHover)
+        case .syntaxOnDarkPink:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkPink)
+        case .syntaxOnDarkPinkActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkPinkActive)
+        case .syntaxOnDarkPinkHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkPinkHover)
+        case .syntaxOnDarkRed:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkRed)
+        case .syntaxOnDarkRedActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkRedActive)
+        case .syntaxOnDarkRedHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkRedHover)
+        case .syntaxOnDarkSkyBlue:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkSkyBlue)
+        case .syntaxOnDarkSkyBlueActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkSkyBlueActive)
+        case .syntaxOnDarkSkyBlueHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkSkyBlueHover)
+        case .syntaxOnDarkSpring:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkSpring)
+        case .syntaxOnDarkSpringActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkSpringActive)
+        case .syntaxOnDarkSpringHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkSpringHover)
+        case .syntaxOnDarkYellow:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkYellow)
+        case .syntaxOnDarkYellowActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkYellowActive)
+        case .syntaxOnDarkYellowHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnDarkYellowHover)
+        case .syntaxOnLightOrange:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightOrange)
+        case .syntaxOnLightOrangeActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightOrangeActive)
+        case .syntaxOnLightOrangeHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightOrangeHover)
+        case .syntaxOnLightPink:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightPink)
+        case .syntaxOnLightPinkActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightPinkActive)
+        case .syntaxOnLightPinkHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightPinkHover)
+        case .syntaxOnLightRed:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightRed)
+        case .syntaxOnLightRedActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightRedActive)
+        case .syntaxOnLightRedHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightRedHover)
+        case .syntaxOnLightSkyBlue:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightSkyBlue)
+        case .syntaxOnLightSkyBlueActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightSkyBlueActive)
+        case .syntaxOnLightSkyBlueHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightSkyBlueHover)
+        case .syntaxOnLightSpring:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightSpring)
+        case .syntaxOnLightSpringActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightSpringActive)
+        case .syntaxOnLightSpringHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightSpringHover)
+        case .syntaxOnLightYellow:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightYellow)
+        case .syntaxOnLightYellowActive:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightYellowActive)
+        case .syntaxOnLightYellowHover:
+            return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .syntaxOnLightYellowHover)
         case .textDefaultAccent:
             return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: rawValue, base: .textDefaultAccent)
         case .textDefaultAccentActive:

@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -13,13 +14,15 @@ import SwiftUI
  - Methods:
     - init: Инициализирует стили сегмента с заданными параметрами.
  */
-// sdds:apiInfo
+@ApiInfo
 public struct SegmentAppearance {
     public var size: SegmentSizeConfiguration
+    @ApiName("backgroundColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor?
     public var segmentItemAppearance: SegmentItemAppearance
     @available(*, deprecated, message: "Don't use it, public method will be removed")
+    @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
     public var disabledAlpha: CGFloat
 
     /**

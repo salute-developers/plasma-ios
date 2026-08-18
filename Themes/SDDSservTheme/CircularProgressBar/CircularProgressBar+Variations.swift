@@ -734,3 +734,4 @@ private extension CircularProgressBarAppearance {
     }
     
 }
+

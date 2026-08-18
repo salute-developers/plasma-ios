@@ -11,6 +11,9 @@ build_cli.sh — собирает CLI-бинарник SDDSThemeBuilder.
   ./build_cli.sh --debug         Debug-сборка
   ./build_cli.sh --run           собрать и запустить (default-конфиг)
   ./build_cli.sh --run cfg.json  собрать и запустить с внешним JSON-конфигом
+  ./build_cli.sh --run --typed-generator
+                                 собрать и запустить старым (типизированным) генератором;
+                                 любые аргументы после --run уходят в CLI
 
 Результат: SDDSThemeBuilder/build/themebuilder/SDDSThemeBuilder
 EOF
@@ -26,6 +29,7 @@ OUTPUT_BIN="$OUTPUT_DIR/SDDSThemeBuilder"
 
 DO_RUN=0
 RUN_CONFIG=""
+RUN_ARGS=()
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -34,9 +38,17 @@ while [[ $# -gt 0 ]]; do
     --run)     DO_RUN=1; shift
                if [[ $# -gt 0 && "$1" != --* ]]; then RUN_CONFIG="$1"; shift; fi ;;
     -h|--help) usage; exit 0 ;;
-    *) echo "Неизвестный аргумент: $1" >&2; exit 1 ;;
+    --) shift; RUN_ARGS+=("$@"); break ;;
+    *) if [[ $DO_RUN -eq 1 ]]; then RUN_ARGS+=("$1"); shift
+       else echo "Неизвестный аргумент: $1" >&2; exit 1; fi ;;
   esac
 done
+
+if ! META_OUTPUT=$("$SCRIPT_DIR/../scripts/generate_api_meta.sh" 2>&1); then
+    echo "$META_OUTPUT" >&2
+    echo "Не удалось сгенерировать ios-api-meta.json" >&2
+    exit 1
+fi
 
 echo "▶ Сборка $SCHEME ($CONFIGURATION)…"
 xcodebuild \
@@ -67,5 +79,5 @@ file "$OUTPUT_BIN"
 if [[ "$DO_RUN" -eq 1 ]]; then
   echo ""
   echo "▶ Запуск SDDSThemeBuilder ${RUN_CONFIG:+с конфигом $RUN_CONFIG}…"
-  "$OUTPUT_BIN" ${RUN_CONFIG:+"$RUN_CONFIG"}
+  "$OUTPUT_BIN" ${RUN_CONFIG:+"$RUN_CONFIG"} ${RUN_ARGS[@]+"${RUN_ARGS[@]}"}
 fi

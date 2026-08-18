@@ -61,7 +61,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.default.appearance
         
         return .init(
             name: "`default`",
@@ -70,7 +70,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.accent.appearance
         
         return .init(
             name: "accent",
@@ -79,7 +79,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -132,7 +132,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.default.appearance
         
         return .init(
             name: "`default`",
@@ -141,7 +141,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.accent.appearance
         
         return .init(
             name: "accent",
@@ -150,7 +150,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -189,7 +189,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.default.appearance
         
         return .init(
             name: "`default`",
@@ -198,7 +198,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.accent.appearance
         
         return .init(
             name: "accent",
@@ -207,7 +207,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -246,7 +246,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.default.appearance
         
         return .init(
             name: "`default`",
@@ -255,7 +255,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.accent.appearance
         
         return .init(
             name: "accent",
@@ -264,7 +264,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -316,7 +316,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.default.appearance
         
         return .init(
             name: "`default`",
@@ -325,7 +325,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.accent.appearance
         
         return .init(
             name: "accent",
@@ -334,7 +334,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -373,7 +373,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.default.appearance
         
         return .init(
             name: "`default`",
@@ -382,7 +382,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.accent.appearance
         
         return .init(
             name: "accent",
@@ -391,7 +391,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -469,7 +469,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.default.appearance
         
         return .init(
             name: "`default`",
@@ -478,7 +478,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.accent.appearance
         
         return .init(
             name: "accent",
@@ -487,7 +487,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -540,7 +540,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.default.appearance
         
         return .init(
             name: "`default`",
@@ -549,7 +549,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.accent.appearance
         
         return .init(
             name: "accent",
@@ -558,7 +558,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -597,7 +597,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.default.appearance
         
         return .init(
             name: "`default`",
@@ -606,7 +606,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.accent.appearance
         
         return .init(
             name: "accent",
@@ -615,7 +615,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -654,7 +654,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.default.appearance
         
         return .init(
             name: "`default`",
@@ -663,7 +663,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.accent.appearance
         
         return .init(
             name: "accent",
@@ -672,7 +672,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -724,7 +724,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.default.appearance
         
         return .init(
             name: "`default`",
@@ -733,7 +733,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.accent.appearance
         
         return .init(
             name: "accent",
@@ -742,7 +742,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -781,7 +781,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     
     var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.default.appearance
         
         return .init(
             name: "`default`",
@@ -790,7 +790,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.accent.appearance
         
         return .init(
             name: "accent",
@@ -799,7 +799,7 @@ public extension GeneralAppearanceVariation<TabBarSolid, TabBarAppearance, TabBa
     }
     var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -837,3 +837,4 @@ public extension ComponentAppearanceVariation<TabBarSolid, TabBarAppearance> {
 private extension TabBarAppearance {
     
 }
+

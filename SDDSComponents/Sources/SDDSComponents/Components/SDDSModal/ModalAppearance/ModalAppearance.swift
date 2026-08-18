@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -18,7 +19,7 @@ import SwiftUI
  )
  ```
  */
-// sdds:apiInfo
+@ApiInfo
 public struct ModalAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

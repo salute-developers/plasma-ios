@@ -22,8 +22,8 @@ struct RadioboxSize: CodeGenerationSize {
     init(props: RadioboxProps, id: String? = nil, nullify: Bool = false) {
         self.width = CGFloatContextBuilder(props.toggleWidth?.value, nullify: nullify).context
         self.height = CGFloatContextBuilder(props.toggleHeight?.value, nullify: nullify).context
-        self.toggleCheckedIconWidth = CGFloatContextBuilder(props.toggleIconWidth?.value, nullify: nullify).context
-        self.toggleCheckedIconHeight = CGFloatContextBuilder(props.toggleIconHeight?.value, nullify: nullify).context
+        self.toggleCheckedIconWidth = CGFloatContextBuilder(props.toggleIconWidth?.value(for: .checked)?.value, nullify: nullify).context
+        self.toggleCheckedIconHeight = CGFloatContextBuilder(props.toggleIconHeight?.value(for: .checked)?.value, nullify: nullify).context
         self.horizontalGap = CGFloatContextBuilder(props.textPadding?.value, nullify: nullify).context
         self.verticalGap = CGFloatContextBuilder(props.descriptionPadding?.value, nullify: nullify).context
         self.togglePathDrawer = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
