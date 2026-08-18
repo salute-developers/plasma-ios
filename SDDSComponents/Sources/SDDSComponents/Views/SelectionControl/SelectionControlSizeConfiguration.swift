@@ -1,28 +1,32 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 public protocol SelectionControlSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
-    // sdds:apiName=toggleHeight
+    @ApiName("toggleHeight")
     var height: CGFloat { get }
-    // sdds:apiName=toggleWidth
+    @ApiName("toggleWidth")
     var width: CGFloat { get }
-    // sdds:apiName=textPadding
+    @ApiName("textPadding")
     var horizontalGap: CGFloat { get }
-    // sdds:apiName=descriptionPadding
+    @ApiName("descriptionPadding")
     var verticalGap: CGFloat { get }
+    @ApiName("shape")
     var togglePathDrawer: PathDrawer { get }
-    // sdds:apiName=toggleBorderWidth
+    @ApiName("toggleBorderWidth")
     var lineWidth: CGFloat { get }
-    // sdds:apiName=toggleIconWidth
+    @ApiName("toggleIconWidth", state: .checked)
     var toggleCheckedIconWidth: CGFloat { get }
-    // sdds:apiName=toggleIconHeight
+    @ApiName("toggleIconHeight", state: .checked)
     var toggleCheckedIconHeight: CGFloat { get }
-    // sdds:apiName=toggleIndeterminateWidth
+    @ApiName("toggleIconWidth", state: .indeterminate)
+    @ApiStateOnly
     var toggleIndeterminateIconWidth: CGFloat { get }
-    // sdds:apiName=toggleIndeterminateHeight
+    @ApiName("toggleIconHeight", state: .indeterminate)
+    @ApiStateOnly
     var toggleIndeterminateIconHeight: CGFloat { get }
-    // sdds:apiName=togglePadding
+    @ApiName("togglePadding")
     var togglePaddings: CGFloat { get }
 }
 

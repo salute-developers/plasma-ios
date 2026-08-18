@@ -119,12 +119,48 @@ struct Binding: Codable {
     let type: BindingType
     let values: [String]?
     let defaultValue: String?
+
+    enum CodingKeys: String, CodingKey {
+        case name, type, values, defaultValue
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        type = try container.decode(BindingType.self, forKey: .type)
+        values = try container.decodeIfPresent([String].self, forKey: .values)
+        if let string = try? container.decodeIfPresent(String.self, forKey: .defaultValue) {
+            defaultValue = string
+        } else if let bool = try? container.decodeIfPresent(Bool.self, forKey: .defaultValue) {
+            defaultValue = String(bool)
+        } else if let number = try? container.decodeIfPresent(Double.self, forKey: .defaultValue) {
+            defaultValue = String(number)
+        } else {
+            defaultValue = nil
+        }
+    }
 }
 
 /// Значение binding-свойства для конкретной вариации (например, `size=xs`).
 struct VariationBinding: Codable {
     let name: String
     let value: String
+
+    enum CodingKeys: String, CodingKey {
+        case name, value
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        if let string = try? container.decode(String.self, forKey: .value) {
+            value = string
+        } else if let bool = try? container.decode(Bool.self, forKey: .value) {
+            value = String(bool)
+        } else {
+            value = try String(container.decode(Double.self, forKey: .value))
+        }
+    }
 }
 
 // MARK: - Binding API: raw config
@@ -405,15 +441,7 @@ extension ComponentBindingInfo {
 struct ConfigInfo: Codable {
     let name: String
     let packageName: String
-    let tokens: [TokenMeta]
     let components: [ComponentMeta]
-
-    struct TokenMeta: Codable {
-        let id: String?
-        let name: String
-        let type: String?
-        let tags: [String]?
-    }
 
     struct ComponentMeta: Codable {
         let key: String

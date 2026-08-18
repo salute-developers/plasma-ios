@@ -9,7 +9,7 @@ public extension GeneralAppearanceVariation<Note, NoteAppearance, NoteVariation.
     
     var contentBeforeFixed: GeneralAppearanceVariation<Note, NoteAppearance, NoteVariation.Contentbeforefixed> {
         var size =  NoteAnySize(size: appearance.size)
-        size.contentBeforeArrangement = NoteContentBeforeArrangement.top
+        size.contentBeforeArrangement = NoteContentBeforeArrangement.center
         size.contentBeforeEndMargin = CGFloat(8.0)
         size.iconSize = CGFloat(16.0)
 
@@ -390,3 +390,4 @@ private extension NoteAppearance {
     }
     
 }
+

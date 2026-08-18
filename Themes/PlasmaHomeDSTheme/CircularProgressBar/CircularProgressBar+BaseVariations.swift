@@ -76,15 +76,17 @@ public struct CircularProgressBar {
         )
     }
     
-    public static let all: [Variation<CircularProgressBarAppearance>] = [
-        CircularProgressBar.l.variation,
-        CircularProgressBar.m.variation,
-        CircularProgressBar.s.variation,
-        CircularProgressBar.xl.variation,
-        CircularProgressBar.xs.variation,
-        CircularProgressBar.xxl.variation,
-        CircularProgressBar.xxs.variation,
-    ]
+    public static var all: [Variation<CircularProgressBarAppearance>] {
+        [
+            CircularProgressBar.l.variation,
+            CircularProgressBar.m.variation,
+            CircularProgressBar.s.variation,
+            CircularProgressBar.xl.variation,
+            CircularProgressBar.xs.variation,
+            CircularProgressBar.xxl.variation,
+            CircularProgressBar.xxs.variation,
+        ]
+    }
 }
 
 public struct CircularProgressBarVariation {

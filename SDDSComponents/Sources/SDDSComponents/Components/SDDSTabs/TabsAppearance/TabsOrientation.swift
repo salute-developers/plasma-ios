@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 
 /**
  Ориентация контейнера вкладок.
@@ -8,6 +9,7 @@ import Foundation
     - vertical: Вертикальное расположение
  */
 public enum TabsOrientation: String, CaseIterable {
+    @ApiDefault
     case horizontal
     case vertical
 }

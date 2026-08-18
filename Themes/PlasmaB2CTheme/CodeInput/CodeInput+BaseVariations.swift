@@ -39,11 +39,13 @@ public struct CodeInput {
         )
     }
     
-    public static let all: [Variation<CodeInputAppearance>] = [
-        CodeInput.l.variation,
-        CodeInput.m.variation,
-        CodeInput.s.variation,
-    ]
+    public static var all: [Variation<CodeInputAppearance>] {
+        [
+            CodeInput.l.variation,
+            CodeInput.m.variation,
+            CodeInput.s.variation,
+        ]
+    }
 }
 
 public struct CodeInputVariation {

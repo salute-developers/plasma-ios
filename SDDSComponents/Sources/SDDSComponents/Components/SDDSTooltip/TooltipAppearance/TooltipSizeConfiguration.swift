@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -9,6 +10,7 @@ import SwiftUI
  */
 public protocol TooltipSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var offset: CGFloat { get }
+    @ApiName("shape")
     var pathDrawer: PathDrawer { get }
     var tailHeight: CGFloat { get }
     var tailWidth: CGFloat { get }

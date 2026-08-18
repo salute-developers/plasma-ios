@@ -70,9 +70,24 @@ public struct IconTabItemVariation {
 private extension TabItemAppearance {
     static var base: TabItemAppearance {
         var appearance = TabItemAppearance()
-        appearance.actionColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover, selectedColor: .clearColor)
-        appearance.endContentColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover, selectedColor: ColorToken.textDefaultPrimary)
-        appearance.startContentColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: ColorToken.textDefaultSecondaryActive, hoveredColor: ColorToken.textDefaultSecondaryHover, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.actionColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive)
+        ]))
+        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
+        ]))
+        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
+            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
+        ]))
         return appearance
     }
 }

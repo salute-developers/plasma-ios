@@ -1,9 +1,11 @@
 import SwiftUI
 import Foundation
 import SDDSThemeCore
+import SDDSApiInfo
 
-// sdds:apiInfo
+@ApiInfo
 public struct BottomSheetAppearance {
+    @ApiValue("BottomSheetSizeDefault()", zero: "BottomSheetSizeDefault()")
     public var size: BottomSheetSizeConfiguration
     public var backgroundColor: ColorToken
     public var handleColor: ColorToken

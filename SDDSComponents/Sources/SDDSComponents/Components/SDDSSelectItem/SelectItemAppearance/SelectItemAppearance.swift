@@ -1,16 +1,18 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 public enum SelectItemType: String, CaseIterable {
     case single
     case multiple
 }
 
-// sdds:apiInfo
+@ApiInfo(components: ["SelectItemMultipleNormal", "SelectItemMultipleTight", "SelectItemSingleNormal", "SelectItemSingleTight"])
 public struct SelectItemAppearance {
     public var itemType: SelectItemType
     public var iconColor: ColorToken
+    @ApiName("backgroundColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor
     public var disabledAlpha: CGFloat

@@ -221,9 +221,19 @@ public struct SDDSAvatar<Content: View>: View {
     }
     
     private var indicatorAppearance: IndicatorAppearance {
-        var appearance = appearance.indicatorAppearance
-        appearance.backgroundColor = statusColor.statefulColor.statefulFillStyle
-        return appearance
+        var indicator = appearance.indicatorAppearance
+        guard statusColor == .clearColor else {
+            indicator.backgroundColor = statusColor.statefulColor.statefulFillStyle
+            return indicator
+        }
+        guard status == .offline else {
+            return indicator
+        }
+        indicator.backgroundColor = StatefulFillStyle(
+            defaultValue: indicator.backgroundColor.resolvedValue(for: [.inactive]),
+            values: []
+        )
+        return indicator
     }
     
     private var statusColor: ColorToken {

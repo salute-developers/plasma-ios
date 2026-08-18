@@ -1,18 +1,21 @@
 import SwiftUI
 import Foundation
 import SDDSThemeCore
+import SDDSApiInfo
 
 public protocol BadgeSizeConfiguration {
     var height: CGFloat { get }
     var startPadding: CGFloat { get }
     var endPadding: CGFloat { get }
+    @ApiValue("size(startContentSize, startContentSize)")
     var startContentSize: CGSize { get }
-    // sdds:apiName=startContentMargin
+    @ApiName("startContentMargin")
     var startContentPadding: CGFloat { get }
+    @ApiValue("size(endContentSize, startContentSize)")
     var endContentSize: CGSize { get }
-    // sdds:apiName=endContentMargin
+    @ApiName("endContentMargin")
     var endContentPadding: CGFloat { get }
-    // sdds:apiName=shape
+    @ApiName("shape")
     var cornerRadius: CGFloat { get }
 }
 

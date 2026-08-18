@@ -56,13 +56,15 @@ public struct ListNormal {
         )
     }
     
-    public static let all: [Variation<ListAppearance>] = [
-        ListNormal.l.variation,
-        ListNormal.m.variation,
-        ListNormal.s.variation,
-        ListNormal.xl.variation,
-        ListNormal.xs.variation,
-    ]
+    public static var all: [Variation<ListAppearance>] {
+        [
+            ListNormal.l.variation,
+            ListNormal.m.variation,
+            ListNormal.s.variation,
+            ListNormal.xl.variation,
+            ListNormal.xs.variation,
+        ]
+    }
 }
 
 public struct ListNormalVariation {

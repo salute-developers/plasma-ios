@@ -1,8 +1,9 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
-// sdds:apiInfo
+@ApiInfo
 public struct ToastAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

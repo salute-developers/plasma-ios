@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
@@ -13,12 +13,13 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "SDDSThemeCore", path: "../SDDSThemeBuilder/SDDSThemeCore"),
-        .package(name: "InputMask", path: "../Vendor/InputMask")
+        .package(name: "InputMask", path: "../Vendor/InputMask"),
+        .package(name: "SDDSApiInfo", path: "../SDDSApiInfo")
     ],
     targets: [
         .target(
             name: "SDDSComponents",
-            dependencies: ["SDDSThemeCore", "InputMask"],
+            dependencies: ["SDDSThemeCore", "InputMask", "SDDSApiInfo"],
             path: "Sources/SDDSComponents",
             exclude: ["SDDSComponents.h"],
             resources: [

@@ -9,7 +9,7 @@ public struct Switch {
         var appearance = SwitchAppearance.base
         appearance.size = SwitchSize.l
         appearance.subtitleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
-        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
+        appearance.tintColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
         appearance.titleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -21,7 +21,7 @@ public struct Switch {
         var appearance = SwitchAppearance.base
         appearance.size = SwitchSize.m
         appearance.subtitleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
-        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
+        appearance.tintColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
         appearance.titleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
@@ -33,7 +33,7 @@ public struct Switch {
         var appearance = SwitchAppearance.base
         appearance.size = SwitchSize.s
         appearance.subtitleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
+        appearance.tintColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
         appearance.titleTypography = SwitchTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
@@ -67,13 +67,17 @@ private extension SwitchAppearance {
     static var base: SwitchAppearance {
         var appearance = SwitchAppearance()
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.subtitleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.tintColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.clearColor), values: [])
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
-        appearance.toggleThumbColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceOnDarkSolidDefault), values: [])
-        appearance.toggleTrackBorderColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultClear), values: [])
-        appearance.toggleTrackColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentTertiary), values: [])
-        appearance.toggleTrackColorChecked = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccent), values: [])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.tintColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.toggleThumbColor = StatefulFillStyle(defaultValue: .color(.surfaceOnDarkSolidDefault), values: [])
+        appearance.toggleTrackBorderColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
+        appearance.toggleTrackColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentTertiary), values: [
+            .init(states: [InteractiveState.checked], value: .color(.surfaceDefaultAccent))
+        ])
+        appearance.toggleTrackColorChecked = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentTertiary), values: [
+            .init(states: [InteractiveState.checked], value: .color(.surfaceDefaultAccent))
+        ])
         return appearance
     }
 }

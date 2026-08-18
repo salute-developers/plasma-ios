@@ -586,3 +586,4 @@ public extension ComponentAppearanceVariation<ChipGroupWide, ChipGroupAppearance
 private extension ChipGroupAppearance {
     
 }
+

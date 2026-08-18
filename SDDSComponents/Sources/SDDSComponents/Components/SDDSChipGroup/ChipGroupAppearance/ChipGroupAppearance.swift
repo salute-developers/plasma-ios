@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
 /**
  `ChipGroupAppearance` определяет внешний вид `ChipGroup`
@@ -9,7 +10,7 @@ import SwiftUI
     - chipAppearance: Внешний вид отдельных чипов в группе (цвета, шрифты, скругления).
     - gap: Отступ между чипами в группе.
  */
-// sdds:apiInfo
+@ApiInfo(components: ["ChipGroupDense", "ChipGroupWide", "EmbeddedChipGroupDense", "EmbeddedChipGroupWide"])
 public struct ChipGroupAppearance {
     public var size: ChipGroupSizeConfiguration
     public var chipAppearance: ChipAppearance

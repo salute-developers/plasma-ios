@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  `AutocompleteAppearance` определяет внешний вид компонента Autocomplete.
@@ -12,7 +13,7 @@ import SDDSThemeCore
     - textFieldAppearance: Настройки внешнего вида текстового поля
     - size: Конфигурация размеров компонента
  */
-// sdds:apiInfo
+@ApiInfo(components: ["AutocompleteNormal", "AutocompleteTight"])
 public struct AutocompleteAppearance: Hashable {
     let id = UUID()
     public var dropdownAppearance: DropdownMenuAppearance

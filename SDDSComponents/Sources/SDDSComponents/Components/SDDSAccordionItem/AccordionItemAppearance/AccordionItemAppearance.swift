@@ -1,8 +1,9 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
-// sdds:apiInfo
+@ApiInfo(components: ["AccordionItemClearActionEnd", "AccordionItemClearActionStart", "AccordionItemSolidActionEnd", "AccordionItemSolidActionStart"])
 public struct AccordionItemAppearance: Hashable {
     let id = UUID()
     public var titleTypography: TypographyConfiguration

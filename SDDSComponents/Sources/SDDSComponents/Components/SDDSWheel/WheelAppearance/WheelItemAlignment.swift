@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 import SwiftUI
 @_exported import SDDSThemeCore
 
@@ -6,6 +7,7 @@ import SwiftUI
  `WheelItemAlignment` определяет варианты выравнивания элементов Wheel.
  */
 public enum WheelItemAlignment {
+    @ApiDefault
     case start
     case center
     case end

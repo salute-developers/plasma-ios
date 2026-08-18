@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 import SwiftUI
 
 /**
@@ -13,12 +14,18 @@ import SwiftUI
     - overflowIconSize: Размер иконок кнопок навигации
  */
 public protocol TabsSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @ApiValue(zero: "Bool(true)")
     var dividerEnabled: Bool { get }
+    @ApiValue(zero: "Bool(true)")
     var indicatorEnabled: Bool { get }
     var indicatorThickness: CGFloat { get }
     var minSpacing: CGFloat { get }
     var orientation: TabsOrientation { get }
+    @ApiType(.iconSize)
+    @ApiName("overflowNextIcon")
     var overflowIconSize: CGFloat { get }
+    @ApiType(.iconSize)
+    @ApiName("disclosureIcon")
     var disclosureIconSize: CGFloat { get }
 }
 

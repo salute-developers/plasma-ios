@@ -15,7 +15,6 @@ public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, Ta
         size.minHeight = CGFloat(60.0)
         size.paddingBottom = CGFloat(11.0)
         size.paddingTop = CGFloat(11.0)
-        size.shape = DefaultPathDrawer() as PathDrawer
 
         var appearance = appearance
         appearance.size = size
@@ -64,3 +63,4 @@ public extension ComponentAppearanceVariation<TabBarItem, TabBarItemAppearance> 
 private extension TabBarItemAppearance {
     
 }
+

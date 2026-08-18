@@ -333,3 +333,4 @@ public extension ComponentAppearanceVariation<AccordionItemSolidActionEnd, Accor
 private extension AccordionItemAppearance {
     
 }
+

@@ -116,19 +116,21 @@ public struct Editable {
         )
     }
     
-    public static let all: [Variation<EditableAppearance>] = [
-        Editable.bodyL.variation,
-        Editable.bodyM.variation,
-        Editable.bodyS.variation,
-        Editable.bodyXs.variation,
-        Editable.bodyXxs.variation,
-        Editable.h1.variation,
-        Editable.h2.variation,
-        Editable.h3.variation,
-        Editable.h4.variation,
-        Editable.h5.variation,
-        Editable.h6.variation,
-    ]
+    public static var all: [Variation<EditableAppearance>] {
+        [
+            Editable.bodyL.variation,
+            Editable.bodyM.variation,
+            Editable.bodyS.variation,
+            Editable.bodyXs.variation,
+            Editable.bodyXxs.variation,
+            Editable.h1.variation,
+            Editable.h2.variation,
+            Editable.h3.variation,
+            Editable.h4.variation,
+            Editable.h5.variation,
+            Editable.h6.variation,
+        ]
+    }
 }
 
 public struct EditableVariation {

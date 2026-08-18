@@ -26,10 +26,12 @@ public struct Tooltip {
         )
     }
     
-    public static let all: [Variation<TooltipAppearance>] = [
-        Tooltip.m.variation,
-        Tooltip.s.variation,
-    ]
+    public static var all: [Variation<TooltipAppearance>] {
+        [
+            Tooltip.m.variation,
+            Tooltip.s.variation,
+        ]
+    }
 }
 
 public struct TooltipVariation {

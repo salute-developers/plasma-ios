@@ -1,12 +1,13 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `CollapsingNavigationBarAppearance` определяет внешний вид компонента SDDSCollapsingNavigationBar.
  Кнопка «назад» отображается, когда задан `backIcon`.
  */
-// sdds:apiInfo
+@ApiInfo(components: ["CollapsingNavigationBarInternalPage", "CollapsingNavigationBarMainPage"])
 public struct CollapsingNavigationBarAppearance {
     // Цвета
     public var backIconColor: ColorToken
@@ -21,14 +22,20 @@ public struct CollapsingNavigationBarAppearance {
     public var backIcon: Image?
 
     // Стиль кнопки действия
+    @ApiName("actionButtonStyle")
     public var actionButtonAppearance: ButtonAppearance?
 
     // Типографика
+    @ApiName("textStyle")
     public var textTypography: TypographyConfiguration
+    @ApiName("titleStyle")
     public var titleTypography: TypographyConfiguration
+    @ApiName("titleStyle", state: .collapsed)
     public var titleTypographyCollapsed: TypographyConfiguration
     public var titleStatefulTypography: StatefulValue<TypographyConfiguration>
+    @ApiName("descriptionStyle")
     public var descriptionTypography: TypographyConfiguration
+    @ApiName("descriptionStyle", state: .collapsed)
     public var descriptionTypographyCollapsed: TypographyConfiguration
     public var descriptionStatefulTypography: StatefulValue<TypographyConfiguration>
 

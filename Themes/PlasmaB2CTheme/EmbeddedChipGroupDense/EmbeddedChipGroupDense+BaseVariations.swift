@@ -51,13 +51,15 @@ public struct EmbeddedChipGroupDense {
         )
     }
     
-    public static let all: [Variation<ChipGroupAppearance>] = [
-        EmbeddedChipGroupDense.l.variation,
-        EmbeddedChipGroupDense.m.variation,
-        EmbeddedChipGroupDense.s.variation,
-        EmbeddedChipGroupDense.xl.variation,
-        EmbeddedChipGroupDense.xs.variation,
-    ]
+    public static var all: [Variation<ChipGroupAppearance>] {
+        [
+            EmbeddedChipGroupDense.l.variation,
+            EmbeddedChipGroupDense.m.variation,
+            EmbeddedChipGroupDense.s.variation,
+            EmbeddedChipGroupDense.xl.variation,
+            EmbeddedChipGroupDense.xs.variation,
+        ]
+    }
 }
 
 public struct EmbeddedChipGroupDenseVariation {

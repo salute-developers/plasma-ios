@@ -5,19 +5,106 @@ import SDDSThemeCore
 import SDDSIcons
 
 
-public extension GeneralAppearanceVariation<ListItem, ListItemAppearance, ListItemVariation.S> {
+public extension GeneralAppearanceVariation<ListItem, ListItemAppearance, ListItemVariation.M> {
     
     var hasBackground: ComponentAppearanceVariation<ListItem, ListItemAppearance> {
         var size =  ListItemAnySize(size: appearance.size)
-        size.paddingBottom = CGFloat(10.0)
+        size.paddingBottom = CGFloat(12.0)
         size.paddingEnd = CGFloat(14.0)
         size.paddingStart = CGFloat(16.0)
-        size.paddingTop = CGFloat(10.0)
+        size.paddingTop = CGFloat(12.0)
         size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius) as PathDrawer
 
         var appearance = appearance
         appearance.size = size
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentPrimary), values: [])
+    
+        return .init(
+            name: "m.hasBackground",
+            appearance: appearance
+        )
+    }
+    
+    var m: GeneralAppearanceVariation<ListItem, ListItemAppearance, ListItemVariation.M> {
+        var size =  ListItemAnySize(size: appearance.size)
+        size.contentPaddingEnd = CGFloat(12.0)
+        size.contentPaddingStart = CGFloat(12.0)
+        size.height = CGFloat(48.0)
+        size.paddingBottom = CGFloat(12.0)
+        size.paddingEnd = CGFloat(0.0)
+        size.paddingStart = CGFloat(0.0)
+        size.paddingTop = CGFloat(12.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.disclosureIcon = Asset.disclosureRightOutline24.image
+        appearance.labelTypography = ListItemTypography(m: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.subtitleTypography = ListItemTypography(m: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.titleTypography = ListItemTypography(m: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ListItem, ListItemAppearance, ListItemVariation.MHasbackground> {
+    
+    var hasBackground: ComponentAppearanceVariation<ListItem, ListItemAppearance> {
+        var size =  ListItemAnySize(size: appearance.size)
+        size.paddingBottom = CGFloat(12.0)
+        size.paddingEnd = CGFloat(14.0)
+        size.paddingStart = CGFloat(16.0)
+        size.paddingTop = CGFloat(12.0)
+        size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentPrimary), values: [])
+    
+        return .init(
+            name: "m.hasBackground",
+            appearance: appearance
+        )
+    }
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
+public extension GeneralAppearanceVariation<ListItem, ListItemAppearance, ListItemVariation.S> {
+    
+    var hasBackground: ComponentAppearanceVariation<ListItem, ListItemAppearance> {
+        var size =  ListItemAnySize(size: appearance.size)
+        size.paddingBottom = CGFloat(12.0)
+        size.paddingEnd = CGFloat(14.0)
+        size.paddingStart = CGFloat(16.0)
+        size.paddingTop = CGFloat(12.0)
+        size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius) as PathDrawer
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentPrimary), values: [])
     
         return .init(
             name: "s.hasBackground",
@@ -30,10 +117,10 @@ public extension GeneralAppearanceVariation<ListItem, ListItemAppearance, ListIt
         size.contentPaddingEnd = CGFloat(12.0)
         size.contentPaddingStart = CGFloat(12.0)
         size.height = CGFloat(48.0)
-        size.paddingBottom = CGFloat(10.0)
+        size.paddingBottom = CGFloat(12.0)
         size.paddingEnd = CGFloat(0.0)
         size.paddingStart = CGFloat(0.0)
-        size.paddingTop = CGFloat(10.0)
+        size.paddingTop = CGFloat(12.0)
 
         var appearance = appearance
         appearance.size = size
@@ -64,15 +151,15 @@ public extension GeneralAppearanceVariation<ListItem, ListItemAppearance, ListIt
     
     var hasBackground: ComponentAppearanceVariation<ListItem, ListItemAppearance> {
         var size =  ListItemAnySize(size: appearance.size)
-        size.paddingBottom = CGFloat(10.0)
+        size.paddingBottom = CGFloat(12.0)
         size.paddingEnd = CGFloat(14.0)
         size.paddingStart = CGFloat(16.0)
-        size.paddingTop = CGFloat(10.0)
+        size.paddingTop = CGFloat(12.0)
         size.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius) as PathDrawer
 
         var appearance = appearance
         appearance.size = size
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentPrimary), values: [])
     
         return .init(
             name: "s.hasBackground",
@@ -108,3 +195,4 @@ public extension ComponentAppearanceVariation<ListItem, ListItemAppearance> {
 private extension ListItemAppearance {
     
 }
+

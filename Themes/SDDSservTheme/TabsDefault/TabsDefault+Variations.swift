@@ -513,3 +513,4 @@ public extension ComponentAppearanceVariation<TabsDefault, TabsAppearance> {
 private extension TabsAppearance {
     
 }
+

@@ -19,9 +19,11 @@ public struct TabBar {
         )
     }
     
-    public static let all: [Variation<TabBarIslandAppearance>] = [
-        TabBar.default.variation,
-    ]
+    public static var all: [Variation<TabBarIslandAppearance>] {
+        [
+            TabBar.default.variation,
+        ]
+    }
 }
 
 public struct TabBarVariation {

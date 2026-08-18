@@ -246,7 +246,7 @@ public final class App {
             paletteURL: paletteURL,
             fontFamiliesContainer: fontFamiliesContainer
         )
-        generateBindingArtifacts(themeConfig: themeConfig, schemeDirectory: schemeDirectory)
+        generateBindingArtifacts(themeConfig: themeConfig)
     }
 
     private func generateTokensMeta(
@@ -304,10 +304,7 @@ public final class App {
 
     /// Генерирует binding API: для каждого компонента с `bindings` в конфиге —
     /// `<Component>+StylesCollection.swift`, и общий мета-файл `.sdds/config-info-ios.json`.
-    private func generateBindingArtifacts(
-        themeConfig: ThemeBuilderConfiguration.ThemeConfiguration,
-        schemeDirectory: SchemeDirectory
-    ) {
+    private func generateBindingArtifacts(themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) {
         var componentMetas: [ConfigInfo.ComponentMeta] = []
 
         // Компоненты с binding API (их конфиг содержит `bindings`). Конфиг темы
@@ -344,7 +341,6 @@ public final class App {
         let configInfo = ConfigInfo(
             name: themeConfig.name,
             packageName: themeConfig.name,
-            tokens: tokenMetas(metaURL: schemeDirectory.url(for: .meta)),
             components: componentMetas
         )
         writeConfigInfo(configInfo, themeConfig: themeConfig)
@@ -362,23 +358,6 @@ public final class App {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return try? decoder.decode(RawComponentConfig.self, from: data)
-    }
-
-    private func tokenMetas(metaURL: URL) -> [ConfigInfo.TokenMeta] {
-        struct RawMeta: Codable {
-            struct Token: Codable {
-                let id: String?
-                let name: String
-                let type: String?
-                let tags: [String]?
-            }
-            let tokens: [Token]?
-        }
-        guard let data = try? Data(contentsOf: metaURL),
-              let meta = try? JSONDecoder().decode(RawMeta.self, from: data) else {
-            return []
-        }
-        return (meta.tokens ?? []).map { .init(id: $0.id, name: $0.name, type: $0.type, tags: $0.tags) }
     }
 
     private func writeString(_ content: String, to directory: URL, filename: String) {
@@ -545,7 +524,7 @@ public final class App {
                 default:
                     break
                 }
-                Logger.terminate(with: error)
+                Logger.terminate("\(command.name) failed: \(error)")
             default:
                 break
             }
@@ -555,8 +534,37 @@ public final class App {
 
 // MARK: - Variations
 extension App {
+    func loadApiMeta() {
+        guard !ApiMetaStore.shared.isLoaded else { return }
+        let candidates = apiMetaCandidates
+        for url in candidates where ApiMetaStore.shared.load(from: url) {
+            Logger.printText("📐 Loaded styles API meta: \(ApiMetaStore.shared.byComponent.count) components")
+            return
+        }
+        Logger.terminate("Styles API meta not found in \(candidates.map { $0.path() }.joined(separator: ", ")). In the repo run scripts/generate_api_meta.sh; a released CLI expects ios-api-meta.json next to the binary")
+    }
+
+    private var apiMetaCandidates: [URL] {
+        var candidates = [themeBuilderURL.appending(component: ".sdds/ios-api-meta.json")]
+        if let binaryDirectory = Bundle.main.executableURL?.resolvingSymlinksInPath().deletingLastPathComponent() {
+            candidates.append(binaryDirectory.appending(component: "ios-api-meta.json"))
+        }
+        return candidates
+    }
+
     private func generateComponentVariations(themeConfig: ThemeBuilderConfiguration.ThemeConfiguration) -> [Command] {
-        CodeGenerationComponent.supportedComponents.map { component in
+        let index = ComponentIndex.entries(themeConfig: themeConfig)
+        let components = index.isEmpty
+            ? CodeGenerationComponent.supportedComponents
+            : CodeGenerationComponent.supportedComponents.filter { ComponentIndex.entry(for: $0, themeConfig: themeConfig) != nil }
+        if !index.isEmpty {
+            Logger.printText("🧩 \(themeConfig.name): \(components.count) of \(index.count) DS styles")
+            let missing = ComponentIndex.notImplemented(themeConfig: themeConfig)
+            if !missing.isEmpty {
+                Logger.printText("   not implemented on iOS: \(missing.joined(separator: ", "))")
+            }
+        }
+        return components.map { component in
             return component.command(outputURL: generatedComponentsURL(component: component, config: themeConfig), themeConfig: themeConfig)
         }
     }
@@ -776,6 +784,7 @@ extension App: Runnable {
         Logger.printLine()
 
         ComponentConfigSource.localDirectory = themeBuilderURL
+        if !standalone { loadApiMeta() }
 
         for themeConfig in config.themes {
             Logger.printText("🚀 Generating code for theme \(themeConfig.name)...")

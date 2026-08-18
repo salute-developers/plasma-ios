@@ -51,13 +51,15 @@ public struct Spinner {
         )
     }
     
-    public static let all: [Variation<SpinnerAppearance>] = [
-        Spinner.m.variation,
-        Spinner.s.variation,
-        Spinner.scalable.variation,
-        Spinner.xs.variation,
-        Spinner.xxs.variation,
-    ]
+    public static var all: [Variation<SpinnerAppearance>] {
+        [
+            Spinner.m.variation,
+            Spinner.s.variation,
+            Spinner.scalable.variation,
+            Spinner.xs.variation,
+            Spinner.xxs.variation,
+        ]
+    }
 }
 
 public struct SpinnerVariation {
@@ -71,7 +73,7 @@ public struct SpinnerVariation {
 private extension SpinnerAppearance {
     static var base: SpinnerAppearance {
         var appearance = SpinnerAppearance()
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultClear), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
         appearance.strokeCap = StrokeCap.round
         return appearance
     }

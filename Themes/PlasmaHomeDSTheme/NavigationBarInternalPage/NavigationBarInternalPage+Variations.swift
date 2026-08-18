@@ -12,8 +12,8 @@ public extension GeneralAppearanceVariation<NavigationBarInternalPage, Navigatio
         size.backIconMargin = CGFloat(4.0)
         size.horizontalSpacing = CGFloat(8.0)
         size.paddingBottom = CGFloat(8.0)
-        size.paddingEnd = CGFloat(16.0)
-        size.paddingStart = CGFloat(16.0)
+        size.paddingEnd = CGFloat(24.0)
+        size.paddingStart = CGFloat(24.0)
         size.paddingTop = CGFloat(8.0)
         size.textBlockTopMargin = CGFloat(16.0)
 
@@ -21,7 +21,7 @@ public extension GeneralAppearanceVariation<NavigationBarInternalPage, Navigatio
         appearance.size = size
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
-        appearance.backIcon = Asset.disclosureLeftOutline24.image
+        appearance.backIcon = Asset.chevronLeft24.image
         appearance.backIconColor = ColorToken.textDefaultPrimary
         appearance.backgroundColor = ColorToken.surfaceDefaultClear
         appearance.textColor = ColorToken.textDefaultPrimary
@@ -61,3 +61,4 @@ public extension ComponentAppearanceVariation<NavigationBarInternalPage, Navigat
 private extension NavigationBarInternalPageAppearance {
     
 }
+

@@ -5,6 +5,40 @@ import SDDSThemeCore
 import SDDSIcons
 
 
+public extension GeneralAppearanceVariation<ListNumberedItem, ListItemAppearance, ListNumberedItemVariation.M> {
+    
+    var m: ComponentAppearanceVariation<ListNumberedItem, ListItemAppearance> {
+        var size =  ListNumberedItemAnySize(size: appearance.size)
+        size.contentPaddingStart = CGFloat(6.0)
+        size.paddingBottom = CGFloat(0.0)
+        size.paddingEnd = CGFloat(0.0)
+        size.paddingStart = CGFloat(0.0)
+        size.paddingTop = CGFloat(0.0)
+
+        var appearance = appearance
+        appearance.size = size
+        appearance.counterAppearance = Counter.s.secondary.appearance
+        appearance.subtitleTypography = ListNumberedItemTypography(m: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.titleTypography = ListNumberedItemTypography(m: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+    
+        return .init(
+            name: "m",
+            appearance: appearance
+        )
+    }
+    
+    var variation: Variation<Appearance> {
+        .init(
+            originalVariation: self,
+            styles: [
+            ],
+            name: name,
+            appearance: appearance
+        )
+    }
+    
+}
+
 public extension GeneralAppearanceVariation<ListNumberedItem, ListItemAppearance, ListNumberedItemVariation.S> {
     
     var s: ComponentAppearanceVariation<ListNumberedItem, ListItemAppearance> {
@@ -17,7 +51,8 @@ public extension GeneralAppearanceVariation<ListNumberedItem, ListItemAppearance
 
         var appearance = appearance
         appearance.size = size
-        appearance.counterAppearance = Counter.xs.secondary.appearance
+        appearance.counterAppearance = Counter.s.secondary.appearance
+        appearance.subtitleTypography = ListNumberedItemTypography(s: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titleTypography = ListNumberedItemTypography(s: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
         return .init(
@@ -54,3 +89,4 @@ public extension ComponentAppearanceVariation<ListNumberedItem, ListItemAppearan
 private extension ListItemAppearance {
     
 }
+

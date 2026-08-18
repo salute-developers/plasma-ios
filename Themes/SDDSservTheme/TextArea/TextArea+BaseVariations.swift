@@ -9,6 +9,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -20,6 +21,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
@@ -31,6 +33,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
@@ -42,6 +45,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.xl
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -53,6 +57,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(

@@ -102,3 +102,4 @@ public extension ComponentAppearanceVariation<TextSkeletonDisplay, SkeletonAppea
 private extension SkeletonAppearance {
     
 }
+

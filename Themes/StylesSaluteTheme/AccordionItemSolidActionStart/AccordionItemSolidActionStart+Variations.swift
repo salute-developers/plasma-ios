@@ -325,3 +325,4 @@ public extension ComponentAppearanceVariation<AccordionItemSolidActionStart, Acc
 private extension AccordionItemAppearance {
     
 }
+

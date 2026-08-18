@@ -4,16 +4,17 @@ import SDDSComponents
 import SDDSThemeCore
 import SDDSIcons
 
+
 public extension GeneralAppearanceVariation<CollapsingNavigationBarMainPage, CollapsingNavigationBarAppearance, CollapsingNavigationBarMainPageVariation.Default> {
+    
     var `default`: ComponentAppearanceVariation<CollapsingNavigationBarMainPage, CollapsingNavigationBarAppearance> {
-        var size = CollapsingNavigationBarMainPageAnySize(size: appearance.size)
-        size.backIconMargin = CGFloat(0)
+        var size =  CollapsingNavigationBarMainPageAnySize(size: appearance.size)
         size.descriptionPadding = CGFloat(12.0)
         size.descriptionPaddingCollapsed = CGFloat(4.0)
         size.horizontalSpacing = CGFloat(8.0)
         size.paddingBottom = CGFloat(8.0)
-        size.paddingEnd = CGFloat(16.0)
-        size.paddingStart = CGFloat(16.0)
+        size.paddingEnd = CGFloat(24.0)
+        size.paddingStart = CGFloat(24.0)
         size.paddingTop = CGFloat(8.0)
         size.textBlockTopMargin = CGFloat(16.0)
 
@@ -24,20 +25,20 @@ public extension GeneralAppearanceVariation<CollapsingNavigationBarMainPage, Col
         appearance.actionStartColor = ColorToken.textDefaultPrimary
         appearance.backgroundColor = ColorToken.surfaceDefaultClear
         appearance.descriptionColor = ColorToken.textDefaultSecondary
-        appearance.descriptionTypography = CollapsingNavigationBarTypography(default: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
-        appearance.descriptionTypographyCollapsed = CollapsingNavigationBarTypography(default: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
+        appearance.descriptionTypography = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.descriptionTypographyCollapsed = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.textColor = ColorToken.textDefaultPrimary
-        appearance.textTypography = CollapsingNavigationBarTypography(default: AdaptiveTypographyToken.headerH5Normal.typography).asContainer
+        appearance.textTypography = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.headerH5Normal.typography).asContainer
         appearance.titleColor = ColorToken.textDefaultPrimary
-        appearance.titleTypography = CollapsingNavigationBarTypography(default: AdaptiveTypographyToken.headerH2Normal.typography).asContainer
-        appearance.titleTypographyCollapsed = CollapsingNavigationBarTypography(default: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
-
+        appearance.titleTypography = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.headerH2Normal.typography).asContainer
+        appearance.titleTypographyCollapsed = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+    
         return .init(
             name: "default",
             appearance: appearance
         )
     }
-
+    
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -47,7 +48,9 @@ public extension GeneralAppearanceVariation<CollapsingNavigationBarMainPage, Col
             appearance: appearance
         )
     }
+    
 }
+
 
 public extension ComponentAppearanceVariation<CollapsingNavigationBarMainPage, CollapsingNavigationBarAppearance> {
     var variation: Variation<Appearance> {
@@ -60,3 +63,8 @@ public extension ComponentAppearanceVariation<CollapsingNavigationBarMainPage, C
         )
     }
 }
+
+private extension CollapsingNavigationBarAppearance {
+    
+}
+

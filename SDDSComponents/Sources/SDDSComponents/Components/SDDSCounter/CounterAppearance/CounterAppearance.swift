@@ -1,13 +1,14 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
-// sdds:apiInfo
+@ApiInfo(components: ["SegmentItemCounter"])
 public struct CounterAppearance: Modifiable {
     public typealias ModifiableType = Self
     
     public var size: CounterSizeConfiguration
-    // sdds:apiName=labelStyle
+    @ApiName("labelStyle")
     public var textTypography: TypographyConfiguration
     public var textColor: StatefulFillStyle
     public var backgroundColor: StatefulFillStyle

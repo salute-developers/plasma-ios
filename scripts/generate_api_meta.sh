@@ -17,7 +17,12 @@ PROPS="$REPO_ROOT/SDDSThemeBuilder/SDDSThemeBuilderCore/Model/Props"
 OUTPUT="$REPO_ROOT/SDDSThemeBuilder/.sdds/ios-api-meta.json"
 
 echo "==> Сборка сканера (release)…"
-swift build --package-path "$TOOL_DIR" -c release >/dev/null
+BUILD_LOG="$(mktemp)"
+trap 'rm -f "$BUILD_LOG"' EXIT
+if ! swift build --package-path "$TOOL_DIR" -c release >"$BUILD_LOG" 2>&1; then
+    cat "$BUILD_LOG" >&2
+    exit 1
+fi
 BIN="$TOOL_DIR/.build/release/SDDSApiInfoGenerator"
 
 if [[ "${1:-}" == "--only" ]]; then

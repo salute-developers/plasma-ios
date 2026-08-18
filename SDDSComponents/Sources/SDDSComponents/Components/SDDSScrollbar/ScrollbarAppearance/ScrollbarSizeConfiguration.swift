@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  Протокол для конфигурации размеров скроллбара.
@@ -8,6 +9,7 @@ import SDDSThemeCore
 public protocol ScrollbarSizeConfiguration {
     var width: CGFloat { get }
     var hoverExpandFactor: CGFloat { get }
+    @ApiAlwaysEmit
     var shape: PathDrawer { get }
 }
 

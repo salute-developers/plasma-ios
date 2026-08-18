@@ -9,8 +9,6 @@ public struct ProgressBar {
         var appearance = ProgressBarAppearance.base
         appearance.size = ProgressBarSize.`default`
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.tintFillStyle = .color(.clearColor)
-        appearance.trackColor = .clearColor
 
         return .init(
             name: "`default`",
@@ -18,9 +16,11 @@ public struct ProgressBar {
         )
     }
     
-    public static let all: [Variation<ProgressBarAppearance>] = [
-        ProgressBar.default.variation,
-    ]
+    public static var all: [Variation<ProgressBarAppearance>] {
+        [
+            ProgressBar.default.variation,
+        ]
+    }
 }
 
 public struct ProgressBarVariation {
@@ -31,8 +31,6 @@ private extension ProgressBarAppearance {
     static var base: ProgressBarAppearance {
         var appearance = ProgressBarAppearance()
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.tintFillStyle = .color(.clearColor)
-        appearance.trackColor = .clearColor
         return appearance
     }
 }

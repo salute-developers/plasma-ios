@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  `TabBarItemAppearance` определяет внешний вид элемента таб-бара, включая цвета, типографику и стили.
@@ -14,13 +15,16 @@ import SDDSThemeCore
     - indicatorAppearance: Стиль индикатора
     - size: Конфигурация размеров и отступов элемента
  */
-// sdds:apiInfo
+@ApiInfo(components: ["TabBarItemClear", "TabBarItemSolid"])
 public struct TabBarItemAppearance: Hashable {
     let id = UUID()
+    @ApiName("labelColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var labelColor: ButtonColor
+    @ApiName("iconColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var iconColor: ButtonColor
+    @ApiName("backgroundColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor
     public var labelTypography: TypographyConfiguration

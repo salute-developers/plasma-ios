@@ -19,9 +19,11 @@ public struct BottomSheet {
         )
     }
     
-    public static let all: [Variation<BottomSheetAppearance>] = [
-        BottomSheet.default.variation,
-    ]
+    public static var all: [Variation<BottomSheetAppearance>] {
+        [
+            BottomSheet.default.variation,
+        ]
+    }
 }
 
 public struct BottomSheetVariation {

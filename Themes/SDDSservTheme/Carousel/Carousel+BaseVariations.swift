@@ -28,10 +28,12 @@ public struct Carousel {
         )
     }
     
-    public static let all: [Variation<CarouselAppearance>] = [
-        Carousel.buttonsPlacementInner.variation,
-        Carousel.buttonsPlacementOuter.variation,
-    ]
+    public static var all: [Variation<CarouselAppearance>] {
+        [
+            Carousel.buttonsPlacementInner.variation,
+            Carousel.buttonsPlacementOuter.variation,
+        ]
+    }
 }
 
 public struct CarouselVariation {

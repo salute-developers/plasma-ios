@@ -1,15 +1,19 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
 public enum PaginationDotsOrientation {
+    @ApiDefault
     case horizontal
     case vertical
 }
 
 public protocol PaginationDotsSizeConfiguration {
     var dotHeight: CGFloat { get }
+    @ApiName("dotHeight", state: .activated)
     var dotHeightActivated: CGFloat { get }
     var dotWidth: CGFloat { get }
+    @ApiName("dotWidth", state: .activated)
     var dotWidthActivated: CGFloat { get }
     var edgeCount: Int { get }
     var edgeShrinkFactor: CGFloat { get }

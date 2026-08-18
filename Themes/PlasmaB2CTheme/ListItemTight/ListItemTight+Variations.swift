@@ -10,6 +10,7 @@ public extension GeneralAppearanceVariation<ListItemTight, ListItemAppearance, L
     var l: ComponentAppearanceVariation<ListItemTight, ListItemAppearance> {
         var size =  ListItemTightAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(8.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.height = CGFloat(48.0)
         size.paddingBottom = CGFloat(12.0)
         size.paddingEnd = CGFloat(16.0)
@@ -47,6 +48,7 @@ public extension GeneralAppearanceVariation<ListItemTight, ListItemAppearance, L
     var m: ComponentAppearanceVariation<ListItemTight, ListItemAppearance> {
         var size =  ListItemTightAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(8.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.height = CGFloat(40.0)
         size.paddingBottom = CGFloat(8.0)
         size.paddingEnd = CGFloat(14.0)
@@ -84,6 +86,7 @@ public extension GeneralAppearanceVariation<ListItemTight, ListItemAppearance, L
     var s: ComponentAppearanceVariation<ListItemTight, ListItemAppearance> {
         var size =  ListItemTightAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(6.0)
+        size.contentPaddingStart = CGFloat(6.0)
         size.height = CGFloat(32.0)
         size.paddingBottom = CGFloat(7.0)
         size.paddingEnd = CGFloat(12.0)
@@ -121,6 +124,7 @@ public extension GeneralAppearanceVariation<ListItemTight, ListItemAppearance, L
     var xl: ComponentAppearanceVariation<ListItemTight, ListItemAppearance> {
         var size =  ListItemTightAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(8.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.height = CGFloat(56.0)
         size.paddingBottom = CGFloat(16.0)
         size.paddingEnd = CGFloat(18.0)
@@ -158,6 +162,7 @@ public extension GeneralAppearanceVariation<ListItemTight, ListItemAppearance, L
     var xs: ComponentAppearanceVariation<ListItemTight, ListItemAppearance> {
         var size =  ListItemTightAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(6.0)
+        size.contentPaddingStart = CGFloat(6.0)
         size.height = CGFloat(24.0)
         size.paddingBottom = CGFloat(4.0)
         size.paddingEnd = CGFloat(8.0)
@@ -206,3 +211,4 @@ public extension ComponentAppearanceVariation<ListItemTight, ListItemAppearance>
 private extension ListItemAppearance {
     
 }
+

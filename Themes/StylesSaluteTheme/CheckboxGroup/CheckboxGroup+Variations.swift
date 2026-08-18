@@ -79,3 +79,4 @@ public extension ComponentAppearanceVariation<CheckboxGroup, CheckboxGroupAppear
 private extension CheckboxGroupAppearance {
     
 }
+

@@ -60,20 +60,22 @@ public struct IconButton {
         )
     }
     
-    public static let all: [Variation<ButtonAppearance>] = [
-        IconButton.l.variation,
-        IconButton.l.pilled.variation,
-        IconButton.m.variation,
-        IconButton.m.pilled.variation,
-        IconButton.s.variation,
-        IconButton.s.pilled.variation,
-        IconButton.xl.variation,
-        IconButton.xl.pilled.variation,
-        IconButton.xs.variation,
-        IconButton.xs.pilled.variation,
-        IconButton.xxs.variation,
-        IconButton.xxs.pilled.variation,
-    ]
+    public static var all: [Variation<ButtonAppearance>] {
+        [
+            IconButton.l.variation,
+            IconButton.l.pilled.variation,
+            IconButton.m.variation,
+            IconButton.m.pilled.variation,
+            IconButton.s.variation,
+            IconButton.s.pilled.variation,
+            IconButton.xl.variation,
+            IconButton.xl.pilled.variation,
+            IconButton.xs.variation,
+            IconButton.xs.pilled.variation,
+            IconButton.xxs.variation,
+            IconButton.xxs.pilled.variation,
+        ]
+    }
 }
 
 public struct IconButtonVariation {

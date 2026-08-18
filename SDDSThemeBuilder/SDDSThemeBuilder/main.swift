@@ -34,7 +34,12 @@ struct ThemeBuilder: ParsableCommand {
             help: "Корень вендоримых исходников (библиотеки + пакет темы) для standalone. Если не указан — корень репозитория. Позволяет запускать вне репо, указав распакованную копию исходников.")
     var sourcesRoot: String?
 
+    @Flag(name: .long,
+          help: "Генерировать стили компонентов типизированным (старым) путём, без ios-api-meta.json. По умолчанию используется универсальный генератор.")
+    var typedGenerator: Bool = false
+
     func run() throws {
+        UniversalRuntime.isEnabled = !typedGenerator
         
         let config: ThemeBuilderConfiguration
         do {

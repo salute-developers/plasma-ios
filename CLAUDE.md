@@ -20,6 +20,8 @@
 | Путь | Что это | Детальный гайд |
 |---|---|---|
 | `SDDSComponents/` | Библиотека компонентов (SwiftUI+UIKit), ~387 файлов | [CLAUDE.md](SDDSComponents/CLAUDE.md) |
+| `SDDSApiInfo/` | Маркерные макросы разметки API стилей (`@ApiName`, …) | — |
+| `Tools/SDDSApiInfoGenerator/` | Сканер `*Appearance` → `ios-api-meta.json` | [CLAUDE.md](Tools/SDDSApiInfoGenerator/CLAUDE.md) |
 | `SDDSThemeBuilder/` | macOS CLI генерации тем + `SDDSThemeCore` | [CLAUDE.md](SDDSThemeBuilder/CLAUDE.md) |
 | `SDDSThemeBuilder/SDDSThemeCore/` | Рантайм-типы токенов (портируемое ядро) | [CLAUDE.md](SDDSThemeBuilder/SDDSThemeCore/CLAUDE.md) |
 | `SDDSDemoApp/` | Демо/песочница компонентов, схемы per-DS | [CLAUDE.md](SDDSDemoApp/CLAUDE.md) |
@@ -84,6 +86,11 @@ ruby scripts/run_tests.rb        # прогоняет схемы из масси
 
 ## Грабли
 
+- **Настройки сборки — в таргетах, не в командной строке `xcodebuild`.** `SDDSComponents`
+  зависит от макро-пакета `SDDSApiInfo`, а настройки из командной строки применяются ко всем
+  таргетам графа, включая macro-плагин: `MACH_O_TYPE`, `BUILD_LIBRARY_FOR_DISTRIBUTION`,
+  `SKIP_INSTALL` и `-sdk` его ломают (плагин собирается статикой/резилиентно/под iOS и не
+  грузится компилятором). Платформу задаём только через `-destination`.
 - **Сгенерированные файлы не редактируем руками**: `Themes/*` и `SDDSIcons/Generated/*`
   перезатрутся генератором. Меняй шаблоны/токены-источники, потом регенерируй.
 - Сборка отдельного проекта требует заранее собранных XCFrameworks

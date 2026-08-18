@@ -52,7 +52,7 @@ struct StandaloneBundle {
     /// внешним и его импорт сохраняется.
     var strippedModules: [String] {
         guard includeComponents else { return ["SDDSThemeCore"] }
-        var modules = ["SDDSThemeCore", "SDDSComponents", "SDDSIcons"]
+        var modules = ["SDDSThemeCore", "SDDSComponents", "SDDSIcons", "SDDSApiInfo"]
         if vendorExternalDependencies { modules.append("InputMask") }
         return modules
     }
@@ -275,6 +275,7 @@ struct StandaloneBundle {
     private func writeStripped(_ url: URL, isFontsManifest: Bool, renames: [String: String] = [:], used: inout Set<String>) {
         guard var text = try? String(contentsOf: url, encoding: .utf8) else { return }
         text = stripImports(text)
+        text = stripApiMarkers(text)
         text = stripModuleQualifiers(text)
         text = renameSymbols(text, renames)
         if isFontsManifest {
@@ -350,6 +351,20 @@ struct StandaloneBundle {
             .joined(separator: "\n")
     }
 
+    private func stripApiMarkers(_ text: String) -> String {
+        text
+            .split(separator: "\n", omittingEmptySubsequences: false)
+            .filter { !Self.isApiMarker(String($0)) }
+            .joined(separator: "\n")
+    }
+
+    static func isApiMarker(_ line: String) -> Bool {
+        let trimmed = line.trimmingCharacters(in: .whitespaces)
+        guard trimmed.hasPrefix("@Api") else { return false }
+        let name = trimmed.dropFirst().prefix { $0.isLetter }
+        return trimmed == "@\(name)" || trimmed.hasPrefix("@\(name)(") && trimmed.hasSuffix(")")
+    }
+
     /// Снимает модульные квалификаторы вендоренных модулей (`SDDSThemeCore.FontInfo` →
     /// `FontInfo`): в едином модуле имя модуля больше не резолвится. Точка после имени
     /// защищает от совпадений с идентификаторами-префиксами (`SDDSComponentsFoo`).
@@ -396,6 +411,10 @@ struct StandaloneBundle {
                     if !Self.systemModules.contains(module) && !strippedModules.contains(module) && !allowedExternalModules.contains(module) {
                         Logger.terminate("Standalone bundle leaks non-vendored import '\(module)' in \(url.lastPathComponent)")
                     }
+                }
+
+                if Self.isApiMarker(trimmed) {
+                    Logger.terminate("Standalone bundle leaks API marker '\(trimmed)' in \(url.lastPathComponent)")
                 }
 
                 if let name = Self.topLevelTypeName(line: String(line)) {

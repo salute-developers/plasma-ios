@@ -42,16 +42,18 @@ public struct IconBadgeClear {
         )
     }
     
-    public static let all: [Variation<BadgeAppearance>] = [
-        IconBadgeClear.l.variation,
-        IconBadgeClear.l.pilled.variation,
-        IconBadgeClear.m.variation,
-        IconBadgeClear.m.pilled.variation,
-        IconBadgeClear.s.variation,
-        IconBadgeClear.s.pilled.variation,
-        IconBadgeClear.xs.variation,
-        IconBadgeClear.xs.pilled.variation,
-    ]
+    public static var all: [Variation<BadgeAppearance>] {
+        [
+            IconBadgeClear.l.variation,
+            IconBadgeClear.l.pilled.variation,
+            IconBadgeClear.m.variation,
+            IconBadgeClear.m.pilled.variation,
+            IconBadgeClear.s.variation,
+            IconBadgeClear.s.pilled.variation,
+            IconBadgeClear.xs.variation,
+            IconBadgeClear.xs.pilled.variation,
+        ]
+    }
 }
 
 public struct IconBadgeClearVariation {
@@ -68,7 +70,7 @@ public struct IconBadgeClearVariation {
 private extension BadgeAppearance {
     static var base: BadgeAppearance {
         var appearance = BadgeAppearance()
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultClear), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
         return appearance
     }
 }

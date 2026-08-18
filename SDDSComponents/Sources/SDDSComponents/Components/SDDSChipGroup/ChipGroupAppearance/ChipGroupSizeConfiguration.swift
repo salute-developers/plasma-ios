@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 import SwiftUI
 
 /**
@@ -11,8 +12,11 @@ import SwiftUI
  */
 public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     @available(*, deprecated, message: "use 'appearance' instead")
+    @ApiValue("(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }")
     func insets(for gap: ChipGroupGap) -> EdgeInsets
+    @ApiValue("Int(0)", zero: "Int(0)")
     var maxColumns: Int { get }
+    @ApiValue("ChipGroupAlignment.left")
     var alignment: ChipGroupAlignment { get }
     var gap: CGFloat { get }
     var lineSpacing: CGFloat { get }

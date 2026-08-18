@@ -18,7 +18,6 @@ struct Reconciler {
 
     /// Безопасные синонимы-эквиваленты (только однозначные, напр. опечаточные варианты).
     /// Семантические синонимы (label↔title и т.п.) НЕ включаем — они требуют явного
-    /// `// sdds:apiName=` на свойстве Appearance.
     private static let synonyms: [String: String] = [
         "disabledalpha": "disablealpha"
     ]
@@ -45,7 +44,10 @@ struct Reconciler {
         // Индекс Appearance-параметров по нормализованным methodName и id (id несёт marker-override).
         var index: [String: [Param]] = [:]
         for param in meta.params {
-            for key in Set([Self.normalize(param.methodName), Self.normalize(param.id)]) {
+            let keys = param.explicitId
+                ? Set([Self.normalize(param.id)])
+                : Set([Self.normalize(param.methodName), Self.normalize(param.id)])
+            for key in keys {
                 index[key, default: []].append(param)
             }
         }
@@ -55,18 +57,19 @@ struct Reconciler {
         var gaps: [String] = []
 
         for field in fields {
-            // Маркер `// sdds:apiName=<configId>` на свойстве Appearance проставил param.id —
             // это точное объявление config-id, высший приоритет.
             // Только для реально размеченных свойств (id != имя property), чтобы случайно
             // одноимённое свойство не перехватило вложенный компонент (напр. Wheel.dividerStyle).
-            if let match = index[Self.normalize(field.id)]?.first(where: {
-                Self.normalize($0.id) == Self.normalize(field.id) && $0.id != $0.methodName
+            if let match = bestMatch(for: field, in: index) ?? index[Self.normalize(field.id)]?.first(where: {
+                Self.normalize($0.id) == Self.normalize(field.id) && $0.id != $0.methodName && $0.state == nil
             }) {
                 usedParamKeys.insert(Self.normalize(match.methodName))
                 newParams.append(Param(
                     type: match.type, id: field.id, methodName: match.methodName, paramName: match.paramName,
                     paramQualifiedType: match.paramQualifiedType, paramSimpleType: match.paramSimpleType,
-                    valueQualifiedType: match.valueQualifiedType, group: match.group
+                    valueQualifiedType: match.valueQualifiedType, group: match.group,
+                    state: match.state, copyOf: match.copyOf, valueEnum: match.valueEnum, fromVariation: match.fromVariation, markupValue: match.markupValue, markupZero: match.markupZero,
+                    rawNumber: match.rawNumber, alwaysEmit: match.alwaysEmit, stateOnly: match.stateOnly
                 ))
                 continue
             }
@@ -77,7 +80,9 @@ struct Reconciler {
                 newParams.append(Param(
                     type: match.type, id: field.id, methodName: match.methodName, paramName: match.paramName,
                     paramQualifiedType: match.paramQualifiedType, paramSimpleType: match.paramSimpleType,
-                    valueQualifiedType: match.valueQualifiedType, group: match.group
+                    valueQualifiedType: match.valueQualifiedType, group: match.group,
+                    state: match.state, copyOf: match.copyOf, valueEnum: match.valueEnum, fromVariation: match.fromVariation, markupValue: match.markupValue, markupZero: match.markupZero,
+                    rawNumber: match.rawNumber, alwaysEmit: match.alwaysEmit, stateOnly: match.stateOnly
                 ))
                 continue
             }
@@ -91,7 +96,16 @@ struct Reconciler {
                     paramQualifiedType: match.paramQualifiedType,
                     paramSimpleType: match.paramSimpleType,
                     valueQualifiedType: match.valueQualifiedType,
-                    group: match.group
+                    group: match.group,
+                    state: match.state,
+                    copyOf: match.copyOf,
+                    valueEnum: match.valueEnum,
+                    fromVariation: match.fromVariation,
+                    markupValue: match.markupValue,
+                    markupZero: match.markupZero,
+                    rawNumber: match.rawNumber,
+                    alwaysEmit: match.alwaysEmit,
+                    stateOnly: match.stateOnly
                 ))
             } else {
                 gaps.append(field.id)
@@ -109,6 +123,15 @@ struct Reconciler {
             }
         }
 
+        // Свойство с разметочным значением конфиг-поля не имеет по определению —
+        // сохраняем его так же, как явно размеченные.
+        for param in meta.params
+        where (param.explicitId || param.markupValue != nil || param.markupZero != nil)
+            && !usedParamKeys.contains(Self.normalize(param.methodName)) {
+            newParams.append(param)
+            usedParamKeys.insert(Self.normalize(param.methodName))
+        }
+
         let drift = meta.params
             .filter { !usedParamKeys.contains(Self.normalize($0.methodName)) }
             .map { $0.id }
@@ -117,6 +140,8 @@ struct Reconciler {
             componentName: meta.componentName,
             qualifiedName: meta.qualifiedName,
             styleQualifiedName: meta.styleQualifiedName,
+            sizeQualifiedName: meta.sizeQualifiedName,
+            components: meta.components,
             resolvedTypes: meta.resolvedTypes,
             stateEnum: meta.stateEnum,
             params: newParams
@@ -141,6 +166,8 @@ struct Reconciler {
         var bestScore = 0
         for (_, params) in index {
             for param in params {
+                if param.explicitId, Self.normalize(param.id) != fnorm { continue }
+                if param.state != nil { continue }
                 let pnorm = Self.normalize(param.methodName)
                 let pbase = Self.base(pnorm)
                 var score = 0

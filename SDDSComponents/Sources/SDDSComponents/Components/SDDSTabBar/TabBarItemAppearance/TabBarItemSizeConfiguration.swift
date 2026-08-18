@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
 /**
  `TabBarItemSizeConfiguration` определяет протокол для конфигурации размеров и отступов элемента таб-бара.
@@ -17,9 +18,12 @@ public protocol TabBarItemSizeConfiguration: SizeConfiguration, CustomDebugStrin
     var minHeight: CGFloat { get }
     var paddingTop: CGFloat { get }
     var paddingBottom: CGFloat { get }
+    @ApiName("iconSize")
     var iconSize: CGFloat { get }
     var labelPadding: CGFloat { get }
+    @ApiName("shape")
     var shape: PathDrawer { get }
+    @ApiName("labelPlacement")
     var labelPlacement: TabBarItemLabelPlacement { get }
 }
 
@@ -60,6 +64,7 @@ public struct ZeroTabBarItemSize: TabBarItemSizeConfiguration {
  */
 public enum TabBarItemLabelPlacement: String, CaseIterable {
     case bottom = "bottom"
+    @ApiDefault
     case none = "none"
     case top = "top"
 }

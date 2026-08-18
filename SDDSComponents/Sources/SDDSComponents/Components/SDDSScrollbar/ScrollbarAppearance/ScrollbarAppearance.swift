@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  `ScrollbarAppearance` определяет внешний вид скроллбара, включая цвета трека и ползунка, а также размеры.
@@ -11,7 +12,7 @@ import SDDSThemeCore
     - trackColor: Цвет трека скроллбара.
     - shape: Форма скроллбара.
  */
-// sdds:apiInfo
+@ApiInfo(components: ["ScrollBar"])
 public struct ScrollbarAppearance: Hashable {
     let id = UUID()
     public var size: ScrollbarSizeConfiguration

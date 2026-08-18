@@ -24,20 +24,22 @@ public struct TabBarHasLabel {
         )
     }
     
-    public static let all: [Variation<TabBarAppearance>] = [
-        TabBarHasLabel.l.variation,
-        TabBarHasLabel.l.divider.variation,
-        TabBarHasLabel.l.divider.rounded.variation,
-        TabBarHasLabel.l.rounded.variation,
-        TabBarHasLabel.l.shadow.variation,
-        TabBarHasLabel.l.shadow.rounded.variation,
-        TabBarHasLabel.m.variation,
-        TabBarHasLabel.m.divider.variation,
-        TabBarHasLabel.m.divider.rounded.variation,
-        TabBarHasLabel.m.rounded.variation,
-        TabBarHasLabel.m.shadow.variation,
-        TabBarHasLabel.m.shadow.rounded.variation,
-    ]
+    public static var all: [Variation<TabBarAppearance>] {
+        [
+            TabBarHasLabel.l.variation,
+            TabBarHasLabel.l.divider.variation,
+            TabBarHasLabel.l.divider.rounded.variation,
+            TabBarHasLabel.l.rounded.variation,
+            TabBarHasLabel.l.shadow.variation,
+            TabBarHasLabel.l.shadow.rounded.variation,
+            TabBarHasLabel.m.variation,
+            TabBarHasLabel.m.divider.variation,
+            TabBarHasLabel.m.divider.rounded.variation,
+            TabBarHasLabel.m.rounded.variation,
+            TabBarHasLabel.m.shadow.variation,
+            TabBarHasLabel.m.shadow.rounded.variation,
+        ]
+    }
 }
 
 public struct TabBarHasLabelVariation {

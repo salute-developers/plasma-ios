@@ -57,6 +57,10 @@ func swiftFiles(in directory: String) -> [String] {
     return result
 }
 
+if args.contains("--emit-marker-plan") {
+    SyntaxSupport.includeDeprecated = true
+}
+
 let table = SymbolTable()
 var fileCount = 0
 for dir in sourceDirs {
@@ -70,6 +74,14 @@ for dir in sourceDirs {
         table.ingest(source: source, path: file)
         fileCount += 1
     }
+}
+
+if !table.markerErrors.isEmpty {
+    for error in table.markerErrors {
+        FileHandle.standardError.write(Data("error: \(error)\n".utf8))
+    }
+    FileHandle.standardError.write(Data("Найдено ошибок в маркерах: \(table.markerErrors.count)\n".utf8))
+    exit(1)
 }
 
 // MARK: - Каталог config-id из *Props (для сверки)
@@ -103,7 +115,6 @@ if let data = try? Data(contentsOf: URL(fileURLWithPath: overridesArg)),
 let scanner = Scanner(table: table, moduleName: moduleName)
 let scanned = scanner.scan(only: onlyFilter)
 
-// MARK: - Режим --emit-marker-plan: где разместить `// sdds:apiName=` для миграции таблицы в аннотации
 
 if args.contains("--emit-marker-plan") {
     struct MarkerPlanItem: Codable {

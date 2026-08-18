@@ -28,10 +28,12 @@ public struct Radiobox {
         )
     }
     
-    public static let all: [Variation<RadioboxAppearance>] = [
-        Radiobox.m.variation,
-        Radiobox.s.variation,
-    ]
+    public static var all: [Variation<RadioboxAppearance>] {
+        [
+            Radiobox.m.variation,
+            Radiobox.s.variation,
+        ]
+    }
 }
 
 public struct RadioboxVariation {
@@ -42,13 +44,19 @@ public struct RadioboxVariation {
 private extension RadioboxAppearance {
     static var base: RadioboxAppearance {
         var appearance = RadioboxAppearance()
-        appearance.borderColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.checkedIconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.borderColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.focused], value: .color(.outlineDefaultAccentMain)),
+            .init(states: [InteractiveState.focused, InteractiveState.checked], value: .color(.outlineDefaultAccentMain)),
+            .init(states: [InteractiveState.checked], value: .color(.outlineDefaultClear))
+        ])
+        appearance.checkedIconColor = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.subtitleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
-        appearance.toggleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccentMain), values: [])
-        appearance.toggleColorChecked = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textOnDarkPrimary), values: [])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.toggleColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.checked], value: .color(.surfaceDefaultAccentMain))
+        ])
+        appearance.toggleColorChecked = StatefulFillStyle(defaultValue: .color(.textOnDarkPrimary), values: [])
         return appearance
     }
 }

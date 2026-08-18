@@ -39,11 +39,13 @@ public struct BasicButton {
         )
     }
     
-    public static let all: [Variation<ButtonAppearance>] = [
-        BasicButton.m.variation,
-        BasicButton.s.variation,
-        BasicButton.xs.variation,
-    ]
+    public static var all: [Variation<ButtonAppearance>] {
+        [
+            BasicButton.m.variation,
+            BasicButton.s.variation,
+            BasicButton.xs.variation,
+        ]
+    }
 }
 
 public struct BasicButtonVariation {

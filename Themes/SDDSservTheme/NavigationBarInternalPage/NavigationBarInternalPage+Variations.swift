@@ -235,3 +235,4 @@ public extension ComponentAppearanceVariation<NavigationBarInternalPage, Navigat
 private extension NavigationBarInternalPageAppearance {
     
 }
+

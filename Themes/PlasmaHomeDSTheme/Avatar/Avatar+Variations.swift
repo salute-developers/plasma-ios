@@ -17,7 +17,7 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
         appearance.size = size
         appearance.badgeAppearance = Badge.s.pilled.accent.appearance
         appearance.counterAppearance = Counter.s.negative.appearance
-        appearance.indicatorAppearance = Indicator.m.appearance
+        appearance.indicatorAppearance = AvatarIndicator.m.appearance
         appearance.textTypography = AvatarTypography(l: AdaptiveTypographyToken.headerH4Bold.typography).asContainer
     
         return .init(
@@ -92,7 +92,7 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
         appearance.size = size
         appearance.badgeAppearance = Badge.xs.pilled.accent.appearance
         appearance.counterAppearance = Counter.xs.negative.appearance
-        appearance.indicatorAppearance = Indicator.m.appearance
+        appearance.indicatorAppearance = AvatarIndicator.m.appearance
         appearance.textTypography = AvatarTypography(m: AdaptiveTypographyToken.bodySBold.typography).asContainer
     
         return .init(
@@ -180,7 +180,7 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
         var appearance = appearance
         appearance.size = size
         appearance.counterAppearance = Counter.xxs.negative.appearance
-        appearance.indicatorAppearance = Indicator.s.appearance
+        appearance.indicatorAppearance = AvatarIndicator.s.appearance
         appearance.textTypography = AvatarTypography(s: AdaptiveTypographyToken.bodyXxsBold.typography).asContainer
     
         return .init(
@@ -255,7 +255,7 @@ public extension GeneralAppearanceVariation<Avatar, AvatarAppearance, AvatarVari
         appearance.size = size
         appearance.badgeAppearance = Badge.l.pilled.accent.appearance
         appearance.counterAppearance = Counter.l.negative.appearance
-        appearance.indicatorAppearance = Indicator.l.appearance
+        appearance.indicatorAppearance = AvatarIndicator.l.appearance
         appearance.textTypography = AvatarTypography(xxl: AdaptiveTypographyToken.headerH2Bold.typography).asContainer
     
         return .init(
@@ -320,3 +320,4 @@ public extension ComponentAppearanceVariation<Avatar, AvatarAppearance> {
 private extension AvatarAppearance {
     
 }
+

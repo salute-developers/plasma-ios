@@ -9,7 +9,7 @@ public extension GeneralAppearanceVariation<RectSkeleton, SkeletonAppearance, Re
     
     var `default`: AppearanceVariation<SkeletonAppearance> {
         var appearance = appearance
-        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonGradient), values: [])
+        appearance.gradient = StatefulFillStyle(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonGradient), values: [])
         
         return .init(
             name: "`default`",
@@ -18,7 +18,7 @@ public extension GeneralAppearanceVariation<RectSkeleton, SkeletonAppearance, Re
     }
     var lighter: AppearanceVariation<SkeletonAppearance> {
         var appearance = appearance
-        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient), values: [])
+        appearance.gradient = StatefulFillStyle(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient), values: [])
         
         return .init(
             name: "lighter",
@@ -70,14 +70,21 @@ private extension SkeletonAppearance {
     
     var `default`: SkeletonAppearance {
         var appearance = self
-        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonGradient), values: [])
+        appearance.gradient = StatefulFillStyle(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonGradient), values: [])
         return appearance
     }
     
     var lighter: SkeletonAppearance {
         var appearance = self
-        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient), values: [])
+        appearance.gradient = StatefulFillStyle(defaultValue: .gradient(GradientToken.surfaceDefaultSkeletonDeepGradient), values: [])
         return appearance
     }
     
 }
+
+public extension RectSkeleton {
+    static var lighter: AppearanceVariation<SkeletonAppearance> {
+        return RectSkeleton.`default`.lighter
+    }
+}
+

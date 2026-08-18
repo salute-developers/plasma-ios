@@ -20,7 +20,7 @@ struct ListItemTightSize {
 }
 struct ListItemTightSizeL: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(8.0)
-    var contentPaddingStart = CGFloat(0)
+    var contentPaddingStart = CGFloat(8.0)
     var height = CGFloat(48.0)
     var paddingBottom = CGFloat(12.0)
     var paddingEnd = CGFloat(16.0)
@@ -33,7 +33,7 @@ struct ListItemTightSizeL: ListItemSizeConfiguration {
 }
 struct ListItemTightSizeM: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(8.0)
-    var contentPaddingStart = CGFloat(0)
+    var contentPaddingStart = CGFloat(8.0)
     var height = CGFloat(40.0)
     var paddingBottom = CGFloat(8.0)
     var paddingEnd = CGFloat(14.0)
@@ -46,7 +46,7 @@ struct ListItemTightSizeM: ListItemSizeConfiguration {
 }
 struct ListItemTightSizeS: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(6.0)
-    var contentPaddingStart = CGFloat(0)
+    var contentPaddingStart = CGFloat(6.0)
     var height = CGFloat(32.0)
     var paddingBottom = CGFloat(7.0)
     var paddingEnd = CGFloat(12.0)
@@ -59,7 +59,7 @@ struct ListItemTightSizeS: ListItemSizeConfiguration {
 }
 struct ListItemTightSizeXl: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(8.0)
-    var contentPaddingStart = CGFloat(0)
+    var contentPaddingStart = CGFloat(8.0)
     var height = CGFloat(56.0)
     var paddingBottom = CGFloat(16.0)
     var paddingEnd = CGFloat(18.0)
@@ -72,7 +72,7 @@ struct ListItemTightSizeXl: ListItemSizeConfiguration {
 }
 struct ListItemTightSizeXs: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(6.0)
-    var contentPaddingStart = CGFloat(0)
+    var contentPaddingStart = CGFloat(6.0)
     var height = CGFloat(24.0)
     var paddingBottom = CGFloat(4.0)
     var paddingEnd = CGFloat(8.0)

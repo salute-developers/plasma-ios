@@ -36,11 +36,13 @@ public struct TextSkeletonDisplay {
         )
     }
     
-    public static let all: [Variation<SkeletonAppearance>] = [
-        TextSkeletonDisplay.l.variation,
-        TextSkeletonDisplay.m.variation,
-        TextSkeletonDisplay.s.variation,
-    ]
+    public static var all: [Variation<SkeletonAppearance>] {
+        [
+            TextSkeletonDisplay.l.variation,
+            TextSkeletonDisplay.m.variation,
+            TextSkeletonDisplay.s.variation,
+        ]
+    }
 }
 
 public struct TextSkeletonDisplayVariation {
@@ -53,7 +55,7 @@ private extension SkeletonAppearance {
     static var base: SkeletonAppearance {
         var appearance = SkeletonAppearance()
         appearance.duration = CGFloat(700.0)
-        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
+        appearance.gradient = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
         return appearance
     }

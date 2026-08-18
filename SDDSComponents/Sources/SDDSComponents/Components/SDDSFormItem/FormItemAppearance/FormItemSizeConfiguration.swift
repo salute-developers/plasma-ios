@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 import SwiftUI
 
 public protocol FormItemSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
@@ -10,6 +11,7 @@ public protocol FormItemSizeConfiguration: SizeConfiguration, CustomDebugStringC
     var titleCaptionPadding: CGFloat { get }
     var captionPadding: CGFloat { get }
     var counterPadding: CGFloat { get }
+    @ApiValue("point(indicatorOffsetX, indicatorOffsetY)")
     var indicatorOffset: CGPoint { get }
 }
 

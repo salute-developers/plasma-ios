@@ -171,3 +171,4 @@ public extension ComponentAppearanceVariation<SelectSingleTight, SelectAppearanc
 private extension SelectAppearance {
     
 }
+

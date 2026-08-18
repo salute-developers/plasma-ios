@@ -33,11 +33,13 @@ public struct Indicator {
         )
     }
     
-    public static let all: [Variation<IndicatorAppearance>] = [
-        Indicator.l.variation,
-        Indicator.m.variation,
-        Indicator.s.variation,
-    ]
+    public static var all: [Variation<IndicatorAppearance>] {
+        [
+            Indicator.l.variation,
+            Indicator.m.variation,
+            Indicator.s.variation,
+        ]
+    }
 }
 
 public struct IndicatorVariation {

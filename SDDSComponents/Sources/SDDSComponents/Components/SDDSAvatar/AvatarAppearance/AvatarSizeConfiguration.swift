@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  `AvatarSizeConfiguration` определяет размеры и отступы для аватара.
@@ -11,9 +12,13 @@ import SDDSThemeCore
     - statusInsets: Отступы иконки статуса относительно нижнего правого угла.
  */
 public protocol AvatarSizeConfiguration {
+    @ApiValue("size(width, height)")
     var avatarSize: CGSize { get }
+    @ApiValue("insets(0, 0, statusOffsetY, statusOffsetX)")
     var statusInsets: EdgeInsets { get }
+    @ApiValue("point(extraOffsetX, extraOffsetY)")
     var extraOffset: CGPoint { get }
+    @ApiName("shape")
     var pathDrawer: PathDrawer { get }
 }
 

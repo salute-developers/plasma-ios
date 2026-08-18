@@ -24,12 +24,14 @@ public struct TabBarIslandHasLabel {
         )
     }
     
-    public static let all: [Variation<TabBarIslandAppearance>] = [
-        TabBarIslandHasLabel.l.variation,
-        TabBarIslandHasLabel.l.shadow.variation,
-        TabBarIslandHasLabel.m.variation,
-        TabBarIslandHasLabel.m.shadow.variation,
-    ]
+    public static var all: [Variation<TabBarIslandAppearance>] {
+        [
+            TabBarIslandHasLabel.l.variation,
+            TabBarIslandHasLabel.l.shadow.variation,
+            TabBarIslandHasLabel.m.variation,
+            TabBarIslandHasLabel.m.shadow.variation,
+        ]
+    }
 }
 
 public struct TabBarIslandHasLabelVariation {

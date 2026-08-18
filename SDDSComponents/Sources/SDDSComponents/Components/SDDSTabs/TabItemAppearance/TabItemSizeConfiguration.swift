@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 import SwiftUI
 
 /**
@@ -34,6 +35,8 @@ public protocol TabItemSizeConfiguration: SizeConfiguration, CustomDebugStringCo
     var paddingEnd: CGFloat { get }
     var iconPadding: CGFloat { get }
     var actionSize: CGFloat { get }
+    @ApiType(.iconSize)
+    @ApiName("actionIcon")
     var actionIconSize: CGFloat { get }
     var counterOffsetX: CGFloat { get }
     var counterOffsetY: CGFloat { get }

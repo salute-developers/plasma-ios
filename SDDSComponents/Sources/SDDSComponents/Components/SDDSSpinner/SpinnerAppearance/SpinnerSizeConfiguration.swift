@@ -1,10 +1,12 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 public protocol SpinnerSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var size: CGFloat { get }
     var padding: CGFloat { get }
+    @ApiAlwaysEmit
     var angle: CGFloat { get }
 }
 

@@ -34,7 +34,11 @@ final class PropsCatalog {
     }
 
     func fields(forComponent componentName: String) -> [PropsField]? {
-        byComponent[Self.norm(componentName)]
+        let key = Self.norm(componentName)
+        if let exact = byComponent[key] { return exact }
+        let candidates = byComponent.keys.filter { $0.hasPrefix(key) }
+        guard candidates.count == 1, let only = candidates.first else { return nil }
+        return byComponent[only]
     }
 
     static func norm(_ s: String) -> String {

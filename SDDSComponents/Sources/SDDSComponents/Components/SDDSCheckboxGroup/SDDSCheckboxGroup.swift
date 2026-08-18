@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
 public typealias CheckboxGroupOnChange = ((_ index: Int, _ state: SelectionControlState) -> ())
 public typealias CheckboxGroupOnParentChange = ((_ state: SelectionControlState) -> ())
@@ -29,9 +30,9 @@ public enum CheckboxGroupBehaviour {
     - verticalSpacing: Вертикальный отступ между элементами.
  */
 public protocol CheckboxGroupSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
-    // sdds:apiName=itemOffset
+    @ApiName("itemOffset")
     var horizontalIndent: CGFloat { get }
-    // sdds:apiName=itemSpacing
+    @ApiName("itemSpacing")
     var verticalSpacing: CGFloat { get }
 }
 

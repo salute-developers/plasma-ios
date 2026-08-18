@@ -46,12 +46,14 @@ public struct DropdownMenuListNormal {
         )
     }
     
-    public static let all: [Variation<ListAppearance>] = [
-        DropdownMenuListNormal.l.variation,
-        DropdownMenuListNormal.m.variation,
-        DropdownMenuListNormal.s.variation,
-        DropdownMenuListNormal.xs.variation,
-    ]
+    public static var all: [Variation<ListAppearance>] {
+        [
+            DropdownMenuListNormal.l.variation,
+            DropdownMenuListNormal.m.variation,
+            DropdownMenuListNormal.s.variation,
+            DropdownMenuListNormal.xs.variation,
+        ]
+    }
 }
 
 public struct DropdownMenuListNormalVariation {
