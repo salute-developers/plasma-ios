@@ -61,13 +61,15 @@ public struct DropdownMenuItemTight {
         )
     }
     
-    public static let all: [Variation<ListItemAppearance>] = [
-        DropdownMenuItemTight.l.variation,
-        DropdownMenuItemTight.m.variation,
-        DropdownMenuItemTight.s.variation,
-        DropdownMenuItemTight.xl.variation,
-        DropdownMenuItemTight.xs.variation,
-    ]
+    public static var all: [Variation<ListItemAppearance>] {
+        [
+            DropdownMenuItemTight.l.variation,
+            DropdownMenuItemTight.m.variation,
+            DropdownMenuItemTight.s.variation,
+            DropdownMenuItemTight.xl.variation,
+            DropdownMenuItemTight.xs.variation,
+        ]
+    }
 }
 
 public struct DropdownMenuItemTightVariation {
@@ -81,11 +83,11 @@ public struct DropdownMenuItemTightVariation {
 private extension ListItemAppearance {
     static var base: ListItemAppearance {
         var appearance = ListItemAppearance()
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultClear), values: [
-            .init(states: [InteractiveState.focused], value: .color(ColorToken.surfaceDefaultTransparentSecondary))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.focused], value: .color(.surfaceDefaultTransparentSecondary))
         ])
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.disclosureIconColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultSecondary), values: [])
+        appearance.disclosureIconColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         return appearance
     }
 }

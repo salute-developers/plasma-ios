@@ -104,3 +104,13 @@ private extension ToastAppearance {
     }
     
 }
+
+public extension Toast {
+    static var negative: AppearanceVariation<ToastAppearance> {
+        return Toast.`default`.negative
+    }
+    static var positive: AppearanceVariation<ToastAppearance> {
+        return Toast.`default`.positive
+    }
+}
+

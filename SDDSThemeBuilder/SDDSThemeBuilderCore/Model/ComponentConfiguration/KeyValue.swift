@@ -11,6 +11,8 @@ enum ComponentState: String, Codable, CaseIterable {
     case error
     case readonly
     case collapsed
+    case inactive
+    case textInlined = "text-inlined"
 }
 
 struct StatefulValueDTO<T> {
@@ -49,6 +51,12 @@ struct KeyValue<T: Codable>: Codable {
 
     func value(for statesSet: Set<ComponentState>) -> ValueState<T>? {
         value(for: Array(statesSet))
+    }
+
+    /// Значение строго для состояния: если конфиг его не несёт — `nil`, без отката
+    /// на базовое значение ключа (в отличие от `value(for:)`).
+    func stateOnlyValue(for state: ComponentState) -> ValueState<T>? {
+        states?.first { Set($0.state ?? []) == Set([state]) }
     }
 
     func asStatefulValue() -> StatefulValueDTO<T> {

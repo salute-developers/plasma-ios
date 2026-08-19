@@ -1,10 +1,12 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `NotificationContentAppearance` определяет внешний вид компонента NotificationContent.
  */
+@ApiInfo
 public struct NotificationContentAppearance {
     public var iconColor: ColorToken
     public var titleColor: ColorToken
@@ -12,6 +14,7 @@ public struct NotificationContentAppearance {
     public var titleTypography: TypographyConfiguration
     public var textTypography: TypographyConfiguration
     public var buttonLayout: NotificationContentButtonLayout
+    @ApiType(.value)
     public var iconPlacement: NotificationContentIconPlacement
     public var buttonGroupAppearance: ButtonGroupAppearance?
     public var size: NotificationContentSizeConfiguration

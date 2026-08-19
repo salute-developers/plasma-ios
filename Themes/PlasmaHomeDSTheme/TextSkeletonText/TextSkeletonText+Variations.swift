@@ -129,3 +129,4 @@ public extension ComponentAppearanceVariation<TextSkeletonText, SkeletonAppearan
 private extension SkeletonAppearance {
     
 }
+

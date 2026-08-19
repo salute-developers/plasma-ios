@@ -1,24 +1,38 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
 /// Определяет конфигурацию размеров текстового поля.
 public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
+    @ApiName("labelPadding")
     var titleBottomPadding: CGFloat { get }
+    @ApiName("labelPadding")
     var titleInnerPadding: CGFloat { get }
+    @ApiName("boxPaddingStart")
     var boxLeadingPadding: CGFloat { get }
+    @ApiName("boxPaddingEnd")
     var boxTrailingPadding: CGFloat { get }
     var boxPaddingBottom: CGFloat { get }
     var boxPaddingTop: CGFloat { get }
+    @ApiName("helperTextPadding")
     var captionTopPadding: CGFloat { get }
+    @ApiName("helperTextPadding")
     var captionBottomPadding: CGFloat { get }
     var optionalPadding: CGFloat { get }
+    @ApiName("shape")
     var cornerRadius: CGFloat { get }
+    @ApiName("endContentPadding")
     var iconActionPadding: CGFloat { get }
+    @ApiValue("size(endContentSize, endContentSize)")
     var iconActionSize: CGSize { get }
+    @ApiName("chipsPadding")
     var chipContainerHorizontalPadding: CGFloat { get }
     var chipsPadding: CGFloat { get }
+    @ApiName("boxMinHeight")
     var fieldHeight: CGFloat { get }
+    @ApiValue("point(indicatorOffsetX, indicatorOffsetY)")
     var indicatorOffset: CGPoint { get }
+    @ApiValue("size(indicatorSize, indicatorSize)")
     var indicatorSize: CGSize { get }
     var endContentPadding: CGFloat { get }
     var scrollBarThickness: CGFloat { get }

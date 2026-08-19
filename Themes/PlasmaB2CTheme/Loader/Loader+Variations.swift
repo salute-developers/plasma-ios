@@ -49,3 +49,4 @@ public extension ComponentAppearanceVariation<Loader, LoaderAppearance> {
 private extension LoaderAppearance {
     
 }
+

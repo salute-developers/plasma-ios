@@ -17,7 +17,7 @@ struct NoteCompactSizeContentbeforefixed: NoteCompactSizeConfiguration {
     var actionStartMargin = CGFloat(12.0)
     var closeSize = CGFloat(0)
     var closeStartMargin = CGFloat(0.0)
-    var contentBeforeArrangement = NoteCompactContentBeforeArrangement.top
+    var contentBeforeArrangement = NoteCompactContentBeforeArrangement.center
     var contentBeforeEndMargin = CGFloat(8.0)
     var iconSize = CGFloat(16.0)
     var paddingBottom = CGFloat(16.0)

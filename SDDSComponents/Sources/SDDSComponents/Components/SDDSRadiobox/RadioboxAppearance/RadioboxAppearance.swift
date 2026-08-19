@@ -1,23 +1,32 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
+@ApiInfo
 public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
     @available(*, deprecated, message: "use 'toggleColor' instead")
     public var color: StatefulFillStyle
     public var toggleColor: StatefulFillStyle
+    @ApiName("toggleBorderColor")
     public var borderColor: StatefulFillStyle
     public var checkedIcon: PathDrawer?
+    @ApiName("toggleIconColor")
     public var checkedIconColor: StatefulFillStyle
     public var toggleIndeterminateIcon: PathDrawer?
     public var toggleIndeterminateIconColor: StatefulFillStyle
+    @ApiName("toggleIconColor")
     public var toggleColorChecked: StatefulFillStyle
     public var toggleColorIndeterminate: StatefulFillStyle
     public var size: SelectionControlSizeConfiguration
+    @ApiName("labelStyle")
     public var titleTypography: TypographyConfiguration
+    @ApiName("descriptionStyle")
     public var subtitleTypography: TypographyConfiguration
+    @ApiName("labelColor")
     public var titleColor: StatefulFillStyle
+    @ApiName("descriptionColor")
     public var subtitleColor: StatefulFillStyle
     public var disabledAlpha: CGFloat
     

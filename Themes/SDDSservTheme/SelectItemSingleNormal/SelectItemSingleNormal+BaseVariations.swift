@@ -88,7 +88,7 @@ private extension SelectItemAppearance {
         ]))
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.iconColor = ColorToken.textDefaultAccent
-        appearance.itemType = .single
+        appearance.itemType = SelectItemType.single
         return appearance
     }
 }

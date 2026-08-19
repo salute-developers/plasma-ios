@@ -1,13 +1,16 @@
 import SwiftUI
 import Foundation
 import SDDSThemeCore
+import SDDSApiInfo
 
 public protocol BottomSheetSizeConfiguration: CustomDebugStringConvertible {
     var paddingStart: CGFloat { get }
     var paddingEnd: CGFloat { get }
     var paddingTop: CGFloat { get }
     var paddingBottom: CGFloat { get }
+    @ApiName("shape")
     var pathDrawer: PathDrawer { get }
+    @ApiName("handleShape")
     var handlePathDrawer: PathDrawer { get }
     var handleWidth: CGFloat { get }
     var handleHeight: CGFloat { get }

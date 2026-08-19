@@ -1,4 +1,5 @@
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -21,6 +22,7 @@ import SwiftUI
  )
  ```
  */
+@ApiInfo(components: ["RectSkeleton", "TextSkeleton", "TextSkeletonBody", "TextSkeletonDisplay", "TextSkeletonHeader", "TextSkeletonText"])
 public struct SkeletonAppearance {
     public var shape: PathDrawer
     public var gradient: StatefulFillStyle

@@ -1,9 +1,13 @@
 import Foundation
+import SDDSApiInfo
 import SwiftUI
 
 public enum FormTitlePlacement: String, CaseIterable, Codable {
+    @ApiName("title-start")
     case start
+    @ApiName("title-top")
     case top
+    @ApiName("title-none")
     case none
 }
 

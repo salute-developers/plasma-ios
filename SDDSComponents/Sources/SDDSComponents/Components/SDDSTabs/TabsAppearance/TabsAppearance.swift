@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  `TabsAppearance` определяет внешний вид контейнера вкладок.
@@ -19,10 +20,12 @@ import SDDSThemeCore
     - disclosureTextTypography: Типографика текста disclosure
     - disclosureIcon: Иконка disclosure (для IconTabs)
  */
+@ApiInfo(components: ["IconTabs", "TabsDefault", "TabsHeader"])
 public struct TabsAppearance: Hashable {
     let id = UUID()
     public var size: TabsSizeConfiguration
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    @ApiName("disclosureColor")
     public var disclosureColor: ButtonColor
     public var indicatorColor: ColorToken
     public var overflowNextIcon: Image?

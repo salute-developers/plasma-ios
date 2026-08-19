@@ -1,4 +1,5 @@
 import SwiftUI
+import SDDSApiInfo
 
 /**
  `RadioboxGroupSizeConfiguration` задает конфигурацию размеров`.
@@ -7,6 +8,7 @@ import SwiftUI
     - verticalSpacing: Вертикальный отступ между элементами.
  */
 public protocol RadioboxGroupSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @ApiName("itemSpacing")
     var verticalSpacing: CGFloat { get }
 }
 

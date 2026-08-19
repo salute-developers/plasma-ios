@@ -17,9 +17,11 @@ public struct Loader {
         )
     }
     
-    public static let all: [Variation<LoaderAppearance>] = [
-        Loader.default.variation,
-    ]
+    public static var all: [Variation<LoaderAppearance>] {
+        [
+            Loader.default.variation,
+        ]
+    }
 }
 
 public struct LoaderVariation {

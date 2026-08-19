@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  Протокол `ButtonSizeConfiguration` определяет размеры и отступы кнопки, которые можно настроить для различных стилей и вариантов кнопок.
@@ -23,31 +24,37 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
     /**
      Shape token скругления углов кнопки.
      */
+    @ApiName("shape")
     var pathDrawer: PathDrawer { get }
     
     /**
      Внутренние отступы кнопки.
      */
+    @ApiValue("insets(_, paddingStart, _, paddingEnd)")
     var paddings: EdgeInsets { get }
     
     /**
      Размер иконки, отображаемой в кнопке.
      */
+    @ApiValue("size(iconSize, iconSize)")
     var iconSize: CGSize { get }
     
     /**
      Размер спиннера загрузки в кнопке.
      */
+    @ApiValue("size(spinnerSize, spinnerSize)")
     var spinnerSize: CGSize { get }
     
     /**
      Горизонтальный промежуток между иконкой и текстом кнопки.
      */
+    @ApiName("iconMargin")
     var iconHorizontalGap: CGFloat { get }
     
     /**
      Горизонтальный промежуток между заголовком и подзаголовком кнопки.
      */
+    @ApiName("valueMargin")
     var titleHorizontalGap: CGFloat { get }
     
 }

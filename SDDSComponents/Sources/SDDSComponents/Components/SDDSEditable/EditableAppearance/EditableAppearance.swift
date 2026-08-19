@@ -1,14 +1,22 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
+@ApiInfo
 public struct EditableAppearance {
+    @ApiName("textColor")
     public var textColorDefault: ColorToken
+    @ApiName("textColor")
     public var textColorReadonly: ColorToken
+    @ApiName("iconColor")
     public var iconColorDefault: ColorToken
+    @ApiName("iconColor")
     public var iconColorReadonly: ColorToken
     public var cursorColor: ColorToken
+    @ApiRawNumber
     public var disabledAlpha: CGFloat
+    @ApiName("textStyle")
     public var textTypography: TypographyConfiguration
     public var size: EditableSizeConfiguration
     

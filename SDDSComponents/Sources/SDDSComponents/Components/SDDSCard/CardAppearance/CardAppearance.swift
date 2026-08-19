@@ -1,7 +1,9 @@
 import SwiftUI
 import Foundation
 import SDDSThemeCore
+import SDDSApiInfo
 
+@ApiInfo(components: ["CardClear", "CardSolid"])
 public struct CardAppearance {
     public var size: CardSizeConfiguration
     public var backgroundColor: ColorToken

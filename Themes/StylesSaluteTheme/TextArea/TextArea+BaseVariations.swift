@@ -9,6 +9,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -20,6 +21,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
@@ -31,6 +33,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
@@ -42,6 +45,7 @@ public struct TextArea {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
@@ -50,41 +54,43 @@ public struct TextArea {
         )
     }
     
-    public static let all: [Variation<TextAreaAppearance>] = [
-        TextArea.l.variation,
-        TextArea.l.innerLabel.variation,
-        TextArea.l.innerLabel.requiredEnd.variation,
-        TextArea.l.innerLabel.requiredStart.variation,
-        TextArea.l.outerLabel.variation,
-        TextArea.l.outerLabel.requiredEnd.variation,
-        TextArea.l.outerLabel.requiredStart.variation,
-        TextArea.l.requiredEnd.variation,
-        TextArea.l.requiredStart.variation,
-        TextArea.m.variation,
-        TextArea.m.innerLabel.variation,
-        TextArea.m.innerLabel.requiredEnd.variation,
-        TextArea.m.innerLabel.requiredStart.variation,
-        TextArea.m.outerLabel.variation,
-        TextArea.m.outerLabel.requiredEnd.variation,
-        TextArea.m.outerLabel.requiredStart.variation,
-        TextArea.m.requiredEnd.variation,
-        TextArea.m.requiredStart.variation,
-        TextArea.s.variation,
-        TextArea.s.innerLabel.variation,
-        TextArea.s.innerLabel.requiredEnd.variation,
-        TextArea.s.innerLabel.requiredStart.variation,
-        TextArea.s.outerLabel.variation,
-        TextArea.s.outerLabel.requiredEnd.variation,
-        TextArea.s.outerLabel.requiredStart.variation,
-        TextArea.s.requiredEnd.variation,
-        TextArea.s.requiredStart.variation,
-        TextArea.xs.variation,
-        TextArea.xs.outerLabel.variation,
-        TextArea.xs.outerLabel.requiredEnd.variation,
-        TextArea.xs.outerLabel.requiredStart.variation,
-        TextArea.xs.requiredEnd.variation,
-        TextArea.xs.requiredStart.variation,
-    ]
+    public static var all: [Variation<TextAreaAppearance>] {
+        [
+            TextArea.l.variation,
+            TextArea.l.innerLabel.variation,
+            TextArea.l.innerLabel.requiredEnd.variation,
+            TextArea.l.innerLabel.requiredStart.variation,
+            TextArea.l.outerLabel.variation,
+            TextArea.l.outerLabel.requiredEnd.variation,
+            TextArea.l.outerLabel.requiredStart.variation,
+            TextArea.l.requiredEnd.variation,
+            TextArea.l.requiredStart.variation,
+            TextArea.m.variation,
+            TextArea.m.innerLabel.variation,
+            TextArea.m.innerLabel.requiredEnd.variation,
+            TextArea.m.innerLabel.requiredStart.variation,
+            TextArea.m.outerLabel.variation,
+            TextArea.m.outerLabel.requiredEnd.variation,
+            TextArea.m.outerLabel.requiredStart.variation,
+            TextArea.m.requiredEnd.variation,
+            TextArea.m.requiredStart.variation,
+            TextArea.s.variation,
+            TextArea.s.innerLabel.variation,
+            TextArea.s.innerLabel.requiredEnd.variation,
+            TextArea.s.innerLabel.requiredStart.variation,
+            TextArea.s.outerLabel.variation,
+            TextArea.s.outerLabel.requiredEnd.variation,
+            TextArea.s.outerLabel.requiredStart.variation,
+            TextArea.s.requiredEnd.variation,
+            TextArea.s.requiredStart.variation,
+            TextArea.xs.variation,
+            TextArea.xs.outerLabel.variation,
+            TextArea.xs.outerLabel.requiredEnd.variation,
+            TextArea.xs.outerLabel.requiredStart.variation,
+            TextArea.xs.requiredEnd.variation,
+            TextArea.xs.requiredStart.variation,
+        ]
+    }
 }
 
 public struct TextAreaVariation {

@@ -9,6 +9,7 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
@@ -22,6 +23,7 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
@@ -35,6 +37,7 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
@@ -48,6 +51,7 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.xl
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
@@ -61,6 +65,7 @@ public struct TextField {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
@@ -71,50 +76,52 @@ public struct TextField {
         )
     }
     
-    public static let all: [Variation<TextFieldAppearance>] = [
-        TextField.l.variation,
-        TextField.l.innerLabel.variation,
-        TextField.l.innerLabel.requiredEnd.variation,
-        TextField.l.innerLabel.requiredStart.variation,
-        TextField.l.outerLabel.variation,
-        TextField.l.outerLabel.requiredEnd.variation,
-        TextField.l.outerLabel.requiredStart.variation,
-        TextField.l.requiredEnd.variation,
-        TextField.l.requiredStart.variation,
-        TextField.m.variation,
-        TextField.m.innerLabel.variation,
-        TextField.m.innerLabel.requiredEnd.variation,
-        TextField.m.innerLabel.requiredStart.variation,
-        TextField.m.outerLabel.variation,
-        TextField.m.outerLabel.requiredEnd.variation,
-        TextField.m.outerLabel.requiredStart.variation,
-        TextField.m.requiredEnd.variation,
-        TextField.m.requiredStart.variation,
-        TextField.s.variation,
-        TextField.s.innerLabel.variation,
-        TextField.s.innerLabel.requiredEnd.variation,
-        TextField.s.innerLabel.requiredStart.variation,
-        TextField.s.outerLabel.variation,
-        TextField.s.outerLabel.requiredEnd.variation,
-        TextField.s.outerLabel.requiredStart.variation,
-        TextField.s.requiredEnd.variation,
-        TextField.s.requiredStart.variation,
-        TextField.xl.variation,
-        TextField.xl.innerLabel.variation,
-        TextField.xl.innerLabel.requiredEnd.variation,
-        TextField.xl.innerLabel.requiredStart.variation,
-        TextField.xl.outerLabel.variation,
-        TextField.xl.outerLabel.requiredEnd.variation,
-        TextField.xl.outerLabel.requiredStart.variation,
-        TextField.xl.requiredEnd.variation,
-        TextField.xl.requiredStart.variation,
-        TextField.xs.variation,
-        TextField.xs.outerLabel.variation,
-        TextField.xs.outerLabel.requiredEnd.variation,
-        TextField.xs.outerLabel.requiredStart.variation,
-        TextField.xs.requiredEnd.variation,
-        TextField.xs.requiredStart.variation,
-    ]
+    public static var all: [Variation<TextFieldAppearance>] {
+        [
+            TextField.l.variation,
+            TextField.l.innerLabel.variation,
+            TextField.l.innerLabel.requiredEnd.variation,
+            TextField.l.innerLabel.requiredStart.variation,
+            TextField.l.outerLabel.variation,
+            TextField.l.outerLabel.requiredEnd.variation,
+            TextField.l.outerLabel.requiredStart.variation,
+            TextField.l.requiredEnd.variation,
+            TextField.l.requiredStart.variation,
+            TextField.m.variation,
+            TextField.m.innerLabel.variation,
+            TextField.m.innerLabel.requiredEnd.variation,
+            TextField.m.innerLabel.requiredStart.variation,
+            TextField.m.outerLabel.variation,
+            TextField.m.outerLabel.requiredEnd.variation,
+            TextField.m.outerLabel.requiredStart.variation,
+            TextField.m.requiredEnd.variation,
+            TextField.m.requiredStart.variation,
+            TextField.s.variation,
+            TextField.s.innerLabel.variation,
+            TextField.s.innerLabel.requiredEnd.variation,
+            TextField.s.innerLabel.requiredStart.variation,
+            TextField.s.outerLabel.variation,
+            TextField.s.outerLabel.requiredEnd.variation,
+            TextField.s.outerLabel.requiredStart.variation,
+            TextField.s.requiredEnd.variation,
+            TextField.s.requiredStart.variation,
+            TextField.xl.variation,
+            TextField.xl.innerLabel.variation,
+            TextField.xl.innerLabel.requiredEnd.variation,
+            TextField.xl.innerLabel.requiredStart.variation,
+            TextField.xl.outerLabel.variation,
+            TextField.xl.outerLabel.requiredEnd.variation,
+            TextField.xl.outerLabel.requiredStart.variation,
+            TextField.xl.requiredEnd.variation,
+            TextField.xl.requiredStart.variation,
+            TextField.xs.variation,
+            TextField.xs.outerLabel.variation,
+            TextField.xs.outerLabel.requiredEnd.variation,
+            TextField.xs.outerLabel.requiredStart.variation,
+            TextField.xs.requiredEnd.variation,
+            TextField.xs.requiredStart.variation,
+        ]
+    }
 }
 
 public struct TextFieldVariation {

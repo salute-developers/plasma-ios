@@ -105,6 +105,30 @@ jobs:
           path: artifacts/
           retention-days: 30
 
+      - name: Build ThemeBuilder CLI
+        run: |
+          cd SDDSThemeBuilder
+          ./build_cli.sh
+          test -x build/themebuilder/SDDSThemeBuilder || { echo "❌ CLI binary not built"; exit 1; }
+
+      - name: Package ThemeBuilder CLI
+        env:
+          TAG: ${{ github.event.inputs.tag_name }}
+        run: |
+          cd SDDSThemeBuilder/build
+          rm -rf SDDSThemeBuilder-cli && mkdir -p SDDSThemeBuilder-cli
+          cp -R themebuilder/SDDSThemeBuilder themebuilder/SDDSThemeBuilderCore.framework SDDSThemeBuilder-cli/
+          test -f ../.sdds/ios-api-meta.json || { echo "❌ styles API meta not generated"; exit 1; }
+          cp ../.sdds/ios-api-meta.json SDDSThemeBuilder-cli/
+          ditto -c -k --sequesterRsrc --keepParent SDDSThemeBuilder-cli "SDDSThemeBuilder-cli-${TAG}.zip"
+
+      - name: Upload ThemeBuilder CLI to release
+        env:
+          TAG: ${{ github.event.inputs.tag_name }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          gh release upload "${TAG}" "SDDSThemeBuilder/build/SDDSThemeBuilder-cli-${TAG}.zip" --clobber
+
       - name: Determine changed modules
         id: changed
         run: |

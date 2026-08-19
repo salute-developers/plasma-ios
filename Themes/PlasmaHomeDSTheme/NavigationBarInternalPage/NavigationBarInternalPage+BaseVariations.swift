@@ -10,7 +10,7 @@ public struct NavigationBarInternalPage {
         appearance.size = NavigationBarInternalPageSize.`default`
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
-        appearance.backIcon = Asset.disclosureLeftOutline24.image
+        appearance.backIcon = Asset.chevronLeft24.image
         appearance.backIconColor = ColorToken.textDefaultPrimary
         appearance.backgroundColor = ColorToken.surfaceDefaultClear
         appearance.textColor = ColorToken.textDefaultPrimary
@@ -22,9 +22,11 @@ public struct NavigationBarInternalPage {
         )
     }
     
-    public static let all: [Variation<NavigationBarInternalPageAppearance>] = [
-        NavigationBarInternalPage.default.variation,
-    ]
+    public static var all: [Variation<NavigationBarInternalPageAppearance>] {
+        [
+            NavigationBarInternalPage.default.variation,
+        ]
+    }
 }
 
 public struct NavigationBarInternalPageVariation {
@@ -36,7 +38,7 @@ private extension NavigationBarInternalPageAppearance {
         var appearance = NavigationBarInternalPageAppearance()
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
-        appearance.backIcon = Asset.disclosureLeftOutline24.image
+        appearance.backIcon = Asset.chevronLeft24.image
         appearance.backIconColor = ColorToken.textDefaultPrimary
         appearance.backgroundColor = ColorToken.surfaceDefaultClear
         appearance.textColor = ColorToken.textDefaultPrimary

@@ -8,7 +8,7 @@ public struct SegmentItem {
     public static var l: GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.L> {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.l
-        appearance.counterAppearance = Counter.s.accent.appearance
+        appearance.counterAppearance = SegmentItemCounter.s.default.appearance
         appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
         appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
 
@@ -20,7 +20,7 @@ public struct SegmentItem {
     public static var m: GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.M> {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.m
-        appearance.counterAppearance = Counter.xs.accent.appearance
+        appearance.counterAppearance = SegmentItemCounter.xs.default.appearance
         appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyMBold.typography).asContainer
         appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyMBold.typography).asContainer
 
@@ -32,7 +32,7 @@ public struct SegmentItem {
     public static var s: GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.S> {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.s
-        appearance.counterAppearance = Counter.xs.accent.appearance
+        appearance.counterAppearance = SegmentItemCounter.xs.default.appearance
         appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
         appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodySBold.typography).asContainer
 
@@ -44,7 +44,7 @@ public struct SegmentItem {
     public static var xl: GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.Xl> {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.xl
-        appearance.counterAppearance = Counter.s.accent.appearance
+        appearance.counterAppearance = SegmentItemCounter.s.default.appearance
         appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
         appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyLBold.typography).asContainer
 
@@ -56,7 +56,7 @@ public struct SegmentItem {
     public static var xs: GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, SegmentItemVariation.Xs> {
         var appearance = SegmentItemAppearance.base
         appearance.size = SegmentItemSize.xs
-        appearance.counterAppearance = Counter.xxs.accent.appearance
+        appearance.counterAppearance = SegmentItemCounter.xxs.default.appearance
         appearance.subtitleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyXsBold.typography).asContainer
         appearance.titleTypography = SegmentItemTypography(oneSize: AdaptiveTypographyToken.bodyXsBold.typography).asContainer
 
@@ -66,18 +66,20 @@ public struct SegmentItem {
         )
     }
     
-    public static let all: [Variation<SegmentItemAppearance>] = [
-        SegmentItem.l.variation,
-        SegmentItem.l.pilled.variation,
-        SegmentItem.m.variation,
-        SegmentItem.m.pilled.variation,
-        SegmentItem.s.variation,
-        SegmentItem.s.pilled.variation,
-        SegmentItem.xl.variation,
-        SegmentItem.xl.pilled.variation,
-        SegmentItem.xs.variation,
-        SegmentItem.xs.pilled.variation,
-    ]
+    public static var all: [Variation<SegmentItemAppearance>] {
+        [
+            SegmentItem.l.variation,
+            SegmentItem.l.pilled.variation,
+            SegmentItem.m.variation,
+            SegmentItem.m.pilled.variation,
+            SegmentItem.s.variation,
+            SegmentItem.s.pilled.variation,
+            SegmentItem.xl.variation,
+            SegmentItem.xl.pilled.variation,
+            SegmentItem.xs.variation,
+            SegmentItem.xs.pilled.variation,
+        ]
+    }
 }
 
 public struct SegmentItemVariation {

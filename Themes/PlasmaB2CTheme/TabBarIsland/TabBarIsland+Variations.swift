@@ -34,7 +34,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     
     var `default`: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.default.appearance
         
         return .init(
             name: "`default`",
@@ -43,7 +43,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     }
     var accent: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.accent.appearance
         
         return .init(
             name: "accent",
@@ -52,7 +52,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     }
     var secondary: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -91,7 +91,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     
     var `default`: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.default.appearance
         
         return .init(
             name: "`default`",
@@ -100,7 +100,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     }
     var accent: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.accent.appearance
         
         return .init(
             name: "accent",
@@ -109,7 +109,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     }
     var secondary: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.l.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.l.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -160,7 +160,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     
     var `default`: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.default.appearance
         
         return .init(
             name: "`default`",
@@ -169,7 +169,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     }
     var accent: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.accent.appearance
         
         return .init(
             name: "accent",
@@ -178,7 +178,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     }
     var secondary: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -217,7 +217,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     
     var `default`: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.default.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.default.appearance
         
         return .init(
             name: "`default`",
@@ -226,7 +226,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     }
     var accent: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.accent.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.accent.appearance
         
         return .init(
             name: "accent",
@@ -235,7 +235,7 @@ public extension GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance
     }
     var secondary: AppearanceVariation<TabBarIslandAppearance> {
         var appearance = appearance
-        appearance.tabBarItemAppearance = TabBarItem.m.secondary.appearance
+        appearance.tabBarItemAppearance = TabBarItemSolid.m.secondary.appearance
         
         return .init(
             name: "secondary",
@@ -273,3 +273,4 @@ public extension ComponentAppearanceVariation<TabBarIsland, TabBarIslandAppearan
 private extension TabBarIslandAppearance {
     
 }
+

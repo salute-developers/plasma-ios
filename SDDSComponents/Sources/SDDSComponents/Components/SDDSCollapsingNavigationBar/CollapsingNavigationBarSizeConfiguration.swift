@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -8,6 +9,7 @@ import SwiftUI
 public protocol CollapsingNavigationBarSizeConfiguration {
     var backIconMargin: CGFloat { get }
     var descriptionPadding: CGFloat { get }
+    @ApiName("descriptionPadding", state: .collapsed)
     var descriptionPaddingCollapsed: CGFloat { get }
     var paddingStart: CGFloat { get }
     var paddingEnd: CGFloat { get }

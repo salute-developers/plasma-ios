@@ -66,14 +66,16 @@ public struct TextSkeletonHeader {
         )
     }
     
-    public static let all: [Variation<SkeletonAppearance>] = [
-        TextSkeletonHeader.h1.variation,
-        TextSkeletonHeader.h2.variation,
-        TextSkeletonHeader.h3.variation,
-        TextSkeletonHeader.h4.variation,
-        TextSkeletonHeader.h5.variation,
-        TextSkeletonHeader.h6.variation,
-    ]
+    public static var all: [Variation<SkeletonAppearance>] {
+        [
+            TextSkeletonHeader.h1.variation,
+            TextSkeletonHeader.h2.variation,
+            TextSkeletonHeader.h3.variation,
+            TextSkeletonHeader.h4.variation,
+            TextSkeletonHeader.h5.variation,
+            TextSkeletonHeader.h6.variation,
+        ]
+    }
 }
 
 public struct TextSkeletonHeaderVariation {
@@ -89,7 +91,7 @@ private extension SkeletonAppearance {
     static var base: SkeletonAppearance {
         var appearance = SkeletonAppearance()
         appearance.duration = CGFloat(700.0)
-        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
+        appearance.gradient = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
         return appearance
     }

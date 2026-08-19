@@ -1,7 +1,9 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
+@ApiInfo(components: ["SelectMultipleNormal", "SelectMultipleTight", "SelectSingleNormal", "SelectSingleTight"])
 public struct SelectAppearance {
     public var dropdownAppearance: DropdownMenuAppearance
     public var textFieldAppearance: TextFieldAppearance

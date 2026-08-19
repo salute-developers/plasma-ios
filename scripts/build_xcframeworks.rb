@@ -4,6 +4,24 @@ require 'fileutils'
 require 'optparse'
 require_relative 'common' # Подключаем общий файл
 
+BUILD_ONLY_MODULES = ['SDDSApiInfo'].freeze
+
+def strip_build_only_imports(framework_path)
+  Dir.glob(File.join(framework_path, "Modules/*.swiftmodule/*.swiftinterface")).each do |interface|
+    text = File.read(interface)
+    BUILD_ONLY_MODULES.each do |mod|
+      next unless text.include?("import #{mod}\n")
+      if text.include?("#{mod}.") || text.match?(/@Api\w+/)
+        print_error "#{File.basename(interface)} использует #{mod} — импорт нельзя убрать"
+        exit 1
+      end
+      text = text.gsub(/^import #{mod}\n/, '')
+      File.write(interface, text)
+      print_info "Убран build-only импорт #{mod} из #{File.basename(interface)}"
+    end
+  end
+end
+
 def build_xcframeworks(project_root_dir, workspace_name, project_name, modules, static_modules = [])
   print_info "Корневая директория проекта: #{project_root_dir}"
   build_configuration = "Release"
@@ -59,6 +77,9 @@ def build_xcframeworks(project_root_dir, workspace_name, project_name, modules, 
     is_static = static_modules.include?(scheme)
     framework_type = is_static ? "статический" : "динамический"
     print_info "Сборка #{framework_type} XCFramework для схемы #{scheme}"
+    if is_static
+      print_info "Статическая линковка берётся из MACH_O_TYPE таргета #{scheme}"
+    end
     
     # Определяем проект для каждого модуля
     scheme_project_path = nil
@@ -74,16 +95,13 @@ def build_xcframeworks(project_root_dir, workspace_name, project_name, modules, 
       end
     end
     
-    # Дополнительные параметры для статических фреймворков
-    static_build_settings = is_static ? "MACH_O_TYPE=staticlib " : ""
-    
     print_info "Создание архива для устройства iOS..."
     ios_archive_path = File.join(build_path, "#{scheme}-iphoneos.xcarchive")
-    archive_command_base = "xcodebuild archive -configuration #{build_configuration} #{static_build_settings}SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY=\"\" CODE_SIGN_ENTITLEMENTS=\"\""
+    archive_command_base = "xcodebuild archive -configuration #{build_configuration} DEPLOYMENT_POSTPROCESSING=NO STRIP_INSTALLED_PRODUCT=NO COPY_PHASE_STRIP=NO CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY=\"\" CODE_SIGN_ENTITLEMENTS=\"\""
     if workspace_name
-      execute_command("#{archive_command_base} -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos -destination 'generic/platform=iOS'")
+      execute_command("#{archive_command_base} -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_archive_path} -destination 'generic/platform=iOS'")
     elsif scheme_project_path
-      execute_command("#{archive_command_base} -project #{scheme_project_path} -scheme #{scheme} -archivePath #{ios_archive_path} -sdk iphoneos -destination 'generic/platform=iOS'")
+      execute_command("#{archive_command_base} -project #{scheme_project_path} -scheme #{scheme} -archivePath #{ios_archive_path} -destination 'generic/platform=iOS'")
     else
       print_error "Не удалось определить проект для схемы #{scheme}"
       next
@@ -91,14 +109,23 @@ def build_xcframeworks(project_root_dir, workspace_name, project_name, modules, 
 
     print_info "Создание архива для симулятора iOS..."
     ios_simulator_archive_path = File.join(build_path, "#{scheme}-iossimulator.xcarchive")
-    simulator_archive_command_base = "xcodebuild archive -configuration #{build_configuration} #{static_build_settings}SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY=\"\" CODE_SIGN_ENTITLEMENTS=\"\""
+    simulator_archive_command_base = "xcodebuild archive -configuration #{build_configuration} DEPLOYMENT_POSTPROCESSING=NO STRIP_INSTALLED_PRODUCT=NO COPY_PHASE_STRIP=NO CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO CODE_SIGN_IDENTITY=\"\" CODE_SIGN_ENTITLEMENTS=\"\""
     if workspace_name
-      execute_command("#{simulator_archive_command_base} -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator -destination 'generic/platform=iOS Simulator'")
+      execute_command("#{simulator_archive_command_base} -workspace #{workspace_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -destination 'generic/platform=iOS Simulator'")
     elsif scheme_project_path
-      execute_command("#{simulator_archive_command_base} -project #{scheme_project_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -sdk iphonesimulator -destination 'generic/platform=iOS Simulator'")
+      execute_command("#{simulator_archive_command_base} -project #{scheme_project_path} -scheme #{scheme} -archivePath #{ios_simulator_archive_path} -destination 'generic/platform=iOS Simulator'")
     else
       print_error "Не удалось определить проект для схемы #{scheme}"
       next
+    end
+
+    [ios_archive_path, ios_simulator_archive_path].each do |archive|
+      framework = File.join(archive, "Products/Library/Frameworks/#{scheme}.framework")
+      unless File.directory?(framework)
+        print_error "Архив #{File.basename(archive)} не содержит #{scheme}.framework — у таргета #{scheme} должно быть SKIP_INSTALL = NO (в командной строке его передавать нельзя: сломает macro-плагины пакетов)"
+        exit 1
+      end
+      strip_build_only_imports(framework)
     end
 
     print_info "Создание XCFramework..."

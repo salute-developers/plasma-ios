@@ -1500,3 +1500,4 @@ private extension NoteCompactAppearance {
     }
     
 }
+

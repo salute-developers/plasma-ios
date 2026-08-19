@@ -1,18 +1,22 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
+@ApiInfo(components: ["PaginationDotsHorizontal", "PaginationDotsVertical"])
 public struct PaginationDotsAppearance {
     public var size: PaginationDotsSizeConfiguration = DefaultPaginationDotsSize()
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var dotBackgroundStatefulColor: ButtonColor = ButtonColor(defaultColor: .clearColor)
 
+    @ApiName("dotBackgroundColor")
     @available(*, deprecated, message: "Use dotBackgroundStatefulColor.defaultColor.")
     public var dotBackgroundColor: ColorToken {
         get { dotBackgroundStatefulColor.defaultColor }
         set { dotBackgroundStatefulColor.defaultColor = newValue }
     }
 
+    @ApiName("dotBackgroundColor", state: .activated)
     @available(*, deprecated, message: "Use dotBackgroundStatefulColor.selectedColor.")
     public var dotBackgroundColorActivated: ColorToken {
         get { dotBackgroundStatefulColor.selectedColor }

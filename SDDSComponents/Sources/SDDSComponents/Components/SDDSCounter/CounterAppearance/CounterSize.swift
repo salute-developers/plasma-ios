@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
 public struct DefaultCounterSize: CounterSizeConfiguration {
     public var height: CGFloat = 0
@@ -13,7 +14,10 @@ public struct DefaultCounterSize: CounterSizeConfiguration {
 }
 
 public protocol CounterSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @ApiName("minHeight")
     var height: CGFloat { get }
+    @ApiName("minWidth")
     var width: CGFloat { get }
+    @ApiValue("insets(paddingTop, paddingLeft, paddingBottom, paddingRight)")
     var paddings: EdgeInsets { get }
 }

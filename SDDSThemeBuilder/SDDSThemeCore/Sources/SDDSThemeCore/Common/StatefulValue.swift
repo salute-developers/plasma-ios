@@ -16,6 +16,8 @@ public enum InteractiveState: String, CaseIterable, Codable, Hashable, ValueStat
     case error
     case readonly
     case collapsed
+    case inactive
+    case textInlined = "text-inlined"
 
     public var stateKey: String { rawValue }
 }

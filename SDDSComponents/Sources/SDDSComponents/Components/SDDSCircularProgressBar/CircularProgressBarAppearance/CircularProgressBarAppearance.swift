@@ -1,7 +1,9 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
+@ApiInfo
 public struct CircularProgressBarAppearance: Hashable {
     let id = UUID()
     public var valueColor: ColorToken

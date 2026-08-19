@@ -172,3 +172,4 @@ public extension ComponentAppearanceVariation<IconTabItem, TabItemAppearance> {
 private extension TabItemAppearance {
     
 }
+

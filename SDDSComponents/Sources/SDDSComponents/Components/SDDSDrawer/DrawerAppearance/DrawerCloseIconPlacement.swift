@@ -1,4 +1,5 @@
 import Foundation
+import SDDSApiInfo
 import SwiftUI
 @_exported import SDDSThemeCore
 
@@ -7,6 +8,7 @@ import SwiftUI
  */
 public enum DrawerCloseIconPlacement {
     case inner
+    @ApiDefault
     case none
     case outer
 }

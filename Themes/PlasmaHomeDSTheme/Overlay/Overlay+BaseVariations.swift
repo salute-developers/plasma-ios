@@ -37,11 +37,13 @@ public struct Overlay {
         )
     }
     
-    public static let all: [Variation<OverlayAppearance>] = [
-        Overlay.default.variation,
-        Overlay.directionBottom.variation,
-        Overlay.directionTop.variation,
-    ]
+    public static var all: [Variation<OverlayAppearance>] {
+        [
+            Overlay.default.variation,
+            Overlay.directionBottom.variation,
+            Overlay.directionTop.variation,
+        ]
+    }
 }
 
 public struct OverlayVariation {
@@ -53,7 +55,6 @@ public struct OverlayVariation {
 private extension OverlayAppearance {
     static var base: OverlayAppearance {
         var appearance = OverlayAppearance()
-        appearance.backgroundColor = .color(.clearColor)
         return appearance
     }
 }

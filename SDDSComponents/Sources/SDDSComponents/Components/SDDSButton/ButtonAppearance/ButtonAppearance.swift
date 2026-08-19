@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -21,6 +22,7 @@ import SwiftUI
  - Methods:
     - init: Инициализирует стили кнопки с заданными параметрами.
  */
+@ApiInfo(components: ["BasicButton", "IconButton", "LinkButton"])
 public struct ButtonAppearance {
     /**
      Конфигурация размеров кнопки, определяемая `ButtonSizeConfiguration`.
@@ -30,26 +32,31 @@ public struct ButtonAppearance {
     /**
      Стиль формы кнопки (например, закругленная или овальная), определяемый `ComponentShapeStyle`.
      */
+    @ApiIgnore
     public var shapeStyle: ComponentShapeStyle
 
     /**
      Типографика для текста заголовка кнопки, определяемая `TypographyConfiguration`.
      */
+    @ApiName("labelStyle")
     public var titleTypography: TypographyConfiguration
 
     /**
      Стиль заливки текста заголовка кнопки для различных состояний, определяемый `StatefulFillStyle`.
      */
+    @ApiName("labelColor")
     public var titleColor: StatefulFillStyle
 
     /**
      Типографика для текста подзаголовка кнопки, определяемая `TypographyConfiguration`.
      */
+    @ApiName("valueStyle")
     public var subtitleTypography: TypographyConfiguration
 
     /**
      Стиль заливки текста подзаголовка кнопки для различных состояний, определяемый `StatefulFillStyle`.
      */
+    @ApiName("valueColor")
     public var subtitleColor: StatefulFillStyle
 
     /**

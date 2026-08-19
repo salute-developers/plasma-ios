@@ -1,10 +1,12 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `NoteCompactAppearance` определяет внешний вид компонента NoteCompact.
  */
+@ApiInfo
 public struct NoteCompactAppearance {
     public var backgroundColor: ColorToken
     public var iconColor: ColorToken

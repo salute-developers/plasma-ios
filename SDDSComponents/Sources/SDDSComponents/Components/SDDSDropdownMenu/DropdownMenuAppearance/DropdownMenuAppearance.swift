@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  `DropdownMenuAppearance` представляет собой структуру для настройки внешнего вида выпадающего меню.
@@ -15,6 +16,7 @@ import SDDSThemeCore
     - shadow: Тень меню
     - size: Конфигурация размеров меню
  */
+@ApiInfo(components: ["DropdownMenuNormal", "DropdownMenuTight"])
 public struct DropdownMenuAppearance: Hashable {
     let id = UUID()
     public var listAppearance: ListAppearance

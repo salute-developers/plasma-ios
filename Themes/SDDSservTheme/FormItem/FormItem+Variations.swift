@@ -34,7 +34,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "l.requiredEnd",
@@ -51,7 +50,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "l.requiredStart",
@@ -69,7 +67,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
@@ -89,7 +87,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
@@ -150,7 +148,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "l.requiredEnd",
@@ -209,7 +206,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "l.requiredStart",
@@ -269,7 +265,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "l.titleStart.requiredEnd",
@@ -279,15 +274,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "l.titleStart.requiredStart",
@@ -305,7 +299,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
@@ -367,7 +361,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "l.titleStart.requiredEnd",
@@ -419,15 +412,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "l.titleStart.requiredStart",
@@ -487,7 +479,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "l.titleTop.requiredEnd",
@@ -497,15 +488,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "l.titleTop.requiredStart",
@@ -523,7 +513,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
     
@@ -585,7 +575,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "l.titleTop.requiredEnd",
@@ -637,15 +626,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "l.titleTop.requiredStart",
@@ -722,7 +710,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "m.requiredEnd",
@@ -739,7 +726,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "m.requiredStart",
@@ -757,7 +743,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
@@ -777,7 +763,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
@@ -838,7 +824,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "m.requiredEnd",
@@ -897,7 +882,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "m.requiredStart",
@@ -957,7 +941,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "m.titleStart.requiredEnd",
@@ -967,15 +950,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "m.titleStart.requiredStart",
@@ -993,7 +975,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
@@ -1055,7 +1037,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "m.titleStart.requiredEnd",
@@ -1107,15 +1088,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "m.titleStart.requiredStart",
@@ -1175,7 +1155,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "m.titleTop.requiredEnd",
@@ -1185,15 +1164,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "m.titleTop.requiredStart",
@@ -1211,7 +1189,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     
@@ -1273,7 +1251,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "m.titleTop.requiredEnd",
@@ -1325,15 +1302,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "m.titleTop.requiredStart",
@@ -1392,7 +1368,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "s.requiredEnd",
@@ -1409,7 +1384,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "s.requiredStart",
@@ -1445,7 +1419,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
@@ -1465,7 +1439,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
@@ -1526,7 +1500,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "s.requiredEnd",
@@ -1585,7 +1558,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "s.requiredStart",
@@ -1645,7 +1617,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "s.titleStart.requiredEnd",
@@ -1655,15 +1626,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "s.titleStart.requiredStart",
@@ -1681,7 +1651,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.start
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
@@ -1743,7 +1713,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "s.titleStart.requiredEnd",
@@ -1795,15 +1764,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "s.titleStart.requiredStart",
@@ -1863,7 +1831,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "s.titleTop.requiredEnd",
@@ -1873,15 +1840,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "s.titleTop.requiredStart",
@@ -1899,7 +1865,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         var appearance = appearance
         appearance.size = size
         appearance.hintIcon = Asset.infoCircleOutline16.image
-        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
+        appearance.optionalTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.titlePlacement = FormTitlePlacement.top
         appearance.titleTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
     
@@ -1961,7 +1927,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "s.titleTop.requiredEnd",
@@ -2013,15 +1978,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "s.titleTop.requiredStart",
@@ -2080,7 +2044,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "xs.requiredEnd",
@@ -2097,7 +2060,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "xs.requiredStart",
@@ -2214,7 +2176,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "xs.requiredEnd",
@@ -2273,7 +2234,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.inner
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.none
     
         return .init(
             name: "xs.requiredStart",
@@ -2333,7 +2293,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "xs.titleStart.requiredEnd",
@@ -2343,15 +2302,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "xs.titleStart.requiredStart",
@@ -2431,7 +2389,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "xs.titleStart.requiredEnd",
@@ -2483,15 +2440,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.start
     
         return .init(
             name: "xs.titleStart.requiredStart",
@@ -2551,7 +2507,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "xs.titleTop.requiredEnd",
@@ -2561,15 +2516,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "xs.titleTop.requiredStart",
@@ -2649,7 +2603,6 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
         appearance.indicatorAlignment = FormIndicatorAlignment.topEnd
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "xs.titleTop.requiredEnd",
@@ -2701,15 +2654,14 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var requiredStart: ComponentAppearanceVariation<FormItem, FormItemAppearance> {
         var size =  FormItemAnySize(size: appearance.size)
-
         size.indicatorOffset = CGPoint(x:4.0, y:0.0)
+
         var appearance = appearance
         appearance.size = size
         appearance.formType = FormType.required
         appearance.indicatorAlignment = FormIndicatorAlignment.centerStart
         appearance.indicatorAlignmentMode = FormIndicatorAlignmentMode.outer
         appearance.indicatorAppearance = Indicator.s.negative.appearance
-        appearance.titlePlacement = FormTitlePlacement.top
     
         return .init(
             name: "xs.titleTop.requiredStart",
@@ -2802,26 +2754,27 @@ private extension FormItemAppearance {
     
     var `default`: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary)
+        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
         return appearance
     }
     
     var negative: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultNegative)
+        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultNegative, values: [])
         return appearance
     }
     
     var positive: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultPositive)
+        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultPositive, values: [])
         return appearance
     }
     
     var warning: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultWarning)
+        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultWarning, values: [])
         return appearance
     }
     
 }
+

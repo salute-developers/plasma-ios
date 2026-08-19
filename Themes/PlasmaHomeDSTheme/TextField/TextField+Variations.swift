@@ -48,6 +48,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(l: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(l: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(l: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
@@ -426,6 +427,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(m: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(m: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(m: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
@@ -838,6 +840,7 @@ public extension GeneralAppearanceVariation<TextField, TextFieldAppearance, Text
 
         var appearance = appearance
         appearance.size = size
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(s: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(s: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(s: AdaptiveTypographyToken.bodySNormal.typography).asContainer
@@ -1187,3 +1190,4 @@ private extension TextFieldAppearance {
     }
     
 }
+

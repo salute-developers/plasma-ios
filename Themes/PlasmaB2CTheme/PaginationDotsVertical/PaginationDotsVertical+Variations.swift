@@ -167,3 +167,4 @@ public extension ComponentAppearanceVariation<PaginationDotsVertical, Pagination
 private extension PaginationDotsAppearance {
     
 }
+

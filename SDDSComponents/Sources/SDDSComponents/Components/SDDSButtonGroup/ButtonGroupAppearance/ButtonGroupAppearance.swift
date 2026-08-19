@@ -1,10 +1,12 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `ButtonGroupAppearance` определяет внешний вид компонента ButtonGroup.
  */
+@ApiInfo(components: ["BasicButtonGroup", "IconButtonGroup"])
 public struct ButtonGroupAppearance {
     public var buttonAppearance: ButtonAppearance?
     public var size: ButtonGroupSizeConfiguration

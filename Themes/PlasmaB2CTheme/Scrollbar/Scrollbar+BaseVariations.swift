@@ -24,10 +24,12 @@ public struct ScrollBar {
         )
     }
     
-    public static let all: [Variation<ScrollbarAppearance>] = [
-        ScrollBar.m.variation,
-        ScrollBar.s.variation,
-    ]
+    public static var all: [Variation<ScrollbarAppearance>] {
+        [
+            ScrollBar.m.variation,
+            ScrollBar.s.variation,
+        ]
+    }
 }
 
 public struct ScrollBarVariation {

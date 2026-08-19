@@ -183,3 +183,4 @@ public extension ComponentAppearanceVariation<TextSkeletonHeader, SkeletonAppear
 private extension SkeletonAppearance {
     
 }
+

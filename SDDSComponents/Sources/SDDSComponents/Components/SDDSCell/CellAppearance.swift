@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -20,6 +21,7 @@ import SwiftUI
  - switchStyle: Стиль компонента Switch.
  - radioBoxStyle: Стиль компонента RadioBox.
  */
+@ApiInfo
 public struct CellAppearance {
     public var size: CellSizeConfiguration
     public var labelTypography: TypographyConfiguration
@@ -30,9 +32,12 @@ public struct CellAppearance {
     public var subtitleColor: StatefulFillStyle
     public var disclosureTextTypography: TypographyConfiguration
     public var disclosureTextColor: StatefulFillStyle
+    @ApiName("disclosureIconColor")
     public var disclosureImageColor: StatefulFillStyle
+    @ApiName("disclosureIcon")
     public var disclosureImage: Image?
     public var avatarAppearance: AvatarAppearance
+    @ApiName("iconButtonStyle")
     public var buttonAppearance: ButtonAppearance
     public var checkboxAppearance: CheckboxAppearance
     public var radioboxAppearance: RadioboxAppearance

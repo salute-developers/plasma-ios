@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  `TabItemAppearance` определяет внешний вид элемента вкладки.
@@ -18,18 +19,24 @@ import SDDSThemeCore
     - actionIcon: Иконка действия
     - indicatorColor: Цвет индикатора выбора (опционально, если nil - берется из TabsAppearance)
  */
+@ApiInfo(components: ["IconTabItem", "TabItemDefault", "TabItemHeader"])
 public struct TabItemAppearance: Hashable {
     let id = UUID()
     public var size: TabItemSizeConfiguration
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    @ApiName("labelColor")
     public var labelColor: ButtonColor
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    @ApiName("valueColor")
     public var valueColor: ButtonColor
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    @ApiName("startContentColor")
     public var startContentColor: ButtonColor
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    @ApiName("endContentColor")
     public var endContentColor: ButtonColor
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    @ApiName("actionColor")
     public var actionColor: ButtonColor
     public var labelTypography: TypographyConfiguration
     public var valueTypography: TypographyConfiguration

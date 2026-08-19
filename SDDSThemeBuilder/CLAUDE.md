@@ -35,7 +35,26 @@ CLI-утилита (macOS command-line tool) генерации Swift-кода �
 
 Кастомный выходной каталог — опция `-o/--output`.
 
+## Что откуда берётся
+
+- Состав компонентов темы и имена файлов конфигов — из индекса DS
+  `components/<theme>/meta.json` (theme-converter). Генерятся только вариации, которые
+  в теме есть; чего iOS не умеет — печатается в лог.
+- Значения enum-свойств — из меты (`valueEnum`): case'ы, их id в конфиге и дефолт
+  задаются аннотациями на самом enum'е, отдельного реестра в генераторе нет.
+- Имена `*Appearance`/`*SizeConfiguration` — из `.sdds/ios-api-meta.json` (см.
+  [../Tools/SDDSApiInfoGenerator/CLAUDE.md](../Tools/SDDSApiInfoGenerator/CLAUDE.md)),
+  руками в генераторе не дублируются.
+- Связка «компонент → тип стиля» объявлена в самой библиотеке —
+  `@ApiInfo(components: [...])` на `*Appearance`, как на Android — и приезжает в мету.
+  Вывести её из данных нельзя: группировка по типам iOS не совпадает с группировкой DS
+  (у DS `basic-button`/`icon-button` — разные компоненты, на iOS это один
+  `ButtonAppearance`; и наоборот, один DS `tab-bar` — это `TabBar` и `TabBarIsland`).
+
 ## Источник темы
+
+`.sdds/ios-api-meta.json` — продукт сборки, не коммитится: генерится
+`scripts/generate_api_meta.sh`, который вызывают `build_cli.sh` и `run_tests.rb`.
 
 Приоритет: локальная `.sdds/`-директория DS Builder → удалённый/локальный zip-снапшот.
 `.sdds/` наполняется `scripts/fetch_sdds.sh` (DS Builder CLI). Токены/палитра в `.sdds/`

@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -12,13 +13,18 @@ import SwiftUI
  - indicatorCornerRadius: Радиус скругления углов индикатора прогресса.
  */
 public protocol ProgressBarSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @ApiName("backgroundHeight")
     var height: CGFloat { get }
     var indicatorHeight: CGFloat { get }
+    @ApiName("indicatorShape")
     var indicatorPathDrawer: PathDrawer { get }
+    @ApiName("backgroundShape")
     var pathDrawer: PathDrawer { get }
     @available(*, deprecated, message: "use 'pathDrawer' instead")
+    @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
     var cornerRadius: CGFloat { get }
     @available(*, deprecated, message: "use 'indicatorPathDrawer' instead")
+    @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
     var indicatorCornerRadius: CGFloat { get }
 }
 

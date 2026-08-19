@@ -1,6 +1,8 @@
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
+@ApiInfo
 public struct ImageAppearance {
     public var size: ImageSizeConfiguration
 

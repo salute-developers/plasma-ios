@@ -90,7 +90,10 @@ public struct IconTabsVariation {
 private extension TabsAppearance {
     static var base: TabsAppearance {
         var appearance = TabsAppearance()
-        appearance.disclosureColor = ButtonColor(defaultColor: ColorToken.textDefaultPrimary, highlightedColor: ColorToken.textDefaultPrimaryActive, hoveredColor: ColorToken.textDefaultPrimaryHover, selectedColor: .clearColor)
+        appearance.disclosureColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
+            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
+            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive)
+        ]))
         appearance.disclosureIcon = Asset.dotsHorizontalOutline24.image
         appearance.dividerAppearance = Divider.default.appearance
         appearance.indicatorColor = ColorToken.surfaceDefaultSolidDefault

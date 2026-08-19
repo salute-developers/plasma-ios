@@ -17,9 +17,11 @@ public struct Modal {
         )
     }
     
-    public static let all: [Variation<ModalAppearance>] = [
-        Modal.default.variation,
-    ]
+    public static var all: [Variation<ModalAppearance>] {
+        [
+            Modal.default.variation,
+        ]
+    }
 }
 
 public struct ModalVariation {

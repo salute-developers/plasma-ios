@@ -42,16 +42,18 @@ public struct Card {
         )
     }
     
-    public static let all: [Variation<CardAppearance>] = [
-        Card.l.variation,
-        Card.l.hasInnerPaddings.variation,
-        Card.m.variation,
-        Card.m.hasInnerPaddings.variation,
-        Card.s.variation,
-        Card.s.hasInnerPaddings.variation,
-        Card.xl.variation,
-        Card.xl.hasInnerPaddings.variation,
-    ]
+    public static var all: [Variation<CardAppearance>] {
+        [
+            Card.l.variation,
+            Card.l.hasInnerPaddings.variation,
+            Card.m.variation,
+            Card.m.hasInnerPaddings.variation,
+            Card.s.variation,
+            Card.s.hasInnerPaddings.variation,
+            Card.xl.variation,
+            Card.xl.hasInnerPaddings.variation,
+        ]
+    }
 }
 
 public struct CardVariation {

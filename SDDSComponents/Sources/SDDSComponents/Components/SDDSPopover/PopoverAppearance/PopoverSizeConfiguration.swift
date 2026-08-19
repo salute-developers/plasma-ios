@@ -1,9 +1,11 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 public protocol PopoverSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     var offset: CGFloat { get }
+    @ApiName("shape")
     var pathDrawer: PathDrawer { get }
     var tailHeight: CGFloat { get }
     var tailWidth: CGFloat { get }

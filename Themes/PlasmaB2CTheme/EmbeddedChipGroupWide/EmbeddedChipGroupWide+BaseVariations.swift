@@ -51,13 +51,15 @@ public struct EmbeddedChipGroupWide {
         )
     }
     
-    public static let all: [Variation<ChipGroupAppearance>] = [
-        EmbeddedChipGroupWide.l.variation,
-        EmbeddedChipGroupWide.m.variation,
-        EmbeddedChipGroupWide.s.variation,
-        EmbeddedChipGroupWide.xl.variation,
-        EmbeddedChipGroupWide.xs.variation,
-    ]
+    public static var all: [Variation<ChipGroupAppearance>] {
+        [
+            EmbeddedChipGroupWide.l.variation,
+            EmbeddedChipGroupWide.m.variation,
+            EmbeddedChipGroupWide.s.variation,
+            EmbeddedChipGroupWide.xl.variation,
+            EmbeddedChipGroupWide.xs.variation,
+        ]
+    }
 }
 
 public struct EmbeddedChipGroupWideVariation {

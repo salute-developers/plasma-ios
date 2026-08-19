@@ -1,49 +1,80 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
+@ApiInfo(components: ["TextAreaClear"])
 public struct TextAreaAppearance {
     public var id = UUID()
     public var size: TextAreaSizeConfiguration
+    @ApiName("chipStyle")
     public var chipAppearance: ChipAppearance
+    @ApiName("chipGroupStyle")
     public var chipGroupAppearance: ChipGroupAppearance
     public var labelPlacement: TextAreaLabelPlacement
+    @ApiFromVariation
     public var requiredPlacement: TextAreaRequiredPlacement
     public var backgroundColor: ColorToken
+    @ApiName("backgroundColor", state: .activated)
     public var backgroundColorFocused: ColorToken
     public var backgroundColorReadOnly: ColorToken?
+    @ApiIgnore
     public var borderColor: ColorToken
     public var captionColor: ColorToken
+    @ApiName("captionColor", state: .activated)
     public var captionColorFocused: ColorToken
     public var captionColorReadOnly: ColorToken?
+    @ApiName("captionStyle")
     public var captionTypography: TypographyConfiguration
     public var counterColor: ColorToken
+    @ApiIgnore
     public var counterColorReadOnly: ColorToken
+    @ApiName("counterStyle")
     public var counterTypography: TypographyConfiguration
     public var cursorColor: ColorToken
+    @ApiName("disableAlpha")
+    @ApiRawNumber
     public var disabledAlpha: CGFloat
     public var endContentColor: ColorToken
     public var endContentColorReadOnly: ColorToken?
+    @ApiIgnore
     public var endContentColorFocused: ColorToken
+    @ApiIgnore
     public var innerTitleTextAlignment: TextAlignment
+    @ApiName("labelStyle")
     public var innerTitleTypography: TypographyConfiguration
+    @ApiIgnore
     public var inputTextAlignment: TextAlignment
+    @ApiName("dividerColor")
     public var lineColor: ColorToken
+    @ApiName("dividerColor", state: .activated)
     public var lineColorFocused: ColorToken
+    @ApiName("dividerColorReadOnly")
     public var lineColorReadOnly: ColorToken
+    @ApiName("optionalColor")
     public var optionalTitleColor: ColorToken
     public var placeholderColor: ColorToken
+    @ApiName("placeholderColor", state: .activated)
     public var placeholderColorFocused: ColorToken
     public var placeholderColorReadOnly: ColorToken?
+    @ApiName("indicatorColor")
     public var requiredIndicatorColor: ColorToken
     public var startContentColor: ColorToken
+    @ApiIgnore
     public var startContentColorReadOnly: ColorToken
+    @ApiName("valueColor")
     public var textColor: ColorToken
+    @ApiName("valueColor", state: .activated)
     public var textColorFocused: ColorToken
+    @ApiName("valueColorReadOnly")
     public var textColorReadOnly: ColorToken?
+    @ApiName("valueStyle")
     public var textTypography: TypographyConfiguration
+    @ApiName("labelColor")
     public var titleColor: ColorToken
+    @ApiIgnore
     public var titleTextAlignment: TextAlignment
+    @ApiName("labelStyle")
     public var titleTypography: TypographyConfiguration
     public var scrollBarTrackColor: ColorToken
     public var scrollBarThumbColor: ColorToken

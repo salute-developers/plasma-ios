@@ -1,6 +1,8 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 
+@ApiInfo
 public struct CheckboxGroupAppearance {
     public var size: CheckboxGroupSizeConfiguration
     public var checkboxAppearance: CheckboxAppearance

@@ -8,20 +8,19 @@ struct CollapsingNavigationBarInternalPageSize {
 
     static let all: [CollapsingNavigationBarSizeConfiguration] = [
         CollapsingNavigationBarInternalPageSize.`default`,
-    ]
+    ] 
 }
-
 struct CollapsingNavigationBarInternalPageSizeDefault: CollapsingNavigationBarSizeConfiguration {
     var backIconMargin = CGFloat(4.0)
+    var bottomShape = DefaultPathDrawer() as PathDrawer as PathDrawer
     var descriptionPadding = CGFloat(12.0)
     var descriptionPaddingCollapsed = CGFloat(4.0)
     var horizontalSpacing = CGFloat(8.0)
     var paddingBottom = CGFloat(8.0)
-    var paddingEnd = CGFloat(16.0)
-    var paddingStart = CGFloat(16.0)
+    var paddingEnd = CGFloat(24.0)
+    var paddingStart = CGFloat(24.0)
     var paddingTop = CGFloat(8.0)
     var textBlockTopMargin = CGFloat(16.0)
-    var bottomShape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "CollapsingNavigationBarInternalPageSize"
     }
@@ -29,6 +28,7 @@ struct CollapsingNavigationBarInternalPageSizeDefault: CollapsingNavigationBarSi
 
 struct CollapsingNavigationBarInternalPageAnySize: CollapsingNavigationBarSizeConfiguration {
     var backIconMargin = CGFloat(0)
+    var bottomShape = DefaultPathDrawer() as PathDrawer
     var descriptionPadding = CGFloat(0)
     var descriptionPaddingCollapsed = CGFloat(0)
     var horizontalSpacing = CGFloat(0)
@@ -37,10 +37,10 @@ struct CollapsingNavigationBarInternalPageAnySize: CollapsingNavigationBarSizeCo
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
     var textBlockTopMargin = CGFloat(0)
-    var bottomShape = DefaultPathDrawer() as PathDrawer
 
     init(size: CollapsingNavigationBarSizeConfiguration) {
         self.backIconMargin = size.backIconMargin
+        self.bottomShape = size.bottomShape
         self.descriptionPadding = size.descriptionPadding
         self.descriptionPaddingCollapsed = size.descriptionPaddingCollapsed
         self.horizontalSpacing = size.horizontalSpacing
@@ -49,7 +49,6 @@ struct CollapsingNavigationBarInternalPageAnySize: CollapsingNavigationBarSizeCo
         self.paddingStart = size.paddingStart
         self.paddingTop = size.paddingTop
         self.textBlockTopMargin = size.textBlockTopMargin
-        self.bottomShape = size.bottomShape
     }
     var debugDescription: String {
         return "CollapsingNavigationBarInternalPageAnySize"

@@ -1,20 +1,27 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `CodeFieldAppearance` определяет внешний вид компонента CodeField.
  */
+@ApiInfo
 public struct CodeFieldAppearance {
     public var valueColor: ColorToken
+    @ApiName("valueColor", state: .error)
     public var valueColorError: ColorToken
     public var backgroundColor: ColorToken
+    @ApiName("backgroundColor", state: .activated)
     public var backgroundColorActivated: ColorToken
+    @ApiName("backgroundColor", state: .error)
     public var backgroundColorError: ColorToken
     public var cursorColor: ColorToken
     public var captionColor: ColorToken
+    @ApiName("captionColor", state: .error)
     public var captionColorError: ColorToken
     public var dotColor: ColorToken
+    @ApiName("dotColor", state: .error)
     public var dotColorError: ColorToken
     public var captionTypography: TypographyConfiguration
     public var valueTypography: TypographyConfiguration

@@ -1,9 +1,12 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
+@ApiInfo
 public struct FormItemAppearance {
     public var size: FormItemSizeConfiguration
+    @ApiRawNumber
     public var disableAlpha: CGFloat
 
     public var hintIcon: Image?
@@ -25,6 +28,7 @@ public struct FormItemAppearance {
     public var counterColor: StatefulColor
     public var counterTypography: TypographyConfiguration
 
+    @ApiName("formItemType")
     public var formType: FormType
     public var topTextAlignment: FormTextAlignment
     public var bottomTextAlignment: FormTextAlignment

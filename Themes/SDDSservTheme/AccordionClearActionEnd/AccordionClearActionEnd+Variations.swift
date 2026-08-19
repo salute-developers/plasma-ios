@@ -245,3 +245,4 @@ public extension ComponentAppearanceVariation<AccordionClearActionEnd, Accordion
 private extension AccordionAppearance {
     
 }
+

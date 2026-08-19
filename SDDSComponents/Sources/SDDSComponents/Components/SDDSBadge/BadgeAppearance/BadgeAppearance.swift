@@ -1,7 +1,9 @@
 import SwiftUI
 import Foundation
 import SDDSThemeCore
+import SDDSApiInfo
 
+@ApiInfo(components: ["BadgeClear", "BadgeTransparent", "IconBadge", "IconBadgeClear", "IconBadgeTransparent"])
 public struct BadgeAppearance {
     public var size: BadgeSizeConfiguration = DefaultBadgeSize()
     public var backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])

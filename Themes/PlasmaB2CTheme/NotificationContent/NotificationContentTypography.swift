@@ -30,6 +30,6 @@ struct NotificationContentTypography: GeneralTypographyConfiguration {
         if size is NotificationContentSizeNobuttonstretch {
             return noButtonStretch
         }
-        return nil
+        return buttonStretch
     }
 }

@@ -1,10 +1,14 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
+@ApiInfo(components: ["AccordionClearActionEnd", "AccordionClearActionStart", "AccordionSolidActionEnd", "AccordionSolidActionStart"])
 public struct AccordionAppearance: Hashable {
     let id = UUID()
+    @ApiName("accordionItemStyle")
     public var accordionItemAppearance: AccordionItemAppearance
+    @ApiName("dividerStyle")
     public var dividerAppearance: DividerAppearance
     public var size: AccordionSizeConfiguration
     

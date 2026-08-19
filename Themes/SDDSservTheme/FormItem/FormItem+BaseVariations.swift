@@ -50,44 +50,46 @@ public struct FormItem {
         )
     }
     
-    public static let all: [Variation<FormItemAppearance>] = [
-        FormItem.l.variation,
-        FormItem.l.requiredEnd.variation,
-        FormItem.l.requiredStart.variation,
-        FormItem.l.titleStart.variation,
-        FormItem.l.titleStart.requiredEnd.variation,
-        FormItem.l.titleStart.requiredStart.variation,
-        FormItem.l.titleTop.variation,
-        FormItem.l.titleTop.requiredEnd.variation,
-        FormItem.l.titleTop.requiredStart.variation,
-        FormItem.m.variation,
-        FormItem.m.requiredEnd.variation,
-        FormItem.m.requiredStart.variation,
-        FormItem.m.titleStart.variation,
-        FormItem.m.titleStart.requiredEnd.variation,
-        FormItem.m.titleStart.requiredStart.variation,
-        FormItem.m.titleTop.variation,
-        FormItem.m.titleTop.requiredEnd.variation,
-        FormItem.m.titleTop.requiredStart.variation,
-        FormItem.s.variation,
-        FormItem.s.requiredEnd.variation,
-        FormItem.s.requiredStart.variation,
-        FormItem.s.titleStart.variation,
-        FormItem.s.titleStart.requiredEnd.variation,
-        FormItem.s.titleStart.requiredStart.variation,
-        FormItem.s.titleTop.variation,
-        FormItem.s.titleTop.requiredEnd.variation,
-        FormItem.s.titleTop.requiredStart.variation,
-        FormItem.xs.variation,
-        FormItem.xs.requiredEnd.variation,
-        FormItem.xs.requiredStart.variation,
-        FormItem.xs.titleStart.variation,
-        FormItem.xs.titleStart.requiredEnd.variation,
-        FormItem.xs.titleStart.requiredStart.variation,
-        FormItem.xs.titleTop.variation,
-        FormItem.xs.titleTop.requiredEnd.variation,
-        FormItem.xs.titleTop.requiredStart.variation,
-    ]
+    public static var all: [Variation<FormItemAppearance>] {
+        [
+            FormItem.l.variation,
+            FormItem.l.requiredEnd.variation,
+            FormItem.l.requiredStart.variation,
+            FormItem.l.titleStart.variation,
+            FormItem.l.titleStart.requiredEnd.variation,
+            FormItem.l.titleStart.requiredStart.variation,
+            FormItem.l.titleTop.variation,
+            FormItem.l.titleTop.requiredEnd.variation,
+            FormItem.l.titleTop.requiredStart.variation,
+            FormItem.m.variation,
+            FormItem.m.requiredEnd.variation,
+            FormItem.m.requiredStart.variation,
+            FormItem.m.titleStart.variation,
+            FormItem.m.titleStart.requiredEnd.variation,
+            FormItem.m.titleStart.requiredStart.variation,
+            FormItem.m.titleTop.variation,
+            FormItem.m.titleTop.requiredEnd.variation,
+            FormItem.m.titleTop.requiredStart.variation,
+            FormItem.s.variation,
+            FormItem.s.requiredEnd.variation,
+            FormItem.s.requiredStart.variation,
+            FormItem.s.titleStart.variation,
+            FormItem.s.titleStart.requiredEnd.variation,
+            FormItem.s.titleStart.requiredStart.variation,
+            FormItem.s.titleTop.variation,
+            FormItem.s.titleTop.requiredEnd.variation,
+            FormItem.s.titleTop.requiredStart.variation,
+            FormItem.xs.variation,
+            FormItem.xs.requiredEnd.variation,
+            FormItem.xs.requiredStart.variation,
+            FormItem.xs.titleStart.variation,
+            FormItem.xs.titleStart.requiredEnd.variation,
+            FormItem.xs.titleStart.requiredStart.variation,
+            FormItem.xs.titleTop.variation,
+            FormItem.xs.titleTop.requiredEnd.variation,
+            FormItem.xs.titleTop.requiredStart.variation,
+        ]
+    }
 }
 
 public struct FormItemVariation {
@@ -133,15 +135,14 @@ private extension FormItemAppearance {
     static var base: FormItemAppearance {
         var appearance = FormItemAppearance()
         appearance.captionTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.counterColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary)
+        appearance.counterColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
         appearance.counterTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.disableAlpha = 0.4
-        appearance.hintColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary)
-        appearance.optionalColor = StatefulColor(defaultValue: ColorToken.textDefaultTertiary)
-        appearance.titleCaptionColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary)
+        appearance.hintColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
+        appearance.optionalColor = StatefulColor(defaultValue: ColorToken.textDefaultTertiary, values: [])
+        appearance.titleCaptionColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
         appearance.titleCaptionTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.titleColor = StatefulColor(defaultValue: ColorToken.textDefaultPrimary)
-        appearance.titlePlacement = FormTitlePlacement.none
+        appearance.titleColor = StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [])
         return appearance
     }
 }

@@ -10,6 +10,7 @@ public extension GeneralAppearanceVariation<DropdownMenuItemNormal, ListItemAppe
     var l: ComponentAppearanceVariation<DropdownMenuItemNormal, ListItemAppearance> {
         var size =  DropdownMenuItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(8.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.height = CGFloat(56.0)
         size.paddingBottom = CGFloat(16.0)
         size.paddingEnd = CGFloat(16.0)
@@ -66,6 +67,7 @@ public extension GeneralAppearanceVariation<DropdownMenuItemNormal, ListItemAppe
     var m: ComponentAppearanceVariation<DropdownMenuItemNormal, ListItemAppearance> {
         var size =  DropdownMenuItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(8.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.height = CGFloat(48.0)
         size.paddingBottom = CGFloat(12.0)
         size.paddingEnd = CGFloat(14.0)
@@ -122,6 +124,7 @@ public extension GeneralAppearanceVariation<DropdownMenuItemNormal, ListItemAppe
     var s: ComponentAppearanceVariation<DropdownMenuItemNormal, ListItemAppearance> {
         var size =  DropdownMenuItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(6.0)
+        size.contentPaddingStart = CGFloat(6.0)
         size.height = CGFloat(40.0)
         size.paddingBottom = CGFloat(11.0)
         size.paddingEnd = CGFloat(12.0)
@@ -178,6 +181,7 @@ public extension GeneralAppearanceVariation<DropdownMenuItemNormal, ListItemAppe
     var xl: ComponentAppearanceVariation<DropdownMenuItemNormal, ListItemAppearance> {
         var size =  DropdownMenuItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(8.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.height = CGFloat(64.0)
         size.paddingBottom = CGFloat(20.0)
         size.paddingEnd = CGFloat(18.0)
@@ -234,6 +238,7 @@ public extension GeneralAppearanceVariation<DropdownMenuItemNormal, ListItemAppe
     var xs: ComponentAppearanceVariation<DropdownMenuItemNormal, ListItemAppearance> {
         var size =  DropdownMenuItemNormalAnySize(size: appearance.size)
         size.contentPaddingEnd = CGFloat(6.0)
+        size.contentPaddingStart = CGFloat(6.0)
         size.height = CGFloat(32.0)
         size.paddingBottom = CGFloat(8.0)
         size.paddingEnd = CGFloat(8.0)
@@ -323,20 +328,21 @@ private extension ListItemAppearance {
     
     var `default`: ListItemAppearance {
         var appearance = self
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPrimary), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         return appearance
     }
     
     var negative: ListItemAppearance {
         var appearance = self
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultNegative), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultNegative), values: [])
         return appearance
     }
     
     var positive: ListItemAppearance {
         var appearance = self
-        appearance.titleColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.textDefaultPositive), values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPositive), values: [])
         return appearance
     }
     
 }
+

@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -10,10 +11,13 @@ import SwiftUI
     - tintColor: Цвет индикатора прогресса.
     - trackColor: Цвет фона прогресс-бара.
  */
+@ApiInfo
 public struct ProgressBarAppearance: Hashable {
     let id = UUID()
     public var size: ProgressBarSizeConfiguration
+    @ApiName("indicatorColor")
     public var tintFillStyle: FillStyle
+    @ApiName("backgroundColor")
     public var trackColor: ColorToken
     public var disabledAlpha: CGFloat
     

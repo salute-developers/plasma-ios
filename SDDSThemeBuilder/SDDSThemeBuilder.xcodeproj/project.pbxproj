@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		153F4004B62546402A36FF5A /* UniversalGeneratorParityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E0C50F2BB2307CF25882BB /* UniversalGeneratorParityTests.swift */; };
 		1AF7AC5AA13EAB634E3EA8F2 /* StandaloneBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EE10E1E6841F38C41F469B /* StandaloneBundle.swift */; };
 		243C1D132C05D1D300C17C0F /* Colors.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D122C05D1D300C17C0F /* Colors.stencil */; };
 		243C1D152C05D38600C17C0F /* Shapes.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D142C05D38600C17C0F /* Shapes.stencil */; };
@@ -32,6 +33,8 @@
 		24CB390C2BC95BDF00B32463 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 24CB390B2BC95BDF00B32463 /* ArgumentParser */; };
 		24F383152BD7C11100AB8057 /* ColorContextBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */; };
 		24F3831B2BD7C8F300AB8057 /* PaletteAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */; };
+		2AC5320A04AFD9619AA03EA9 /* UniversalAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B03E3E520F4585DA103308 /* UniversalAppearance.swift */; };
+		2F0E611C31B50F4D751504BD /* ApiMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D0EF379FEA49100D458347 /* ApiMeta.swift */; };
 		3613FCC6EC87AC637BB3D5B9 /* FormItemProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2ABE197F8EA2EE71C90D9F /* FormItemProps.swift */; };
 		692CEBE92DC26685003DFEFA /* ProgressBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692CEBE62DC26685003DFEFA /* ProgressBarAppearance.swift */; };
 		692CEBEA2DC26685003DFEFA /* ProgressBarSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692CEBE72DC26685003DFEFA /* ProgressBarSize.swift */; };
@@ -67,6 +70,8 @@
 		69A8759B2DAF9E470074C1BD /* CheckboxGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875952DAF9E470074C1BD /* CheckboxGroupProps.swift */; };
 		69A8759C2DAF9E470074C1BD /* RadioboxGroupProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A875972DAF9E470074C1BD /* RadioboxGroupProps.swift */; };
 		6EFD3CB528CFC6FB45048DA6 /* FormItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63CE858546033A3F29EDA6 /* FormItemSize.swift */; };
+		753B498E9CEA4360A71B36F4 /* UniversalGeneratorFileParityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1082F1F4DEF44809FA794DBC /* UniversalGeneratorFileParityTests.swift */; };
+		7F61900313CAF5190823CE58 /* MarkupValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB67268815269F4E2D83D69 /* MarkupValue.swift */; };
 		8093B5461F51AB3086F9873D /* FormItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CA09A05A15A3FA7BF73144 /* FormItemAppearance.swift */; };
 		8106AC6A2D1093FC004348B7 /* CodeGenerationComponent+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8106AC692D1093FC004348B7 /* CodeGenerationComponent+Extension.swift */; };
 		81090AC72E4393310086BB29 /* SpinnerSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81090AC52E4393310086BB29 /* SpinnerSize.swift */; };
@@ -474,15 +479,19 @@
 		81FD6D562D6E2779002A6E51 /* IndicatorSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D552D6E2776002A6E51 /* IndicatorSize.swift */; };
 		81FD6D582D6E27BF002A6E51 /* IndicatorAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D572D6E27BA002A6E51 /* IndicatorAppearance.swift */; };
 		82E57762BE576B1A119539FC /* SddsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4A6AB36664D8B7F379AD80 /* SddsConfig.swift */; };
+		85FCD12FF39C2908889E6847 /* MetaValueResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEDF966404B4505EE98ACE /* MetaValueResolver.swift */; };
 		A10000012C258EB5003B1064 /* TokenMetaResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000022C258EB5003B1064 /* TokenMetaResolverTests.swift */; };
 		A12B00112F90ABCD005A0001 /* ImageProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B00102F90ABCD005A0001 /* ImageProps.swift */; };
 		A12B00132F90ABCD005A0001 /* ImageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B00122F90ABCD005A0001 /* ImageAppearance.swift */; };
 		A12B00152F90ABCD005A0001 /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B00142F90ABCD005A0001 /* ImageSize.swift */; };
+		A86DCCC30800AEDD27DE9DC7 /* UniversalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F09E36693BE0DA5330F4855 /* UniversalConfig.swift */; };
 		B12B00C72F90ABCD005A0001 /* CarouselProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00C62F90ABCD005A0001 /* CarouselProps.swift */; };
 		B12B00C92F90ABCD005A0001 /* CarouselAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00C82F90ABCD005A0001 /* CarouselAppearance.swift */; };
 		B12B00CB2F90ABCD005A0001 /* CarouselSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00CA2F90ABCD005A0001 /* CarouselSize.swift */; };
 		DA6705C207C20ABE81B6D54C /* SddsThemeSourceReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE43A9FC5FEC3B62258E9804 /* SddsThemeSourceReaderTests.swift */; };
 		E2F4D42538685AD389F37800 /* SddsThemeSourceReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174EEEEF7D7128A896F9E3E2 /* SddsThemeSourceReader.swift */; };
+		E55C9C25EE7F1316E9FD0FBB /* ComponentStyleCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71AD7CE2C4C5EA16803C45 /* ComponentStyleCatalog.swift */; };
+		EDB6AD2BDF7FED62FB4EEB16 /* ComponentIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD9258789D7D333938D633 /* ComponentIndex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -568,8 +577,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1082F1F4DEF44809FA794DBC /* UniversalGeneratorFileParityTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UniversalGeneratorFileParityTests.swift; path = UniversalGeneratorFileParityTests.swift; sourceTree = "<group>"; };
 		174EEEEF7D7128A896F9E3E2 /* SddsThemeSourceReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SddsThemeSourceReader.swift; sourceTree = "<group>"; };
 		1B4A6AB36664D8B7F379AD80 /* SddsConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SddsConfig.swift; sourceTree = "<group>"; };
+		1E71AD7CE2C4C5EA16803C45 /* ComponentStyleCatalog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComponentStyleCatalog.swift; sourceTree = "<group>"; };
+		20E0C50F2BB2307CF25882BB /* UniversalGeneratorParityTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UniversalGeneratorParityTests.swift; sourceTree = "<group>"; };
 		243C1D122C05D1D300C17C0F /* Colors.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.stencil; sourceTree = "<group>"; };
 		243C1D142C05D38600C17C0F /* Shapes.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Shapes.stencil; sourceTree = "<group>"; };
 		243C1D162C05D39E00C17C0F /* Shadows.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Shadows.stencil; sourceTree = "<group>"; };
@@ -588,7 +600,10 @@
 		24F383142BD7C11100AB8057 /* ColorContextBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilder.swift; sourceTree = "<group>"; };
 		24F3831A2BD7C8F300AB8057 /* PaletteAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteAlias.swift; sourceTree = "<group>"; };
 		46EE10E1E6841F38C41F469B /* StandaloneBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StandaloneBundle.swift; sourceTree = "<group>"; };
+		47D0EF379FEA49100D458347 /* ApiMeta.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ApiMeta.swift; sourceTree = "<group>"; };
 		51CA09A05A15A3FA7BF73144 /* FormItemAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormItemAppearance.swift; path = FormItem/FormItemAppearance.swift; sourceTree = "<group>"; };
+		5BB67268815269F4E2D83D69 /* MarkupValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MarkupValue.swift; sourceTree = "<group>"; };
+		5F09E36693BE0DA5330F4855 /* UniversalConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UniversalConfig.swift; sourceTree = "<group>"; };
 		692CEBE62DC26685003DFEFA /* ProgressBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarAppearance.swift; sourceTree = "<group>"; };
 		692CEBE72DC26685003DFEFA /* ProgressBarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarSize.swift; sourceTree = "<group>"; };
 		692CEBEB2DC266A6003DFEFA /* ProgressBarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarProps.swift; sourceTree = "<group>"; };
@@ -1010,6 +1025,8 @@
 		81FD6D522D6E2749002A6E51 /* IndicatorProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorProps.swift; sourceTree = "<group>"; };
 		81FD6D552D6E2776002A6E51 /* IndicatorSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSize.swift; sourceTree = "<group>"; };
 		81FD6D572D6E27BA002A6E51 /* IndicatorAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorAppearance.swift; sourceTree = "<group>"; };
+		83B03E3E520F4585DA103308 /* UniversalAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UniversalAppearance.swift; sourceTree = "<group>"; };
+		8DAD9258789D7D333938D633 /* ComponentIndex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComponentIndex.swift; sourceTree = "<group>"; };
 		A10000022C258EB5003B1064 /* TokenMetaResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenMetaResolverTests.swift; sourceTree = "<group>"; };
 		A12B00102F90ABCD005A0001 /* ImageProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProps.swift; sourceTree = "<group>"; };
 		A12B00122F90ABCD005A0001 /* ImageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAppearance.swift; sourceTree = "<group>"; };
@@ -1017,6 +1034,7 @@
 		B12B00C62F90ABCD005A0001 /* CarouselProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselProps.swift; sourceTree = "<group>"; };
 		B12B00C82F90ABCD005A0001 /* CarouselAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselAppearance.swift; sourceTree = "<group>"; };
 		B12B00CA2F90ABCD005A0001 /* CarouselSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSize.swift; sourceTree = "<group>"; };
+		B5AEDF966404B4505EE98ACE /* MetaValueResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MetaValueResolver.swift; sourceTree = "<group>"; };
 		BE43A9FC5FEC3B62258E9804 /* SddsThemeSourceReaderTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SddsThemeSourceReaderTests.swift; sourceTree = "<group>"; };
 		DD63CE858546033A3F29EDA6 /* FormItemSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormItemSize.swift; path = FormItem/FormItemSize.swift; sourceTree = "<group>"; };
 		EF856C3C56D98E1C7C96BBD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -1396,6 +1414,7 @@
 				81CB0FDF2C245052003B1064 /* TemplateRenderer */,
 				81CF30642D5B254900FCBC79 /* Tokens */,
 				81CF30632D5B253E00FCBC79 /* Сomponents */,
+				F1E572B17D9003AA287D970F /* Universal */,
 			);
 			path = CodeGeneration;
 			sourceTree = "<group>";
@@ -1872,6 +1891,8 @@
 				81CB10032C258EB5003B1064 /* SchemeTokenNameValidatorTests.swift */,
 				A10000022C258EB5003B1064 /* TokenMetaResolverTests.swift */,
 				BE43A9FC5FEC3B62258E9804 /* SddsThemeSourceReaderTests.swift */,
+				20E0C50F2BB2307CF25882BB /* UniversalGeneratorParityTests.swift */,
+				1082F1F4DEF44809FA794DBC /* UniversalGeneratorFileParityTests.swift */,
 			);
 			path = SDDSThemeBuilderCoreTests;
 			sourceTree = "<group>";
@@ -2153,6 +2174,7 @@
 			isa = PBXGroup;
 			children = (
 				81A753442D47DDF0006E1BE7 /* GenerateComponentCommand.swift */,
+				8DAD9258789D7D333938D633 /* ComponentIndex.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2441,6 +2463,20 @@
 				1B4A6AB36664D8B7F379AD80 /* SddsConfig.swift */,
 			);
 			path = Sdds;
+			sourceTree = "<group>";
+		};
+		F1E572B17D9003AA287D970F /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				47D0EF379FEA49100D458347 /* ApiMeta.swift */,
+				5F09E36693BE0DA5330F4855 /* UniversalConfig.swift */,
+				B5AEDF966404B4505EE98ACE /* MetaValueResolver.swift */,
+				83B03E3E520F4585DA103308 /* UniversalAppearance.swift */,
+				1E71AD7CE2C4C5EA16803C45 /* ComponentStyleCatalog.swift */,
+				5BB67268815269F4E2D83D69 /* MarkupValue.swift */,
+			);
+			name = Universal;
+			path = Universal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3149,6 +3185,13 @@
 				82E57762BE576B1A119539FC /* SddsConfig.swift in Sources */,
 				E2F4D42538685AD389F37800 /* SddsThemeSourceReader.swift in Sources */,
 				1AF7AC5AA13EAB634E3EA8F2 /* StandaloneBundle.swift in Sources */,
+				2F0E611C31B50F4D751504BD /* ApiMeta.swift in Sources */,
+				A86DCCC30800AEDD27DE9DC7 /* UniversalConfig.swift in Sources */,
+				85FCD12FF39C2908889E6847 /* MetaValueResolver.swift in Sources */,
+				2AC5320A04AFD9619AA03EA9 /* UniversalAppearance.swift in Sources */,
+				E55C9C25EE7F1316E9FD0FBB /* ComponentStyleCatalog.swift in Sources */,
+				EDB6AD2BDF7FED62FB4EEB16 /* ComponentIndex.swift in Sources */,
+				7F61900313CAF5190823CE58 /* MarkupValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3170,6 +3213,8 @@
 				A10000012C258EB5003B1064 /* TokenMetaResolverTests.swift in Sources */,
 				81E1EDDE2BD6D6E400F86AE1 /* GeneralContextBuilderTests.swift in Sources */,
 				DA6705C207C20ABE81B6D54C /* SddsThemeSourceReaderTests.swift in Sources */,
+				153F4004B62546402A36FF5A /* UniversalGeneratorParityTests.swift in Sources */,
+				753B498E9CEA4360A71B36F4 /* UniversalGeneratorFileParityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3468,7 +3513,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeBuilderCore;
@@ -3505,7 +3550,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeBuilderCore;
@@ -3529,7 +3574,7 @@
 				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeBuilderCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -3546,7 +3591,7 @@
 				DEVELOPMENT_TEAM = Y6QKS4Y8B9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeBuilderCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -3576,7 +3621,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSTheme;
@@ -3617,7 +3662,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSTheme;
@@ -3657,7 +3702,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3690,7 +3735,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -3743,7 +3788,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -3775,7 +3820,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -3808,7 +3853,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeUtilities;
@@ -3845,7 +3890,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSThemeUtilities;

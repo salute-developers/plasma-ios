@@ -46,12 +46,14 @@ public struct LinkButton {
         )
     }
     
-    public static let all: [Variation<ButtonAppearance>] = [
-        LinkButton.l.variation,
-        LinkButton.m.variation,
-        LinkButton.s.variation,
-        LinkButton.xs.variation,
-    ]
+    public static var all: [Variation<ButtonAppearance>] {
+        [
+            LinkButton.l.variation,
+            LinkButton.m.variation,
+            LinkButton.s.variation,
+            LinkButton.xs.variation,
+        ]
+    }
 }
 
 public struct LinkButtonVariation {
@@ -64,7 +66,7 @@ public struct LinkButtonVariation {
 private extension ButtonAppearance {
     static var base: ButtonAppearance {
         var appearance = ButtonAppearance()
-        appearance.backgroundColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultClear), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.loadingAlpha = CGFloat(0.06)
         return appearance

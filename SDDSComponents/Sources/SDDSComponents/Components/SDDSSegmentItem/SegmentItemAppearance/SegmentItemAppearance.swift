@@ -1,22 +1,32 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
+@ApiInfo
 public struct SegmentItemAppearance {
     public var size: SegmentItemSizeConfiguration
+    @ApiIgnore
     public var shapeStyle: ComponentShapeStyle
+    @ApiName("labelStyle")
     public var titleTypography: TypographyConfiguration
+    @ApiName("labelColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var titleColor: ButtonColor
+    @ApiName("valueStyle")
     public var subtitleTypography: TypographyConfiguration
+    @ApiName("valueColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var subtitleColor: ButtonColor
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var iconColor: ButtonColor
+    @ApiName("startContentColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var startContentColor: ButtonColor
+    @ApiName("endContentColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var endContentColor: ButtonColor
+    @ApiName("backgroundColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var backgroundColor: ButtonColor
     public var disabledAlpha: CGFloat

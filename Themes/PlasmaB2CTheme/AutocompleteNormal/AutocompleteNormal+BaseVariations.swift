@@ -61,13 +61,15 @@ public struct AutocompleteNormal {
         )
     }
     
-    public static let all: [Variation<AutocompleteAppearance>] = [
-        AutocompleteNormal.l.variation,
-        AutocompleteNormal.m.variation,
-        AutocompleteNormal.s.variation,
-        AutocompleteNormal.xl.variation,
-        AutocompleteNormal.xs.variation,
-    ]
+    public static var all: [Variation<AutocompleteAppearance>] {
+        [
+            AutocompleteNormal.l.variation,
+            AutocompleteNormal.m.variation,
+            AutocompleteNormal.s.variation,
+            AutocompleteNormal.xl.variation,
+            AutocompleteNormal.xs.variation,
+        ]
+    }
 }
 
 public struct AutocompleteNormalVariation {

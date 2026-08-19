@@ -1,18 +1,32 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 public protocol SelectionControlSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @ApiName("toggleHeight")
     var height: CGFloat { get }
+    @ApiName("toggleWidth")
     var width: CGFloat { get }
+    @ApiName("textPadding")
     var horizontalGap: CGFloat { get }
+    @ApiName("descriptionPadding")
     var verticalGap: CGFloat { get }
+    @ApiName("shape")
     var togglePathDrawer: PathDrawer { get }
+    @ApiName("toggleBorderWidth")
     var lineWidth: CGFloat { get }
+    @ApiName("toggleIconWidth", state: .checked)
     var toggleCheckedIconWidth: CGFloat { get }
+    @ApiName("toggleIconHeight", state: .checked)
     var toggleCheckedIconHeight: CGFloat { get }
+    @ApiName("toggleIconWidth", state: .indeterminate)
+    @ApiStateOnly
     var toggleIndeterminateIconWidth: CGFloat { get }
+    @ApiName("toggleIconHeight", state: .indeterminate)
+    @ApiStateOnly
     var toggleIndeterminateIconHeight: CGFloat { get }
+    @ApiName("togglePadding")
     var togglePaddings: CGFloat { get }
 }
 

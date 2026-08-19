@@ -257,3 +257,4 @@ public extension ComponentAppearanceVariation<EmbeddedChipGroupWide, ChipGroupAp
 private extension ChipGroupAppearance {
     
 }
+

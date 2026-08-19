@@ -9,7 +9,7 @@ public struct TextSkeleton {
         var appearance = SkeletonAppearance.base
         appearance.size = TextSkeletonSize.`default`
         appearance.duration = CGFloat(700.0)
-        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
+        appearance.gradient = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
 
         return .init(
@@ -18,9 +18,11 @@ public struct TextSkeleton {
         )
     }
     
-    public static let all: [Variation<SkeletonAppearance>] = [
-        TextSkeleton.default.variation,
-    ]
+    public static var all: [Variation<SkeletonAppearance>] {
+        [
+            TextSkeleton.default.variation,
+        ]
+    }
 }
 
 public struct TextSkeletonVariation {
@@ -31,7 +33,7 @@ private extension SkeletonAppearance {
     static var base: SkeletonAppearance {
         var appearance = SkeletonAppearance()
         appearance.duration = CGFloat(700.0)
-        appearance.gradient = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
+        appearance.gradient = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
         appearance.shape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundM.cornerRadius) as PathDrawer
         return appearance
     }

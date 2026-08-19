@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -11,7 +12,11 @@ public protocol WheelSizeConfiguration: CustomDebugStringConvertible {
     var descriptionPadding: CGFloat { get }
     var separatorSpacing: CGFloat { get }
     var itemAlignment: WheelItemAlignment { get }
+    @ApiType(.iconSize)
+    @ApiName("controlIconUp")
     var controlIconUpSize: CGFloat { get }
+    @ApiType(.iconSize)
+    @ApiName("controlIconDown")
     var controlIconDownSize: CGFloat { get }
 }
 

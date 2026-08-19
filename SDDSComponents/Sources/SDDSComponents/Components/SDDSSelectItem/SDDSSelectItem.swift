@@ -138,17 +138,17 @@ private struct SelectItemCheckboxControl: View {
     var body: some View {
         ZStack {
             if isSelected {
-                shapeFill(togglePath, style: appearance.toggleColor.resolvedDefaultValue())
-                
+                shapeFill(togglePath, style: appearance.toggleColor.resolvedValue(for: [.checked]))
+
                 if let checkedIcon = appearance.checkedIcon {
                     checkedIcon.path(in: CGRect(x: 0, y: 0, width: iconWidth, height: iconHeight))
                         .frame(width: iconWidth, height: iconHeight)
-                        .fillForeground(style: appearance.toggleColorChecked.resolvedDefaultValue())
+                        .fillForeground(style: appearance.toggleColorChecked.resolvedValue(for: [.checked]))
                 } else {
                     CheckmarkDrawer(lineWidth: appearance.size.lineWidth * sizeScale)
                         .path(in: CGRect(x: 0, y: 0, width: iconWidth, height: iconHeight))
                         .frame(width: iconWidth, height: iconHeight)
-                        .fillForeground(style: appearance.toggleColorChecked.resolvedDefaultValue())
+                        .fillForeground(style: appearance.toggleColorChecked.resolvedValue(for: [.checked]))
                 }
             } else {
                 shapeStroke(togglePath, style: appearance.borderColor.resolvedDefaultValue(), lineWidth: appearance.size.lineWidth)

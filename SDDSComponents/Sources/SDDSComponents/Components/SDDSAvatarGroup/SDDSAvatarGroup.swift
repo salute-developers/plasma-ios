@@ -1,4 +1,5 @@
 import SwiftUI
+import SDDSApiInfo
 
 // MARK: - SDDSAvatarGroup
 
@@ -129,6 +130,8 @@ public struct SDDSAvatarGroup: View {
     - spacing: Расстояние между аватарами.
  */
 public protocol AvatarGroupSizeConfiguration {
+    @ApiName("itemSpacing")
     var borderWidth: CGFloat { get }
+    @ApiName("itemOffset")
     var spacing: CGFloat { get }
 }

@@ -5,9 +5,11 @@ import SDDSThemeCore
 
 struct WheelSize {
     static let h1 = WheelSizeH1()
+    static let h4 = WheelSizeH4()
 
     static let all: [WheelSizeConfiguration] = [
         WheelSize.h1,
+        WheelSize.h4,
     ] 
 }
 struct WheelSizeH1: WheelSizeConfiguration {
@@ -18,6 +20,18 @@ struct WheelSizeH1: WheelSizeConfiguration {
     var itemMinSpacing = CGFloat(20.0)
     var itemTextAfterPadding = CGFloat(2.0)
     var separatorSpacing = CGFloat(40.0)
+    public var debugDescription: String {
+        return "WheelSize"
+    }
+}
+struct WheelSizeH4: WheelSizeConfiguration {
+    var controlIconDownSize = CGFloat(36)
+    var controlIconUpSize = CGFloat(36)
+    var descriptionPadding = CGFloat(6.0)
+    var itemAlignment = WheelItemAlignment.start
+    var itemMinSpacing = CGFloat(32.0)
+    var itemTextAfterPadding = CGFloat(2.0)
+    var separatorSpacing = CGFloat(24.0)
     public var debugDescription: String {
         return "WheelSize"
     }

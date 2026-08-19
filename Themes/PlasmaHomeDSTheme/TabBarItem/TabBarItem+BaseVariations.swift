@@ -25,9 +25,11 @@ public struct TabBarItem {
         )
     }
     
-    public static let all: [Variation<TabBarItemAppearance>] = [
-        TabBarItem.default.variation,
-    ]
+    public static var all: [Variation<TabBarItemAppearance>] {
+        [
+            TabBarItem.default.variation,
+        ]
+    }
 }
 
 public struct TabBarItemVariation {

@@ -1,10 +1,12 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `WheelAppearance` определяет внешний вид компонента Wheel.
  */
+@ApiInfo
 public struct WheelAppearance {    
     // Цвета текста
     public var itemTextColor: ColorToken
@@ -12,8 +14,10 @@ public struct WheelAppearance {
     public var descriptionColor: ColorToken
     
     // Цвета иконок управления
+    @ApiName("controlIconUpColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var controlIconUpColor: ButtonColor
+    @ApiName("controlIconDownColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var controlIconDownColor: ButtonColor
     

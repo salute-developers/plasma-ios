@@ -9,6 +9,7 @@ public struct TextAreaClear {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -20,6 +21,7 @@ public struct TextAreaClear {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
@@ -31,6 +33,7 @@ public struct TextAreaClear {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
@@ -42,6 +45,7 @@ public struct TextAreaClear {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(
@@ -50,41 +54,43 @@ public struct TextAreaClear {
         )
     }
     
-    public static let all: [Variation<TextAreaAppearance>] = [
-        TextAreaClear.l.variation,
-        TextAreaClear.l.innerLabel.variation,
-        TextAreaClear.l.innerLabel.requiredEnd.variation,
-        TextAreaClear.l.innerLabel.requiredStart.variation,
-        TextAreaClear.l.outerLabel.variation,
-        TextAreaClear.l.outerLabel.requiredEnd.variation,
-        TextAreaClear.l.outerLabel.requiredStart.variation,
-        TextAreaClear.l.requiredEnd.variation,
-        TextAreaClear.l.requiredStart.variation,
-        TextAreaClear.m.variation,
-        TextAreaClear.m.innerLabel.variation,
-        TextAreaClear.m.innerLabel.requiredEnd.variation,
-        TextAreaClear.m.innerLabel.requiredStart.variation,
-        TextAreaClear.m.outerLabel.variation,
-        TextAreaClear.m.outerLabel.requiredEnd.variation,
-        TextAreaClear.m.outerLabel.requiredStart.variation,
-        TextAreaClear.m.requiredEnd.variation,
-        TextAreaClear.m.requiredStart.variation,
-        TextAreaClear.s.variation,
-        TextAreaClear.s.innerLabel.variation,
-        TextAreaClear.s.innerLabel.requiredEnd.variation,
-        TextAreaClear.s.innerLabel.requiredStart.variation,
-        TextAreaClear.s.outerLabel.variation,
-        TextAreaClear.s.outerLabel.requiredEnd.variation,
-        TextAreaClear.s.outerLabel.requiredStart.variation,
-        TextAreaClear.s.requiredEnd.variation,
-        TextAreaClear.s.requiredStart.variation,
-        TextAreaClear.xs.variation,
-        TextAreaClear.xs.outerLabel.variation,
-        TextAreaClear.xs.outerLabel.requiredEnd.variation,
-        TextAreaClear.xs.outerLabel.requiredStart.variation,
-        TextAreaClear.xs.requiredEnd.variation,
-        TextAreaClear.xs.requiredStart.variation,
-    ]
+    public static var all: [Variation<TextAreaAppearance>] {
+        [
+            TextAreaClear.l.variation,
+            TextAreaClear.l.innerLabel.variation,
+            TextAreaClear.l.innerLabel.requiredEnd.variation,
+            TextAreaClear.l.innerLabel.requiredStart.variation,
+            TextAreaClear.l.outerLabel.variation,
+            TextAreaClear.l.outerLabel.requiredEnd.variation,
+            TextAreaClear.l.outerLabel.requiredStart.variation,
+            TextAreaClear.l.requiredEnd.variation,
+            TextAreaClear.l.requiredStart.variation,
+            TextAreaClear.m.variation,
+            TextAreaClear.m.innerLabel.variation,
+            TextAreaClear.m.innerLabel.requiredEnd.variation,
+            TextAreaClear.m.innerLabel.requiredStart.variation,
+            TextAreaClear.m.outerLabel.variation,
+            TextAreaClear.m.outerLabel.requiredEnd.variation,
+            TextAreaClear.m.outerLabel.requiredStart.variation,
+            TextAreaClear.m.requiredEnd.variation,
+            TextAreaClear.m.requiredStart.variation,
+            TextAreaClear.s.variation,
+            TextAreaClear.s.innerLabel.variation,
+            TextAreaClear.s.innerLabel.requiredEnd.variation,
+            TextAreaClear.s.innerLabel.requiredStart.variation,
+            TextAreaClear.s.outerLabel.variation,
+            TextAreaClear.s.outerLabel.requiredEnd.variation,
+            TextAreaClear.s.outerLabel.requiredStart.variation,
+            TextAreaClear.s.requiredEnd.variation,
+            TextAreaClear.s.requiredStart.variation,
+            TextAreaClear.xs.variation,
+            TextAreaClear.xs.outerLabel.variation,
+            TextAreaClear.xs.outerLabel.requiredEnd.variation,
+            TextAreaClear.xs.outerLabel.requiredStart.variation,
+            TextAreaClear.xs.requiredEnd.variation,
+            TextAreaClear.xs.requiredStart.variation,
+        ]
+    }
 }
 
 public struct TextAreaClearVariation {

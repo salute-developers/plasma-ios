@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -13,20 +14,29 @@ import SwiftUI
     - subtitleColor: Цвет подзаголовка, когда переключатель включен.
     - tintColor: Цвет переключателя, когда он включен.
  */
+@ApiInfo
 public struct SwitchAppearance: Hashable {
     let id = UUID()
     public var size: SwitchSizeConfiguration
+    @ApiName("labelStyle")
     public var titleTypography: TypographyConfiguration
+    @ApiName("descriptionStyle")
     public var subtitleTypography: TypographyConfiguration
+    @ApiName("labelColor")
     public var titleColor: StatefulFillStyle
+    @ApiName("descriptionColor")
     public var subtitleColor: StatefulFillStyle
+    @ApiName("toggleTrackColor")
     public var toggleTrackColor: StatefulFillStyle
+    @ApiName("toggleTrackColor")
     public var toggleTrackColorChecked: StatefulFillStyle
     public var toggleTrackBorderColor: StatefulFillStyle
+    @ApiName("toggleThumbColor")
     public var toggleThumbColor: StatefulFillStyle
     public var disabledAlpha: CGFloat
     
     @available(*, deprecated, message: "Don't use it, public method will be removed")
+    @ApiValue("StatefulFillStyle(defaultValue: .color(.clearColor), values: [])", zero: "StatefulFillStyle(defaultValue: .color(.clearColor), values: [])")
     public var tintColor: StatefulFillStyle
     
     public init(

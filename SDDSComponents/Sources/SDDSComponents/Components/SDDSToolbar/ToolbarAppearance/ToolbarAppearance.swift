@@ -1,10 +1,12 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
  `ToolbarAppearance` определяет внешний вид компонента Toolbar.
  */
+@ApiInfo(components: ["ToolbarHorizontal", "ToolbarVertical"])
 public struct ToolbarAppearance: Hashable {
     private let id = UUID()
     

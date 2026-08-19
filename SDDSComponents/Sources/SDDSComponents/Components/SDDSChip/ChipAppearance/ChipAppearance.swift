@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -14,12 +15,17 @@ import SwiftUI
     - backgroundColor: Цвет чипа.
     - disabledAlpha: Прозрачность чипа в выключенном состоянии.
  */
+@ApiInfo(components: ["EmbeddedChip"])
 public struct ChipAppearance: Hashable {
     let id = UUID()
     public var size: ChipSizeConfiguration
+    @ApiName("labelColor")
     public var titleColor: StatefulFillStyle
+    @ApiName("labelStyle")
     public var titleTypography: TypographyConfiguration
+    @ApiName("contentStartColor")
     public var imageTintColor: StatefulFillStyle
+    @ApiName("contentEndColor")
     public var buttonTintColor: StatefulFillStyle
     public var backgroundColor: StatefulFillStyle
     public var disabledAlpha: CGFloat

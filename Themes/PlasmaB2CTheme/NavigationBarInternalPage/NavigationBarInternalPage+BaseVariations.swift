@@ -26,14 +26,16 @@ public struct NavigationBarInternalPage {
         )
     }
     
-    public static let all: [Variation<NavigationBarInternalPageAppearance>] = [
-        NavigationBarInternalPage.hasBackground.variation,
-        NavigationBarInternalPage.hasBackground.rounded.variation,
-        NavigationBarInternalPage.hasBackground.shadow.variation,
-        NavigationBarInternalPage.hasBackground.shadow.rounded.variation,
-        NavigationBarInternalPage.noBackground.variation,
-        NavigationBarInternalPage.noBackground.rounded.variation,
-    ]
+    public static var all: [Variation<NavigationBarInternalPageAppearance>] {
+        [
+            NavigationBarInternalPage.hasBackground.variation,
+            NavigationBarInternalPage.hasBackground.rounded.variation,
+            NavigationBarInternalPage.hasBackground.shadow.variation,
+            NavigationBarInternalPage.hasBackground.shadow.rounded.variation,
+            NavigationBarInternalPage.noBackground.variation,
+            NavigationBarInternalPage.noBackground.rounded.variation,
+        ]
+    }
 }
 
 public struct NavigationBarInternalPageVariation {

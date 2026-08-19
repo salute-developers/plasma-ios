@@ -56,7 +56,6 @@ jobs:
           xcodebuild test \
           -project SDDSDemoApp.xcodeproj \
           -scheme SDDSDemoApp \
-          -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,OS=26.2,name=iPhone 17 Pro' \
           -derivedDataPath ../DerivedDataSnapshotTests \
           -resultBundlePath ../TestResults_1.xcresult 2>&1 | tee ../test_output_1.log
@@ -99,7 +98,6 @@ jobs:
           xcodebuild test \
           -project SDDSDemoApp.xcodeproj \
           -scheme SDDSDemoApp \
-          -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,OS=26.2,name=iPhone 17 Pro' \
           -derivedDataPath ../DerivedDataSnapshotTests \
           -resultBundlePath ../TestResults_2.xcresult 2>&1 | tee ../test_output_2.log

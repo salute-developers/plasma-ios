@@ -19,7 +19,7 @@ struct BottomSheetSizeDefault: BottomSheetSizeConfiguration {
     var paddingEnd = CGFloat(16.0)
     var paddingStart = CGFloat(16.0)
     var paddingTop = CGFloat(16.0)
-    var pathDrawer = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXl.cornerRadius) as PathDrawer
+    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
     public var debugDescription: String {
         return "BottomSheetSize"
     }

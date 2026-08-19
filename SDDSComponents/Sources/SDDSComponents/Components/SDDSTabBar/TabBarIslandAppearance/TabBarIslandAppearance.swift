@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import SDDSThemeCore
+import SDDSApiInfo
 
 /**
  `TabBarIslandAppearance` определяет внешний вид островка таб-бара, включая цвета, тени и стили элементов.
@@ -11,6 +12,7 @@ import SDDSThemeCore
     - tabBarItemAppearance: Стиль элементов таб-бара
     - size: Конфигурация размеров и отступов островка таб-бара
  */
+@ApiInfo(components: ["TabBar", "TabBarIslandClear", "TabBarIslandHasLabel", "TabBarIslandHasLabelClear"])
 public struct TabBarIslandAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

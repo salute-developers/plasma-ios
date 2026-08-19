@@ -11,8 +11,8 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
         size.horizontalSpacing = CGFloat(8.0)
         size.paddingBottom = CGFloat(8.0)
-        size.paddingEnd = CGFloat(16.0)
-        size.paddingStart = CGFloat(16.0)
+        size.paddingEnd = CGFloat(24.0)
+        size.paddingStart = CGFloat(24.0)
         size.paddingTop = CGFloat(8.0)
         size.textBlockTopMargin = CGFloat(16.0)
 
@@ -58,3 +58,4 @@ public extension ComponentAppearanceVariation<NavigationBarMainPage, NavigationB
 private extension NavigationBarMainPageAppearance {
     
 }
+

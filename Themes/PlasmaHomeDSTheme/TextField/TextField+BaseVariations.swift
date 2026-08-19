@@ -8,6 +8,7 @@ public struct TextField {
     public static var l: GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.L> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.l
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
@@ -20,6 +21,7 @@ public struct TextField {
     public static var m: GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.M> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.m
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
@@ -32,6 +34,7 @@ public struct TextField {
     public static var s: GeneralAppearanceVariation<TextField, TextFieldAppearance, TextFieldVariation.S> {
         var appearance = TextFieldAppearance.base
         appearance.size = TextFieldSize.s
+        appearance.labelPlacement = TextFieldLabelPlacement.none
         appearance.textAfterTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textBeforeTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.textTypography = TextFieldTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
@@ -42,26 +45,28 @@ public struct TextField {
         )
     }
     
-    public static let all: [Variation<TextFieldAppearance>] = [
-        TextField.l.variation,
-        TextField.l.innerLabel.variation,
-        TextField.l.innerLabel.requiredEnd.variation,
-        TextField.l.innerLabel.requiredStart.variation,
-        TextField.l.requiredEnd.variation,
-        TextField.l.requiredStart.variation,
-        TextField.m.variation,
-        TextField.m.innerLabel.variation,
-        TextField.m.innerLabel.requiredEnd.variation,
-        TextField.m.innerLabel.requiredStart.variation,
-        TextField.m.requiredEnd.variation,
-        TextField.m.requiredStart.variation,
-        TextField.s.variation,
-        TextField.s.innerLabel.variation,
-        TextField.s.innerLabel.requiredEnd.variation,
-        TextField.s.innerLabel.requiredStart.variation,
-        TextField.s.requiredEnd.variation,
-        TextField.s.requiredStart.variation,
-    ]
+    public static var all: [Variation<TextFieldAppearance>] {
+        [
+            TextField.l.variation,
+            TextField.l.innerLabel.variation,
+            TextField.l.innerLabel.requiredEnd.variation,
+            TextField.l.innerLabel.requiredStart.variation,
+            TextField.l.requiredEnd.variation,
+            TextField.l.requiredStart.variation,
+            TextField.m.variation,
+            TextField.m.innerLabel.variation,
+            TextField.m.innerLabel.requiredEnd.variation,
+            TextField.m.innerLabel.requiredStart.variation,
+            TextField.m.requiredEnd.variation,
+            TextField.m.requiredStart.variation,
+            TextField.s.variation,
+            TextField.s.innerLabel.variation,
+            TextField.s.innerLabel.requiredEnd.variation,
+            TextField.s.innerLabel.requiredStart.variation,
+            TextField.s.requiredEnd.variation,
+            TextField.s.requiredStart.variation,
+        ]
+    }
 }
 
 public struct TextFieldVariation {

@@ -56,13 +56,15 @@ public struct ListTight {
         )
     }
     
-    public static let all: [Variation<ListAppearance>] = [
-        ListTight.l.variation,
-        ListTight.m.variation,
-        ListTight.s.variation,
-        ListTight.xl.variation,
-        ListTight.xs.variation,
-    ]
+    public static var all: [Variation<ListAppearance>] {
+        [
+            ListTight.l.variation,
+            ListTight.m.variation,
+            ListTight.s.variation,
+            ListTight.xl.variation,
+            ListTight.xs.variation,
+        ]
+    }
 }
 
 public struct ListTightVariation {

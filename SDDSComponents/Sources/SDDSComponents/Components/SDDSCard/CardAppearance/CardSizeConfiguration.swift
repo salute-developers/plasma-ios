@@ -1,12 +1,14 @@
 import SwiftUI
 import Foundation
 import SDDSThemeCore
+import SDDSApiInfo
 
 public protocol CardSizeConfiguration: CustomDebugStringConvertible {
     var paddingStart: CGFloat { get }
     var paddingEnd: CGFloat { get }
     var paddingTop: CGFloat { get }
     var paddingBottom: CGFloat { get }
+    @ApiName("shape")
     var pathDrawer: PathDrawer { get }
 }
 

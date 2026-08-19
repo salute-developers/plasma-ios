@@ -1,9 +1,16 @@
 #!/usr/bin/env ruby
 
 require 'fileutils'
+require 'open3'
 require_relative 'common'
 
 def run_tests(project_root_dir, workspace_name, modules)
+  output, status = Open3.capture2e(File.join(__dir__, 'generate_api_meta.sh'))
+  unless status.success?
+    puts output
+    abort('Не удалось сгенерировать ios-api-meta.json')
+  end
+
   workspace_path = File.join(project_root_dir, workspace_name)
   print_info "Путь к XCWorkspace: #{workspace_path}"
 

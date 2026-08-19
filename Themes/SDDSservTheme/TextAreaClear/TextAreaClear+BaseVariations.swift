@@ -9,6 +9,7 @@ public struct TextAreaClear {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.l
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.l.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -20,6 +21,7 @@ public struct TextAreaClear {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.m
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.m.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
         return .init(
@@ -31,6 +33,7 @@ public struct TextAreaClear {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.s
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.s.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
 
         return .init(
@@ -42,6 +45,7 @@ public struct TextAreaClear {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.xl
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xl.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodyLNormal.typography).asContainer
 
         return .init(
@@ -53,6 +57,7 @@ public struct TextAreaClear {
         var appearance = TextAreaAppearance.base
         appearance.size = TextAreaClearSize.xs
         appearance.chipGroupAppearance = EmbeddedChipGroupDense.xs.secondary.appearance
+        appearance.labelPlacement = TextAreaLabelPlacement.none
         appearance.textTypography = TextAreaClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
 
         return .init(

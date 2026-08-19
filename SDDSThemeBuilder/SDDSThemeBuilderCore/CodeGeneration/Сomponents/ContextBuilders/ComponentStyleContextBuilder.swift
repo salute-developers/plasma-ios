@@ -14,34 +14,31 @@ final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
     var context: String? {
         let comma = "."
         let parts = string.components(separatedBy: ".")
-        var componentVariation = [String]()
-        let _ = parts.filter {
-            if $0.contains("-") {
-                componentVariation = $0.components(separatedBy: "-")
-            }
-            return false
+        let componentVariation = parts.first(where: { $0.contains("-") })?.components(separatedBy: "-") ?? []
+
+        // Имя компонента собирается из первого сегмента: `tab-bar-item-solid` → `TabBarItemSolid`.
+        // Часть имён в конфигах несёт вид как суффикс (`badge-solid` — это `Badge`),
+        // поэтому если полное имя не компонент, пробуем без `solid`.
+        func name(_ words: [String]) -> String {
+            words.map { $0.contains("box") ? $0 : $0.capitalized }.joined()
         }
-        let componentParts = componentVariation
-            .filter {
-                if $0.contains("solid") && !string.contains("accordion") {
-                    return false
-                }
-                return true
-            }
-        
-        let componentName = componentVariation.isEmpty ? parts.first?.capitalized : componentParts
-            .map {
-                if !$0.contains("box") {
-                    return $0.capitalized
-                }
-                return $0
-            }
-            .joined()
-        
-        guard let component = CodeGenerationComponent(rawValue: componentName ?? "") else {
+        let candidates = componentVariation.isEmpty
+            ? [parts.first?.capitalized ?? ""]
+            : [name(componentVariation), name(componentVariation.filter { $0 != "solid" })]
+
+        guard let component = candidates.lazy.compactMap({ CodeGenerationComponent(rawValue: $0) }).first else {
             return nullify ? "nil" : ""
         }
-        let variations = Array(parts[1..<parts.count])
+        // Сегмент вариации в конфиге может быть через дефис (`has-background`),
+        // в сгенерированном коде это свойство — `hasBackground`.
+        let variations = parts[1..<parts.count].map { $0.contains("-") ? $0.camelCase : $0 }
+        // Конфиг темы может ссылаться на стиль, которого в ЭТОЙ теме нет
+        // (у компонента нет такой вариации либо компонента нет вовсе).
+        // Такую ссылку не эмитим — код с ней не компилируется.
+        guard ComponentStyleCatalog.contains(component: component, path: variations) else {
+            ComponentStyleCatalog.reportSkipped(style: string)
+            return nullify ? "nil" : ""
+        }
         
         var result = [String]()
         result += [component.rawValue]

@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -26,6 +27,7 @@ import SwiftUI
  )
  ```
  */
+@ApiInfo
 public struct TooltipAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

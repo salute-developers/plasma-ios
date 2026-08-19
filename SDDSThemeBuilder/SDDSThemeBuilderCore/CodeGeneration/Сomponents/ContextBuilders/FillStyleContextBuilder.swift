@@ -19,7 +19,12 @@ final class FillStyleContextBuilder: CodeGenerationContextBuilder {
         }
 
         guard type == "gradient" else {
-            return ".color(.\(string.camelCase))"
+            // The config may dim a color token (`alpha`); dropping it silently changes
+            // how the component looks.
+            guard let alpha else {
+                return ".color(.\(string.camelCase))"
+            }
+            return ".color(ColorToken.\(string.camelCase).withOpacity(\(alpha)))"
         }
 
         let gradientString = ".gradient(GradientToken.\(string.camelCase))"

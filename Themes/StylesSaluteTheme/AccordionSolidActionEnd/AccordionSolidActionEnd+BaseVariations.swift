@@ -86,16 +86,18 @@ public struct AccordionSolidActionEnd {
         )
     }
     
-    public static let all: [Variation<AccordionAppearance>] = [
-        AccordionSolidActionEnd.h2.variation,
-        AccordionSolidActionEnd.h3.variation,
-        AccordionSolidActionEnd.h4.variation,
-        AccordionSolidActionEnd.h5.variation,
-        AccordionSolidActionEnd.l.variation,
-        AccordionSolidActionEnd.m.variation,
-        AccordionSolidActionEnd.s.variation,
-        AccordionSolidActionEnd.xs.variation,
-    ]
+    public static var all: [Variation<AccordionAppearance>] {
+        [
+            AccordionSolidActionEnd.h2.variation,
+            AccordionSolidActionEnd.h3.variation,
+            AccordionSolidActionEnd.h4.variation,
+            AccordionSolidActionEnd.h5.variation,
+            AccordionSolidActionEnd.l.variation,
+            AccordionSolidActionEnd.m.variation,
+            AccordionSolidActionEnd.s.variation,
+            AccordionSolidActionEnd.xs.variation,
+        ]
+    }
 }
 
 public struct AccordionSolidActionEndVariation {

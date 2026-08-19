@@ -461,51 +461,52 @@ private extension SpinnerAppearance {
     
     var `default`: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPrimary), values: [])
-        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultSolidDefault), values: [])
+        appearance.endColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentPrimary), values: [])
+        appearance.startColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultSolidDefault), values: [])
         return appearance
     }
     
     var accent: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentAccent), values: [])
-        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultAccent), values: [])
+        appearance.endColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentAccent), values: [])
+        appearance.startColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultAccent), values: [])
         return appearance
     }
     
     var info: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentInfo), values: [])
-        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultInfo), values: [])
+        appearance.endColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentInfo), values: [])
+        appearance.startColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultInfo), values: [])
         return appearance
     }
     
     var negative: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentNegative), values: [])
-        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultNegative), values: [])
+        appearance.endColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentNegative), values: [])
+        appearance.startColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultNegative), values: [])
         return appearance
     }
     
     var positive: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPositive), values: [])
-        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultPositive), values: [])
+        appearance.endColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentPositive), values: [])
+        appearance.startColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultPositive), values: [])
         return appearance
     }
     
     var secondary: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentPrimary.withOpacity(0.32)), values: [])
-        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultSolidDefault.withOpacity(0.32)), values: [])
+        appearance.endColor = StatefulFillStyle(defaultValue: .color(ColorToken.surfaceDefaultTransparentPrimary.withOpacity(0.32)), values: [])
+        appearance.startColor = StatefulFillStyle(defaultValue: .color(ColorToken.surfaceDefaultSolidDefault.withOpacity(0.32)), values: [])
         return appearance
     }
     
     var warning: SpinnerAppearance {
         var appearance = self
-        appearance.endColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultTransparentWarning), values: [])
-        appearance.startColor = StatefulValue<SDDSComponents.FillStyle>(defaultValue: .color(ColorToken.surfaceDefaultWarning), values: [])
+        appearance.endColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentWarning), values: [])
+        appearance.startColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultWarning), values: [])
         return appearance
     }
     
 }
+

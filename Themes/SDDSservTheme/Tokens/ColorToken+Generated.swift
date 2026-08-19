@@ -7347,6 +7347,726 @@ public extension ColorToken {
     }
 
 
+    static var syntaxDefaultOrange: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultOrange.rawValue,
+            darkColor: Color(UIColor(hex: "#FFB38A")),
+            lightColor: Color(UIColor(hex: "#85380C"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultOrangeActive: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultOrangeActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FF9F6BFF")),
+            lightColor: Color(UIColor(hex: "#5D2809FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultOrangeHover: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultOrangeHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FFE8DBFF")),
+            lightColor: Color(UIColor(hex: "#B14B10FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultPink: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultPink.rawValue,
+            darkColor: Color(UIColor(hex: "#FF4791")),
+            lightColor: Color(UIColor(hex: "#9B0D46"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultPinkActive: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultPinkActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FF297EFF")),
+            lightColor: Color(UIColor(hex: "#760A35FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultPinkHover: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultPinkHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FF99C2FF")),
+            lightColor: Color(UIColor(hex: "#CB105BFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultRed: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultRed.rawValue,
+            darkColor: Color(UIColor(hex: "#FF8F9A")),
+            lightColor: Color(UIColor(hex: "#FF3D51"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultRedActive: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultRedActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FF707EFF")),
+            lightColor: Color(UIColor(hex: "#FF142CFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultRedHover: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultRedHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FFE0E3FF")),
+            lightColor: Color(UIColor(hex: "#FF8F9AFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultSkyBlue: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultSkyBlue.rawValue,
+            darkColor: Color(UIColor(hex: "#8AE6FF")),
+            lightColor: Color(UIColor(hex: "#0492B9"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultSkyBlueActive: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultSkyBlueActive.rawValue,
+            darkColor: Color(UIColor(hex: "#6BDFFFFF")),
+            lightColor: Color(UIColor(hex: "#037291FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultSkyBlueHover: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultSkyBlueHover.rawValue,
+            darkColor: Color(UIColor(hex: "#DBF7FFFF")),
+            lightColor: Color(UIColor(hex: "#05B9EBFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultSpring: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultSpring.rawValue,
+            darkColor: Color(UIColor(hex: "#C5FC5F")),
+            lightColor: Color(UIColor(hex: "#629405"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultSpringActive: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultSpringActive.rawValue,
+            darkColor: Color(UIColor(hex: "#BAFB41FF")),
+            lightColor: Color(UIColor(hex: "#486C04FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultSpringHover: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultSpringHover.rawValue,
+            darkColor: Color(UIColor(hex: "#E2FDAFFF")),
+            lightColor: Color(UIColor(hex: "#82C507FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultYellow: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultYellow.rawValue,
+            darkColor: Color(UIColor(hex: "#F3A912")),
+            lightColor: Color(UIColor(hex: "#F3A912"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultYellowActive: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultYellowActive.rawValue,
+            darkColor: Color(UIColor(hex: "#DA950BFF")),
+            lightColor: Color(UIColor(hex: "#DA950BFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxDefaultYellowHover: Self {
+        let base = Self(
+            id: Colors.syntaxDefaultYellowHover.rawValue,
+            darkColor: Color(UIColor(hex: "#F7C45FFF")),
+            lightColor: Color(UIColor(hex: "#F8CB72FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseOrange: Self {
+        let base = Self(
+            id: Colors.syntaxInverseOrange.rawValue,
+            darkColor: Color(UIColor(hex: "#85380C")),
+            lightColor: Color(UIColor(hex: "#FFB38A"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseOrangeActive: Self {
+        let base = Self(
+            id: Colors.syntaxInverseOrangeActive.rawValue,
+            darkColor: Color(UIColor(hex: "#5D2809FF")),
+            lightColor: Color(UIColor(hex: "#FF9F6BFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseOrangeHover: Self {
+        let base = Self(
+            id: Colors.syntaxInverseOrangeHover.rawValue,
+            darkColor: Color(UIColor(hex: "#B14B10FF")),
+            lightColor: Color(UIColor(hex: "#FFE8DBFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInversePink: Self {
+        let base = Self(
+            id: Colors.syntaxInversePink.rawValue,
+            darkColor: Color(UIColor(hex: "#9B0D46")),
+            lightColor: Color(UIColor(hex: "#FF4791"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInversePinkActive: Self {
+        let base = Self(
+            id: Colors.syntaxInversePinkActive.rawValue,
+            darkColor: Color(UIColor(hex: "#760A35FF")),
+            lightColor: Color(UIColor(hex: "#FF297EFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInversePinkHover: Self {
+        let base = Self(
+            id: Colors.syntaxInversePinkHover.rawValue,
+            darkColor: Color(UIColor(hex: "#CB105BFF")),
+            lightColor: Color(UIColor(hex: "#FF99C2FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseRed: Self {
+        let base = Self(
+            id: Colors.syntaxInverseRed.rawValue,
+            darkColor: Color(UIColor(hex: "#FF3D51")),
+            lightColor: Color(UIColor(hex: "#FF8F9A"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseRedActive: Self {
+        let base = Self(
+            id: Colors.syntaxInverseRedActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FF142CFF")),
+            lightColor: Color(UIColor(hex: "#FF707EFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseRedHover: Self {
+        let base = Self(
+            id: Colors.syntaxInverseRedHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FF8F9AFF")),
+            lightColor: Color(UIColor(hex: "#FFE0E3FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseSkyBlue: Self {
+        let base = Self(
+            id: Colors.syntaxInverseSkyBlue.rawValue,
+            darkColor: Color(UIColor(hex: "#0492B9")),
+            lightColor: Color(UIColor(hex: "#8AE6FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseSkyBlueActive: Self {
+        let base = Self(
+            id: Colors.syntaxInverseSkyBlueActive.rawValue,
+            darkColor: Color(UIColor(hex: "#037291FF")),
+            lightColor: Color(UIColor(hex: "#6BDFFFFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseSkyBlueHover: Self {
+        let base = Self(
+            id: Colors.syntaxInverseSkyBlueHover.rawValue,
+            darkColor: Color(UIColor(hex: "#05B9EBFF")),
+            lightColor: Color(UIColor(hex: "#DBF7FFFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseSpring: Self {
+        let base = Self(
+            id: Colors.syntaxInverseSpring.rawValue,
+            darkColor: Color(UIColor(hex: "#629405")),
+            lightColor: Color(UIColor(hex: "#C5FC5F"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseSpringActive: Self {
+        let base = Self(
+            id: Colors.syntaxInverseSpringActive.rawValue,
+            darkColor: Color(UIColor(hex: "#486C04FF")),
+            lightColor: Color(UIColor(hex: "#BAFB41FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseSpringHover: Self {
+        let base = Self(
+            id: Colors.syntaxInverseSpringHover.rawValue,
+            darkColor: Color(UIColor(hex: "#82C507FF")),
+            lightColor: Color(UIColor(hex: "#E2FDAFFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseYellow: Self {
+        let base = Self(
+            id: Colors.syntaxInverseYellow.rawValue,
+            darkColor: Color(UIColor(hex: "#F3A912")),
+            lightColor: Color(UIColor(hex: "#F3A912"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseYellowActive: Self {
+        let base = Self(
+            id: Colors.syntaxInverseYellowActive.rawValue,
+            darkColor: Color(UIColor(hex: "#DA950BFF")),
+            lightColor: Color(UIColor(hex: "#DA950BFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxInverseYellowHover: Self {
+        let base = Self(
+            id: Colors.syntaxInverseYellowHover.rawValue,
+            darkColor: Color(UIColor(hex: "#F8CB72FF")),
+            lightColor: Color(UIColor(hex: "#F7C45FFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkOrange: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkOrange.rawValue,
+            darkColor: Color(UIColor(hex: "#FFB38A")),
+            lightColor: Color(UIColor(hex: "#FFB38A"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkOrangeActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkOrangeActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FF9F6BFF")),
+            lightColor: Color(UIColor(hex: "#FF9F6BFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkOrangeHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkOrangeHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FFE8DBFF")),
+            lightColor: Color(UIColor(hex: "#FFE8DBFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkPink: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkPink.rawValue,
+            darkColor: Color(UIColor(hex: "#FF4791")),
+            lightColor: Color(UIColor(hex: "#FF4791"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkPinkActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkPinkActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FF297EFF")),
+            lightColor: Color(UIColor(hex: "#FF297EFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkPinkHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkPinkHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FF99C2FF")),
+            lightColor: Color(UIColor(hex: "#FF99C2FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkRed: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkRed.rawValue,
+            darkColor: Color(UIColor(hex: "#FF8F9A")),
+            lightColor: Color(UIColor(hex: "#FF8F9A"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkRedActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkRedActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FF707EFF")),
+            lightColor: Color(UIColor(hex: "#FF707EFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkRedHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkRedHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FFE0E3FF")),
+            lightColor: Color(UIColor(hex: "#FFE0E3FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkSkyBlue: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkSkyBlue.rawValue,
+            darkColor: Color(UIColor(hex: "#8AE6FF")),
+            lightColor: Color(UIColor(hex: "#8AE6FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkSkyBlueActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkSkyBlueActive.rawValue,
+            darkColor: Color(UIColor(hex: "#6BDFFFFF")),
+            lightColor: Color(UIColor(hex: "#6BDFFFFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkSkyBlueHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkSkyBlueHover.rawValue,
+            darkColor: Color(UIColor(hex: "#DBF7FFFF")),
+            lightColor: Color(UIColor(hex: "#DBF7FFFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkSpring: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkSpring.rawValue,
+            darkColor: Color(UIColor(hex: "#C5FC5F")),
+            lightColor: Color(UIColor(hex: "#C5FC5F"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkSpringActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkSpringActive.rawValue,
+            darkColor: Color(UIColor(hex: "#BAFB41FF")),
+            lightColor: Color(UIColor(hex: "#BAFB41FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkSpringHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkSpringHover.rawValue,
+            darkColor: Color(UIColor(hex: "#E2FDAFFF")),
+            lightColor: Color(UIColor(hex: "#E2FDAFFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkYellow: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkYellow.rawValue,
+            darkColor: Color(UIColor(hex: "#F3A912")),
+            lightColor: Color(UIColor(hex: "#F3A912"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkYellowActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkYellowActive.rawValue,
+            darkColor: Color(UIColor(hex: "#DA950BFF")),
+            lightColor: Color(UIColor(hex: "#DA950BFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnDarkYellowHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnDarkYellowHover.rawValue,
+            darkColor: Color(UIColor(hex: "#F7C45FFF")),
+            lightColor: Color(UIColor(hex: "#F7C45FFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightOrange: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightOrange.rawValue,
+            darkColor: Color(UIColor(hex: "#85380C")),
+            lightColor: Color(UIColor(hex: "#85380C"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightOrangeActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightOrangeActive.rawValue,
+            darkColor: Color(UIColor(hex: "#5D2809FF")),
+            lightColor: Color(UIColor(hex: "#5D2809FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightOrangeHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightOrangeHover.rawValue,
+            darkColor: Color(UIColor(hex: "#B14B10FF")),
+            lightColor: Color(UIColor(hex: "#B14B10FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightPink: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightPink.rawValue,
+            darkColor: Color(UIColor(hex: "#9B0D46")),
+            lightColor: Color(UIColor(hex: "#9B0D46"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightPinkActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightPinkActive.rawValue,
+            darkColor: Color(UIColor(hex: "#760A35FF")),
+            lightColor: Color(UIColor(hex: "#760A35FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightPinkHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightPinkHover.rawValue,
+            darkColor: Color(UIColor(hex: "#CB105BFF")),
+            lightColor: Color(UIColor(hex: "#CB105BFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightRed: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightRed.rawValue,
+            darkColor: Color(UIColor(hex: "#FF3D51")),
+            lightColor: Color(UIColor(hex: "#FF3D51"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightRedActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightRedActive.rawValue,
+            darkColor: Color(UIColor(hex: "#FF142CFF")),
+            lightColor: Color(UIColor(hex: "#FF142CFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightRedHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightRedHover.rawValue,
+            darkColor: Color(UIColor(hex: "#FF8F9AFF")),
+            lightColor: Color(UIColor(hex: "#FF8F9AFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightSkyBlue: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightSkyBlue.rawValue,
+            darkColor: Color(UIColor(hex: "#0492B9")),
+            lightColor: Color(UIColor(hex: "#0492B9"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightSkyBlueActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightSkyBlueActive.rawValue,
+            darkColor: Color(UIColor(hex: "#037291FF")),
+            lightColor: Color(UIColor(hex: "#037291FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightSkyBlueHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightSkyBlueHover.rawValue,
+            darkColor: Color(UIColor(hex: "#05B9EBFF")),
+            lightColor: Color(UIColor(hex: "#05B9EBFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightSpring: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightSpring.rawValue,
+            darkColor: Color(UIColor(hex: "#629405")),
+            lightColor: Color(UIColor(hex: "#629405"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightSpringActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightSpringActive.rawValue,
+            darkColor: Color(UIColor(hex: "#486C04FF")),
+            lightColor: Color(UIColor(hex: "#486C04FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightSpringHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightSpringHover.rawValue,
+            darkColor: Color(UIColor(hex: "#82C507FF")),
+            lightColor: Color(UIColor(hex: "#82C507FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightYellow: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightYellow.rawValue,
+            darkColor: Color(UIColor(hex: "#F3A912")),
+            lightColor: Color(UIColor(hex: "#F3A912"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightYellowActive: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightYellowActive.rawValue,
+            darkColor: Color(UIColor(hex: "#DA950BFF")),
+            lightColor: Color(UIColor(hex: "#DA950BFF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
+    static var syntaxOnLightYellowHover: Self {
+        let base = Self(
+            id: Colors.syntaxOnLightYellowHover.rawValue,
+            darkColor: Color(UIColor(hex: "#F8CB72FF")),
+            lightColor: Color(UIColor(hex: "#F8CB72FF"))
+        )
+        return ThemeTenantRegistry.shared.resolveColor(theme: "SDDSServ", id: base.id, base: base)
+    }
+
+
     static var textDefaultAccent: Self {
         let base = Self(
             id: Colors.textDefaultAccent.rawValue,

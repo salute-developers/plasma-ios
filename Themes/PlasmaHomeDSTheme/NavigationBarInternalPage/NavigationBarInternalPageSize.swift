@@ -15,8 +15,8 @@ struct NavigationBarInternalPageSizeDefault: NavigationBarInternalPageSizeConfig
     var bottomShape = DefaultPathDrawer() as PathDrawer as PathDrawer
     var horizontalSpacing = CGFloat(8.0)
     var paddingBottom = CGFloat(8.0)
-    var paddingEnd = CGFloat(16.0)
-    var paddingStart = CGFloat(16.0)
+    var paddingEnd = CGFloat(24.0)
+    var paddingStart = CGFloat(24.0)
     var paddingTop = CGFloat(8.0)
     var textBlockTopMargin = CGFloat(16.0)
     public var debugDescription: String {

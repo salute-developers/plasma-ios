@@ -1,4 +1,5 @@
 import SwiftUI
+import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
@@ -17,6 +18,7 @@ import SwiftUI
  )
  ```
  */
+@ApiInfo(components: ["NotificationCompact", "NotificationLoose"])
 public struct NotificationAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

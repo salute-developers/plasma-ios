@@ -30,9 +30,11 @@ public struct FormItem {
         )
     }
     
-    public static let all: [Variation<FormItemAppearance>] = [
-        FormItem.default.variation,
-    ]
+    public static var all: [Variation<FormItemAppearance>] {
+        [
+            FormItem.default.variation,
+        ]
+    }
 }
 
 public struct FormItemVariation {
