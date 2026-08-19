@@ -161,13 +161,16 @@ struct FocusableTextField: UIViewRepresentable {
                 autocompleteOnFocus: false
             )
             
-            // Callback для обновления текста через coordinator
+            // Callback для обновления текста через coordinator.
+            // Обновляем синхронно: ширина поля вычисляется из этого текста, а маска
+            // вставляет разделители, поэтому при отложенном обновлении SwiftUI мерил
+            // ширину по старому тексту — рамка выходила уже содержимого и прижимала
+            // каретку к своему правому краю (заметнее всего на числовой маске,
+            // где разделители появляются по ходу набора).
             maskListener.onMaskedTextChangedCallback = { textInput, value, complete, _ in
-                DispatchQueue.main.async {
-                    let newText = textInput.allText
-                    context.coordinator.parent.text = newText
-                    context.coordinator.parent.onMaskComplete?(complete)
-                }
+                let newText = textInput.allText
+                context.coordinator.parent.text = newText
+                context.coordinator.parent.onMaskComplete?(complete)
             }
             
             context.coordinator.maskListener = maskListener
