@@ -4371,6 +4371,2941 @@ public extension SwiftUI.Image {
 }
 #endif
 
+
+// MARK: - Icon Lookup
+
+/// Размер иконки SDDS. Каждая иконка поставляется ровно в этих трёх размерах.
+public enum IconSize: Int, CaseIterable, Codable, Hashable {
+  case size16 = 16
+  case size24 = 24
+  case size36 = 36
+}
+
+#if canImport(CoreGraphics)
+public extension IconSize {
+  /// Наименьший размер иконки, помещающийся в заданную ширину.
+  init(fittingWidth width: CGFloat) {
+    switch width {
+    case ...16: self = .size16
+    case ...24: self = .size24
+    default: self = .size36
+    }
+  }
+}
+#endif
+
+/// Имя иконки без суффикса размера, например "accessibility" или "musicOutline".
+/// Размер задаётся отдельно через `IconSize`.
+public enum IconName: String, Codable, Hashable {
+  case accessibility
+  case addFill
+  case addOutline
+  case addSmileFill
+  case addSmileOutline
+  case adjustHeight
+  case adjustWidth
+  case aiFill
+  case aiOutline
+  case airQuality
+  case alarmAddFill
+  case alarmAddOutline
+  case alarmCircleFill
+  case alarmCircleOutline
+  case alarmDoneFill
+  case alarmDoneOutline
+  case androidFill
+  case animalFill
+  case animalOutline
+  case antennaFill
+  case antennaOutline
+  case appleFill
+  case appleLogoFill
+  case appleOutline
+  case appsFill
+  case appsOutline
+  case arrowBack
+  case arrowBarDown
+  case arrowBarUp
+  case arrowDiagLeftDown
+  case arrowDiagLeftUp
+  case arrowDiagRightDown
+  case arrowDiagRightUp
+  case arrowDown
+  case arrowForward
+  case arrowLeft
+  case arrowRight
+  case arrowUp
+  case arrowWideDownFill
+  case arrowWideDownOutline
+  case arrowWideForwardBack
+  case arrowWideLeftFill
+  case arrowWideLeftOutline
+  case arrowWideRightFill
+  case arrowWideRightOutline
+  case arrowWideTraceR
+  case arrowWideUpFill
+  case arrowWideUpOutline
+  case arrowsMove
+  case arrowsMoveHoriz
+  case arrowsMoveVertical
+  case attention
+  case attentionCircleFill
+  case attentionCircleOutline
+  case attentionTriangleFill
+  case attentionTriangleOutline
+  case aura
+  case auraCast
+  case auraError
+  case auraSound
+  case axisX
+  case axisY
+  case backspaceFill
+  case backspaceOutline
+  case backwardFill
+  case backwardOutline
+  case ballFill
+  case ballOutline
+  case bankCardDoneFill
+  case bankCardDoneOutline
+  case bankCardErrorFill
+  case bankCardErrorOutline
+  case bankCardFill
+  case bankCardForwardFill
+  case bankCardForwardOutline
+  case bankCardLockFill
+  case bankCardLockOutline
+  case bankCardOutline
+  case bankCardStackFill
+  case bankCardStackOutline
+  case bankFill
+  case bankOutline
+  case battery100Fill
+  case battery100Outline
+  case battery10Fill
+  case battery10Outline
+  case battery20Fill
+  case battery20Outline
+  case battery40Fill
+  case battery40Outline
+  case battery60Fill
+  case battery60Outline
+  case battery80Fill
+  case battery80Outline
+  case batteryChargeFill
+  case batteryChargeOutline
+  case batteryEmptyFill
+  case batteryEmptyOutline
+  case batteryHoriz100Fill
+  case batteryHoriz100Outline
+  case batteryHoriz10Fill
+  case batteryHoriz10Outline
+  case batteryHoriz20Fill
+  case batteryHoriz20Outline
+  case batteryHoriz40Fill
+  case batteryHoriz40Outline
+  case batteryHoriz60Fill
+  case batteryHoriz60Outline
+  case batteryHoriz80Fill
+  case batteryHoriz80Outline
+  case batteryHorizChargeFill
+  case batteryHorizChargeOutline
+  case batteryHorizEmptyFill
+  case batteryHorizEmptyOutline
+  case beachUmbrellaFill
+  case beachUmbrellaOutline
+  case beautificationFill
+  case beautificationOutline
+  case bellDashFill
+  case bellDashOutline
+  case bellDoneFill
+  case bellDoneOutline
+  case bellErrorFill
+  case bellErrorOutline
+  case bellFill
+  case bellOutline
+  case bendFill
+  case bendOutline
+  case bikeFill
+  case bikeOutline
+  case birrFill
+  case birrOutline
+  case bitbucketOutline
+  case blankCsvFill
+  case blankCsvOutline
+  case blankDocFill
+  case blankDocOutline
+  case blankFill
+  case blankJpgFill
+  case blankJpgOutline
+  case blankOutline
+  case blankPdfFill
+  case blankPdfOutline
+  case blankPlusAltFill
+  case blankPlusAltOutline
+  case blankPlusFill
+  case blankPlusOutline
+  case blankPngFill
+  case blankPngOutline
+  case blankPptxFill
+  case blankPptxOutline
+  case blankTextFill
+  case blankTextOutline
+  case blankTxtFill
+  case blankTxtOutline
+  case blankVisibilityOffFill
+  case blankVisibilityOffOutline
+  case blankVisibilityOnFill
+  case blankVisibilityOnOutline
+  case blankXlsFill
+  case blankXlsOutline
+  case blankXmlFill
+  case blankXmlOutline
+  case blockFill
+  case blockOutline
+  case bluetooth
+  case bluetoothDisabled
+  case bluetoothLock
+  case bluetoothSearching
+  case bluetoothSignal
+  case blurFill
+  case blurOutline
+  case boardingPassFill
+  case boardingPassOutline
+  case bookFill
+  case bookOpenFill
+  case bookOpenOutline
+  case bookOutline
+  case bookmarkDashFill
+  case bookmarkDashOutline
+  case bookmarkFill
+  case bookmarkOutline
+  case bookmarkStackFill
+  case bookmarkStackOutline
+  case bookmarkStarFill
+  case bookmarkStarOutline
+  case boxFill
+  case boxOutline
+  case brackets
+  case brainFill
+  case brainOutline
+  case brightness0Fill
+  case brightness0Outline
+  case brightness1Fill
+  case brightness1Outline
+  case brightness2Fill
+  case brightness2Outline
+  case brightnessmaxFill
+  case brightnessmaxOutline
+  case buildingsAddFill
+  case buildingsAddOutline
+  case buildingsFill
+  case buildingsOutline
+  case bulbDiodeFill
+  case bulbDiodeOutline
+  case bulbFill
+  case bulbOutline
+  case bulbSbFill
+  case bulbSbOutline
+  case busFill
+  case busOutline
+  case button2x1LFill
+  case button2x1LOutline
+  case button2x1RFill
+  case button2x1ROutline
+  case button2x2BotLFill
+  case button2x2BotLOutline
+  case button2x2BotRFill
+  case button2x2BotROutline
+  case button2x2TopLFill
+  case button2x2TopLOutline
+  case button2x2TopRFill
+  case button2x2TopROutline
+  case button3x2CFill
+  case button3x2COutline
+  case button3x2LFill
+  case button3x2LOutline
+  case button3x2RFill
+  case button3x2ROutline
+  case co2
+  case cakeFill
+  case cakeOutline
+  case calculatorFill
+  case calculatorOutline
+  case calendarEventFill
+  case calendarEventOutline
+  case calendarFill
+  case calendarOutline
+  case callBlockFill
+  case callBlockOutline
+  case callCircleEndFill
+  case callCircleEndOutline
+  case callCircleFill
+  case callCircleOutline
+  case callDashFill
+  case callDashOutline
+  case callEndBlockFill
+  case callEndBlockOutline
+  case callEndFill
+  case callEndOutline
+  case callFill
+  case callIncomingFill
+  case callIncomingOutline
+  case callMissedFill
+  case callMissedOutline
+  case callOutgoingFill
+  case callOutgoingOutline
+  case callOutline
+  case cameraDashFill
+  case cameraDashOutline
+  case cameraPhotoFill
+  case cameraPhotoOutline
+  case cameraReverseFill
+  case cameraReverseOutline
+  case cameraVideoAddFill
+  case cameraVideoAddOutline
+  case cameraVideoFill
+  case cameraVideoOffFill
+  case cameraVideoOffOutline
+  case cameraVideoOutline
+  case cameraVideoRecFill
+  case cameraVideoRecOffFill
+  case cameraVideoRecOffOutline
+  case cameraVideoRecOutline
+  case candyFill
+  case candyOutline
+  case canisterFill
+  case canisterOutline
+  case capsuleFill
+  case capsuleOpenFill
+  case capsuleOpenOutline
+  case capsuleOutline
+  case carFill
+  case carOutline
+  case carTaxFill
+  case carTaxOutline
+  case cardsGridFill
+  case cardsGridOutline
+  case cardsListFill
+  case cardsListOutline
+  case cardsOrderCenterHorizFill
+  case cardsOrderCenterHorizOutline
+  case cardsOrderCenterVertFill
+  case cardsOrderCenterVertOutline
+  case cardsOrderFrontHorizFill
+  case cardsOrderFrontHorizOutline
+  case cardsOrderFrontVertFill
+  case cardsOrderFrontVertOutline
+  case cardstackFill
+  case cardstackHorizFill
+  case cardstackHorizOutline
+  case cardstackOutline
+  case cartBagFill
+  case cartBagOutline
+  case cartFill
+  case cartOutline
+  case caseBusinessFill
+  case caseBusinessOutline
+  case caseDiagramFill
+  case caseDiagramOutline
+  case caseFill
+  case caseOutline
+  case cashATMFill
+  case cashATMOutline
+  case cashFill
+  case cashOutline
+  case catalogFill
+  case catalogOutline
+  case certificateFill
+  case certificateOutline
+  case chartDistributionFill
+  case chartDistributionOutline
+  case chartPieFill
+  case chartPieOutline
+  case chatFill
+  case chatHumanFill
+  case chatHumanOutline
+  case chatOutline
+  case chatTranscriptionFill
+  case chatTranscriptionOutline
+  case checkEngine
+  case checkEngineFill
+  case chevronCircleDownFill
+  case chevronCircleDownOutline
+  case chevronCircleLeftFill
+  case chevronCircleLeftOutline
+  case chevronCircleRightFill
+  case chevronCircleRightOutline
+  case chevronCircleUpFill
+  case chevronCircleUpOutline
+  case chevronDown
+  case chevronLeft
+  case chevronRight
+  case chevronUp
+  case choiceFill
+  case choiceOutline
+  case circleFill
+  case circleOutline
+  case clip
+  case clipPlus
+  case clockCircleFill
+  case clockCircleOutline
+  case close
+  case closeCircleFill
+  case closeCircleOutline
+  case closePanelFill
+  case closeSquareFill
+  case closeSquareOutline
+  case cloudDashFill
+  case cloudDashOutline
+  case cloudDownloadFill
+  case cloudDownloadOutline
+  case cloudErrorFill
+  case cloudErrorOutline
+  case cloudFill
+  case cloudOutline
+  case cloudUploadFill
+  case cloudUploadOutline
+  case clown
+  case coatOfArmsFill
+  case coatOfArmsOutline
+  case code
+  case coinBirrFallingFill
+  case coinBirrFallingOutline
+  case coinBirrFill
+  case coinBirrOutline
+  case coinDirhamFallingFill
+  case coinDirhamFallingOutline
+  case coinDirhamFill
+  case coinDirhamOutline
+  case coinFallingFill
+  case coinFallingOutline
+  case coinFill
+  case coinHeartFill
+  case coinHeartOutline
+  case coinOutline
+  case coinPoundFallingFill
+  case coinPoundFallingOutline
+  case coinPoundFill
+  case coinPoundOutline
+  case coinRandFallingFill
+  case coinRandFallingOutline
+  case coinRandFill
+  case coinRandOutline
+  case coinRealFallingFill
+  case coinRealFallingOutline
+  case coinRealFill
+  case coinRealOutline
+  case coinRialFallingFill
+  case coinRialFallingOutline
+  case coinRialFill
+  case coinRialOutline
+  case coinRubleFill
+  case coinRubleOutline
+  case coinRupiahFallingFill
+  case coinRupiahFallingOutline
+  case coinRupiahFill
+  case coinRupiahOutline
+  case coinYuanFallingFill
+  case coinYuanFallingOutline
+  case coinYuanFill
+  case coinYuanOutline
+  case colorFill
+  case colorOutline
+  case colorSwatchFill
+  case colorSwatchOutline
+  case columnCheckboxFill
+  case columnCheckboxFillOff
+  case columnCheckboxOutline
+  case columnCheckboxOutlineOff
+  case commit
+  case compassFill
+  case compassOutline
+  case connectionError
+  case connectionSuccess
+  case connectionWaiting
+  case contrast0Fill
+  case contrast0Outline
+  case contrast1Fill
+  case contrast1Outline
+  case contrast2Fill
+  case contrast2Outline
+  case contrastMaxFill
+  case contrastMaxOutline
+  case cookieFill
+  case cookieOutline
+  case copyFill
+  case copyOutline
+  case couponDiscountFill
+  case couponDiscountOutline
+  case crop
+  case crownFill
+  case crownOutline
+  case cubeFill
+  case cubeOutline
+  case curlyBrace
+  case currencyBirr
+  case currencyDirham
+  case currencyPound
+  case currencyRand
+  case currencyReal
+  case currencyRial
+  case currencyRuble
+  case currencyRupiah
+  case currencyYuan
+  case cursorFill
+  case cursorOutline
+  case curve
+  case cutlery
+  case dashboardFill
+  case dashboardOutline
+  case dataBaseFill
+  case dataBaseOutline
+  case deliveryFill
+  case deliveryOutline
+  case deviceShareFill
+  case deviceShareOutline
+  case devicesFill
+  case devicesOutline
+  case dirhamFill
+  case dirhamOutline
+  case disclosureDownFill
+  case disclosureDownOutline
+  case disclosureLeftFill
+  case disclosureLeftOutline
+  case disclosureRightFill
+  case disclosureRightOutline
+  case disclosureUpFill
+  case disclosureUpOutline
+  case dishwasherBrillianceFill
+  case dishwasherBrillianceOutline
+  case dishwasherFill
+  case dishwasherIntensiveFill
+  case dishwasherIntensiveOutline
+  case dishwasherNormalFill
+  case dishwasherNormalOutline
+  case dishwasherOutline
+  case dishwasherSelfcleanFill
+  case dishwasherSelfcleanOutline
+  case dishwasherSuper60Fill
+  case dishwasherSuper60Outline
+  case dislikeFill
+  case dislikeOutline
+  case documentAddFill
+  case documentAddOutline
+  case documentAttachFill
+  case documentAttachOutline
+  case documentAutopayFill
+  case documentAutopayOutline
+  case documentBackwardFill
+  case documentBackwardOutline
+  case documentExportFill
+  case documentExportOutline
+  case documentFill
+  case documentForwardFill
+  case documentForwardOutline
+  case documentGlassFill
+  case documentGlassOutline
+  case documentImportFill
+  case documentImportOutline
+  case documentInquirerFill
+  case documentInquirerOutline
+  case documentOutline
+  case documentPasteFill
+  case documentPasteOutline
+  case done
+  case doneCircleFill
+  case doneCircleOutline
+  case doneDouble
+  case doneSquareFill
+  case doneSquareOutline
+  case doorLClosedFill
+  case doorLClosedOutline
+  case doorLOpenFill
+  case doorLOpenOutline
+  case doorRClosedFill
+  case doorRClosedOutline
+  case doorROpenFill
+  case doorROpenOutline
+  case dotsHorizontalOutline
+  case dotsVerticalCenteredOutline
+  case dotsVerticalOutline
+  case doubleDisclosureDown
+  case doubleDisclosureLeft
+  case doubleDisclosureRight
+  case doubleDisclosureUp
+  case download
+  case drag
+  case dropDashFill
+  case dropDashOutline
+  case dropFill
+  case dropOutline
+  case dropsGroupFill
+  case dropsGroupOutline
+  case dzenAltFill
+  case dzenFill
+  case dzenOutline
+  case earDashFill
+  case earDashOutline
+  case earErrorFill
+  case earErrorOutline
+  case earFill
+  case earOutline
+  case editFill
+  case editOutline
+  case educationFill
+  case educationOutline
+  case equals
+  case eraserFill
+  case eraserOutline
+  case ethernetFill
+  case ethernetOutline
+  case exportDoneOutline
+  case exportOutline
+  case eyeClosedFill
+  case eyeClosedOutline
+  case eyeFill
+  case eyeOutline
+  case feedbackCircleFill
+  case fileCheckFill
+  case fileCheckOutline
+  case fileErrorFill
+  case fileErrorOutline
+  case fileGlassFill
+  case fileGlassOutline
+  case fileStackFill
+  case fileStackOutline
+  case fileTextFill
+  case fileTextOutline
+  case filter
+  case filterFunnelFill
+  case filterFunnelOffFill
+  case filterFunnelOffOutline
+  case filterFunnelOutline
+  case filterOff
+  case fireFill
+  case fireOutline
+  case flagFill
+  case flagOutline
+  case flashDriveFill
+  case flashDriveOutline
+  case flasherFill
+  case flasherOutline
+  case flashlightFill
+  case flashlightOutline
+  case flaskFill
+  case flaskOutline
+  case flipHorizontalFill
+  case flipHorizontalOutline
+  case flipVerticalFill
+  case flipVerticalOutline
+  case floorTypeFill
+  case floorTypeOutline
+  case focusFill
+  case focusOutline
+  case folderFill
+  case folderOutline
+  case folderPlusFill
+  case folderPlusOutline
+  case footballFill
+  case footballOutline
+  case formaldehyde
+  case fullscreenOff
+  case fullscreenOn
+  case function
+  case gamepadFill
+  case gamepadOutline
+  case gas
+  case gasStationFill
+  case gasStationOutline
+  case giftFill
+  case giftOutline
+  case gigaFill
+  case gigaOutline
+  case glassCareFill
+  case glassCareOutline
+  case glassFill
+  case glassOutline
+  case glassesFill
+  case glassesOutline
+  case globeDashFill
+  case globeDashOutline
+  case globeFill
+  case globeOutline
+  case gosuslugiOutline
+  case gradientColorOutline
+  case groupAltFill
+  case groupAltOutline
+  case groupFill
+  case groupOutline
+  case gyroOutline
+  case handActionDashFill
+  case handActionDashOutline
+  case handActionFill
+  case handActionOutline
+  case handFill
+  case handOutline
+  case handPointerFill
+  case handPointerOutline
+  case handTapFill
+  case handTapOutline
+  case hdmiFill
+  case hdmiOutline
+  case header1
+  case header2
+  case header3
+  case header4
+  case header5
+  case headphonesFill
+  case headphonesOutline
+  case heartBoxFill
+  case heartBoxOutline
+  case heartCircleFill
+  case heartCircleOutline
+  case heartDashFill
+  case heartDashOutline
+  case heartFill
+  case heartOutline
+  case helicopterFill
+  case helicopterOutline
+  case helpCircleFill
+  case helpCircleOutline
+  case hierarchy
+  case hierarchyFill
+  case history
+  case homeAltFill
+  case homeAltOutline
+  case hourglassBotFill
+  case hourglassBotOutline
+  case hourglassFill
+  case hourglassOutline
+  case hourglassTopFill
+  case hourglassTopOutline
+  case houseFill
+  case houseHandsetFill
+  case houseHandsetOutline
+  case houseOutline
+  case housePercentFill
+  case housePercentOutline
+  case hummerFill
+  case hummerOutline
+  case inProgressFill
+  case inProgressOutline
+  case infoCircleFill
+  case infoCircleOutline
+  case inputsFill
+  case inputsOutline
+  case internationalTradeFill
+  case internationalTradeOutline
+  case internationalTradeRubleFill
+  case internationalTradeRubleOutline
+  case internationalTradeRupiahFill
+  case internationalTradeRupiahOutline
+  case keyFill
+  case keyOutline
+  case keyboardFill
+  case keyboardOutline
+  case kidsFill
+  case kidsLockFill
+  case kidsLockOutline
+  case kidsOutline
+  case langFlow
+  case layerBlurOutline
+  case letterSpacing
+  case lightbulbFill
+  case lightbulbOutline
+  case lightningFill
+  case lightningOutline
+  case likeFill
+  case likeOutline
+  case line
+  case lineHeight
+  case lineLinkFromto
+  case lineLinkToto
+  case lineWeight
+  case link
+  case linkBrokenChain
+  case linkError
+  case linkedin
+  case listView
+  case locationArrowFill
+  case locationArrowOutline
+  case locationPinFill
+  case locationPinOutline
+  case locationPointFill
+  case locationPointOutline
+  case lockFill
+  case lockOpenFill
+  case lockOpenOutline
+  case lockOutline
+  case login
+  case loginFill
+  case logout
+  case logoutFill
+  case magic
+  case magicDailyFill
+  case magicDailyOutline
+  case magicWand
+  case mailClosedFill
+  case mailClosedOutline
+  case mailErrorFill
+  case mailErrorOutline
+  case mailFill
+  case mailOpenFill
+  case mailOpenOutline
+  case mailOutline
+  case mailPlusFill
+  case mailPlusOutline
+  case mailTrayFill
+  case mailTrayOutline
+  case mailWavesFill
+  case mailWavesOutline
+  case mapFill
+  case mapOutline
+  case markerFill
+  case markerOutline
+  case maskFill
+  case maskOutline
+  case mastercard
+  case maxFill
+  case megaphoneFill
+  case megaphoneLoudFill
+  case megaphoneLoudOutline
+  case megaphoneOutline
+  case mention
+  case menu
+  case messageAltFill
+  case messageAltOutline
+  case messageAttentionFill
+  case messageAttentionOutline
+  case messageChatFill
+  case messageChatOutline
+  case messageCloseFill
+  case messageCloseOutline
+  case messageDraftFill
+  case messageDraftOutline
+  case messageFill
+  case messageGoToFill
+  case messageGoToOutline
+  case messageNewFill
+  case messageNewOutline
+  case messageOutline
+  case messagePersonChatFill
+  case messagePersonChatOutline
+  case messagePersonFill
+  case messagePersonOutline
+  case messageQuestionFill
+  case messageQuestionOutline
+  case messageRequestFill
+  case messageRequestOutline
+  case messageTranscriptionFill
+  case messageTranscriptionOutline
+  case messageVideoFill
+  case messageVideoOutline
+  case messagesFill
+  case messagesOutline
+  case micErrorFill
+  case micErrorOutline
+  case micFill
+  case micOffFill
+  case micOffOutline
+  case micOutline
+  case microscopeFill
+  case microscopeOutline
+  case mindmap
+  case minus
+  case minusCircleFill
+  case minusCircleOutline
+  case minusSquareFill
+  case minusSquareOutline
+  case mir
+  case mobileAutorotateFill
+  case mobileAutorotateOutline
+  case mobileFrontFill
+  case mobileFrontOutline
+  case mobilePlusFill
+  case mobilePlusOutline
+  case mobileVibrationFill
+  case mobileVibrationOutline
+  case mobileWavesFill
+  case mobileWavesOutline
+  case moneybagFill
+  case moneybagOutline
+  case movementOutline
+  case moviesFill
+  case moviesOutline
+  case musicAlbumFill
+  case musicAlbumOutline
+  case musicFill
+  case musicMicFill
+  case musicMicOutline
+  case musicOutline
+  case musicPodcastFill
+  case musicPodcastOutline
+  case musicWithLightFill
+  case musicWithLightOutline
+  case muteFill
+  case muteOutline
+  case nested
+  case networkFill
+  case networkOutline
+  case newsFill
+  case newsOutline
+  case newsPaperFill
+  case newsPaperOutline
+  case nextFill
+  case nextOutline
+  case noteFill
+  case noteOutline
+  case notebookDownloadFill
+  case notebookDownloadOutline
+  case notebookFill
+  case notebookOutline
+  case notebookWavesFill
+  case notebookWavesOutline
+  case numberedView
+  case objectsSymbolsFill
+  case objectsSymbolsOutline
+  case odnoklassnikiFill
+  case openFill
+  case openOutline
+  case openPanelFill
+  case openPanelOutline
+  case paletteFill
+  case paletteOutline
+  case panelSidebarDFocusOutline
+  case panelSidebarDFocusOutlineOff
+  case panelSidebarLFill
+  case panelSidebarLFocusFill
+  case panelSidebarLFocusOutline
+  case panelSidebarLOutline
+  case panelSidebarRFill
+  case panelSidebarRFocusFill
+  case panelSidebarRFocusOutline
+  case panelSidebarRFocusOutlineOff
+  case panelSidebarROutline
+  case parkingFill
+  case parkingOutline
+  case passportFill
+  case passportOutline
+  case pauseFill
+  case pauseOutline
+  case pawFill
+  case pawOutline
+  case pcMouseFill
+  case pcMouseOutline
+  case peopleGroupBigFill
+  case peopleGroupBigOutline
+  case peopleGroupFill
+  case peopleGroupOutline
+  case percent
+  case pictureCopyFill
+  case pictureCopyOutline
+  case pictureFill
+  case pictureOutline
+  case pictureSquareFill
+  case pictureSquareOutline
+  case piggyBankFill
+  case piggyBankOutline
+  case pinDashFill
+  case pinDashOutline
+  case pinFill
+  case pinListFill
+  case pinListOutline
+  case pinOutline
+  case pipFill
+  case pipOffFill
+  case pipOffOutline
+  case pipOnFill
+  case pipOnOutline
+  case pipOutline
+  case planeDashFill
+  case planeDashOutline
+  case planeFill
+  case planeFlyFill
+  case planeFlyOutline
+  case planeOutline
+  case planetDashOutline
+  case planetOutline
+  case plasma
+  case playCircleFill
+  case playCircleOutline
+  case playFill
+  case playOutline
+  case plus
+  case plusCircleFill
+  case plusCircleOutline
+  case plusSquareFill
+  case plusSquareOutline
+  case poopFill
+  case poopOutline
+  case postFill
+  case postOutline
+  case postcardFill
+  case postcardOutline
+  case poundFill
+  case poundOutline
+  case power
+  case powerWireCableFill
+  case powerWireCableOutline
+  case powerWireDashFill
+  case powerWireDashOutline
+  case powerWireFill
+  case powerWireOutline
+  case pramFill
+  case pramOutline
+  case pressure10
+  case pressure1
+  case pressure25
+  case previousFill
+  case previousOutline
+  case printerFill
+  case printerOutline
+  case productExportFill
+  case productExportOutline
+  case productImportFill
+  case productImportOutline
+  case profileBadgeFill
+  case profileBadgeOutline
+  case profileCircleFill
+  case profileCircleOutline
+  case profileCrossFill
+  case profileCrossOutline
+  case profileFill
+  case profileOutline
+  case profilePinFill
+  case profilePinOutline
+  case profilePlusFill
+  case profilePlusOutline
+  case profileSquareFill
+  case profileSquareOutline
+  case qrCode
+  case queueDashFill
+  case queueDashOutline
+  case queueFill
+  case queueOutline
+  case radioFill
+  case radioOutline
+  case randFill
+  case randOutline
+  case realFill
+  case realOutline
+  case redCrossFill
+  case redCrossOutline
+  case refresh
+  case regionalFill
+  case regionalOutline
+  case remoteControllerFill
+  case remoteControllerOutline
+  case repeatCircleOutline
+  case repeatOneOutline
+  case repeatOutline
+  case resetOutline
+  case resizeCornered
+  case resizeCorneredFill
+  case resizeDiagonal
+  case rewindBackward10
+  case rewindBackward30
+  case rewindBackwardFill
+  case rewindBackwardOutline
+  case rewindForward10
+  case rewindForward30
+  case rewindForwardFill
+  case rewindForwardOutline
+  case rialFill
+  case rialOutline
+  case robotFill
+  case robotOutline
+  case rombFill
+  case rombOutline
+  case rotateCcw
+  case rotateCw
+  case rowHeightFill
+  case rowHeightMaxFill
+  case rowHeightMaxOutline
+  case rowHeightMinFill
+  case rowHeightMinOutline
+  case rowHeightOutline
+  case ruTubeAltFill
+  case ruTubeFill
+  case rubleFill
+  case rubleOutline
+  case rublePlus
+  case rublePlusDollar
+  case rulerFill
+  case rulerOutline
+  case rupiahFill
+  case rupiahOutline
+  case safeDiagramFill
+  case safeDiagramOutline
+  case safeFill
+  case safeOutline
+  case saluteFill
+  case saluteOutline
+  case save
+  case sb
+  case sbBoom
+  case sbBoomCast
+  case sbBoomError
+  case sbBoomMiniCastFill
+  case sbBoomMiniCastOutline
+  case sbBoomMiniErrorFill
+  case sbBoomMiniErrorOutline
+  case sbBoomMiniFill
+  case sbBoomMiniOutline
+  case sbBoomMiniSoundFill
+  case sbBoomMiniSoundOutline
+  case sbBoomSound
+  case sbBoxFill
+  case sbBoxOutline
+  case sbBoxPackFill
+  case sbBoxPackOutline
+  case sbBoxTimeFill
+  case sbBoxTimeOutline
+  case sbBoxTopFill
+  case sbBoxTopOutline
+  case sbCost
+  case sbDotCastFill
+  case sbDotCastOutline
+  case sbDotErrorFill
+  case sbDotErrorOutline
+  case sbDotFill
+  case sbDotOutline
+  case sbDotSoundFill
+  case sbDotSoundOutline
+  case sbHomeCastFill
+  case sbHomeCastOutline
+  case sbHomeErrorFill
+  case sbHomeErrorOutline
+  case sbHomeFill
+  case sbHomeOutline
+  case sbHomeSoundFill
+  case sbHomeSoundOutline
+  case sbPortalBulbFill
+  case sbPortalBulbOutline
+  case sbPortalFill
+  case sbPortalOutline
+  case scenarioAutoFill
+  case scenarioAutoOutline
+  case scenarioFill
+  case scenarioOutline
+  case scenarioSyncAuto35Fill
+  case scenarioSyncAuto35Outline
+  case scenarioSyncAuto45Fill
+  case scenarioSyncAuto45Outline
+  case scenarioSyncAuto65Fill
+  case scenarioSyncAuto65Outline
+  case scene3dFill
+  case scene3dOutline
+  case scissorsFill
+  case screenSharePinFill
+  case screenSharePinOutline
+  case screenShareUnpinFill
+  case screenShareUnpinOutline
+  case scribble
+  case scribbleDiagonal
+  case sctivityFill
+  case sctivityOutline
+  case search
+  case searchError
+  case searchFill
+  case securityCameraFill
+  case securityCameraOutline
+  case selectionScreenOutline
+  case sendFill
+  case sendOutline
+  case sensorFill
+  case sensorOutline
+  case sensorTemperatureFill
+  case sensorTemperatureOutline
+  case settingsFill
+  case settingsFilter
+  case settingsFilterOff
+  case settingsOutline
+  case shadowDownOutline
+  case shadowLeftOutline
+  case shadowRightOutline
+  case shadowUpOutline
+  case shapeFill
+  case shapeOutline
+  case shareFill
+  case shareOutline
+  case shareScreenFill
+  case shareScreenMobileFill
+  case shareScreenMobileOutline
+  case shareScreenOutline
+  case shareScreenTabletFill
+  case shareScreenTabletOutline
+  case shazam
+  case shieldChildFill
+  case shieldChildOutline
+  case shieldDashFill
+  case shieldDashOutline
+  case shieldDoneFill
+  case shieldDoneOutline
+  case shieldFill
+  case shieldLinesCirclesFill
+  case shieldLinesCirclesOutline
+  case shieldLinesFill
+  case shieldLinesOutline
+  case shieldOutline
+  case shower
+  case showerFill
+  case shuffleOutline
+  case silent
+  case silent2
+  case sizeExpand
+  case sizeMaximize
+  case sizeMinimize
+  case sleepFill
+  case sleepOutline
+  case smileFill
+  case smileOutline
+  case smoke
+  case snow
+  case solidColorOutline
+  case sortAlphabetAsc
+  case sortAlphabetDesc
+  case sortBigSmall
+  case sortSmallBig
+  case space
+  case spacingHorizontal
+  case spacingVertical
+  case speedometerFill
+  case speedometerOutline
+  case squareFill
+  case squareOutline
+  case stacksFill
+  case stacksOutline
+  case starCircleFill
+  case starCircleOutline
+  case starDashFill
+  case starDashOutline
+  case starFill
+  case starFourFill
+  case starFourOutline
+  case starHalfFill
+  case starLightFill
+  case starLightOutline
+  case starOutline
+  case starRecommendFill
+  case starRecommendOutline
+  case steeringWheelFill
+  case steeringWheelOutline
+  case stickerFill
+  case stickerOutline
+  case stickerSquareFill
+  case stickerSquareOutline
+  case stopFill
+  case stopOutline
+  case sum
+  case sunFill
+  case sunOutline
+  case sunriseFill
+  case sunriseOutline
+  case sunsetFill
+  case sunsetOutline
+  case superscriptText
+  case swapHoriz
+  case swapHorizCircFill
+  case swapHorizCircOutline
+  case swapVert
+  case swapVertCircFill
+  case swapVertCircOutline
+  case swapVertOff
+  case switchSettingsFill
+  case switchSettingsOutline
+  case switchToggleOffFill
+  case switchToggleOffOutline
+  case switchToggleOnFill
+  case switchToggleOnOutline
+  case symbolsFill
+  case symbolsOutline
+  case syncError
+  case syncProblem
+  case tableColumnAdd
+  case tableColumnFill
+  case tableColumnOutline
+  case tableColumnPin
+  case tableColumnPinFill
+  case tableCornerPin
+  case tableCornerPinFill
+  case tableFill
+  case tableLampFill
+  case tableLampOutline
+  case tableOutline
+  case tablePin
+  case tablePinFill
+  case tableRowAdd
+  case tableRowFill
+  case tableRowOutline
+  case tableRowPin
+  case tableRowPinFill
+  case tagBadgeFill
+  case tagBadgeOutline
+  case targetOutline
+  case taskHorizFill
+  case taskHorizOutline
+  case telegramFill
+  case text
+  case textUnderline
+  case thermometerFill
+  case thermometerOutline
+  case ticketFill
+  case ticketOutline
+  case timer45Fill
+  case timer45Outline
+  case timerAddFill
+  case timerAddOutline
+  case timerExpressFill
+  case timerExpressOutline
+  case timerExpressSpeedFill
+  case timerExpressSpeedOutline
+  case timerFastFill
+  case timerFastOutline
+  case timerFill
+  case timerOutline
+  case towTruckFill
+  case towTruckOutline
+  case track
+  case trackCast
+  case trackError
+  case trackSound
+  case trafficLightFill
+  case trafficLightOutline
+  case transcribeTextVoiceErrorFill
+  case transcribeTextVoiceErrorLine
+  case transcribeTextVoiceFill
+  case transcribeTextVoiceOutline
+  case transcript
+  case transcriptDash
+  case transcriptionVoiceTextErrorFill
+  case transcriptionVoiceTextErrorOutline
+  case transcriptionVoiceTextFill
+  case transcriptionVoiceTextOutline
+  case translateFill
+  case translateOutline
+  case trashFill
+  case trashOutline
+  case travelCarFill
+  case travelCarOutline
+  case tree
+  case triangleFill
+  case triangleOutline
+  case tvBulbFill
+  case tvBulbOutline
+  case tvDashFill
+  case tvDashOutline
+  case tvFill
+  case tvModeFill
+  case tvModeOutline
+  case tvOutline
+  case tvPlayFill
+  case tvPlayOutline
+  case tvSaluteFill
+  case tvSaluteOutline
+  case typography
+  case umbrellaFill
+  case umbrellaOutline
+  case ungroupAltFill
+  case ungroupAltOutline
+  case uploadFill
+  case uploadOutline
+  case usbAFill
+  case usbAOutline
+  case usbCFill
+  case usbCOutline
+  case variable
+  case verificationFill
+  case verificationOutline
+  case vgaFill
+  case vgaOutline
+  case vibration
+  case videoArchive24Fill
+  case videoArchive24Outline
+  case videoClipFill
+  case videoClipOutline
+  case videoProcessFill
+  case videoProcessOutline
+  case videoQuality4K
+  case videoQualityHD
+  case videoRecordFill
+  case videoRecordOutline
+  case viewBeautyFill
+  case viewBeautyOutline
+  case viewPersonFill
+  case viewPersonOutline
+  case viewPersonPanelLFill
+  case viewPersonPanelLOutline
+  case viewPersonPanelRFill
+  case viewPersonPanelROutline
+  case viewScreen4Fill
+  case viewScreen4Outline
+  case viewSplit4Fill
+  case viewSplit4Outline
+  case viewfinderCard
+  case viewfinderFace
+  case viewfinderQRCode
+  case visa
+  case vkAltFill
+  case vkFill
+  case vkOutline
+  case volumeLevel0Fill
+  case volumeLevel0Outline
+  case volumeLevel1Fill
+  case volumeLevel1Outline
+  case volumeLevel2Fill
+  case volumeLevel2Outline
+  case walletAppleFill
+  case walletAppleOutline
+  case walletFill
+  case walletOutline
+  case warningTriangleFill
+  case warningTriangleOutline
+  case washerFill
+  case washerOutline
+  case watchRectangleFill
+  case watchRectangleOutline
+  case watchRoundClockFill
+  case watchRoundClockOutline
+  case watchRoundFill
+  case watchRoundOutline
+  case watermark
+  case watermarkDash
+  case waveLine
+  case waves
+  case wavesCross
+  case weatherFill
+  case weatherOutline
+  case webFill
+  case whatsapp
+  case wheelFill
+  case wheelOutline
+  case whistleFill
+  case whistleOutline
+  case whiteboardFill
+  case whiteboardOutline
+  case wifiDash
+  case wifiDefault
+  case wifiLock
+  case wifiLow
+  case wifiMedium
+  case windowFill
+  case windowMaximize
+  case windowMaximizeLFill
+  case windowMaximizeLOutline
+  case windowMaximizeRFill
+  case windowMaximizeROutline
+  case windowMinimize
+  case windowMinimizeLFill
+  case windowMinimizeLOutline
+  case windowMinimizeRFill
+  case windowMinimizeROutline
+  case windowMultiFill
+  case windowMultiOutline
+  case windowOutline
+  case wrenchFill
+  case wrenchOutline
+  case yuanFill
+  case yuanOutline
+  case zoomMinusFill
+  case zoomMinusOutline
+  case zoomPlusFill
+  case zoomPlusOutline
+}
+
+extension IconName: CaseIterable {
+  private static let rawNames = """
+    accessibility
+    addFill
+    addOutline
+    addSmileFill
+    addSmileOutline
+    adjustHeight
+    adjustWidth
+    aiFill
+    aiOutline
+    airQuality
+    alarmAddFill
+    alarmAddOutline
+    alarmCircleFill
+    alarmCircleOutline
+    alarmDoneFill
+    alarmDoneOutline
+    androidFill
+    animalFill
+    animalOutline
+    antennaFill
+    antennaOutline
+    appleFill
+    appleLogoFill
+    appleOutline
+    appsFill
+    appsOutline
+    arrowBack
+    arrowBarDown
+    arrowBarUp
+    arrowDiagLeftDown
+    arrowDiagLeftUp
+    arrowDiagRightDown
+    arrowDiagRightUp
+    arrowDown
+    arrowForward
+    arrowLeft
+    arrowRight
+    arrowUp
+    arrowWideDownFill
+    arrowWideDownOutline
+    arrowWideForwardBack
+    arrowWideLeftFill
+    arrowWideLeftOutline
+    arrowWideRightFill
+    arrowWideRightOutline
+    arrowWideTraceR
+    arrowWideUpFill
+    arrowWideUpOutline
+    arrowsMove
+    arrowsMoveHoriz
+    arrowsMoveVertical
+    attention
+    attentionCircleFill
+    attentionCircleOutline
+    attentionTriangleFill
+    attentionTriangleOutline
+    aura
+    auraCast
+    auraError
+    auraSound
+    axisX
+    axisY
+    backspaceFill
+    backspaceOutline
+    backwardFill
+    backwardOutline
+    ballFill
+    ballOutline
+    bankCardDoneFill
+    bankCardDoneOutline
+    bankCardErrorFill
+    bankCardErrorOutline
+    bankCardFill
+    bankCardForwardFill
+    bankCardForwardOutline
+    bankCardLockFill
+    bankCardLockOutline
+    bankCardOutline
+    bankCardStackFill
+    bankCardStackOutline
+    bankFill
+    bankOutline
+    battery100Fill
+    battery100Outline
+    battery10Fill
+    battery10Outline
+    battery20Fill
+    battery20Outline
+    battery40Fill
+    battery40Outline
+    battery60Fill
+    battery60Outline
+    battery80Fill
+    battery80Outline
+    batteryChargeFill
+    batteryChargeOutline
+    batteryEmptyFill
+    batteryEmptyOutline
+    batteryHoriz100Fill
+    batteryHoriz100Outline
+    batteryHoriz10Fill
+    batteryHoriz10Outline
+    batteryHoriz20Fill
+    batteryHoriz20Outline
+    batteryHoriz40Fill
+    batteryHoriz40Outline
+    batteryHoriz60Fill
+    batteryHoriz60Outline
+    batteryHoriz80Fill
+    batteryHoriz80Outline
+    batteryHorizChargeFill
+    batteryHorizChargeOutline
+    batteryHorizEmptyFill
+    batteryHorizEmptyOutline
+    beachUmbrellaFill
+    beachUmbrellaOutline
+    beautificationFill
+    beautificationOutline
+    bellDashFill
+    bellDashOutline
+    bellDoneFill
+    bellDoneOutline
+    bellErrorFill
+    bellErrorOutline
+    bellFill
+    bellOutline
+    bendFill
+    bendOutline
+    bikeFill
+    bikeOutline
+    birrFill
+    birrOutline
+    bitbucketOutline
+    blankCsvFill
+    blankCsvOutline
+    blankDocFill
+    blankDocOutline
+    blankFill
+    blankJpgFill
+    blankJpgOutline
+    blankOutline
+    blankPdfFill
+    blankPdfOutline
+    blankPlusAltFill
+    blankPlusAltOutline
+    blankPlusFill
+    blankPlusOutline
+    blankPngFill
+    blankPngOutline
+    blankPptxFill
+    blankPptxOutline
+    blankTextFill
+    blankTextOutline
+    blankTxtFill
+    blankTxtOutline
+    blankVisibilityOffFill
+    blankVisibilityOffOutline
+    blankVisibilityOnFill
+    blankVisibilityOnOutline
+    blankXlsFill
+    blankXlsOutline
+    blankXmlFill
+    blankXmlOutline
+    blockFill
+    blockOutline
+    bluetooth
+    bluetoothDisabled
+    bluetoothLock
+    bluetoothSearching
+    bluetoothSignal
+    blurFill
+    blurOutline
+    boardingPassFill
+    boardingPassOutline
+    bookFill
+    bookOpenFill
+    bookOpenOutline
+    bookOutline
+    bookmarkDashFill
+    bookmarkDashOutline
+    bookmarkFill
+    bookmarkOutline
+    bookmarkStackFill
+    bookmarkStackOutline
+    bookmarkStarFill
+    bookmarkStarOutline
+    boxFill
+    boxOutline
+    brackets
+    brainFill
+    brainOutline
+    brightness0Fill
+    brightness0Outline
+    brightness1Fill
+    brightness1Outline
+    brightness2Fill
+    brightness2Outline
+    brightnessmaxFill
+    brightnessmaxOutline
+    buildingsAddFill
+    buildingsAddOutline
+    buildingsFill
+    buildingsOutline
+    bulbDiodeFill
+    bulbDiodeOutline
+    bulbFill
+    bulbOutline
+    bulbSbFill
+    bulbSbOutline
+    busFill
+    busOutline
+    button2x1LFill
+    button2x1LOutline
+    button2x1RFill
+    button2x1ROutline
+    button2x2BotLFill
+    button2x2BotLOutline
+    button2x2BotRFill
+    button2x2BotROutline
+    button2x2TopLFill
+    button2x2TopLOutline
+    button2x2TopRFill
+    button2x2TopROutline
+    button3x2CFill
+    button3x2COutline
+    button3x2LFill
+    button3x2LOutline
+    button3x2RFill
+    button3x2ROutline
+    co2
+    cakeFill
+    cakeOutline
+    calculatorFill
+    calculatorOutline
+    calendarEventFill
+    calendarEventOutline
+    calendarFill
+    calendarOutline
+    callBlockFill
+    callBlockOutline
+    callCircleEndFill
+    callCircleEndOutline
+    callCircleFill
+    callCircleOutline
+    callDashFill
+    callDashOutline
+    callEndBlockFill
+    callEndBlockOutline
+    callEndFill
+    callEndOutline
+    callFill
+    callIncomingFill
+    callIncomingOutline
+    callMissedFill
+    callMissedOutline
+    callOutgoingFill
+    callOutgoingOutline
+    callOutline
+    cameraDashFill
+    cameraDashOutline
+    cameraPhotoFill
+    cameraPhotoOutline
+    cameraReverseFill
+    cameraReverseOutline
+    cameraVideoAddFill
+    cameraVideoAddOutline
+    cameraVideoFill
+    cameraVideoOffFill
+    cameraVideoOffOutline
+    cameraVideoOutline
+    cameraVideoRecFill
+    cameraVideoRecOffFill
+    cameraVideoRecOffOutline
+    cameraVideoRecOutline
+    candyFill
+    candyOutline
+    canisterFill
+    canisterOutline
+    capsuleFill
+    capsuleOpenFill
+    capsuleOpenOutline
+    capsuleOutline
+    carFill
+    carOutline
+    carTaxFill
+    carTaxOutline
+    cardsGridFill
+    cardsGridOutline
+    cardsListFill
+    cardsListOutline
+    cardsOrderCenterHorizFill
+    cardsOrderCenterHorizOutline
+    cardsOrderCenterVertFill
+    cardsOrderCenterVertOutline
+    cardsOrderFrontHorizFill
+    cardsOrderFrontHorizOutline
+    cardsOrderFrontVertFill
+    cardsOrderFrontVertOutline
+    cardstackFill
+    cardstackHorizFill
+    cardstackHorizOutline
+    cardstackOutline
+    cartBagFill
+    cartBagOutline
+    cartFill
+    cartOutline
+    caseBusinessFill
+    caseBusinessOutline
+    caseDiagramFill
+    caseDiagramOutline
+    caseFill
+    caseOutline
+    cashATMFill
+    cashATMOutline
+    cashFill
+    cashOutline
+    catalogFill
+    catalogOutline
+    certificateFill
+    certificateOutline
+    chartDistributionFill
+    chartDistributionOutline
+    chartPieFill
+    chartPieOutline
+    chatFill
+    chatHumanFill
+    chatHumanOutline
+    chatOutline
+    chatTranscriptionFill
+    chatTranscriptionOutline
+    checkEngine
+    checkEngineFill
+    chevronCircleDownFill
+    chevronCircleDownOutline
+    chevronCircleLeftFill
+    chevronCircleLeftOutline
+    chevronCircleRightFill
+    chevronCircleRightOutline
+    chevronCircleUpFill
+    chevronCircleUpOutline
+    chevronDown
+    chevronLeft
+    chevronRight
+    chevronUp
+    choiceFill
+    choiceOutline
+    circleFill
+    circleOutline
+    clip
+    clipPlus
+    clockCircleFill
+    clockCircleOutline
+    close
+    closeCircleFill
+    closeCircleOutline
+    closePanelFill
+    closeSquareFill
+    closeSquareOutline
+    cloudDashFill
+    cloudDashOutline
+    cloudDownloadFill
+    cloudDownloadOutline
+    cloudErrorFill
+    cloudErrorOutline
+    cloudFill
+    cloudOutline
+    cloudUploadFill
+    cloudUploadOutline
+    clown
+    coatOfArmsFill
+    coatOfArmsOutline
+    code
+    coinBirrFallingFill
+    coinBirrFallingOutline
+    coinBirrFill
+    coinBirrOutline
+    coinDirhamFallingFill
+    coinDirhamFallingOutline
+    coinDirhamFill
+    coinDirhamOutline
+    coinFallingFill
+    coinFallingOutline
+    coinFill
+    coinHeartFill
+    coinHeartOutline
+    coinOutline
+    coinPoundFallingFill
+    coinPoundFallingOutline
+    coinPoundFill
+    coinPoundOutline
+    coinRandFallingFill
+    coinRandFallingOutline
+    coinRandFill
+    coinRandOutline
+    coinRealFallingFill
+    coinRealFallingOutline
+    coinRealFill
+    coinRealOutline
+    coinRialFallingFill
+    coinRialFallingOutline
+    coinRialFill
+    coinRialOutline
+    coinRubleFill
+    coinRubleOutline
+    coinRupiahFallingFill
+    coinRupiahFallingOutline
+    coinRupiahFill
+    coinRupiahOutline
+    coinYuanFallingFill
+    coinYuanFallingOutline
+    coinYuanFill
+    coinYuanOutline
+    colorFill
+    colorOutline
+    colorSwatchFill
+    colorSwatchOutline
+    columnCheckboxFill
+    columnCheckboxFillOff
+    columnCheckboxOutline
+    columnCheckboxOutlineOff
+    commit
+    compassFill
+    compassOutline
+    connectionError
+    connectionSuccess
+    connectionWaiting
+    contrast0Fill
+    contrast0Outline
+    contrast1Fill
+    contrast1Outline
+    contrast2Fill
+    contrast2Outline
+    contrastMaxFill
+    contrastMaxOutline
+    cookieFill
+    cookieOutline
+    copyFill
+    copyOutline
+    couponDiscountFill
+    couponDiscountOutline
+    crop
+    crownFill
+    crownOutline
+    cubeFill
+    cubeOutline
+    curlyBrace
+    currencyBirr
+    currencyDirham
+    currencyPound
+    currencyRand
+    currencyReal
+    currencyRial
+    currencyRuble
+    currencyRupiah
+    currencyYuan
+    cursorFill
+    cursorOutline
+    curve
+    cutlery
+    dashboardFill
+    dashboardOutline
+    dataBaseFill
+    dataBaseOutline
+    deliveryFill
+    deliveryOutline
+    deviceShareFill
+    deviceShareOutline
+    devicesFill
+    devicesOutline
+    dirhamFill
+    dirhamOutline
+    disclosureDownFill
+    disclosureDownOutline
+    disclosureLeftFill
+    disclosureLeftOutline
+    disclosureRightFill
+    disclosureRightOutline
+    disclosureUpFill
+    disclosureUpOutline
+    dishwasherBrillianceFill
+    dishwasherBrillianceOutline
+    dishwasherFill
+    dishwasherIntensiveFill
+    dishwasherIntensiveOutline
+    dishwasherNormalFill
+    dishwasherNormalOutline
+    dishwasherOutline
+    dishwasherSelfcleanFill
+    dishwasherSelfcleanOutline
+    dishwasherSuper60Fill
+    dishwasherSuper60Outline
+    dislikeFill
+    dislikeOutline
+    documentAddFill
+    documentAddOutline
+    documentAttachFill
+    documentAttachOutline
+    documentAutopayFill
+    documentAutopayOutline
+    documentBackwardFill
+    documentBackwardOutline
+    documentExportFill
+    documentExportOutline
+    documentFill
+    documentForwardFill
+    documentForwardOutline
+    documentGlassFill
+    documentGlassOutline
+    documentImportFill
+    documentImportOutline
+    documentInquirerFill
+    documentInquirerOutline
+    documentOutline
+    documentPasteFill
+    documentPasteOutline
+    done
+    doneCircleFill
+    doneCircleOutline
+    doneDouble
+    doneSquareFill
+    doneSquareOutline
+    doorLClosedFill
+    doorLClosedOutline
+    doorLOpenFill
+    doorLOpenOutline
+    doorRClosedFill
+    doorRClosedOutline
+    doorROpenFill
+    doorROpenOutline
+    dotsHorizontalOutline
+    dotsVerticalCenteredOutline
+    dotsVerticalOutline
+    doubleDisclosureDown
+    doubleDisclosureLeft
+    doubleDisclosureRight
+    doubleDisclosureUp
+    download
+    drag
+    dropDashFill
+    dropDashOutline
+    dropFill
+    dropOutline
+    dropsGroupFill
+    dropsGroupOutline
+    dzenAltFill
+    dzenFill
+    dzenOutline
+    earDashFill
+    earDashOutline
+    earErrorFill
+    earErrorOutline
+    earFill
+    earOutline
+    editFill
+    editOutline
+    educationFill
+    educationOutline
+    equals
+    eraserFill
+    eraserOutline
+    ethernetFill
+    ethernetOutline
+    exportDoneOutline
+    exportOutline
+    eyeClosedFill
+    eyeClosedOutline
+    eyeFill
+    eyeOutline
+    feedbackCircleFill
+    fileCheckFill
+    fileCheckOutline
+    fileErrorFill
+    fileErrorOutline
+    fileGlassFill
+    fileGlassOutline
+    fileStackFill
+    fileStackOutline
+    fileTextFill
+    fileTextOutline
+    filter
+    filterFunnelFill
+    filterFunnelOffFill
+    filterFunnelOffOutline
+    filterFunnelOutline
+    filterOff
+    fireFill
+    fireOutline
+    flagFill
+    flagOutline
+    flashDriveFill
+    flashDriveOutline
+    flasherFill
+    flasherOutline
+    flashlightFill
+    flashlightOutline
+    flaskFill
+    flaskOutline
+    flipHorizontalFill
+    flipHorizontalOutline
+    flipVerticalFill
+    flipVerticalOutline
+    floorTypeFill
+    floorTypeOutline
+    focusFill
+    focusOutline
+    folderFill
+    folderOutline
+    folderPlusFill
+    folderPlusOutline
+    footballFill
+    footballOutline
+    formaldehyde
+    fullscreenOff
+    fullscreenOn
+    function
+    gamepadFill
+    gamepadOutline
+    gas
+    gasStationFill
+    gasStationOutline
+    giftFill
+    giftOutline
+    gigaFill
+    gigaOutline
+    glassCareFill
+    glassCareOutline
+    glassFill
+    glassOutline
+    glassesFill
+    glassesOutline
+    globeDashFill
+    globeDashOutline
+    globeFill
+    globeOutline
+    gosuslugiOutline
+    gradientColorOutline
+    groupAltFill
+    groupAltOutline
+    groupFill
+    groupOutline
+    gyroOutline
+    handActionDashFill
+    handActionDashOutline
+    handActionFill
+    handActionOutline
+    handFill
+    handOutline
+    handPointerFill
+    handPointerOutline
+    handTapFill
+    handTapOutline
+    hdmiFill
+    hdmiOutline
+    header1
+    header2
+    header3
+    header4
+    header5
+    headphonesFill
+    headphonesOutline
+    heartBoxFill
+    heartBoxOutline
+    heartCircleFill
+    heartCircleOutline
+    heartDashFill
+    heartDashOutline
+    heartFill
+    heartOutline
+    helicopterFill
+    helicopterOutline
+    helpCircleFill
+    helpCircleOutline
+    hierarchy
+    hierarchyFill
+    history
+    homeAltFill
+    homeAltOutline
+    hourglassBotFill
+    hourglassBotOutline
+    hourglassFill
+    hourglassOutline
+    hourglassTopFill
+    hourglassTopOutline
+    houseFill
+    houseHandsetFill
+    houseHandsetOutline
+    houseOutline
+    housePercentFill
+    housePercentOutline
+    hummerFill
+    hummerOutline
+    inProgressFill
+    inProgressOutline
+    infoCircleFill
+    infoCircleOutline
+    inputsFill
+    inputsOutline
+    internationalTradeFill
+    internationalTradeOutline
+    internationalTradeRubleFill
+    internationalTradeRubleOutline
+    internationalTradeRupiahFill
+    internationalTradeRupiahOutline
+    keyFill
+    keyOutline
+    keyboardFill
+    keyboardOutline
+    kidsFill
+    kidsLockFill
+    kidsLockOutline
+    kidsOutline
+    langFlow
+    layerBlurOutline
+    letterSpacing
+    lightbulbFill
+    lightbulbOutline
+    lightningFill
+    lightningOutline
+    likeFill
+    likeOutline
+    line
+    lineHeight
+    lineLinkFromto
+    lineLinkToto
+    lineWeight
+    link
+    linkBrokenChain
+    linkError
+    linkedin
+    listView
+    locationArrowFill
+    locationArrowOutline
+    locationPinFill
+    locationPinOutline
+    locationPointFill
+    locationPointOutline
+    lockFill
+    lockOpenFill
+    lockOpenOutline
+    lockOutline
+    login
+    loginFill
+    logout
+    logoutFill
+    magic
+    magicDailyFill
+    magicDailyOutline
+    magicWand
+    mailClosedFill
+    mailClosedOutline
+    mailErrorFill
+    mailErrorOutline
+    mailFill
+    mailOpenFill
+    mailOpenOutline
+    mailOutline
+    mailPlusFill
+    mailPlusOutline
+    mailTrayFill
+    mailTrayOutline
+    mailWavesFill
+    mailWavesOutline
+    mapFill
+    mapOutline
+    markerFill
+    markerOutline
+    maskFill
+    maskOutline
+    mastercard
+    maxFill
+    megaphoneFill
+    megaphoneLoudFill
+    megaphoneLoudOutline
+    megaphoneOutline
+    mention
+    menu
+    messageAltFill
+    messageAltOutline
+    messageAttentionFill
+    messageAttentionOutline
+    messageChatFill
+    messageChatOutline
+    messageCloseFill
+    messageCloseOutline
+    messageDraftFill
+    messageDraftOutline
+    messageFill
+    messageGoToFill
+    messageGoToOutline
+    messageNewFill
+    messageNewOutline
+    messageOutline
+    messagePersonChatFill
+    messagePersonChatOutline
+    messagePersonFill
+    messagePersonOutline
+    messageQuestionFill
+    messageQuestionOutline
+    messageRequestFill
+    messageRequestOutline
+    messageTranscriptionFill
+    messageTranscriptionOutline
+    messageVideoFill
+    messageVideoOutline
+    messagesFill
+    messagesOutline
+    micErrorFill
+    micErrorOutline
+    micFill
+    micOffFill
+    micOffOutline
+    micOutline
+    microscopeFill
+    microscopeOutline
+    mindmap
+    minus
+    minusCircleFill
+    minusCircleOutline
+    minusSquareFill
+    minusSquareOutline
+    mir
+    mobileAutorotateFill
+    mobileAutorotateOutline
+    mobileFrontFill
+    mobileFrontOutline
+    mobilePlusFill
+    mobilePlusOutline
+    mobileVibrationFill
+    mobileVibrationOutline
+    mobileWavesFill
+    mobileWavesOutline
+    moneybagFill
+    moneybagOutline
+    movementOutline
+    moviesFill
+    moviesOutline
+    musicAlbumFill
+    musicAlbumOutline
+    musicFill
+    musicMicFill
+    musicMicOutline
+    musicOutline
+    musicPodcastFill
+    musicPodcastOutline
+    musicWithLightFill
+    musicWithLightOutline
+    muteFill
+    muteOutline
+    nested
+    networkFill
+    networkOutline
+    newsFill
+    newsOutline
+    newsPaperFill
+    newsPaperOutline
+    nextFill
+    nextOutline
+    noteFill
+    noteOutline
+    notebookDownloadFill
+    notebookDownloadOutline
+    notebookFill
+    notebookOutline
+    notebookWavesFill
+    notebookWavesOutline
+    numberedView
+    objectsSymbolsFill
+    objectsSymbolsOutline
+    odnoklassnikiFill
+    openFill
+    openOutline
+    openPanelFill
+    openPanelOutline
+    paletteFill
+    paletteOutline
+    panelSidebarDFocusOutline
+    panelSidebarDFocusOutlineOff
+    panelSidebarLFill
+    panelSidebarLFocusFill
+    panelSidebarLFocusOutline
+    panelSidebarLOutline
+    panelSidebarRFill
+    panelSidebarRFocusFill
+    panelSidebarRFocusOutline
+    panelSidebarRFocusOutlineOff
+    panelSidebarROutline
+    parkingFill
+    parkingOutline
+    passportFill
+    passportOutline
+    pauseFill
+    pauseOutline
+    pawFill
+    pawOutline
+    pcMouseFill
+    pcMouseOutline
+    peopleGroupBigFill
+    peopleGroupBigOutline
+    peopleGroupFill
+    peopleGroupOutline
+    percent
+    pictureCopyFill
+    pictureCopyOutline
+    pictureFill
+    pictureOutline
+    pictureSquareFill
+    pictureSquareOutline
+    piggyBankFill
+    piggyBankOutline
+    pinDashFill
+    pinDashOutline
+    pinFill
+    pinListFill
+    pinListOutline
+    pinOutline
+    pipFill
+    pipOffFill
+    pipOffOutline
+    pipOnFill
+    pipOnOutline
+    pipOutline
+    planeDashFill
+    planeDashOutline
+    planeFill
+    planeFlyFill
+    planeFlyOutline
+    planeOutline
+    planetDashOutline
+    planetOutline
+    plasma
+    playCircleFill
+    playCircleOutline
+    playFill
+    playOutline
+    plus
+    plusCircleFill
+    plusCircleOutline
+    plusSquareFill
+    plusSquareOutline
+    poopFill
+    poopOutline
+    postFill
+    postOutline
+    postcardFill
+    postcardOutline
+    poundFill
+    poundOutline
+    power
+    powerWireCableFill
+    powerWireCableOutline
+    powerWireDashFill
+    powerWireDashOutline
+    powerWireFill
+    powerWireOutline
+    pramFill
+    pramOutline
+    pressure10
+    pressure1
+    pressure25
+    previousFill
+    previousOutline
+    printerFill
+    printerOutline
+    productExportFill
+    productExportOutline
+    productImportFill
+    productImportOutline
+    profileBadgeFill
+    profileBadgeOutline
+    profileCircleFill
+    profileCircleOutline
+    profileCrossFill
+    profileCrossOutline
+    profileFill
+    profileOutline
+    profilePinFill
+    profilePinOutline
+    profilePlusFill
+    profilePlusOutline
+    profileSquareFill
+    profileSquareOutline
+    qrCode
+    queueDashFill
+    queueDashOutline
+    queueFill
+    queueOutline
+    radioFill
+    radioOutline
+    randFill
+    randOutline
+    realFill
+    realOutline
+    redCrossFill
+    redCrossOutline
+    refresh
+    regionalFill
+    regionalOutline
+    remoteControllerFill
+    remoteControllerOutline
+    repeatCircleOutline
+    repeatOneOutline
+    repeatOutline
+    resetOutline
+    resizeCornered
+    resizeCorneredFill
+    resizeDiagonal
+    rewindBackward10
+    rewindBackward30
+    rewindBackwardFill
+    rewindBackwardOutline
+    rewindForward10
+    rewindForward30
+    rewindForwardFill
+    rewindForwardOutline
+    rialFill
+    rialOutline
+    robotFill
+    robotOutline
+    rombFill
+    rombOutline
+    rotateCcw
+    rotateCw
+    rowHeightFill
+    rowHeightMaxFill
+    rowHeightMaxOutline
+    rowHeightMinFill
+    rowHeightMinOutline
+    rowHeightOutline
+    ruTubeAltFill
+    ruTubeFill
+    rubleFill
+    rubleOutline
+    rublePlus
+    rublePlusDollar
+    rulerFill
+    rulerOutline
+    rupiahFill
+    rupiahOutline
+    safeDiagramFill
+    safeDiagramOutline
+    safeFill
+    safeOutline
+    saluteFill
+    saluteOutline
+    save
+    sb
+    sbBoom
+    sbBoomCast
+    sbBoomError
+    sbBoomMiniCastFill
+    sbBoomMiniCastOutline
+    sbBoomMiniErrorFill
+    sbBoomMiniErrorOutline
+    sbBoomMiniFill
+    sbBoomMiniOutline
+    sbBoomMiniSoundFill
+    sbBoomMiniSoundOutline
+    sbBoomSound
+    sbBoxFill
+    sbBoxOutline
+    sbBoxPackFill
+    sbBoxPackOutline
+    sbBoxTimeFill
+    sbBoxTimeOutline
+    sbBoxTopFill
+    sbBoxTopOutline
+    sbCost
+    sbDotCastFill
+    sbDotCastOutline
+    sbDotErrorFill
+    sbDotErrorOutline
+    sbDotFill
+    sbDotOutline
+    sbDotSoundFill
+    sbDotSoundOutline
+    sbHomeCastFill
+    sbHomeCastOutline
+    sbHomeErrorFill
+    sbHomeErrorOutline
+    sbHomeFill
+    sbHomeOutline
+    sbHomeSoundFill
+    sbHomeSoundOutline
+    sbPortalBulbFill
+    sbPortalBulbOutline
+    sbPortalFill
+    sbPortalOutline
+    scenarioAutoFill
+    scenarioAutoOutline
+    scenarioFill
+    scenarioOutline
+    scenarioSyncAuto35Fill
+    scenarioSyncAuto35Outline
+    scenarioSyncAuto45Fill
+    scenarioSyncAuto45Outline
+    scenarioSyncAuto65Fill
+    scenarioSyncAuto65Outline
+    scene3dFill
+    scene3dOutline
+    scissorsFill
+    screenSharePinFill
+    screenSharePinOutline
+    screenShareUnpinFill
+    screenShareUnpinOutline
+    scribble
+    scribbleDiagonal
+    sctivityFill
+    sctivityOutline
+    search
+    searchError
+    searchFill
+    securityCameraFill
+    securityCameraOutline
+    selectionScreenOutline
+    sendFill
+    sendOutline
+    sensorFill
+    sensorOutline
+    sensorTemperatureFill
+    sensorTemperatureOutline
+    settingsFill
+    settingsFilter
+    settingsFilterOff
+    settingsOutline
+    shadowDownOutline
+    shadowLeftOutline
+    shadowRightOutline
+    shadowUpOutline
+    shapeFill
+    shapeOutline
+    shareFill
+    shareOutline
+    shareScreenFill
+    shareScreenMobileFill
+    shareScreenMobileOutline
+    shareScreenOutline
+    shareScreenTabletFill
+    shareScreenTabletOutline
+    shazam
+    shieldChildFill
+    shieldChildOutline
+    shieldDashFill
+    shieldDashOutline
+    shieldDoneFill
+    shieldDoneOutline
+    shieldFill
+    shieldLinesCirclesFill
+    shieldLinesCirclesOutline
+    shieldLinesFill
+    shieldLinesOutline
+    shieldOutline
+    shower
+    showerFill
+    shuffleOutline
+    silent
+    silent2
+    sizeExpand
+    sizeMaximize
+    sizeMinimize
+    sleepFill
+    sleepOutline
+    smileFill
+    smileOutline
+    smoke
+    snow
+    solidColorOutline
+    sortAlphabetAsc
+    sortAlphabetDesc
+    sortBigSmall
+    sortSmallBig
+    space
+    spacingHorizontal
+    spacingVertical
+    speedometerFill
+    speedometerOutline
+    squareFill
+    squareOutline
+    stacksFill
+    stacksOutline
+    starCircleFill
+    starCircleOutline
+    starDashFill
+    starDashOutline
+    starFill
+    starFourFill
+    starFourOutline
+    starHalfFill
+    starLightFill
+    starLightOutline
+    starOutline
+    starRecommendFill
+    starRecommendOutline
+    steeringWheelFill
+    steeringWheelOutline
+    stickerFill
+    stickerOutline
+    stickerSquareFill
+    stickerSquareOutline
+    stopFill
+    stopOutline
+    sum
+    sunFill
+    sunOutline
+    sunriseFill
+    sunriseOutline
+    sunsetFill
+    sunsetOutline
+    superscriptText
+    swapHoriz
+    swapHorizCircFill
+    swapHorizCircOutline
+    swapVert
+    swapVertCircFill
+    swapVertCircOutline
+    swapVertOff
+    switchSettingsFill
+    switchSettingsOutline
+    switchToggleOffFill
+    switchToggleOffOutline
+    switchToggleOnFill
+    switchToggleOnOutline
+    symbolsFill
+    symbolsOutline
+    syncError
+    syncProblem
+    tableColumnAdd
+    tableColumnFill
+    tableColumnOutline
+    tableColumnPin
+    tableColumnPinFill
+    tableCornerPin
+    tableCornerPinFill
+    tableFill
+    tableLampFill
+    tableLampOutline
+    tableOutline
+    tablePin
+    tablePinFill
+    tableRowAdd
+    tableRowFill
+    tableRowOutline
+    tableRowPin
+    tableRowPinFill
+    tagBadgeFill
+    tagBadgeOutline
+    targetOutline
+    taskHorizFill
+    taskHorizOutline
+    telegramFill
+    text
+    textUnderline
+    thermometerFill
+    thermometerOutline
+    ticketFill
+    ticketOutline
+    timer45Fill
+    timer45Outline
+    timerAddFill
+    timerAddOutline
+    timerExpressFill
+    timerExpressOutline
+    timerExpressSpeedFill
+    timerExpressSpeedOutline
+    timerFastFill
+    timerFastOutline
+    timerFill
+    timerOutline
+    towTruckFill
+    towTruckOutline
+    track
+    trackCast
+    trackError
+    trackSound
+    trafficLightFill
+    trafficLightOutline
+    transcribeTextVoiceErrorFill
+    transcribeTextVoiceErrorLine
+    transcribeTextVoiceFill
+    transcribeTextVoiceOutline
+    transcript
+    transcriptDash
+    transcriptionVoiceTextErrorFill
+    transcriptionVoiceTextErrorOutline
+    transcriptionVoiceTextFill
+    transcriptionVoiceTextOutline
+    translateFill
+    translateOutline
+    trashFill
+    trashOutline
+    travelCarFill
+    travelCarOutline
+    tree
+    triangleFill
+    triangleOutline
+    tvBulbFill
+    tvBulbOutline
+    tvDashFill
+    tvDashOutline
+    tvFill
+    tvModeFill
+    tvModeOutline
+    tvOutline
+    tvPlayFill
+    tvPlayOutline
+    tvSaluteFill
+    tvSaluteOutline
+    typography
+    umbrellaFill
+    umbrellaOutline
+    ungroupAltFill
+    ungroupAltOutline
+    uploadFill
+    uploadOutline
+    usbAFill
+    usbAOutline
+    usbCFill
+    usbCOutline
+    variable
+    verificationFill
+    verificationOutline
+    vgaFill
+    vgaOutline
+    vibration
+    videoArchive24Fill
+    videoArchive24Outline
+    videoClipFill
+    videoClipOutline
+    videoProcessFill
+    videoProcessOutline
+    videoQuality4K
+    videoQualityHD
+    videoRecordFill
+    videoRecordOutline
+    viewBeautyFill
+    viewBeautyOutline
+    viewPersonFill
+    viewPersonOutline
+    viewPersonPanelLFill
+    viewPersonPanelLOutline
+    viewPersonPanelRFill
+    viewPersonPanelROutline
+    viewScreen4Fill
+    viewScreen4Outline
+    viewSplit4Fill
+    viewSplit4Outline
+    viewfinderCard
+    viewfinderFace
+    viewfinderQRCode
+    visa
+    vkAltFill
+    vkFill
+    vkOutline
+    volumeLevel0Fill
+    volumeLevel0Outline
+    volumeLevel1Fill
+    volumeLevel1Outline
+    volumeLevel2Fill
+    volumeLevel2Outline
+    walletAppleFill
+    walletAppleOutline
+    walletFill
+    walletOutline
+    warningTriangleFill
+    warningTriangleOutline
+    washerFill
+    washerOutline
+    watchRectangleFill
+    watchRectangleOutline
+    watchRoundClockFill
+    watchRoundClockOutline
+    watchRoundFill
+    watchRoundOutline
+    watermark
+    watermarkDash
+    waveLine
+    waves
+    wavesCross
+    weatherFill
+    weatherOutline
+    webFill
+    whatsapp
+    wheelFill
+    wheelOutline
+    whistleFill
+    whistleOutline
+    whiteboardFill
+    whiteboardOutline
+    wifiDash
+    wifiDefault
+    wifiLock
+    wifiLow
+    wifiMedium
+    windowFill
+    windowMaximize
+    windowMaximizeLFill
+    windowMaximizeLOutline
+    windowMaximizeRFill
+    windowMaximizeROutline
+    windowMinimize
+    windowMinimizeLFill
+    windowMinimizeLOutline
+    windowMinimizeRFill
+    windowMinimizeROutline
+    windowMultiFill
+    windowMultiOutline
+    windowOutline
+    wrenchFill
+    wrenchOutline
+    yuanFill
+    yuanOutline
+    zoomMinusFill
+    zoomMinusOutline
+    zoomPlusFill
+    zoomPlusOutline
+    """
+
+  /// Все иконки. Массив строится один раз при первом обращении.
+  public static let allCases: [IconName] = rawNames
+    .split(separator: "\n")
+    .compactMap { IconName(rawValue: String($0)) }
+}
+
+public extension IconName {
+  /// Имена, для которых простой `upperFirstLetter` не даёт имя из asset-каталога.
+  /// Генерируется автоматически — сюда попадают только реальные расхождения.
+  private static let catalogNameOverrides: [String: String] = [
+    "co2": "CO2",
+    "pressure25": "Pressure2_5",
+    "qrCode": "QRCode",
+  ]
+
+  private static let byLowercasedName: [String: IconName] = {
+    var map = [String: IconName](minimumCapacity: allCases.count)
+    for icon in allCases {
+      map[icon.rawValue.lowercased()] = icon
+    }
+    return map
+  }()
+
+  /// Имя иконки в asset-каталоге без суффикса размера, например "Accessibility".
+  var catalogBaseName: String {
+    if let override = IconName.catalogNameOverrides[rawValue] {
+      return override
+    }
+    return rawValue.prefix(1).uppercased() + rawValue.dropFirst()
+  }
+
+  /// Мягкий поиск по строковому имени: сначала точное совпадение, затем
+  /// регистронезависимое. Возвращает nil для неизвестного имени вместо падения.
+  init?(name: String) {
+    if let exact = IconName(rawValue: name) {
+      self = exact
+      return
+    }
+    guard let found = IconName.byLowercasedName[name.lowercased()] else {
+      return nil
+    }
+    self = found
+  }
+
+  /// Ассет иконки в заданном размере.
+  func asset(_ size: IconSize) -> ImageAsset {
+    ImageAsset(name: "\(catalogBaseName)\(size.rawValue)")
+  }
+
+  #if os(iOS) || os(tvOS) || os(watchOS)
+  @available(iOS 8.0, tvOS 9.0, watchOS 2.0, *)
+  func uiImage(_ size: IconSize) -> ImageAsset.Image? {
+    ImageAsset.Image(asset: asset(size))
+  }
+  #endif
+
+  #if canImport(SwiftUI)
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  func image(_ size: IconSize) -> SwiftUI.Image {
+    SwiftUI.Image(asset: asset(size))
+  }
+  #endif
+}
+
+public extension KeyedDecodingContainer {
+  /// Декодирует имя иконки мягко: неизвестное или отсутствующее имя даёт nil,
+  /// а не роняет разбор всей модели.
+  func decodeIconNameIfPresent(forKey key: Key) -> IconName? {
+    guard let raw = try? decodeIfPresent(String.self, forKey: key) else {
+      return nil
+    }
+    return IconName(name: raw)
+  }
+}
+
 // swiftlint:disable convenience_type
 private final class BundleToken {
   static let bundle: Bundle = {
