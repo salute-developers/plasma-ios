@@ -102,6 +102,10 @@ jobs:
            cd SDDSIcons
            swiftgen
 
+      - name: Verify generated icon names
+        working-directory: ./current
+        run: ruby ./SDDSIcons/Scripts/verify_icons.rb
+
       - name: Create tag and release pull request
         working-directory: ./current
         shell: bash

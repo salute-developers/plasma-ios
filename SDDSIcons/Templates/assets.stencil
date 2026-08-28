@@ -341,6 +341,168 @@
   }
 }
 #endif
+
+{# ------------------------------------------------------------------ #}
+{# SDDS: поиск иконки по строковому имени (конфиг, сервер, deep link). #}
+{# Каждая иконка поставляется ровно в трёх размерах (16/24/36), поэтому #}
+{# базовые имена перечисляем по ассетам с суффиксом "16", отрезая его.  #}
+{# Пропускаем базы с кириллической "С" (U+0421): это опечатка upstream, #}
+{# у каждой такой иконки есть точный латинский двойник. Сами ассеты     #}
+{# остаются доступны как Asset.сurrency* — ломающих изменений нет.      #}
+{# ------------------------------------------------------------------ #}
+{% macro iconCasesBlock assets %}
+  {% for asset in assets %}
+  {% if asset.type == "image" %}
+  {% if asset.name|hasSuffix:"16" %}
+  {% set cbase %}{{asset.name|replace:"16",""}}{% endset %}
+  {% if not cbase|hasPrefix:"С" %}
+  case {{cbase|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}
+  {% endif %}
+  {% endif %}
+  {% elif asset.items %}
+  {% call iconCasesBlock asset.items %}
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+{% macro iconRawNamesBlock assets %}
+  {% for asset in assets %}
+  {% if asset.type == "image" %}
+  {% if asset.name|hasSuffix:"16" %}
+  {% set cbase %}{{asset.name|replace:"16",""}}{% endset %}
+  {% if not cbase|hasPrefix:"С" %}
+    {{cbase|swiftIdentifier:"pretty"|lowerFirstWord}}
+  {% endif %}
+  {% endif %}
+  {% elif asset.items %}
+  {% call iconRawNamesBlock asset.items %}
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+{% macro iconOverridesBlock assets %}
+  {% for asset in assets %}
+  {% if asset.type == "image" %}
+  {% if asset.name|hasSuffix:"16" %}
+  {% set cbase %}{{asset.name|replace:"16",""}}{% endset %}
+  {% set prop %}{{cbase|swiftIdentifier:"pretty"|lowerFirstWord}}{% endset %}
+  {% if not cbase|hasPrefix:"С" %}
+  {% if prop|upperFirstLetter != cbase %}
+    "{{prop}}": "{{cbase}}",
+  {% endif %}
+  {% endif %}
+  {% endif %}
+  {% elif asset.items %}
+  {% call iconOverridesBlock asset.items %}
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+// MARK: - Icon Lookup
+
+/// Размер иконки SDDS. Каждая иконка поставляется ровно в этих трёх размерах.
+{{accessModifier}} enum IconSize: Int, CaseIterable, Codable, Hashable {
+  case size16 = 16
+  case size24 = 24
+  case size36 = 36
+}
+
+#if canImport(CoreGraphics)
+{{accessModifier}} extension IconSize {
+  /// Наименьший размер иконки, помещающийся в заданную ширину.
+  init(fittingWidth width: CGFloat) {
+    switch width {
+    case ...16: self = .size16
+    case ...24: self = .size24
+    default: self = .size36
+    }
+  }
+}
+#endif
+
+/// Имя иконки без суффикса размера, например "accessibility" или "musicOutline".
+/// Размер задаётся отдельно через `IconSize`.
+{{accessModifier}} enum IconName: String, Codable, Hashable {
+  {% for catalog in catalogs %}{% call iconCasesBlock catalog.assets %}{% endfor %}
+}
+
+extension IconName: CaseIterable {
+  {# Один строковый литерал вместо синтезированного массива на 1414 элементов:  #}
+  {# синтез CaseIterable стоил ~26 с на чистой сборке таргета, литерал — ~0.    #}
+  private static let rawNames = """
+{% for catalog in catalogs %}{% call iconRawNamesBlock catalog.assets %}{% endfor %}
+    """
+
+  /// Все иконки. Массив строится один раз при первом обращении.
+  {{accessModifier}} static let allCases: [IconName] = rawNames
+    .split(separator: "\n")
+    .compactMap { IconName(rawValue: String($0)) }
+}
+
+{{accessModifier}} extension IconName {
+  /// Имена, для которых простой `upperFirstLetter` не даёт имя из asset-каталога.
+  /// Генерируется автоматически — сюда попадают только реальные расхождения.
+  private static let catalogNameOverrides: [String: String] = [
+    {% for catalog in catalogs %}{% call iconOverridesBlock catalog.assets %}{% endfor %}
+  ]
+
+  private static let byLowercasedName: [String: IconName] = {
+    var map = [String: IconName](minimumCapacity: allCases.count)
+    for icon in allCases {
+      map[icon.rawValue.lowercased()] = icon
+    }
+    return map
+  }()
+
+  /// Имя иконки в asset-каталоге без суффикса размера, например "Accessibility".
+  var catalogBaseName: String {
+    if let override = IconName.catalogNameOverrides[rawValue] {
+      return override
+    }
+    return rawValue.prefix(1).uppercased() + rawValue.dropFirst()
+  }
+
+  /// Мягкий поиск по строковому имени: сначала точное совпадение, затем
+  /// регистронезависимое. Возвращает nil для неизвестного имени вместо падения.
+  init?(name: String) {
+    if let exact = IconName(rawValue: name) {
+      self = exact
+      return
+    }
+    guard let found = IconName.byLowercasedName[name.lowercased()] else {
+      return nil
+    }
+    self = found
+  }
+
+  /// Ассет иконки в заданном размере.
+  func asset(_ size: IconSize) -> {{imageType}} {
+    {{imageType}}(name: "\(catalogBaseName)\(size.rawValue)")
+  }
+
+  #if os(iOS) || os(tvOS) || os(watchOS)
+  @available(iOS 8.0, tvOS 9.0, watchOS 2.0, *)
+  func uiImage(_ size: IconSize) -> {{imageType}}.Image? {
+    {{imageType}}.Image(asset: asset(size))
+  }
+  #endif
+
+  #if canImport(SwiftUI)
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  func image(_ size: IconSize) -> SwiftUI.Image {
+    SwiftUI.Image(asset: asset(size))
+  }
+  #endif
+}
+
+{{accessModifier}} extension KeyedDecodingContainer {
+  /// Декодирует имя иконки мягко: неизвестное или отсутствующее имя даёт nil,
+  /// а не роняет разбор всей модели.
+  func decodeIconNameIfPresent(forKey key: Key) -> IconName? {
+    guard let raw = try? decodeIfPresent(String.self, forKey: key) else {
+      return nil
+    }
+    return IconName(name: raw)
+  }
+}
 {% endif %}
 {% if hasSymbol %}
 
