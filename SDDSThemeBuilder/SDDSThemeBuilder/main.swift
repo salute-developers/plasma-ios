@@ -34,9 +34,34 @@ struct ThemeBuilder: ParsableCommand {
             help: "Корень вендоримых исходников (библиотеки + пакет темы) для standalone. Если не указан — корень репозитория. Позволяет запускать вне репо, указав распакованную копию исходников.")
     var sourcesRoot: String?
 
+    @Option(name: .long,
+            help: """
+            Версия исходников SDDS (тег релиза) для standalone. Архив забирается с GitHub Release и распаковывается \
+            туда же, куда генерируются токены и стили компонентов; распакованный корень используется вместо --sources-root.
+            """)
+    var sourcesVersion: String?
+
+    @Option(name: .customLong("sources-url"),
+            help: "Явный адрес архива исходников (в т.ч. file://) для --sources-version. По умолчанию — ассет релиза на GitHub.")
+    var sourcesURL: String?
+
+    @Option(name: .long,
+            help: "GitHub-репозиторий с релизами (owner/repo), откуда берётся архив --sources-version. По умолчанию \(SourcesReleaseFetcher.defaultRepository).")
+    var sourcesRepository: String?
+
     @Flag(name: .long,
           help: "Генерировать стили компонентов типизированным (старым) путём, без ios-api-meta.json. По умолчанию используется универсальный генератор.")
     var typedGenerator: Bool = false
+
+    func validate() throws {
+        guard sourcesVersion != nil else { return }
+        guard standalone else {
+            throw ValidationError("--sources-version работает только со --standalone: исходники релиза нужны для сборки автономного бандла.")
+        }
+        guard sourcesRoot == nil else {
+            throw ValidationError("--sources-version и --sources-root задают один и тот же корень исходников — укажите что-то одно.")
+        }
+    }
 
     func run() throws {
         UniversalRuntime.isEnabled = !typedGenerator
@@ -63,7 +88,20 @@ struct ThemeBuilder: ParsableCommand {
             config = ThemeBuilderConfiguration()
         }
         
-        let app = App(config: config, sourcePath: #file, outputPath: output, standalone: standalone, coreSourcesPath: coreSources, includeComponents: components, standaloneOutputPath: standaloneOutput, vendorExternalDependencies: externalDependencies, sourcesRootPath: sourcesRoot)
+        let app = App(
+            config: config,
+            sourcePath: #file,
+            outputPath: output,
+            standalone: standalone,
+            coreSourcesPath: coreSources,
+            includeComponents: components,
+            standaloneOutputPath: standaloneOutput,
+            vendorExternalDependencies: externalDependencies,
+            sourcesRootPath: sourcesRoot,
+            sourcesVersion: sourcesVersion,
+            sourcesArchiveURLString: sourcesURL,
+            sourcesRepository: sourcesRepository
+        )
         app.run()
     }
     

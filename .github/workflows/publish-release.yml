@@ -129,6 +129,23 @@ jobs:
         run: |
           gh release upload "${TAG}" "SDDSThemeBuilder/build/SDDSThemeBuilder-cli-${TAG}.zip" --clobber
 
+      # Архив исходников, из которых CLI собирает standalone-бандл. С ним клиенту не
+      # нужен доступ к репозиторию: `--standalone --sources-version <tag>`.
+      - name: Package SDDS sources archive
+        env:
+          TAG: ${{ github.event.inputs.tag_name }}
+        run: |
+          chmod +x scripts/package_sources.sh
+          ./scripts/package_sources.sh "${TAG}"
+          test -f "build/SDDSSources-${TAG}.zip" || { echo "❌ sources archive not built"; exit 1; }
+
+      - name: Upload SDDS sources archive to release
+        env:
+          TAG: ${{ github.event.inputs.tag_name }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          gh release upload "${TAG}" "build/SDDSSources-${TAG}.zip" --clobber
+
       - name: Determine changed modules
         id: changed
         run: |
