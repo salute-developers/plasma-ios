@@ -35,6 +35,23 @@ CLI-утилита (macOS command-line tool) генерации Swift-кода �
 
 Кастомный выходной каталог — опция `-o/--output`.
 
+## Standalone-бандл и исходники с релиза
+
+`--standalone [--components]` собирает плоскую папку `.swift` (`StandaloneBundle.swift`).
+Вендоримые исходники и пакет темы берутся от `sourcesRootURL` (`App.swift`), приоритет:
+
+1. `--sources-version <tag>` — архив `SDDSSources-<tag>.zip` с GitHub Release; скачивает и
+   распаковывает `SourcesRelease/SourcesReleaseFetcher.swift` в `generationRootURL`, то есть
+   рядом со сгенерированными токенами (`<output>/SDDSSources-<tag>`). Требует `--standalone`,
+   несовместим с `--sources-root`. `--sources-url` / `--sources-repository` — переопределения.
+2. `--sources-root <dir>` — распакованная копия исходников.
+3. корень репозитория.
+
+Архив собирает [../scripts/package_sources.sh](../scripts/package_sources.sh), публикует
+`.github/workflows/publish-release.yml`. **Список путей в скрипте обязан совпадать с тем,
+что читает `App.sourcesRootURL`** — иначе бандл соберётся молча неполным (на этот случай
+есть guard'ы `StandaloneBundle.runGuards` и проверка layout-маркера в фетчере).
+
 ## Что откуда берётся
 
 - Состав компонентов темы и имена файлов конфигов — из индекса DS

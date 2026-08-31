@@ -33,6 +33,10 @@
 - `changed-modules.sh` — какие модули изменились.
 - `parse-changelog*.{js,rb,sh}` — обработка changelog.
 - `release_sync/`, `dispatch-publish.sh`, `build-release-announcement.sh` — релизные шаги.
+- `package_sources.sh <version>` — архив исходников `SDDSSources-<version>.zip` для релиза
+  (`build/`). Его забирает CLI ThemeBuilder в режиме `--standalone --sources-version <tag>`,
+  поэтому внутри сохранено дерево путей репозитория. Список путей держи синхронным с
+  `App.sourcesRootURL` в [../SDDSThemeBuilder/CLAUDE.md](../SDDSThemeBuilder/CLAUDE.md).
 
 ## Грабли
 

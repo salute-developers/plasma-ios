@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		153F4004B62546402A36FF5A /* UniversalGeneratorParityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E0C50F2BB2307CF25882BB /* UniversalGeneratorParityTests.swift */; };
 		1AF7AC5AA13EAB634E3EA8F2 /* StandaloneBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EE10E1E6841F38C41F469B /* StandaloneBundle.swift */; };
+		20E33A2F8C7784A9D41E80CC /* SourcesReleaseFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA442B758717E9838013652 /* SourcesReleaseFetcher.swift */; };
 		243C1D132C05D1D300C17C0F /* Colors.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D122C05D1D300C17C0F /* Colors.stencil */; };
 		243C1D152C05D38600C17C0F /* Shapes.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D142C05D38600C17C0F /* Shapes.stencil */; };
 		243C1D172C05D39E00C17C0F /* Shadows.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 243C1D162C05D39E00C17C0F /* Shadows.stencil */; };
@@ -488,6 +489,7 @@
 		B12B00C72F90ABCD005A0001 /* CarouselProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00C62F90ABCD005A0001 /* CarouselProps.swift */; };
 		B12B00C92F90ABCD005A0001 /* CarouselAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00C82F90ABCD005A0001 /* CarouselAppearance.swift */; };
 		B12B00CB2F90ABCD005A0001 /* CarouselSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12B00CA2F90ABCD005A0001 /* CarouselSize.swift */; };
+		B84F8A0D3F6DA9D5833796EF /* SourcesReleaseFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449FD281EEC90E30F57C6F2 /* SourcesReleaseFetcherTests.swift */; };
 		DA6705C207C20ABE81B6D54C /* SddsThemeSourceReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE43A9FC5FEC3B62258E9804 /* SddsThemeSourceReaderTests.swift */; };
 		E2F4D42538685AD389F37800 /* SddsThemeSourceReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174EEEEF7D7128A896F9E3E2 /* SddsThemeSourceReader.swift */; };
 		E55C9C25EE7F1316E9FD0FBB /* ComponentStyleCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E71AD7CE2C4C5EA16803C45 /* ComponentStyleCatalog.swift */; };
@@ -1036,6 +1038,8 @@
 		B12B00CA2F90ABCD005A0001 /* CarouselSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSize.swift; sourceTree = "<group>"; };
 		B5AEDF966404B4505EE98ACE /* MetaValueResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MetaValueResolver.swift; sourceTree = "<group>"; };
 		BE43A9FC5FEC3B62258E9804 /* SddsThemeSourceReaderTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SddsThemeSourceReaderTests.swift; sourceTree = "<group>"; };
+		BEA442B758717E9838013652 /* SourcesReleaseFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SourcesReleaseFetcher.swift; sourceTree = "<group>"; };
+		C449FD281EEC90E30F57C6F2 /* SourcesReleaseFetcherTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SourcesReleaseFetcherTests.swift; sourceTree = "<group>"; };
 		DD63CE858546033A3F29EDA6 /* FormItemSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormItemSize.swift; path = FormItem/FormItemSize.swift; sourceTree = "<group>"; };
 		EF856C3C56D98E1C7C96BBD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -1107,6 +1111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083299C294622DD008E70559 /* SourcesRelease */ = {
+			isa = PBXGroup;
+			children = (
+				BEA442B758717E9838013652 /* SourcesReleaseFetcher.swift */,
+			);
+			name = SourcesRelease;
+			path = SourcesRelease;
+			sourceTree = "<group>";
+		};
 		2489D0982BC7F3790053AAB1 = {
 			isa = PBXGroup;
 			children = (
@@ -1875,6 +1888,7 @@
 				8175395B2BD0077200138866 /* SDDSThemeBuilderCore.docc */,
 				71EB0A22844FB8117F646E69 /* Sdds */,
 				46EE10E1E6841F38C41F469B /* StandaloneBundle.swift */,
+				083299C294622DD008E70559 /* SourcesRelease */,
 			);
 			path = SDDSThemeBuilderCore;
 			sourceTree = "<group>";
@@ -1893,6 +1907,7 @@
 				BE43A9FC5FEC3B62258E9804 /* SddsThemeSourceReaderTests.swift */,
 				20E0C50F2BB2307CF25882BB /* UniversalGeneratorParityTests.swift */,
 				1082F1F4DEF44809FA794DBC /* UniversalGeneratorFileParityTests.swift */,
+				C449FD281EEC90E30F57C6F2 /* SourcesReleaseFetcherTests.swift */,
 			);
 			path = SDDSThemeBuilderCoreTests;
 			sourceTree = "<group>";
@@ -3192,6 +3207,7 @@
 				E55C9C25EE7F1316E9FD0FBB /* ComponentStyleCatalog.swift in Sources */,
 				EDB6AD2BDF7FED62FB4EEB16 /* ComponentIndex.swift in Sources */,
 				7F61900313CAF5190823CE58 /* MarkupValue.swift in Sources */,
+				20E33A2F8C7784A9D41E80CC /* SourcesReleaseFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3215,6 +3231,7 @@
 				DA6705C207C20ABE81B6D54C /* SddsThemeSourceReaderTests.swift in Sources */,
 				153F4004B62546402A36FF5A /* UniversalGeneratorParityTests.swift in Sources */,
 				753B498E9CEA4360A71B36F4 /* UniversalGeneratorFileParityTests.swift in Sources */,
+				B84F8A0D3F6DA9D5833796EF /* SourcesReleaseFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

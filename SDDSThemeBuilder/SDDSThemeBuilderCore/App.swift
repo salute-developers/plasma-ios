@@ -25,6 +25,18 @@ public final class App {
     /// пакет темы (`--sources-root`); `nil` → корень репозитория (запуск внутри plasma-ios).
     /// Позволяет запускать CLI вне репозитория, указав распакованную копию исходников.
     let sourcesRootPath: String?
+    /// Версия исходников (тег релиза) для загрузки с GitHub Release (`--sources-version`).
+    /// Задан → исходники скачиваются и распаковываются в `generationRootURL`, и уже
+    /// распакованный корень используется вместо `sourcesRootPath`.
+    let sourcesVersion: String?
+    /// Явный URL архива исходников (`--sources-url`), в том числе `file://`.
+    let sourcesArchiveURLString: String?
+    /// GitHub-репозиторий с релизами (`owner/repo`) для `--sources-version`.
+    let sourcesRepository: String?
+
+    /// Корень исходников, распакованных из релизного архива. Заполняется один раз
+    /// в `run()`, до генерации тем.
+    private var fetchedSourcesRootURL: URL?
 
     public init(
         config: ThemeBuilderConfiguration,
@@ -35,7 +47,10 @@ public final class App {
         includeComponents: Bool = false,
         standaloneOutputPath: String? = nil,
         vendorExternalDependencies: Bool = false,
-        sourcesRootPath: String? = nil
+        sourcesRootPath: String? = nil,
+        sourcesVersion: String? = nil,
+        sourcesArchiveURLString: String? = nil,
+        sourcesRepository: String? = nil
     ) {
         self.config = config
         self.sourcePath = sourcePath
@@ -46,6 +61,9 @@ public final class App {
         self.standaloneOutputPath = standaloneOutputPath
         self.vendorExternalDependencies = vendorExternalDependencies
         self.sourcesRootPath = sourcesRootPath
+        self.sourcesVersion = sourcesVersion
+        self.sourcesArchiveURLString = sourcesArchiveURLString
+        self.sourcesRepository = sourcesRepository
     }
 
     /// Разрешённый источник темы. Зеркалит Android `ThemeSourceResolver`:
@@ -660,29 +678,51 @@ extension App {
         themeURL(config: config).appending(component: "info.plist")
     }
 
-    private func themeURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+    /// Директория, в которую CLI складывает сгенерированные темы (`<name>Theme`), а с
+    /// `--sources-version` — и распакованный архив исходников.
+    private var generationRootURL: URL {
         if let outputPath = outputPath, !outputPath.isEmpty {
             return URL(fileURLWithPath: outputPath, isDirectory: true)
-                .appending(component: "\(config.name)Theme")
         }
         // В standalone-режиме без -o токены — промежуточный артефакт для сборки бандла,
         // поэтому пишем в портируемый work-scratch (а не в Themes/* и не в baked-путь).
         if standalone {
-            return workRootURL
-                .appending(path: "standalone-work")
-                .appending(component: "\(config.name)Theme")
+            return workRootURL.appending(path: "standalone-work")
         }
-        return themeBuilderURL.appending(component: "../Themes/\(config.name)Theme")
+        return themeBuilderURL.appending(path: "../Themes")
     }
 
-    /// Корень вендоримых исходников: `--sources-root` либо корень репозитория. От него
-    /// резолвятся исходники библиотек и пакет темы. Позволяет запускать CLI вне репо,
-    /// указав распакованную копию исходников (напр. артефакт релиза).
+    private func themeURL(config: ThemeBuilderConfiguration.ThemeConfiguration) -> URL {
+        generationRootURL.appending(component: "\(config.name)Theme")
+    }
+
+    /// Корень вендоримых исходников, от которого резолвятся библиотеки и пакет темы.
+    /// Приоритет: распакованный релизный архив (`--sources-version`) → `--sources-root`
+    /// → корень репозитория. Позволяет запускать CLI вне репо.
     private var sourcesRootURL: URL {
+        if let fetchedSourcesRootURL = fetchedSourcesRootURL {
+            return fetchedSourcesRootURL
+        }
         if let sourcesRootPath = sourcesRootPath, !sourcesRootPath.isEmpty {
             return URL(fileURLWithPath: sourcesRootPath, isDirectory: true)
         }
         return repoRootURL
+    }
+
+    /// Скачивает и распаковывает исходники запрошенной версии в `generationRootURL`.
+    /// Вызывается один раз до генерации тем; дальше `sourcesRootURL` указывает на них.
+    private func fetchSourcesIfNeeded() {
+        guard let sourcesVersion = sourcesVersion, !sourcesVersion.isEmpty else { return }
+
+        var fetcher = SourcesReleaseFetcher(version: sourcesVersion, destinationDirectory: generationRootURL)
+        if let string = sourcesArchiveURLString, !string.isEmpty {
+            fetcher.archiveURL = URL(string: string).flatMap { $0.scheme == nil ? nil : $0 }
+                ?? URL(fileURLWithPath: string)
+        }
+        if let sourcesRepository = sourcesRepository, !sourcesRepository.isEmpty {
+            fetcher.repository = sourcesRepository
+        }
+        fetchedSourcesRootURL = fetcher.resolve()
     }
 
     /// Исходники `SDDSThemeCore` для встраивания: путь из `--core-sources`, иначе — от
@@ -785,6 +825,7 @@ extension App: Runnable {
 
         ComponentConfigSource.localDirectory = themeBuilderURL
         if !standalone { loadApiMeta() }
+        fetchSourcesIfNeeded()
 
         for themeConfig in config.themes {
             Logger.printText("🚀 Generating code for theme \(themeConfig.name)...")
