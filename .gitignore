@@ -4,17 +4,17 @@
 .DS_Store
 
 ## Generated
-./SDDSThemeBuilder/SDDSTheme/
-./SDDSThemeBuilder/SDDSTheme/Generated/
-./SDDSThemeBuilder/SDDSTheme/Fonts/
-./SDDSThemeBuilder/Output/
+./DesignSystemBuilder/SDDSTheme/
+./DesignSystemBuilder/SDDSTheme/Generated/
+./DesignSystemBuilder/SDDSTheme/Fonts/
+./DesignSystemBuilder/Output/
 Output/
 
 ## DS Builder CLI theme files
 ## .sdds/config.json остаётся в гите; токены/палитра, выгруженные DS Builder CLI, — нет.
 **/.sdds/**/
 ## Мета API стилей — продукт сборки, генерится scripts/generate_api_meta.sh
-SDDSThemeBuilder/.sdds/ios-api-meta.json
+DesignSystemBuilder/.sdds/ios-api-meta.json
 
 ## User settings
 xcuserdata/

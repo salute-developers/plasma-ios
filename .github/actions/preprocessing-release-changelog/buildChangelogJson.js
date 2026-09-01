@@ -69,8 +69,6 @@ function getThemeFromH2(h2Title) {
         'plasma-home-ds': 'plasma-homeds-theme',
         'plasma-homeds': 'plasma-homeds-theme',
         'plasma-b2c': 'plasma-b2c-theme',
-        'styles-salute': 'styles-salute-theme',
-        'plasma-styles-salute': 'styles-salute-theme'
     };
     
     // Нормализуем (убираем дефисы) для сравнения
@@ -89,8 +87,7 @@ export function buildChangelogJson(componentsByH2) {
     const themesMap = {
         'sddsserv-theme': new Set(),
         'plasma-homeds-theme': new Set(),
-        'plasma-b2c-theme': new Set(),
-        'styles-salute-theme': new Set()
+        'plasma-b2c-theme': new Set()
     };
     
     const commonSections = ['SDDSComponents', 'SDDSThemeCore'];

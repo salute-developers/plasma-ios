@@ -67,7 +67,7 @@
 		81FC48312D931AF500A83F87 /* EnvironmentValueProvider+DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValueProvider+DefaultValues.swift"; sourceTree = "<group>"; };
 		8E63361D6FA1A21DB3E6F39B /* project.pbxproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.pbxproject; path = project.pbxproj; sourceTree = "<group>"; };
 		B71199390CAED614AAA55E03 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		C5548E1A0E384848023C5205 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
+		C5548E1A0E384848023C5205 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../../DesignSystemBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */

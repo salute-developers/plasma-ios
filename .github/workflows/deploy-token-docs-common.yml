@@ -5,9 +5,9 @@ on:
     inputs:
       modules:
         type: string
-        description: 'Список модулей в формате json (например, ["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]). Если пустое, используется весь список тем.'
+        description: 'Список модулей в формате json (например, ["sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]). Если пустое, используется весь список тем.'
         required: false
-        default: '["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]'
+        default: '["sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]'
       versions:
         type: string
         description: 'Опциональный JSON map модуль->версия (например, {"sddsserv-theme":"0.19.0"}). Если версия задана, она имеет приоритет над ref для конкретного модуля.'
@@ -67,14 +67,11 @@ jobs:
       matrix:
         module: 
           - sddsserv-theme
-          - styles-salute-theme
           - plasma-b2c-theme
           - plasma-home-ds-theme
         include:
           - module: sddsserv-theme
             theme_name: sddsserv
-          - module: styles-salute-theme
-            theme_name: styles-salute
           - module: plasma-b2c-theme
             theme_name: plasma-b2c
           - module: plasma-home-ds-theme
@@ -89,7 +86,7 @@ jobs:
           
           # Если modules пустое, используем значение по умолчанию
           if [[ -z "$modules" || "$modules" == "" ]]; then
-            modules='["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]'
+            modules='["sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]'
             echo "🔍 Using default modules list: $modules"
           fi
           

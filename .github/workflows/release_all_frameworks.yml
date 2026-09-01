@@ -20,7 +20,7 @@ jobs:
           - name: SDDSComponents
             project_path: SDDSComponents/SDDSComponents.xcodeproj
           - name: SDDSThemeCore
-            project_path: SDDSThemeBuilder/SDDSThemeBuilder.xcodeproj
+            project_path: DesignSystemBuilder/DesignSystemBuilder.xcodeproj
 
     steps:
       - name: Checkout the code

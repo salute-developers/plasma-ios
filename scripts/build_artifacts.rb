@@ -6,7 +6,7 @@ require 'zip'
 
 # Скрипт для сборки артефактов
 # Выполняет сборку в следующем порядке:
-# 1. Build XCFramework в SDDSThemeBuilder
+# 1. Build XCFramework в DesignSystemBuilder
 # 2. build_xcframeworks.rb
 # 3. build_themes.rb
 # 4. Копирование артефактов тем в artifacts
@@ -17,7 +17,7 @@ class ArtifactBuilder
     @project_root = File.expand_path('..', __dir__)
     @build_dir = File.join(@project_root, 'build')
     @artifacts_dir = File.join(@project_root, 'artifacts')
-    @theme_builder_dir = File.join(@project_root, 'SDDSThemeBuilder')
+    @theme_builder_dir = File.join(@project_root, 'DesignSystemBuilder')
   end
 
   def run
@@ -27,8 +27,8 @@ class ArtifactBuilder
     FileUtils.mkdir_p(@build_dir) unless Dir.exist?(@build_dir)
     FileUtils.mkdir_p(@artifacts_dir) unless Dir.exist?(@artifacts_dir)
     
-    # Шаг 1: Build XCFramework в SDDSThemeBuilder
-    puts "📦 Шаг 1: Сборка XCFramework в SDDSThemeBuilder..."
+    # Шаг 1: Build XCFramework в DesignSystemBuilder
+    puts "📦 Шаг 1: Сборка XCFramework в DesignSystemBuilder..."
     build_xcframework
     
     # Шаг 2: Запуск build_xcframeworks.rb
@@ -56,12 +56,12 @@ class ArtifactBuilder
   def build_xcframework
     Dir.chdir(@theme_builder_dir) do
       puts "  Очищаю DerivedData для избежания конфликтов..."
-      system("xcodebuild clean -scheme 'Build XCFramework' -project SDDSThemeBuilder.xcodeproj")
+      system("xcodebuild clean -scheme 'Build XCFramework' -project DesignSystemBuilder.xcodeproj")
       
       puts "  Выполняю: xcodebuild -scheme 'Build XCFramework' -configuration Release"
       
       # Используем popen3 для отображения вывода в реальном времени
-      Open3.popen3('xcodebuild', '-scheme', 'Build XCFramework', '-configuration', 'Release', '-project', 'SDDSThemeBuilder.xcodeproj') do |stdin, stdout, stderr, wait_thr|
+      Open3.popen3('xcodebuild', '-scheme', 'Build XCFramework', '-configuration', 'Release', '-project', 'DesignSystemBuilder.xcodeproj') do |stdin, stdout, stderr, wait_thr|
         # Читаем stdout в отдельном потоке
         stdout_thread = Thread.new do
           stdout.each_line do |line|

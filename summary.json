@@ -49,22 +49,5 @@
         }
       }
     }
-  },
-  "plasmaStylesSalute": {
-    "swiftui": {
-      "title": "SwiftUI",
-      "version": "0.23.0",
-      "links": {
-        "documentation": {
-          "href": "https://plasma.sberdevices.ru/ios/styles-salute-theme/0.23.0/"
-        },
-        "changelog": {
-          "href": "https://plasma.sberdevices.ru/ios/styles-salute-theme/0.23.0/CHANGELOG/"
-        },
-        "changelogData": {
-          "href": "https://plasma.sberdevices.ru/ios/styles-salute-theme/changelog.json"
-        }
-      }
-    }
   }
 }

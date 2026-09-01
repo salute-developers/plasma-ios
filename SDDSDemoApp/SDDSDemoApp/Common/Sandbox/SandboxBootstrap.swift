@@ -8,7 +8,6 @@ import SDDSServTheme
 #else
 import PlasmaB2CTheme
 import PlasmaHomeDSTheme
-import StylesSaluteTheme
 import SDDSServTheme
 #endif
 import SandboxCore
@@ -25,15 +24,12 @@ enum SandboxBootstrap {
             registerServTheme(manager)
             registerPlasmaB2CTheme(manager)
             registerPlasmaHomeDSTheme(manager)
-            registerStylesSaluteTheme(manager)
         case .sddsServ:
             registerServTheme(manager)
         case .plasmaB2C:
             registerPlasmaB2CTheme(manager)
         case .plasmaHomeDS:
             registerPlasmaHomeDSTheme(manager)
-        case .stylesSalute:
-            registerStylesSaluteTheme(manager)
         }
     }
 
@@ -206,12 +202,6 @@ private extension SandboxBootstrap {
     static func registerPlasmaHomeDSTheme(_ manager: ThemeManager) {
         #if SANDBOX_DS_PLASMA_HOME_DS || (!SANDBOX_DS_SERV && !SANDBOX_DS_PLASMA_B2C)
         manager.register(PlasmaHomeDSSandboxThemeProvider())
-        #endif
-    }
-
-    static func registerStylesSaluteTheme(_ manager: ThemeManager) {
-        #if !SANDBOX_DS_SERV && !SANDBOX_DS_PLASMA_B2C && !SANDBOX_DS_PLASMA_HOME_DS
-        manager.register(StylesSaluteSandboxThemeProvider())
         #endif
     }
 }

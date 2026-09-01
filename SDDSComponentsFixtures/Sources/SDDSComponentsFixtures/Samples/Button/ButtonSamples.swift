@@ -12,7 +12,6 @@ struct BasicButton_Simple: View {
             isDisabled: false,
             isLoading: false,
             spinnerImage: Image.image("spinner"),
-            appearance: BasicButton.l.accent.appearance,
             layoutMode: .wrapContent,
             action: { print("Button did tap") }
         )
@@ -30,7 +29,6 @@ struct BasicButton_Snippet: View {
                 isDisabled: false,
                 isLoading: false,
                 spinnerImage: Image.image("spinner"),
-                appearance: BasicButton.l.accent.appearance,
                 layoutMode: .wrapContent,
                 action: { print("Button did tap") }
             )
@@ -44,7 +42,6 @@ struct BasicButton_WithPlaceholder: View {
         BasicButton(
             title: placeholder("Label", "Основной текст"),
             subtitle: "",
-            appearance: BasicButton.l.accent.appearance,
             layoutMode: .wrapContent,
             action: {}
         )

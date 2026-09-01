@@ -11,8 +11,7 @@ struct SDDSCheckbox_Simple: View {
             state: $state,
             title: "Value",
             subtitle: "Description",
-            isEnabled: true,
-            appearance: Checkbox.m.default.appearance
+            isEnabled: true
         )
     }
 }

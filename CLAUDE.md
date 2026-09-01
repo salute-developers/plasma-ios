@@ -8,8 +8,9 @@
 
 `plasma-ios` — адаптация дизайн-системы **SDDS** (Salute Design System) под iOS:
 - библиотека компонентов на **SwiftUI + UIKit** (`SDDSComponents`);
-- рантайм-ядро токенов темы (`SDDSThemeBuilder/SDDSThemeCore`);
-- CLI-генератор тем из токенов DS Builder (`SDDSThemeBuilder`);
+- рантайм-ядро токенов темы (`DesignSystemBuilder/SDDSThemeCore`);
+- CLI дизайн-системы `dsbuilder`: генерация тем из токенов DS Builder и сборка
+  документационного бандла (`DesignSystemBuilder`);
 - сгенерированные пакеты тем (`Themes/*`) и демо-песочница (`SDDSDemoApp`).
 
 Платформа: iOS 14+, `swift-tools-version:5.3`. Пакеты — локальные SwiftPM (path-based),
@@ -22,8 +23,8 @@
 | `SDDSComponents/` | Библиотека компонентов (SwiftUI+UIKit), ~387 файлов | [CLAUDE.md](SDDSComponents/CLAUDE.md) |
 | `SDDSApiInfo/` | Маркерные макросы разметки API стилей (`@ApiName`, …) | — |
 | `Tools/SDDSApiInfoGenerator/` | Сканер `*Appearance` → `ios-api-meta.json` | [CLAUDE.md](Tools/SDDSApiInfoGenerator/CLAUDE.md) |
-| `SDDSThemeBuilder/` | macOS CLI генерации тем + `SDDSThemeCore` | [CLAUDE.md](SDDSThemeBuilder/CLAUDE.md) |
-| `SDDSThemeBuilder/SDDSThemeCore/` | Рантайм-типы токенов (портируемое ядро) | [CLAUDE.md](SDDSThemeBuilder/SDDSThemeCore/CLAUDE.md) |
+| `DesignSystemBuilder/` | macOS CLI `dsbuilder` (темы + докбандл) и `SDDSThemeCore` | [CLAUDE.md](DesignSystemBuilder/CLAUDE.md) |
+| `DesignSystemBuilder/SDDSThemeCore/` | Рантайм-типы токенов (портируемое ядро) | [CLAUDE.md](DesignSystemBuilder/SDDSThemeCore/CLAUDE.md) |
 | `SDDSDemoApp/` | Демо/песочница компонентов, схемы per-DS | [CLAUDE.md](SDDSDemoApp/CLAUDE.md) |
 | `SDDSIcons/` | Asset-бандл иконок (swiftgen) | [CLAUDE.md](SDDSIcons/CLAUDE.md) |
 | `Themes/` | Сгенерированные пакеты тем (коммитятся) | [CLAUDE.md](Themes/CLAUDE.md) |
@@ -51,7 +52,7 @@ cd SDDSComponents && xcodebuild -project SDDSComponents.xcodeproj -scheme SDDSCo
 
 Тесты:
 ```sh
-ruby scripts/run_tests.rb        # прогоняет схемы из массива modules внутри скрипта
+ruby scripts/run_tests.rb        # swift test для DesignSystemBuilder + xcodebuild-схемы из скрипта
 ```
 
 Линт:
@@ -75,13 +76,15 @@ ruby scripts/run_tests.rb        # прогоняет схемы из масси
 
 ## Где что лежит
 
-- Точка входа CLI генератора тем: `SDDSThemeBuilder/SDDSThemeBuilder/main.swift`,
-  логика — `SDDSThemeBuilder/SDDSThemeBuilderCore/App.swift`.
-- Stencil-шаблоны токенов/компонентов — внутри `SDDSThemeBuilder` (см. его гайд).
+- Точка входа CLI: `DesignSystemBuilder/DesignSystemBuilderCLI/main.swift`
+  (подкоманды `themes` и `docs`), логика генерации тем —
+  `DesignSystemBuilder/DesignSystemBuilderCore/App.swift`, документационный бандл —
+  `DesignSystemBuilder/DocsAggregatorCore/`.
+- Stencil-шаблоны токенов/компонентов — внутри `DesignSystemBuilder` (см. его гайд).
 - Сгенерированный код тем — `Themes/<Name>Theme/` (НЕ править руками — регенерируется).
 - Иконки — генерируются swiftgen в `SDDSIcons/Generated/`.
 - Сборочные/релизные скрипты — `scripts/*.rb`, `scripts/*.sh`.
-- Данные темы от DS Builder CLI — `SDDSThemeBuilder/.sdds/` (токены/палитра в `.gitignore`,
+- Данные темы от DS Builder CLI — `DesignSystemBuilder/.sdds/` (токены/палитра в `.gitignore`,
   `config.json` — трекается).
 
 ## Грабли
@@ -97,9 +100,13 @@ ruby scripts/run_tests.rb        # прогоняет схемы из масси
   (`build_all_static_dependencies.sh` или сборка через workspace).
 - `Vendor/InputMask` — submodule: после клона `git submodule update --init`.
 - `.sdds/` эфемерна: токены/палитра выгружаются DS Builder CLI и в git не попадают;
-  при пустой `.sdds/` ThemeBuilder откатывается на zip-снапшот.
-- Тесты идут через `xcodebuild ... test` на iOS Simulator / macOS — держи установленный
-  симулятор из `run_tests.rb`.
+  при пустой `.sdds/` dsbuilder откатывается на zip-снапшот.
+- **Имя `dsbuilder` занято дважды**: наш бинарь и внешний Kotlin/Native CLI
+  `salute-developers/design-system-builder` (он выгружает `.sdds/` и печёт бандл
+  документации из нашего дерева). В скриптах и доке зовём их по явным путям.
+- CLI собирается SwiftPM'ом (`DesignSystemBuilder/Package.swift`), а не из
+  `DesignSystemBuilder.xcodeproj` — в проекте остались только `SDDSThemeCore`,
+  `SDDSTheme`, `SDDSDemo` и агрегатный таргет XCFramework.
 
 ## Локальный AI-режим (важно для биллинга)
 
@@ -119,4 +126,5 @@ GitHub Actions и метерных вызовов.
 - Локальный цикл работы — [docs/LOCAL_WORKFLOW.md](docs/LOCAL_WORKFLOW.md).
 - Как ставить задачу агенту — [docs/TASK_GUIDE.md](docs/TASK_GUIDE.md).
 - Необязательный локальный бэклог — [docs/BACKLOG.md](docs/BACKLOG.md).
+- Документационный бандл (как собрать и отдать в dsbuilder) — [docs/DOCS_BUNDLE.md](docs/DOCS_BUNDLE.md).
 - Контракт переносимости пакетов/знаний — [project.yml](project.yml).

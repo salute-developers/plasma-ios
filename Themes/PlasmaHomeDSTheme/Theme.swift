@@ -8,7 +8,7 @@ public class Theme {
     /// Синхронная инициализация темы.
     ///
     /// HomeDS закреплён на системном SF Pro (`fontFamilyOverride: .systemSFPro`
-    /// в `ThemeBuilderConfiguration`), поэтому `FontsManifest.fonts` пустой:
+    /// в `DesignSystemBuilderConfiguration`), поэтому `FontsManifest.fonts` пустой:
     /// скачивать и регистрировать нечего, вся инициализация сводится к установке
     /// дефолтных значений окружения. После возврата из метода тема готова —
     /// снапшот-тестам не нужны ни колбэк, ни `XCTestExpectation`.

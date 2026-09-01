@@ -67,10 +67,7 @@ xcodebuild -scheme SDDSDemoAppPlasmaHomeDS -destination 'generic/platform=iOS Si
 - `sddsserv`
 - `plasmab2c`
 - `plasmahomeds`
-- `stylessalute`
 - (пусто/не задано) => `all`
-
-> Для `stylessalute` профиль в коде уже есть, но отдельная shared-схема в проекте пока не заведена.
 
 ---
 
@@ -120,7 +117,7 @@ python3 scripts/generate_sandbox_stories.py
 - `title`,
 - `supportedThemes`.
 
-Пример (для `stylesSalute`):
+Пример (для гипотетической `acmeDS`):
 
 ```swift
 enum SandboxDesignSystemProfile: Equatable {
@@ -128,12 +125,12 @@ enum SandboxDesignSystemProfile: Equatable {
     case sddsServ
     case plasmaB2C
     case plasmaHomeDS
-    case stylesSalute
+    case acmeDS
 
     static func from(environmentValue: String?) -> SandboxDesignSystemProfile {
         switch environmentValue?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() {
-        case "stylessalute", "styles_salute", "salute":
-            return .stylesSalute
+        case "acmeds", "acme_ds", "acme":
+            return .acmeDS
         default:
             return .all
         }
@@ -141,8 +138,8 @@ enum SandboxDesignSystemProfile: Equatable {
 
     var title: String {
         switch self {
-        case .stylesSalute:
-            return "Components - Styles Salute"
+        case .acmeDS:
+            return "Components - Acme DS"
         default:
             return "Components"
         }
@@ -150,8 +147,8 @@ enum SandboxDesignSystemProfile: Equatable {
 
     var supportedThemes: Set<Theme> {
         switch self {
-        case .stylesSalute:
-            return [.stylesSalute]
+        case .acmeDS:
+            return [.acmeDS]
         default:
             return Set(Theme.allCases)
         }
@@ -167,7 +164,7 @@ enum SandboxDesignSystemProfile: Equatable {
 - подключите в `registerTheme(profile:)`,
 - при необходимости добавьте `#if SANDBOX_DS_<...>` условия.
 
-Пример (по аналогии, для `stylesSalute`):
+Пример (по аналогии, для `acmeDS`):
 
 ```swift
 enum SandboxBootstrap {
@@ -180,9 +177,9 @@ enum SandboxBootstrap {
             registerServTheme(manager)
             registerPlasmaB2CTheme(manager)
             registerPlasmaHomeDSTheme(manager)
-            registerStylesSaluteTheme(manager)
-        case .stylesSalute:
-            registerStylesSaluteTheme(manager)
+            registerAcmeDSTheme(manager)
+        case .acmeDS:
+            registerAcmeDSTheme(manager)
         default:
             break
         }
@@ -190,9 +187,9 @@ enum SandboxBootstrap {
 }
 
 private extension SandboxBootstrap {
-    static func registerStylesSaluteTheme(_ manager: ThemeManager) {
+    static func registerAcmeDSTheme(_ manager: ThemeManager) {
         #if !SANDBOX_DS_SERV && !SANDBOX_DS_PLASMA_B2C && !SANDBOX_DS_PLASMA_HOME_DS
-        manager.register(StylesSaluteSandboxThemeProvider())
+        manager.register(AcmeDSSandboxThemeProvider())
         #endif
     }
 }

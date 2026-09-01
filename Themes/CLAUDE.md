@@ -1,7 +1,7 @@
 # CLAUDE.md — Themes
 
 Сгенерированные пакеты тем SDDS. Каждая папка — отдельная тема, собранная CLI
-`SDDSThemeBuilder` из токенов и палитры. Содержимое **коммитится** в git (в отличие от
+`DesignSystemBuilder` из токенов и палитры. Содержимое **коммитится** в git (в отличие от
 эфемерной `.sdds/`).
 
 ## Темы
@@ -9,7 +9,6 @@
 - `PlasmaB2CTheme/`
 - `PlasmaHomeDSTheme/`
 - `SDDSservTheme/`
-- `StylesSaluteTheme/`
 
 Внутри темы — сгенерированные Swift-файлы: `Tokens/` (цвета, типографика, тени, формы,
 отступы, градиенты), `Fonts/`, `Theme.swift`, плюс appearance-вариации компонентов.
@@ -22,9 +21,9 @@
 
 ## Как регенерировать
 
-Через CLI `SDDSThemeBuilder` (одна тема) или конвейер `scripts/generate_themes/` +
+Через CLI `DesignSystemBuilder` (одна тема) или конвейер `scripts/generate_themes/` +
 `scripts/create_project/` (все темы + Xcode-проекты). См.
-[../SDDSThemeBuilder/CLAUDE.md](../SDDSThemeBuilder/CLAUDE.md) и
+[../DesignSystemBuilder/CLAUDE.md](../DesignSystemBuilder/CLAUDE.md) и
 [../scripts/CLAUDE.md](../scripts/CLAUDE.md).
 
 ## Грабли

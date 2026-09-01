@@ -10,7 +10,6 @@ struct SDDSAvatarGroup_Simple: View {
             image: nil,
             placeholderImage: nil,
             status: .offline,
-            appearance: Avatar.l.appearance,
             accessibility: AvatarAccessibility()
         ),
         SDDSAvatarData(
@@ -18,7 +17,6 @@ struct SDDSAvatarGroup_Simple: View {
             image: nil,
             placeholderImage: nil,
             status: .offline,
-            appearance: Avatar.l.appearance,
             accessibility: AvatarAccessibility()
         )
     ]
@@ -28,7 +26,6 @@ struct SDDSAvatarGroup_Simple: View {
         image: nil,
         placeholderImage: nil,
         status: .hidden,
-        appearance: Avatar.l.appearance,
         accessibility: AvatarAccessibility()
     )
 
@@ -36,8 +33,7 @@ struct SDDSAvatarGroup_Simple: View {
         SDDSAvatarGroup(
             data: Self.exampleAvatars,
             lastAvatar: Self.lastAvatarData,
-            maxDisplayingAvatarCount: 3,
-            appearance: AvatarGroup.s.appearance
+            maxDisplayingAvatarCount: 3
         )
     }
 }

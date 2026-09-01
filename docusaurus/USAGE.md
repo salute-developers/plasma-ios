@@ -9,7 +9,7 @@
 ./docusaurus/generate-docs.sh
 
 # Для Styles Salute Theme
-./docusaurus/generate-docs.sh styles-salute-theme 1.0.0-test test swiftui styles-salute
+./docusaurus/generate-docs.sh sddsserv-theme 1.0.0-test test swiftui sddsserv
 ```
 
 ### 2. Тестирование документации
@@ -22,7 +22,7 @@
 ./docusaurus/test-docs.sh --with-server
 
 # Тестирование конкретной темы
-./docusaurus/test-docs.sh styles-salute-theme 1.0.0-test test swiftui "Styles Salute Theme" StylesSaluteTheme --with-server
+./docusaurus/test-docs.sh sddsserv-theme 1.0.0-test test swiftui "SDDS Serv Theme" SDDSservTheme --with-server
 ```
 
 ## Параметры
@@ -53,8 +53,8 @@
 
 ### Styles Salute Theme
 ```bash
-./docusaurus/generate-docs.sh styles-salute-theme 1.0.0-test test swiftui "Styles Salute Theme" StylesSaluteTheme
-./docusaurus/test-docs.sh styles-salute-theme 1.0.0-test test swiftui "Styles Salute Theme" StylesSaluteTheme
+./docusaurus/generate-docs.sh sddsserv-theme 1.0.0-test test swiftui "SDDS Serv Theme" SDDSservTheme
+./docusaurus/test-docs.sh sddsserv-theme 1.0.0-test test swiftui "SDDS Serv Theme" SDDSservTheme
 ```
 
 ### Другая тема

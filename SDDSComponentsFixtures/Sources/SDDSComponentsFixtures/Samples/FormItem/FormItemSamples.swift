@@ -6,8 +6,8 @@ import SDDSServTheme
 struct SDDSFormItem_Simple: View {
     var body: some View {
         SDDSFormItem(
-            appearance: FormItem.xs.default.appearance,
             title: { Text("Title") },
+            optional: { EmptyView() },
             titleCaption: { Text("TitleCaption") },
             caption: { Text("Caption") },
             counter: { Text("Counter") }
@@ -23,8 +23,11 @@ struct SDDSFormItem_WithHint: View {
 
     var body: some View {
         SDDSFormItem(
-            appearance: FormItem.xs.default.appearance,
             title: { Text("Title") },
+            optional: { EmptyView() },
+            titleCaption: { EmptyView() },
+            caption: { EmptyView() },
+            counter: { EmptyView() },
             hasHint: true,
             onHintPressed: { isTooltipPresented = true }
         ) {
@@ -32,7 +35,7 @@ struct SDDSFormItem_WithHint: View {
         }
         .tooltip(
             isPresented: $isTooltipPresented,
-            appearance: Tooltip.default.appearance,
+            appearance: Tooltip.m.appearance,
             width: nil,
             text: "Tooltip text"
         ) {
@@ -44,14 +47,22 @@ struct SDDSFormItem_WithHint: View {
 // @DocSample
 struct SDDSFormVertical_Simple: View {
     var body: some View {
-        SDDSFormVertical(appearance: FormItem.xs.default.appearance) {
+        SDDSFormVertical() {
             SDDSFormItem(
-                title: { Text("First") }
+                title: { Text("First") },
+                optional: { EmptyView() },
+                titleCaption: { EmptyView() },
+                caption: { EmptyView() },
+                counter: { EmptyView() }
             ) {
                 Text("Value 1")
             }
             SDDSFormItem(
-                title: { Text("Second") }
+                title: { Text("Second") },
+                optional: { EmptyView() },
+                titleCaption: { EmptyView() },
+                caption: { EmptyView() },
+                counter: { EmptyView() }
             ) {
                 Text("Value 2")
             }
@@ -62,14 +73,22 @@ struct SDDSFormVertical_Simple: View {
 // @DocSample
 struct SDDSFormHorizontal_Simple: View {
     var body: some View {
-        SDDSFormHorizontal(appearance: FormItem.xs.default.appearance) {
+        SDDSFormHorizontal() {
             SDDSFormItem(
-                title: { Text("Left") }
+                title: { Text("Left") },
+                optional: { EmptyView() },
+                titleCaption: { EmptyView() },
+                caption: { EmptyView() },
+                counter: { EmptyView() }
             ) {
                 Text("Value 1")
             }
             SDDSFormItem(
-                title: { Text("Right") }
+                title: { Text("Right") },
+                optional: { EmptyView() },
+                titleCaption: { EmptyView() },
+                caption: { EmptyView() },
+                counter: { EmptyView() }
             ) {
                 Text("Value 2")
             }

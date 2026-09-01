@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4865EAF86C63B2466DF565F2 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
+		4865EAF86C63B2466DF565F2 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../../DesignSystemBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 		69397F6B2D79991F001913E2 /* Counter+BaseVariations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Counter+BaseVariations.swift"; sourceTree = "<group>"; };
 		69397F6C2D79991F001913E2 /* Counter+Variations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Counter+Variations.swift"; sourceTree = "<group>"; };
 		69397F6D2D79991F001913E2 /* CounterSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterSize.swift; sourceTree = "<group>"; };

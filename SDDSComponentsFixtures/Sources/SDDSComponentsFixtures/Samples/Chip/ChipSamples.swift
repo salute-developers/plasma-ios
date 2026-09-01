@@ -10,7 +10,6 @@ struct SDDSChip_Simple: View {
             isEnabled: true,
             iconImage: nil,
             buttonImage: nil,
-            appearance: Chip.m.default.appearance,
             removeAction: {}
         )
     }

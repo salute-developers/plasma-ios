@@ -162,9 +162,6 @@ function isCoreSection(heading, coreName) {
 function isLibSection(heading, libName) {
     // Маппинг названий из markdown в имена библиотек
     const nameMapping = {
-        'plasma-styles-salute': 'styles-salute-theme',
-        'plasma-stylesalute': 'styles-salute-theme',
-        'styles-salute': 'styles-salute-theme',
         'plasma-b2c': 'plasma-b2c-theme',
         'plasma-b2c-theme': 'plasma-b2c-theme',
         'plasma-homeds': 'plasma-home-ds-theme',

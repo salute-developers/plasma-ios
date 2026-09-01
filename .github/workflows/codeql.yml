@@ -101,8 +101,8 @@ jobs:
 
       - name: Build SDDSThemeCore XCFramework
         run: |
-          cd SDDSThemeBuilder
-          ruby ../scripts/build_xcframeworks.rb -d . -p SDDSThemeBuilder.xcodeproj -m SDDSThemeCore
+          cd DesignSystemBuilder
+          ruby ../scripts/build_xcframeworks.rb -d . -p DesignSystemBuilder.xcodeproj -m SDDSThemeCore
 
       - name: Build all XCFrameworks
         run: |

@@ -132,9 +132,6 @@ get_theme_artifact_id() {
         "PlasmaHomeDSTheme")
             echo "plasma-home-ds-theme"
             ;;
-        "StylesSaluteTheme")
-            echo "styles-salute-theme"
-            ;;
         *)
             return 1
             ;;
@@ -190,7 +187,7 @@ echo "Found themes: $ALL_THEMES"
 
 # Создаем массивы для всех модулей
 MODULES=("SDDSComponents" "SDDSThemeCore" "SDDSDemoApp")
-PROJECTS=("SDDSComponents/SDDSComponents.xcodeproj/project.pbxproj" "SDDSThemeBuilder/SDDSThemeBuilder.xcodeproj/project.pbxproj" "SDDSDemoApp/SDDSDemoApp.xcodeproj/project.pbxproj")
+PROJECTS=("SDDSComponents/SDDSComponents.xcodeproj/project.pbxproj" "DesignSystemBuilder/DesignSystemBuilder.xcodeproj/project.pbxproj" "SDDSDemoApp/SDDSDemoApp.xcodeproj/project.pbxproj")
 
 # Добавляем темы в массивы
 for theme in $ALL_THEMES; do
