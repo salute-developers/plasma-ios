@@ -2,6 +2,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
+// @DocSample
 struct SDDSIcon_Gradient: View {
     var body: some View {
         SDDSIcon(

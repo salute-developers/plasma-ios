@@ -21,11 +21,11 @@
 2. Запустите скрипт с помощью команды:
 
     ```sh
-    ruby create_project.rb /path/to/SDDSThemeBuilder.xcodeproj NewProjectName /path/to/output /path/to/SDDSThemeCore.xcframework
+    ruby create_project.rb /path/to/DesignSystemBuilder.xcodeproj NewProjectName /path/to/output /path/to/SDDSThemeCore.xcframework
     ```
 
     где:
-    - `/path/to/SDDSThemeBuilder.xcodeproj` — путь к исходному Xcode проекту.
+    - `/path/to/DesignSystemBuilder.xcodeproj` — путь к исходному Xcode проекту.
     - `NewProjectName` — название нового проекта.
     - `/path/to/output` — путь к директории, где будет создан новый проект.
     - `/path/to/SDDSThemeCore.xcframework` — путь к собранному `SDDSThemeCore.xcframework`.
@@ -33,5 +33,5 @@
 ## Пример
 
 ```sh
-ruby create_project.rb /Users/username/Projects/SDDSThemeBuilder/SDDSThemeBuilder.xcodeproj Vertical /Users/username/Projects/Themes /Users/username/Frameworks/SDDSThemeCore.xcframework
+ruby create_project.rb /Users/username/Projects/DesignSystemBuilder/DesignSystemBuilder.xcodeproj Vertical /Users/username/Projects/Themes /Users/username/Frameworks/SDDSThemeCore.xcframework
 

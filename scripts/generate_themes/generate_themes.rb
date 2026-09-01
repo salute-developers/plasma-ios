@@ -81,7 +81,7 @@ themes.each do |theme|
   # Запуск скрипта create_project.rb
   create_project_command = [
     'ruby', create_project_script_path,
-    "#{source_project_path}/SDDSThemeBuilder.xcodeproj",
+    "#{source_project_path}/DesignSystemBuilder.xcodeproj",
     project_name,
     themes_output_dir,
     xcframeworks.first['xcframework_path']

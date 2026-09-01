@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		008A8B2B0E499483CA4CB81A /* SDDSComponentsFixtures in Frameworks */ = {isa = PBXBuildFile; productRef = 81690DE7CB2CEE2CB7CD8F93 /* SDDSComponentsFixtures */; };
 		1AB8FF22688E13DD7BC5E14F /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		1EBD4EE047E67D2981858A2F /* SandboxSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000600AAA001 /* SandboxSwiftUI */; };
 		217970CFC84354EBC4AF7940 /* SandboxCore in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000500AAA001 /* SandboxCore */; };
@@ -29,6 +30,7 @@
 		24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */; };
 		40FC9D201C866D6C018E09F2 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		57B7B31F85ACB9D2AA93659E /* SandboxCore in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000500AAA001 /* SandboxCore */; };
+		592B5882796E1DB7FBBBC405 /* DocThemeCase+SDDSServTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40349070B1EB3D53D31DF1 /* DocThemeCase+SDDSServTheme.swift */; };
 		64DFC21C81C819B85ECEF5FA /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
 		69A261FA2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
 		69A261FB2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C62982CB80E0C00352891 /* SDDSComponents */; };
@@ -36,6 +38,7 @@
 		69A261FD2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 819A38302CC692BD00A1377F /* SDDSComponents */; };
 		69A261FE2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243F2CFDB8E10009B6E9 /* SDDSComponents */; };
 		69A261FF2D75AF91005E4328 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8183456A2CFDBAF30081113B /* SDDSComponents */; };
+		73FC6E0C7A80EDCA27D3456D /* DocSampleScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338782B1FF63A739C68FAE5 /* DocSampleScreenshotTests.swift */; };
 		7B2C7C7512D77528AE752CDB /* SandboxSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000600AAA001 /* SandboxSwiftUI */; };
 		7CA9F0C43698F2C8828552EB /* SandboxCore in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000500AAA001 /* SandboxCore */; };
 		8104243D2CFDB83F0009B6E9 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
@@ -43,12 +46,10 @@
 		8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		816174E12E38EAE8003C1071 /* PlasmaHomeDSTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 816174E02E38EAE8003C1071 /* PlasmaHomeDSTheme */; };
 		8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
-		8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */; };
 		816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 816C629D2CB80E2E00352891 /* SDDSComponents */; };
 		8183D87F2EB2A92800610A9A /* PlasmaB2CTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183D87B2EB2A92800610A9A /* PlasmaB2CTheme.xcframework */; };
 		8183D8812EB2A92800610A9A /* PlasmaHomeDSTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183D87C2EB2A92800610A9A /* PlasmaHomeDSTheme.xcframework */; };
 		8183D8832EB2A92800610A9A /* SDDSServTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183D87D2EB2A92800610A9A /* SDDSServTheme.xcframework */; };
-		8183D8852EB2A92800610A9A /* StylesSaluteTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183D87E2EB2A92800610A9A /* StylesSaluteTheme.xcframework */; };
 		8183D8882EB2A93A00610A9A /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */; };
 		8183D88C2EB2A93B00610A9A /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8183D88B2EB2A93B00610A9A /* SDDSIcons.xcframework */; };
 		8183D88D2EB2A93B00610A9A /* SDDSIcons.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8183D88B2EB2A93B00610A9A /* SDDSIcons.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -60,6 +61,7 @@
 		81ADF4CD2F6C18CE00F9D236 /* PaginationDotsTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADF4CB2F6C18CE00F9D236 /* PaginationDotsTestCases.swift */; };
 		81CA2C542CC69549002AF2DF /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 81CA2C532CC69549002AF2DF /* SDDSComponents */; };
 		81F2E52E2DF98A9400708B40 /* TextFieldTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */; };
+		8202BD445ABE1B316FBFA0A0 /* DocThemeCase+PlasmaHomeDSTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA11918C241D762E55CAF879 /* DocThemeCase+PlasmaHomeDSTheme.swift */; };
 		968513680DA78FC1A9600D08 /* SandboxSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000600AAA001 /* SandboxSwiftUI */; };
 		99A346C47902102C4876D568 /* SDDSThemeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8159F72B2C5CFDCF00622836 /* SDDSThemeCore */; };
 		A1B2C3D42F70000100AAA001 /* SandboxCore in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D42F70000500AAA001 /* SandboxCore */; };
@@ -72,6 +74,7 @@
 		CB87CD667625CE11D573CA4A /* PlasmaB2CTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */; };
 		CDDE80344DAD6D1A868A3D84 /* SDDSServTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 8104243C2CFDB83F0009B6E9 /* SDDSServTheme */; };
 		D3B8C9ED2DAE587300E5FEE6 /* SDSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = D3B8C9EC2DAE587300E5FEE6 /* SDSnapshots */; };
+		E1337B57B4A4FAE20C939B84 /* DocThemeCase+PlasmaB2CTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D8538565F6F1AFC74A8FEF /* DocThemeCase+PlasmaB2CTheme.swift */; };
 		EEA72E958A25A84B22E774FE /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
 		FBFCA637E0C16E953A937845 /* SDDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 8178A7762C74ABDA00DFDA61 /* SDDSComponents */; };
 /* End PBXBuildFile section */
@@ -118,6 +121,9 @@
 		24C1540C2BB3020B00963FAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		24C154122BB3020B00963FAA /* SDDSDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDDSDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasmaDemoAppTests.swift; sourceTree = "<group>"; };
+		3D40349070B1EB3D53D31DF1 /* DocThemeCase+SDDSServTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DocThemeCase+SDDSServTheme.swift"; sourceTree = "<group>"; };
+		4338782B1FF63A739C68FAE5 /* DocSampleScreenshotTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DocSampleScreenshotTests.swift; sourceTree = "<group>"; };
+		68D8538565F6F1AFC74A8FEF /* DocThemeCase+PlasmaB2CTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DocThemeCase+PlasmaB2CTheme.swift"; sourceTree = "<group>"; };
 		694C288A2D89BC9A00D7F341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		730F858EEB054276530AEC79 /* SDDSDemoAppPlasmaHomeDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemoAppPlasmaHomeDS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811170EF2E7B269F0063A7EB /* SDDSDemoAppTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SDDSDemoAppTests.xctestplan; sourceTree = "<group>"; };
@@ -126,9 +132,8 @@
 		8183D87B2EB2A92800610A9A /* PlasmaB2CTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PlasmaB2CTheme.xcframework; path = ../Themes/build/PlasmaB2CTheme.xcframework; sourceTree = "<group>"; };
 		8183D87C2EB2A92800610A9A /* PlasmaHomeDSTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PlasmaHomeDSTheme.xcframework; path = ../Themes/build/PlasmaHomeDSTheme.xcframework; sourceTree = "<group>"; };
 		8183D87D2EB2A92800610A9A /* SDDSServTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSServTheme.xcframework; path = ../Themes/build/SDDSServTheme.xcframework; sourceTree = "<group>"; };
-		8183D87E2EB2A92800610A9A /* StylesSaluteTheme.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = StylesSaluteTheme.xcframework; path = ../Themes/build/StylesSaluteTheme.xcframework; sourceTree = "<group>"; };
 		8183D88B2EB2A93B00610A9A /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../build/SDDSIcons.xcframework; sourceTree = "<group>"; };
-		8183D88E2EB2A95500610A9A /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
+		8183D88E2EB2A95500610A9A /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../DesignSystemBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 		818FE9462C3C50C800F64958 /* SDDSComponents.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDDSComponents.xctestplan; path = ../../SDDSComponents/SDDSComponentsTests/SDDSComponents.xctestplan; sourceTree = "<group>"; };
 		81A8E44E2EE32DC7004C1EED /* InputMask.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = InputMask.xcframework; path = ../build/InputMask.xcframework; sourceTree = "<group>"; };
 		81ADF4CB2F6C18CE00F9D236 /* PaginationDotsTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationDotsTestCases.swift; sourceTree = "<group>"; };
@@ -142,11 +147,12 @@
 		81EDCE4C2DDE48E700FDBA5C /* PopoverVariationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverVariationProvider.swift; sourceTree = "<group>"; };
 		81F2E52C2DF98A9400708B40 /* TextFieldTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTestCases.swift; sourceTree = "<group>"; };
 		AB7E3686142E22A75EDE6FC8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EA11918C241D762E55CAF879 /* DocThemeCase+PlasmaHomeDSTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DocThemeCase+PlasmaHomeDSTheme.swift"; sourceTree = "<group>"; };
 		F9A14DC1F69FDBA3A8162127 /* SDDSDemoAppPlasmaB2C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDDSDemoAppPlasmaB2C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		81102EF02EB2B575009BF3D0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		81102EF02EB2B575009BF3D0 /* Exceptions for "App" folder in "SDDSDemoAppStatic" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				SDDSDemoApp.swift,
@@ -156,50 +162,491 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		81340B492EC383C500D40423 /* BaseTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BaseTestCases; sourceTree = "<group>"; };
-		8183D8662EB2A8F200610A9A /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (81102EF02EB2B575009BF3D0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = App; sourceTree = "<group>"; };
-		8183D86E2EB2A91400610A9A /* SDDSDemoAppStatic */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SDDSDemoAppStatic; sourceTree = "<group>"; };
-		8183D89A2EB2A98D00610A9A /* Common */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Common; sourceTree = "<group>"; };
-		8183D96A2EB2A98D00610A9A /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
-		8188360C2F9A9548004AA1A0 /* CarouselTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CarouselTestCase; sourceTree = "<group>"; };
-		D336A7EB2E0AE28700A996FC /* CardTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CardTestCase; sourceTree = "<group>"; };
-		D34C4A532EEAE4D300678E78 /* MasksTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MasksTestCase; sourceTree = "<group>"; };
-		D35F1ACF2E681A42005B8B59 /* TabBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabBarTestCase; sourceTree = "<group>"; };
-		D35F47C72E5701F800B3EC9E /* LoaderTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LoaderTestCase; sourceTree = "<group>"; };
-		D35F766B2E4E32BF00B3EC9E /* ScrollbarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ScrollbarTestCase; sourceTree = "<group>"; };
-		D35FCCC02E4F1FB600B3EC9E /* CodeFieldTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CodeFieldTestCase; sourceTree = "<group>"; };
-		D36588AF2E72B73800036483 /* CodeInputTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CodeInputTestCase; sourceTree = "<group>"; };
-		D37C09022DE8B32400B76DF2 /* SegmentTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SegmentTestCase; sourceTree = "<group>"; };
-		D3839E792E0E8CD000B6E830 /* ModalTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ModalTestCase; sourceTree = "<group>"; };
-		D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RectSkeletonTestCase; sourceTree = "<group>"; };
-		D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextSkeletonTestCase; sourceTree = "<group>"; };
-		D383C67C2E292B1700B6E830 /* AccordionTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AccordionTestCase; sourceTree = "<group>"; };
-		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ListTestCase; sourceTree = "<group>"; };
-		D3886B342ED866CE0001DF66 /* DrawerTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrawerTestCase; sourceTree = "<group>"; };
-		D38EC3382F619395000872FE /* ToolbarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ToolbarTestCase; sourceTree = "<group>"; };
-		D3A415162FC47602003FE4EF /* FormItemTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = FormItemTestCase; sourceTree = "<group>"; };
-		D3AC26AB2EC609900099FE36 /* NoteTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NoteTestCase; sourceTree = "<group>"; };
-		D3AC382A2EC721730099FE36 /* NavigationBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = NavigationBarTestCase; sourceTree = "<group>"; };
-		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonTestCases; sourceTree = "<group>"; };
-		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SnapshotTests; sourceTree = "<group>"; };
-		D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ButtonGroupTestCase; sourceTree = "<group>"; };
-		D3C163362DD36F59008F37F5 /* ProgressBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ProgressBarTestCase; sourceTree = "<group>"; };
-		D3C55E4C2F485A5300E3EBE7 /* CollapsingNavigationBarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CollapsingNavigationBarTestCase; sourceTree = "<group>"; };
-		D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SpinnerTestCase; sourceTree = "<group>"; };
-		D3EC568D2ED06F8C00114B3D /* TabsTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsTestCase; sourceTree = "<group>"; };
-		D3F77CA32F602D700071787C /* EditableTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EditableTestCase; sourceTree = "<group>"; };
-		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IndicatorTestCase; sourceTree = "<group>"; };
-		42634B64AFC7A686F309FA90 /* WheelTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = WheelTestCase; sourceTree = "<group>"; };
-		D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BadgeTestCase; sourceTree = "<group>"; };
-		D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheckBoxTestCase; sourceTree = "<group>"; };
-		D3FEDC002DB91F10009A2867 /* ChipTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ChipTestCase; sourceTree = "<group>"; };
-		D3FEDC042DB91F3C009A2867 /* CounterTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CounterTestCase; sourceTree = "<group>"; };
-		D3FEDCE12DB923F3009A2867 /* AvatarTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AvatarTestCase; sourceTree = "<group>"; };
-		D3FEDCE72DB92732009A2867 /* RadioBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RadioBoxTestCase; sourceTree = "<group>"; };
-		D3FEDD122DB92C8D009A2867 /* SwitchTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwitchTestCase; sourceTree = "<group>"; };
-		D3FEDD312DB9338E009A2867 /* CellTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CellTestCase; sourceTree = "<group>"; };
-		E4A1B2C32F90000100DEMO01 /* ImageTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ImageTestCase; sourceTree = "<group>"; };
-		E4A1B2C32F90000200DEMO01 /* TextIconTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TextIconTestCase; sourceTree = "<group>"; };
+		81340B492EC383C500D40423 /* BaseTestCases */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = BaseTestCases;
+			sourceTree = "<group>";
+		};
+		8183D8662EB2A8F200610A9A /* App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				81102EF02EB2B575009BF3D0 /* Exceptions for "App" folder in "SDDSDemoAppStatic" target */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8183D86E2EB2A91400610A9A /* SDDSDemoAppStatic */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = SDDSDemoAppStatic;
+			sourceTree = "<group>";
+		};
+		8183D89A2EB2A98D00610A9A /* Common */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8183D96A2EB2A98D00610A9A /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8188360C2F9A9548004AA1A0 /* CarouselTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CarouselTestCase;
+			sourceTree = "<group>";
+		};
+		D336A7EB2E0AE28700A996FC /* CardTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CardTestCase;
+			sourceTree = "<group>";
+		};
+		D34C4A532EEAE4D300678E78 /* MasksTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = MasksTestCase;
+			sourceTree = "<group>";
+		};
+		D35F1ACF2E681A42005B8B59 /* TabBarTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TabBarTestCase;
+			sourceTree = "<group>";
+		};
+		D35F47C72E5701F800B3EC9E /* LoaderTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = LoaderTestCase;
+			sourceTree = "<group>";
+		};
+		D35F766B2E4E32BF00B3EC9E /* ScrollbarTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ScrollbarTestCase;
+			sourceTree = "<group>";
+		};
+		D35FCCC02E4F1FB600B3EC9E /* CodeFieldTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CodeFieldTestCase;
+			sourceTree = "<group>";
+		};
+		D36588AF2E72B73800036483 /* CodeInputTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CodeInputTestCase;
+			sourceTree = "<group>";
+		};
+		D37C09022DE8B32400B76DF2 /* SegmentTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = SegmentTestCase;
+			sourceTree = "<group>";
+		};
+		D3839E792E0E8CD000B6E830 /* ModalTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ModalTestCase;
+			sourceTree = "<group>";
+		};
+		D3839EB62E0EC44F00B6E830 /* RectSkeletonTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = RectSkeletonTestCase;
+			sourceTree = "<group>";
+		};
+		D3839EC12E0EC6D300B6E830 /* TextSkeletonTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TextSkeletonTestCase;
+			sourceTree = "<group>";
+		};
+		D383C67C2E292B1700B6E830 /* AccordionTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = AccordionTestCase;
+			sourceTree = "<group>";
+		};
+		D383E6E22E17D02F00B6E830 /* ListTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ListTestCase;
+			sourceTree = "<group>";
+		};
+		D3886B342ED866CE0001DF66 /* DrawerTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = DrawerTestCase;
+			sourceTree = "<group>";
+		};
+		D38EC3382F619395000872FE /* ToolbarTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ToolbarTestCase;
+			sourceTree = "<group>";
+		};
+		D3A415162FC47602003FE4EF /* FormItemTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = FormItemTestCase;
+			sourceTree = "<group>";
+		};
+		D3AC26AB2EC609900099FE36 /* NoteTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = NoteTestCase;
+			sourceTree = "<group>";
+		};
+		D3AC382A2EC721730099FE36 /* NavigationBarTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = NavigationBarTestCase;
+			sourceTree = "<group>";
+		};
+		D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ButtonTestCases;
+			sourceTree = "<group>";
+		};
+		D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = SnapshotTests;
+			sourceTree = "<group>";
+		};
+		D3BB40102E8AA0B900E64F05 /* ButtonGroupTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ButtonGroupTestCase;
+			sourceTree = "<group>";
+		};
+		D3C163362DD36F59008F37F5 /* ProgressBarTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ProgressBarTestCase;
+			sourceTree = "<group>";
+		};
+		D3C55E4C2F485A5300E3EBE7 /* CollapsingNavigationBarTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CollapsingNavigationBarTestCase;
+			sourceTree = "<group>";
+		};
+		D3D6C81D2E2E3C9300BC1581 /* SpinnerTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = SpinnerTestCase;
+			sourceTree = "<group>";
+		};
+		D3EC568D2ED06F8C00114B3D /* TabsTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TabsTestCase;
+			sourceTree = "<group>";
+		};
+		D3F77CA32F602D700071787C /* EditableTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = EditableTestCase;
+			sourceTree = "<group>";
+		};
+		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = IndicatorTestCase;
+			sourceTree = "<group>";
+		};
+		42634B64AFC7A686F309FA90 /* WheelTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = WheelTestCase;
+			sourceTree = "<group>";
+		};
+		D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = BadgeTestCase;
+			sourceTree = "<group>";
+		};
+		D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CheckBoxTestCase;
+			sourceTree = "<group>";
+		};
+		D3FEDC002DB91F10009A2867 /* ChipTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ChipTestCase;
+			sourceTree = "<group>";
+		};
+		D3FEDC042DB91F3C009A2867 /* CounterTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CounterTestCase;
+			sourceTree = "<group>";
+		};
+		D3FEDCE12DB923F3009A2867 /* AvatarTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = AvatarTestCase;
+			sourceTree = "<group>";
+		};
+		D3FEDCE72DB92732009A2867 /* RadioBoxTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = RadioBoxTestCase;
+			sourceTree = "<group>";
+		};
+		D3FEDD122DB92C8D009A2867 /* SwitchTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = SwitchTestCase;
+			sourceTree = "<group>";
+		};
+		D3FEDD312DB9338E009A2867 /* CellTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = CellTestCase;
+			sourceTree = "<group>";
+		};
+		E4A1B2C32F90000100DEMO01 /* ImageTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ImageTestCase;
+			sourceTree = "<group>";
+		};
+		E4A1B2C32F90000200DEMO01 /* TextIconTestCase */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = TextIconTestCase;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,8 +671,8 @@
 				8166B44D2D5C7E6B0044A680 /* PlasmaB2CTheme in Frameworks */,
 				816C629E2CB80E2E00352891 /* SDDSComponents in Frameworks */,
 				8159F72C2C5CFDCF00622836 /* SDDSThemeCore in Frameworks */,
-				8166B46B2D5C7EEA0044A680 /* StylesSaluteTheme in Frameworks */,
 				81A079622DA6707100260DC9 /* SDDSThemeCore in Frameworks */,
+				008A8B2B0E499483CA4CB81A /* SDDSComponentsFixtures in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +703,6 @@
 			files = (
 				8183D88F2EB2A95500610A9A /* SDDSThemeCore.xcframework in Frameworks */,
 				8183D87F2EB2A92800610A9A /* PlasmaB2CTheme.xcframework in Frameworks */,
-				8183D8852EB2A92800610A9A /* StylesSaluteTheme.xcframework in Frameworks */,
 				8183D88C2EB2A93B00610A9A /* SDDSIcons.xcframework in Frameworks */,
 				8183D8882EB2A93A00610A9A /* SDDSComponents.xcframework in Frameworks */,
 				8183D8832EB2A92800610A9A /* SDDSServTheme.xcframework in Frameworks */,
@@ -291,6 +737,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15F5E0EAB1E30679886C15CC /* DocScreenshots */ = {
+			isa = PBXGroup;
+			children = (
+				4338782B1FF63A739C68FAE5 /* DocSampleScreenshotTests.swift */,
+				3D40349070B1EB3D53D31DF1 /* DocThemeCase+SDDSServTheme.swift */,
+				EA11918C241D762E55CAF879 /* DocThemeCase+PlasmaHomeDSTheme.swift */,
+				68D8538565F6F1AFC74A8FEF /* DocThemeCase+PlasmaB2CTheme.swift */,
+			);
+			name = DocScreenshots;
+			path = DocScreenshots;
+			sourceTree = "<group>";
+		};
 		24C153F92BB3020A00963FAA = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +843,7 @@
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */,
+				15F5E0EAB1E30679886C15CC /* DocScreenshots */,
 			);
 			path = SDDSDemoAppTests;
 			sourceTree = "<group>";
@@ -398,7 +857,6 @@
 				8183D87B2EB2A92800610A9A /* PlasmaB2CTheme.xcframework */,
 				8183D87C2EB2A92800610A9A /* PlasmaHomeDSTheme.xcframework */,
 				8183D87D2EB2A92800610A9A /* SDDSServTheme.xcframework */,
-				8183D87E2EB2A92800610A9A /* StylesSaluteTheme.xcframework */,
 				817D9F152C370676006C4814 /* SDDSComponents.framework */,
 				81D2B19D2C32B59900CAA7FD /* SDDSComponents.xcframework */,
 				81D2B19A2C32B58900CAA7FD /* SDDSComponents.framework */,
@@ -514,10 +972,10 @@
 				8104243F2CFDB8E10009B6E9 /* SDDSComponents */,
 				8183456A2CFDBAF30081113B /* SDDSComponents */,
 				8166B44C2D5C7E6B0044A680 /* PlasmaB2CTheme */,
-				8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */,
 				81A0795E2DA6706500260DC9 /* SDDSComponents */,
 				81A079612DA6707100260DC9 /* SDDSThemeCore */,
 				816174E02E38EAE8003C1071 /* PlasmaHomeDSTheme */,
+				81690DE7CB2CEE2CB7CD8F93 /* SDDSComponentsFixtures */,
 			);
 			productName = PlasmaDemoApp;
 			productReference = 24C154022BB3020A00963FAA /* SDDSDemoApp.app */;
@@ -704,16 +1162,16 @@
 			);
 			mainGroup = 24C153F92BB3020A00963FAA;
 			packageReferences = (
-				A1B2C3D42F70000300AAA001 /* XCLocalSwiftPackageReference "../IntegrationCore/SandboxCore" */,
-				A1B2C3D42F70000400AAA001 /* XCLocalSwiftPackageReference "../IntegrationCore/SandboxSwiftUI" */,
-				B2C3D4E52F70000700AAA001 /* XCLocalSwiftPackageReference "../IntegrationCore/SandboxDemoTheme" */,
-				8104243B2CFDB83F0009B6E9 /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */,
-				8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */,
-				8166B4692D5C7EEA0044A680 /* XCLocalSwiftPackageReference "../Themes/StylesSaluteTheme" */,
-				81A0795D2DA6706500260DC9 /* XCLocalSwiftPackageReference "../SDDSComponents" */,
-				81A079602DA6707100260DC9 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */,
+				A1B2C3D42F70000300AAA001 /* XCLocalSwiftPackageReference "SandboxCore" */,
+				A1B2C3D42F70000400AAA001 /* XCLocalSwiftPackageReference "SandboxSwiftUI" */,
+				B2C3D4E52F70000700AAA001 /* XCLocalSwiftPackageReference "SandboxDemoTheme" */,
+				8104243B2CFDB83F0009B6E9 /* XCLocalSwiftPackageReference "SDDSservTheme" */,
+				8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "PlasmaB2CTheme" */,
+				81A0795D2DA6706500260DC9 /* XCLocalSwiftPackageReference "SDDSComponents" */,
+				81A079602DA6707100260DC9 /* XCLocalSwiftPackageReference "SDDSThemeCore" */,
 				8127A0812E0ABD1700B320D1 /* XCRemoteSwiftPackageReference "snapshots-kit-ios" */,
-				816174DF2E38EAE8003C1071 /* XCLocalSwiftPackageReference "../Themes/PlasmaHomeDSTheme" */,
+				816174DF2E38EAE8003C1071 /* XCLocalSwiftPackageReference "PlasmaHomeDSTheme" */,
+				90383DBDCE8C29E91E8F8069 /* XCLocalSwiftPackageReference "SDDSComponentsFixtures" */,
 			);
 			productRefGroup = 24C154032BB3020A00963FAA /* Products */;
 			projectDirPath = "";
@@ -967,6 +1425,10 @@
 				24C154172BB3020B00963FAA /* PlasmaDemoAppTests.swift in Sources */,
 				81F2E52E2DF98A9400708B40 /* TextFieldTestCases.swift in Sources */,
 				81ADF4CD2F6C18CE00F9D236 /* PaginationDotsTestCases.swift in Sources */,
+				73FC6E0C7A80EDCA27D3456D /* DocSampleScreenshotTests.swift in Sources */,
+				592B5882796E1DB7FBBBC405 /* DocThemeCase+SDDSServTheme.swift in Sources */,
+				8202BD445ABE1B316FBFA0A0 /* DocThemeCase+PlasmaHomeDSTheme.swift in Sources */,
+				E1337B57B4A4FAE20C939B84 /* DocThemeCase+PlasmaB2CTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1666,39 +2128,39 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		8104243B2CFDB83F0009B6E9 /* XCLocalSwiftPackageReference "../Themes/SDDSservTheme" */ = {
+		8104243B2CFDB83F0009B6E9 /* XCLocalSwiftPackageReference "SDDSservTheme" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../Themes/SDDSservTheme;
 		};
-		816174DF2E38EAE8003C1071 /* XCLocalSwiftPackageReference "../Themes/PlasmaHomeDSTheme" */ = {
+		816174DF2E38EAE8003C1071 /* XCLocalSwiftPackageReference "PlasmaHomeDSTheme" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../Themes/PlasmaHomeDSTheme;
 		};
-		8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "../Themes/PlasmaB2CTheme" */ = {
+		8166B44B2D5C7E6B0044A680 /* XCLocalSwiftPackageReference "PlasmaB2CTheme" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../Themes/PlasmaB2CTheme;
 		};
-		8166B4692D5C7EEA0044A680 /* XCLocalSwiftPackageReference "../Themes/StylesSaluteTheme" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Themes/StylesSaluteTheme;
-		};
-		81A0795D2DA6706500260DC9 /* XCLocalSwiftPackageReference "../SDDSComponents" */ = {
+		81A0795D2DA6706500260DC9 /* XCLocalSwiftPackageReference "SDDSComponents" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SDDSComponents;
 		};
-		81A079602DA6707100260DC9 /* XCLocalSwiftPackageReference "../SDDSThemeBuilder/SDDSThemeCore" */ = {
+		81A079602DA6707100260DC9 /* XCLocalSwiftPackageReference "SDDSThemeCore" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SDDSThemeBuilder/SDDSThemeCore;
+			relativePath = ../DesignSystemBuilder/SDDSThemeCore;
 		};
-		A1B2C3D42F70000300AAA001 /* XCLocalSwiftPackageReference "../IntegrationCore/SandboxCore" */ = {
+		90383DBDCE8C29E91E8F8069 /* XCLocalSwiftPackageReference "SDDSComponentsFixtures" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SDDSComponentsFixtures;
+		};
+		A1B2C3D42F70000300AAA001 /* XCLocalSwiftPackageReference "SandboxCore" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../IntegrationCore/SandboxCore;
 		};
-		A1B2C3D42F70000400AAA001 /* XCLocalSwiftPackageReference "../IntegrationCore/SandboxSwiftUI" */ = {
+		A1B2C3D42F70000400AAA001 /* XCLocalSwiftPackageReference "SandboxSwiftUI" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../IntegrationCore/SandboxSwiftUI;
 		};
-		B2C3D4E52F70000700AAA001 /* XCLocalSwiftPackageReference "../IntegrationCore/SandboxDemoTheme" */ = {
+		B2C3D4E52F70000700AAA001 /* XCLocalSwiftPackageReference "SandboxDemoTheme" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../IntegrationCore/SandboxDemoTheme;
 		};
@@ -1749,9 +2211,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = PlasmaB2CTheme;
 		};
-		8166B46A2D5C7EEA0044A680 /* StylesSaluteTheme */ = {
+		81690DE7CB2CEE2CB7CD8F93 /* SDDSComponentsFixtures */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = StylesSaluteTheme;
+			productName = SDDSComponentsFixtures;
 		};
 		816C62982CB80E0C00352891 /* SDDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;

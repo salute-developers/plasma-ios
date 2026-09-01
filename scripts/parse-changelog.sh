@@ -30,9 +30,6 @@ normalize_library_name() {
         "plasma-b2c-theme")
             echo "plasma-b2c-theme"
             ;;
-        "styles-salute-theme")
-            echo "styles-salute-theme"
-            ;;
         *)
             # Если не найдено в маппинге, возвращаем как есть
             echo "$name"

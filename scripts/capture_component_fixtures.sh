@@ -2,11 +2,10 @@
 set -euo pipefail
 
 BASE="https://github.com/salute-developers/theme-converter/raw/refs/heads/main/components"
-SCHEMES=(sdds_serv plasma_b2c plasma_homeds plasma_giga plasma_giga_app plasma_stards \
-         stylesSalute sdds_sbcom)
+SCHEMES=(sdds_serv plasma_b2c plasma_homeds plasma_giga plasma_giga_app plasma_stards sdds_sbcom)
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-FIXTURES="$ROOT/SDDSThemeBuilder/SDDSThemeBuilderCoreTests/Fixtures/ComponentConfigs"
+FIXTURES="$ROOT/DesignSystemBuilder/DesignSystemBuilderCoreTests/Fixtures/ComponentConfigs"
 
 REFRESH=0
 [ "${1:-}" = "--refresh" ] && REFRESH=1

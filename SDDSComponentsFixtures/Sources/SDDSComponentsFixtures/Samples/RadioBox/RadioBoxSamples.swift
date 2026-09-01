@@ -11,8 +11,7 @@ struct SDDSRadiobox_Simple: View {
             isSelected: $isSelected,
             title: "Value",
             subtitle: "Description",
-            isEnabled: true,
-            appearance: Radiobox.m.appearance
+            isEnabled: true
         )
     }
 }

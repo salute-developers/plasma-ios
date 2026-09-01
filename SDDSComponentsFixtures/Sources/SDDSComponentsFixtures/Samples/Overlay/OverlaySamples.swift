@@ -7,7 +7,7 @@ struct SDDSOverlay_Simple: View {
     @State private var isPresented = false
 
     var body: some View {
-        SDDSOverlay(isPresented: $isPresented, appearance: Overlay.default.appearance) {
+        SDDSOverlay(isPresented: $isPresented) {
             Text("Content")
         }
     }

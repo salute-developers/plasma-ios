@@ -9,8 +9,7 @@ struct SDDSProgressView_Simple: View {
     var body: some View {
         SDDSProgressView(
             progress: $progress,
-            isEnabled: true,
-            appearance: ProgressBar.default.appearance
+            isEnabled: true
         )
     }
 }

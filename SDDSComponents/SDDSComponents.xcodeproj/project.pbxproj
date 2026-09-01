@@ -445,49 +445,49 @@
 		};
 		81E957A52ED7897300229705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */;
+			containerPortal = 81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2489D0A12BC7F3790053AAB1;
-			remoteInfo = SDDSThemeBuilder;
+			remoteInfo = DesignSystemBuilder;
 		};
 		81E957A72ED7897300229705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */;
+			containerPortal = 81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 817539582BD0077200138866;
-			remoteInfo = SDDSThemeBuilderCore;
+			remoteInfo = DesignSystemBuilderCore;
 		};
 		81E957A92ED7897300229705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */;
+			containerPortal = 81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 817539612BD0077300138866;
-			remoteInfo = SDDSThemeBuilderCoreTests;
+			remoteInfo = DesignSystemBuilderCoreTests;
 		};
 		81E957AB2ED7897300229705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */;
+			containerPortal = 81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 819B2AC72BF280F900688624;
 			remoteInfo = SDDSDemo;
 		};
 		81E957AD2ED7897300229705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */;
+			containerPortal = 81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8180A53C2C11067100009AF5;
 			remoteInfo = SDDSTheme;
 		};
 		81E957AF2ED7897300229705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */;
+			containerPortal = 81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8180A5812C11C01C00009AF5;
 			remoteInfo = SDDSThemeCore;
 		};
 		81E957B12ED7897300229705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */;
+			containerPortal = 81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 81CF63472C6E8E82008F3BB2;
 			remoteInfo = SDDSThemeUtilities;
@@ -789,8 +789,8 @@
 		8178A0802DF2F6B5003F5041 /* ModalSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSizeConfiguration.swift; sourceTree = "<group>"; };
 		8178A0822DF2F6B5003F5041 /* SDDSModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSModal.swift; sourceTree = "<group>"; };
 		8178A0832DF2F6B5003F5041 /* View+Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modal.swift"; sourceTree = "<group>"; };
-		8178A7392C733C5000DFDA61 /* SDDSThemeCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeCore.framework; path = "../../Library/Developer/Xcode/DerivedData/SDDSThemeBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeCore.framework"; sourceTree = "<group>"; };
-		8178A73D2C733C5900DFDA61 /* SDDSThemeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeUtilities.framework; path = "../../Library/Developer/Xcode/DerivedData/SDDSThemeBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeUtilities.framework"; sourceTree = "<group>"; };
+		8178A7392C733C5000DFDA61 /* SDDSThemeCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeCore.framework; path = "../../Library/Developer/Xcode/DerivedData/DesignSystemBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeCore.framework"; sourceTree = "<group>"; };
+		8178A73D2C733C5900DFDA61 /* SDDSThemeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDDSThemeUtilities.framework; path = "../../Library/Developer/Xcode/DerivedData/DesignSystemBuilder-fqfdpznjjmrsjyexwtopazivejlq/Build/Products/Debug-iphoneos/SDDSThemeUtilities.framework"; sourceTree = "<group>"; };
 		817AE4F92C99925A00F427DE /* SDDSSwitchPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSSwitchPreview.swift; sourceTree = "<group>"; };
 		817AE5052C99925A00F427DE /* SDDSComponentsPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDDSComponentsPreview.swift; sourceTree = "<group>"; };
 		817CB18A2E1F978900B9286C /* DropdownMenuAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownMenuAppearance.swift; sourceTree = "<group>"; };
@@ -845,7 +845,7 @@
 		8191DF062EAF97E9006E36F5 /* SDDSNoteCompact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSNoteCompact.swift; sourceTree = "<group>"; };
 		81998FD42C3436E1009074B7 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = "/Users/vladimirkaltyrin/plasma-ios/SDDSDemoApp/../build/SDDSIcons.xcframework"; sourceTree = "<absolute>"; };
 		81998FD82C343F4A009074B7 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSIcons.xcframework; path = ../SDDSIcons/build/SDDSIcons.xcframework; sourceTree = "<group>"; };
-		81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
+		81998FEB2C353C52009074B7 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../DesignSystemBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 		81998FF32C354C7F009074B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81998FF82C35503D009074B7 /* View+Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modifiers.swift"; sourceTree = "<group>"; };
 		81998FFF2C3555D4009074B7 /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
@@ -970,23 +970,6 @@
 		81E955DA2ED7897200229705 /* meta.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = meta.json; sourceTree = "<group>"; };
 		81E955DC2ED7897200229705 /* general.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = general.json; sourceTree = "<group>"; };
 		81E955DD2ED7897200229705 /* latest.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = latest.zip; sourceTree = "<group>"; };
-		81E955DF2ED7897200229705 /* ios_color.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ios_color.json; sourceTree = "<group>"; };
-		81E955E02ED7897200229705 /* ios_fontFamily.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ios_fontFamily.json; sourceTree = "<group>"; };
-		81E955E12ED7897200229705 /* ios_gradient.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ios_gradient.json; sourceTree = "<group>"; };
-		81E955E22ED7897200229705 /* ios_shadow.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ios_shadow.json; sourceTree = "<group>"; };
-		81E955E32ED7897200229705 /* ios_shape.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ios_shape.json; sourceTree = "<group>"; };
-		81E955E42ED7897200229705 /* ios_spacing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ios_spacing.json; sourceTree = "<group>"; };
-		81E955E52ED7897200229705 /* ios_typography.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ios_typography.json; sourceTree = "<group>"; };
-		81E955E72ED7897200229705 /* reactNative_color.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reactNative_color.json; sourceTree = "<group>"; };
-		81E955E82ED7897200229705 /* reactNative_fontFamily.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reactNative_fontFamily.json; sourceTree = "<group>"; };
-		81E955E92ED7897200229705 /* reactNative_gradient.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reactNative_gradient.json; sourceTree = "<group>"; };
-		81E955EA2ED7897200229705 /* reactNative_shadow.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reactNative_shadow.json; sourceTree = "<group>"; };
-		81E955EB2ED7897200229705 /* reactNative_shape.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reactNative_shape.json; sourceTree = "<group>"; };
-		81E955EC2ED7897200229705 /* reactNative_spacing.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reactNative_spacing.json; sourceTree = "<group>"; };
-		81E955ED2ED7897200229705 /* reactNative_typography.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reactNative_typography.json; sourceTree = "<group>"; };
-		81E955EF2ED7897200229705 /* meta.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = meta.json; sourceTree = "<group>"; };
-		81E955F12ED7897200229705 /* general.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = general.json; sourceTree = "<group>"; };
-		81E955F22ED7897200229705 /* latest.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = latest.zip; sourceTree = "<group>"; };
 		81E955F52ED7897200229705 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		81E955F72ED7897200229705 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		81E955F82ED7897200229705 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -1292,8 +1275,8 @@
 		81E9576F2ED7897200229705 /* SchemeValidationLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeValidationLogger.swift; sourceTree = "<group>"; };
 		81E957712ED7897200229705 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		81E957722ED7897200229705 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		81E957732ED7897200229705 /* SDDSThemeBuilderCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDSThemeBuilderCore.h; sourceTree = "<group>"; };
-		81E957742ED7897200229705 /* SDDSThemeBuilderCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = SDDSThemeBuilderCore.docc; sourceTree = "<group>"; };
+		81E957732ED7897200229705 /* DesignSystemBuilderCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignSystemBuilderCore.h; sourceTree = "<group>"; };
+		81E957742ED7897200229705 /* DesignSystemBuilderCore.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DesignSystemBuilderCore.docc; sourceTree = "<group>"; };
 		81E957762ED7897200229705 /* ColorContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorContextBuilderTests.swift; sourceTree = "<group>"; };
 		81E957772ED7897200229705 /* ContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextBuilderTests.swift; sourceTree = "<group>"; };
 		81E957782ED7897200229705 /* GeneralContextBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralContextBuilderTests.swift; sourceTree = "<group>"; };
@@ -1321,7 +1304,7 @@
 		81E957922ED7897200229705 /* SDDSThemeCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSThemeCoreTests.swift; sourceTree = "<group>"; };
 		81E957942ED7897200229705 /* SDDSThemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSThemeTests.swift; sourceTree = "<group>"; };
 		81E957962ED7897200229705 /* SDDSTheme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDDSTheme; sourceTree = "<group>"; };
-		81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SDDSThemeBuilder.xcodeproj; sourceTree = "<group>"; };
+		81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DesignSystemBuilder.xcodeproj; sourceTree = "<group>"; };
 		81E957982ED7897200229705 /* SDDSThemeCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDDSThemeCore; sourceTree = "<group>"; };
 		81E957992ED7897200229705 /* SDDSThemeUtilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SDDSThemeUtilities; sourceTree = "<group>"; };
 		81E968132CBD194F00256968 /* FocusableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableTextField.swift; sourceTree = "<group>"; };
@@ -2777,7 +2760,7 @@
 			isa = PBXGroup;
 			children = (
 				815E42C22EE86424001EA7C8 /* InputMask.xcframework */,
-				81E9579A2ED7897200229705 /* SDDSThemeBuilder */,
+				81E9579A2ED7897200229705 /* DesignSystemBuilder */,
 				81E931DB2ED786B500229705 /* build */,
 				8178A73D2C733C5900DFDA61 /* SDDSThemeUtilities.framework */,
 				81CF633E2C6E8E18008F3BB2 /* SDDSThemeCore.framework */,
@@ -3090,7 +3073,7 @@
 				81E931DA2ED786B500229705 /* SDDSThemeCore.xcframework */,
 			);
 			name = build;
-			path = ../SDDSThemeBuilder/build;
+			path = ../DesignSystemBuilder/build;
 			sourceTree = "<group>";
 		};
 		81E9343B2DEDF70D00B76E38 /* ToastAppearance */ = {
@@ -3283,61 +3266,12 @@
 			path = SDDSServ;
 			sourceTree = "<group>";
 		};
-		81E955E62ED7897200229705 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				81E955DF2ED7897200229705 /* ios_color.json */,
-				81E955E02ED7897200229705 /* ios_fontFamily.json */,
-				81E955E12ED7897200229705 /* ios_gradient.json */,
-				81E955E22ED7897200229705 /* ios_shadow.json */,
-				81E955E32ED7897200229705 /* ios_shape.json */,
-				81E955E42ED7897200229705 /* ios_spacing.json */,
-				81E955E52ED7897200229705 /* ios_typography.json */,
-			);
-			path = ios;
-			sourceTree = "<group>";
-		};
-		81E955EE2ED7897200229705 /* reactNative */ = {
-			isa = PBXGroup;
-			children = (
-				81E955E72ED7897200229705 /* reactNative_color.json */,
-				81E955E82ED7897200229705 /* reactNative_fontFamily.json */,
-				81E955E92ED7897200229705 /* reactNative_gradient.json */,
-				81E955EA2ED7897200229705 /* reactNative_shadow.json */,
-				81E955EB2ED7897200229705 /* reactNative_shape.json */,
-				81E955EC2ED7897200229705 /* reactNative_spacing.json */,
-				81E955ED2ED7897200229705 /* reactNative_typography.json */,
-			);
-			path = reactNative;
-			sourceTree = "<group>";
-		};
-		81E955F02ED7897200229705 /* latest */ = {
-			isa = PBXGroup;
-			children = (
-				81E955E62ED7897200229705 /* ios */,
-				81E955EE2ED7897200229705 /* reactNative */,
-				81E955EF2ED7897200229705 /* meta.json */,
-			);
-			path = latest;
-			sourceTree = "<group>";
-		};
-		81E955F32ED7897200229705 /* StylesSalute */ = {
-			isa = PBXGroup;
-			children = (
-				81E955F02ED7897200229705 /* latest */,
-				81E955F12ED7897200229705 /* general.json */,
-				81E955F22ED7897200229705 /* latest.zip */,
-			);
-			path = StylesSalute;
-			sourceTree = "<group>";
-		};
 		81E955F42ED7897200229705 /* Output */ = {
 			isa = PBXGroup;
 			children = (
 				81E955B42ED7897200229705 /* PlasmaB2C */,
 				81E955C92ED7897200229705 /* PlasmaHomeDS */,
 				81E955DE2ED7897200229705 /* SDDSServ */,
-				81E955F32ED7897200229705 /* StylesSalute */,
 			);
 			path = Output;
 			sourceTree = "<group>";
@@ -3371,12 +3305,12 @@
 			path = SDDSDemo;
 			sourceTree = "<group>";
 		};
-		81E955FF2ED7897200229705 /* SDDSThemeBuilder */ = {
+		81E955FF2ED7897200229705 /* DesignSystemBuilder */ = {
 			isa = PBXGroup;
 			children = (
 				81E955FE2ED7897200229705 /* main.swift */,
 			);
-			path = SDDSThemeBuilder;
+			path = DesignSystemBuilder;
 			sourceTree = "<group>";
 		};
 		81E956082ED7897200229705 /* TemplateRenderer */ = {
@@ -4253,7 +4187,7 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		81E957752ED7897200229705 /* SDDSThemeBuilderCore */ = {
+		81E957752ED7897200229705 /* DesignSystemBuilderCore */ = {
 			isa = PBXGroup;
 			children = (
 				81E956362ED7897200229705 /* CodeGeneration */,
@@ -4264,10 +4198,10 @@
 				81E957702ED7897200229705 /* Utilities */,
 				81E957712ED7897200229705 /* App.swift */,
 				81E957722ED7897200229705 /* Config.swift */,
-				81E957732ED7897200229705 /* SDDSThemeBuilderCore.h */,
-				81E957742ED7897200229705 /* SDDSThemeBuilderCore.docc */,
+				81E957732ED7897200229705 /* DesignSystemBuilderCore.h */,
+				81E957742ED7897200229705 /* DesignSystemBuilderCore.docc */,
 			);
-			path = SDDSThemeBuilderCore;
+			path = DesignSystemBuilderCore;
 			sourceTree = "<group>";
 		};
 		81E9577B2ED7897200229705 /* ContextBuilders */ = {
@@ -4309,7 +4243,7 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		81E957912ED7897200229705 /* SDDSThemeBuilderCoreTests */ = {
+		81E957912ED7897200229705 /* DesignSystemBuilderCoreTests */ = {
 			isa = PBXGroup;
 			children = (
 				81E9577B2ED7897200229705 /* ContextBuilders */,
@@ -4322,7 +4256,7 @@
 				81E9578F2ED7897200229705 /* SchemeTokenNameValidatorTests.swift */,
 				81E957902ED7897200229705 /* TemplateRendererTests.swift */,
 			);
-			path = SDDSThemeBuilderCoreTests;
+			path = DesignSystemBuilderCoreTests;
 			sourceTree = "<group>";
 		};
 		81E957932ED7897200229705 /* SDDSThemeCoreTests */ = {
@@ -4341,33 +4275,33 @@
 			path = SDDSThemeTests;
 			sourceTree = "<group>";
 		};
-		81E9579A2ED7897200229705 /* SDDSThemeBuilder */ = {
+		81E9579A2ED7897200229705 /* DesignSystemBuilder */ = {
 			isa = PBXGroup;
 			children = (
 				81E9559D2ED7897200229705 /* .swiftpm */,
 				81E9559F2ED7897200229705 /* build */,
 				81E955F42ED7897200229705 /* Output */,
 				81E955FD2ED7897200229705 /* SDDSDemo */,
-				81E955FF2ED7897200229705 /* SDDSThemeBuilder */,
-				81E957752ED7897200229705 /* SDDSThemeBuilderCore */,
-				81E957912ED7897200229705 /* SDDSThemeBuilderCoreTests */,
+				81E955FF2ED7897200229705 /* DesignSystemBuilder */,
+				81E957752ED7897200229705 /* DesignSystemBuilderCore */,
+				81E957912ED7897200229705 /* DesignSystemBuilderCoreTests */,
 				81E957932ED7897200229705 /* SDDSThemeCoreTests */,
 				81E957952ED7897200229705 /* SDDSThemeTests */,
 				81E957962ED7897200229705 /* SDDSTheme */,
-				81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */,
+				81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */,
 				81E957982ED7897200229705 /* SDDSThemeCore */,
 				81E957992ED7897200229705 /* SDDSThemeUtilities */,
 			);
-			name = SDDSThemeBuilder;
-			path = ../SDDSThemeBuilder;
+			name = DesignSystemBuilder;
+			path = ../DesignSystemBuilder;
 			sourceTree = "<group>";
 		};
 		81E9579B2ED7897200229705 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81E957A62ED7897300229705 /* SDDSThemeBuilder */,
-				81E957A82ED7897300229705 /* SDDSThemeBuilderCore.framework */,
-				81E957AA2ED7897300229705 /* SDDSThemeBuilderCoreTests.xctest */,
+				81E957A62ED7897300229705 /* DesignSystemBuilder */,
+				81E957A82ED7897300229705 /* DesignSystemBuilderCore.framework */,
+				81E957AA2ED7897300229705 /* DesignSystemBuilderCoreTests.xctest */,
 				81E957AC2ED7897300229705 /* SDDSDemo.app */,
 				81E957AE2ED7897300229705 /* SDDSTheme.framework */,
 				81E957B02ED7897300229705 /* SDDSThemeCore.framework */,
@@ -4703,7 +4637,7 @@
 			projectReferences = (
 				{
 					ProductGroup = 81E9579B2ED7897200229705 /* Products */;
-					ProjectRef = 81E957972ED7897200229705 /* SDDSThemeBuilder.xcodeproj */;
+					ProjectRef = 81E957972ED7897200229705 /* DesignSystemBuilder.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -4716,24 +4650,24 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		81E957A62ED7897300229705 /* SDDSThemeBuilder */ = {
+		81E957A62ED7897300229705 /* DesignSystemBuilder */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = SDDSThemeBuilder;
+			path = DesignSystemBuilder;
 			remoteRef = 81E957A52ED7897300229705 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		81E957A82ED7897300229705 /* SDDSThemeBuilderCore.framework */ = {
+		81E957A82ED7897300229705 /* DesignSystemBuilderCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = SDDSThemeBuilderCore.framework;
+			path = DesignSystemBuilderCore.framework;
 			remoteRef = 81E957A72ED7897300229705 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		81E957AA2ED7897300229705 /* SDDSThemeBuilderCoreTests.xctest */ = {
+		81E957AA2ED7897300229705 /* DesignSystemBuilderCoreTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = SDDSThemeBuilderCoreTests.xctest;
+			path = DesignSystemBuilderCoreTests.xctest;
 			remoteRef = 81E957A92ED7897300229705 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

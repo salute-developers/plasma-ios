@@ -6,7 +6,6 @@ import SDDSServTheme
 struct SDDSDrawer_Simple: View {
     var body: some View {
         SDDSDrawer(
-            appearance: DrawerCloseOuter.m.appearance,
             backgroundColor: nil,
             onClose: nil,
             closePlacement: .right,

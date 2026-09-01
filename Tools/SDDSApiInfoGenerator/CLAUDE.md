@@ -56,7 +56,7 @@ builder для KSP). Имя компонента по умолчанию = им�
 
 ## Сверка config-id ↔ Appearance (ключевое)
 
-Имя свойства в конфиге (= поле `<Component>Props` в `SDDSThemeBuilderCore/Model/Props/*.swift`,
+Имя свойства в конфиге (= поле `<Component>Props` в `DesignSystemBuilderCore/Model/Props/*.swift`,
 snake_case в JSON) часто **не совпадает** с именем property в `Appearance` (`titleStyle`↔`titleTypography`,
 `formItemType`↔`formType`). Генератор ищет свойство в мете по config-id, поэтому мета **ключуется по
 config-id**. Правило владельца: **имена свойств в `Props`/`Appearance` (Swift) переименовывать НЕЛЬЗЯ**;
@@ -85,7 +85,7 @@ config-id**. Правило владельца: **имена свойств в `
 
 ```sh
 # Полная перегенерация (скан + сверка с Props + override'ы + отчёт):
-scripts/generate_api_meta.sh               # → SDDSThemeBuilder/.sdds/ios-api-meta.json
+scripts/generate_api_meta.sh               # → DesignSystemBuilder/.sdds/ios-api-meta.json
 
 # Подмножество в stdout + диагностика сверки (для ревью):
 scripts/generate_api_meta.sh --only FormItem,Counter
@@ -94,9 +94,9 @@ scripts/generate_api_meta.sh --only FormItem,Counter
 swift build --package-path Tools/SDDSApiInfoGenerator -c release
 Tools/SDDSApiInfoGenerator/.build/release/SDDSApiInfoGenerator \
   --sources SDDSComponents/Sources \
-  --props SDDSThemeBuilder/SDDSThemeBuilderCore/Model/Props \
-  --overrides SDDSThemeBuilder/.sdds/ios-api-meta.overrides.json \
-  --output SDDSThemeBuilder/.sdds/ios-api-meta.json --report
+  --props DesignSystemBuilder/DesignSystemBuilderCore/Model/Props \
+  --overrides DesignSystemBuilder/.sdds/ios-api-meta.overrides.json \
+  --output DesignSystemBuilder/.sdds/ios-api-meta.json --report
 ```
 
 ## Схема выхода
@@ -122,6 +122,6 @@ Tools/SDDSApiInfoGenerator/.build/release/SDDSApiInfoGenerator \
 
 ## Грабли
 
-- Тул автономен от CLI `SDDSThemeBuilder` (тот на xcodebuild и не тянет SPM-swift-syntax).
+- Тул автономен от CLI `DesignSystemBuilder` (тот на xcodebuild и не тянет SPM-swift-syntax).
 - `.build/` в `.gitignore`; `Package.resolved` — трекается (воспроизводимость версии swift-syntax).
 - Скоуп коммита: `sdds-icore/theme-builder` (или заведите `sdds-ios/api-info`).

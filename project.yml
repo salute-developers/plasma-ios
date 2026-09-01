@@ -5,7 +5,7 @@
 name: plasma-ios
 description: >-
   Адаптация дизайн-системы SDDS под iOS: библиотека компонентов (SwiftUI + UIKit),
-  рантайм-ядро токенов и CLI-генератор тем.
+  рантайм-ядро токенов и CLI дизайн-системы (генерация тем + документационный бандл).
 
 packages:
   - dir: SDDSComponents
@@ -14,13 +14,13 @@ packages:
     test: "xcodebuild -project SDDSComponents/SDDSComponents.xcodeproj -scheme SDDSComponents -destination 'platform=iOS Simulator,name=iPhone 16 Pro Max' test"
     lint: "./lint.sh"
 
-  - dir: SDDSThemeBuilder
-    type: swift-cli                # macOS command-line tool (генератор тем)
-    build: "cd SDDSThemeBuilder && ./build_cli.sh"
-    test: "ruby scripts/run_tests.rb"   # SDDSThemeBuilderCoreTests (macOS)
+  - dir: DesignSystemBuilder
+    type: swift-cli                # macOS CLI `dsbuilder`: генерация тем + докбандл
+    build: "swift build --package-path DesignSystemBuilder -c release --product dsbuilder"
+    test: "swift test --package-path DesignSystemBuilder"
     lint: "./lint.sh"
 
-  - dir: SDDSThemeBuilder/SDDSThemeCore
+  - dir: DesignSystemBuilder/SDDSThemeCore
     type: swift-library            # портируемое рантайм-ядро токенов
     lint: "./lint.sh"
 

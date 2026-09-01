@@ -10,7 +10,6 @@ struct SDDSAvatar_Simple: View {
             image: nil,
             placeholderImage: nil,
             status: .hidden,
-            appearance: Avatar.l.appearance,
             accessibility: AvatarAccessibility()
         )
     }

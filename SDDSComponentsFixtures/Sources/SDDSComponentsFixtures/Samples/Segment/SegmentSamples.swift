@@ -21,7 +21,6 @@ struct SDDSSegment_Simple: View {
         let items: [SDDSSegmentItemData<AnyView>] = [item]
         return SDDSSegment(
             items: items,
-            appearance: Segment.m.appearance,
             layoutMode: .flexible,
             layoutOrientation: .horizontal,
             selectedItemId: $selectedId,

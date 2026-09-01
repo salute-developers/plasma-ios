@@ -2,6 +2,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
+// @DocSample
 struct SDDSIcon_TintColor: View {
     var body: some View {
         SDDSIcon(

@@ -23,7 +23,6 @@ resolve_theme_metadata() {
     if [[ -z "$theme_key" ]]; then
         case "$clean_artifact_id" in
             "sddsserv-theme") theme_key="sddsserv" ;;
-            "styles-salute-theme") theme_key="styles-salute" ;;
             "plasma-b2c-theme") theme_key="plasma-b2c" ;;
             "plasma-home-ds-theme") theme_key="plasma-homeds" ;;
         esac
@@ -32,9 +31,6 @@ resolve_theme_metadata() {
     case "$theme_key" in
         "sddsserv")
             echo "sddsserv|SDDSServTheme|../Themes/SDDSservTheme/override-docs|SDDSservTheme"
-            ;;
-        "styles-salute")
-            echo "styles-salute|StylesSaluteTheme|../Themes/StylesSaluteTheme/override-docs|StylesSaluteTheme"
             ;;
         "plasma-b2c")
             echo "plasma-b2c|PlasmaB2CTheme|../Themes/PlasmaB2CTheme/override-docs|PlasmaB2CTheme"
@@ -263,7 +259,7 @@ echo "  # Для sddsserv-theme (по умолчанию):"
 echo "  ./docusaurus/generate-docs.sh"
 echo ""
 echo "  # Для Styles Salute Theme:"
-echo "  ./docusaurus/generate-docs.sh styles-salute-theme 1.0.0-test test swiftui styles-salute"
+echo "  ./docusaurus/generate-docs.sh sddsserv-theme 1.0.0-test test swiftui sddsserv"
 echo ""
 echo "  # Для SDDSComponents:"
 echo "  ./docusaurus/generate-docs.sh SDDSComponents 1.0.0-test test swiftui \"SDDS iOS Components\" SDDSComponents"

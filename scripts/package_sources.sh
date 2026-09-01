@@ -7,7 +7,7 @@
 # Версия — тег релиза (`release-18-08-2026`); результат — `<output-dir>/SDDSSources-<version>.zip`
 # (по умолчанию output-dir = <repo>/build).
 #
-# Архив нужен CLI SDDSThemeBuilder в режиме `--standalone --sources-version <version>`:
+# Архив нужен CLI dsbuilder в режиме `--standalone --sources-version <version>`:
 # он скачивает его с релиза, распаковывает рядом со сгенерированными токенами и берёт
 # оттуда вендоримые исходники вместо репозитория. Поэтому внутри архива сохраняется
 # дерево путей репозитория — распакованный корень подходит на роль `--sources-root`
@@ -36,7 +36,7 @@ ARCHIVE="$OUTPUT_DIR/$STAGE_NAME.zip"
 # поэтому падаем; InputMask опционален (нужен только для --external-dependencies и
 # приезжает сабмодулем).
 REQUIRED_PATHS=(
-  "SDDSThemeBuilder/SDDSThemeCore/Sources/SDDSThemeCore"
+  "DesignSystemBuilder/SDDSThemeCore/Sources/SDDSThemeCore"
   "SDDSComponents/Sources/SDDSComponents"
   "SDDSComponents/Assets.xcassets"
   "SDDSIcons/Generated/Assets.swift"
