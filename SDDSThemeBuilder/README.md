@@ -93,7 +93,7 @@ build/themebuilder-dd/Build/Products/Release/SDDSThemeBuilder
 | `-o, --output <dir>` | Директория для сгенерированных тем. Если задана — каждая тема пишется в `<dir>/<ThemeName>Theme`. Если не задана — поведение прежнее (`<repo>/Themes`). |
 | `--standalone` | Собрать **автономный** бандл темы (`<ThemeName>ThemeSources`) — плоскую папку `.swift`, компилируемую одним модулем без линковки наших библиотек. См. [«Автономные исходники»](#автономные-исходники-standalone). |
 | `--components` | Аддитивно к `--standalone`: включить в бандл слой компонентов (иначе — только токены). |
-| `--standalone-output <dir>` | Куда класть автономный бандл. По умолчанию — `SDDSThemeBuilder/build/standalone`. |
+| `--standalone-output <dir>` | Куда класть автономный бандл. По умолчанию — `./SDDSStandalone` относительно текущей рабочей директории запуска. |
 | `--external-dependencies` | Вендорить исходники внешних зависимостей (`InputMask`) в бандл. По умолчанию они **не** копируются — `import InputMask` сохранён, клиент линкует модуль сам. |
 | `--core-sources <dir>` | Путь к исходникам `SDDSThemeCore` для встраивания в бандл. По умолчанию — от `--sources-root`. |
 | `--sources-root <dir>` | Корень вендоримых исходников (библиотеки + пакет темы). По умолчанию — корень репозитория. Позволяет запускать CLI **вне** plasma-ios, указав распакованную копию исходников (напр. артефакт релиза). |
@@ -152,12 +152,12 @@ SDDS_TYPED_GENERATOR=1 ./build_cli.sh --run
 
 | Что | Куда |
 | --- | --- |
-| Временные скачанные/распакованные схемы и палитра | `SDDSThemeBuilder/Output/<ThemeName>/` |
+| Временные скачанные/распакованные схемы и палитра | `$TMPDIR/SDDSThemeBuilder/Output/<ThemeName>/` |
 | Тенанты темы | `…/Output/<ThemeName>/tenants/<Tenant>/` |
 
-> Каталог `SDDSThemeBuilder/Output/` — это рабочий scratch (он в `.gitignore`,
-> `generate_themes.rb` чистит его после каждой темы), поэтому `--output` его не
-> переносит — туда уходит только финальный сгенерированный код.
+> Этот scratch лежит в системном temp, а не в дереве репозитория: бинарь должен
+> одинаково работать и на машине клиента. `--output` его не переносит — туда
+> уходит только финальный сгенерированный код.
 
 ---
 
@@ -183,7 +183,7 @@ SDDS_TYPED_GENERATOR=1 ./build_cli.sh --run
 cd SDDSThemeBuilder
 ./build_cli.sh
 
-# Только токены выбранной темы → build/standalone/<ThemeName>ThemeSources
+# Только токены выбранной темы → ./SDDSStandalone/<ThemeName>ThemeSources
 ./build/themebuilder/SDDSThemeBuilder file:///path/to/config.json --standalone
 
 # Токены + компоненты
@@ -199,11 +199,19 @@ cd SDDSThemeBuilder
   --external-dependencies
 ```
 
-**Куда пишется:** `--standalone-output <dir>` (по умолчанию
-`SDDSThemeBuilder/build/standalone`), внутри — папка `<ThemeName>ThemeSources` на
-каждую тему из конфига. `build/` в `.gitignore`. Промежуточная генерация токенов
-в standalone-режиме без `-o` идёт в `build/standalone-work` и **не перезаписывает**
-закоммиченные `Themes/*`.
+**Куда пишется бандл:** `--standalone-output <dir>`; по умолчанию —
+`./SDDSStandalone` относительно **текущей рабочей директории запуска** (не пути
+сборки: бинарь должен одинаково работать и у клиента). Внутри — папка
+`<ThemeName>ThemeSources` на каждую тему из конфига.
+
+**Куда пишется промежуточное:** токены, `FontsManifest` и — при
+`--sources-version` — распакованные исходники кладутся в общий корень генерации:
+`-o <dir>`, если он задан, иначе `$TMPDIR/SDDSThemeBuilder/standalone-work`.
+В обоих случаях закоммиченные `Themes/*` **не перезаписываются**.
+
+> Из-за этого в примере ниже с одним лишь `--standalone-output` бандл окажется в
+> `./out`, а распакованные исходники — во временном каталоге. Если хотите видеть
+> их рядом с бандлом, добавьте `-o ./out`.
 
 **Подключение у клиента:** положить папку (вместе с `.xcassets` для уровня с
 компонентами) в свой target и вызвать `Theme.initialize(tenant:)`; токены доступны
@@ -229,12 +237,55 @@ plasma-ios, укажите `--sources-root <dir>` на распакованну�
 `SDDSSources-<tag>.zip`, и CLI умеет забирать его сам. Клиенту достаточно бинаря
 и номера версии — доступ к репозиторию не нужен.
 
+#### Сценарий целиком (у клиента нет чекаута репозитория)
+
+Оба артефакта лежат ассетами одного релиза, тег общий:
+
 ```sh
-./SDDSThemeBuilder file:///path/to/config.json --standalone --components \
-  --sources-version release-18-08-2026
+TAG=release-18-08-2026
 ```
 
-Что происходит: архив скачивается с GitHub Release, распаковывается в
+**1. Скачать и распаковать CLI.** В архиве бинарь, `SDDSThemeBuilderCore.framework`
+и `ios-api-meta.json`. Бинарь линкует фреймворк рядом через rpath — запускайте из
+этой папки, не выдёргивая один файл.
+
+```sh
+gh release download "$TAG" --repo salute-developers/plasma-ios \
+  --pattern "SDDSThemeBuilder-cli-$TAG.zip"
+unzip -q "SDDSThemeBuilder-cli-$TAG.zip" && cd SDDSThemeBuilder-cli
+```
+
+**2. Подготовить конфиг.** Минимальный рабочий конфиг для запуска вне репозитория —
+только `paletteURL` и темы с `url`. См. [«Конфигурация»](#конфигурация); поля
+`localSchemePath` и `sddsConfigPath` вне репозитория **не работают** — подробности
+там же.
+
+```json
+{
+  "paletteURL": "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json",
+  "themes": [
+    {
+      "name": "SDDSServ",
+      "url": "https://github.com/salute-developers/theme-converter/raw/refs/heads/main/themes/sdds_serv/latest.zip"
+    }
+  ]
+}
+```
+
+**3. Собрать бандл нужной версии.**
+
+```sh
+./SDDSThemeBuilder ./config.json --standalone --components \
+  --sources-version "$TAG" \
+  --standalone-output ./out
+# → ./out/SDDSServThemeSources — плоская папка .swift + .xcassets
+```
+
+Обновиться на другую версию — тот же запуск с другим тегом.
+
+#### Что происходит внутри
+
+Архив скачивается с GitHub Release, распаковывается в
 `<output>/SDDSSources-<tag>` — **туда же, куда CLI генерирует токены и стили
 компонентов** — и этот распакованный корень используется как `--sources-root`.
 Скачанный zip удаляется, дерево остаётся: повторный запуск с той же версией
@@ -284,7 +335,7 @@ plasma-ios, укажите `--sources-root <dir>` на распакованну�
 
 ```sh
 SDK=$(xcrun --sdk iphonesimulator --show-sdk-path)
-cd build/standalone/<ThemeName>ThemeSources
+cd SDDSStandalone/<ThemeName>ThemeSources
 xcrun swiftc -sdk "$SDK" -target arm64-apple-ios16.0-simulator -typecheck *.swift
 ```
 
@@ -300,7 +351,7 @@ xcrun swiftc -sdk "$SDK" -target "$TGT" -emit-module -module-name InputMask \
   -emit-module-path /tmp/im/InputMask.swiftmodule \
   Vendor/InputMask/Source/InputMask/InputMask/Classes/*.swift
 # 2. type-check бандла, подсунув модуль через -I
-cd build/standalone/<ThemeName>ThemeSources
+cd SDDSStandalone/<ThemeName>ThemeSources
 xcrun swiftc -sdk "$SDK" -target "$TGT" -typecheck -I /tmp/im *.swift
 ```
 
@@ -337,6 +388,17 @@ xcrun swiftc -sdk "$SDK" -target "$TGT" -typecheck -I /tmp/im *.swift
 }
 ```
 
+> ⚠️ **Этот пример рассчитан на запуск внутри репозитория.** Последняя тема
+> (`PlasmaHomeDS`) использует `sddsConfigPath` и `localSchemePath` — оба поля
+> резолвятся от корня plasma-ios, а корень вычисляется от `#file`, то есть от
+> пути, **зашитого в бинарь при компиляции**. На чужой машине такого пути нет:
+> схема не найдётся, и CLI остановится с `No scheme directory`.
+>
+> Для запуска вне репозитория (в том числе с `--sources-version`) уберите оба
+> поля и оставьте у темы `url` — схема будет скачана с upstream. Готовый
+> минимальный конфиг — в разделе
+> [«Исходники с релиза»](#сценарий-целиком-у-клиента-нет-чекаута-репозитория).
+
 ### Поля темы (`themes[]`)
 
 | Поле | Обяз. | Описание |
@@ -345,8 +407,12 @@ xcrun swiftc -sdk "$SDK" -target "$TGT" -typecheck -I /tmp/im *.swift
 | `url` | да | URL на ZIP-архив scheme темы (upstream `theme-converter`). |
 | `tenants` | нет | Доп. суб-темы: `[{ "name", "url" }]`. Генерируются поверх базовой. |
 | `fontFamilyOverride` | нет | `none` (по умолчанию) или `systemSFPro` — подменяет `fontName` в typography-токенах на системный SF Pro и выпускает пустой `FontsManifest` (без runtime-загрузки шрифтов). Применяется по compliance-причинам. |
-| `sddsConfigPath` | нет | Путь (от корня репо) к `.sdds/config.json` от DS Builder CLI. Если задан и `.sdds` валиден — тема собирается **из локальной `.sdds`-директории** напрямую, без скачивания/распаковки zip. Иначе — fallback на `localSchemePath`/`url`. См. раздел [«Источник темы»](#источник-темы-sdds-ds-builder-или-remotezip). |
-| `localSchemePath` | нет | Путь (от корня репо) к локальному snapshot-ZIP. Если задан — схема читается локально через `file://`, без обращений к upstream. Служит fallback'ом, когда `.sdds` недоступен. |
+| `sddsConfigPath` | нет | Путь (от корня репо) к `.sdds/config.json` от DS Builder CLI. Если задан и `.sdds` валиден — тема собирается **из локальной `.sdds`-директории** напрямую, без скачивания/распаковки zip. Иначе — fallback на `localSchemePath`/`url`. Только для запуска внутри репозитория. См. раздел [«Источник темы»](#источник-темы-sdds-ds-builder-или-remotezip). |
+| `localSchemePath` | нет | Путь (от корня репо) к локальному snapshot-ZIP. Если задан — схема читается локально через `file://`, без обращений к upstream. Служит fallback'ом, когда `.sdds` недоступен. Только для запуска внутри репозитория. |
+
+> Оба пути резолвятся от корня репозитория, вычисленного от compile-time `#file`,
+> поэтому вне plasma-ios они не разрешаются. `--sources-root` и `--sources-version`
+> на них **не влияют**: те задают корень вендоримых исходников, а не источник схемы.
 
 Верхнеуровневые поля: `paletteURL` (URL палитры цветов) и `themes` (массив тем).
 

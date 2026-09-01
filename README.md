@@ -46,6 +46,26 @@ xcodebuild -project SDDSDemoApp.xcodeproj -scheme SDDSDemoApp -destination 'plat
 
 Вместо `iPhone 16,OS=18.6` укажите доступный симулятор из списка `xcodebuild -destination 'platform=iOS Simulator' -showdestinations`.
 
+## Генерация тем: SDDSThemeBuilder
+
+CLI-утилита, которая по токенам дизайн-системы генерирует пакет темы (`Themes/<Name>Theme`)
+— токены, типографику, вариации компонентов. Полное руководство:
+[SDDSThemeBuilder/README.md](SDDSThemeBuilder/README.md).
+
+Отдельный режим — **автономные исходники** (`--standalone`): тема собирается в плоскую папку
+`.swift`, которая компилируется одним модулем без линковки наших библиотек. Исходники для
+сборки можно забрать прямо с релиза по номеру версии, не имея чекаута репозитория:
+
+```
+./SDDSThemeBuilder ./config.json --standalone --components --sources-version release-18-08-2026
+```
+
+Как получить бинарь CLI и как выглядит конфиг для запуска вне репозитория — см.
+[«Исходники с релиза»](SDDSThemeBuilder/README.md#исходники-с-релиза---sources-version).
+Каждый релиз публикует два ассета: `SDDSThemeBuilder-cli-<tag>.zip` (сам CLI) и
+`SDDSSources-<tag>.zip` (исходники SDDS, собирает
+[scripts/package_sources.sh](scripts/package_sources.sh)).
+
 ## AI-агентная инфра
 
 В репозитории развёрнута локальная инфраструктура для работы с AI-агентом (Claude Code).
