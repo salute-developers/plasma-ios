@@ -14,6 +14,13 @@ struct WheelSize: CodeGenerationSize {
     
     var itemAlignment: String?
     
+    var selectionIndicatorEnabled: String?
+    var selectionIndicatorShape: String?
+    var selectionIndicatorPaddingTop: String?
+    var selectionIndicatorPaddingBottom: String?
+    var selectionIndicatorPaddingStart: String?
+    var selectionIndicatorPaddingEnd: String?
+    
     init(variation: WheelConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
@@ -25,6 +32,12 @@ struct WheelSize: CodeGenerationSize {
         self.separatorSpacing = CGFloatContextBuilder(props.separatorSpacing?.value, nullify: nullify).context
         self.controlIconUpSize = ImageSizeContextBuilder(props.controlIconUp?.value, nullify: nullify).context
         self.controlIconDownSize = ImageSizeContextBuilder(props.controlIconDown?.value, nullify: nullify).context
+        self.selectionIndicatorEnabled = BoolContextBuilder(props.selectionIndicatorEnabled?.value, nullify: nullify).context
+        self.selectionIndicatorShape = ShapeTokenContextBuilder(shape: props.selectionIndicatorShape, nullify: nullify).context
+        self.selectionIndicatorPaddingTop = CGFloatContextBuilder(props.selectionIndicatorPaddingTop?.value, nullify: nullify).context
+        self.selectionIndicatorPaddingBottom = CGFloatContextBuilder(props.selectionIndicatorPaddingBottom?.value, nullify: nullify).context
+        self.selectionIndicatorPaddingStart = CGFloatContextBuilder(props.selectionIndicatorPaddingStart?.value, nullify: nullify).context
+        self.selectionIndicatorPaddingEnd = CGFloatContextBuilder(props.selectionIndicatorPaddingEnd?.value, nullify: nullify).context
         
         if let itemAlignment = props.itemAlignment {
             self.itemAlignment = WheelItemAlignmentContextBuilder(
@@ -44,5 +57,12 @@ struct WheelSize: CodeGenerationSize {
         self.controlIconUpSize = CGFloat.defaultContext
         self.controlIconDownSize = CGFloat.defaultContext
         self.itemAlignment = WheelItemAlignmentContextBuilder.defaultContext
+        // BoolContextBuilder без значения печатает "Bool(0)" — невалидный Swift, поэтому явный литерал.
+        self.selectionIndicatorEnabled = "Bool(false)"
+        self.selectionIndicatorShape = CGFloat.defaultContext
+        self.selectionIndicatorPaddingTop = CGFloat.defaultContext
+        self.selectionIndicatorPaddingBottom = CGFloat.defaultContext
+        self.selectionIndicatorPaddingStart = CGFloat.defaultContext
+        self.selectionIndicatorPaddingEnd = CGFloat.defaultContext
     }
 }

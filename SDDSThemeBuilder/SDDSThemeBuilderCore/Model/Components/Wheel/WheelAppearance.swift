@@ -16,6 +16,9 @@ struct WheelAppearance: CodeGenerationAppearance {
     // Цвет разделителя
     var separatorColor: String?
     
+    // Цвет индикатора выбранного элемента
+    var selectionIndicatorColor: String?
+    
     // Типографика
     var itemTextTypography: String?
     var itemTextAfterTypography: String?
@@ -48,6 +51,9 @@ struct WheelAppearance: CodeGenerationAppearance {
         
         // Цвет разделителя
         self.separatorColor = ColorTokenContextBuilder(props.separatorColor).context
+        
+        // Цвет индикатора выбранного элемента
+        self.selectionIndicatorColor = ColorTokenContextBuilder(props.selectionIndicatorColor).context
         
         // Типографика
         self.itemTextTypography = TypographyTokenContextBuilder(
