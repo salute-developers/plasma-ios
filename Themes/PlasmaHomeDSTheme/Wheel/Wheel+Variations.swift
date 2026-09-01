@@ -219,6 +219,12 @@ public extension GeneralAppearanceVariation<Wheel, WheelAppearance, WheelVariati
         size.descriptionPadding = CGFloat(6.0)
         size.itemMinSpacing = CGFloat(32.0)
         size.itemTextAfterPadding = CGFloat(2.0)
+        size.selectionIndicatorEnabled = Bool(true)
+        size.selectionIndicatorPaddingBottom = CGFloat(16.0)
+        size.selectionIndicatorPaddingEnd = CGFloat(0.0)
+        size.selectionIndicatorPaddingStart = CGFloat(0.0)
+        size.selectionIndicatorPaddingTop = CGFloat(16.0)
+        size.selectionIndicatorShape = ShapeToken.roundXl.cornerRadius
         size.separatorSpacing = CGFloat(24.0)
 
         var appearance = appearance
@@ -227,6 +233,7 @@ public extension GeneralAppearanceVariation<Wheel, WheelAppearance, WheelVariati
         appearance.itemTextAfterColor = ColorToken.textDefaultPrimary
         appearance.itemTextAfterTypography = WheelTypography(h4: AdaptiveTypographyToken.headerH4Bold.typography).asContainer
         appearance.itemTextTypography = WheelTypography(h4: AdaptiveTypographyToken.headerH4Bold.typography).asContainer
+        appearance.selectionIndicatorColor = ColorToken.surfaceDefaultTransparentPrimary
     
         return .init(
             name: "h4",

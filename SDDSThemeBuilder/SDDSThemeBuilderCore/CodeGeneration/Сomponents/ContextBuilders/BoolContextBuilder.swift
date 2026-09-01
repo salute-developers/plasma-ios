@@ -18,7 +18,7 @@ final class BoolContextBuilder: CodeGenerationContextBuilder {
         if let value = value {
             return "Bool(\(value))"
         } else {
-            return nullify ? nil : "Bool(0)"
+            return nullify ? nil : "Bool(false)"
         }
     }
 }

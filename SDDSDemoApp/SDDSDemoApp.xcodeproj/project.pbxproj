@@ -189,6 +189,7 @@
 		D3EC568D2ED06F8C00114B3D /* TabsTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TabsTestCase; sourceTree = "<group>"; };
 		D3F77CA32F602D700071787C /* EditableTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EditableTestCase; sourceTree = "<group>"; };
 		D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = IndicatorTestCase; sourceTree = "<group>"; };
+		42634B64AFC7A686F309FA90 /* WheelTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = WheelTestCase; sourceTree = "<group>"; };
 		D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BadgeTestCase; sourceTree = "<group>"; };
 		D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CheckBoxTestCase; sourceTree = "<group>"; };
 		D3FEDC002DB91F10009A2867 /* ChipTestCase */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ChipTestCase; sourceTree = "<group>"; };
@@ -380,6 +381,7 @@
 				D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */,
 				D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */,
 				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
+				42634B64AFC7A686F309FA90 /* WheelTestCase */,
 				D3B8C9F32DAF81F300E5FEE6 /* SnapshotTests */,
 				D3B8C9E82DAE580600E5FEE6 /* ButtonTestCases */,
 				24C154162BB3020B00963FAA /* PlasmaDemoAppTests.swift */,
@@ -564,6 +566,7 @@
 				D3EC568D2ED06F8C00114B3D /* TabsTestCase */,
 				D3F77CA32F602D700071787C /* EditableTestCase */,
 				D3FEDBF42DB91E96009A2867 /* IndicatorTestCase */,
+				42634B64AFC7A686F309FA90 /* WheelTestCase */,
 				D3FEDBF82DB91EC7009A2867 /* BadgeTestCase */,
 				D3FEDBFC2DB91EED009A2867 /* CheckBoxTestCase */,
 				D3FEDC002DB91F10009A2867 /* ChipTestCase */,

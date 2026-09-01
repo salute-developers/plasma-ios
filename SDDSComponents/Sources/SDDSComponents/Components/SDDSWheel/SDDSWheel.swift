@@ -33,6 +33,7 @@ public struct SDDSWheel: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.wheelAppearance) private var appearance
+    @Environment(\.layoutDirection) private var layoutDirection
 
     private let wheels: [WheelData]
     @Binding private var selection: [Int]
@@ -62,7 +63,32 @@ public struct SDDSWheel: View {
                 }
             }
         }
-        .fixedSize(horizontal: true, vertical: false)
+        .background(selectionIndicator())
+    }
+
+    /// Индикатор выбранного элемента — одна подложка на всё колесо, включая разделители.
+    /// Портирует `Wheel.drawBehind` из Compose: полоса рисуется на всём `WheelLayout`,
+    /// а не по колонкам.
+    @ViewBuilder
+    private func selectionIndicator() -> some View {
+        let size = appearance.size
+        if size.selectionIndicatorEnabled, !wheels.isEmpty {
+            let isRTL = layoutDirection == .rightToLeft
+            let leading = isRTL ? size.selectionIndicatorPaddingEnd : size.selectionIndicatorPaddingStart
+            let trailing = isRTL ? size.selectionIndicatorPaddingStart : size.selectionIndicatorPaddingEnd
+            let content = wheels.indices.reduce(CGFloat(0)) { acc, index in
+                let m = metrics(for: index)
+                return max(acc, m.itemBoxHeight)
+            }
+            let height = max(0, content + size.selectionIndicatorPaddingTop + size.selectionIndicatorPaddingBottom)
+
+            GeometryReader { proxy in
+                RoundedRectangle(cornerRadius: size.selectionIndicatorShape)
+                    .fill(currentColor(for: appearance.selectionIndicatorColor))
+                    .frame(width: max(0, proxy.size.width + leading + trailing), height: height)
+                    .offset(x: -leading, y: (proxy.size.height - height) / 2)
+            }
+        }
     }
 
     @ViewBuilder
@@ -84,6 +110,13 @@ public struct SDDSWheel: View {
 
             controlIconDown(for: index, width: width, alignment: frameAlignment)
         }
+        .frame(maxWidth: shouldStretch(at: index) ? .infinity : width, alignment: frameAlignment)
+    }
+
+    /// Портирует `shouldStretchWheel` из Compose: при `mixed` тянутся только крайние колонки,
+    /// в остальных выравниваниях — все.
+    private func shouldStretch(at index: Int) -> Bool {
+        appearance.size.itemAlignment != .mixed || index == 0 || index == wheels.count - 1
     }
 
     @ViewBuilder
@@ -148,7 +181,7 @@ public struct SDDSWheel: View {
 
             case .dots:
                 VStack(spacing: 0) {
-                    Color.clear.frame(height: metrics.centerY - metrics.itemHeight / 2)
+                    Color.clear.frame(height: metrics.centerY - metrics.itemBoxHeight / 2)
                     Text(":")
                         .foregroundColor(currentColor(for: appearance.itemTextColor))
                         .typography(metrics.itemTextTypography)

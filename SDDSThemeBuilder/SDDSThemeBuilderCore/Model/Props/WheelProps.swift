@@ -33,6 +33,15 @@ struct WheelProps: MergeableConfiguration, Codable {
     var controlIconUp: KeyValue<String>?
     var controlIconDown: KeyValue<String>?
     
+    // Индикатор выбранного элемента
+    var selectionIndicatorEnabled: KeyValue<Bool>?
+    var selectionIndicatorColor: ColorKeyValue?
+    var selectionIndicatorShape: ShapeKeyValue?
+    var selectionIndicatorPaddingTop: KeyValue<Double>?
+    var selectionIndicatorPaddingBottom: KeyValue<Double>?
+    var selectionIndicatorPaddingStart: KeyValue<Double>?
+    var selectionIndicatorPaddingEnd: KeyValue<Double>?
+    
     // Вложенный компонент
     var dividerStyle: ComponentStyleKeyValue<DividerProps>?
 }
