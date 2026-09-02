@@ -35,7 +35,7 @@ struct AccordionItemClearActionEndSizeH2: AccordionItemSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(16.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "AccordionItemClearActionEndSize"
     }
@@ -51,7 +51,7 @@ struct AccordionItemClearActionEndSizeH3: AccordionItemSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(14.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "AccordionItemClearActionEndSize"
     }
@@ -67,7 +67,7 @@ struct AccordionItemClearActionEndSizeH4: AccordionItemSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(11.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "AccordionItemClearActionEndSize"
     }
@@ -83,7 +83,7 @@ struct AccordionItemClearActionEndSizeH5: AccordionItemSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(8.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "AccordionItemClearActionEndSize"
     }
@@ -99,7 +99,7 @@ struct AccordionItemClearActionEndSizeL: AccordionItemSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(17.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "AccordionItemClearActionEndSize"
     }
@@ -115,7 +115,7 @@ struct AccordionItemClearActionEndSizeM: AccordionItemSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(14.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "AccordionItemClearActionEndSize"
     }
@@ -131,7 +131,7 @@ struct AccordionItemClearActionEndSizeS: AccordionItemSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(11.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "AccordionItemClearActionEndSize"
     }
@@ -147,7 +147,7 @@ struct AccordionItemClearActionEndSizeXs: AccordionItemSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(8.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "AccordionItemClearActionEndSize"
     }

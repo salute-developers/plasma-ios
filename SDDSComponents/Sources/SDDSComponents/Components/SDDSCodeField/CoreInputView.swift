@@ -34,24 +34,24 @@ internal struct CoreInputView: View {
     let isHidden: Bool
     let showBeforeSecure: Bool
     
-    let valueColor: ColorToken
-    let valueColorError: ColorToken
-    let backgroundColor: ColorToken
-    let backgroundColorActivated: ColorToken
-    let backgroundColorError: ColorToken
+    let valueColor: FillStyle
+    let valueColorError: FillStyle
+    let backgroundColor: FillStyle
+    let backgroundColorActivated: FillStyle
+    let backgroundColorError: FillStyle
     let cursorColor: ColorToken
-    let captionColor: ColorToken
-    let captionColorError: ColorToken
-    let dotColor: ColorToken
-    let dotColorError: ColorToken
+    let captionColor: FillStyle
+    let captionColorError: FillStyle
+    let dotColor: FillStyle
+    let dotColorError: FillStyle
     let valueTypography: TypographyToken
     let captionTypography: TypographyToken
     
-    let strokeColor: ColorToken?
-    let strokeColorError: ColorToken?
-    let strokeColorFocused: ColorToken?
-    let fillColor: ColorToken?
-    let fillColorError: ColorToken?
+    let strokeColor: FillStyle?
+    let strokeColorError: FillStyle?
+    let strokeColorFocused: FillStyle?
+    let fillColor: FillStyle?
+    let fillColorError: FillStyle?
     let strokeWidth: CGFloat?
     
     let itemWidth: CGFloat
@@ -102,23 +102,23 @@ internal struct CoreInputView: View {
         showBeforeSecure: Bool = false,
         isAnimating: Bool = false,
         inputMode: InputMode,
-        valueColor: ColorToken,
-        valueColorError: ColorToken,
-        backgroundColor: ColorToken,
-        backgroundColorActivated: ColorToken,
-        backgroundColorError: ColorToken,
+        valueColor: FillStyle,
+        valueColorError: FillStyle,
+        backgroundColor: FillStyle,
+        backgroundColorActivated: FillStyle,
+        backgroundColorError: FillStyle,
         cursorColor: ColorToken,
-        captionColor: ColorToken,
-        captionColorError: ColorToken,
-        dotColor: ColorToken,
-        dotColorError: ColorToken,
+        captionColor: FillStyle,
+        captionColorError: FillStyle,
+        dotColor: FillStyle,
+        dotColorError: FillStyle,
         valueTypography: TypographyToken,
         captionTypography: TypographyToken,
-        strokeColor: ColorToken? = nil,
-        strokeColorError: ColorToken? = nil,
-        strokeColorFocused: ColorToken? = nil,
-        fillColor: ColorToken? = nil,
-        fillColorError: ColorToken? = nil,
+        strokeColor: FillStyle? = nil,
+        strokeColorError: FillStyle? = nil,
+        strokeColorFocused: FillStyle? = nil,
+        fillColor: FillStyle? = nil,
+        fillColorError: FillStyle? = nil,
         strokeWidth: CGFloat? = nil,
         itemWidth: CGFloat,
         itemHeight: CGFloat,
@@ -196,7 +196,7 @@ internal struct CoreInputView: View {
             Text(caption)
                 .multilineTextAlignment(captionAlignment.textAlignment)
                 .typography(captionTypography)
-                .foregroundColor(captionColor(isCaptionErrorDisplayed: isCaptionErrorDisplayed).color(for: colorScheme, subtheme: subtheme))
+                .fillForeground(style: captionColor(isCaptionErrorDisplayed: isCaptionErrorDisplayed))
                 .frame(minHeight: captionTypography.lineHeight)
                 .padding([.top], captionSpacing)
         } else {
@@ -256,8 +256,7 @@ internal struct CoreInputView: View {
     
     @ViewBuilder
     private func fieldItem(value: String, isError: Bool, isCurrentPosition: Bool, globalIndex: Int) -> some View {
-        Rectangle()
-            .fill(backgroundColor(isError: isError, isCurrentPosition: isCurrentPosition).color(for: colorScheme, subtheme: subtheme))
+        FillStyleShape(Rectangle(), style: backgroundColor(isError: isError, isCurrentPosition: isCurrentPosition))
             .frame(width: itemWidth, height: itemHeight)
             .overlay(
                 Group {
@@ -282,7 +281,7 @@ internal struct CoreInputView: View {
             if !value.isEmpty {
                 if isError && !isFullError {
                     if let strokeColor = strokeColor(isError: isError) {
-                        dot(color: strokeColor)
+                        dot(style: strokeColor)
                             .scaleEffect(isScaled && (globalIndex == errorPosition) ? 1.5 : 1.0)
                             .animation(.easeInOut(duration: 0.2), value: isScaled)
                     }
@@ -290,31 +289,31 @@ internal struct CoreInputView: View {
                     if isHidden {
                         if isFullError {
                             // fillColorError is often .clearColor in themes; fall back so dots stay visible like develop
-                            if let fill = fillColor(isError: isError), fill != .clearColor {
-                                dot(color: fill)
+                            if let fill = fillColor(isError: isError), fill != .color(.clearColor) {
+                                dot(style: fill)
                             } else {
-                                dot(color: valueColorError)
+                                dot(style: valueColorError)
                             }
                         } else if visibleCharacters.contains(globalIndex) && showBeforeSecure {
                             Text(value)
                                 .typography(valueTypography)
-                                .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))
+                                .fillForeground(style: isError ? valueColorError : valueColor)
                         } else {
                             if let fillColor = fillColor(isError: isError) {
-                                dot(color: fillColor)
+                                dot(style: fillColor)
                             }
                         }
                     } else {
                         Text(value)
                             .typography(valueTypography)
-                            .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))
+                            .fillForeground(style: isError ? valueColorError : valueColor)
                     }
                 }
             } else {
                 if let strokeColor = strokeColor(isError: isError),
                    let strokeWidth = strokeWidth {
                     Circle()
-                        .stroke(strokeColor.color(for: colorScheme, subtheme: subtheme), lineWidth: strokeWidth)
+                        .stroke(strokeColor.representativeColor(for: colorScheme, subtheme: subtheme), lineWidth: strokeWidth)
                         .frame(width: dotSize, height: dotSize)
                 }
             }
@@ -328,9 +327,8 @@ internal struct CoreInputView: View {
     }
     
     @ViewBuilder
-    private func dot(color: ColorToken) -> some View {
-        Circle()
-            .fill(color.color(for: colorScheme, subtheme: subtheme))
+    private func dot(style: FillStyle) -> some View {
+        FillStyleShape(Circle(), style: style)
             .frame(width: dotSize, height: dotSize)
     }
     
@@ -357,21 +355,20 @@ internal struct CoreInputView: View {
             if visibleCharacters.contains(globalIndex) && showBeforeSecure {
                 Text(value)
                     .typography(valueTypography)
-                    .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))
+                    .fillForeground(style: isError ? valueColorError : valueColor)
             } else {
                 dot(isError: isError)
             }
         } else {
             Text(value)
                 .typography(valueTypography)
-                .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))
+                .fillForeground(style: isError ? valueColorError : valueColor)
         }
     }
     
     @ViewBuilder
     private func dot(isError: Bool) -> some View {
-        Circle()
-            .fill((isError ? dotColorError : dotColor).color(for: colorScheme, subtheme: subtheme))
+        FillStyleShape(Circle(), style: isError ? dotColorError : dotColor)
             .frame(width: dotSize, height: dotSize)
     }
     
@@ -491,7 +488,7 @@ internal struct CoreInputView: View {
         }
     }
     
-    private func backgroundColor(isError: Bool, isCurrentPosition: Bool) -> ColorToken {
+    private func backgroundColor(isError: Bool, isCurrentPosition: Bool) -> FillStyle {
         if isError {
             return backgroundColorError
         }
@@ -503,7 +500,7 @@ internal struct CoreInputView: View {
         }
     }
     
-    private func captionColor(isCaptionErrorDisplayed: Bool) -> ColorToken {
+    private func captionColor(isCaptionErrorDisplayed: Bool) -> FillStyle {
         if isCaptionErrorDisplayed {
             return captionColorError
         }
@@ -574,7 +571,7 @@ internal struct CoreInputView: View {
 }
 
 extension CoreInputView {
-    private func strokeColor(isError: Bool) -> ColorToken? {
+    private func strokeColor(isError: Bool) -> FillStyle? {
         if isError {
             if animationPhase == .colorChange || animationPhase == .scaleUp || animationPhase == .shaking {
                 return strokeColorError
@@ -589,7 +586,7 @@ extension CoreInputView {
         }
     }
     
-    private func fillColor(isError: Bool) -> ColorToken? {
+    private func fillColor(isError: Bool) -> FillStyle? {
         if isError {
             return fillColorError
         } else {

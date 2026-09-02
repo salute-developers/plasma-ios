@@ -135,11 +135,11 @@ public struct SDDSSegmentItem<Counter: View>: View {
             size: buttonSize,
             shapeStyle: appearance.shapeStyle,
             titleTypography: OneSizeTypography<ButtonSizeConfiguration>(token: appearance.titleTypography.typography(with: appearance.size)).asContainer,
-            titleColor: appearance.titleColor.statefulColor.statefulFillStyle,
+            titleColor: appearance.titleColor,
             subtitleTypography: OneSizeTypography<ButtonSizeConfiguration>(token: appearance.subtitleTypography.typography(with: appearance.size)).asContainer,
-            subtitleColor: appearance.subtitleColor.statefulColor.statefulFillStyle,
-            iconColor: (iconAttributes?.alignment == .leading ? appearance.startContentColor : appearance.endContentColor).statefulColor.statefulFillStyle,
-            backgroundColor: appearance.backgroundColor.statefulColor.statefulFillStyle,
+            subtitleColor: appearance.subtitleColor,
+            iconColor: iconAttributes?.alignment == .leading ? appearance.startContentColor : appearance.endContentColor,
+            backgroundColor: appearance.backgroundColor,
             disabledAlpha: appearance.disabledAlpha
         )
     }

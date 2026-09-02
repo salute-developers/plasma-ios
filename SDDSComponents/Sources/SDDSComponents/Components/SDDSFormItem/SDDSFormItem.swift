@@ -127,14 +127,14 @@ private extension SDDSFormItem {
                         .frame(width: appearance.size.hintWidth, height: appearance.size.hintHeight)
                 }
                 .buttonStyle(.plain)
-                .foregroundColor(appearance.hintColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme))
+                .fillForeground(style: appearance.hintColor.resolvedValue(for: activeStates))
             )
         }
         if let hintBuilder {
             return AnyView(
                 hintBuilder()
                     .frame(width: appearance.size.hintWidth, height: appearance.size.hintHeight)
-                    .foregroundColor(appearance.hintColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme))
+                    .fillForeground(style: appearance.hintColor.resolvedValue(for: activeStates))
             )
         }
         return nil
@@ -146,7 +146,7 @@ private extension SDDSFormItem {
             if let titleBuilder {
                 titleBuilder()
                     .typography(typography(appearance.titleTypography))
-                    .foregroundColor(appearance.titleColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme))
+                    .fillForeground(style: appearance.titleColor.resolvedValue(for: activeStates))
                     .opacity(enabled ? 1 : appearance.disableAlpha)
             }
             if let resolvedHint {
@@ -155,7 +155,7 @@ private extension SDDSFormItem {
             if appearance.formType == .optional, let optionalBuilder {
                 optionalBuilder()
                     .typography(typography(appearance.optionalTypography))
-                    .foregroundColor(appearance.optionalColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme))
+                    .fillForeground(style: appearance.optionalColor.resolvedValue(for: activeStates))
                     .opacity(enabled ? 1 : appearance.disableAlpha)
             }
         }
@@ -205,7 +205,7 @@ private extension SDDSFormItem {
         return AnyView(
             titleCaptionBuilder()
                 .typography(typography(appearance.titleCaptionTypography))
-                .foregroundColor(appearance.titleCaptionColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme))
+                .fillForeground(style: appearance.titleCaptionColor.resolvedValue(for: activeStates))
                 .opacity(enabled ? 1 : appearance.disableAlpha)
                 .padding(.bottom, appearance.size.titleCaptionPadding)
         )
@@ -216,7 +216,7 @@ private extension SDDSFormItem {
         return AnyView(
             captionBuilder()
                 .typography(typography(appearance.captionTypography))
-                .foregroundColor(appearance.captionColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme))
+                .fillForeground(style: appearance.captionColor.resolvedValue(for: activeStates))
                 .opacity(enabled ? 1 : appearance.disableAlpha)
                 .padding(.top, appearance.size.captionPadding)
         )
@@ -227,7 +227,7 @@ private extension SDDSFormItem {
         return AnyView(
             counterBuilder()
                 .typography(typography(appearance.counterTypography))
-                .foregroundColor(appearance.counterColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme))
+                .fillForeground(style: appearance.counterColor.resolvedValue(for: activeStates))
                 .opacity(enabled ? 1 : appearance.disableAlpha)
                 .padding(.top, appearance.size.counterPadding)
         )

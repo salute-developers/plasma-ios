@@ -26,11 +26,11 @@ struct TabItemDefaultAppearance: CodeGenerationAppearance {
         }
         
         // Цвета с состояниями
-        self.labelColor = ButtonColorContextBuilder(statefulColor: props.labelColor).context
-        self.valueColor = ButtonColorContextBuilder(statefulColor: props.valueColor).context
-        self.startContentColor = ButtonColorContextBuilder(statefulColor: props.startContentColor).context
-        self.endContentColor = ButtonColorContextBuilder(statefulColor: props.endContentColor).context
-        self.actionColor = ButtonColorContextBuilder(statefulColor: props.actionColor).context
+        self.labelColor = StatefulFillStyleContextBuilder(props.labelColor).context
+        self.valueColor = StatefulFillStyleContextBuilder(props.valueColor).context
+        self.startContentColor = StatefulFillStyleContextBuilder(props.startContentColor).context
+        self.endContentColor = StatefulFillStyleContextBuilder(props.endContentColor).context
+        self.actionColor = StatefulFillStyleContextBuilder(props.actionColor).context
         
         // Типографика
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context

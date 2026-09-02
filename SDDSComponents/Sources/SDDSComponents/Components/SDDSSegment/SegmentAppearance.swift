@@ -8,7 +8,7 @@ import SDDSApiInfo
 
  - Properties:
     - size: Конфигурация размеров сегмента, определяемая `SegmentSizeConfiguration`.
-    - backgroundColor: Цвет фона сегмента для различных состояний, определяемый `StatefulColor`.
+    - backgroundColor: Цвет фона сегмента для различных состояний, определяемый `StatefulFillStyle`.
     - segmentItemAppearance: Внешний вид элементов сегмента, определяемый `SegmentItemAppearance`.
 
  - Methods:
@@ -18,8 +18,7 @@ import SDDSApiInfo
 public struct SegmentAppearance {
     public var size: SegmentSizeConfiguration
     @ApiName("backgroundColor")
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var backgroundColor: ButtonColor?
+    public var backgroundColor: StatefulFillStyle?
     public var segmentItemAppearance: SegmentItemAppearance
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
@@ -36,7 +35,7 @@ public struct SegmentAppearance {
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         size: SegmentSizeConfiguration = SegmentZeroSize(),
-        backgroundColor: ButtonColor? = ButtonColor(),
+        backgroundColor: StatefulFillStyle? = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         segmentItemAppearance: SegmentItemAppearance = SegmentItemAppearance(),
         disabledAlpha: CGFloat = 0
     ) {
@@ -45,10 +44,10 @@ public struct SegmentAppearance {
         self.segmentItemAppearance = segmentItemAppearance
         self.disabledAlpha = disabledAlpha
     }
-    
+
     public init(
         size: SegmentSizeConfiguration = SegmentZeroSize(),
-        backgroundColor: ButtonColor? = ButtonColor(),
+        backgroundColor: StatefulFillStyle? = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         segmentItemAppearance: SegmentItemAppearance = SegmentItemAppearance()
     ) {
         self.size = size
@@ -57,7 +56,19 @@ public struct SegmentAppearance {
         self.disabledAlpha = 0
     }
 
-    
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
+    public init(
+        size: SegmentSizeConfiguration = SegmentZeroSize(),
+        backgroundColor: ButtonColor? = ButtonColor(),
+        segmentItemAppearance: SegmentItemAppearance = SegmentItemAppearance()
+    ) {
+        self.init(
+            size: size,
+            backgroundColor: backgroundColor?.statefulColor.statefulFillStyle,
+            segmentItemAppearance: segmentItemAppearance
+        )
+    }
 }
 
 extension SegmentAppearance: EnvironmentKey {

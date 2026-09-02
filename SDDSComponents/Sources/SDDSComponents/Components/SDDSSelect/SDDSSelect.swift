@@ -256,15 +256,16 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
     private var textFieldTriggerAppearance: TextFieldAppearance {
         var adjustedAppearance = resolvedTextFieldData.appearance ?? appearance.textFieldAppearance
         if isDropdownPresented && !readOnly && !disabled {
-            adjustedAppearance.backgroundColorReadOnly = adjustedAppearance.backgroundColorFocused
-            adjustedAppearance.lineColorReadOnly = adjustedAppearance.lineColorFocused
-            adjustedAppearance.captionColorReadOnly = adjustedAppearance.captionColorFocused
-            adjustedAppearance.placeholderColorReadOnly = adjustedAppearance.placeholderColorFocused
-            adjustedAppearance.startContentColorReadOnly = adjustedAppearance.startContentColorFocused
-            adjustedAppearance.endContentColorReadOnly = adjustedAppearance.endContentColorFocused
-            adjustedAppearance.textColorReadOnly = adjustedAppearance.textColorFocused
+            let activated = Set([InteractiveState.activated])
+            adjustedAppearance.backgroundColorReadOnly = adjustedAppearance.backgroundColor.resolvedValue(for: activated).representativeColorToken
+            adjustedAppearance.lineColorReadOnly = adjustedAppearance.lineColor.resolvedValue(for: activated).representativeColorToken
+            adjustedAppearance.captionColorReadOnly = adjustedAppearance.captionColor.resolvedValue(for: activated).representativeColorToken
+            adjustedAppearance.placeholderColorReadOnly = adjustedAppearance.placeholderColor.resolvedValue(for: activated).representativeColorToken
+            adjustedAppearance.startContentColorReadOnly = adjustedAppearance.startContentColor.resolvedValue(for: activated).representativeColorToken
+            adjustedAppearance.endContentColorReadOnly = adjustedAppearance.endContentColor.resolvedValue(for: activated).representativeColorToken
+            adjustedAppearance.textColorReadOnly = adjustedAppearance.textColor.resolvedValue(for: activated).representativeColorToken
         } else if !readOnly {
-            adjustedAppearance.backgroundColorReadOnly = adjustedAppearance.backgroundColor
+            adjustedAppearance.backgroundColorReadOnly = adjustedAppearance.backgroundColor.resolvedDefaultValue().representativeColorToken
         }
         return adjustedAppearance
     }

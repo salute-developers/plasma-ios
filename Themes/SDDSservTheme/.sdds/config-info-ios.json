@@ -17708,6 +17708,143 @@
       ]
     },
     {
+      "coreName" : "ChipGroupDense",
+      "key" : "chip-group-dense",
+      "props" : [
+        {
+          "name" : "size",
+          "values" : [
+            "l",
+            "m",
+            "s",
+            "xs"
+          ]
+        },
+        {
+          "name" : "shape",
+          "values" : [
+            "default",
+            "pilled"
+          ]
+        }
+      ],
+      "styleName" : "ChipGroupDense",
+      "variations" : [
+        {
+          "name" : "l.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "shape",
+              "value" : "default"
+            }
+          ],
+          "reference" : "ChipGroupDense.L.Default"
+        },
+        {
+          "name" : "l.pilled",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "shape",
+              "value" : "pilled"
+            }
+          ],
+          "reference" : "ChipGroupDense.L.Pilled"
+        },
+        {
+          "name" : "m.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "shape",
+              "value" : "default"
+            }
+          ],
+          "reference" : "ChipGroupDense.M.Default"
+        },
+        {
+          "name" : "m.pilled",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "shape",
+              "value" : "pilled"
+            }
+          ],
+          "reference" : "ChipGroupDense.M.Pilled"
+        },
+        {
+          "name" : "s.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "s"
+            },
+            {
+              "name" : "shape",
+              "value" : "default"
+            }
+          ],
+          "reference" : "ChipGroupDense.S.Default"
+        },
+        {
+          "name" : "s.pilled",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "s"
+            },
+            {
+              "name" : "shape",
+              "value" : "pilled"
+            }
+          ],
+          "reference" : "ChipGroupDense.S.Pilled"
+        },
+        {
+          "name" : "xs.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "xs"
+            },
+            {
+              "name" : "shape",
+              "value" : "default"
+            }
+          ],
+          "reference" : "ChipGroupDense.Xs.Default"
+        },
+        {
+          "name" : "xs.pilled",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "xs"
+            },
+            {
+              "name" : "shape",
+              "value" : "pilled"
+            }
+          ],
+          "reference" : "ChipGroupDense.Xs.Pilled"
+        }
+      ]
+    },
+    {
       "coreName" : "ChipGroupWide",
       "key" : "chip-group-wide",
       "props" : [
@@ -29946,6 +30083,108 @@
       ]
     },
     {
+      "coreName" : "AccordionSolidActionStart",
+      "key" : "accordion-solid-action-start",
+      "props" : [
+        {
+          "name" : "size",
+          "values" : [
+            "xs",
+            "s",
+            "m",
+            "l",
+            "h2",
+            "h3",
+            "h4",
+            "h5"
+          ]
+        }
+      ],
+      "styleName" : "AccordionSolidActionStart",
+      "variations" : [
+        {
+          "name" : "xs",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "xs"
+            }
+          ],
+          "reference" : "AccordionSolidActionStart.Xs"
+        },
+        {
+          "name" : "s",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "s"
+            }
+          ],
+          "reference" : "AccordionSolidActionStart.S"
+        },
+        {
+          "name" : "m",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            }
+          ],
+          "reference" : "AccordionSolidActionStart.M"
+        },
+        {
+          "name" : "l",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            }
+          ],
+          "reference" : "AccordionSolidActionStart.L"
+        },
+        {
+          "name" : "h2",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "h2"
+            }
+          ],
+          "reference" : "AccordionSolidActionStart.H2"
+        },
+        {
+          "name" : "h3",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "h3"
+            }
+          ],
+          "reference" : "AccordionSolidActionStart.H3"
+        },
+        {
+          "name" : "h4",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "h4"
+            }
+          ],
+          "reference" : "AccordionSolidActionStart.H4"
+        },
+        {
+          "name" : "h5",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "h5"
+            }
+          ],
+          "reference" : "AccordionSolidActionStart.H5"
+        }
+      ]
+    },
+    {
       "coreName" : "AccordionSolidActionEnd",
       "key" : "accordion-solid-action-end",
       "props" : [
@@ -31066,6 +31305,85 @@
             }
           ],
           "reference" : "Spinner.Scalable.Info"
+        }
+      ]
+    },
+    {
+      "coreName" : "CodeField",
+      "key" : "code-field",
+      "props" : [
+        {
+          "name" : "size",
+          "values" : [
+            "l",
+            "m"
+          ]
+        },
+        {
+          "name" : "shape",
+          "values" : [
+            "default",
+            "segmented"
+          ]
+        }
+      ],
+      "styleName" : "CodeField",
+      "variations" : [
+        {
+          "name" : "l.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "shape",
+              "value" : "default"
+            }
+          ],
+          "reference" : "CodeField.L.Default"
+        },
+        {
+          "name" : "l.segmented",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "shape",
+              "value" : "segmented"
+            }
+          ],
+          "reference" : "CodeField.L.Segmented"
+        },
+        {
+          "name" : "m.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "shape",
+              "value" : "default"
+            }
+          ],
+          "reference" : "CodeField.M.Default"
+        },
+        {
+          "name" : "m.segmented",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "shape",
+              "value" : "segmented"
+            }
+          ],
+          "reference" : "CodeField.M.Segmented"
         }
       ]
     },
@@ -36639,6 +36957,75 @@
             }
           ],
           "reference" : "SelectMultipleTight.Xs"
+        }
+      ]
+    },
+    {
+      "coreName" : "SelectSingleNormal",
+      "key" : "select-single-normal",
+      "props" : [
+        {
+          "name" : "size",
+          "values" : [
+            "xl",
+            "l",
+            "m",
+            "s",
+            "xs"
+          ]
+        }
+      ],
+      "styleName" : "SelectSingleNormal",
+      "variations" : [
+        {
+          "name" : "xl",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "xl"
+            }
+          ],
+          "reference" : "SelectSingleNormal.Xl"
+        },
+        {
+          "name" : "l",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            }
+          ],
+          "reference" : "SelectSingleNormal.L"
+        },
+        {
+          "name" : "m",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            }
+          ],
+          "reference" : "SelectSingleNormal.M"
+        },
+        {
+          "name" : "s",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "s"
+            }
+          ],
+          "reference" : "SelectSingleNormal.S"
+        },
+        {
+          "name" : "xs",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "xs"
+            }
+          ],
+          "reference" : "SelectSingleNormal.Xs"
         }
       ]
     },

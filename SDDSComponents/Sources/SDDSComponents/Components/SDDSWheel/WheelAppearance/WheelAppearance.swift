@@ -15,11 +15,9 @@ public struct WheelAppearance {
     
     // Цвета иконок управления
     @ApiName("controlIconUpColor")
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var controlIconUpColor: ButtonColor
+    public var controlIconUpColor: StatefulFillStyle
     @ApiName("controlIconDownColor")
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var controlIconDownColor: ButtonColor
+    public var controlIconDownColor: StatefulFillStyle
     
     // Цвет разделителя
     public var separatorColor: ColorToken
@@ -49,8 +47,8 @@ public struct WheelAppearance {
         itemTextColor: ColorToken = .clearColor,
         itemTextAfterColor: ColorToken = .clearColor,
         descriptionColor: ColorToken = .clearColor,
-        controlIconUpColor: ButtonColor = ButtonColor(defaultColor: .clearColor),
-        controlIconDownColor: ButtonColor = ButtonColor(defaultColor: .clearColor),
+        controlIconUpColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        controlIconDownColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         separatorColor: ColorToken = .clearColor,
         selectionIndicatorColor: ColorToken = .clearColor,
         itemTextTypography: TypographyConfiguration = .default,

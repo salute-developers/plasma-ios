@@ -46,8 +46,8 @@ struct WheelAppearance: CodeGenerationAppearance {
         self.descriptionColor = ColorTokenContextBuilder(props.descriptionColor).context
         
         // Цвета иконок управления
-        self.controlIconUpColor = ButtonColorContextBuilder(statefulColor: props.controlIconUpColor).context
-        self.controlIconDownColor = ButtonColorContextBuilder(statefulColor: props.controlIconDownColor).context
+        self.controlIconUpColor = StatefulFillStyleContextBuilder(props.controlIconUpColor).context
+        self.controlIconDownColor = StatefulFillStyleContextBuilder(props.controlIconDownColor).context
         
         // Цвет разделителя
         self.separatorColor = ColorTokenContextBuilder(props.separatorColor).context

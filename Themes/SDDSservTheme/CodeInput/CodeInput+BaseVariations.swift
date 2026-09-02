@@ -57,14 +57,19 @@ public struct CodeInputVariation {
 private extension CodeInputAppearance {
     static var base: CodeInputAppearance {
         var appearance = CodeInputAppearance()
-        appearance.captionColor = ColorToken.textDefaultSecondary
-        appearance.captionColorError = ColorToken.textDefaultNegative
-        appearance.codeColor = ColorToken.textDefaultPrimary
-        appearance.codeColorError = ColorToken.textDefaultNegative
-        appearance.fillColor = ColorToken.surfaceDefaultSolidDefault
-        appearance.strokeColor = ColorToken.outlineDefaultSolidDefault
-        appearance.strokeColorError = ColorToken.outlineDefaultNegative
-        appearance.strokeColorFocused = ColorToken.outlineDefaultAccent
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.error], value: .color(.textDefaultNegative))
+        ])
+        appearance.codeColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.error], value: .color(.textDefaultNegative))
+        ])
+        appearance.fillColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultSolidDefault), values: [
+            .init(states: [InteractiveState.error], value: .color(.surfaceDefaultNegative))
+        ])
+        appearance.strokeColor = StatefulFillStyle(defaultValue: .color(.outlineDefaultSolidDefault), values: [
+            .init(states: [InteractiveState.error], value: .color(.outlineDefaultNegative)),
+            .init(states: [InteractiveState.focused], value: .color(.outlineDefaultAccent))
+        ])
         return appearance
     }
 }

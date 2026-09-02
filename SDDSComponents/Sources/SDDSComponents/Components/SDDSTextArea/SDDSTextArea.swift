@@ -540,9 +540,9 @@ public struct SDDSTextArea<ActionContent: View>: View {
     
     private var endContentColor: Color {
         if readOnly {
-            return appearance.endContentColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.endContentColor.color(for: colorScheme, subtheme: subtheme)
+            return appearance.endContentColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.endContentColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.endContentColor.color(for: colorScheme, subtheme: subtheme)
+        return appearance.endContentColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
     }
     
     private var counterColor: Color {
@@ -551,42 +551,42 @@ public struct SDDSTextArea<ActionContent: View>: View {
     
     private var backgroundColor: Color {
         if readOnly {
-            return appearance.backgroundColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
+            return appearance.backgroundColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.backgroundColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.backgroundColorFocused.color(for: colorScheme, subtheme: subtheme)
+            return appearance.backgroundColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColor(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
+        return appearance.backgroundColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
     }
     
     private var captionColor: Color {
         if readOnly {
-            return appearance.captionColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.captionColor.color(for: colorScheme, subtheme: subtheme)
+            return appearance.captionColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.captionColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.captionColorFocused.color(for: colorScheme, subtheme: subtheme)
+            return appearance.captionColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColor(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.captionColor.color(for: colorScheme, subtheme: subtheme)
+        return appearance.captionColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
     }
     
     private var placeholderColor: Color {
         if readOnly {
-            return appearance.placeholderColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.placeholderColor.color(for: colorScheme, subtheme: subtheme)
+            return appearance.placeholderColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.placeholderColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.placeholderColorFocused.color(for: colorScheme, subtheme: subtheme)
+            return appearance.placeholderColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColor(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.placeholderColor.color(for: colorScheme, subtheme: subtheme)
+        return appearance.placeholderColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
     }
     
     private var textColor: Color {
         if readOnly {
-            return appearance.textColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.textColor.color(for: colorScheme, subtheme: subtheme)
+            return appearance.textColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.textColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.textColorFocused.color(for: colorScheme, subtheme: subtheme)
+            return appearance.textColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColor(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.textColor.color(for: colorScheme, subtheme: subtheme)
+        return appearance.textColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
     }
     
     private var bottomLineColor: Color {
@@ -594,9 +594,9 @@ public struct SDDSTextArea<ActionContent: View>: View {
             return appearance.lineColorReadOnly.color(for: colorScheme, subtheme: subtheme)
         }
         if isFocused {
-            return appearance.lineColorFocused.color(for: colorScheme, subtheme: subtheme)
+            return appearance.lineColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColor(for: colorScheme, subtheme: subtheme)
         }
-        return appearance.lineColor.color(for: colorScheme, subtheme: subtheme)
+        return appearance.lineColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme)
     }
 
     @ViewBuilder
