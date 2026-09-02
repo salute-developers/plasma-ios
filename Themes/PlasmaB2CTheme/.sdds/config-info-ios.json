@@ -28254,6 +28254,114 @@
       ]
     },
     {
+      "coreName" : "Toast",
+      "key" : "toast",
+      "props" : [
+        {
+          "name" : "shape",
+          "values" : [
+            "rounded",
+            "pilled"
+          ]
+        },
+        {
+          "name" : "view",
+          "values" : [
+            "default",
+            "positive",
+            "negative"
+          ]
+        }
+      ],
+      "styleName" : "Toast",
+      "variations" : [
+        {
+          "name" : "rounded.default",
+          "props" : [
+            {
+              "name" : "shape",
+              "value" : "rounded"
+            },
+            {
+              "name" : "view",
+              "value" : "default"
+            }
+          ],
+          "reference" : "Toast.Rounded.Default"
+        },
+        {
+          "name" : "rounded.positive",
+          "props" : [
+            {
+              "name" : "shape",
+              "value" : "rounded"
+            },
+            {
+              "name" : "view",
+              "value" : "positive"
+            }
+          ],
+          "reference" : "Toast.Rounded.Positive"
+        },
+        {
+          "name" : "rounded.negative",
+          "props" : [
+            {
+              "name" : "shape",
+              "value" : "rounded"
+            },
+            {
+              "name" : "view",
+              "value" : "negative"
+            }
+          ],
+          "reference" : "Toast.Rounded.Negative"
+        },
+        {
+          "name" : "pilled.default",
+          "props" : [
+            {
+              "name" : "shape",
+              "value" : "pilled"
+            },
+            {
+              "name" : "view",
+              "value" : "default"
+            }
+          ],
+          "reference" : "Toast.Pilled.Default"
+        },
+        {
+          "name" : "pilled.positive",
+          "props" : [
+            {
+              "name" : "shape",
+              "value" : "pilled"
+            },
+            {
+              "name" : "view",
+              "value" : "positive"
+            }
+          ],
+          "reference" : "Toast.Pilled.Positive"
+        },
+        {
+          "name" : "pilled.negative",
+          "props" : [
+            {
+              "name" : "shape",
+              "value" : "pilled"
+            },
+            {
+              "name" : "view",
+              "value" : "negative"
+            }
+          ],
+          "reference" : "Toast.Pilled.Negative"
+        }
+      ]
+    },
+    {
       "coreName" : "NotificationLoose",
       "key" : "notification-loose",
       "props" : [
@@ -31191,6 +31299,253 @@
             }
           ],
           "reference" : "CodeField.M.Segmented"
+        }
+      ]
+    },
+    {
+      "coreName" : "TabBarItemSolid",
+      "key" : "tab-bar-item-solid",
+      "props" : [
+        {
+          "name" : "size",
+          "values" : [
+            "m",
+            "l"
+          ]
+        },
+        {
+          "name" : "label-placement",
+          "values" : [
+            "none",
+            "bottom"
+          ]
+        },
+        {
+          "name" : "view",
+          "values" : [
+            "default",
+            "accent",
+            "secondary"
+          ]
+        }
+      ],
+      "styleName" : "TabBarItemSolid",
+      "variations" : [
+        {
+          "name" : "m.none.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "none"
+            },
+            {
+              "name" : "view",
+              "value" : "default"
+            }
+          ],
+          "reference" : "TabBarItemSolid.M.None.Default"
+        },
+        {
+          "name" : "m.none.accent",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "none"
+            },
+            {
+              "name" : "view",
+              "value" : "accent"
+            }
+          ],
+          "reference" : "TabBarItemSolid.M.None.Accent"
+        },
+        {
+          "name" : "m.none.secondary",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "none"
+            },
+            {
+              "name" : "view",
+              "value" : "secondary"
+            }
+          ],
+          "reference" : "TabBarItemSolid.M.None.Secondary"
+        },
+        {
+          "name" : "m.bottom.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "bottom"
+            },
+            {
+              "name" : "view",
+              "value" : "default"
+            }
+          ],
+          "reference" : "TabBarItemSolid.M.Bottom.Default"
+        },
+        {
+          "name" : "m.bottom.accent",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "bottom"
+            },
+            {
+              "name" : "view",
+              "value" : "accent"
+            }
+          ],
+          "reference" : "TabBarItemSolid.M.Bottom.Accent"
+        },
+        {
+          "name" : "m.bottom.secondary",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "bottom"
+            },
+            {
+              "name" : "view",
+              "value" : "secondary"
+            }
+          ],
+          "reference" : "TabBarItemSolid.M.Bottom.Secondary"
+        },
+        {
+          "name" : "l.none.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "none"
+            },
+            {
+              "name" : "view",
+              "value" : "default"
+            }
+          ],
+          "reference" : "TabBarItemSolid.L.None.Default"
+        },
+        {
+          "name" : "l.none.accent",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "none"
+            },
+            {
+              "name" : "view",
+              "value" : "accent"
+            }
+          ],
+          "reference" : "TabBarItemSolid.L.None.Accent"
+        },
+        {
+          "name" : "l.none.secondary",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "none"
+            },
+            {
+              "name" : "view",
+              "value" : "secondary"
+            }
+          ],
+          "reference" : "TabBarItemSolid.L.None.Secondary"
+        },
+        {
+          "name" : "l.bottom.default",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "bottom"
+            },
+            {
+              "name" : "view",
+              "value" : "default"
+            }
+          ],
+          "reference" : "TabBarItemSolid.L.Bottom.Default"
+        },
+        {
+          "name" : "l.bottom.accent",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "bottom"
+            },
+            {
+              "name" : "view",
+              "value" : "accent"
+            }
+          ],
+          "reference" : "TabBarItemSolid.L.Bottom.Accent"
+        },
+        {
+          "name" : "l.bottom.secondary",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "l"
+            },
+            {
+              "name" : "label-placement",
+              "value" : "bottom"
+            },
+            {
+              "name" : "view",
+              "value" : "secondary"
+            }
+          ],
+          "reference" : "TabBarItemSolid.L.Bottom.Secondary"
         }
       ]
     },

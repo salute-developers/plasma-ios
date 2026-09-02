@@ -24,11 +24,11 @@ struct SegmentItemAppearance: CodeGenerationAppearance {
         }
         
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
-        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
-        self.startContentColor = ButtonColorContextBuilder(statefulColor: props.startContentColor).context
-        self.endContentColor = ButtonColorContextBuilder(statefulColor: props.endContentColor).context
-        self.titleColor = ButtonColorContextBuilder(statefulColor: props.labelColor).context
-        self.subtitleColor = ButtonColorContextBuilder(statefulColor: props.valueColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
+        self.startContentColor = StatefulFillStyleContextBuilder(props.startContentColor).context
+        self.endContentColor = StatefulFillStyleContextBuilder(props.endContentColor).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.labelColor).context
+        self.subtitleColor = StatefulFillStyleContextBuilder(props.valueColor).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         

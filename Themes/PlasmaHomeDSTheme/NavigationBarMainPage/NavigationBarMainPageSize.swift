@@ -11,7 +11,7 @@ struct NavigationBarMainPageSize {
     ] 
 }
 struct NavigationBarMainPageSizeDefault: NavigationBarMainPageSizeConfiguration {
-    var bottomShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(8.0)
     var paddingBottom = CGFloat(8.0)
     var paddingEnd = CGFloat(24.0)

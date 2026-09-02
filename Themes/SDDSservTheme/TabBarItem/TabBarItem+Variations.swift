@@ -286,25 +286,52 @@ private extension TabBarItemAppearance {
     
     var `default`: TabBarItemAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.surfaceDefaultSolidDefault)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textInversePrimary)
-        appearance.labelColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textInversePrimary)
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultSolidDefault))
+        ])
+        appearance.iconColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.activated], value: .color(.textInversePrimary))
+        ])
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.activated], value: .color(.textInversePrimary))
+        ])
         return appearance
     }
     
     var accent: TabBarItemAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.surfaceDefaultTransparentAccent)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultAccent)
-        appearance.labelColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultAccent)
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentAccent)),
+            .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultTransparentAccent))
+        ])
+        appearance.iconColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultAccent)),
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultAccent))
+        ])
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultAccent)),
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultAccent))
+        ])
         return appearance
     }
     
     var secondary: TabBarItemAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(defaultColor: ColorToken.surfaceDefaultClear, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.surfaceDefaultTransparentSecondary)
-        appearance.iconColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
-        appearance.labelColor = ButtonColor(defaultColor: ColorToken.textDefaultSecondary, highlightedColor: .clearColor, hoveredColor: .clearColor, selectedColor: ColorToken.textDefaultPrimary)
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentSecondary)),
+            .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultTransparentSecondary))
+        ])
+        appearance.iconColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultPrimary))
+        ])
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultPrimary))
+        ])
         return appearance
     }
     

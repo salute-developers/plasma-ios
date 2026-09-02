@@ -48,16 +48,20 @@ public struct CodeFieldVariation {
 private extension CodeFieldAppearance {
     static var base: CodeFieldAppearance {
         var appearance = CodeFieldAppearance()
-        appearance.backgroundColor = ColorToken.surfaceDefaultSolidPrimary
-        appearance.backgroundColorActivated = ColorToken.surfaceDefaultTransparentSecondary
-        appearance.backgroundColorError = ColorToken.surfaceDefaultTransparentNegative
-        appearance.captionColor = ColorToken.textDefaultSecondary
-        appearance.captionColorError = ColorToken.textDefaultNegative
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultSolidPrimary), values: [
+            .init(states: [InteractiveState.error], value: .color(.surfaceDefaultTransparentNegative)),
+            .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultTransparentSecondary))
+        ])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.error], value: .color(.textDefaultNegative))
+        ])
         appearance.cursorColor = ColorToken.textDefaultAccent
-        appearance.dotColor = ColorToken.surfaceDefaultSolidDefault
-        appearance.dotColorError = ColorToken.surfaceDefaultNegative
-        appearance.valueColor = ColorToken.textDefaultPrimary
-        appearance.valueColorError = ColorToken.textDefaultNegative
+        appearance.dotColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultSolidDefault), values: [
+            .init(states: [InteractiveState.error], value: .color(.surfaceDefaultNegative))
+        ])
+        appearance.valueColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.error], value: .color(.textDefaultNegative))
+        ])
         return appearance
     }
 }

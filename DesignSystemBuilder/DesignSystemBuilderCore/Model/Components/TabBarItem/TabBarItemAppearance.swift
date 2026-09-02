@@ -20,9 +20,9 @@ struct TabBarItemAppearance: CodeGenerationAppearance {
             return
         }
         
-        self.labelColor = ButtonColorContextBuilder(statefulColor: props.labelColor).context
-        self.iconColor = ButtonColorContextBuilder(statefulColor: props.iconColor).context
-        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
+        self.labelColor = StatefulFillStyleContextBuilder(props.labelColor).context
+        self.iconColor = StatefulFillStyleContextBuilder(props.iconColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         
         if let counterStyle = props.counterStyle?.value {

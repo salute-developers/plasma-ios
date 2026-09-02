@@ -21,7 +21,7 @@ struct CardSizeL: CardSizeConfiguration {
     var paddingEnd = CGFloat(0.0)
     var paddingStart = CGFloat(0.0)
     var paddingTop = CGFloat(0.0)
-    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var pathDrawer = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "CardSize"
     }
@@ -31,7 +31,7 @@ struct CardSizeM: CardSizeConfiguration {
     var paddingEnd = CGFloat(0.0)
     var paddingStart = CGFloat(0.0)
     var paddingTop = CGFloat(0.0)
-    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var pathDrawer = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "CardSize"
     }
@@ -41,7 +41,7 @@ struct CardSizeS: CardSizeConfiguration {
     var paddingEnd = CGFloat(0.0)
     var paddingStart = CGFloat(0.0)
     var paddingTop = CGFloat(0.0)
-    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var pathDrawer = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "CardSize"
     }
@@ -51,7 +51,7 @@ struct CardSizeXl: CardSizeConfiguration {
     var paddingEnd = CGFloat(0.0)
     var paddingStart = CGFloat(0.0)
     var paddingTop = CGFloat(0.0)
-    var pathDrawer = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var pathDrawer = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "CardSize"
     }

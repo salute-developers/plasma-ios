@@ -24,7 +24,7 @@ struct ListTightSizeL: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListTightSize"
     }
@@ -35,7 +35,7 @@ struct ListTightSizeM: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListTightSize"
     }
@@ -46,7 +46,7 @@ struct ListTightSizeS: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListTightSize"
     }
@@ -57,7 +57,7 @@ struct ListTightSizeXl: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListTightSize"
     }
@@ -68,7 +68,7 @@ struct ListTightSizeXs: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListTightSize"
     }

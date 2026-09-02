@@ -14,15 +14,11 @@ public struct TextAreaAppearance {
     public var labelPlacement: TextAreaLabelPlacement
     @ApiFromVariation
     public var requiredPlacement: TextAreaRequiredPlacement
-    public var backgroundColor: ColorToken
-    @ApiName("backgroundColor", state: .activated)
-    public var backgroundColorFocused: ColorToken
+    public var backgroundColor: StatefulFillStyle
     public var backgroundColorReadOnly: ColorToken?
     @ApiIgnore
     public var borderColor: ColorToken
-    public var captionColor: ColorToken
-    @ApiName("captionColor", state: .activated)
-    public var captionColorFocused: ColorToken
+    public var captionColor: StatefulFillStyle
     public var captionColorReadOnly: ColorToken?
     @ApiName("captionStyle")
     public var captionTypography: TypographyConfiguration
@@ -35,10 +31,9 @@ public struct TextAreaAppearance {
     @ApiName("disableAlpha")
     @ApiRawNumber
     public var disabledAlpha: CGFloat
-    public var endContentColor: ColorToken
+    public var endContentColor: StatefulFillStyle
     public var endContentColorReadOnly: ColorToken?
     @ApiIgnore
-    public var endContentColorFocused: ColorToken
     @ApiIgnore
     public var innerTitleTextAlignment: TextAlignment
     @ApiName("labelStyle")
@@ -46,16 +41,12 @@ public struct TextAreaAppearance {
     @ApiIgnore
     public var inputTextAlignment: TextAlignment
     @ApiName("dividerColor")
-    public var lineColor: ColorToken
-    @ApiName("dividerColor", state: .activated)
-    public var lineColorFocused: ColorToken
+    public var lineColor: StatefulFillStyle
     @ApiName("dividerColorReadOnly")
     public var lineColorReadOnly: ColorToken
     @ApiName("optionalColor")
     public var optionalTitleColor: ColorToken
-    public var placeholderColor: ColorToken
-    @ApiName("placeholderColor", state: .activated)
-    public var placeholderColorFocused: ColorToken
+    public var placeholderColor: StatefulFillStyle
     public var placeholderColorReadOnly: ColorToken?
     @ApiName("indicatorColor")
     public var requiredIndicatorColor: ColorToken
@@ -63,9 +54,7 @@ public struct TextAreaAppearance {
     @ApiIgnore
     public var startContentColorReadOnly: ColorToken
     @ApiName("valueColor")
-    public var textColor: ColorToken
-    @ApiName("valueColor", state: .activated)
-    public var textColorFocused: ColorToken
+    public var textColor: StatefulFillStyle
     @ApiName("valueColorReadOnly")
     public var textColorReadOnly: ColorToken?
     @ApiName("valueStyle")
@@ -79,6 +68,86 @@ public struct TextAreaAppearance {
     public var scrollBarTrackColor: ColorToken
     public var scrollBarThumbColor: ColorToken
 
+    public init(
+        size: TextAreaSizeConfiguration = ZeroTextAreaSize(),
+        chipAppearance: ChipAppearance = ChipAppearance(),
+        chipGroupAppearance: ChipGroupAppearance = ChipGroupAppearance(),
+        labelPlacement: TextAreaLabelPlacement = .none,
+        requiredPlacement: TextAreaRequiredPlacement = .none,
+        backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        backgroundColorReadOnly: ColorToken? = nil,
+        borderColor: ColorToken = .clearColor,
+        captionColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        captionColorReadOnly: ColorToken? = nil,
+        counterColor: ColorToken = .clearColor,
+        counterColorReadOnly: ColorToken = .clearColor,
+        cursorColor: ColorToken = .clearColor,
+        disabledAlpha: CGFloat = 0,
+        endContentColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        endContentColorReadOnly: ColorToken? = nil,
+        innerTitleTextAlignment: TextAlignment = .leading,
+        inputTextAlignment: TextAlignment = .leading,
+        lineColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        lineColorReadonly: ColorToken = .clearColor,
+        optionalTitleColor: ColorToken = .clearColor,
+        placeholderColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        placeholderColorReadOnly: ColorToken? = nil,
+        requiredIndicatorColor: ColorToken = .clearColor,
+        scrollBarTrackColor: ColorToken = .clearColor,
+        scrollBarThumbColor: ColorToken = .clearColor,
+        startContentColor: ColorToken = .clearColor,
+        startContentColorReadOnly: ColorToken = .clearColor,
+        textColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        textColorReadOnly: ColorToken? = nil,
+        titleColor: ColorToken = .clearColor,
+        titleTextAlignment: TextAlignment = .leading,
+        captionTypography: TypographyConfiguration = .default,
+        counterTypography: TypographyConfiguration = .default,
+        innerTitleTypography: TypographyConfiguration = .default,
+        textTypography: TypographyConfiguration = .default,
+        titleTypography: TypographyConfiguration = .default
+    ) {
+        self.size = size
+        self.chipAppearance = chipAppearance
+        self.chipGroupAppearance = chipGroupAppearance
+        self.labelPlacement = labelPlacement
+        self.requiredPlacement = requiredPlacement
+        self.backgroundColor = backgroundColor
+        self.backgroundColorReadOnly = backgroundColorReadOnly
+        self.borderColor = borderColor
+        self.captionColor = captionColor
+        self.captionColorReadOnly = captionColorReadOnly
+        self.captionTypography = captionTypography
+        self.counterColor = counterColor
+        self.counterColorReadOnly = counterColorReadOnly
+        self.counterTypography = counterTypography
+        self.cursorColor = cursorColor
+        self.disabledAlpha = disabledAlpha
+        self.endContentColor = endContentColor
+        self.endContentColorReadOnly = endContentColorReadOnly
+        self.innerTitleTextAlignment = innerTitleTextAlignment
+        self.innerTitleTypography = innerTitleTypography
+        self.inputTextAlignment = inputTextAlignment
+        self.lineColor = lineColor
+        self.lineColorReadOnly = lineColorReadonly
+        self.optionalTitleColor = optionalTitleColor
+        self.placeholderColor = placeholderColor
+        self.placeholderColorReadOnly = placeholderColorReadOnly
+        self.requiredIndicatorColor = requiredIndicatorColor
+        self.startContentColor = startContentColor
+        self.startContentColorReadOnly = startContentColorReadOnly
+        self.scrollBarThumbColor = scrollBarThumbColor
+        self.scrollBarTrackColor = scrollBarTrackColor
+        self.textColor = textColor
+        self.textColorReadOnly = textColorReadOnly
+        self.textTypography = textTypography
+        self.titleColor = titleColor
+        self.titleTextAlignment = titleTextAlignment
+        self.titleTypography = titleTypography
+    }
+
+    @available(*, deprecated, message: "ColorToken is deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
     public init(
         size: TextAreaSizeConfiguration = ZeroTextAreaSize(),
         chipAppearance: ChipAppearance = ChipAppearance(),
@@ -124,49 +193,99 @@ public struct TextAreaAppearance {
         textTypography: TypographyConfiguration = .default,
         titleTypography: TypographyConfiguration = .default
     ) {
-        self.size = size
-        self.chipAppearance = chipAppearance
-        self.chipGroupAppearance = chipGroupAppearance
-        self.labelPlacement = labelPlacement
-        self.requiredPlacement = requiredPlacement
-        self.backgroundColor = backgroundColor
-        self.backgroundColorReadOnly = backgroundColorReadOnly
-        self.borderColor = borderColor
-        self.captionColor = captionColor
-        self.captionColorFocused = captionColorFocused
-        self.captionColorReadOnly = captionColorReadOnly
-        self.captionTypography = captionTypography
-        self.counterColor = counterColor
-        self.counterColorReadOnly = counterColorReadOnly
-        self.counterTypography = counterTypography
-        self.cursorColor = cursorColor
-        self.disabledAlpha = disabledAlpha
-        self.endContentColor = endContentColor
-        self.endContentColorReadOnly = endContentColorReadOnly
-        self.endContentColorFocused = endContentColorFocused
-        self.backgroundColorFocused = backgroundColorFocused
-        self.innerTitleTextAlignment = innerTitleTextAlignment
-        self.innerTitleTypography = innerTitleTypography
-        self.inputTextAlignment = inputTextAlignment
-        self.lineColor = lineColor
-        self.lineColorFocused = lineColorFocused
-        self.lineColorReadOnly = lineColorReadonly
-        self.optionalTitleColor = optionalTitleColor
-        self.placeholderColor = placeholderColor
-        self.placeholderColorFocused = placeholderColorFocused
-        self.placeholderColorReadOnly = placeholderColorReadOnly
-        self.requiredIndicatorColor = requiredIndicatorColor
-        self.startContentColor = startContentColor
-        self.startContentColorReadOnly = startContentColorReadOnly
-        self.scrollBarThumbColor = scrollBarThumbColor
-        self.scrollBarTrackColor = scrollBarTrackColor
-        self.textColor = textColor
-        self.textColorFocused = textColorFocused
-        self.textColorReadOnly = textColorReadOnly
-        self.textTypography = textTypography
-        self.titleColor = titleColor
-        self.titleTextAlignment = titleTextAlignment
-        self.titleTypography = titleTypography
+        self.init(
+            size: size,
+            chipAppearance: chipAppearance,
+            chipGroupAppearance: chipGroupAppearance,
+            labelPlacement: labelPlacement,
+            requiredPlacement: requiredPlacement,
+            backgroundColor: StatefulFillStyle(
+                defaultValue: .color(backgroundColor),
+                values: [.init(states: [InteractiveState.activated], value: .color(backgroundColorFocused))]
+            ),
+            backgroundColorReadOnly: backgroundColorReadOnly,
+            borderColor: borderColor,
+            captionColor: StatefulFillStyle(
+                defaultValue: .color(captionColor),
+                values: [.init(states: [InteractiveState.activated], value: .color(captionColorFocused))]
+            ),
+            captionColorReadOnly: captionColorReadOnly,
+            counterColor: counterColor,
+            counterColorReadOnly: counterColorReadOnly,
+            cursorColor: cursorColor,
+            disabledAlpha: disabledAlpha,
+            endContentColor: StatefulFillStyle(
+                defaultValue: .color(endContentColor),
+                values: [.init(states: [InteractiveState.activated], value: .color(endContentColorFocused))]
+            ),
+            endContentColorReadOnly: endContentColorReadOnly,
+            innerTitleTextAlignment: innerTitleTextAlignment,
+            inputTextAlignment: inputTextAlignment,
+            lineColor: StatefulFillStyle(
+                defaultValue: .color(lineColor),
+                values: [.init(states: [InteractiveState.activated], value: .color(lineColorFocused))]
+            ),
+            lineColorReadonly: lineColorReadonly,
+            optionalTitleColor: optionalTitleColor,
+            placeholderColor: StatefulFillStyle(
+                defaultValue: .color(placeholderColor),
+                values: [.init(states: [InteractiveState.activated], value: .color(placeholderColorFocused))]
+            ),
+            placeholderColorReadOnly: placeholderColorReadOnly,
+            requiredIndicatorColor: requiredIndicatorColor,
+            scrollBarTrackColor: scrollBarTrackColor,
+            scrollBarThumbColor: scrollBarThumbColor,
+            startContentColor: startContentColor,
+            startContentColorReadOnly: startContentColorReadOnly,
+            textColor: StatefulFillStyle(
+                defaultValue: .color(textColor),
+                values: [.init(states: [InteractiveState.activated], value: .color(textColorFocused))]
+            ),
+            textColorReadOnly: textColorReadOnly,
+            titleColor: titleColor,
+            titleTextAlignment: titleTextAlignment,
+            captionTypography: captionTypography,
+            counterTypography: counterTypography,
+            innerTitleTypography: innerTitleTypography,
+            textTypography: textTypography,
+            titleTypography: titleTypography
+        )
+    }
+
+    @ApiIgnore
+    @available(*, deprecated, message: "Use backgroundColor.resolvedValue(for: [.activated]).")
+    public var backgroundColorFocused: ColorToken {
+        backgroundColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColorToken
+    }
+
+    @ApiIgnore
+    @available(*, deprecated, message: "Use captionColor.resolvedValue(for: [.activated]).")
+    public var captionColorFocused: ColorToken {
+        captionColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColorToken
+    }
+
+    @ApiIgnore
+    @available(*, deprecated, message: "Use endContentColor.resolvedValue(for: [.activated]).")
+    public var endContentColorFocused: ColorToken {
+        endContentColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColorToken
+    }
+
+    @ApiIgnore
+    @available(*, deprecated, message: "Use lineColor.resolvedValue(for: [.activated]).")
+    public var lineColorFocused: ColorToken {
+        lineColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColorToken
+    }
+
+    @ApiIgnore
+    @available(*, deprecated, message: "Use placeholderColor.resolvedValue(for: [.activated]).")
+    public var placeholderColorFocused: ColorToken {
+        placeholderColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColorToken
+    }
+
+    @ApiIgnore
+    @available(*, deprecated, message: "Use textColor.resolvedValue(for: [.activated]).")
+    public var textColorFocused: ColorToken {
+        textColor.resolvedValue(for: Set([InteractiveState.activated])).representativeColorToken
     }
 }
 

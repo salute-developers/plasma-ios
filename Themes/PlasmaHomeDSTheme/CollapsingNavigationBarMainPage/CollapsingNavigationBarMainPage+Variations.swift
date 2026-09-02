@@ -21,15 +21,15 @@ public extension GeneralAppearanceVariation<CollapsingNavigationBarMainPage, Col
         var appearance = appearance
         appearance.size = size
         appearance.actionButtonAppearance = IconButton.s.secondary.appearance
-        appearance.actionEndColor = ColorToken.textDefaultPrimary
-        appearance.actionStartColor = ColorToken.textDefaultPrimary
-        appearance.backgroundColor = ColorToken.surfaceDefaultClear
-        appearance.descriptionColor = ColorToken.textDefaultSecondary
+        appearance.actionEndColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.actionStartColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
+        appearance.descriptionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         appearance.descriptionTypography = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.descriptionTypographyCollapsed = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.textColor = ColorToken.textDefaultPrimary
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         appearance.textTypography = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.headerH5Normal.typography).asContainer
-        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         appearance.titleTypography = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.headerH2Normal.typography).asContainer
         appearance.titleTypographyCollapsed = CollapsingNavigationBarMainPageTypography(default: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     

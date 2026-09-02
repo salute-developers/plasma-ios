@@ -131,11 +131,11 @@ public struct SDDSWheel: View {
                             .renderingMode(.template)
                             .resizable()
                             .frame(width: iconSize, height: iconSize)
-                            .foregroundColor(currentColor(for: appearance.controlIconUpColor))
+                            .fillForeground(style: currentFillStyle(for: appearance.controlIconUpColor))
                     } else {
                         controlIconUp
                             .renderingMode(.template)
-                            .foregroundColor(currentColor(for: appearance.controlIconUpColor))
+                            .fillForeground(style: currentFillStyle(for: appearance.controlIconUpColor))
                     }
                 }
             )
@@ -156,11 +156,11 @@ public struct SDDSWheel: View {
                             .renderingMode(.template)
                             .resizable()
                             .frame(width: iconSize, height: iconSize)
-                            .foregroundColor(currentColor(for: appearance.controlIconDownColor))
+                            .fillForeground(style: currentFillStyle(for: appearance.controlIconDownColor))
                     } else {
                         controlIconDown
                             .renderingMode(.template)
-                            .foregroundColor(currentColor(for: appearance.controlIconDownColor))
+                            .fillForeground(style: currentFillStyle(for: appearance.controlIconDownColor))
                     }
                 }
             )
@@ -241,8 +241,8 @@ public struct SDDSWheel: View {
         colorToken.color(for: colorScheme, subtheme: subtheme)
     }
 
-    private func currentColor(for buttonColor: ButtonColor) -> Color {
-        buttonColor.color(for: [], colorScheme: colorScheme, subtheme: subtheme)
+    private func currentFillStyle(for fillStyle: StatefulFillStyle) -> FillStyle {
+        fillStyle.resolvedValue(for: Set<InteractiveState>())
     }
 }
 

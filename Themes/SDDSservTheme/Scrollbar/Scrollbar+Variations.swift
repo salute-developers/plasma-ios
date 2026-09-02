@@ -9,7 +9,7 @@ public extension GeneralAppearanceVariation<ScrollBar, ScrollbarAppearance, Scro
     
     var m: ComponentAppearanceVariation<ScrollBar, ScrollbarAppearance> {
         var size =  ScrollBarAnySize(size: appearance.size)
-        size.shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+        size.shape = DefaultPathDrawer() as PathDrawer
         size.width = CGFloat(4.0)
 
         var appearance = appearance
@@ -37,7 +37,7 @@ public extension GeneralAppearanceVariation<ScrollBar, ScrollbarAppearance, Scro
     
     var s: ComponentAppearanceVariation<ScrollBar, ScrollbarAppearance> {
         var size =  ScrollBarAnySize(size: appearance.size)
-        size.shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+        size.shape = DefaultPathDrawer() as PathDrawer
         size.width = CGFloat(2.0)
 
         var appearance = appearance

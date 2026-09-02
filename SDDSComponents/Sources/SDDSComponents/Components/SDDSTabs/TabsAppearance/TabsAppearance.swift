@@ -24,9 +24,8 @@ import SDDSApiInfo
 public struct TabsAppearance: Hashable {
     let id = UUID()
     public var size: TabsSizeConfiguration
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     @ApiName("disclosureColor")
-    public var disclosureColor: ButtonColor
+    public var disclosureColor: StatefulFillStyle
     public var indicatorColor: ColorToken
     public var overflowNextIcon: Image?
     public var overflowNextIconColor: ColorToken
@@ -40,7 +39,7 @@ public struct TabsAppearance: Hashable {
     
     public init(
         size: TabsSizeConfiguration = ZeroTabsSize(),
-        disclosureColor: ButtonColor = ButtonColor(),
+        disclosureColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         indicatorColor: ColorToken = .clearColor,
         overflowNextIcon: Image? = nil,
         overflowNextIconColor: ColorToken = .clearColor,
@@ -66,8 +65,38 @@ public struct TabsAppearance: Hashable {
         self.disclosureIcon = disclosureIcon
     }
 
-    
-    
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
+    public init(
+        size: TabsSizeConfiguration = ZeroTabsSize(),
+        disclosureColor: ButtonColor = ButtonColor(),
+        indicatorColor: ColorToken = .clearColor,
+        overflowNextIcon: Image? = nil,
+        overflowNextIconColor: ColorToken = .clearColor,
+        overflowPrevIcon: Image? = nil,
+        overflowPrevIconColor: ColorToken = .clearColor,
+        dividerAppearance: DividerAppearance? = nil,
+        tabItemAppearance: TabItemAppearance = TabItemAppearance(),
+        dropdownMenuAppearance: DropdownMenuAppearance? = nil,
+        disclosureTextTypography: TypographyConfiguration = .default,
+        disclosureIcon: Image? = nil
+    ) {
+        self.init(
+            size: size,
+            disclosureColor: disclosureColor.statefulColor.statefulFillStyle,
+            indicatorColor: indicatorColor,
+            overflowNextIcon: overflowNextIcon,
+            overflowNextIconColor: overflowNextIconColor,
+            overflowPrevIcon: overflowPrevIcon,
+            overflowPrevIconColor: overflowPrevIconColor,
+            dividerAppearance: dividerAppearance,
+            tabItemAppearance: tabItemAppearance,
+            dropdownMenuAppearance: dropdownMenuAppearance,
+            disclosureTextTypography: disclosureTextTypography,
+            disclosureIcon: disclosureIcon
+        )
+    }
+
     public static func == (lhs: TabsAppearance, rhs: TabsAppearance) -> Bool {
         return lhs.id == rhs.id
     }
