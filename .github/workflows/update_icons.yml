@@ -47,19 +47,26 @@ jobs:
         with:
           node-version-file: 'plasma/.nvmrc'
 
+      # Голый `npm ci` в plasma не работает: он дёргает `prepare` всех воркспейсов
+      # в произвольном порядке, и @salutejs/core-themes собирается раньше, чем
+      # @salutejs/plasma-tokens-utils сгенерит lib/ (TS2307). Штатная установка в
+      # plasma — только через их же скрипт: `npm ci --ignore-scripts && patch-package`.
+      # Сборка воркспейсов (setup:packages) нам не нужна: generate:ios — это обычный
+      # node-скрипт по ./src, он не зависит от build-артефактов пакетов.
       - name: Install plasma web project deps
         working-directory: ./plasma
-        run: npm ci
-          
-      - name: Install plasma-icons
-        working-directory: ./plasma
         run: |
-          npx lerna bootstrap ${{ env.lerna-scope }}
+          npm run setup:deps:ci
+          # sharp@0.32 забирает бинарь libvips в install-скрипте, который съедается
+          # флагом --ignore-scripts; без rebuild generate:ios упадёт на require('sharp').
+          npm rebuild sharp
 
+      # `lerna bootstrap` удалён в lerna 7+ (в plasma сейчас 9.x), а сама установка
+      # уже сделана шагом выше. Фильтры в lerna 7+ идут после команды.
       - name: Generate iOS icons
         working-directory: ./plasma
         run: |
-          npx lerna ${{ env.lerna-scope }} run generate:ios
+          npx lerna run generate:ios ${{ env.lerna-scope }}
 
       - name: Bump version
         working-directory: ./current
@@ -102,9 +109,17 @@ jobs:
            cd SDDSIcons
            swiftgen
 
+      # ./current чекаутится из `main` (у repository_dispatch нет inputs), а скрипт
+      # добавлен только в develop — пока его там нет, шаг пропускаем, а не падаем.
       - name: Verify generated icon names
         working-directory: ./current
-        run: ruby ./SDDSIcons/Scripts/verify_icons.rb
+        shell: bash
+        run: |
+          if [ -f ./SDDSIcons/Scripts/verify_icons.rb ]; then
+            ruby ./SDDSIcons/Scripts/verify_icons.rb
+          else
+            echo "::warning::SDDSIcons/Scripts/verify_icons.rb not found in ${{ github.event.inputs.checkout-branch || 'main' }}, skipping icon name verification"
+          fi
 
       - name: Create tag and release pull request
         working-directory: ./current

@@ -59,6 +59,17 @@ jobs:
           echo "Running changed-modules script..."
           scripts/changed-modules.sh "${{ env.FROM_TAG }}"
 
+      # Релизную ветку режем до бампа: она база и для bump-PR, и для релизного PR.
+      # Пушим ref напрямую из origin/develop, не трогая HEAD — дальше шаги считают
+      # changed-modules и changelog от того же HEAD, что и раньше.
+      - name: Create release branch
+        id: release_branch
+        run: |
+          BRANCH_NAME="release/${{ env.SAFE_DATE }}"
+          git push origin "origin/develop:refs/heads/$BRANCH_NAME"
+          echo "branch_name=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+          echo "Release branch is $BRANCH_NAME"
+
       - name: Create version bump branch
         id: bump_branch
         run: |
@@ -94,7 +105,7 @@ jobs:
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Create PR to develop
+      - name: Create PR to release branch
         if: steps.commit_bump.outputs.has_changes == 'true'
         run: |
           # Prepare PR body
@@ -103,14 +114,14 @@ jobs:
           gh pr create \
             --title "chore: Bump versions for changed modules" \
             --body "$PR_BODY" \
-            --base develop \
+            --base ${{ steps.release_branch.outputs.branch_name }} \
             --head ${{ steps.bump_branch.outputs.branch }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Skip PR to develop
+      - name: Skip PR to release branch
         if: steps.commit_bump.outputs.has_changes != 'true'
-        run: echo "No version changes detected, skipping PR to develop."
+        run: echo "No version changes detected, skipping version bump PR."
 
       - name: Build Changelog
         id: changelog
@@ -130,14 +141,6 @@ jobs:
 
       - name: List pull request
         run: echo "pull_requests --> ${{ steps.changelog.outputs.pull_requests }}"
-
-      - name: Create release branch
-        id: release_branch
-        run: |
-          BRANCH_NAME="release/${{ env.SAFE_DATE }}"
-          git checkout -b "$BRANCH_NAME" origin/develop
-          git push origin "$BRANCH_NAME"
-          echo "branch_name=$BRANCH_NAME" >> "$GITHUB_OUTPUT"    
 
       - name: Create release PR
         run: |
