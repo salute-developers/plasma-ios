@@ -4,19 +4,33 @@ on:
   workflow_dispatch:
     inputs:
       tag_name:
-        description: 'Название тэга (например release-16-04-2025)'
+        description: 'Название тэга (например release-01-09-2026)'
         required: true
+      dry_run:
+        description: 'Только собрать ассеты (без тега и релиза). Можно запускать с любой ветки.'
+        type: boolean
+        required: false
+        default: false
 
+# Один прогон: сборка всех ассетов → тег → draft-релиз → upload → снятие draft.
+# Сборка идёт первой, поэтому упавший билд не оставляет ни тега, ни релиза.
 jobs:
   publish-release:
-    name: Create Tag & Trigger Module Publishes
-    runs-on: macos-latest
-    environment: sdds
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
+    name: Build artifacts & publish release
+    # macos-latest = macOS 26 без Xcode 16.x; образ и Xcode закреплены явно, Xcode = локальному 26.6.
+    runs-on: macos-26
+    # Публикация идёт через окружение release: required reviewers (владельцы), джоба ждёт
+    # одобрения перед стартом. dry_run ничего не создаёт, поэтому идёт через sdds без
+    # одобрения. На sdds стоят PR-сборки — reviewers там заблокировали бы весь CI.
+    environment: ${{ inputs.dry_run && 'sdds' || 'release' }}
     permissions:
       contents: write
+    env:
+      TAG: ${{ github.event.inputs.tag_name }}
+      # Встроенный токен джобы: contents: write хватает на тег, релиз и ассеты. PAT не нужен —
+      # на теги/релизы больше не подписан ни один воркфлоу, так что «GITHUB_TOKEN не триггерит
+      # другие воркфлоу» ничего не ломает.
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Checkout
@@ -28,135 +42,80 @@ jobs:
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.4'
+          xcode-version: '26.6'
 
-      - name: Install the Apple certificate and provisioning profile
-        env:
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-          P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
-          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
-          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+      - name: Verify tag does not exist
         run: |
-          chmod +x ./scripts/install_certificate_and_profile.sh
-          ./scripts/install_certificate_and_profile.sh "$RUNNER_TEMP" "$BUILD_CERTIFICATE_BASE64" "$P12_PASSWORD" "$BUILD_PROVISION_PROFILE_BASE64" "$KEYCHAIN_PASSWORD"
-
-      - name: Computed envs
-        run: |
-          DATE=$(date +'%d.%m.%Y')
-          echo "DATE=$DATE" >> $GITHUB_ENV
-          echo "FROM_TAG=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
-
-      - name: Retrieve tag exists flag
-        uses: mukunku/tag-exists-action@v1.0.0
-        id: checkTag
-        with:
-          tag: ${{ github.event.inputs.tag_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-      - name: Verify tag not exists
-        run: |
-          if [ ${{ steps.checkTag.outputs.exists }} == true ]; then exit 1; else exit 0; fi
-
-      - name: Create and push tag
-        run: |
-          git config --global user.email "salutedevs@gmail.com"
-          git config --global user.name "Salute iOS Team"
-
-          git tag -a $TAG -m "Release $TAG"
-          git push origin $TAG
-        env:
-          TAG: ${{ github.event.inputs.tag_name }}
-
-      - name: Create Release on GitHub
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        with:
-          tag_name: ${{ github.event.inputs.tag_name }}
-          release_name: ${{ github.event.inputs.tag_name }}
-          draft: true
-          prerelease: false
-
-      - name: Install Ruby dependencies
-        run: |
-          bundle install
-
-      - name: Build artifacts
-        run: |
-          ruby scripts/build_xcframeworks.rb -d DesignSystemBuilder -p DesignSystemBuilder.xcodeproj -m SDDSThemeCore
-          if [ ! -d "DesignSystemBuilder/build/SDDSThemeCore.xcframework" ]; then
-            echo "❌ SDDSThemeCore.xcframework was not created at DesignSystemBuilder/build"
+          if [ -n "$(git ls-remote --tags origin "refs/tags/${TAG}")" ]; then
+            echo "::error::Tag ${TAG} already exists"
             exit 1
           fi
-          ruby scripts/build_xcframeworks.rb -d . -w SDDS.xcworkspace
-          ruby scripts/build_themes.rb
 
-      - name: Collect artifacts
-        run: |
-          mkdir -p artifacts
-          if [ -d "build" ]; then cp -R "build" "artifacts/build"; fi
-          if [ -d "Themes/build" ]; then cp -R "Themes/build" "artifacts/themes-build"; fi
+      - name: Install Ruby dependencies
+        run: bundle install
+
+      - name: Build release artifacts
+        run: scripts/release/build_release.sh "${TAG}"
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifacts
-          path: artifacts/
+          name: release-artifacts
+          path: release-artifacts/
           retention-days: 30
 
-      - name: Build dsbuilder CLI
+      - name: Dry run summary
+        if: ${{ inputs.dry_run }}
         run: |
-          cd DesignSystemBuilder
-          ./build_cli.sh
-          test -x build/dsbuilder/dsbuilder || { echo "❌ CLI binary not built"; exit 1; }
+          echo "dry_run — тег и релиз не создаются, ассеты лежат в Actions-артефакте release-artifacts"
 
-      - name: Package dsbuilder CLI
-        env:
-          TAG: ${{ github.event.inputs.tag_name }}
+      # Предыдущий release-тег считаем до создания нового — от него строится changelog.
+      - name: Compute previous release tag
+        if: ${{ !inputs.dry_run }}
         run: |
-          cd DesignSystemBuilder/build
-          rm -rf dsbuilder-cli && mkdir -p dsbuilder-cli
-          cp dsbuilder/dsbuilder dsbuilder-cli/
-          test -f ../.sdds/ios-api-meta.json || { echo "❌ styles API meta not generated"; exit 1; }
-          cp ../.sdds/ios-api-meta.json dsbuilder-cli/
-          ditto -c -k --sequesterRsrc --keepParent dsbuilder-cli "dsbuilder-cli-${TAG}.zip"
+          FROM_TAG=$(git describe --tags --abbrev=0 --match 'release-*' 2>/dev/null || git rev-list --max-parents=0 HEAD | tail -1)
+          echo "FROM_TAG=$FROM_TAG" >> "$GITHUB_ENV"
+          echo "Changelog range: $FROM_TAG..HEAD"
 
-      - name: Upload dsbuilder CLI to release
-        env:
-          TAG: ${{ github.event.inputs.tag_name }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Create and push tag
+        if: ${{ !inputs.dry_run }}
         run: |
-          gh release upload "${TAG}" "DesignSystemBuilder/build/dsbuilder-cli-${TAG}.zip" --clobber
+          # Локальный конфиг клона: глобальный конфиг машины не трогаем.
+          git config user.email "salutedevs@gmail.com"
+          git config user.name "Salute iOS Team"
+          git tag -a "${TAG}" -m "Release ${TAG}"
+          git push origin "${TAG}"
 
-      # Архив исходников, из которых CLI собирает standalone-бандл. С ним клиенту не
-      # нужен доступ к репозиторию: `--standalone --sources-version <tag>`.
-      - name: Package SDDS sources archive
-        env:
-          TAG: ${{ github.event.inputs.tag_name }}
-        run: |
-          chmod +x scripts/package_sources.sh
-          ./scripts/package_sources.sh "${TAG}"
-          test -f "build/SDDSSources-${TAG}.zip" || { echo "❌ sources archive not built"; exit 1; }
+      - name: Build changelog
+        id: changelog
+        if: ${{ !inputs.dry_run }}
+        continue-on-error: true
+        uses: ./.github/actions/release-changelog
+        with:
+          fromTag: ${{ env.FROM_TAG }}
+          toTag: ${{ github.event.inputs.tag_name }}
 
-      - name: Upload SDDS sources archive to release
+      # Заметки релиза: сгенерированный GitHub список PR («What's Changed») всегда; сверху —
+      # наш changelog по компонентам, если release-changelog его собрал (PR без шаблона
+      # «### What/why changed» дают пустой результат — тогда только --generate-notes).
+      - name: Create draft release
+        if: ${{ !inputs.dry_run }}
         env:
-          TAG: ${{ github.event.inputs.tag_name }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CHANGELOG: ${{ steps.changelog.outputs.changelog }}
         run: |
-          gh release upload "${TAG}" "build/SDDSSources-${TAG}.zip" --clobber
+          NOTES="$RUNNER_TEMP/release-notes.md"
+          printf '%s\n' "${CHANGELOG}" > "$NOTES"
+          if grep -qE '[^[:space:]]' "$NOTES"; then
+            gh release create "${TAG}" --draft --title "${TAG}" --notes-file "$NOTES" --generate-notes
+          else
+            echo "::notice::changelog по компонентам пуст, в релизе только автосгенерированные заметки"
+            gh release create "${TAG}" --draft --title "${TAG}" --generate-notes
+          fi
 
-      - name: Determine changed modules
-        id: changed
-        run: |
-          scripts/changed-modules.sh "${{ env.FROM_TAG }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Upload assets to release
+        if: ${{ !inputs.dry_run }}
+        run: gh release upload "${TAG}" release-artifacts/* --clobber
 
-      - name: Dispatch publish workflows for changed modules
-        if: steps.changed.outputs.modules != ''
-        run: |
-          chmod +x scripts/dispatch-publish.sh
-          scripts/dispatch-publish.sh "${{ steps.changed.outputs.modules }}" "${{ github.event.inputs.tag_name }}"
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }} 
+      - name: Publish release
+        if: ${{ !inputs.dry_run }}
+        run: gh release edit "${TAG}" --draft=false

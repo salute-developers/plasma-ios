@@ -28,6 +28,17 @@ metadata:
   `/opsx:*`, спеки в `openspec/`). Выбран как единственный spec-инструмент; spec-kit не
   используем (избегаем двух перекрывающихся систем).
 - Локальный режим биллинга — см. [[local-mode-billing]].
+- Публикация релиза (с 2026-09-02) — один прогон `publish-release.yml` на `main`:
+  `scripts/release/build_release.sh` → тег → draft-релиз → upload → снятие draft. Раннер
+  `macos-26`, Xcode `26.6` закреплён явно (macos-latest потерял Xcode 16.x). Фан-аут через
+  `repository_dispatch` (`release_components`, `publish-all-themes-release`, `release_all_frameworks`)
+  удалён — он не публиковал ассеты никогда. `release_icons.yml` живёт: у иконок отдельный релиз
+  по тегу `SDDSIcons-v*` (как на Android), в датный релиз `SDDSIcons.xcframework.zip` не кладём.
+  Флоу иконок: PR «Release SDDSIcons-vX» с веба → мерж в main → `create_tag_release.yml` с тегом
+  `SDDSIcons-vX.Y.Z` → `release_icons.yml` по тегу кладёт `SDDSIcons-vX.Y.Z.zip` → снять draft. Проверка воркфлоу с любой ветки — вход `dry_run`.
+  Джоба идёт через окружение `release` (required reviewers: vkaltyrin, malilex, raininforest;
+  достаточно одного), не `sdds` — `sdds` стоит на PR-сборках. Токен — `github.token`, PAT не нужен.
+  Self-hosted раннер обсуждали и отложили (2026-09-02): публичный репо, риск чужих джоб.
 
 **Как применять:** перед рефакторингом публичного appearance-API компонентов помни, что
 это ломает сгенерированные `Themes/*` — регенерируй и проверяй сборку.
