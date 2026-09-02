@@ -72,9 +72,10 @@ cd DesignSystemBuilder && ./build_cli.sh      # → build/dsbuilder/dsbuilder
 
 Как получить бинарь CLI и как выглядит конфиг для запуска вне репозитория — см.
 [«Исходники с релиза»](DesignSystemBuilder/README.md#исходники-с-релиза---sources-version).
-Каждый релиз публикует два ассета: `dsbuilder-cli-<tag>.zip` (сам CLI) и
-`SDDSSources-<tag>.zip` (исходники SDDS, собирает
-[scripts/package_sources.sh](scripts/package_sources.sh)).
+Каждый релиз публикует xcframework'и (`SDDSThemeCore`, `InputMask`, `SDDSComponents`,
+`SDDSIcons`, темы), `dsbuilder-cli-<tag>.zip` (сам CLI) и `SDDSSources-<tag>.zip` (исходники
+SDDS, собирает [scripts/package_sources.sh](scripts/package_sources.sh)). Тот же набор локально
+собирает [scripts/release/build_release.sh](scripts/release/build_release.sh) `<tag>`.
 
 Тесты CLI — `swift test --package-path DesignSystemBuilder` (или `ruby scripts/run_tests.rb`).
 Подробности — [DesignSystemBuilder/README.md](DesignSystemBuilder/README.md) и

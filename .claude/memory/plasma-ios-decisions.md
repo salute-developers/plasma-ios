@@ -28,6 +28,11 @@ metadata:
   `/opsx:*`, спеки в `openspec/`). Выбран как единственный spec-инструмент; spec-kit не
   используем (избегаем двух перекрывающихся систем).
 - Локальный режим биллинга — см. [[local-mode-billing]].
+- Публикация релиза (с 2026-09-02) — один прогон `publish-release.yml` на `main`:
+  `scripts/release/build_release.sh` → тег → draft-релиз → upload → снятие draft. Раннер
+  `macos-26`, Xcode `26.6` закреплён явно (macos-latest потерял Xcode 16.x). Фан-аут через
+  `repository_dispatch` (`release_components/icons`, `publish-all-themes-release`) удалён — он
+  не публиковал ассеты никогда. Проверка воркфлоу с любой ветки — вход `dry_run`.
 
 **Как применять:** перед рефакторингом публичного appearance-API компонентов помни, что
 это ломает сгенерированные `Themes/*` — регенерируй и проверяй сборку.
