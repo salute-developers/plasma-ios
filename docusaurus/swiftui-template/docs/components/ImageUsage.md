@@ -4,7 +4,7 @@ title: Image
 
 `SDDSImage` — компонент для отображения `SwiftUI.Image` с фиксированным **соотношением сторон** из сгенерированной темы (`ImageSize` / `ImageAppearance`).
 
-Вариации ratio генерируются ThemeBuilder из `image_config.json` и доступны в теме как `Image.ratio_*`.
+Вариации ratio генерируются dsbuilder из `image_config.json` и доступны в теме как `Image.ratio_*`.
 
 ## Параметры
 

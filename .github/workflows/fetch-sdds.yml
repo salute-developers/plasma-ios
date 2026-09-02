@@ -5,7 +5,7 @@ name: Fetch .sdds (DS Builder)
 #
 # Запуск вручную (workflow_dispatch) или как переиспользуемый job (workflow_call) перед
 # генерацией тем. Сам по себе ничего не коммитит: .sdds/ эфемерен и используется в рамках
-# того же прогона (например, последующим шагом запуска SDDSThemeBuilder).
+# того же прогона (например, последующим шагом запуска DesignSystemBuilder).
 
 on:
   workflow_dispatch: {}

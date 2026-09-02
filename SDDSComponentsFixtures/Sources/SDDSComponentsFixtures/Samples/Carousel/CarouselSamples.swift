@@ -9,8 +9,7 @@ struct SDDSCarousel_Simple: View {
     var body: some View {
         SDDSCarousel(
             selection: $selection,
-            pageCount: 5,
-            appearance: Carousel.buttonsPlacementInner.appearance
+            pageCount: 5
         ) { index in
             ZStack {
                 RoundedRectangle(cornerRadius: 12)

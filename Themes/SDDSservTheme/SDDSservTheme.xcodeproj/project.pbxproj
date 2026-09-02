@@ -67,7 +67,7 @@
 		81FC48312D931AF500A83F87 /* EnvironmentValueProvider+DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValueProvider+DefaultValues.swift"; sourceTree = "<group>"; };
 		8E63361D6FA1A21DB3E6F39B /* project.pbxproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.pbxproject; path = project.pbxproj; sourceTree = "<group>"; };
 		B71199390CAED614AAA55E03 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		C5548E1A0E384848023C5205 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../../SDDSThemeBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
+		C5548E1A0E384848023C5205 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = SDDSThemeCore.xcframework; path = ../../DesignSystemBuilder/build/SDDSThemeCore.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -1978,7 +1978,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.30.0;
+				MARKETING_VERSION = 0.31.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSServTheme;
@@ -2014,7 +2014,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACH_O_TYPE = staticlib;
-				MARKETING_VERSION = 0.30.0;
+				MARKETING_VERSION = 0.31.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdds.SDDSServTheme;

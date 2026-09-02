@@ -2,6 +2,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
+// @DocSample
 struct SDDSImage_Ratio16x9: View {
     var body: some View {
         SDDSImage(

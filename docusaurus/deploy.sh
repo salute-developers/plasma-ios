@@ -30,7 +30,6 @@ resolve_theme_metadata() {
     if [[ -z "$theme_key" ]]; then
         case "$clean_artifact_id" in
             "sddsserv-theme") theme_key="sddsserv" ;;
-            "styles-salute-theme") theme_key="styles-salute" ;;
             "plasma-b2c-theme") theme_key="plasma-b2c" ;;
             "plasma-home-ds-theme") theme_key="plasma-homeds" ;;
         esac
@@ -38,7 +37,6 @@ resolve_theme_metadata() {
 
     case "$theme_key" in
         "sddsserv") echo "sddsserv|SDDSServTheme" ;;
-        "styles-salute") echo "styles-salute|StylesSaluteTheme" ;;
         "plasma-b2c") echo "plasma-b2c|PlasmaB2CTheme" ;;
         "plasma-homeds") echo "plasma-homeds|PlasmaHomeDSTheme" ;;
         *) echo "$theme_key|" ;;
@@ -115,9 +113,6 @@ get_version() {
     case "$clean_artifact_id" in
         "sddsserv-theme")
             theme_dir_name="SDDSservTheme"
-            ;;
-        "styles-salute-theme")
-            theme_dir_name="StylesSaluteTheme"
             ;;
         "plasma-b2c-theme")
             theme_dir_name="PlasmaB2CTheme"
@@ -352,9 +347,6 @@ echo "📝 Обновление versionsArchived.json для темы $THEME_NAM
 case "$THEME_NAME" in
     "sddsserv")
         THEME_DIR="../Themes/SDDSservTheme"
-        ;;
-    "styles-salute")
-        THEME_DIR="../Themes/StylesSaluteTheme"
         ;;
     "plasma-b2c")
         THEME_DIR="../Themes/PlasmaB2CTheme"
@@ -617,7 +609,7 @@ echo "  # Деплой на S3 с changelog:"
 echo "  ./deploy.sh --s3 --with-changelog SDDSComponents 1.0.0 test swiftui \"SDDS iOS Components\" SDDSComponents"
 echo ""
 echo "  # Деплой на S3 с кастомными параметрами:"
-echo "  ./deploy.sh --s3 styles-salute-theme 1.0.0-dev develop swiftui \"Styles Salute Theme\" StylesSaluteTheme"
+echo "  ./deploy.sh --s3 sddsserv-theme 1.0.0-dev develop swiftui \"SDDS Serv Theme\" SDDSservTheme"
 echo ""
 echo "  # Локальное тестирование с кастомными параметрами:"
 echo "  ./deploy.sh --local SDDSComponents 1.0.0 test swiftui \"SDDS iOS Components\" SDDSComponents --with-server"

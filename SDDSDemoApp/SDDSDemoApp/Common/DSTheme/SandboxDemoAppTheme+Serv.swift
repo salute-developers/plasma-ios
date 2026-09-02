@@ -10,7 +10,6 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
     case sdddsServTheme
     case plasmaB2CTheme
     case plasmaHomeDSTheme
-    case stylesSalute
     
     public var name: String {
         rawValue.capitalized
@@ -382,7 +381,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         switch self {
         case .plasmaHomeDSTheme:
             []
-        case .sdddsServTheme, .plasmaB2CTheme, .stylesSalute:
+        case .sdddsServTheme, .plasmaB2CTheme:
             []
         }
     }
@@ -391,7 +390,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         switch self {
         case .plasmaHomeDSTheme:
             []
-        case .sdddsServTheme, .plasmaB2CTheme, .stylesSalute:
+        case .sdddsServTheme, .plasmaB2CTheme:
             []
         }
     }
@@ -400,7 +399,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         switch self {
         case .plasmaHomeDSTheme:
             []
-        case .sdddsServTheme, .plasmaB2CTheme, .stylesSalute:
+        case .sdddsServTheme, .plasmaB2CTheme:
             []
         }
     }
@@ -409,7 +408,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         switch self {
         case .plasmaHomeDSTheme:
             []
-        case .sdddsServTheme, .plasmaB2CTheme, .stylesSalute:
+        case .sdddsServTheme, .plasmaB2CTheme:
             []
         }
     }
@@ -422,7 +421,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
     
     public var listNumberedItemVariations: [Variation<ListItemAppearance>] {
         switch self {
-        case .sdddsServTheme, .stylesSalute, .plasmaB2CTheme:
+        case .sdddsServTheme, .plasmaB2CTheme:
             []
         case .plasmaHomeDSTheme:
             []
@@ -449,7 +448,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
     
     public var listNumberedVariations: [Variation<ListAppearance>] {
         switch self {
-        case .sdddsServTheme, .stylesSalute, .plasmaB2CTheme:
+        case .sdddsServTheme, .plasmaB2CTheme:
             []
         case .plasmaHomeDSTheme:
             []
@@ -808,7 +807,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.Theme.availableTenants
-        case .plasmaB2CTheme, .plasmaHomeDSTheme, .stylesSalute:
+        case .plasmaB2CTheme, .plasmaHomeDSTheme:
             return []
         }
     }
@@ -817,7 +816,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
-        case .plasmaB2CTheme, .plasmaHomeDSTheme, .stylesSalute:
+        case .plasmaB2CTheme, .plasmaHomeDSTheme:
             onComplete()
         }
     }

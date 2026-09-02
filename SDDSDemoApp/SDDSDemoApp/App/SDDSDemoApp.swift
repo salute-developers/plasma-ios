@@ -10,7 +10,6 @@ import PlasmaHomeDSTheme
 import SDDSServTheme
 import PlasmaB2CTheme
 import PlasmaHomeDSTheme
-import StylesSaluteTheme
 import SandboxDemoTheme
 #endif
 

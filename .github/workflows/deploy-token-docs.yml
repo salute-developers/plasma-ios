@@ -7,7 +7,7 @@ on:
     inputs:
       modules:
         type: string
-        description: 'Список модулей в формате json (например, ["styles-salute-theme", "sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]). Если пустое, используется весь список тем.'
+        description: 'Список модулей в формате json (например, ["sddsserv-theme", "plasma-b2c-theme", "plasma-home-ds-theme"]). Если пустое, используется весь список тем.'
         required: false
       versions:
         type: string

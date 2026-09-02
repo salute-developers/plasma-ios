@@ -16,7 +16,6 @@ struct SDDSTabs_Simple: View {
             tabItemType: .default,
             stretch: true,
             hasDivider: true,
-            appearance: TabsDefault.l.appearance,
             onSelect: { _ in }
         )
     }

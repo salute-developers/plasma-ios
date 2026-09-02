@@ -3,7 +3,7 @@ import PackageDescription
 
 // Автономный build-tool: сканирует `*Appearance`-структуры SDDSComponents через SwiftSyntax
 // и эмитит `ios-api-meta.json` — iOS-аналог Android `uikit-api-meta.json`
-// (агрегатор API стилей). Держится отдельно от CLI SDDSThemeBuilder (тот собирается
+// (агрегатор API стилей). Держится отдельно от CLI DesignSystemBuilder (тот собирается
 // через xcodebuild и не тянет SPM-swift-syntax).
 let package = Package(
     name: "SDDSApiInfoGenerator",

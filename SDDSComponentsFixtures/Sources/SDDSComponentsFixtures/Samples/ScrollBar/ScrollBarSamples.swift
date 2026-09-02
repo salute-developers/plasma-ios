@@ -6,7 +6,6 @@ import SDDSServTheme
 struct SDDSScrollBar_Simple: View {
     var body: some View {
         SDDSScrollbar(
-            appearance: ScrollBar.m.appearance,
             hasTrack: true,
             hoverExpand: true,
             thumbOffset: 0,

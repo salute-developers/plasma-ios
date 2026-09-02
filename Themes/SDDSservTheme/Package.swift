@@ -13,7 +13,7 @@ let package = Package(
             targets: ["SDDSServTheme"]),
     ],
     dependencies: [
-        .package(name: "SDDSThemeCore", path: "../../SDDSThemeBuilder/SDDSThemeCore"),
+        .package(name: "SDDSThemeCore", path: "../../DesignSystemBuilder/SDDSThemeCore"),
         .package(name: "SDDSComponents", path: "../../SDDSComponents"),
         .package(name: "SDDSIcons", path: "../../SDDSIcons"),
         .package(name: "SandboxCore", path: "../../IntegrationCore/SandboxCore")

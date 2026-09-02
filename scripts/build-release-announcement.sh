@@ -41,7 +41,7 @@ get_modules_json() {
     return
   fi
 
-  echo '["sddsserv-theme","plasma-b2c-theme","plasma-home-ds-theme","styles-salute-theme"]'
+  echo '["sddsserv-theme","plasma-b2c-theme","plasma-home-ds-theme"]'
 }
 
 is_module_selected() {
@@ -70,11 +70,6 @@ fi
 if is_module_selected "plasma-home-ds-theme"; then
   HOME_VERSION="$(get_module_version "plasma-home-ds-theme" "$REPO_ROOT/Themes/PlasmaHomeDSTheme/override-docs/versionsArchived.json")"
   ANNOUNCEMENT_LINES+=("Changelog Plasma HomeDS Theme: https://plasma.sberdevices.ru/ios/plasma-home-ds-theme/${HOME_VERSION}/CHANGELOG/")
-fi
-
-if is_module_selected "styles-salute-theme"; then
-  SALUTE_VERSION="$(get_module_version "styles-salute-theme" "$REPO_ROOT/Themes/StylesSaluteTheme/override-docs/versionsArchived.json")"
-  ANNOUNCEMENT_LINES+=("Changelog Styles Salute Theme: https://plasma.sberdevices.ru/ios/styles-salute-theme/${SALUTE_VERSION}/CHANGELOG/")
 fi
 
 RELEASE_DATE="$(echo "$TAG" | sed -E 's/^release-([0-9]{2})-([0-9]{2})-([0-9]{4})$/\1.\2.\3/')"

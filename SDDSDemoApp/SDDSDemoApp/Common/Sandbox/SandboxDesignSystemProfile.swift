@@ -7,7 +7,6 @@ enum SandboxDesignSystemProfile: Equatable {
     case sddsServ
     case plasmaB2C
     case plasmaHomeDS
-    case stylesSalute
 
     static let environmentKey = "SANDBOX_DS_PROFILE"
 
@@ -29,8 +28,6 @@ enum SandboxDesignSystemProfile: Equatable {
             return .plasmaB2C
         case "plasmahomeds", "plasma_home_ds", "homeds", "home":
             return .plasmaHomeDS
-        case "stylessalute", "styles_salute", "salute":
-            return .stylesSalute
         default:
             return .all
         }
@@ -46,8 +43,6 @@ enum SandboxDesignSystemProfile: Equatable {
             return "Components - Plasma B2C"
         case .plasmaHomeDS:
             return "Components - Plasma HomeDS"
-        case .stylesSalute:
-            return "Components - Styles Salute"
         }
     }
 
@@ -61,8 +56,6 @@ enum SandboxDesignSystemProfile: Equatable {
             return [.plasmaB2CTheme]
         case .plasmaHomeDS:
             return [.plasmaHomeDSTheme]
-        case .stylesSalute:
-            return [.stylesSalute]
         }
     }
 }

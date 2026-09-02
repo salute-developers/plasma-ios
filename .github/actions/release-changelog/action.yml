@@ -102,7 +102,7 @@ runs:
       run: |
         cat > "${{ env.FILE }}" <<EOF
         ${{ steps.changelog.outputs.changelog }}
-        EOF   
+        EOF
 
     - name: Debug print changelog_artifacts.md
       shell: bash

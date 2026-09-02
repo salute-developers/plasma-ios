@@ -38,9 +38,6 @@ case "$clean_artifact_id" in
     "sddsserv-theme")
         theme_dir_name="SDDSservTheme"
         ;;
-    "styles-salute-theme")
-        theme_dir_name="StylesSaluteTheme"
-        ;;
     "plasma-b2c-theme")
         theme_dir_name="PlasmaB2CTheme"
         ;;

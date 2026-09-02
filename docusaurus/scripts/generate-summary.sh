@@ -21,9 +21,6 @@ get_theme_mapping() {
         "sddsserv-theme")
             echo "SDDSServTheme"
             ;;
-        "styles-salute-theme")
-            echo "StylesSaluteTheme"
-            ;;
         "plasma-b2c-theme")
             echo "PlasmaB2CTheme"
             ;;
@@ -43,9 +40,6 @@ get_summary_key() {
         "SDDSServTheme"|"SDDSservTheme")
             echo "SDDSService"
             ;;
-        "StylesSaluteTheme")
-            echo "plasmaStylesSalute"
-            ;;
         "PlasmaB2CTheme")
             echo "plasmaSDService"
             ;;
@@ -64,9 +58,6 @@ get_theme_url_name() {
     case "$theme_dir_name" in
         "SDDSServTheme"|"SDDSservTheme")
             echo "sddsserv-theme"
-            ;;
-        "StylesSaluteTheme")
-            echo "styles-salute-theme"
             ;;
         "PlasmaB2CTheme")
             echo "plasma-b2c-theme"

@@ -8,8 +8,7 @@ struct SDDSToast_Simple: View {
         SDDSToast(
             text: "Текст тоста",
             contentEndPosition: .topRight,
-            onClose: nil,
-            appearance: Toast.pilled.appearance
+            onClose: nil
         )
     }
 }

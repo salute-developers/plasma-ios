@@ -1,0 +1,434 @@
+{
+  "navigation": [
+    {
+      "title": "Быстрый старт",
+      "path": "quick_start.md",
+      "subjects": []
+    },
+    {
+      "title": "Тема",
+      "subjects": [],
+      "items": [
+        {
+          "title": "Токены цвета и градиентов",
+          "path": "theme/Colors.md",
+          "subjects": [
+            "tokens.colors"
+          ]
+        },
+        {
+          "title": "Токены теней",
+          "path": "theme/Shadows.md",
+          "subjects": [
+            "tokens.shadows"
+          ]
+        },
+        {
+          "title": "Токены скруглений",
+          "path": "theme/Shapes.md",
+          "subjects": [
+            "tokens.shapes"
+          ]
+        },
+        {
+          "title": "Токены отступов",
+          "path": "theme/Spacing.md",
+          "subjects": [
+            "tokens.spacing"
+          ]
+        },
+        {
+          "title": "Токены типографики",
+          "path": "theme/Typography.md",
+          "subjects": [
+            "tokens.typography"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Компоненты",
+      "subjects": [],
+      "items": [
+        {
+          "title": "Accordion",
+          "path": "components/AccordionUsage.md",
+          "subjects": [
+            "components.accordion"
+          ]
+        },
+        {
+          "title": "AvatarGroup",
+          "path": "components/AvatarGroupUsage.md",
+          "subjects": [
+            "components.avatar-group"
+          ]
+        },
+        {
+          "title": "Avatar",
+          "path": "components/AvatarUsage.md",
+          "subjects": [
+            "components.avatar"
+          ]
+        },
+        {
+          "title": "Badge",
+          "path": "components/BadgeUsage.md",
+          "subjects": [
+            "components.badge"
+          ]
+        },
+        {
+          "title": "Button",
+          "path": "components/ButtonUsage.md",
+          "subjects": [
+            "components.button"
+          ]
+        },
+        {
+          "title": "Card",
+          "path": "components/CardUsage.md",
+          "subjects": [
+            "components.card"
+          ]
+        },
+        {
+          "title": "Carousel",
+          "path": "components/CarouselUsage.md",
+          "subjects": [
+            "components.carousel"
+          ]
+        },
+        {
+          "title": "Cell",
+          "path": "components/CellUsage.md",
+          "subjects": [
+            "components.cell"
+          ]
+        },
+        {
+          "title": "CheckBoxGroup",
+          "path": "components/CheckBoxGroupUsage.md",
+          "subjects": [
+            "components.check-box-group"
+          ]
+        },
+        {
+          "title": "CheckBox",
+          "path": "components/CheckBoxUsage.md",
+          "subjects": [
+            "components.check-box"
+          ]
+        },
+        {
+          "title": "ChipGroup",
+          "path": "components/ChipGroupUsage.md",
+          "subjects": [
+            "components.chip-group"
+          ]
+        },
+        {
+          "title": "Chip",
+          "path": "components/ChipUsage.md",
+          "subjects": [
+            "components.chip"
+          ]
+        },
+        {
+          "title": "CircularProgressBar",
+          "path": "components/CircularProgressBarUsage.md",
+          "subjects": [
+            "components.circular-progress-bar"
+          ]
+        },
+        {
+          "title": "CodeField",
+          "path": "components/CodeFieldUsage.md",
+          "subjects": [
+            "components.code-field"
+          ]
+        },
+        {
+          "title": "CodeInput",
+          "path": "components/CodeInputUsage.md",
+          "subjects": [
+            "components.code-input"
+          ]
+        },
+        {
+          "title": "CollapsingNavigationBar",
+          "path": "components/CollapsingNavigationBarUsage.md",
+          "subjects": [
+            "components.collapsing-navigation-bar"
+          ]
+        },
+        {
+          "title": "Counter",
+          "path": "components/CounterUsage.md",
+          "subjects": [
+            "components.counter"
+          ]
+        },
+        {
+          "title": "Divider",
+          "path": "components/DividerUsage.md",
+          "subjects": [
+            "components.divider"
+          ]
+        },
+        {
+          "title": "Drawer",
+          "path": "components/DrawerUsage.md",
+          "subjects": [
+            "components.drawer"
+          ]
+        },
+        {
+          "title": "DropdownMenu",
+          "path": "components/DropdownMenuUsage.md",
+          "subjects": [
+            "components.dropdown-menu"
+          ]
+        },
+        {
+          "title": "FormItem",
+          "path": "components/FormItemUsage.md",
+          "subjects": [
+            "components.form-item"
+          ]
+        },
+        {
+          "title": "Icon (SDDSIcon)",
+          "path": "components/IconUsage.md",
+          "subjects": [
+            "components.icon"
+          ]
+        },
+        {
+          "title": "Image",
+          "path": "components/ImageUsage.md",
+          "subjects": [
+            "components.image"
+          ]
+        },
+        {
+          "title": "Indicator",
+          "path": "components/IndicatorUsage.md",
+          "subjects": [
+            "components.indicator"
+          ]
+        },
+        {
+          "title": "List",
+          "path": "components/ListUsage.md",
+          "subjects": [
+            "components.list"
+          ]
+        },
+        {
+          "title": "Loader",
+          "path": "components/LoaderUsage.md",
+          "subjects": [
+            "components.loader"
+          ]
+        },
+        {
+          "title": "Modal",
+          "path": "components/ModalUsage.md",
+          "subjects": [
+            "components.modal"
+          ]
+        },
+        {
+          "title": "NavigationBar",
+          "path": "components/NavigationBarUsage.md",
+          "subjects": [
+            "components.navigation-bar"
+          ]
+        },
+        {
+          "title": "NoteCompact",
+          "path": "components/NoteCompactUsage.md",
+          "subjects": [
+            "components.note-compact"
+          ]
+        },
+        {
+          "title": "Note",
+          "path": "components/NoteUsage.md",
+          "subjects": [
+            "components.note"
+          ]
+        },
+        {
+          "title": "Notification",
+          "path": "components/NotificationUsage.md",
+          "subjects": [
+            "components.notification"
+          ]
+        },
+        {
+          "title": "Overlay",
+          "path": "components/OverlayUsage.md",
+          "subjects": [
+            "components.overlay"
+          ]
+        },
+        {
+          "title": "PaginationDots",
+          "path": "components/PaginationDotsUsage.md",
+          "subjects": [
+            "components.pagination-dots"
+          ]
+        },
+        {
+          "title": "Popover",
+          "path": "components/PopoverUsage.md",
+          "subjects": [
+            "components.popover"
+          ]
+        },
+        {
+          "title": "ProgressBar",
+          "path": "components/ProgressBarUsage.md",
+          "subjects": [
+            "components.progress-bar"
+          ]
+        },
+        {
+          "title": "RadioBoxGroup",
+          "path": "components/RadioBoxGroupUsage.md",
+          "subjects": [
+            "components.radio-box-group"
+          ]
+        },
+        {
+          "title": "RadioBox",
+          "path": "components/RadioBoxUsage.md",
+          "subjects": [
+            "components.radio-box"
+          ]
+        },
+        {
+          "title": "RectSkeleton",
+          "path": "components/RectSkeletonUsage.md",
+          "subjects": [
+            "components.rect-skeleton"
+          ]
+        },
+        {
+          "title": "ScrollBar",
+          "path": "components/ScrollBarUsage.md",
+          "subjects": [
+            "components.scroll-bar"
+          ]
+        },
+        {
+          "title": "SegmentItem",
+          "path": "components/SegmentItemUsage.md",
+          "subjects": [
+            "components.segment-item"
+          ]
+        },
+        {
+          "title": "Segment",
+          "path": "components/SegmentUsage.md",
+          "subjects": [
+            "components.segment"
+          ]
+        },
+        {
+          "title": "Select",
+          "path": "components/SelectUsage.md",
+          "subjects": [
+            "components.select"
+          ]
+        },
+        {
+          "title": "Spinner",
+          "path": "components/SpinnerUsage.md",
+          "subjects": [
+            "components.spinner"
+          ]
+        },
+        {
+          "title": "Switch",
+          "path": "components/SwitchUsage.md",
+          "subjects": [
+            "components.switch"
+          ]
+        },
+        {
+          "title": "TabBarIsland",
+          "path": "components/TabBarIslandUsage.md",
+          "subjects": [
+            "components.tab-bar-island"
+          ]
+        },
+        {
+          "title": "TabBar",
+          "path": "components/TabBarUsage.md",
+          "subjects": [
+            "components.tab-bar"
+          ]
+        },
+        {
+          "title": "TabItem",
+          "path": "components/TabItemUsage.md",
+          "subjects": [
+            "components.tab-item"
+          ]
+        },
+        {
+          "title": "Tabs",
+          "path": "components/TabsUsage.md",
+          "subjects": [
+            "components.tabs"
+          ]
+        },
+        {
+          "title": "TextField",
+          "path": "components/TextFieldUsage.md",
+          "subjects": [
+            "components.text-field"
+          ]
+        },
+        {
+          "title": "TextSkeleton",
+          "path": "components/TextSkeletonUsage.md",
+          "subjects": [
+            "components.text-skeleton"
+          ]
+        },
+        {
+          "title": "Text (SDDSText)",
+          "path": "components/TextUsage.md",
+          "subjects": [
+            "components.text"
+          ]
+        },
+        {
+          "title": "Toast",
+          "path": "components/ToastUsage.md",
+          "subjects": [
+            "components.toast"
+          ]
+        },
+        {
+          "title": "Toolbar",
+          "path": "components/ToolbarUsage.md",
+          "subjects": [
+            "components.toolbar"
+          ]
+        },
+        {
+          "title": "Tooltip",
+          "path": "components/TooltipUsage.md",
+          "subjects": [
+            "components.tooltip"
+          ]
+        }
+      ]
+    }
+  ]
+}

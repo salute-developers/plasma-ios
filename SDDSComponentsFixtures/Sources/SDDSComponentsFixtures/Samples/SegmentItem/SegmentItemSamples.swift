@@ -10,7 +10,6 @@ struct SDDSSegmentItem_Simple: View {
             subtitle: "Subtitle",
             iconAttributes: nil,
             isSelected: true,
-            appearance: SegmentItem.l.secondary.appearance,
             accessibility: SegmentItemAccessibility(),
             action: {}
         )

@@ -15,7 +15,7 @@ if args.contains("--help") || args.contains("-h") {
 
     Опции:
       --sources <dir[,dir...]>  Каталоги исходников для скана (default: SDDSComponents/Sources)
-      --props   <dir>           Каталог *Props для сверки config-id (default: SDDSThemeBuilder/SDDSThemeBuilderCore/Model/Props; "" — выключить)
+      --props   <dir>           Каталог *Props для сверки config-id (default: DesignSystemBuilder/DesignSystemBuilderCore/Model/Props; "" — выключить)
       --output  <file>          Куда писать JSON (default: stdout)
       --module  <name>          Имя модуля для qualifiedName (default: SDDSComponents)
       --only    <A,B,...>       Ограничить набор компонентов (по имени компонента или типа)
@@ -26,8 +26,8 @@ if args.contains("--help") || args.contains("-h") {
 }
 
 let sourcesArg = argValue("--sources", in: args) ?? "SDDSComponents/Sources"
-let propsArg = argValue("--props", in: args) ?? "SDDSThemeBuilder/SDDSThemeBuilderCore/Model/Props"
-let overridesArg = argValue("--overrides", in: args) ?? "SDDSThemeBuilder/.sdds/ios-api-meta.overrides.json"
+let propsArg = argValue("--props", in: args) ?? "DesignSystemBuilder/DesignSystemBuilderCore/Model/Props"
+let overridesArg = argValue("--overrides", in: args) ?? "DesignSystemBuilder/.sdds/ios-api-meta.overrides.json"
 let outputPath = argValue("--output", in: args)
 let moduleName = argValue("--module", in: args) ?? "SDDSComponents"
 let wantReport = args.contains("--report")

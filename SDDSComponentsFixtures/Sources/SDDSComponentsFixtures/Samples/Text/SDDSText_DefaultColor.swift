@@ -2,6 +2,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
+// @DocSample
 struct SDDSText_DefaultColor: View {
     var body: some View {
         SDDSText(

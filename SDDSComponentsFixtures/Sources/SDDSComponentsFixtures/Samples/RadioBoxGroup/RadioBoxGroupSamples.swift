@@ -33,8 +33,7 @@ struct SDDSRadioboxGroup_Simple: View {
         ]
         return SDDSRadioboxGroup(
             radioboxData: data,
-            size: SDDSRadioboxGroupSize.large,
-            appearance: RadioboxGroup.m.appearance
+            size: SDDSRadioboxGroupSize.large
         )
     }
 }

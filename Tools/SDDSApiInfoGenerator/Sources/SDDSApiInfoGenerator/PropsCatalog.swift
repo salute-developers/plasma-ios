@@ -11,7 +11,7 @@ struct PropsField {
 }
 
 /// Каталог config-id по компонентам, собранный из неизменённых `*Props`-структур
-/// (`SDDSThemeBuilderCore/Model/Props`). Это авторитетный словарь свойств конфига —
+/// (`DesignSystemBuilderCore/Model/Props`). Это авторитетный словарь свойств конфига —
 /// тул сопоставляет его с Appearance, ничего не переименовывая в исходниках.
 final class PropsCatalog {
     /// norm(componentName) → поля.
