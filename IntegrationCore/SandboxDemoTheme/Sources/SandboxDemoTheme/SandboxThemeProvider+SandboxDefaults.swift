@@ -3,7 +3,6 @@ import PlasmaB2CTheme
 import PlasmaHomeDSTheme
 import SandboxCore
 import SDDSServTheme
-import StylesSaluteTheme
 
 extension SDDSServSandboxThemeProvider {
     /// Pre-configured provider for sandbox variant/appearance lists (SDDS Serv).
@@ -33,11 +32,3 @@ extension PlasmaHomeDSSandboxThemeProvider {
     }
 }
 
-extension StylesSaluteSandboxThemeProvider {
-    public static var forSandbox: Self {
-        Self(
-            variantResolver: { SandboxThemeVariationResolver.variantNames(theme: .stylesSalute, component: $0) },
-            appearanceResolver: { SandboxThemeVariationResolver.appearanceNames(theme: .stylesSalute, component: $0, variant: $1) }
-        )
-    }
-}

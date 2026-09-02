@@ -11,11 +11,11 @@ CHANGED_THEMES=false
 while IFS= read -r FILE; do
   echo "➡️ Checking file: $FILE"
 
-  # SDDSThemeBuilder (versioned as SDDSThemeCore module)
-  if [[ "$FILE" == SDDSThemeBuilder/* ]]; then
+  # DesignSystemBuilder (versioned as SDDSThemeCore module)
+  if [[ "$FILE" == DesignSystemBuilder/* ]]; then
     MODULE="SDDSThemeCore"
     MODULES_SET+=("$MODULE")
-    echo "✅ Matched: $MODULE (from SDDSThemeBuilder)"
+    echo "✅ Matched: $MODULE (from DesignSystemBuilder)"
   fi
 
   # SDDSComponents

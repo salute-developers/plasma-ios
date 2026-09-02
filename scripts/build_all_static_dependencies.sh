@@ -16,8 +16,8 @@ echo "📦 Корневая директория проекта: $PROJECT_ROOT"
 
 # Шаг 1: Сборка SDDSThemeCore
 echo "📦 Шаг 1: Сборка SDDSThemeCore..."
-cd "$PROJECT_ROOT/SDDSThemeBuilder"
-ruby "$PROJECT_ROOT/scripts/build_xcframeworks.rb" -d . -p SDDSThemeBuilder.xcodeproj -m SDDSThemeCore
+cd "$PROJECT_ROOT/DesignSystemBuilder"
+ruby "$PROJECT_ROOT/scripts/build_xcframeworks.rb" -d . -p DesignSystemBuilder.xcodeproj -m SDDSThemeCore
 
 # Шаг 2: Сборка SDDSComponents и SDDSIcons
 echo "📦 Шаг 2: Сборка SDDSComponents и SDDSIcons..."

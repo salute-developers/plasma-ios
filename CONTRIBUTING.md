@@ -23,9 +23,10 @@ Target -  это то, что мы собираем и выпускаем в р�
 Допустимые скоупы:
 - sdds-icore/uikit
 - sdds-icore/uikit-swift
-- sdds-icore/theme-builder
+- sdds-icore/theme-builder (DesignSystemBuilder / `dsbuilder`)
 - sdds-icore/sandbox
 - sdds-ios/build-system (не target, но нужно указывать, если есть изменения в build-system)
+- sdds-ios/docs-aggregator (DesignSystemBuilder/DocsAggregatorCore и docs-template)
 - sdds-ilibs/${libName} - где libName - это библиотеки для вертикалей
 
 Примеры коммитов:

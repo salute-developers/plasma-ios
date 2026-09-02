@@ -44,6 +44,6 @@ xcodebuild -project SDDSComponents.xcodeproj -scheme SDDSComponents \
   `scripts/run_tests.rb`, не подменяй симулятор произвольно.
 - Appearance-типы генерируются/потребляются вместе с темами: изменение публичного
   appearance-API компонента ломает сгенерированные `Themes/*`. Меняешь API — проверь
-  генерацию тем (см. [../SDDSThemeBuilder/CLAUDE.md](../SDDSThemeBuilder/CLAUDE.md)).
+  генерацию тем (см. [../DesignSystemBuilder/CLAUDE.md](../DesignSystemBuilder/CLAUDE.md)).
 - Коммит-скоуп: `sdds-icore/uikit` или `sdds-icore/uikit-swift` (см. корневой
   [CONTRIBUTING.md](../CONTRIBUTING.md)).

@@ -46,6 +46,44 @@ xcodebuild -project SDDSDemoApp.xcodeproj -scheme SDDSDemoApp -destination 'plat
 
 Вместо `iPhone 16,OS=18.6` укажите доступный симулятор из списка `xcodebuild -destination 'platform=iOS Simulator' -showdestinations`.
 
+## CLI дизайн-системы (`dsbuilder`)
+
+`DesignSystemBuilder/` — единый CLI дизайн-системы. Один бинарник делает и генерацию тем
+(`Themes/<Name>Theme` — токены, типографика, вариации компонентов), и сборку
+документационного бандла:
+
+```
+cd DesignSystemBuilder && ./build_cli.sh      # → build/dsbuilder/dsbuilder
+```
+
+```
+./build/dsbuilder/dsbuilder                                   # генерация тем (подкоманда themes)
+./build/dsbuilder/dsbuilder docs extract   --repo-root ..     # сэмплы документации
+./build/dsbuilder/dsbuilder docs aggregate --repo-root .. --theme SDDSserv
+```
+
+Отдельный режим — **автономные исходники** (`--standalone`): тема собирается в плоскую папку
+`.swift`, которая компилируется одним модулем без линковки наших библиотек. Исходники для
+сборки можно забрать прямо с релиза по номеру версии, не имея чекаута репозитория:
+
+```
+./dsbuilder ./config.json --standalone --components --sources-version release-18-08-2026
+```
+
+Как получить бинарь CLI и как выглядит конфиг для запуска вне репозитория — см.
+[«Исходники с релиза»](DesignSystemBuilder/README.md#исходники-с-релиза---sources-version).
+Каждый релиз публикует два ассета: `dsbuilder-cli-<tag>.zip` (сам CLI) и
+`SDDSSources-<tag>.zip` (исходники SDDS, собирает
+[scripts/package_sources.sh](scripts/package_sources.sh)).
+
+Тесты CLI — `swift test --package-path DesignSystemBuilder` (или `ruby scripts/run_tests.rb`).
+Подробности — [DesignSystemBuilder/README.md](DesignSystemBuilder/README.md) и
+[docs/DOCS_BUNDLE.md](docs/DOCS_BUNDLE.md).
+
+> Одноимённый внешний `dsbuilder` (Kotlin/Native, репозиторий `design-system-builder`)
+> выгружает `.sdds/` и печёт готовый архив документации из подготовленного нами дерева —
+> это другой бинарник.
+
 ## AI-агентная инфра
 
 В репозитории развёрнута локальная инфраструктура для работы с AI-агентом (Claude Code).

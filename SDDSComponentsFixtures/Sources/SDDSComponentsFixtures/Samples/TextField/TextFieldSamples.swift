@@ -10,8 +10,7 @@ struct SDDSTextField_Simple: View {
         SDDSTextField(
             value: $value,
             title: "Title",
-            placeholder: "Enter the text",
-            appearance: TextField.l.default.appearance
+            placeholder: "Enter the text"
         )
     }
 }
@@ -26,8 +25,7 @@ struct SDDSTextField_SecureEntryKeyboardType: View {
             title: "Password",
             placeholder: "Enter password",
             secureEntry: true,
-            keyboardType: .emailAddress,
-            appearance: TextField.m.default.appearance
+            keyboardType: .emailAddress
         )
     }
 }

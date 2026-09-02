@@ -6,7 +6,6 @@ import SDDSServTheme
 struct SDDSCell_Simple: View {
     var body: some View {
         SDDSCell(
-            appearance: Cell.l.appearance,
             alignment: .center,
             label: "label",
             title: "title",

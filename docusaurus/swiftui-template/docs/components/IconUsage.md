@@ -2,7 +2,7 @@
 title: Icon (SDDSIcon)
 ---
 
-`SDDSIcon` — обёртка над `SwiftUI.Image` для **иконок** (template + tint или градиент через ``FillStyle``). Не генерируется ThemeBuilder; дефолты задаются через окружение ``SDDSIconEnvironment``.
+`SDDSIcon` — обёртка над `SwiftUI.Image` для **иконок** (template + tint или градиент через ``FillStyle``). Не генерируется dsbuilder; дефолты задаются через окружение ``SDDSIconEnvironment``.
 
 ## Параметры
 

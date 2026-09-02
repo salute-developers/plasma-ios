@@ -25,6 +25,7 @@ public struct Wheel {
         appearance.itemTextAfterColor = ColorToken.textDefaultPrimary
         appearance.itemTextAfterTypography = WheelTypography(oneSize: AdaptiveTypographyToken.headerH4Bold.typography).asContainer
         appearance.itemTextTypography = WheelTypography(oneSize: AdaptiveTypographyToken.headerH4Bold.typography).asContainer
+        appearance.selectionIndicatorColor = ColorToken.surfaceDefaultTransparentPrimary
 
         return .init(
             name: "h4",

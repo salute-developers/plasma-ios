@@ -55,7 +55,6 @@ enum TextIconDemoTokens {
 import PlasmaB2CTheme
 import PlasmaHomeDSTheme
 import SDDSServTheme
-import StylesSaluteTheme
 
 enum TextIconDemoTokens {
     static func positiveTextColorToken(theme: Theme) -> ColorToken {
@@ -66,8 +65,6 @@ enum TextIconDemoTokens {
             return PlasmaB2CTheme.Colors.textDefaultPositive.token
         case .plasmaHomeDSTheme:
             return PlasmaHomeDSTheme.Colors.textDefaultPositive.token
-        case .stylesSalute:
-            return StylesSaluteTheme.Colors.textDefaultPositive.token
         }
     }
 
@@ -79,8 +76,6 @@ enum TextIconDemoTokens {
             return PlasmaB2CTheme.Colors.textDefaultAccent.token
         case .plasmaHomeDSTheme:
             return PlasmaHomeDSTheme.Colors.textDefaultAccent.token
-        case .stylesSalute:
-            return StylesSaluteTheme.Colors.textDefaultAccent.token
         }
     }
 
@@ -92,8 +87,6 @@ enum TextIconDemoTokens {
             return PlasmaB2CTheme.Gradients.textDefaultAccentGradient.token
         case .plasmaHomeDSTheme:
             return PlasmaHomeDSTheme.Gradients.textDefaultAccentGradient.token
-        case .stylesSalute:
-            return StylesSaluteTheme.Gradients.textDefaultAccentGradient.token
         }
     }
 }

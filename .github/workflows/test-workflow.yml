@@ -20,7 +20,6 @@ on:
           - plasma-homeds
           - plasma-b2c
           - sddsserv
-          - styles-salute
         default: 'sddsserv'
         required: true
 

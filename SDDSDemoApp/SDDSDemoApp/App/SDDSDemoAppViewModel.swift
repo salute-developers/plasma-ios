@@ -8,7 +8,6 @@ import PlasmaB2CTheme
 import PlasmaHomeDSTheme
 #else
 import SDDSServTheme
-import StylesSaluteTheme
 import PlasmaB2CTheme
 import PlasmaHomeDSTheme
 #endif
@@ -60,14 +59,6 @@ final class SDDSDemoAppViewModel: ObservableObject {
         if profile.supportedThemes.contains(.sdddsServTheme) {
             SDDSServTheme.Theme.initialize(
                 tenant: TenantStorage.shared.tenant(for: .sdddsServTheme)
-            ) { [weak self] in
-                self?.themeDidInitialize()
-            }
-        }
-
-        if profile.supportedThemes.contains(.stylesSalute) {
-            StylesSaluteTheme.Theme.initialize(
-                tenant: TenantStorage.shared.tenant(for: .stylesSalute)
             ) { [weak self] in
                 self?.themeDidInitialize()
             }

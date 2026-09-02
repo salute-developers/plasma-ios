@@ -24,6 +24,9 @@ public struct WheelAppearance {
     // Цвет разделителя
     public var separatorColor: ColorToken
     
+    // Цвет индикатора выбранного элемента
+    public var selectionIndicatorColor: ColorToken
+    
     // Типографика
     public var itemTextTypography: TypographyConfiguration
     public var itemTextAfterTypography: TypographyConfiguration
@@ -49,6 +52,7 @@ public struct WheelAppearance {
         controlIconUpColor: ButtonColor = ButtonColor(defaultColor: .clearColor),
         controlIconDownColor: ButtonColor = ButtonColor(defaultColor: .clearColor),
         separatorColor: ColorToken = .clearColor,
+        selectionIndicatorColor: ColorToken = .clearColor,
         itemTextTypography: TypographyConfiguration = .default,
         itemTextAfterTypography: TypographyConfiguration = .default,
         descriptionTypography: TypographyConfiguration = .default,
@@ -64,6 +68,7 @@ public struct WheelAppearance {
         self.controlIconUpColor = controlIconUpColor
         self.controlIconDownColor = controlIconDownColor
         self.separatorColor = separatorColor
+        self.selectionIndicatorColor = selectionIndicatorColor
         self.itemTextTypography = itemTextTypography
         self.itemTextAfterTypography = itemTextAfterTypography
         self.descriptionTypography = descriptionTypography

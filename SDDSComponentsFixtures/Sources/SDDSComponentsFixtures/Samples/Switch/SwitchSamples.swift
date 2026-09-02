@@ -12,7 +12,6 @@ struct SDDSSwitch_Simple: View {
             subtitle: "Description",
             isOn: $isOn,
             isEnabled: true,
-            appearance: Switch.l.appearance,
             switchAccessibility: SwitchAccessibility()
         )
     }

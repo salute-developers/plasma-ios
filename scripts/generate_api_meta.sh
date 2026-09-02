@@ -13,8 +13,8 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TOOL_DIR="$REPO_ROOT/Tools/SDDSApiInfoGenerator"
 SOURCES="$REPO_ROOT/SDDSComponents/Sources"
-PROPS="$REPO_ROOT/SDDSThemeBuilder/SDDSThemeBuilderCore/Model/Props"
-OUTPUT="$REPO_ROOT/SDDSThemeBuilder/.sdds/ios-api-meta.json"
+PROPS="$REPO_ROOT/DesignSystemBuilder/DesignSystemBuilderCore/Model/Props"
+OUTPUT="$REPO_ROOT/DesignSystemBuilder/.sdds/ios-api-meta.json"
 
 echo "==> Сборка сканера (release)…"
 BUILD_LOG="$(mktemp)"

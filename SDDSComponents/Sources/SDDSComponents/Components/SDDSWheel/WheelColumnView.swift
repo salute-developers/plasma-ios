@@ -80,7 +80,13 @@ struct WheelColumnView: View {
         let isCentral = index == centeredIndex(for: offset)
         let frameAlignment = textAlignment()
         let scaleAnchor = scaleAnchorPoint()
-        let topY = m.centerY - m.itemHeight / 2 + displacement
+        // Компенсация описания: у элементов ВЫШЕ центра заголовок съезжает вниз на высоту
+        // описания, схлопывая зарезервированное под него пустое место. Портирует
+        // `itemTitleTranslationY` из Compose (`descriptionCompensationFactor` без abs,
+        // поэтому ниже центра сдвиг нулевой).
+        let descriptionCompensation = m.descriptionExtraHeight
+            * min(max(-displacement / m.itemBoxHeight, 0), 1)
+        let topY = m.centerY - m.itemBoxHeight / 2 + displacement + descriptionCompensation
 
         HStack(spacing: appearance.size.itemTextAfterPadding) {
             Text(item.text)
@@ -105,7 +111,7 @@ struct WheelColumnView: View {
     private func descriptionStaticLayer(offset: CGFloat, metrics m: WheelMetrics) -> some View {
         if let description = wheel.description, !description.isEmpty {
             VStack(spacing: 0) {
-                Color.clear.frame(height: m.centerY - m.itemHeight / 2)
+                Color.clear.frame(height: m.centerY - m.itemBoxHeight / 2)
                 VStack(spacing: 0) {
                     Color.clear.frame(height: m.itemHeight)
                     Text(description)
@@ -229,8 +235,11 @@ struct WheelMetrics {
 
     var itemHeight: CGFloat { itemTextTypography.lineHeight }
     var spacing: CGFloat { appearance.size.itemMinSpacing }
-    var pitch: CGFloat { itemHeight + spacing }
-    var baseHeight: CGFloat { CGFloat(visibleItemsCount) * itemHeight }
+    /// Бокс элемента: описание резервирует место у каждого элемента, как в `Item` из Compose
+    /// (`.padding(vertical: itemSpacing / 2)` + описание внутри той же `Column`).
+    var itemBoxHeight: CGFloat { itemHeight + descriptionExtraHeight }
+    var pitch: CGFloat { itemBoxHeight + spacing }
+    var baseHeight: CGFloat { CGFloat(visibleItemsCount) * itemBoxHeight }
     var spacingHeight: CGFloat { CGFloat(max(0, visibleItemsCount - 1)) * spacing }
     var centerY: CGFloat { (baseHeight + spacingHeight) / 2 }
 
@@ -238,7 +247,7 @@ struct WheelMetrics {
         guard let description = wheel.description, !description.isEmpty else { return 0 }
         return appearance.size.descriptionPadding + descriptionTypography.lineHeight
     }
-    var columnHeight: CGFloat { baseHeight + spacingHeight + descriptionExtraHeight }
+    var columnHeight: CGFloat { baseHeight + spacingHeight }
 
     var columnWidth: CGFloat {
         let maxWidth = wheel.items.reduce(0.0) { acc, item in

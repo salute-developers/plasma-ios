@@ -1,13 +1,13 @@
 # generate_themes.rb
 
-Этот скрипт предназначен для автоматического создания Xcode проектов для каждой темы по всем вертикалям на основе заданных параметров из JSON файла. Скрипт запускает схему `SDDSThemeBuilder` для каждой темы, а затем запускает `create_project.rb` для создания нового проекта и генерации фреймворка.
+Этот скрипт предназначен для автоматического создания Xcode проектов для каждой темы по всем вертикалям на основе заданных параметров из JSON файла. Скрипт запускает схему `DesignSystemBuilder` для каждой темы, а затем запускает `create_project.rb` для создания нового проекта и генерации фреймворка.
 
 ## Требования
 
 - Ruby 2.6 или выше
 - Библиотека `xcodeproj` для Ruby (`gem install xcodeproj`)
 - Библиотека `json` для Ruby
-- Исполняемый файл утилиты `SDDSThemeBuilder` под macOS
+- Исполняемый файл утилиты `DesignSystemBuilder` под macOS
 - Собранный `SDDSThemeCore.xcframework`
 
 ## Установка
@@ -43,16 +43,16 @@
       "name": "FlamingoTheme"
     }
   ],
-  "output_dir": "file:///Users/username/plasma-ios/SDDSThemeBuilder",
-  "source_project_path": "/Users/username/plasma-ios/SDDSThemeBuilder",
+  "output_dir": "file:///Users/username/plasma-ios/DesignSystemBuilder",
+  "source_project_path": "/Users/username/plasma-ios/DesignSystemBuilder",
   "create_project_script_path": "/Users/username/plasma-ios/scripts/create_project/create_project.rb",
   "xcframeworks": [
     {
-      "xcframework_path": "/Users/username/plasma-ios/SDDSThemeBuilder/build/SDDSThemeCore.xcframework"
+      "xcframework_path": "/Users/username/plasma-ios/DesignSystemBuilder/build/SDDSThemeCore.xcframework"
     }
   ],
   "themes_output_dir": "/Users/username/plasma-ios/Themes",
-  "executable_path": "/Users/username/themebuilder/SDDSThemeBuilder"
+  "executable_path": "/Users/username/plasma-ios/DesignSystemBuilder/build/dsbuilder/dsbuilder"
 }
 ```
 
@@ -62,9 +62,9 @@
 - `palette`: URL на JSON файл с палитрой цветов.
 - `name`: Название темы.
 
-`output_dir`: Путь к директории, где будет размещен вывод исполняемого файла SDDSThemeBuilder. Этот путь должен начинаться с file://. 
+`output_dir`: Путь к директории, где будет размещен вывод исполняемого файла DesignSystemBuilder. Этот путь должен начинаться с file://. 
 
-`source_project_path`: Путь к исходному Xcode проекту `SDDSThemeBuilder`.
+`source_project_path`: Путь к исходному Xcode проекту `DesignSystemBuilder`.
 
 `create_project_script_path`: Путь к скрипту `create_project.rb`, который будет запущен для создания нового Xcode проекта и генерации фреймворка.
 
@@ -73,7 +73,7 @@
 
 `themes_output_dir`: Путь к директории, где будут создаваться новые Xcode проекты для тем.
 
-`executable_path`: Путь к исполняемому файлу SDDSThemeBuilder.
+`executable_path`: Путь к исполняемому файлу DesignSystemBuilder.
 
 ### Запуск скрипта
 

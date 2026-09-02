@@ -18,7 +18,7 @@
 #      и палитру в .sdds/tenants/palette.json, обновляя список tenants в config.json.
 #
 # Токены/палитра попадают под .gitignore (**/.sdds/**/); config.json остаётся отслеживаемым.
-# После наполнения SDDSThemeBuilder читает .sdds/ как источник темы (PlasmaHomeDS); если .sdds/
+# После наполнения DesignSystemBuilder читает .sdds/ как источник темы (PlasmaHomeDS); если .sdds/
 # пуст — откатывается на zip-снапшот (localSchemePath).
 set -euo pipefail
 

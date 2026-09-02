@@ -10,7 +10,7 @@ let package = Package(
     dependencies: [
         .package(path: "./SDDSComponents"),
         .package(path: "./SDDSIcons"),
-        .package(path: "./SDDSThemeBuilder/SDDSThemeCore")
+        .package(path: "./DesignSystemBuilder/SDDSThemeCore")
     ],
     targets: []
 )

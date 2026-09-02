@@ -1,0 +1,86 @@
+import Foundation
+
+struct WheelAppearance: CodeGenerationAppearance {
+    typealias Variation = WheelConfiguration.Variation
+    typealias Props = WheelProps
+    
+    // Цвета текста
+    var itemTextColor: String?
+    var itemTextAfterColor: String?
+    var descriptionColor: String?
+    
+    // Цвета иконок управления
+    var controlIconUpColor: String?
+    var controlIconDownColor: String?
+    
+    // Цвет разделителя
+    var separatorColor: String?
+    
+    // Цвет индикатора выбранного элемента
+    var selectionIndicatorColor: String?
+    
+    // Типографика
+    var itemTextTypography: String?
+    var itemTextAfterTypography: String?
+    var descriptionTypography: String?
+    
+    // Иконки
+    var controlIconUp: String?
+    var controlIconDown: String?
+    
+    // Вложенный компонент
+    var dividerAppearance: String?
+    
+    init(variation: WheelConfiguration.Variation, component: CodeGenerationComponent) {
+        self.init(props: variation.props, id: variation.id, component: component)
+    }
+    
+    init(props: WheelProps?, id: String? = nil, component: CodeGenerationComponent) {
+        guard let props = props else {
+            return
+        }
+        
+        // Цвета текста (без состояний)
+        self.itemTextColor = ColorTokenContextBuilder(props.itemTextColor).context
+        self.itemTextAfterColor = ColorTokenContextBuilder(props.itemTextAfterColor).context
+        self.descriptionColor = ColorTokenContextBuilder(props.descriptionColor).context
+        
+        // Цвета иконок управления
+        self.controlIconUpColor = ButtonColorContextBuilder(statefulColor: props.controlIconUpColor).context
+        self.controlIconDownColor = ButtonColorContextBuilder(statefulColor: props.controlIconDownColor).context
+        
+        // Цвет разделителя
+        self.separatorColor = ColorTokenContextBuilder(props.separatorColor).context
+        
+        // Цвет индикатора выбранного элемента
+        self.selectionIndicatorColor = ColorTokenContextBuilder(props.selectionIndicatorColor).context
+        
+        // Типографика
+        self.itemTextTypography = TypographyTokenContextBuilder(
+            string: props.itemTextStyle?.value,
+            id: id,
+            component: component
+        ).context
+        
+        self.itemTextAfterTypography = TypographyTokenContextBuilder(
+            string: props.itemTextAfterStyle?.value,
+            id: id,
+            component: component
+        ).context
+        
+        self.descriptionTypography = TypographyTokenContextBuilder(
+            string: props.descriptionStyle?.value,
+            id: id,
+            component: component
+        ).context
+        
+        // Иконки
+        self.controlIconUp = ImageContextBuilder(props.controlIconUp?.value).context
+        self.controlIconDown = ImageContextBuilder(props.controlIconDown?.value).context
+        
+        // Вложенный компонент divider
+        if let dividerStyle = props.dividerStyle?.value {
+            self.dividerAppearance = ComponentStyleContextBuilder(dividerStyle).context
+        }
+    }
+}

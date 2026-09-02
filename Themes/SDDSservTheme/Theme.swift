@@ -45,7 +45,7 @@ public class Theme {
     /// Регистрация перекрытий для всех известных тенантов.
     ///
     /// Этот список должен совпадать со списком тенантов, объявленных в
-    /// `ThemeBuilderConfiguration.Theme.sddsServTheme.tenants`. При добавлении
+    /// `DesignSystemBuilderConfiguration.Theme.sddsServTheme.tenants`. При добавлении
     /// нового тенанта в Config.swift здесь нужно вызвать соответствующий
     /// `register{Tenant}()` для всех шести типов токенов.
     private static var tenantsRegistered = false

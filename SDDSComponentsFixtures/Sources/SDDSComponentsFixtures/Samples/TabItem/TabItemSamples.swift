@@ -12,7 +12,6 @@ struct SDDSTabItem_Simple: View {
             isSelected: false,
             isDisabled: false,
             orientation: .horizontal,
-            appearance: TabItemDefault.l.appearance,
             startContent: { EmptyView() },
             contentRight: { EmptyView() },
             actionContent: { EmptyView() }

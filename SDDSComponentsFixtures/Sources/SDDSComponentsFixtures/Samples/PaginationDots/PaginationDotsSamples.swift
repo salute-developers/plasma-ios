@@ -8,8 +8,7 @@ struct SDDSPaginationDots_Simple: View {
         SDDSPaginationDots(
             selectedIndex: 2,
             totalCount: 8,
-            visibleCount: 5,
-            appearance: PaginationDotsHorizontal.m.appearance
+            visibleCount: 5
         )
     }
 }

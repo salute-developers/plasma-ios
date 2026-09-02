@@ -84,9 +84,9 @@ jobs:
 
       - name: Build artifacts
         run: |
-          ruby scripts/build_xcframeworks.rb -d SDDSThemeBuilder -p SDDSThemeBuilder.xcodeproj -m SDDSThemeCore
-          if [ ! -d "SDDSThemeBuilder/build/SDDSThemeCore.xcframework" ]; then
-            echo "❌ SDDSThemeCore.xcframework was not created at SDDSThemeBuilder/build"
+          ruby scripts/build_xcframeworks.rb -d DesignSystemBuilder -p DesignSystemBuilder.xcodeproj -m SDDSThemeCore
+          if [ ! -d "DesignSystemBuilder/build/SDDSThemeCore.xcframework" ]; then
+            echo "❌ SDDSThemeCore.xcframework was not created at DesignSystemBuilder/build"
             exit 1
           fi
           ruby scripts/build_xcframeworks.rb -d . -w SDDS.xcworkspace
@@ -105,29 +105,46 @@ jobs:
           path: artifacts/
           retention-days: 30
 
-      - name: Build ThemeBuilder CLI
+      - name: Build dsbuilder CLI
         run: |
-          cd SDDSThemeBuilder
+          cd DesignSystemBuilder
           ./build_cli.sh
-          test -x build/themebuilder/SDDSThemeBuilder || { echo "❌ CLI binary not built"; exit 1; }
+          test -x build/dsbuilder/dsbuilder || { echo "❌ CLI binary not built"; exit 1; }
 
-      - name: Package ThemeBuilder CLI
+      - name: Package dsbuilder CLI
         env:
           TAG: ${{ github.event.inputs.tag_name }}
         run: |
-          cd SDDSThemeBuilder/build
-          rm -rf SDDSThemeBuilder-cli && mkdir -p SDDSThemeBuilder-cli
-          cp -R themebuilder/SDDSThemeBuilder themebuilder/SDDSThemeBuilderCore.framework SDDSThemeBuilder-cli/
+          cd DesignSystemBuilder/build
+          rm -rf dsbuilder-cli && mkdir -p dsbuilder-cli
+          cp dsbuilder/dsbuilder dsbuilder-cli/
           test -f ../.sdds/ios-api-meta.json || { echo "❌ styles API meta not generated"; exit 1; }
-          cp ../.sdds/ios-api-meta.json SDDSThemeBuilder-cli/
-          ditto -c -k --sequesterRsrc --keepParent SDDSThemeBuilder-cli "SDDSThemeBuilder-cli-${TAG}.zip"
+          cp ../.sdds/ios-api-meta.json dsbuilder-cli/
+          ditto -c -k --sequesterRsrc --keepParent dsbuilder-cli "dsbuilder-cli-${TAG}.zip"
 
-      - name: Upload ThemeBuilder CLI to release
+      - name: Upload dsbuilder CLI to release
         env:
           TAG: ${{ github.event.inputs.tag_name }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          gh release upload "${TAG}" "SDDSThemeBuilder/build/SDDSThemeBuilder-cli-${TAG}.zip" --clobber
+          gh release upload "${TAG}" "DesignSystemBuilder/build/dsbuilder-cli-${TAG}.zip" --clobber
+
+      # Архив исходников, из которых CLI собирает standalone-бандл. С ним клиенту не
+      # нужен доступ к репозиторию: `--standalone --sources-version <tag>`.
+      - name: Package SDDS sources archive
+        env:
+          TAG: ${{ github.event.inputs.tag_name }}
+        run: |
+          chmod +x scripts/package_sources.sh
+          ./scripts/package_sources.sh "${TAG}"
+          test -f "build/SDDSSources-${TAG}.zip" || { echo "❌ sources archive not built"; exit 1; }
+
+      - name: Upload SDDS sources archive to release
+        env:
+          TAG: ${{ github.event.inputs.tag_name }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          gh release upload "${TAG}" "build/SDDSSources-${TAG}.zip" --clobber
 
       - name: Determine changed modules
         id: changed

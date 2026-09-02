@@ -5,7 +5,6 @@ import SDDSComponents
 import SDDSServTheme
 import PlasmaB2CTheme
 import PlasmaHomeDSTheme
-import StylesSaluteTheme
 
 extension SandboxDemoAppTheme {
     var overlayDefaultSoftColorToken: ColorToken {
@@ -16,8 +15,6 @@ extension SandboxDemoAppTheme {
             return PlasmaB2CTheme.Colors.overlayDefaultSoft.token
         case .plasmaHomeDSTheme:
             return PlasmaHomeDSTheme.Colors.overlayDefaultSoft.token
-        case .stylesSalute:
-            return StylesSaluteTheme.Colors.overlayDefaultSoft.token
         }
     }
 
@@ -27,7 +24,7 @@ extension SandboxDemoAppTheme {
             return SDDSServTheme.FormItem.all
         case .plasmaHomeDSTheme:
             return PlasmaHomeDSTheme.FormItem.all
-        case .plasmaB2CTheme, .stylesSalute:
+        case .plasmaB2CTheme:
             return []
         }
     }
