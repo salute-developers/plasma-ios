@@ -15,7 +15,8 @@ concurrency:
 jobs:
   generate-distribution:
     name: Generate icons distribution zip
-    runs-on: macos-latest
+    # Как в publish-release.yml: macos-latest = macOS 26 без Xcode 16.x, закрепляем образ и Xcode явно.
+    runs-on: macos-26
     environment: sdds
     steps:
       - name: Checkout the code
@@ -26,7 +27,7 @@ jobs:
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: 'latest'
+          xcode-version: '26.6'
           
       - name: Install the Apple certificate and provisioning profile
         env:
@@ -35,7 +36,7 @@ jobs:
           BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         run: |
-          .chmod +x ./scripts/install_certificate_and_profile.sh
+          chmod +x ./scripts/install_certificate_and_profile.sh
           ./scripts/install_certificate_and_profile.sh "$RUNNER_TEMP" "$BUILD_CERTIFICATE_BASE64" "$P12_PASSWORD" "$BUILD_PROVISION_PROFILE_BASE64" "$KEYCHAIN_PASSWORD"
 
       - name: Build SDDSIcons
@@ -51,8 +52,8 @@ jobs:
            cd SDDSIcons
            mv build $TAG_NAME
            zip -r ./../$TAG_NAME.zip $TAG_NAME/SDDSIcons.xcframework
-           echo "::set-output name=zip_path::${TAG_NAME}.zip"
-           echo "::set-output name=release_title::${TAG_NAME}"
+           echo "zip_path=${TAG_NAME}.zip" >> "$GITHUB_OUTPUT"
+           echo "release_title=${TAG_NAME}" >> "$GITHUB_OUTPUT"
 
       - name: Release
         uses: softprops/action-gh-release@v2
