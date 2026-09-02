@@ -176,7 +176,11 @@ private extension TextFieldAppearance {
         appearance.captionTypography = TextFieldClearTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
-        appearance.endContentColor = ColorToken.textDefaultSecondary
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
         appearance.endContentColorReadOnly = ColorToken.textDefaultSecondary.withOpacity(0.4)
         appearance.lineColorReadOnly = ColorToken.surfaceDefaultTransparentPrimary
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary

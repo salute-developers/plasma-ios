@@ -6,3 +6,4 @@
 
 - [Правила локального биллинга](local-mode-billing.md) — только интерактивный Claude Code (подписка), без метерного API
 - [Ключевые решения по проекту](plasma-ios-decisions.md) — архитектурные и процессные решения plasma-ios
+- [Миграция на StatefulValue](stateful-value-migration.md) — один stateful-проп на цвет; что схлопывается в состояния, а что остаётся парой

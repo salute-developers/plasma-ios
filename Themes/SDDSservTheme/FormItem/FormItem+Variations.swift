@@ -2754,25 +2754,25 @@ private extension FormItemAppearance {
     
     var `default`: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         return appearance
     }
     
     var negative: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultNegative, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultNegative), values: [])
         return appearance
     }
     
     var positive: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultPositive, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultPositive), values: [])
         return appearance
     }
     
     var warning: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultWarning, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultWarning), values: [])
         return appearance
     }
     

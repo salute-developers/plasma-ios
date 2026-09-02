@@ -287,30 +287,30 @@ private extension TabBarItemAppearance {
     
     var `default`: TabBarItemAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
-        ]))
-        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
-        ]))
+        appearance.iconColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary))
+        ])
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary))
+        ])
         return appearance
     }
     
     var accent: TabBarItemAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultAccent)
-        ]))
-        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultAccent)
-        ]))
+        appearance.iconColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultAccent))
+        ])
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultAccent))
+        ])
         return appearance
     }
     
     var secondary: TabBarItemAppearance {
         var appearance = self
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: []))
-        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: []))
+        appearance.iconColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         return appearance
     }
     

@@ -64,7 +64,7 @@ public struct SDDSSelectItem<LeftContent: View, RightContent: View>: View {
         .padding(.bottom, appearance.size.paddingBottom)
         .frame(maxWidth: .infinity, alignment: .leading)
         .frame(height: resolvedHeight)
-        .background(currentColor(for: appearance.backgroundColor))
+        .fillBackground(currentFillStyle(for: appearance.backgroundColor), colorScheme: colorScheme, subtheme: subtheme)
         .shape(pathDrawer: appearance.size.shape)
         .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
         .contentShape(Rectangle())
@@ -90,12 +90,12 @@ public struct SDDSSelectItem<LeftContent: View, RightContent: View>: View {
         appearance.size.height > 0 ? appearance.size.height : nil
     }
     
-    private func currentColor(for buttonColor: ButtonColor) -> Color {
+    private func currentFillStyle(for fillStyle: StatefulFillStyle) -> FillStyle {
         var activeStates = Set<InteractiveState>()
         if isSelected { activeStates.insert(.selected) }
         if isHighlighted { activeStates.insert(.pressed) }
         if isHovered { activeStates.insert(.hovered) }
-        return buttonColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
+        return fillStyle.resolvedValue(for: activeStates)
     }
     
     @ViewBuilder
@@ -107,7 +107,7 @@ public struct SDDSSelectItem<LeftContent: View, RightContent: View>: View {
                     icon
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(appearance.iconColor.color(for: colorScheme, subtheme: subtheme))
+                        .fillForeground(style: currentFillStyle(for: appearance.iconColor))
                         .aspectRatio(contentMode: .fit)
                         .frame(width: appearance.size.controlSize, height: appearance.size.controlSize)
                 } else {

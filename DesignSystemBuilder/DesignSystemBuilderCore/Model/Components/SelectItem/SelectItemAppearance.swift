@@ -22,9 +22,9 @@ struct SelectItemAppearance: CodeGenerationAppearance {
         }
         
         self.itemType = props.itemType?.value.map { ".\($0)" }
-        self.iconColor = ColorTokenContextBuilder(props.iconColor).context
+        self.iconColor = StatefulFillStyleContextBuilder(props.iconColor).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
-        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
         
         if let cellStyle = props.cellStyle?.value {
             self.cellAppearance = ComponentStyleContextBuilder(cellStyle).context

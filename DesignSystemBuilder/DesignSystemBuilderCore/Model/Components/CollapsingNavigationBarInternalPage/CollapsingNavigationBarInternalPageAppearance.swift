@@ -29,13 +29,13 @@ struct CollapsingNavigationBarInternalPageAppearance: CodeGenerationAppearance {
         }
 
         // Цвета
-        self.backIconColor = ColorTokenContextBuilder(props.backIconColor).context
-        self.actionStartColor = ColorTokenContextBuilder(props.actionStartColor).context
-        self.actionEndColor = ColorTokenContextBuilder(props.actionEndColor).context
-        self.textColor = ColorTokenContextBuilder(props.textColor).context
-        self.titleColor = ColorTokenContextBuilder(props.titleColor).context
-        self.descriptionColor = ColorTokenContextBuilder(props.descriptionColor).context
-        self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
+        self.backIconColor = StatefulFillStyleContextBuilder(props.backIconColor).context
+        self.actionStartColor = StatefulFillStyleContextBuilder(props.actionStartColor).context
+        self.actionEndColor = StatefulFillStyleContextBuilder(props.actionEndColor).context
+        self.textColor = StatefulFillStyleContextBuilder(props.textColor).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.titleColor).context
+        self.descriptionColor = StatefulFillStyleContextBuilder(props.descriptionColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
 
         // Иконка
         self.backIcon = ImageContextBuilder(props.backIcon?.value).context

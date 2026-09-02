@@ -5,15 +5,10 @@ struct CodeFieldAppearance: CodeGenerationAppearance {
     typealias Props = CodeFieldProps
     
     var valueColor: String? = nil
-    var valueColorError: String? = nil
     var captionColor: String? = nil
-    var captionColorError: String? = nil
     var dotColor: String? = nil
-    var dotColorError: String? = nil
     var cursorColor: String? = nil
     var backgroundColor: String? = nil
-    var backgroundColorActivated: String? = nil
-    var backgroundColorError: String? = nil
     var captionTypography: String? = nil
     var valueTypography: String? = nil
     
@@ -26,16 +21,11 @@ struct CodeFieldAppearance: CodeGenerationAppearance {
             return
         }
         
-        self.valueColor = ColorTokenContextBuilder(props.valueColor).context
-        self.valueColorError = ColorTokenContextBuilder(props.valueColor?.value(for: .error)).context
+        self.valueColor = StatefulFillStyleContextBuilder(props.valueColor).context
         self.cursorColor = ColorTokenContextBuilder(props.cursorColor).context
-        self.captionColor = ColorTokenContextBuilder(props.captionColor).context
-        self.captionColorError = ColorTokenContextBuilder(props.captionColor?.value(for: .error)).context
-        self.dotColor = ColorTokenContextBuilder(props.dotColor).context
-        self.dotColorError = ColorTokenContextBuilder(props.dotColor?.value(for: .error)).context
-        self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
-        self.backgroundColorActivated = ColorTokenContextBuilder(props.backgroundColor?.value(for: .activated)).context
-        self.backgroundColorError = ColorTokenContextBuilder(props.backgroundColor?.value(for: .error)).context
+        self.captionColor = StatefulFillStyleContextBuilder(props.captionColor).context
+        self.dotColor = StatefulFillStyleContextBuilder(props.dotColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
         self.captionTypography = TypographyTokenContextBuilder(string: props.captionStyle?.value, id: id, component: component).context
         self.valueTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
     }

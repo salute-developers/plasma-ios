@@ -13,7 +13,7 @@ struct NavigationBarMainPageSize {
     ] 
 }
 struct NavigationBarMainPageSizeHasbackground: NavigationBarMainPageSizeConfiguration {
-    var bottomShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(16.0)
     var paddingBottom = CGFloat(20.0)
     var paddingEnd = CGFloat(20.0)
@@ -25,7 +25,7 @@ struct NavigationBarMainPageSizeHasbackground: NavigationBarMainPageSizeConfigur
     }
 }
 struct NavigationBarMainPageSizeNobackground: NavigationBarMainPageSizeConfiguration {
-    var bottomShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(16.0)
     var paddingBottom = CGFloat(20.0)
     var paddingEnd = CGFloat(20.0)

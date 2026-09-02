@@ -24,37 +24,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.s.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -63,36 +63,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -101,36 +101,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -156,37 +156,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.s.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -195,36 +195,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -233,36 +233,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -303,37 +303,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.xs.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -342,36 +342,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -380,36 +380,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -435,37 +435,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.xs.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -474,36 +474,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -512,36 +512,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -582,37 +582,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.xs.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -621,36 +621,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -659,36 +659,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -714,37 +714,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.xs.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -753,36 +753,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -791,36 +791,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -861,37 +861,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.s.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -900,36 +900,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -938,36 +938,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -993,37 +993,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.s.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -1032,36 +1032,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -1070,36 +1070,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -1140,37 +1140,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.xxs.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -1179,36 +1179,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -1217,36 +1217,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -1272,37 +1272,37 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     
     var accent: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.xxs.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         
         return .init(
             name: "accent",
@@ -1311,36 +1311,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var primary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         
         return .init(
             name: "primary",
@@ -1349,36 +1349,36 @@ public extension GeneralAppearanceVariation<SegmentItem, SegmentItemAppearance, 
     }
     var secondary: AppearanceVariation<SegmentItemAppearance> {
         var appearance = appearance
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         
         return .init(
             name: "secondary",
@@ -1438,107 +1438,107 @@ private extension SegmentItemAppearance {
     
     var accent: SegmentItemAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultAccent),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultAccentActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultAccentHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultAccentActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultAccentHover))
+        ])
         appearance.counterAppearance = SegmentItemCounter.xxs.accent.appearance
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textOnDarkPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textOnDarkPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textOnDarkPrimaryHover)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textOnDarkPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textOnDarkPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textOnDarkPrimaryHover))
+        ])
         return appearance
     }
     
     var primary: SegmentItemAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultSolidDefault),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultSolidDefaultActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultSolidDefaultHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInverseSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInverseSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInverseSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textInversePrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textInversePrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textInversePrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultSolidDefault)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultSolidDefaultActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultSolidDefaultHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInverseSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInverseSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInverseSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textInversePrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textInversePrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textInversePrimaryHover))
+        ])
         return appearance
     }
     
     var secondary: SegmentItemAppearance {
         var appearance = self
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.surfaceDefaultClearHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.surfaceDefaultTransparentCard),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.surfaceDefaultTransparentCardActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.surfaceDefaultTransparentCardHover)
-        ]))
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
-        appearance.subtitleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover)
-        ]))
-        appearance.titleColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary),
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.surfaceDefaultClearHover)),
+            .init(states: [InteractiveState.selected], value: .color(.surfaceDefaultTransparentCard)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.surfaceDefaultTransparentCardActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.surfaceDefaultTransparentCardHover))
+        ])
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
+        appearance.subtitleColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover))
+        ])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover))
+        ])
         return appearance
     }
     

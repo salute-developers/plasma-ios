@@ -12,7 +12,7 @@ struct NavigationBarInternalPageSize {
 }
 struct NavigationBarInternalPageSizeDefault: NavigationBarInternalPageSizeConfiguration {
     var backIconMargin = CGFloat(4.0)
-    var bottomShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(8.0)
     var paddingBottom = CGFloat(8.0)
     var paddingEnd = CGFloat(24.0)

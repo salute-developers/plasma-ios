@@ -18,7 +18,7 @@ struct SegmentAppearance: CodeGenerationAppearance {
         }
         
         self.disabledAlpha = CGFloat.defaultContext
-        self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
+        self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
         
         if let segmentItemStyle = props.segmentItemStyle?.value {
             self.segmentItemAppearance = ComponentStyleContextBuilder(segmentItemStyle).context

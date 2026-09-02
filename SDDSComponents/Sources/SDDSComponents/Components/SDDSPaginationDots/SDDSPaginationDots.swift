@@ -175,16 +175,8 @@ public struct SDDSPaginationDots: View {
             PaginationDotView(
                 width: isSelected ? appearance.size.dotWidthActivated : appearance.size.dotWidth,
                 height: isSelected ? appearance.size.dotHeightActivated : appearance.size.dotHeight,
-                unselectedColor: appearance.dotBackgroundStatefulColor.color(
-                    for: [],
-                    colorScheme: colorScheme,
-                    subtheme: subtheme
-                ),
-                selectedColor: appearance.dotBackgroundStatefulColor.color(
-                    for: [.activated],
-                    colorScheme: colorScheme,
-                    subtheme: subtheme
-                ),
+                unselectedStyle: appearance.dotBackgroundColor.resolvedValue(for: Set<InteractiveState>()),
+                selectedStyle: appearance.dotBackgroundColor.resolvedValue(for: Set([InteractiveState.activated])),
                 isSelected: isSelected,
                 scale: scale
             )
@@ -224,8 +216,8 @@ public struct SDDSPaginationDots: View {
 private struct PaginationDotView: View {
     let width: CGFloat
     let height: CGFloat
-    let unselectedColor: Color
-    let selectedColor: Color
+    let unselectedStyle: FillStyle
+    let selectedStyle: FillStyle
     let isSelected: Bool
     let scale: CGFloat
     
@@ -235,11 +227,9 @@ private struct PaginationDotView: View {
             ? PaginationDotVisual.selectedOverlayOpacity
             : PaginationDotVisual.unselectedOverlayOpacity
         
-        RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-            .fill(unselectedColor)
+        FillStyleShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous), style: unselectedStyle)
             .overlay(
-                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .fill(selectedColor)
+                FillStyleShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous), style: selectedStyle)
                     .opacity(selectedOpacity)
             )
             .frame(width: max(width, 0), height: max(height, 0))

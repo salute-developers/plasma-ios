@@ -9,7 +9,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     
     var `default`: AppearanceVariation<FormItemAppearance> {
         var appearance = appearance
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         
         return .init(
             name: "`default`",
@@ -18,7 +18,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     }
     var negative: AppearanceVariation<FormItemAppearance> {
         var appearance = appearance
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultNegative, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultNegative), values: [])
         
         return .init(
             name: "negative",
@@ -27,7 +27,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     }
     var positive: AppearanceVariation<FormItemAppearance> {
         var appearance = appearance
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultPositive, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultPositive), values: [])
         
         return .init(
             name: "positive",
@@ -36,7 +36,7 @@ public extension GeneralAppearanceVariation<FormItem, FormItemAppearance, FormIt
     }
     var warning: AppearanceVariation<FormItemAppearance> {
         var appearance = appearance
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultWarning, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultWarning), values: [])
         
         return .init(
             name: "warning",
@@ -104,25 +104,25 @@ private extension FormItemAppearance {
     
     var `default`: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         return appearance
     }
     
     var negative: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultNegative, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultNegative), values: [])
         return appearance
     }
     
     var positive: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultPositive, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultPositive), values: [])
         return appearance
     }
     
     var warning: FormItemAppearance {
         var appearance = self
-        appearance.captionColor = StatefulColor(defaultValue: ColorToken.textDefaultWarning, values: [])
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultWarning), values: [])
         return appearance
     }
     

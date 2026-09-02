@@ -23,21 +23,16 @@ import SDDSApiInfo
 public struct TabItemAppearance: Hashable {
     let id = UUID()
     public var size: TabItemSizeConfiguration
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     @ApiName("labelColor")
-    public var labelColor: ButtonColor
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    public var labelColor: StatefulFillStyle
     @ApiName("valueColor")
-    public var valueColor: ButtonColor
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    public var valueColor: StatefulFillStyle
     @ApiName("startContentColor")
-    public var startContentColor: ButtonColor
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    public var startContentColor: StatefulFillStyle
     @ApiName("endContentColor")
-    public var endContentColor: ButtonColor
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
+    public var endContentColor: StatefulFillStyle
     @ApiName("actionColor")
-    public var actionColor: ButtonColor
+    public var actionColor: StatefulFillStyle
     public var labelTypography: TypographyConfiguration
     public var valueTypography: TypographyConfiguration
     public var counterAppearance: CounterAppearance?
@@ -46,11 +41,11 @@ public struct TabItemAppearance: Hashable {
     
     public init(
         size: TabItemSizeConfiguration = ZeroTabItemSize(),
-        labelColor: ButtonColor = ButtonColor(),
-        valueColor: ButtonColor = ButtonColor(),
-        startContentColor: ButtonColor = ButtonColor(),
-        endContentColor: ButtonColor = ButtonColor(),
-        actionColor: ButtonColor = ButtonColor(),
+        labelColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        valueColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        startContentColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        endContentColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        actionColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         labelTypography: TypographyConfiguration = .default,
         valueTypography: TypographyConfiguration = .default,
         counterAppearance: CounterAppearance? = nil,
@@ -70,8 +65,36 @@ public struct TabItemAppearance: Hashable {
         self.indicatorColor = indicatorColor
     }
 
-    
-    
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
+    public init(
+        size: TabItemSizeConfiguration = ZeroTabItemSize(),
+        labelColor: ButtonColor = ButtonColor(),
+        valueColor: ButtonColor = ButtonColor(),
+        startContentColor: ButtonColor = ButtonColor(),
+        endContentColor: ButtonColor = ButtonColor(),
+        actionColor: ButtonColor = ButtonColor(),
+        labelTypography: TypographyConfiguration = .default,
+        valueTypography: TypographyConfiguration = .default,
+        counterAppearance: CounterAppearance? = nil,
+        actionIcon: Image? = nil,
+        indicatorColor: ColorToken? = nil
+    ) {
+        self.init(
+            size: size,
+            labelColor: labelColor.statefulColor.statefulFillStyle,
+            valueColor: valueColor.statefulColor.statefulFillStyle,
+            startContentColor: startContentColor.statefulColor.statefulFillStyle,
+            endContentColor: endContentColor.statefulColor.statefulFillStyle,
+            actionColor: actionColor.statefulColor.statefulFillStyle,
+            labelTypography: labelTypography,
+            valueTypography: valueTypography,
+            counterAppearance: counterAppearance,
+            actionIcon: actionIcon,
+            indicatorColor: indicatorColor
+        )
+    }
+
     public static func == (lhs: TabItemAppearance, rhs: TabItemAppearance) -> Bool {
         return lhs.id == rhs.id
     }
