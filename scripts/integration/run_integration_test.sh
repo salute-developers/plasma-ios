@@ -63,7 +63,7 @@ step() { echo; echo "==> $*"; }
 place_xcframework() {
   local src="$1" name
   name="$(basename "$src")"
-  rm -rf "$FRAMEWORKS_DIR/$name"
+  rm -rf "${FRAMEWORKS_DIR:?}/${name:?}"
   cp -R "$src" "$FRAMEWORKS_DIR/$name"
   echo "  $name  <- $src"
 }
@@ -101,7 +101,7 @@ add_source() {
 }
 
 step "1/3 Раскладка xcframework'ов -> $FRAMEWORKS_DIR"
-rm -rf "$FRAMEWORKS_DIR"
+rm -rf "${FRAMEWORKS_DIR:?}"
 mkdir -p "$FRAMEWORKS_DIR"
 for source in "${SOURCES[@]}"; do
   add_source "$source"
