@@ -1,0 +1,182 @@
+name: Release artifacts integration
+
+# Проверяет, что релизные xcframework'и подключаются в чистое приложение и оно запускается —
+# после мержа в develop и на PR в main (required check, см. ruleset). Артефакты кэшируются
+# слоями core → components → theme (ключи — git-tree-хэши, scripts/integration/cache_keys.rb):
+# пересобирается только изменившийся слой, тесты идут матрицей по темам.
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Тот же Xcode, что в publish-release.yml. Входит в ключ кэша.
+  XCODE_VERSION: '26.6'
+  # Ручная инвалидация кэша артефактов: поменять, если изменился формат сборки.
+  CACHE_VERSION: v1
+
+jobs:
+  keys:
+    name: Cache keys
+    runs-on: ubuntu-latest
+    outputs:
+      core: ${{ steps.keys.outputs.core }}
+      core_hit: ${{ steps.core_lookup.outputs.cache-hit }}
+      components: ${{ steps.keys.outputs.components }}
+      components_hit: ${{ steps.components_lookup.outputs.cache-hit }}
+      themes: ${{ steps.keys.outputs.themes }}
+    steps:
+      - uses: actions/checkout@v4
+      # Ключи считает ruby-скрипт, которому нужен гем xcodeproj (имя таргета темы).
+      # setup-ruby даёт пользовательский GEM_HOME — gem install без sudo.
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Install xcodeproj gem
+        run: gem install xcodeproj --no-document
+      - name: Compute layer keys
+        id: keys
+        run: ruby scripts/integration/cache_keys.rb | tee -a "$GITHUB_OUTPUT"
+      - name: Lookup SDDSThemeCore cache
+        id: core_lookup
+        uses: actions/cache/restore@v4
+        with:
+          path: DesignSystemBuilder/build/SDDSThemeCore.xcframework
+          key: ${{ steps.keys.outputs.core }}
+          lookup-only: true
+      - name: Lookup components cache
+        id: components_lookup
+        uses: actions/cache/restore@v4
+        with:
+          path: build/*.xcframework
+          key: ${{ steps.keys.outputs.components }}
+          lookup-only: true
+
+  core:
+    name: SDDSThemeCore
+    needs: keys
+    if: needs.keys.outputs.core_hit != 'true'
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ env.XCODE_VERSION }}
+      - name: Build SDDSThemeCore.xcframework
+        run: ruby scripts/build_xcframeworks.rb -d DesignSystemBuilder -p DesignSystemBuilder.xcodeproj -m SDDSThemeCore
+      - uses: actions/cache/save@v4
+        with:
+          path: DesignSystemBuilder/build/SDDSThemeCore.xcframework
+          key: ${{ needs.keys.outputs.core }}
+
+  components:
+    name: InputMask, SDDSComponents, SDDSIcons
+    needs: [keys, core]
+    # core может быть skipped (кэш) — !failure() пропускает skipped, но не failure/cancelled.
+    if: ${{ !failure() && !cancelled() && needs.keys.outputs.components_hit != 'true' }}
+    runs-on: macos-26
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ env.XCODE_VERSION }}
+      - name: Restore SDDSThemeCore.xcframework
+        uses: actions/cache/restore@v4
+        with:
+          path: DesignSystemBuilder/build/SDDSThemeCore.xcframework
+          key: ${{ needs.keys.outputs.core }}
+          fail-on-cache-miss: true
+      - name: Build InputMask, SDDSComponents, SDDSIcons
+        run: ruby scripts/build_xcframeworks.rb -d . -w SDDS.xcworkspace
+      - uses: actions/cache/save@v4
+        with:
+          path: build/*.xcframework
+          key: ${{ needs.keys.outputs.components }}
+
+  integration:
+    name: Integration test (${{ matrix.scheme }})
+    needs: [keys, core, components]
+    if: ${{ !failure() && !cancelled() }}
+    runs-on: macos-26
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.keys.outputs.themes) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: ${{ env.XCODE_VERSION }}
+      - name: Install Ruby dependencies
+        run: bundle install
+      - name: Restore SDDSThemeCore.xcframework
+        uses: actions/cache/restore@v4
+        with:
+          path: DesignSystemBuilder/build/SDDSThemeCore.xcframework
+          key: ${{ needs.keys.outputs.core }}
+          fail-on-cache-miss: true
+      - name: Restore components xcframeworks
+        uses: actions/cache/restore@v4
+        with:
+          path: build/*.xcframework
+          key: ${{ needs.keys.outputs.components }}
+          fail-on-cache-miss: true
+      - name: Restore ${{ matrix.scheme }}.xcframework.zip
+        id: theme_cache
+        uses: actions/cache/restore@v4
+        with:
+          path: Themes/build/${{ matrix.scheme }}.xcframework.zip
+          key: ${{ matrix.key }}
+      - name: Build ${{ matrix.scheme }}.xcframework
+        if: steps.theme_cache.outputs.cache-hit != 'true'
+        run: ruby scripts/build_themes.rb ${{ matrix.dir }}
+      - name: Save ${{ matrix.scheme }}.xcframework.zip
+        if: steps.theme_cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: Themes/build/${{ matrix.scheme }}.xcframework.zip
+          key: ${{ matrix.key }}
+      - name: Run integration test
+        run: >
+          scripts/integration/run_integration_test.sh
+          --theme ${{ matrix.scheme }}
+          --results IntegrationTests/TestResults
+          DesignSystemBuilder/build build Themes/build
+      - name: Upload xcresult
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: integration-${{ matrix.scheme }}-xcresult
+          path: IntegrationTests/TestResults/${{ matrix.scheme }}.xcresult
+          retention-days: 14
+          if-no-files-found: ignore
+
+  # Единый required status check для ruleset main: имя не зависит от списка тем.
+  integration-test:
+    name: Integration test (all themes)
+    needs: [keys, core, components, integration]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verdict
+        run: |
+          echo "keys=${{ needs.keys.result }} core=${{ needs.core.result }} components=${{ needs.components.result }} integration=${{ needs.integration.result }}"
+          if [[ "${{ needs.integration.result }}" != "success" ]]; then
+            echo "::error::интеграционный тест не прошёл (integration=${{ needs.integration.result }})"
+            exit 1
+          fi
