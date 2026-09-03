@@ -138,7 +138,9 @@ scripts/integration/run_integration_test.sh [--theme <Scheme>]... [--destination
 
 - `<path>` — любое число путей: `*.xcframework.zip` распаковывается, `*.xcframework`
   копируется, каталог сканируется на оба вида (без рекурсии). Так скрипт принимает и
-  `release-artifacts/`, и `build/` + `DesignSystemBuilder/build/` + `Themes/build/`.
+  `release-artifacts/` + `build/`, и `build/` + `DesignSystemBuilder/build/` + `Themes/build/`.
+  `SDDSIcons.xcframework` в ассеты датного релиза не входит (отдельный релиз `SDDSIcons-v*`),
+  поэтому локально к `release-artifacts/` добавляется `build/`.
 - Наполняет `IntegrationTests/XCFrameworkIntegration/Frameworks/` с нуля, проверяет, что на
   месте `SDDSThemeCore`, `InputMask`, `SDDSComponents`, `SDDSIcons` и xcframework каждой
   запрашиваемой темы; иначе exit 1 с перечнем.
@@ -216,7 +218,7 @@ required не добавляем — отдельное решение влад�
 ## Проверка
 
 1. Локально: `scripts/release/build_release.sh local --skip-cli`, затем
-   `scripts/integration/run_integration_test.sh release-artifacts` — три схемы зелёные.
+   `scripts/integration/run_integration_test.sh release-artifacts build` — три схемы зелёные.
 2. Негативная проверка: удалить `SDDSIcons.xcframework` из `Frameworks/` — скрипт падает с
    перечнем недостающих, не доходя до `xcodebuild`.
 3. Воркфлоу: `workflow_dispatch` на ветке фичи — холодный прогон зелёный; повторный
