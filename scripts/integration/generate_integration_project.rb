@@ -34,9 +34,24 @@ COMMON_FRAMEWORKS = {
 SHARED_APP_FILES = %w[IntegrationApp.swift ContentView.swift].freeze
 TEMPLATES = %w[ThemeEntry.swift IntegrationTests.swift].freeze
 
-def render_template(name, scheme)
+# Наборы вариаций BasicButton у тем разные (PlasmaHomeDSTheme, например, без `l`), поэтому
+# размер берём из самой темы: первый существующий из этого списка предпочтений.
+SIZE_VARIATION_PREFERENCE = %w[m s xs l xl].freeze
+
+def size_variation_for(theme_dir)
+  path = File.join(REPO_ROOT, 'Themes', theme_dir, 'BasicButton', 'BasicButton+BaseVariations.swift')
+  abort("Не найден #{path} — у темы #{theme_dir} нет BasicButton?") unless File.exist?(path)
+
+  available = File.read(path).scan(/public static var ([A-Za-z][A-Za-z0-9]*)\b/).flatten
+  variation = SIZE_VARIATION_PREFERENCE.find { |name| available.include?(name) }
+  abort("У темы #{theme_dir} нет ни одной из вариаций BasicButton #{SIZE_VARIATION_PREFERENCE.join(', ')} (есть: #{available.join(', ')})") unless variation
+
+  variation
+end
+
+def render_template(name, scheme, size_variation)
   template = File.read(File.join(ROOT, 'Templates', "#{name}.erb"))
-  ERB.new(template, trim_mode: '-').result_with_hash(scheme: scheme)
+  ERB.new(template, trim_mode: '-').result_with_hash(scheme: scheme, size_variation: size_variation)
 end
 
 def project_settings
@@ -103,9 +118,12 @@ themes.each do |theme|
   scheme = theme['scheme']
   app_name = "Integration#{scheme}"
 
+  size_variation = size_variation_for(theme['dir'])
   theme_dir = File.join(ROOT, 'Generated', scheme)
   FileUtils.mkdir_p(theme_dir)
-  TEMPLATES.each { |name| File.write(File.join(theme_dir, name), render_template(name, scheme)) }
+  TEMPLATES.each do |name|
+    File.write(File.join(theme_dir, name), render_template(name, scheme, size_variation))
+  end
   theme_group = generated_group.new_group(scheme, scheme)
   theme_entry_ref = theme_group.new_file('ThemeEntry.swift')
   tests_ref = theme_group.new_file('IntegrationTests.swift')

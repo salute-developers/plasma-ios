@@ -9,11 +9,14 @@ import SDDSIcons
 /// Hosted-тесты: процесс — само приложение IntegrationPlasmaB2CTheme. Падение на старте
 /// (Theme.initialize, рендер ContentView) валит xcodebuild test целиком.
 final class IntegrationTests: XCTestCase {
-    func testThemeInitializes() {
-        let done = expectation(description: "Theme.initialize completes")
-        IntegrationTheme.initialize { done.fulfill() }
-        // Шрифты FontsService качает с CDN; успех загрузки не проверяем — только завершение.
-        wait(for: [done], timeout: 60)
+    func testThemeInitializesAndExposesAppearance() {
+        // onComplete у Theme.initialize срабатывает только после загрузки всех шрифтов с CDN
+        // (SDDSThemeCore.FontsService), поэтому колбэк не ждём: на раннере сети до
+        // cdn-app.sberdevices.ru нет, а проверяем мы линковку и рантайм темы, а не доставку
+        // шрифтов. Аппиранс из темы приходит из xcframework — height задан в PlasmaB2CTheme.
+        IntegrationTheme.initialize {}
+        XCTAssertFalse(IntegrationTheme.name.isEmpty)
+        XCTAssertGreaterThan(IntegrationTheme.buttonAppearance.size.height, 0)
     }
 
     func testColorTokenResolves() {

@@ -11,8 +11,9 @@ enum IntegrationTheme {
         PlasmaB2CTheme.Theme.initialize(onComplete: onComplete)
     }
 
+    // Размер вариации выбран генератором из тех, что есть у темы PlasmaB2CTheme.
     static var buttonAppearance: ButtonAppearance {
-        PlasmaB2CTheme.BasicButton.l.default.appearance
+        PlasmaB2CTheme.BasicButton.m.default.appearance
     }
 
     static var primaryTextColor: ColorToken {

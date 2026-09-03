@@ -11,8 +11,9 @@ enum IntegrationTheme {
         SDDSServTheme.Theme.initialize(onComplete: onComplete)
     }
 
+    // Размер вариации выбран генератором из тех, что есть у темы SDDSServTheme.
     static var buttonAppearance: ButtonAppearance {
-        SDDSServTheme.BasicButton.l.default.appearance
+        SDDSServTheme.BasicButton.m.default.appearance
     }
 
     static var primaryTextColor: ColorToken {

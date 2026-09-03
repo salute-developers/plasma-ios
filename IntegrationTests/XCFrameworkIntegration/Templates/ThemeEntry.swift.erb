@@ -11,8 +11,9 @@ enum IntegrationTheme {
         <%= scheme %>.Theme.initialize(onComplete: onComplete)
     }
 
+    // Размер вариации выбран генератором из тех, что есть у темы <%= scheme %>.
     static var buttonAppearance: ButtonAppearance {
-        <%= scheme %>.BasicButton.l.default.appearance
+        <%= scheme %>.BasicButton.<%= size_variation %>.default.appearance
     }
 
     static var primaryTextColor: ColorToken {

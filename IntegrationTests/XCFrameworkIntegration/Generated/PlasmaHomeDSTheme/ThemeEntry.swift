@@ -11,8 +11,9 @@ enum IntegrationTheme {
         PlasmaHomeDSTheme.Theme.initialize(onComplete: onComplete)
     }
 
+    // Размер вариации выбран генератором из тех, что есть у темы PlasmaHomeDSTheme.
     static var buttonAppearance: ButtonAppearance {
-        PlasmaHomeDSTheme.BasicButton.l.default.appearance
+        PlasmaHomeDSTheme.BasicButton.m.default.appearance
     }
 
     static var primaryTextColor: ColorToken {
