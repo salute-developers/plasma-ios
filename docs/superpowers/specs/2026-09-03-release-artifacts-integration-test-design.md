@@ -69,10 +69,11 @@ Content» из `IntegrationTests/XCFrameworkIntegration/Frameworks/<Name>.xcfram
 | `InputMask.xcframework` | динамический | Embed & Sign |
 | `SDDSIcons.xcframework` | динамический | Embed & Sign |
 
-Правило владельца: статические фреймворки подключаются только как Do Not Embed. Ресурсы
-`SDDSComponents` (`Assets.xcassets`, `Bundle(for: Components.self)`) при статической линковке
-попадают в бандл приложения не автоматически; как именно они доезжают до клиента, покажет
-`testComponentsRender`. Результат фиксируется в README как инструкция для клиентов.
+Правило владельца: статические фреймворки подключаются только как Do Not Embed. Прогон на
+артефактах релиза подтвердил, что при такой схеме ресурсы доезжают: `testComponentsRender`
+(спиннер `SDDSComponents` через `Bundle(for: Components.self)`) и `testIconAssetLoads`
+(`SDDSIcons`) проходят без дополнительных copy-resources шагов. Инструкция зафиксирована в
+README.
 
 Исходники:
 
@@ -88,7 +89,8 @@ IntegrationTests/XCFrameworkIntegration/
 ```
 
 `ThemeEntry.swift` генерируется на каждую тему и коммитится — единственный файл, который
-знает имя модуля темы:
+знает имя модуля темы. Размер вариации `BasicButton` генератор выбирает из тех, что есть у
+темы: наборы различаются (у `PlasmaHomeDSTheme` нет `l`), поэтому шаблон её не хардкодит.
 
 ```swift
 import SDDSThemeCore
@@ -110,9 +112,11 @@ enum IntegrationTheme {
 
 Тесты (`IntegrationTests.swift`, один класс, ~4 теста):
 
-1. `testThemeInitializes` — `IntegrationTheme.initialize` вызывает `onComplete` за 60 секунд.
-   Регистрацию шрифтов не проверяем: `FontsService` качает их с CDN, сеть на раннере — не наш
-   контракт.
+1. `testThemeInitializesAndExposesAppearance` — `IntegrationTheme.initialize` вызывается,
+   после чего аппиранс темы читается (`size.height > 0`). Колбэк `onComplete` **не ждём**:
+   `SDDSThemeCore.FontsService` срабатывает только после загрузки всех шрифтов с CDN, без
+   сети до `cdn-app.sberdevices.ru` это упирается в таймаут `URLSession`. Проверено прогоном:
+   ожидание колбэка давало падение по таймауту 60 с.
 2. `testColorTokenResolves` — `ColorToken` темы даёт непрозрачный цвет.
 3. `testComponentsRender` — `UIHostingController(rootView: ContentView())` в окне
    `UIWindow`, `layoutIfNeeded`, размер корневого view ненулевой.
@@ -228,9 +232,8 @@ required не добавляем — отдельное решение влад�
 
 ## Риски
 
-- Ресурсы статического `SDDSComponents` (спиннер) при Do Not Embed могут не доехать в бандл
-  приложения. Тест это и должен выявить; решение (copy-resources фаза / отдельный bundle)
-  фиксируется в README, Embed статических фреймворков не рассматривается.
+- ~~Ресурсы статического `SDDSComponents` при Do Not Embed могут не доехать.~~ Проверено
+  прогоном 2026-09-03: доезжают, дополнительных шагов не нужно.
 - Симулятор на `macos-26` с Xcode 26.6 — авто-выбор устройства скриптом; если runtime не
   установлен, `xcodebuild test` падает с понятной ошибкой.
 - `actions/cache` — 10 ГБ на репозиторий, 7 дней без обращений. Слои по 1–30 МБ, риска нет.
