@@ -6,9 +6,7 @@ name: Release artifacts integration
 # пересобирается только изменившийся слой, тесты идут матрицей по темам.
 on:
   push:
-    # TEMP: прогон воркфлоу до мержа — workflow_dispatch недоступен, пока файла нет в
-    # дефолтной ветке. Эта строка удаляется отдельным коммитом перед PR.
-    branches: [develop, feature/release-artifacts-integration-test]
+    branches: [develop]
   pull_request:
     branches: [main]
   workflow_dispatch:
