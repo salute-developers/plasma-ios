@@ -1,0 +1,21 @@
+// Сгенерировано scripts/integration/generate_integration_project.rb — не править руками.
+import SwiftUI
+import SDDSThemeCore
+import SDDSComponents
+import <%= scheme %>
+
+enum IntegrationTheme {
+    static let name = "<%= scheme %>"
+
+    static func initialize(onComplete: @escaping () -> Void) {
+        <%= scheme %>.Theme.initialize(onComplete: onComplete)
+    }
+
+    static var buttonAppearance: ButtonAppearance {
+        <%= scheme %>.BasicButton.l.default.appearance
+    }
+
+    static var primaryTextColor: ColorToken {
+        ColorToken.textDefaultPrimary
+    }
+}
