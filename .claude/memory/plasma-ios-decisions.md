@@ -40,5 +40,15 @@ metadata:
   достаточно одного), не `sdds` — `sdds` стоит на PR-сборках. Токен — `github.token`, PAT не нужен.
   Self-hosted раннер обсуждали и отложили (2026-09-02): публичный репо, риск чужих джоб.
 
+- Интеграционный тест релизных артефактов (с 2026-09-03) — `integration-test.yml`: push в
+  `develop`, PR в `main`, `workflow_dispatch`. Слои `core → components → theme` в
+  `actions/cache` по git-tree-хэшам (`scripts/integration/cache_keys.rb`), тесты матрицей по
+  темам; required check для ruleset `main` — `Integration test (all themes)`. В
+  `publish-release.yml` тест не вставляли (релиз идёт с уже проверенного `main`), `build.yml`
+  не трогали. Статические фреймворки в клиентских проектах — только Do Not Embed, динамические
+  (`InputMask`, `SDDSIcons`) — Embed & Sign. Найдено прогоном: `Theme.initialize(onComplete:)`
+  ждёт загрузки шрифтов с CDN (колбэк в тестах не ждём), наборы вариаций компонентов у тем
+  различаются (у `PlasmaHomeDSTheme` нет `BasicButton.l`) — генератор выбирает существующую.
+
 **Как применять:** перед рефакторингом публичного appearance-API компонентов помни, что
 это ломает сгенерированные `Themes/*` — регенерируй и проверяй сборку.

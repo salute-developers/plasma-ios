@@ -29,6 +29,7 @@
 | `SDDSIcons/` | Asset-бандл иконок (swiftgen) | [CLAUDE.md](SDDSIcons/CLAUDE.md) |
 | `Themes/` | Сгенерированные пакеты тем (коммитятся) | [CLAUDE.md](Themes/CLAUDE.md) |
 | `IntegrationCore/` | SandboxCore / SandboxDemoTheme / SandboxSwiftUI | [CLAUDE.md](IntegrationCore/CLAUDE.md) |
+| `IntegrationTests/` | Интеграционный тест релизных xcframework'ов (приложение на тему + CI) | [CLAUDE.md](IntegrationTests/CLAUDE.md) |
 | `scripts/` | Ruby/Bash: сборка, релиз, генерация | [CLAUDE.md](scripts/CLAUDE.md) |
 | `SDDSComponentsFixtures/` | Тестовые фикстуры для компонентов | — |
 | `Vendor/InputMask/` | Git submodule (RedMadRobot input-mask-ios) | — |

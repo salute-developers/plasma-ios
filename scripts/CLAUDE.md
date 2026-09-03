@@ -19,6 +19,12 @@
 
 - `run_tests.rb` — `swift test` для пакета `DesignSystemBuilder` плюс Xcode-схемы из
   массива `modules` внутри скрипта (`xcodebuild ... test`).
+- `integration/run_integration_test.sh <path>...` — раскладывает релизные xcframework'и в
+  `IntegrationTests/XCFrameworkIntegration/Frameworks/` и гоняет hosted-тесты приложения на
+  каждую тему (`xcodebuild test`). Рядом: `integration/generate_integration_project.rb` —
+  генератор проекта, `integration/cache_keys.rb` — ключи слоёв кэша для
+  `integration-test.yml`, `integration/list_themes.rb` — список тем (`dir`/`scheme`).
+  Подробности — [../IntegrationTests/CLAUDE.md](../IntegrationTests/CLAUDE.md).
 
 ## Генерация тем и проектов
 

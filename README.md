@@ -77,6 +77,28 @@ cd DesignSystemBuilder && ./build_cli.sh      # → build/dsbuilder/dsbuilder
 SDDS, собирает [scripts/package_sources.sh](scripts/package_sources.sh)). Тот же набор локально
 собирает [scripts/release/build_release.sh](scripts/release/build_release.sh) `<tag>`.
 
+### Интеграционный тест релизных артефактов
+
+`.github/workflows/integration-test.yml` после мержа в `develop` и на PR в `main` подключает
+собранные xcframework'и в чистое приложение на каждую тему
+([IntegrationTests/](IntegrationTests/CLAUDE.md)) и гоняет тесты на симуляторе. Слои
+артефактов кэшируются по хэшам исходников — пересобирается только изменившийся. Локально:
+
+```
+scripts/release/build_release.sh local --skip-cli
+scripts/integration/run_integration_test.sh release-artifacts build
+```
+
+`SDDSIcons.xcframework` берётся из `build/`: в ассеты датного релиза он не входит (у иконок
+отдельный релиз `SDDSIcons-v*`).
+
+**Как подключать xcframework'и в приложение** (проверено этим тестом): статические
+`SDDSThemeCore`, `SDDSComponents` и тему — как **Do Not Embed**; динамические `InputMask` и
+`SDDSIcons` — как **Embed & Sign**. `FRAMEWORK_SEARCH_PATHS` должен указывать на каталог с
+xcframework'ами. Ресурсы `SDDSComponents` (спиннер) и `SDDSIcons` при такой схеме доезжают
+без дополнительных шагов. `Theme.initialize(onComplete:)` вызывает колбэк только после
+загрузки шрифтов с CDN — не блокируй на нём запуск приложения.
+
 Тесты CLI — `swift test --package-path DesignSystemBuilder` (или `ruby scripts/run_tests.rb`).
 Подробности — [DesignSystemBuilder/README.md](DesignSystemBuilder/README.md) и
 [docs/DOCS_BUNDLE.md](docs/DOCS_BUNDLE.md).
