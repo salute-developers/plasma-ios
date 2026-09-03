@@ -1,0 +1,1022 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		097A13CEEF5E9D9F7DC1FEBAEECAE62A /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43401C678B8EED4AFAD5AA9A4A01ECBA /* IntegrationTests.swift */; };
+		0B3671C4551703290B22C2E80E8537D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12538C9499C4F2A6664B8907EB05E0A /* ContentView.swift */; };
+		0F4F341419655DEE7FE1C631E2AB9574 /* InputMask.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3001BA797FAD0D9004D78579483F737F /* InputMask.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		16CC89C5C7E42ADF6E68196CF12DB779 /* IntegrationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5024A2E7643F8F9E0BA5C93210883C /* IntegrationApp.swift */; };
+		1C15310257CCF53AB0A6833D5C1C1F9F /* IntegrationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5024A2E7643F8F9E0BA5C93210883C /* IntegrationApp.swift */; };
+		282D1C2ACFB53C464CAE03ED2B2EA6B3 /* InputMask.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3001BA797FAD0D9004D78579483F737F /* InputMask.xcframework */; };
+		292F51713784DA7559649FA9C1B4984D /* SDDSServTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D7309B6B02B071A07B925828581B6D /* SDDSServTheme.xcframework */; };
+		2B1855F22B2E4C0AF5896E6814A8FE83 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0584B53A02458F4EC79AE73BE6E952F9 /* SDDSIcons.xcframework */; };
+		2CEE9B1AAE480745C6F71A15142669E5 /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3CE1A3BEA3680D139A6D44A91482F73 /* SDDSThemeCore.xcframework */; };
+		3424E1F4149CFCC0533517EE498B71A2 /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3CE1A3BEA3680D139A6D44A91482F73 /* SDDSThemeCore.xcframework */; };
+		3AE1374FB10A08F65AD663E63204D240 /* SDDSIcons.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0584B53A02458F4EC79AE73BE6E952F9 /* SDDSIcons.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FB7EE2FC34BE7488F7271972E8B0320 /* PlasmaHomeDSTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28F85C906F43302E4AFFCBE50C60A75 /* PlasmaHomeDSTheme.xcframework */; };
+		45ABF082A371E084EEB4FE173F451DC8 /* InputMask.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3001BA797FAD0D9004D78579483F737F /* InputMask.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		480A36D194981C55EE6D07E35B347C86 /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0C9ABD5006CE1FF9153B245608256D /* SDDSComponents.xcframework */; };
+		59A2A1FC4B06D61B19988B7DA2179C10 /* PlasmaB2CTheme.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CF86ADEA80772C0E7444BE5B2625FD /* PlasmaB2CTheme.xcframework */; };
+		61989D872BFEF1E94362DA6A312913E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12538C9499C4F2A6664B8907EB05E0A /* ContentView.swift */; };
+		6EF87C12F7D4441C635AEA87CCEDDEBB /* SDDSThemeCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3CE1A3BEA3680D139A6D44A91482F73 /* SDDSThemeCore.xcframework */; };
+		73CF178605F778695F3C34487F487F44 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0584B53A02458F4EC79AE73BE6E952F9 /* SDDSIcons.xcframework */; };
+		7AF8F8C45EAE64EFD04CEEA333AC5A4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D2C7D9117547C85D537666B29096 /* Foundation.framework */; };
+		80671295B1E7311D2F3C0D34371D9845 /* InputMask.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3001BA797FAD0D9004D78579483F737F /* InputMask.xcframework */; };
+		826CA3F9517B0654FEA24EEE6031333F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D2C7D9117547C85D537666B29096 /* Foundation.framework */; };
+		8C4073EEADAA8B4DB39840B97648A060 /* SDDSIcons.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0584B53A02458F4EC79AE73BE6E952F9 /* SDDSIcons.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8C9CEB548CB7301269E1A2C1DDEFFCB4 /* IntegrationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5024A2E7643F8F9E0BA5C93210883C /* IntegrationApp.swift */; };
+		8EB6313FDB50FF95D3FCC94144FC50A3 /* InputMask.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3001BA797FAD0D9004D78579483F737F /* InputMask.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CADDDC15C0ADA269A455259DB5C2CD8 /* ThemeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A28F70499663EDE4036F47D5160875 /* ThemeEntry.swift */; };
+		9D52AD01A70BFE4EE5A1D5A23CB9C5A1 /* ThemeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F13CBD5ACC09BDF4E78A6A1A3D32B /* ThemeEntry.swift */; };
+		9FF053ABC2D3D10156C6FF3DF0E9166E /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0C9ABD5006CE1FF9153B245608256D /* SDDSComponents.xcframework */; };
+		A3579CE636EFDBC4E0669A7220046CB5 /* SDDSIcons.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0584B53A02458F4EC79AE73BE6E952F9 /* SDDSIcons.xcframework */; };
+		A60CFBE58FF3913EE309809DC9B3C038 /* ThemeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C934064ECDC4C8251C4D899EFA583 /* ThemeEntry.swift */; };
+		AEBE0CC2B6D3ABCE8B87AC81405E8CD3 /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8D9DA773AD261397C1A2D6D1E1ADB5 /* IntegrationTests.swift */; };
+		B3633776778C6B7C0FAD6340CF53A7F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12538C9499C4F2A6664B8907EB05E0A /* ContentView.swift */; };
+		B922D418F88E0DE205D4AD78C97FAF2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D2C7D9117547C85D537666B29096 /* Foundation.framework */; };
+		BD3DDC97E417A7D87EEE2FF1BBA7ED69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D2C7D9117547C85D537666B29096 /* Foundation.framework */; };
+		D5FCF59A0108CF328FCE62AFDA28C306 /* InputMask.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3001BA797FAD0D9004D78579483F737F /* InputMask.xcframework */; };
+		E33D245449BCF31633EF8B666FCC43CD /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1455CD8CB0C6860CAF907497ACE1418A /* IntegrationTests.swift */; };
+		E360F31EF6E0A00C4ADD011968D20283 /* SDDSIcons.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0584B53A02458F4EC79AE73BE6E952F9 /* SDDSIcons.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E4DE53DF325DF11C521FEE103DE5C915 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D2C7D9117547C85D537666B29096 /* Foundation.framework */; };
+		F2DBED416076132E0A0805F2DD261343 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D9D2C7D9117547C85D537666B29096 /* Foundation.framework */; };
+		F6802B776EA66D82A01333C69A604FDC /* SDDSComponents.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0C9ABD5006CE1FF9153B245608256D /* SDDSComponents.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AEE02C757E2D1A555FBE4633D235F1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38CDDC0EB44506C723B768C0668C9AA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C19BAC995816A8871A3AB254C5B275DC;
+			remoteInfo = IntegrationPlasmaHomeDSTheme;
+		};
+		719B387D4F76C6B76D8DA7F263FC97E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38CDDC0EB44506C723B768C0668C9AA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8055D1827FA7A7172FF8CAC6F45C05BE;
+			remoteInfo = IntegrationSDDSServTheme;
+		};
+		883AC4528BDF443E7FD9377A5350110C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38CDDC0EB44506C723B768C0668C9AA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6414FF8D4CA9CEB6FBBD6D520A389B5;
+			remoteInfo = IntegrationPlasmaB2CTheme;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		565FBC27746B1344371E8118EA64F75B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45ABF082A371E084EEB4FE173F451DC8 /* InputMask.xcframework in Embed Frameworks */,
+				E360F31EF6E0A00C4ADD011968D20283 /* SDDSIcons.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F81EFEE593E676451BC3D2B01755F9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0F4F341419655DEE7FE1C631E2AB9574 /* InputMask.xcframework in Embed Frameworks */,
+				8C4073EEADAA8B4DB39840B97648A060 /* SDDSIcons.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB1A94CB852C507BD11D53278A7BE040 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8EB6313FDB50FF95D3FCC94144FC50A3 /* InputMask.xcframework in Embed Frameworks */,
+				3AE1374FB10A08F65AD663E63204D240 /* SDDSIcons.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0584B53A02458F4EC79AE73BE6E952F9 /* SDDSIcons.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = SDDSIcons.xcframework; sourceTree = "<group>"; };
+		070B3D3935BB2C38BA82405B090C8DA6 /* IntegrationSDDSServTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegrationSDDSServTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		073C934064ECDC4C8251C4D899EFA583 /* ThemeEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThemeEntry.swift; sourceTree = "<group>"; };
+		07D9D2C7D9117547C85D537666B29096 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1455CD8CB0C6860CAF907497ACE1418A /* IntegrationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
+		172A7A9F5437DADF7AE3BFB9208A484A /* IntegrationPlasmaB2CThemeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationPlasmaB2CThemeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3001BA797FAD0D9004D78579483F737F /* InputMask.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = InputMask.xcframework; sourceTree = "<group>"; };
+		31465CBC35EE68BC2860717C1C341FB4 /* IntegrationSDDSServThemeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationSDDSServThemeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		35D7309B6B02B071A07B925828581B6D /* SDDSServTheme.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = SDDSServTheme.xcframework; sourceTree = "<group>"; };
+		37A28F70499663EDE4036F47D5160875 /* ThemeEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThemeEntry.swift; sourceTree = "<group>"; };
+		3A5024A2E7643F8F9E0BA5C93210883C /* IntegrationApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntegrationApp.swift; sourceTree = "<group>"; };
+		43401C678B8EED4AFAD5AA9A4A01ECBA /* IntegrationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
+		55C3C24E18E2F8CF3083519A5CF4A047 /* IntegrationPlasmaHomeDSTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegrationPlasmaHomeDSTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62CF86ADEA80772C0E7444BE5B2625FD /* PlasmaB2CTheme.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = PlasmaB2CTheme.xcframework; sourceTree = "<group>"; };
+		89845D514C484E3F9C717A78A4C052E0 /* IntegrationPlasmaB2CTheme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegrationPlasmaB2CTheme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B12538C9499C4F2A6664B8907EB05E0A /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BCB3824E3DA0679EBE01D05214083436 /* IntegrationPlasmaHomeDSThemeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntegrationPlasmaHomeDSThemeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D28F85C906F43302E4AFFCBE50C60A75 /* PlasmaHomeDSTheme.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = PlasmaHomeDSTheme.xcframework; sourceTree = "<group>"; };
+		E3CE1A3BEA3680D139A6D44A91482F73 /* SDDSThemeCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = SDDSThemeCore.xcframework; sourceTree = "<group>"; };
+		EB0C9ABD5006CE1FF9153B245608256D /* SDDSComponents.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = SDDSComponents.xcframework; sourceTree = "<group>"; };
+		EC8D9DA773AD261397C1A2D6D1E1ADB5 /* IntegrationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
+		FC0F13CBD5ACC09BDF4E78A6A1A3D32B /* ThemeEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThemeEntry.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4070DFE1D8472A19C206741294C6F076 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AF8F8C45EAE64EFD04CEEA333AC5A4B /* Foundation.framework in Frameworks */,
+				6EF87C12F7D4441C635AEA87CCEDDEBB /* SDDSThemeCore.xcframework in Frameworks */,
+				480A36D194981C55EE6D07E35B347C86 /* SDDSComponents.xcframework in Frameworks */,
+				282D1C2ACFB53C464CAE03ED2B2EA6B3 /* InputMask.xcframework in Frameworks */,
+				2B1855F22B2E4C0AF5896E6814A8FE83 /* SDDSIcons.xcframework in Frameworks */,
+				59A2A1FC4B06D61B19988B7DA2179C10 /* PlasmaB2CTheme.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		653AD00F2D89E8B3DE3ACF383BAE50A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2DBED416076132E0A0805F2DD261343 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A05516C09F7A35C590C06DC510FD936 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3DDC97E417A7D87EEE2FF1BBA7ED69 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8217395CB4DD1C7B000461FC50C05048 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B922D418F88E0DE205D4AD78C97FAF2B /* Foundation.framework in Frameworks */,
+				3424E1F4149CFCC0533517EE498B71A2 /* SDDSThemeCore.xcframework in Frameworks */,
+				F6802B776EA66D82A01333C69A604FDC /* SDDSComponents.xcframework in Frameworks */,
+				80671295B1E7311D2F3C0D34371D9845 /* InputMask.xcframework in Frameworks */,
+				A3579CE636EFDBC4E0669A7220046CB5 /* SDDSIcons.xcframework in Frameworks */,
+				292F51713784DA7559649FA9C1B4984D /* SDDSServTheme.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A56548657D03B1897DF429F7AE2C8D1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4DE53DF325DF11C521FEE103DE5C915 /* Foundation.framework in Frameworks */,
+				2CEE9B1AAE480745C6F71A15142669E5 /* SDDSThemeCore.xcframework in Frameworks */,
+				9FF053ABC2D3D10156C6FF3DF0E9166E /* SDDSComponents.xcframework in Frameworks */,
+				D5FCF59A0108CF328FCE62AFDA28C306 /* InputMask.xcframework in Frameworks */,
+				73CF178605F778695F3C34487F487F44 /* SDDSIcons.xcframework in Frameworks */,
+				3FB7EE2FC34BE7488F7271972E8B0320 /* PlasmaHomeDSTheme.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1EBB152B648F8D534E25109661DE28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				826CA3F9517B0654FEA24EEE6031333F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AFDE4A2075CC02B9250DB205B6AC2CF /* PlasmaHomeDSTheme */ = {
+			isa = PBXGroup;
+			children = (
+				073C934064ECDC4C8251C4D899EFA583 /* ThemeEntry.swift */,
+				43401C678B8EED4AFAD5AA9A4A01ECBA /* IntegrationTests.swift */,
+			);
+			name = PlasmaHomeDSTheme;
+			path = PlasmaHomeDSTheme;
+			sourceTree = "<group>";
+		};
+		4D1495FB28319D3C5EF220746F0B23AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89845D514C484E3F9C717A78A4C052E0 /* IntegrationPlasmaB2CTheme.app */,
+				172A7A9F5437DADF7AE3BFB9208A484A /* IntegrationPlasmaB2CThemeTests.xctest */,
+				55C3C24E18E2F8CF3083519A5CF4A047 /* IntegrationPlasmaHomeDSTheme.app */,
+				BCB3824E3DA0679EBE01D05214083436 /* IntegrationPlasmaHomeDSThemeTests.xctest */,
+				070B3D3935BB2C38BA82405B090C8DA6 /* IntegrationSDDSServTheme.app */,
+				31465CBC35EE68BC2860717C1C341FB4 /* IntegrationSDDSServThemeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F18460347BDA4994A4D0B44358B5AA7 /* SDDSServTheme */ = {
+			isa = PBXGroup;
+			children = (
+				37A28F70499663EDE4036F47D5160875 /* ThemeEntry.swift */,
+				1455CD8CB0C6860CAF907497ACE1418A /* IntegrationTests.swift */,
+			);
+			name = SDDSServTheme;
+			path = SDDSServTheme;
+			sourceTree = "<group>";
+		};
+		62A16A7B78CA33C019BA6A7BB36BDB2E = {
+			isa = PBXGroup;
+			children = (
+				4D1495FB28319D3C5EF220746F0B23AA /* Products */,
+				D1AC00C840718DE4521514D580FD29D6 /* Frameworks */,
+				9309A91FC19808B1D2E9F6560D39741F /* Shared */,
+				67C8C1B8932EFA850BC17B6895987F37 /* Generated */,
+				B34C24D7CC84FAD80A67418FD2FF2B76 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		67C8C1B8932EFA850BC17B6895987F37 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				D26D13D38E28241AD92AF8CF2655C3A7 /* PlasmaB2CTheme */,
+				3AFDE4A2075CC02B9250DB205B6AC2CF /* PlasmaHomeDSTheme */,
+				4F18460347BDA4994A4D0B44358B5AA7 /* SDDSServTheme */,
+			);
+			name = Generated;
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		7F5A5EF44B77A57C44CBF64D8062E8D8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3A5024A2E7643F8F9E0BA5C93210883C /* IntegrationApp.swift */,
+				B12538C9499C4F2A6664B8907EB05E0A /* ContentView.swift */,
+			);
+			name = App;
+			path = App;
+			sourceTree = "<group>";
+		};
+		9309A91FC19808B1D2E9F6560D39741F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7F5A5EF44B77A57C44CBF64D8062E8D8 /* App */,
+			);
+			name = Shared;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B34C24D7CC84FAD80A67418FD2FF2B76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE1A3BEA3680D139A6D44A91482F73 /* SDDSThemeCore.xcframework */,
+				EB0C9ABD5006CE1FF9153B245608256D /* SDDSComponents.xcframework */,
+				3001BA797FAD0D9004D78579483F737F /* InputMask.xcframework */,
+				0584B53A02458F4EC79AE73BE6E952F9 /* SDDSIcons.xcframework */,
+				62CF86ADEA80772C0E7444BE5B2625FD /* PlasmaB2CTheme.xcframework */,
+				D28F85C906F43302E4AFFCBE50C60A75 /* PlasmaHomeDSTheme.xcframework */,
+				35D7309B6B02B071A07B925828581B6D /* SDDSServTheme.xcframework */,
+			);
+			name = Frameworks;
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1AC00C840718DE4521514D580FD29D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB096357CD19204136A89C85F7C1D8AB /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D26D13D38E28241AD92AF8CF2655C3A7 /* PlasmaB2CTheme */ = {
+			isa = PBXGroup;
+			children = (
+				FC0F13CBD5ACC09BDF4E78A6A1A3D32B /* ThemeEntry.swift */,
+				EC8D9DA773AD261397C1A2D6D1E1ADB5 /* IntegrationTests.swift */,
+			);
+			name = PlasmaB2CTheme;
+			path = PlasmaB2CTheme;
+			sourceTree = "<group>";
+		};
+		EB096357CD19204136A89C85F7C1D8AB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				07D9D2C7D9117547C85D537666B29096 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1957574079057BFCE4B88D8393BBCFCE /* IntegrationPlasmaHomeDSThemeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 997DC3580B9A8BAFFD61CE5D53AC7685 /* Build configuration list for PBXNativeTarget "IntegrationPlasmaHomeDSThemeTests" */;
+			buildPhases = (
+				48A0FE0EC31C4D7A4E4B4E4C87D54A92 /* Sources */,
+				653AD00F2D89E8B3DE3ACF383BAE50A2 /* Frameworks */,
+				6EF8AFF70FA069A969AF19700D7B725E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FD7F4B3F7AA126A1B3B5E160855D2F5 /* PBXTargetDependency */,
+			);
+			name = IntegrationPlasmaHomeDSThemeTests;
+			productName = IntegrationPlasmaHomeDSThemeTests;
+			productReference = BCB3824E3DA0679EBE01D05214083436 /* IntegrationPlasmaHomeDSThemeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8055D1827FA7A7172FF8CAC6F45C05BE /* IntegrationSDDSServTheme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1A8B9430E592EA9F163B5F0C36BE921 /* Build configuration list for PBXNativeTarget "IntegrationSDDSServTheme" */;
+			buildPhases = (
+				8FE49CAB7BA2A97983A4CF6D690BD8D9 /* Sources */,
+				8217395CB4DD1C7B000461FC50C05048 /* Frameworks */,
+				85E6865E4FD13AC872CB55A3F22E5F43 /* Resources */,
+				56F81EFEE593E676451BC3D2B01755F9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntegrationSDDSServTheme;
+			productName = IntegrationSDDSServTheme;
+			productReference = 070B3D3935BB2C38BA82405B090C8DA6 /* IntegrationSDDSServTheme.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95A41B4A61775EBC35E7E4C45D5BEC56 /* IntegrationSDDSServThemeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1863DA66D31D835870F65A57F2FAE7D6 /* Build configuration list for PBXNativeTarget "IntegrationSDDSServThemeTests" */;
+			buildPhases = (
+				AF69BB255DBD344176BA3A1C069B889C /* Sources */,
+				DE1EBB152B648F8D534E25109661DE28 /* Frameworks */,
+				2024685ACA73B3E14DFFE45CC7FDDDF1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E62CAADDFCEEB8DE221CC4B53F0612B /* PBXTargetDependency */,
+			);
+			name = IntegrationSDDSServThemeTests;
+			productName = IntegrationSDDSServThemeTests;
+			productReference = 31465CBC35EE68BC2860717C1C341FB4 /* IntegrationSDDSServThemeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AEAF44DC959587AD21AC58DBCC34D855 /* IntegrationPlasmaB2CThemeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A74149AF9BB4BFE732FF0845BCF65E2 /* Build configuration list for PBXNativeTarget "IntegrationPlasmaB2CThemeTests" */;
+			buildPhases = (
+				0C1E66374E9FD4237D7F057379BDF0EF /* Sources */,
+				6A05516C09F7A35C590C06DC510FD936 /* Frameworks */,
+				F4A245A954513C0191DF27E9A713932D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE42DD2BDBD74CC1845CC7944845A7E8 /* PBXTargetDependency */,
+			);
+			name = IntegrationPlasmaB2CThemeTests;
+			productName = IntegrationPlasmaB2CThemeTests;
+			productReference = 172A7A9F5437DADF7AE3BFB9208A484A /* IntegrationPlasmaB2CThemeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C19BAC995816A8871A3AB254C5B275DC /* IntegrationPlasmaHomeDSTheme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B18D52D8526DAE3A0C187CA50EDACC93 /* Build configuration list for PBXNativeTarget "IntegrationPlasmaHomeDSTheme" */;
+			buildPhases = (
+				720566AEA6DB469E4F77759E0CCE1669 /* Sources */,
+				A56548657D03B1897DF429F7AE2C8D1A /* Frameworks */,
+				6C647B77EC7BC6EA624D27694A80D17B /* Resources */,
+				BB1A94CB852C507BD11D53278A7BE040 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntegrationPlasmaHomeDSTheme;
+			productName = IntegrationPlasmaHomeDSTheme;
+			productReference = 55C3C24E18E2F8CF3083519A5CF4A047 /* IntegrationPlasmaHomeDSTheme.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D6414FF8D4CA9CEB6FBBD6D520A389B5 /* IntegrationPlasmaB2CTheme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3B908EF1A13ADD838F10863133E94CC /* Build configuration list for PBXNativeTarget "IntegrationPlasmaB2CTheme" */;
+			buildPhases = (
+				1C95AC4567DE16CA8C03BFA52F45263E /* Sources */,
+				4070DFE1D8472A19C206741294C6F076 /* Frameworks */,
+				0C5F428E9EB0CBFCBF1CA3EDBC5CAA2B /* Resources */,
+				565FBC27746B1344371E8118EA64F75B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntegrationPlasmaB2CTheme;
+			productName = IntegrationPlasmaB2CTheme;
+			productReference = 89845D514C484E3F9C717A78A4C052E0 /* IntegrationPlasmaB2CTheme.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38CDDC0EB44506C723B768C0668C9AA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 51B1EC21BB9541419FEF2651152DC7BE /* Build configuration list for PBXProject "XCFrameworkIntegration" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 62A16A7B78CA33C019BA6A7BB36BDB2E;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4D1495FB28319D3C5EF220746F0B23AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D6414FF8D4CA9CEB6FBBD6D520A389B5 /* IntegrationPlasmaB2CTheme */,
+				AEAF44DC959587AD21AC58DBCC34D855 /* IntegrationPlasmaB2CThemeTests */,
+				C19BAC995816A8871A3AB254C5B275DC /* IntegrationPlasmaHomeDSTheme */,
+				1957574079057BFCE4B88D8393BBCFCE /* IntegrationPlasmaHomeDSThemeTests */,
+				8055D1827FA7A7172FF8CAC6F45C05BE /* IntegrationSDDSServTheme */,
+				95A41B4A61775EBC35E7E4C45D5BEC56 /* IntegrationSDDSServThemeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C5F428E9EB0CBFCBF1CA3EDBC5CAA2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2024685ACA73B3E14DFFE45CC7FDDDF1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C647B77EC7BC6EA624D27694A80D17B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EF8AFF70FA069A969AF19700D7B725E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85E6865E4FD13AC872CB55A3F22E5F43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A245A954513C0191DF27E9A713932D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C1E66374E9FD4237D7F057379BDF0EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBE0CC2B6D3ABCE8B87AC81405E8CD3 /* IntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C95AC4567DE16CA8C03BFA52F45263E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C15310257CCF53AB0A6833D5C1C1F9F /* IntegrationApp.swift in Sources */,
+				B3633776778C6B7C0FAD6340CF53A7F3 /* ContentView.swift in Sources */,
+				9D52AD01A70BFE4EE5A1D5A23CB9C5A1 /* ThemeEntry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48A0FE0EC31C4D7A4E4B4E4C87D54A92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				097A13CEEF5E9D9F7DC1FEBAEECAE62A /* IntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		720566AEA6DB469E4F77759E0CCE1669 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16CC89C5C7E42ADF6E68196CF12DB779 /* IntegrationApp.swift in Sources */,
+				61989D872BFEF1E94362DA6A312913E4 /* ContentView.swift in Sources */,
+				A60CFBE58FF3913EE309809DC9B3C038 /* ThemeEntry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE49CAB7BA2A97983A4CF6D690BD8D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C9CEB548CB7301269E1A2C1DDEFFCB4 /* IntegrationApp.swift in Sources */,
+				0B3671C4551703290B22C2E80E8537D1 /* ContentView.swift in Sources */,
+				9CADDDC15C0ADA269A455259DB5C2CD8 /* ThemeEntry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF69BB255DBD344176BA3A1C069B889C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E33D245449BCF31633EF8B666FCC43CD /* IntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FD7F4B3F7AA126A1B3B5E160855D2F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IntegrationPlasmaHomeDSTheme;
+			target = C19BAC995816A8871A3AB254C5B275DC /* IntegrationPlasmaHomeDSTheme */;
+			targetProxy = 5AEE02C757E2D1A555FBE4633D235F1D /* PBXContainerItemProxy */;
+		};
+		7E62CAADDFCEEB8DE221CC4B53F0612B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IntegrationSDDSServTheme;
+			target = 8055D1827FA7A7172FF8CAC6F45C05BE /* IntegrationSDDSServTheme */;
+			targetProxy = 719B387D4F76C6B76D8DA7F263FC97E1 /* PBXContainerItemProxy */;
+		};
+		DE42DD2BDBD74CC1845CC7944845A7E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IntegrationPlasmaB2CTheme;
+			target = D6414FF8D4CA9CEB6FBBD6D520A389B5 /* IntegrationPlasmaB2CTheme */;
+			targetProxy = 883AC4528BDF443E7FD9377A5350110C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F1A3456C1B4AA199015D5479794ABE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.plasmahomedstheme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A7401ED6B96730E68F601923578E05C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.plasmab2ctheme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3608B9FCD19054A1FAF0551861B5FEA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.plasmahomedstheme.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntegrationPlasmaHomeDSTheme.app/IntegrationPlasmaHomeDSTheme";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		456904F5F6F91A5B30F75E33150AAFB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.sddsservtheme.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntegrationSDDSServTheme.app/IntegrationSDDSServTheme";
+			};
+			name = Debug;
+		};
+		682E178D1777FAFF6067A11BCCDE9757 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.plasmahomedstheme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75CB60787310EBE5473286D1E876E1CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		78C86E96E241A6DAC8B0B1EF7F2DB98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.sddsservtheme.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntegrationSDDSServTheme.app/IntegrationSDDSServTheme";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7DE0652ACA7FAF841DED7D8431514513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.plasmab2ctheme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85AB46B55CED892B36100DA1BBD229A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.plasmab2ctheme.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntegrationPlasmaB2CTheme.app/IntegrationPlasmaB2CTheme";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88C857E3033574627162D20D9EE8A7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.sddsservtheme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B04F7A15235215EA7408F1AE45D31CE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.sddsservtheme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C63F88BB967C8815BAA67BEBF9C631AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.plasmahomedstheme.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntegrationPlasmaHomeDSTheme.app/IntegrationPlasmaHomeDSTheme";
+			};
+			name = Debug;
+		};
+		D7C303062A1C94C2F54BB71A61F24A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.sberdevices.sdds.integration.plasmab2ctheme.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntegrationPlasmaB2CTheme.app/IntegrationPlasmaB2CTheme";
+			};
+			name = Debug;
+		};
+		E463A09A3D99D705BD26C38528128949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1863DA66D31D835870F65A57F2FAE7D6 /* Build configuration list for PBXNativeTarget "IntegrationSDDSServThemeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78C86E96E241A6DAC8B0B1EF7F2DB98E /* Release */,
+				456904F5F6F91A5B30F75E33150AAFB0 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51B1EC21BB9541419FEF2651152DC7BE /* Build configuration list for PBXProject "XCFrameworkIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75CB60787310EBE5473286D1E876E1CD /* Debug */,
+				E463A09A3D99D705BD26C38528128949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A74149AF9BB4BFE732FF0845BCF65E2 /* Build configuration list for PBXNativeTarget "IntegrationPlasmaB2CThemeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85AB46B55CED892B36100DA1BBD229A5 /* Release */,
+				D7C303062A1C94C2F54BB71A61F24A08 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		997DC3580B9A8BAFFD61CE5D53AC7685 /* Build configuration list for PBXNativeTarget "IntegrationPlasmaHomeDSThemeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3608B9FCD19054A1FAF0551861B5FEA8 /* Release */,
+				C63F88BB967C8815BAA67BEBF9C631AF /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1A8B9430E592EA9F163B5F0C36BE921 /* Build configuration list for PBXNativeTarget "IntegrationSDDSServTheme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C857E3033574627162D20D9EE8A7FE /* Release */,
+				B04F7A15235215EA7408F1AE45D31CE0 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3B908EF1A13ADD838F10863133E94CC /* Build configuration list for PBXNativeTarget "IntegrationPlasmaB2CTheme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7401ED6B96730E68F601923578E05C /* Release */,
+				7DE0652ACA7FAF841DED7D8431514513 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B18D52D8526DAE3A0C187CA50EDACC93 /* Build configuration list for PBXNativeTarget "IntegrationPlasmaHomeDSTheme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F1A3456C1B4AA199015D5479794ABE3 /* Release */,
+				682E178D1777FAFF6067A11BCCDE9757 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38CDDC0EB44506C723B768C0668C9AA0 /* Project object */;
+}
