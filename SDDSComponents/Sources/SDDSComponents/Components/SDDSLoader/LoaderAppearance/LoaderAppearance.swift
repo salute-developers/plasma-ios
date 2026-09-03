@@ -16,7 +16,7 @@ public struct LoaderAppearance: Hashable {
     public var spinnerAppearance: SpinnerAppearance?
     public var circularProgressAppearance: CircularProgressBarAppearance?
     public var size: LoaderSizeConfiguration
-    
+
     public init(
         spinnerAppearance: SpinnerAppearance? = nil,
         circularProgressAppearance: CircularProgressBarAppearance? = nil,
@@ -26,13 +26,13 @@ public struct LoaderAppearance: Hashable {
         self.circularProgressAppearance = circularProgressAppearance
         self.size = size
     }
-    
+
     public static func == (lhs: LoaderAppearance, rhs: LoaderAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.spinnerAppearance == rhs.spinnerAppearance &&
         lhs.circularProgressAppearance == rhs.circularProgressAppearance
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

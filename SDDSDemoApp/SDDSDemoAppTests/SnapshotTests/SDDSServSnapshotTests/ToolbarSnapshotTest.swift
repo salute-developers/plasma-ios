@@ -14,8 +14,8 @@ import SDDSServTheme
 import UIKit
 import SwiftUI
 
-final class ToolbarSnapshotTest : SDDSServThemeTestCase {
-    
+final class ToolbarSnapshotTest: SDDSServThemeTestCase {
+
     @MainActor
     func testToolbarLHorizontalHasShadow() async throws {
         let appearance = ToolbarHorizontal.l.hasShadow.appearance
@@ -27,7 +27,7 @@ final class ToolbarSnapshotTest : SDDSServThemeTestCase {
             iconButtonAppearance: iconButtonAppearance)
         )
     }
-    
+
     @MainActor
     func testToolbarMVertical() async throws {
         let appearance = ToolbarVertical.m.appearance
@@ -39,7 +39,7 @@ final class ToolbarSnapshotTest : SDDSServThemeTestCase {
             iconButtonAppearance: iconButtonAppearance)
         )
     }
-    
+
     @MainActor
     func testToolbarSHorizontal() async throws {
         let appearance = ToolbarHorizontal.s.appearance
@@ -51,7 +51,7 @@ final class ToolbarSnapshotTest : SDDSServThemeTestCase {
             iconButtonAppearance: iconButtonAppearance)
         )
     }
-    
+
     @MainActor
     func testToolbarXsHorizontal() async throws {
         let appearance = ToolbarHorizontal.xs.appearance
@@ -63,7 +63,7 @@ final class ToolbarSnapshotTest : SDDSServThemeTestCase {
             iconButtonAppearance: iconButtonAppearance)
         )
     }
-    
+
     @MainActor
     func testToolbarLHorizontalHasDivider() async throws {
         let appearance = ToolbarHorizontal.l.appearance

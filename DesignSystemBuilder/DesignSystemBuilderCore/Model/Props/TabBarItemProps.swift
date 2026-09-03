@@ -2,7 +2,7 @@ import Foundation
 
 struct TabBarItemProps: MergeableConfiguration, Codable {
     typealias Props = TabBarItemProps
-    
+
     var labelColor: ColorKeyValue?
     var iconColor: ColorKeyValue?
     var backgroundColor: ColorKeyValue?

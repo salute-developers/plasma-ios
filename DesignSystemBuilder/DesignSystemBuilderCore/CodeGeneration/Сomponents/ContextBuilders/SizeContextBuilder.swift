@@ -5,19 +5,19 @@ final class SizeContextBuilder: CodeGenerationContextBuilder {
         case point
         case size
     }
-    
+
     let x: Double?
     let y: Double?
     let style: SizeContextBuilder.Style
     let nullify: Bool
-    
+
     init(x: Double?, y: Double?, style: SizeContextBuilder.Style = SizeContextBuilder.Style.point, nullify: Bool = false) {
         self.x = x
         self.y = y
         self.style = style
         self.nullify = nullify
     }
-    
+
     var context: String? {
         // Конфиг задаёт координаты по отдельности и вторую часто опускает (у формы
         // `indicatorOffsetX: 4` без `Y`). Раньше это теряло и заданную координату —

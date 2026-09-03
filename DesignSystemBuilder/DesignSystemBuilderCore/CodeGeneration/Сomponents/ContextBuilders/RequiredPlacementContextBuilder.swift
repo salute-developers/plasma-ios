@@ -5,15 +5,15 @@ final class RequiredPlacementContextBuilder: CodeGenerationContextBuilder {
         case requiredEnd = "required-end"
         case requiredStart = "required-start"
     }
-    
+
     let id: String?
     let component: CodeGenerationComponent
-    
+
     init(id: String?, component: CodeGenerationComponent) {
         self.id = id
         self.component = component
     }
-    
+
     var context: String? {
         let type = "\(component.rawValue)RequiredPlacement"
         guard let id = id?.lastKey, let variationId = VariationId(rawValue: id) else {

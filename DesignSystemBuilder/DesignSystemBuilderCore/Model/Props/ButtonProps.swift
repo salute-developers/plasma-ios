@@ -2,7 +2,7 @@ import Foundation
 
 struct ButtonProps: MergeableConfiguration, Codable {
     typealias Props = ButtonProps
-    
+
     var loadingAlpha: KeyValue<Double>?
     var disableAlpha: KeyValue<Double>?
     var shape: ShapeKeyValue?

@@ -12,14 +12,14 @@ extension FileWriter {
             if !fileManager.fileExists(atPath: outputURL.path()) {
                 try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: false)
             }
-            
+
             var outputURL = outputURL
             outputURL.append(path: filename)
-            
+
             if fileManager.fileExists(atPath: outputURL.path()) {
                 try fileManager.removeItem(at: outputURL)
             }
-            
+
             guard let data = content.data(using: .utf8) else {
                 return .error(.unableWriteData)
             }

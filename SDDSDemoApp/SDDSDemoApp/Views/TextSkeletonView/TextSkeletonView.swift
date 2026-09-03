@@ -65,10 +65,10 @@ struct TextSkeletonView: View {
         }
         .listStyle(.plain)
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle(viewModel.title)
     }
-    
+
     @ViewBuilder
     private var kindSelectionView: some View {
         HStack {
@@ -85,7 +85,7 @@ struct TextSkeletonView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var providerSelectionView: some View {
         HStack {
@@ -102,7 +102,7 @@ struct TextSkeletonView: View {
             }
         }
     }
-    
+
     private var skeletonThemeID: String {
         "\(viewModel.theme.rawValue)-\(String(describing: viewModel.subtheme))"
     }
@@ -112,4 +112,4 @@ struct TextSkeletonView: View {
     NavigationView {
         TextSkeletonView()
     }
-} 
+}

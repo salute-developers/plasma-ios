@@ -4,20 +4,20 @@ import SwiftUI
 final class GradientContextBuilder: ContexBuilder, ThemeContext, ColorContext, SchemeTokenNameValidator {
     private let paletteURL: URL
     private let metaScheme: Scheme
-    
+
     private lazy var paletteJson: [String: Any]? = {
         guard let data = try? Data(contentsOf: paletteURL) else {
             return nil
         }
-        
+
         return try? JSONSerialization.jsonObject(with: data) as? [String: Any]
     }()
-    
+
     init(paletteURL: URL, metaScheme: Scheme) {
         self.paletteURL = paletteURL
         self.metaScheme = metaScheme
     }
-    
+
     func buildContext(from data: Data) -> CommandResult {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
@@ -60,7 +60,7 @@ extension GradientContextBuilder {
                 var value = result[colorName] as? [String: Any] ?? [:]
                 let colorsKey = GradientDictionaryKey.colors.rawValue
                 let backgroundKey = GradientDictionaryKey.background.rawValue
-                
+
                 var gradients = dictionary[key] as? [[String: Any]] ?? []
                 gradients = try gradients.map { gradientDictionary in
                     var gradientDictionary = gradientDictionary
@@ -87,7 +87,7 @@ extension GradientContextBuilder {
                     return gradientDictionary
                 }
                 let gradient = gradients.first
-                
+
                 let kindString = (gradient?[GradientDictionaryKey.kind.rawValue] as? String) ?? ""
                 switch kindString {
                 case GradientKind.color.rawValue:
@@ -100,13 +100,13 @@ extension GradientContextBuilder {
                 default:
                     return .failure(GeneralError.invalidColorTokenFormat)
                 }
-                
+
                 value[mode.rawValue] = gradients
                 result[colorName] = value
             }
         }
         populateMissingColors(&result)
-        
+
         return .success(result)
     }
 }

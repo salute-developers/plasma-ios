@@ -33,7 +33,7 @@ struct CardView: View {
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .background(Color(.systemGroupedBackground))
             .listRowInsets(.init())
-            
+
             Section {
                 cardTypeSelectionView
                 VariationsView(viewModel: viewModel)
@@ -41,35 +41,35 @@ struct CardView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Card")
     }
-    
+
     private var horizontalView: some View {
         HStack(spacing: 0) {
             cardText
             content
         }
     }
-    
+
     private var verticalView: some View {
         VStack(spacing: 0) {
             cardText
             content
         }
     }
-    
+
     private var cardText: some View {
         Text("Card text")
             .frame(width: cardSize.width, height: cardSize.height)
     }
-    
+
     private var content: some View {
         SDDSCardContent(shapeContent: cardContentShape, backgroundColor: .gray) {
             cardContent
         }
     }
-    
+
     @ViewBuilder
     private var cardContent: some View {
         ZStack {
@@ -83,7 +83,7 @@ struct CardView: View {
         }
         .frame(width: cardSize.width, height: cardSize.height)
     }
-    
+
     @ViewBuilder
     private var cardTypeSelectionView: some View {
         HStack {
@@ -101,7 +101,7 @@ struct CardView: View {
             }
         }
     }
-    
+
     private var orientation: some View {
         HStack {
             Text("Orientation")
@@ -118,20 +118,20 @@ struct CardView: View {
             }
         }
     }
-    
+
     private var imageSize: CGSize {
         .init(width: 64, height: 64)
     }
-    
+
     private var cardSize: CGSize {
         .init(width: 120, height: 120)
     }
-    
+
     private var cardContentShape: ShapeContent {
         let cornerRadiusDrawer = CornerRadiusDrawer(cornerRadius: 8)
         return ShapeContent(pathDrawer: cornerRadiusDrawer)
     }
-    
+
 }
 
 #Preview {

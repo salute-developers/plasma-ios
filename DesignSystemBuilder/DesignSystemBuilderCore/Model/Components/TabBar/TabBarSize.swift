@@ -4,7 +4,7 @@ import SwiftUI
 struct TabBarSize: CodeGenerationSize {
     typealias Variation = TabBarConfiguration.Variation
     typealias Props = TabBarProps
-    
+
     var contentPaddingStart: String?
     var contentPaddingEnd: String?
     var contentPaddingTop: String?
@@ -12,11 +12,11 @@ struct TabBarSize: CodeGenerationSize {
     var itemSpacing: String?
     var topShape: String?
     var dividerThickness: String?
-    
+
     init(variation: TabBarConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: TabBarProps, id: String? = nil, nullify: Bool = false) {
         self.contentPaddingStart = CGFloatContextBuilder(props.contentPaddingStart?.value, nullify: nullify).context
         self.contentPaddingEnd = CGFloatContextBuilder(props.contentPaddingEnd?.value, nullify: nullify).context
@@ -26,7 +26,7 @@ struct TabBarSize: CodeGenerationSize {
         self.topShape = PathDrawerContextBuilder(shape: props.topShape, nullify: nullify).context
         self.dividerThickness = CGFloatContextBuilder(props.dividerThickness?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.contentPaddingStart = CGFloat.defaultContext
         self.contentPaddingEnd = CGFloat.defaultContext

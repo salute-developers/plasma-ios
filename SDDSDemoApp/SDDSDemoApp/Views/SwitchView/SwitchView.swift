@@ -31,7 +31,7 @@ struct SwitchView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
                 HStack {
@@ -40,25 +40,25 @@ struct SwitchView: View {
                     TextField("Label", text: $viewModel.title)
                         .multilineTextAlignment(.trailing)
                 }
-                
+
                 HStack {
                     Text("Subtitle")
                     Spacer()
                     TextField("Description", text: $viewModel.subtitle)
                         .multilineTextAlignment(.trailing)
                 }
-                
+
                 HStack {
                     Toggle("Enabled", isOn: $viewModel.isEnabled)
                 }
-                
+
                 HStack {
                     Toggle("On/Off", isOn: $viewModel.isOn)
                 }
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Switch")
     }
 }

@@ -4,7 +4,7 @@ import SwiftUI
 public struct SDDSSpinnerData {
     public var isAnimating: Bool
     public var appearance: SpinnerAppearance?
-    
+
     public init(isAnimating: Bool = false, appearance: SpinnerAppearance? = nil) {
         self.isAnimating = isAnimating
         self.appearance = appearance
@@ -12,7 +12,7 @@ public struct SDDSSpinnerData {
 }
 
 extension SDDSSpinnerData: EnvironmentKey {
-    public static var defaultValue: SDDSSpinnerData? = nil
+    public static var defaultValue: SDDSSpinnerData?
 }
 
 public extension EnvironmentValues {

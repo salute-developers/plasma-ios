@@ -19,4 +19,4 @@ public protocol NotificationSizeConfiguration: SizeConfiguration, CustomDebugStr
     var paddingTop: CGFloat { get }
     var paddingBottom: CGFloat { get }
     var shape: PathDrawer { get }
-} 
+}

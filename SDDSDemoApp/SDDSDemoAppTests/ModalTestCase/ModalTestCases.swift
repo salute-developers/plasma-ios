@@ -19,12 +19,12 @@ import SDDSIcons
  */
 struct ModalUseNativeBlackOutHasClose: View {
     var appearance: ModalAppearance
-    
+
     var body: some View {
         ZStack {
             backgroundBlackOut(useNativeBlackout: true)
                 .ignoresSafeArea()
-            
+
             VStack {
                 Spacer()
                 SDDSModal(
@@ -51,12 +51,12 @@ struct ModalUseNativeBlackOutHasClose: View {
  */
 struct ModalWithoutNativeBlackOut: View {
     var appearance: ModalAppearance
-    
+
     var body: some View {
         ZStack {
             backgroundBlackOut(useNativeBlackout: false)
                 .ignoresSafeArea()
-            
+
             VStack {
                 Spacer()
                 SDDSModal(

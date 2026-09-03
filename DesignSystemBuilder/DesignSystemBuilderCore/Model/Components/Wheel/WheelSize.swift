@@ -4,27 +4,27 @@ import SwiftUI
 struct WheelSize: CodeGenerationSize {
     typealias Variation = WheelConfiguration.Variation
     typealias Props = WheelProps
-    
+
     var itemTextAfterPadding: String?
     var itemMinSpacing: String?
     var descriptionPadding: String?
     var separatorSpacing: String?
     var controlIconUpSize: String?
     var controlIconDownSize: String?
-    
+
     var itemAlignment: String?
-    
+
     var selectionIndicatorEnabled: String?
     var selectionIndicatorShape: String?
     var selectionIndicatorPaddingTop: String?
     var selectionIndicatorPaddingBottom: String?
     var selectionIndicatorPaddingStart: String?
     var selectionIndicatorPaddingEnd: String?
-    
+
     init(variation: WheelConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: WheelProps, id: String? = nil, nullify: Bool = false) {
         self.itemTextAfterPadding = CGFloatContextBuilder(props.itemTextAfterPadding?.value, nullify: nullify).context
         self.itemMinSpacing = CGFloatContextBuilder(props.itemMinSpacing?.value, nullify: nullify).context
@@ -38,7 +38,7 @@ struct WheelSize: CodeGenerationSize {
         self.selectionIndicatorPaddingBottom = CGFloatContextBuilder(props.selectionIndicatorPaddingBottom?.value, nullify: nullify).context
         self.selectionIndicatorPaddingStart = CGFloatContextBuilder(props.selectionIndicatorPaddingStart?.value, nullify: nullify).context
         self.selectionIndicatorPaddingEnd = CGFloatContextBuilder(props.selectionIndicatorPaddingEnd?.value, nullify: nullify).context
-        
+
         if let itemAlignment = props.itemAlignment {
             self.itemAlignment = WheelItemAlignmentContextBuilder(
                 props: itemAlignment.value,
@@ -48,7 +48,7 @@ struct WheelSize: CodeGenerationSize {
             self.itemAlignment = WheelItemAlignmentContextBuilder.defaultContext
         }
     }
-    
+
     init() {
         self.itemTextAfterPadding = CGFloat.defaultContext
         self.itemMinSpacing = CGFloat.defaultContext

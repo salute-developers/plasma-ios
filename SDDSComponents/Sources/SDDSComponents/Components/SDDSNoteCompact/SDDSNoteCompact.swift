@@ -9,15 +9,15 @@ extension VerticalAlignment {
             context[VerticalAlignment.center]
         }
     }
-    
+
     static let compactTitleAlignment = VerticalAlignment(NoteCompactTitleAlignment.self)
-    
+
     struct NoteCompactContentCenterAlignment: AlignmentID {
         static func defaultValue(in context: ViewDimensions) -> CGFloat {
             context[VerticalAlignment.center]
         }
     }
-    
+
     static let compactContentCenterGuide = VerticalAlignment(NoteCompactContentCenterAlignment.self)
 }
 
@@ -54,27 +54,27 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
     private let contentBefore: ContentBefore
     private let action: Action
     private let onClose: (() -> Void)?
-    
+
     private var size: NoteCompactSizeConfiguration {
         appearance.size
     }
-    
+
     private var isContentBeforeEmpty: Bool {
         ContentBefore.self == EmptyView.self
     }
-    
+
     private var shouldShowContentBefore: Bool {
         !isContentBeforeEmpty
     }
-    
+
     private var shouldShowCloseButton: Bool {
         size.closeSize > 0 && onClose != nil
     }
-    
+
     private var isActionEmpty: Bool {
         Action.self == EmptyView.self
     }
-    
+
     /**
      Инициализатор с ContentBefore и Action
      
@@ -98,38 +98,38 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
         self.action = action()
         self.onClose = onClose
     }
-    
+
     public var body: some View {
         HStack(alignment: .compactTitleAlignment, spacing: 0) {
             if shouldShowContentBefore {
                 contentBeforeView
-                
+
                 Spacer()
                     .frame(width: size.contentBeforeEndMargin)
             }
-            
+
             textContent
-            
+
             Spacer()
-            
+
             if !isActionEmpty {
                 Spacer()
                     .frame(width: size.actionStartMargin)
-                
+
                 actionView
-                
+
                 if size.actionEndMargin > 0 {
                     Spacer()
                         .frame(width: size.actionEndMargin)
                 }
             }
-            
+
             if shouldShowCloseButton {
                 if size.closeStartMargin > 0 {
                     Spacer()
                         .frame(width: size.closeStartMargin)
                 }
-                
+
                 closeButton
             }
         }
@@ -143,7 +143,7 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
                 .shape(pathDrawer: size.shape)
         )
     }
-    
+
     @ViewBuilder
     private var contentBeforeView: some View {
         Group {
@@ -157,7 +157,7 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
         .tint(appearance.iconColor.color(for: colorScheme, subtheme: subtheme))
         .alignmentGuide(.compactTitleAlignment) { d in d[VerticalAlignment.center] }
     }
-    
+
     private var textContent: some View {
         titleAndText
             .alignmentGuide(.compactTitleAlignment) { d in
@@ -169,13 +169,13 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
                 }
             }
     }
-    
+
     private var titleAndText: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(title)
                 .foregroundColor(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
                 .typography(titleTypography)
-            
+
             if let text = text {
                 Text(text)
                     .foregroundColor(appearance.textColor.color(for: colorScheme, subtheme: subtheme))
@@ -184,7 +184,7 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var actionView: some View {
         action
@@ -193,7 +193,7 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
             }
             .alignmentGuide(.compactTitleAlignment) { d in d[VerticalAlignment.center] }
     }
-    
+
     @ViewBuilder
     private var closeButton: some View {
         if let closeIcon = appearance.closeIcon {
@@ -212,13 +212,13 @@ public struct SDDSNoteCompact<ContentBefore: View, Action: View>: View {
             .alignmentGuide(.compactTitleAlignment) { d in d[VerticalAlignment.center] }
         }
     }
-    
+
     // MARK: - Computed Properties
-    
+
     private var titleTypography: TypographyToken {
         appearance.titleTypography.typography(with: size) ?? .undefined
     }
-    
+
     private var textTypography: TypographyToken {
         appearance.textTypography.typography(with: size) ?? .undefined
     }

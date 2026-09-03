@@ -6,7 +6,7 @@ public struct BottomSheetPresentationConfiguration {
     public var dimmingAlphaWhenInitial: CGFloat
     public var isDimmingEnabled: Bool
     public var detents: [BottomSheetDetent]
-    
+
     public init(
         dimmingAlpha: CGFloat = 0.5,
         dimmingAlphaWhenFull: CGFloat = 1.0,

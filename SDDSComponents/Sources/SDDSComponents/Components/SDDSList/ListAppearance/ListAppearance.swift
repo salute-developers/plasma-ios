@@ -11,7 +11,7 @@ public struct ListAppearance: Hashable {
     public var scrollBarAppearance: ScrollbarAppearance
     public var backgroundColor: StatefulFillStyle
     public var size: ListSizeConfiguration
-    
+
     public init(
         listItemAppearance: ListItemAppearance = .defaultValue,
         dividerAppearance: DividerAppearance = .defaultValue,
@@ -43,7 +43,7 @@ public struct ListAppearance: Hashable {
             size: size
         )
     }
-    
+
     public static func == (lhs: ListAppearance, rhs: ListAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.scrollBarAppearance == rhs.scrollBarAppearance &&
@@ -51,7 +51,7 @@ public struct ListAppearance: Hashable {
         lhs.listItemAppearance == rhs.listItemAppearance &&
         lhs.backgroundColor == rhs.backgroundColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -61,4 +61,4 @@ extension ListAppearance: EnvironmentKey {
     public static var defaultValue: Self {
         ListAppearance(listItemAppearance: .defaultValue)
     }
-} 
+}

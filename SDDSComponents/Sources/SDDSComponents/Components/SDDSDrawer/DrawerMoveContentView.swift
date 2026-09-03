@@ -16,13 +16,13 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
     let footer: () -> Footer
     let explicitDrawerWidth: CGFloat?
     let explicitDrawerHeight: CGFloat?
-    
+
     @State private var dragOffset: CGFloat = 0
     @State private var contentOffset: CGFloat
     @State private var isDragging: Bool = false
     @State private var hasAppeared: Bool = false
     @State private var dragStarted: Bool = false
-    
+
     init(
         mainContent: MainContent,
         alignment: DrawerAlignment,
@@ -53,7 +53,7 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
         self.footer = footer
         self.explicitDrawerWidth = explicitDrawerWidth
         self.explicitDrawerHeight = explicitDrawerHeight
-        
+
         let initialOffset: CGFloat
         switch alignment {
         case .left:
@@ -67,7 +67,7 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
         }
         self._contentOffset = State(initialValue: initialOffset)
     }
-    
+
     var body: some View {
         GeometryReader { geometry in
             Group {
@@ -88,13 +88,13 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
                     handleDragEnded(value: value)
                 }
         )
-        .onChange(of: isPresented) { newValue in
+        .onChange(of: isPresented) { _ in
             if !isDragging {
                 toggleDrawer()
             }
         }
     }
-    
+
     @ViewBuilder
     private func horizontalLayout(geometry: GeometryProxy) -> some View {
         HStack(spacing: 0) {
@@ -110,7 +110,7 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
         }
         .offset(x: contentOffset)
     }
-    
+
     @ViewBuilder
     private func verticalLayout(geometry: GeometryProxy) -> some View {
         VStack(spacing: 0) {
@@ -126,7 +126,7 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
         }
         .offset(y: contentOffset)
     }
-    
+
     @ViewBuilder
     private var mainContentWithOverlay: some View {
         mainContent
@@ -151,7 +151,7 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
                 .allowsHitTesting(isPresented && overlayAppearance != nil)
         )
     }
-    
+
     private func toggleDrawer() {
         withAnimation(.easeIn(duration: 0.3)) {
             switch alignment {
@@ -166,14 +166,14 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
             }
         }
     }
-    
+
     private func handleDragChanged(value: DragGesture.Value) {
         let horizontalMovement = abs(value.translation.width)
         let verticalMovement = abs(value.translation.height)
-        
+
         let isHorizontalAlignment = alignment == .left || alignment == .right
         let isVerticalAlignment = alignment == .top || alignment == .bottom
-        
+
         if !dragStarted {
             if isHorizontalAlignment && horizontalMovement > verticalMovement && horizontalMovement > 10 {
                 dragStarted = true
@@ -191,11 +191,11 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
                 return
             }
         }
-        
+
         if !isDragging {
             isDragging = true
         }
-        
+
         switch alignment {
         case .left:
             let translation = value.translation.width
@@ -251,16 +251,16 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
             }
         }
     }
-    
+
     private func handleDragEnded(value: DragGesture.Value) {
         isDragging = false
         dragStarted = false
-        
+
         let threshold: CGFloat = 80
         let velocityThreshold: CGFloat = 300
-        
+
         let shouldToggle: Bool
-        
+
         switch alignment {
         case .left:
             let translation = value.translation.width
@@ -295,14 +295,14 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
                 shouldToggle = (velocity < -velocityThreshold && translation < 0) || translation < -threshold
             }
         }
-        
+
         if shouldToggle {
             isPresented.toggle()
         } else {
             toggleDrawer()
         }
     }
-    
+
     @ViewBuilder
     private var drawerView: some View {
         SDDSDrawer(
@@ -322,11 +322,10 @@ struct DrawerMoveContentView<MainContent: View, Header: View, Content: View, Foo
             height: (alignment == .top || alignment == .bottom) ? explicitDrawerHeight : nil
         )
     }
-    
+
     private func closeDrawer() {
         withAnimation(.easeIn(duration: 0.3)) {
             isPresented.toggle()
         }
     }
 }
-

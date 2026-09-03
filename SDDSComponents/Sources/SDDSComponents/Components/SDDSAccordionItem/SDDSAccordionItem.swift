@@ -63,16 +63,16 @@ public struct SDDSAccordionItem: View {
     private let _appearance: AccordionItemAppearance?
     private let title: String
     private let content: String
-    private let onToggle: ((Bool) -> ())?
+    private let onToggle: ((Bool) -> Void)?
     @State private var isExpanded: Bool
     @State private var isHovered: Bool = false
-    
+
     public init(
         title: String = "",
         content: String = "",
         isExpanded: Bool = false,
         appearance: AccordionItemAppearance? = nil,
-        onToggle: ((Bool) -> ())? = nil
+        onToggle: ((Bool) -> Void)? = nil
     ) {
         self.title = title
         self.content = content
@@ -80,7 +80,7 @@ public struct SDDSAccordionItem: View {
         self.onToggle = onToggle
         self._appearance = appearance
     }
-    
+
     public var body: some View {
         VStack(spacing: 0) {
             titleCell
@@ -95,7 +95,7 @@ public struct SDDSAccordionItem: View {
                 .onHover { hovering in
                     isHovered = hovering
                 }
-            
+
             if isExpanded {
                 contentCell
                     .transition(.opacity)
@@ -103,20 +103,20 @@ public struct SDDSAccordionItem: View {
         }
         .shape(pathDrawer: appearance.size.shape)
     }
-    
+
     @ViewBuilder private var titleCell: some View {
         HStack(alignment: .center, spacing: 0) {
             if appearance.size.iconPlacement == .start {
                 disclosureIcon
                     .padding(.trailing, appearance.size.iconPadding)
             }
-            
+
             Text(title)
                 .foregroundStyle(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
                 .typography(titleTypography)
-            
+
             Spacer()
-            
+
             if appearance.size.iconPlacement == .end {
                 disclosureIcon
                     .padding(.leading, appearance.size.iconPadding)
@@ -129,7 +129,7 @@ public struct SDDSAccordionItem: View {
         .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
         .contentShape(Rectangle())
     }
-    
+
     @ViewBuilder private var contentCell: some View {
         Text(content)
             .foregroundStyle(appearance.contentTextColor.color(for: colorScheme, subtheme: subtheme))
@@ -140,7 +140,7 @@ public struct SDDSAccordionItem: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
     }
-    
+
     @ViewBuilder private var disclosureIcon: some View {
         if let icon = isExpanded ? appearance.openedIcon : appearance.closedIcon {
             icon
@@ -151,19 +151,19 @@ public struct SDDSAccordionItem: View {
                 .animation(.easeInOut(duration: 0.2), value: isExpanded)
         }
     }
-    
+
     var appearance: AccordionItemAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var rotation: CGFloat {
         appearance.size.iconRotation + (appearance.size.iconPlacement == .end ? 90.0 : -180.0)
     }
-    
+
     private var titleTypography: TypographyToken {
         appearance.titleTypography.typography(with: appearance.size) ?? .undefined
     }
-    
+
     private var contentTextTypography: TypographyToken {
         appearance.contentTextTypography.typography(with: appearance.size) ?? .undefined
     }

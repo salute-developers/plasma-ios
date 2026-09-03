@@ -9,7 +9,7 @@ final class RadioboxViewModel: ComponentViewModel<RadioboxVariationProvider> {
     @Published var subtitle: String = ""
     @Published var isSelected: Bool = false
     @Published var isEnabled: Bool = true
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: RadioboxUiState = .init()) {
         super.init(variationProvider: RadioboxVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)

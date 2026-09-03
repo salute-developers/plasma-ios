@@ -42,7 +42,7 @@ struct ChipView: View {
 
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Chip")
         .onChange(of: viewModel.iconImageEnabled) { iconImageEnabled in
             if iconImageEnabled {

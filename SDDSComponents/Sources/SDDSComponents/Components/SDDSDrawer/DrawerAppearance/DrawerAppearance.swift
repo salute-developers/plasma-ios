@@ -14,7 +14,7 @@ public struct DrawerAppearance: Hashable {
     public var closeIcon: Image?
     public var shadow: ShadowToken?
     public var size: DrawerSizeConfiguration
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         closeColor: ColorToken = .clearColor,
@@ -28,13 +28,13 @@ public struct DrawerAppearance: Hashable {
         self.shadow = shadow
         self.size = size
     }
-    
+
     public static func == (lhs: DrawerAppearance, rhs: DrawerAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor &&
         lhs.closeColor == rhs.closeColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -52,4 +52,3 @@ public extension EnvironmentValues {
         set { self[DrawerAppearance.self] = newValue }
     }
 }
-

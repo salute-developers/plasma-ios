@@ -9,7 +9,7 @@ extension GradientKind {
             return nil
         }
     }
-    
+
     var radialGradient: RadialGradient? {
         switch self {
         case .radial(let data):
@@ -18,7 +18,7 @@ extension GradientKind {
             return nil
         }
     }
-    
+
     var angularGradient: AngularGradient? {
         switch self {
         case .angular(let data):
@@ -27,7 +27,7 @@ extension GradientKind {
             return nil
         }
     }
-    
+
     var plainColor: PlainColor? {
         switch self {
         case .color(let data):

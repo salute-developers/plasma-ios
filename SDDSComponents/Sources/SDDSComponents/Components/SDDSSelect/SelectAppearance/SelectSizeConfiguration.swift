@@ -10,7 +10,6 @@ public struct ZeroSelectSize: SelectSizeConfiguration {
     public var debugDescription: String {
         "ZeroSelectSize"
     }
-    
+
     public init() {}
 }
-

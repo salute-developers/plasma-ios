@@ -6,7 +6,7 @@ public struct FontFamilyToken {
         case header
         case text
     }
-    
+
     public let heading: Heading
     public let name: String
 }

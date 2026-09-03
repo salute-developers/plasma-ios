@@ -29,7 +29,7 @@ public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
     @ApiName("descriptionColor")
     public var subtitleColor: StatefulFillStyle
     public var disabledAlpha: CGFloat
-    
+
     public init(
         color: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         toggleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
@@ -102,11 +102,11 @@ public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
             disabledAlpha: disabledAlpha
         )
     }
-    
+
     public static func == (lhs: RadioboxAppearance, rhs: RadioboxAppearance) -> Bool {
         lhs.id == rhs.id
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

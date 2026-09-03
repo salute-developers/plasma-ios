@@ -18,7 +18,7 @@ public struct NoteAppearance {
     public var closeIcon: Image?
     public var linkButtonAppearance: ButtonAppearance?
     public var size: NoteSizeConfiguration
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         iconColor: ColorToken = .clearColor,

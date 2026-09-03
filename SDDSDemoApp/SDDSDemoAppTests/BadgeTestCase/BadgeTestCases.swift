@@ -16,7 +16,7 @@ import SDDSIcons
 
 struct BadgeSizeLDefaultContentLeft: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -30,7 +30,7 @@ struct BadgeSizeLDefaultContentLeft: View {
 
 struct BadgeSizeMAccentContentRight: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -44,7 +44,7 @@ struct BadgeSizeMAccentContentRight: View {
 
 struct BadgeSizeSPositivePilled: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -58,7 +58,7 @@ struct BadgeSizeSPositivePilled: View {
 
 struct BadgeSizeXsWarning: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -72,7 +72,7 @@ struct BadgeSizeXsWarning: View {
 
 struct BadgeSizeLNegative: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -86,7 +86,7 @@ struct BadgeSizeLNegative: View {
 
 struct BadgeSizeMDark: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -100,7 +100,7 @@ struct BadgeSizeMDark: View {
 
 struct BadgeSizeSLight: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -114,7 +114,7 @@ struct BadgeSizeSLight: View {
 
 struct BadgeSizeLDefaultClear: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -128,7 +128,7 @@ struct BadgeSizeLDefaultClear: View {
 
 struct BadgeSizeLDefaultTransparent: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -142,7 +142,7 @@ struct BadgeSizeLDefaultTransparent: View {
 
 struct BadgeSizeMNegativeClear: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -156,7 +156,7 @@ struct BadgeSizeMNegativeClear: View {
 
 struct BadgeSizeSWarningTransparent: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         BasicBadge(
             label: "Label",
@@ -170,7 +170,7 @@ struct BadgeSizeSWarningTransparent: View {
 
 struct IconBadgeSizeLDefault: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         IconBadge(
             label: "",
@@ -184,7 +184,7 @@ struct IconBadgeSizeLDefault: View {
 
 struct IconBadgeSizeMAccentPilled: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         IconBadge(
             label: "",
@@ -198,7 +198,7 @@ struct IconBadgeSizeMAccentPilled: View {
 
 struct IconBadgeSizeSPositiveClear: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         IconBadge(
             label: "",
@@ -212,7 +212,7 @@ struct IconBadgeSizeSPositiveClear: View {
 
 struct IconBadgeSizeXsWarningTransparent: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         IconBadge(
             label: "",
@@ -226,7 +226,7 @@ struct IconBadgeSizeXsWarningTransparent: View {
 
 struct IconBadgeSizeLNegative: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         IconBadge(
             label: "",
@@ -240,7 +240,7 @@ struct IconBadgeSizeLNegative: View {
 
 struct IconBadgeSizeMDark: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         IconBadge(
             label: "",
@@ -254,7 +254,7 @@ struct IconBadgeSizeMDark: View {
 
 struct IconBadgeSizeSLight: View {
     var appearance: BadgeAppearance
-    
+
     var body: some View {
         IconBadge(
             label: "",

@@ -6,4 +6,4 @@ public enum AccordionItemLayout: String, CaseIterable {
     case clearActionEnd = "Clear Action End"
     case solidActionStart = "Solid Action Start"
     case solidActionEnd = "Solid Action End"
-} 
+}

@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class CircularProgressPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testCircularProgressXxlDefaultPlasmaB2C() async throws {
         let appearance = CircularProgressBar.xxl.default.appearance

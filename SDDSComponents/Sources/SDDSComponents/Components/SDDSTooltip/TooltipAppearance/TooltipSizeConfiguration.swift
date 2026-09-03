@@ -62,4 +62,4 @@ public struct ZeroTooltipSize: TooltipSizeConfiguration {
     public var paddingBottom: CGFloat { 0 }
     public var debugDescription: String { "ZeroTooltipSize" }
     public init() {}
-} 
+}

@@ -21,7 +21,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
      Кнопка автоматически подстраивает свой размер в зависимости от содержимого.
      */
     case wrapContent
-    
+
     /**
      Кнопка имеет фиксированную ширину с выравниванием содержимого (центрированное или бок о бок).
      
@@ -29,7 +29,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
         - alignment: Выравнивание содержимого внутри фиксированной ширины (центрированное или бок о бок).
      */
     case fixedWidth(ButtonContentAlignment)
-    
+
     /**
      Возвращает true, если содержимое кнопки должно быть центрировано (для режима fixedWidth с центровкой).
      */
@@ -41,7 +41,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
             return alignment == .packed
         }
     }
-    
+
     /**
      Возвращает true, если содержимое кнопки должно быть расположено бок о бок (для режима fixedWidth с выравниванием бок о бок).
      */
@@ -53,7 +53,7 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
             return alignment == .spaceBetween
         }
     }
-    
+
     /**
      Возвращает строку, представляющую название режима макета.
      */
@@ -70,11 +70,11 @@ public enum ButtonLayoutMode: CaseIterable, Hashable {
             }
         }
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(title)
     }
-    
+
     /**
      Все возможные случаи `ButtonLayoutMode`.
      */

@@ -3,10 +3,10 @@ import SDDSComponents
 
 final class AccordionItemVariationProvider: VariationProvider {
     typealias Appearance = AccordionItemAppearance
-    
+
     var theme: Theme
     var layout: AccordionItemLayout
-    
+
     init(theme: Theme = .sdddsServTheme, layout: AccordionItemLayout = .solidActionEnd) {
         self.theme = theme
         self.layout = layout
@@ -24,8 +24,8 @@ final class AccordionItemVariationProvider: VariationProvider {
             theme.accordionItemSolidActionEndVariations
         }
     }
-    
+
     var defaultValue: AccordionItemAppearance {
         AccordionItemAppearance.defaultValue
     }
-} 
+}

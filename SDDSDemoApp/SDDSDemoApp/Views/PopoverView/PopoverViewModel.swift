@@ -23,8 +23,8 @@ final class PopoverViewModel: ComponentViewModel<PopoverVariationProvider> {
     @Published var triggerCentered: Bool = false
     @Published var placementMode: PopoverPlacementMode = .strict
     @Published var buttonPosition: PopoverButtonPosition = .center
-    @Published var duration: Int? = nil
-    
+    @Published var duration: Int?
+
     init(theme: Theme = .sdddsServTheme, uiState: PopoverUiState = .init()) {
         super.init(
             variationProvider: PopoverVariationProvider(theme: theme),

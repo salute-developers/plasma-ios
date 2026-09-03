@@ -6,14 +6,14 @@ final class AccordionItemViewModel: ComponentViewModel<AccordionItemVariationPro
     @Published var title: String = "Заголовок элемента аккордеона"
     @Published var content: String = "Это содержимое элемента аккордеона. Здесь может быть любой текст, который будет отображаться при разворачивании элемента."
     @Published var isExpanded: Bool = false
-    
+
     @Published var layout: AccordionItemLayout = .solidActionEnd {
         didSet {
             variationProvider.layout = layout
             self.selectVariation(variations.first)
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: AccordionItemUiState = .init()) {
         super.init(
             variationProvider: AccordionItemVariationProvider(theme: theme, layout: uiState.layout),
@@ -30,4 +30,3 @@ final class AccordionItemViewModel: ComponentViewModel<AccordionItemVariationPro
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }
-

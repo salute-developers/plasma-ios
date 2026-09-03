@@ -3,7 +3,7 @@ import SwiftUI
 
 public enum CounterViewProvider {
     case `default`(text: String)
-    
+
     case custom(viewProvider: ViewProvider, widthCalculator: CounterWidthCalculator)
 }
 
@@ -23,7 +23,7 @@ public struct SDDSSegmentItemData<Counter: View>: Identifiable, Hashable {
     public let counter: Counter
     public var counterWidthCalculator: CounterWidthCalculator?
     public var action: () -> Void
-    
+
     public init(
         id: UUID = UUID(),
         title: String,
@@ -54,7 +54,7 @@ public struct SDDSSegmentItemData<Counter: View>: Identifiable, Hashable {
         self.action = action
         self.counterText = counterText
         self.counter = counter()
-        
+
         if let counterWidthCalculator = counterWidthCalculator, counterText.isEmpty {
             self.counterWidthCalculator = counterWidthCalculator
         } else {
@@ -64,11 +64,11 @@ public struct SDDSSegmentItemData<Counter: View>: Identifiable, Hashable {
             )
         }
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id.uuidString)
     }
-    
+
     public static func == (lhs: SDDSSegmentItemData, rhs: SDDSSegmentItemData) -> Bool {
         lhs.id == rhs.id
     }

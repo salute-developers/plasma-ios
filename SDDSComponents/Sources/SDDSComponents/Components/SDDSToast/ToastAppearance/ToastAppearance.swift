@@ -12,7 +12,7 @@ public struct ToastAppearance: Hashable {
     public var contentEndColor: ColorToken
     public var textTypography: TypographyConfiguration?
     public var size: ToastSizeConfiguration
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         textColor: ColorToken = .clearColor,
@@ -28,16 +28,16 @@ public struct ToastAppearance: Hashable {
         self.textTypography = textTypography
         self.size = size
     }
-    
+
     public static func == (lhs: ToastAppearance, rhs: ToastAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-} 
+}
 
 extension ToastAppearance: EnvironmentKey {
     public static var defaultValue: Self {

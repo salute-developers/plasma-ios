@@ -3,7 +3,7 @@ import SwiftUI
 
 struct SegmentItemSize: CodeGenerationSize {
     typealias Props = SegmentItemProps
-    
+
     var height: String?
     var width: String?
     var cornerRadius: String?
@@ -14,11 +14,11 @@ struct SegmentItemSize: CodeGenerationSize {
     var titleHorizontalGap: String?
     var iconHorizontalGap: String?
     var counterPadding: String?
-    
+
     init(variation: SegmentItemConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: SegmentItemProps, id: String? = nil, nullify: Bool = false) {
         self.height = CGFloatContextBuilder(props.minHeight?.value, nullify: nullify).context
         self.width = CGFloatContextBuilder(props.minWidth?.value, nullify: nullify).context
@@ -31,7 +31,7 @@ struct SegmentItemSize: CodeGenerationSize {
         self.startContentSize = SizeContextBuilder(x: props.startContentSize?.value, y: props.startContentSize?.value, style: .size, nullify: nullify).context
         self.endContentSize = SizeContextBuilder(x: props.startContentSize?.value, y: props.endContentSize?.value, style: .size, nullify: nullify).context
     }
-    
+
     init() {
         self.height = CGFloat.defaultContext
         self.width = CGFloat.defaultContext

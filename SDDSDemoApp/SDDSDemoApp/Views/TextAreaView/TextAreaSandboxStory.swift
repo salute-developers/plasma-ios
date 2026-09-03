@@ -9,7 +9,6 @@ enum TextAreaStory: Story {
     static let title = "TextArea"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: TextAreaUiState, theme: Theme) -> some View {
         TextAreaView(viewModel: TextAreaViewModel(theme: theme, uiState: state))

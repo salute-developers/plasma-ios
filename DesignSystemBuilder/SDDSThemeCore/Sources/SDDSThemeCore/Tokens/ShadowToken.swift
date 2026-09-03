@@ -7,7 +7,7 @@ public struct ShadowToken {
         public let offsetY: CGFloat
         public let blurRadius: CGFloat
         public let spreadRadius: CGFloat
-        
+
         public init(color: Color, offsetX: CGFloat, offsetY: CGFloat, blurRadius: CGFloat, spreadRadius: CGFloat) {
             self.color = color
             self.offsetX = offsetX
@@ -16,9 +16,9 @@ public struct ShadowToken {
             self.spreadRadius = spreadRadius
         }
     }
-    
+
     public let layers: [Layer]
-    
+
     public init(layers: [Layer] = []) {
         self.layers = layers
     }

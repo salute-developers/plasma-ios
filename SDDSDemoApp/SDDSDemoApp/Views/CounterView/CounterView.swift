@@ -23,12 +23,12 @@ public struct CounterView: View {
                 }
             }
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-            
+
         case .subScreen:
             settings
         }
     }
-    
+
     @ViewBuilder
     private var settings: some View {
         if viewModel.componentViewLayoutMode == .screen {
@@ -36,7 +36,7 @@ public struct CounterView: View {
         }
         dataTextField
     }
-    
+
     public var counterView: some View {
         Section {
             HStack {
@@ -54,7 +54,7 @@ public struct CounterView: View {
         }
         .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
     }
-    
+
     public var dataTextField: some View {
         HStack {
             Text("Data")

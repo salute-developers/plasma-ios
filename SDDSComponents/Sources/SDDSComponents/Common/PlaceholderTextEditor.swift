@@ -19,7 +19,7 @@ struct PlaceholderTextEditor<PlaceholderContent: View>: View {
     let numberOfLines: Int
     let colorScheme: ColorScheme
     let subtheme: SubthemeData
-    let onChange: (_ newText: String) -> ()
+    let onChange: (_ newText: String) -> Void
 
     var body: some View {
         ZStack(alignment: .topLeading) {

@@ -214,7 +214,7 @@ public extension View {
             }
         )
     }
-    
+
     private func applyInsets(to frame: CGRect, insets: EdgeInsets) -> CGRect {
         let adjustedWidth = max(frame.width - insets.leading - insets.trailing, 1)
         let adjustedHeight = max(frame.height - insets.top - insets.bottom, 1)
@@ -225,7 +225,7 @@ public extension View {
             height: adjustedHeight
         )
     }
-    
+
     private func protectedTapFrame(
         triggerFrame: CGRect,
         placement: PopoverPlacement,
@@ -252,7 +252,7 @@ public extension View {
             contentHeight: contentHeight
         )
     }
-    
+
     private func protectedTapFrameForPlacement(
         triggerFrame: CGRect,
         placement: PopoverPlacement,
@@ -261,7 +261,7 @@ public extension View {
         contentHeight: CGFloat
     ) -> CGRect {
         let extraInset = max(abs(appearance.size.offset), appearance.size.tailHeight)
-        
+
         let width = max(triggerFrame.width, appearance.size.width)
         let x: CGFloat
         switch alignment {
@@ -272,7 +272,7 @@ public extension View {
         case .end:
             x = triggerFrame.maxX - width
         }
-        
+
         switch placement {
         case .bottom:
             return CGRect(
@@ -326,7 +326,7 @@ public extension View {
             )
         }
     }
-    
+
     private func resolvedProtectedPlacement(
         initial: PopoverPlacement,
         placementMode: PopoverPlacementMode,
@@ -336,9 +336,9 @@ public extension View {
         contentHeight: CGFloat
     ) -> PopoverPlacement {
         guard let window = UIApplication.shared.keyWindow else { return initial }
-        
+
         let screenBounds = window.bounds
-        
+
         func fits(_ placement: PopoverPlacement) -> Bool {
             let frame = protectedTapFrameForPlacement(
                 triggerFrame: triggerFrame,
@@ -349,7 +349,7 @@ public extension View {
             )
             return screenBounds.contains(frame)
         }
-        
+
         return PopoverPlacement.resolved(initial: initial, mode: placementMode, fits: fits)
     }
 }

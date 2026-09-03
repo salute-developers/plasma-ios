@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 560" width="1160" height="560" role="img" aria-label="Граф зависимостей пакетов plasma-ios">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8780"/>
+    </marker>
+    <marker id="arv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b7ec8"/>
+    </marker>
+    <style>
+      .t  { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .h  { font-size: 15px; font-weight: 700; fill: #2b2a28; }
+      .ph { font-size: 13px; font-weight: 700; fill: #55524c; letter-spacing: .04em; text-transform: uppercase; }
+      .s  { font-size: 11.5px; fill: #6b6862; }
+      .n  { font-size: 11.5px; fill: #78756e; }
+      .box{ stroke-width: 1.4; }
+      .ln { stroke: #8a8780; stroke-width: 1.6; fill: none; }
+      .lv { stroke: #8b7ec8; stroke-width: 1.6; fill: none; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1160" height="560" fill="#f7f7f5"/>
+
+  <!-- ============ LEFT PANEL: runtime ============ -->
+  <rect x="24" y="24" width="700" height="512" rx="14" fill="#ffffff" stroke="#e6e4df" stroke-width="1.4"/>
+  <text class="t ph" x="48" y="56">Рантайм — кто от кого зависит</text>
+
+  <!-- app -->
+  <rect class="box" x="48" y="76" width="652" height="60" rx="10" fill="#edf2fb" stroke="#c3d4f2"/>
+  <text class="t h" x="374" y="103" text-anchor="middle">Приложение — ваше или SDDSDemoApp</text>
+  <text class="t s" x="374" y="121" text-anchor="middle">import SDDSComponents + import &lt;Theme&gt;</text>
+  <path class="ln" d="M 374 136 L 374 164" marker-end="url(#ar)"/>
+
+  <!-- themes / integrationcore -->
+  <rect class="box" x="48" y="168" width="316" height="88" rx="10" fill="#e9f7ef" stroke="#a9dcc0"/>
+  <text class="t h" x="206" y="194" text-anchor="middle">Themes/*Theme</text>
+  <text class="t s" x="206" y="213" text-anchor="middle">SDDSServTheme · PlasmaB2CTheme</text>
+  <text class="t s" x="206" y="229" text-anchor="middle">PlasmaHomeDSTheme</text>
+  <text class="t s" x="206" y="246" text-anchor="middle">сгенерированы dsbuilder, коммитятся</text>
+
+  <rect class="box" x="384" y="168" width="316" height="88" rx="10" fill="#f2f2ef" stroke="#d6d3cd"/>
+  <text class="t h" x="542" y="194" text-anchor="middle">IntegrationCore</text>
+  <text class="t s" x="542" y="213" text-anchor="middle">SandboxCore · SandboxSwiftUI</text>
+  <text class="t s" x="542" y="229" text-anchor="middle">SandboxDemoTheme</text>
+  <text class="t s" x="542" y="246" text-anchor="middle">нужен только песочнице</text>
+
+  <path class="ln" d="M 206 256 L 206 288" marker-end="url(#ar)"/>
+  <path class="ln" d="M 542 256 L 542 288" marker-end="url(#ar)"/>
+
+  <!-- components -->
+  <rect class="box" x="48" y="292" width="652" height="58" rx="10" fill="#fceee9" stroke="#edbba9"/>
+  <text class="t h" x="374" y="317" text-anchor="middle">SDDSComponents</text>
+  <text class="t s" x="374" y="335" text-anchor="middle">SwiftUI + UIKit · *Appearance-модель</text>
+  <path class="ln" d="M 374 350 L 374 378" marker-end="url(#ar)"/>
+
+  <!-- foundation -->
+  <rect class="box" x="48" y="382" width="154" height="66" rx="10" fill="#f4f4f2" stroke="#d8d6d0"/>
+  <text class="t h" x="125" y="408" text-anchor="middle">SDDSThemeCore</text>
+  <text class="t s" x="125" y="427" text-anchor="middle">типы токенов</text>
+
+  <rect class="box" x="214" y="382" width="154" height="66" rx="10" fill="#f4f4f2" stroke="#d8d6d0"/>
+  <text class="t h" x="291" y="408" text-anchor="middle">SDDSIcons</text>
+  <text class="t s" x="291" y="427" text-anchor="middle">swiftgen-ассеты</text>
+
+  <rect class="box" x="380" y="382" width="154" height="66" rx="10" fill="#f4f4f2" stroke="#d8d6d0"/>
+  <text class="t h" x="457" y="408" text-anchor="middle">InputMask</text>
+  <text class="t s" x="457" y="427" text-anchor="middle">Vendor/, submodule</text>
+
+  <rect class="box" x="546" y="382" width="154" height="66" rx="10" fill="#f4f4f2" stroke="#d8d6d0" stroke-dasharray="4 3"/>
+  <text class="t h" x="623" y="408" text-anchor="middle">SDDSApiInfo</text>
+  <text class="t s" x="623" y="427" text-anchor="middle">макросы, build-only</text>
+
+  <text class="t n" x="48" y="478">Токены темы (Tokens/, Fonts/, Theme.swift) зависят только от SDDSThemeCore;</text>
+  <text class="t n" x="48" y="496">слой appearance-вариаций тянет SDDSComponents и SDDSIcons.</text>
+  <text class="t n" x="48" y="518">SDDSApiInfo живёт только на сборке — из .xcframework его импорт вырезается.</text>
+
+  <!-- ============ RIGHT PANEL: toolchain ============ -->
+  <rect x="748" y="24" width="388" height="512" rx="14" fill="#ffffff" stroke="#e6e4df" stroke-width="1.4"/>
+  <text class="t ph" x="772" y="56">Тулчейн — откуда берутся темы</text>
+
+  <rect class="box" x="772" y="76" width="164" height="76" rx="10" fill="#efeafb" stroke="#c9bcf0"/>
+  <text class="t h" x="854" y="101" text-anchor="middle">.sdds/</text>
+  <text class="t s" x="854" y="119" text-anchor="middle">токены и палитра</text>
+  <text class="t s" x="854" y="136" text-anchor="middle">scripts/fetch_sdds.sh</text>
+
+  <rect class="box" x="948" y="76" width="164" height="76" rx="10" fill="#efeafb" stroke="#c9bcf0"/>
+  <text class="t h" x="1030" y="101" text-anchor="middle">ios-api-meta.json</text>
+  <text class="t s" x="1030" y="119" text-anchor="middle">слепок *Appearance</text>
+  <text class="t s" x="1030" y="136" text-anchor="middle">generate_api_meta.sh</text>
+
+  <path class="lv" d="M 854 152 L 854 188" marker-end="url(#arv)"/>
+  <path class="lv" d="M 1030 152 L 1030 188" marker-end="url(#arv)"/>
+
+  <rect class="box" x="772" y="192" width="340" height="60" rx="10" fill="#efeafb" stroke="#c9bcf0"/>
+  <text class="t h" x="942" y="217" text-anchor="middle">dsbuilder themes</text>
+  <text class="t s" x="942" y="236" text-anchor="middle">DesignSystemBuilder/build_cli.sh</text>
+  <path class="lv" d="M 942 252 L 942 288" marker-end="url(#arv)"/>
+
+  <rect class="box" x="772" y="292" width="340" height="60" rx="10" fill="#e9f7ef" stroke="#a9dcc0"/>
+  <text class="t h" x="942" y="317" text-anchor="middle">Themes/&lt;Name&gt;Theme/*.swift</text>
+  <text class="t s" x="942" y="336" text-anchor="middle">генерируются, коммитятся, руками не правим</text>
+  <path class="lv" d="M 942 352 L 942 388" marker-end="url(#arv)"/>
+
+  <rect class="box" x="772" y="392" width="340" height="60" rx="10" fill="#f4f4f2" stroke="#d8d6d0"/>
+  <text class="t h" x="942" y="417" text-anchor="middle">scripts/build_themes.rb</text>
+  <text class="t s" x="942" y="436" text-anchor="middle">→ Themes/build/&lt;Name&gt;Theme.xcframework</text>
+
+  <text class="t n" x="772" y="482">ios-api-meta.json снимается из SDDSComponents</text>
+  <text class="t n" x="772" y="500">тулом Tools/SDDSApiInfoGenerator, .sdds/ —</text>
+  <text class="t n" x="772" y="518">внешним Kotlin/Native CLI того же имени dsbuilder.</text>
+</svg>

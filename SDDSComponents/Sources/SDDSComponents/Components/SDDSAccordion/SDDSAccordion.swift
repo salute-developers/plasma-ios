@@ -87,7 +87,7 @@ public struct SDDSAccordion: View {
     private let _appearance: AccordionAppearance?
     private let items: [AccordionData]
     private let showDividers: Bool
-    
+
     public init(
         items: [AccordionData],
         showDividers: Bool = false,
@@ -97,7 +97,7 @@ public struct SDDSAccordion: View {
         self.showDividers = showDividers
         self._appearance = appearance
     }
-    
+
     public var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack(spacing: 0) {
@@ -117,7 +117,7 @@ public struct SDDSAccordion: View {
             }
         }
     }
-    
+
     var appearance: AccordionAppearance {
         _appearance ?? environmentAppearance
     }

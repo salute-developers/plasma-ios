@@ -7,11 +7,11 @@ import SandboxSwiftUI
 struct ListView: View {
     @ObservedObject private var viewModel: ListViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: ListViewModel = ListViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         VStack(spacing: 0) {
             SDDSList(
@@ -57,7 +57,7 @@ struct ListView: View {
                 }
             }
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-            
+
         }
     }
 
@@ -75,4 +75,4 @@ struct ListView: View {
 
 #Preview {
     ListView()
-} 
+}

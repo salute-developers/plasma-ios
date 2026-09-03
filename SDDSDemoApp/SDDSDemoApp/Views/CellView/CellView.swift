@@ -8,11 +8,11 @@ import SandboxSwiftUI
 struct CellView: View {
     @ObservedObject private var viewModel: CellViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: CellViewModel = CellViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -30,9 +30,9 @@ struct CellView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
     }
-    
+
     private var cell: some View {
         SDDSCell(
             appearance: viewModel.appearance,
@@ -47,11 +47,11 @@ struct CellView: View {
         )
         .id(cellRecreationID)
     }
-    
+
     private var variations: some View {
         VariationsView(viewModel: viewModel)
     }
-    
+
     private var contentLeft: some View {
         HStack {
             Text("Content Left")
@@ -67,7 +67,7 @@ struct CellView: View {
             }
         }
     }
-    
+
     private var contentCenter: some View {
         HStack {
             Text("Content Center")
@@ -87,7 +87,7 @@ struct CellView: View {
             }
         }
     }
-    
+
     private var contentRight: some View {
         HStack {
             Text("Content Right")
@@ -103,11 +103,11 @@ struct CellView: View {
             }
         }
     }
-    
+
     private var hasDisclosure: some View {
         Toggle("Disclosure", isOn: $viewModel.disclosureEnabled)
     }
-    
+
     private var disclosureText: some View {
         HStack {
             Text("Disclosure text")
@@ -115,7 +115,7 @@ struct CellView: View {
             TextField("Disclosure text", text: $viewModel.disclosureText)
         }
     }
-    
+
     private var alignment: some View {
         HStack {
             Text("Alignment")
@@ -131,15 +131,15 @@ struct CellView: View {
             }
         }
     }
-    
+
     private var leftContent: some View {
         addContent(type: viewModel.leftContentType)
     }
-    
+
     private var rightContent: some View {
         addContent(type: viewModel.rightContentType)
     }
-    
+
     private var cellRecreationID: String {
         [
             viewModel.theme.rawValue,
@@ -159,7 +159,7 @@ struct CellView: View {
             String(describing: viewModel.state)
         ].joined(separator: "|")
     }
-    
+
     @ViewBuilder
     private func addContent(type: CellContent) -> some View {
         switch type {

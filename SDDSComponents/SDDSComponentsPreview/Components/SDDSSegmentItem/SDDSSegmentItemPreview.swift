@@ -17,7 +17,7 @@ struct SDDSSegmentItemsPreview: PreviewProvider {
             )
         )
     }
-    
+
     static var previews: some View {
         SDDSSegmentItem(
             title: "Value",

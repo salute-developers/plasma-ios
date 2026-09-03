@@ -485,16 +485,29 @@ struct StandaloneBundle {
         public class Theme {
             static let name = "\(themeName)"
 
-            public class func initialize(onComplete: @escaping () -> Void = {}) {
+            /// Синхронная инициализация темы: шрифты вшиты в исходники, сеть не нужна.
+            public class func initialize() {
+                initialize(tenant: .none)
+            }
+
+            public class func initialize(tenant: Tenant) {
+                registerTenants()
+                ThemeTenantRegistry.shared.setActive(tenant, for: "\(registryKey)")\(defaultValuesCall)
+                FontsService.shared.register(embeddedFonts: FontsManifest.embedded)
+            }
+
+            /// Совместимость со старым асинхронным API. Инициализация уже синхронная,
+            /// поэтому колбэк вызывается сразу — на следующем тике, чтобы не менять
+            /// порядок выполнения у вызывающего кода.
+            @available(*, deprecated, message: "Use initialize() — theme initialization is synchronous")
+            public class func initialize(onComplete: @escaping () -> Void) {
                 initialize(tenant: .none, onComplete: onComplete)
             }
 
-            public class func initialize(tenant: Tenant, onComplete: @escaping () -> Void = {}) {
-                registerTenants()
-                ThemeTenantRegistry.shared.setActive(tenant, for: "\(registryKey)")\(defaultValuesCall)
-                FontsService.shared.initialize(fonts: FontsManifest.fonts) { _ in
-                    onComplete()
-                }
+            @available(*, deprecated, message: "Use initialize(tenant:) — theme initialization is synchronous")
+            public class func initialize(tenant: Tenant, onComplete: @escaping () -> Void) {
+                initialize(tenant: tenant)
+                DispatchQueue.main.async { onComplete() }
             }
 
             public class func subtheme(_ subtheme: Subtheme) -> SubthemeData {

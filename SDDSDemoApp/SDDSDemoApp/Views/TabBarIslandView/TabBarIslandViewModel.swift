@@ -22,7 +22,7 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
     }
     @Published private(set) var itemCount: Int = TabBarViewModel.defaultCount
     @Published var customWidthEnabled = false
-    
+
     var tabBarItems: [TabBarItemData] {
         let tabBarItemAppearance = self.appearance.tabBarItemAppearance
         var result = (0..<itemCount).map { index in
@@ -55,7 +55,7 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
         }
         return result
     }
-    
+
     @ViewBuilder
     private var assistant: some View {
         VStack(spacing: 0) {
@@ -67,21 +67,21 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
             Spacer()
         }
     }
-    
+
     @ViewBuilder
     private var icon: some View {
         Asset.starOutline36.image
             .resizable()
             .renderingMode(.template)
     }
-    
+
     @ViewBuilder
     private var selectedIcon: some View {
         Asset.starFill36.image
             .resizable()
             .renderingMode(.template)
     }
-    
+
     private var extraView: AnyView? {
         switch extra {
         case .none:
@@ -92,7 +92,7 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
             AnyView(indicator)
         }
     }
-    
+
     private var counter: SDDSCounter {
         .init(
             text: "12",
@@ -102,11 +102,11 @@ final class TabBarIslandViewModel: ComponentViewModel<TabBarIslandVariationProvi
             isSelected: false
         )
     }
-    
+
     private var indicator: SDDSIndicator {
         .init()
     }
-    
+
     init(
         theme: Theme = .sdddsServTheme,
         uiState: TabBarIslandUiState = .init(),

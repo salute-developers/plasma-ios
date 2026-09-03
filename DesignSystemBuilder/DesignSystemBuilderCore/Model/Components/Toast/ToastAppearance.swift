@@ -24,4 +24,4 @@ struct ToastAppearance: CodeGenerationAppearance {
         self.contentEndColor = ColorTokenContextBuilder(props.contentEndColor).context
         self.textTypography = TypographyTokenContextBuilder(string: props.textStyle?.value, id: id, component: component).context
     }
-} 
+}

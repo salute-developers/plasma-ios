@@ -65,7 +65,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
     public let heightMode: TextAreaHeightMode
     public let layout: TextAreaLayout
     public let accessibility: TextAreaAccessibility
-    
+
     let actionContent: Action<ActionContent>
 
     @Environment(\.colorScheme) private var colorScheme
@@ -78,7 +78,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
     private let _appearance: TextAreaAppearance?
 
     private let debugConfiguration: TextFieldDebugConfiguration
-    
+
     public init(
         value: Binding<TextAreaValue>,
         title: String = "",
@@ -103,7 +103,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             _text = State(wrappedValue: text)
         }
         _value = value
-    
+
         self.caption = caption
         self.counter = counter
         self.disabled = disabled
@@ -125,7 +125,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             if showOuterTitleIndicator || showInnerTitleIndicatorForClearLayout {
                 indicatorWithTrailingPadding
             }
-            
+
             VStack(alignment: .leading, spacing: 0) {
                 if appearance.labelPlacement == .outer {
                     titleLabel
@@ -151,7 +151,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
                     }
                 }
             }
-            
+
             if showInnerTitleRightIndicatorForClearLayout {
                 indicatorWithLeadingPadding
             }
@@ -201,7 +201,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
                 .padding(.leading, appearance.size.optionalPadding)
         }
     }
-    
+
     @ViewBuilder
     private var innerOptionalTitleView: some View {
         if required {
@@ -222,7 +222,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             .padding(.trailing, size.indicatorOffset.x)
             .padding(.top, size.indicatorOffset.y)
     }
-    
+
     @ViewBuilder
     private var indicatorWithLeadingPadding: some View {
         indicatorView
@@ -242,7 +242,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
                     .applyIf(!dynamicHeight) {
                         $0.scrollbar(scrollBarData: scrollBarData, isScrolling: $isScrolling)
                     }
-                                
+
                 if !shouldShowInnerTitle {
                     iconActionView
                         .opacity(0)
@@ -266,13 +266,13 @@ public struct SDDSTextArea<ActionContent: View>: View {
                     .frame(height: calculatedChipGroupHeight)
                     .padding(.trailing, iconActionTrailingPadding)
                     .padding(.bottom, chipsBottomPadding)
-                    
+
                     textEditor(id: textAreaMultipleId)
                         .frame(height: textHeight)
                         .padding(.leading, boxLeadingPadding)
                 }
                 .padding(.bottom, size.boxPaddingBottom)
-                
+
                 iconActionView
                     .opacity(0)
                     .padding(.top, size.boxPaddingTop)
@@ -283,7 +283,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             }
         }
     }
-    
+
     private var chipsBottomPadding: CGFloat {
         let chipAppearance = appearance.chipGroupAppearance.chipAppearance
         let result = appearance.chipGroupAppearance.size.lineSpacing + (chipAppearance.size.height - chipTypography.lineHeight) / 2.0
@@ -300,7 +300,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             readOnly: readOnly,
             placeholderContent: { placeholderView },
             textTypography: textTypography,
-            appearance: appearance, 
+            appearance: appearance,
             showsVerticalScrollIndicator: false,
             trailingContentPadding: trailingContentPadding,
             dynamicHeight: true,
@@ -332,7 +332,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             }
         }
     }
-    
+
     private func textEditorId(with hashable: (any Hashable)? = nil) -> Int {
         var hasher = Hasher()
         hasher.combine(readOnly)
@@ -342,7 +342,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         }
         return hasher.finalize()
     }
-    
+
     @ViewBuilder
     private var placeholderView: some View {
         if appearance.labelPlacement == .inner && !displayChips {
@@ -377,7 +377,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var innerOrNonePlacementOptionalTitleView: some View {
         if required {
@@ -389,7 +389,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
                 .padding(.leading, appearance.size.optionalPadding)
         }
     }
-    
+
     @ViewBuilder
     private var fieldView: some View {
         ZStack(alignment: .top) {
@@ -403,15 +403,15 @@ public struct SDDSTextArea<ActionContent: View>: View {
                         if shouldShowInnerTitle {
                             innerTitleView
                         }
-                        
+
                         Spacer()
                             .frame(maxWidth: .infinity)
                     }
-                    
+
                     Spacer()
                         .frame(maxWidth: .infinity)
                 }
-                
+
                 iconActionView
                     .padding(.leading, size.endContentPadding)
                     .padding(.trailing, boxTrailingPadding)
@@ -419,7 +419,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             .frame(height: appearance.size.fieldHeight, debug: debugConfiguration.fieldHeight)
             .padding(.leading, boxLeadingPadding, debug: debugConfiguration.boxLeadingPadding)
             .padding(.trailing, fieldTrailingPadding, debug: debugConfiguration.boxTrailingPadding)
-            
+
             VStack(alignment: .leading, spacing: 0) {
                 VStack(alignment: .leading, spacing: 0) {
                     if shouldShowInnerTitle {
@@ -428,11 +428,11 @@ public struct SDDSTextArea<ActionContent: View>: View {
                             .padding(.top, appearance.size.boxPaddingTop)
                             .padding(.bottom, appearance.size.titleInnerPadding)
                     }
-                    
+
                     contentView
                 }
                 .frame(height: totalFieldHeight)
-                
+
                 if layout == .default {
                     HStack(alignment: .bottom) {
                         captionLabel
@@ -442,21 +442,21 @@ public struct SDDSTextArea<ActionContent: View>: View {
                     .padding(.bottom, appearance.size.captionBottomPadding)
                     .padding(.trailing, captionTrailingPadding)
                 }
-                
+
                 if layout == .clear {
                     bottomLineView
                 }
             }
             .padding(.leading, boxLeadingPadding, debug: debugConfiguration.boxLeadingPadding)
             .padding(.trailing, fieldTrailingPadding, debug: debugConfiguration.boxTrailingPadding)
-            
+
             if shouldShowEdgeIndicatorForDefaultLayout || shouldShowIndicatorForNoneLabelDefaultLayout {
                 indicatorOverlayView
             }
         }
         .frame(height: totalHeight, debug: debugConfiguration.fieldHeight)
     }
-    
+
     @ViewBuilder
     private var backgroundView: some View {
         RoundedRectangle(cornerRadius: appearance.size.cornerRadius)
@@ -467,7 +467,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             )
             .frame(height: totalHeight, debug: debugConfiguration.fieldView)
     }
-    
+
     private var totalFieldHeight: CGFloat {
         var result = CGFloat(0)
         if shouldLayoutInnerTitle {
@@ -481,14 +481,14 @@ public struct SDDSTextArea<ActionContent: View>: View {
         result += totalTextHeight
         return result
     }
-    
+
     private var innerTitlePadding: CGFloat {
         var result = CGFloat(0)
         result += totalInnerTitlePadding
         result += innerTitleTypography.lineHeight
         return result
     }
-    
+
     private var totalHeight: CGFloat {
         var result = totalFieldHeight
         if layout == .default {
@@ -498,17 +498,17 @@ public struct SDDSTextArea<ActionContent: View>: View {
         }
         return max(result, appearance.size.fieldHeight)
     }
-    
+
     private var totalTextHeight: CGFloat {
         var result = CGFloat(0)
-        
+
         switch heightMode {
         case .fixed(let value):
             result += value
         case .dynamic:
             result += textHeight
         }
-        
+
         if displayChips && dynamicHeight {
             result += calculatedChipGroupHeight
         } else {
@@ -528,7 +528,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
                 .foregroundColor(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
                 .multilineTextAlignment(appearance.innerTitleTextAlignment)
                 .frame(height: innerTitleTypography.lineHeight)
-        
+
             if !optionalTitle.isEmpty {
                 innerOptionalTitleView
             }
@@ -537,18 +537,18 @@ public struct SDDSTextArea<ActionContent: View>: View {
         .padding(.top, appearance.size.boxPaddingTop)
         .padding(.bottom, appearance.size.titleInnerPadding)
     }
-    
+
     private var endContentColor: Color {
         if readOnly {
             return appearance.endContentColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.endContentColor.color(for: colorScheme, subtheme: subtheme)
         }
         return appearance.endContentColor.color(for: colorScheme, subtheme: subtheme)
     }
-    
+
     private var counterColor: Color {
         return appearance.counterColor.color(for: colorScheme, subtheme: subtheme)
     }
-    
+
     private var backgroundColor: Color {
         if readOnly {
             return appearance.backgroundColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
@@ -558,7 +558,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         }
         return appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
     }
-    
+
     private var captionColor: Color {
         if readOnly {
             return appearance.captionColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.captionColor.color(for: colorScheme, subtheme: subtheme)
@@ -568,7 +568,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         }
         return appearance.captionColor.color(for: colorScheme, subtheme: subtheme)
     }
-    
+
     private var placeholderColor: Color {
         if readOnly {
             return appearance.placeholderColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.placeholderColor.color(for: colorScheme, subtheme: subtheme)
@@ -578,7 +578,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         }
         return appearance.placeholderColor.color(for: colorScheme, subtheme: subtheme)
     }
-    
+
     private var textColor: Color {
         if readOnly {
             return appearance.textColorReadOnly?.color(for: colorScheme, subtheme: subtheme) ?? appearance.textColor.color(for: colorScheme, subtheme: subtheme)
@@ -588,7 +588,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         }
         return appearance.textColor.color(for: colorScheme, subtheme: subtheme)
     }
-    
+
     private var bottomLineColor: Color {
         if readOnly {
             return appearance.lineColorReadOnly.color(for: colorScheme, subtheme: subtheme)
@@ -618,7 +618,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             .padding(.top, size.captionTopPadding, debug: debugConfiguration.captionTopPadding)
             .applyIf(displayChips) { $0.padding(.leading, size.chipsPadding) }
     }
-    
+
     @ViewBuilder
     private var counterLabel: some View {
         Text(counter)
@@ -654,7 +654,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
 
         .frame(height: totalHeight, debug: debugConfiguration.fieldHeight)
     }
-    
+
     @ViewBuilder
     private var bottomLineView: some View {
         if divider {
@@ -667,35 +667,35 @@ public struct SDDSTextArea<ActionContent: View>: View {
     }
 
     // MARK: - Computed Properties for Conditions
-    
+
     private var size: TextAreaSizeConfiguration {
         appearance.size
     }
-    
+
     private var indicatorSize: CGSize {
         return appearance.size.indicatorSize
     }
-    
+
     private var iconActionViewWidth: CGFloat {
         min(appearance.size.iconActionSize.width, appearance.size.fieldHeight)
     }
-    
+
     private var iconActionViewHeight: CGFloat {
         min(appearance.size.iconActionSize.height, appearance.size.fieldHeight)
     }
-    
+
     private var captionTrailingPadding: CGFloat {
         boxTrailingPadding
     }
-    
+
     private var fieldTrailingPadding: CGFloat {
         0
     }
-    
+
     private var totalInnerTitlePadding: CGFloat {
         appearance.size.titleInnerPadding + appearance.size.boxPaddingTop
     }
-    
+
     private var iconActionTrailingPadding: CGFloat {
         if !actionContent.isEmpty {
             return iconActionViewWidth + appearance.size.iconActionPadding
@@ -708,7 +708,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         let result = shouldLayoutInnerTitle && (!text.isEmpty || isFocused) && !(title.isEmpty && required)
         return result
     }
-    
+
     private var shouldLayoutInnerTitle: Bool {
         appearance.labelPlacement == .inner &&
         !displayChips &&
@@ -720,7 +720,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         required &&
         layout == .default
     }
-    
+
     private var shouldShowIndicatorForNoneLabelDefaultLayout: Bool {
         appearance.labelPlacement == .none &&
         required &&
@@ -744,29 +744,29 @@ public struct SDDSTextArea<ActionContent: View>: View {
         appearance.requiredPlacement == .right &&
         layout == .clear
     }
-    
+
     private var showInnerTitleIndicatorForClearLayout: Bool {
         (appearance.labelPlacement == .inner || appearance.labelPlacement == .none) &&
         required &&
         appearance.requiredPlacement == .left &&
         layout == .clear
     }
-    
+
     private var showInnerTitleRightIndicatorForClearLayout: Bool {
         (appearance.labelPlacement == .inner || appearance.labelPlacement == .none) &&
         required &&
         appearance.requiredPlacement == .right &&
         layout == .clear
     }
-    
+
     private var required: Bool {
         appearance.requiredPlacement != .none
     }
-    
+
     private var trailingContentPadding: CGFloat {
         (!actionContent.isEmpty ? (iconActionTrailingPadding + size.endContentPadding) : 0)
     }
-    
+
     private var shouldCenterText: Bool {
         return appearance.labelPlacement == .outer || appearance.labelPlacement == .none || !shouldShowInnerTitle
     }
@@ -779,7 +779,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             return true
         }
     }
-    
+
     private var calculatedChipGroupHeight: CGFloat {
         return chipGroupContentHeight
     }
@@ -793,7 +793,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
             return chipAppearance.size.cornerRadius
         }
     }
-    
+
     private var dynamicHeight: Bool {
         switch heightMode {
         case .dynamic:
@@ -827,7 +827,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         }
         return typography
     }
-    
+
     private var counterTypography: TypographyToken {
         guard let typography = appearance.counterTypography.typography(with: appearance.size) else {
             fatalError("Undefined Counter Typography for appearance.size \(appearance.size).")
@@ -841,7 +841,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
         }
         return typography
     }
-    
+
     private var chipTypography: TypographyToken {
         let chipAppearance = appearance.chipGroupAppearance.chipAppearance
         guard let typography = chipAppearance.titleTypography.typography(with: chipAppearance.size) else {
@@ -854,18 +854,18 @@ public struct SDDSTextArea<ActionContent: View>: View {
         if displayChips {
             return appearance.size.chipsPadding
         }
-        
+
         return layout == .clear ? 0 : appearance.size.boxLeadingPadding
     }
-    
+
     private var boxTrailingPadding: CGFloat {
         layout == .clear ? 0 : appearance.size.boxTrailingPadding
     }
-    
+
     private var appearance: TextAreaAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var scrollBarData: ScrollBarData {
         .init(
             offsetY: scrollBarOffsetY,
@@ -879,11 +879,11 @@ public struct SDDSTextArea<ActionContent: View>: View {
             contentInsetTop: chipGroupContentInsetTop
         )
     }
-    
+
     private var scrollBarOffsetY: CGFloat {
         return shouldLayoutInnerTitle ? innerTitlePadding : 0
     }
-    
+
     private var chipGroupContentInsetTop: CGFloat {
         dynamicHeight ? 0 : appearance.size.chipsPadding
     }
@@ -892,7 +892,7 @@ public struct SDDSTextArea<ActionContent: View>: View {
 
 public struct Action<Content: View>: View {
     let content: Content
-    
+
     public init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
@@ -900,6 +900,6 @@ public struct Action<Content: View>: View {
     public var body: some View {
         content
     }
-    
+
     var isEmpty: Bool { Content.self == EmptyView.self }
 }

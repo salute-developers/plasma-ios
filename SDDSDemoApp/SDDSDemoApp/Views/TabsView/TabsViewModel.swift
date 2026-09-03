@@ -6,18 +6,18 @@ import SDDSThemeCore
 
 final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
     typealias Appearance = TabsAppearance
-    
+
     enum TabItemType {
         case `default`
         case header
         case icon
     }
-    
+
     @Published var tabsType: SDDSTabsType = .tabsDefault {
         didSet {
             self.variationProvider.tabsType = tabsType
             self.selectVariation(variations.first)
-            
+
             if tabsType == .iconTabs {
                 tabItemType = .icon
             } else {
@@ -29,11 +29,11 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
                     tabItemType = .default
                 }
             }
-            
+
             selectedId = "tab1"
         }
     }
-    
+
     @Published var tabItemType: TabItemType = .default
     @Published var selectedId: String = "tab1"
     @Published var numberOfTabs: Int = 3
@@ -42,15 +42,15 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
     @Published var clipModeType: ClipModeType = .none
     @Published var stretch: Bool = true
     @Published var hasDivider: Bool = true
-    
+
     @Published var label: String = "Label"
-    @Published var value: String? = nil
+    @Published var value: String?
     @Published var hasValue: Bool = false {
         didSet {
             value = hasValue ? "Value" : nil
         }
     }
-    @Published var counterValue: Int? = nil
+    @Published var counterValue: Int?
     @Published var hasCounter: Bool = false {
         didSet {
             counterValue = hasCounter ? 5 : nil
@@ -60,11 +60,11 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
     @Published var hasEndContentIcon: Bool = false
     @Published var hasAction: Bool = false
     @Published var isDisabled: Bool = false
-    
+
     var counterName: String {
         tabsType != .iconTabs ? "Counter" : "Extra"
     }
-    
+
     var viewIdentifier: String {
         [
             tabsType.rawValue,
@@ -83,13 +83,13 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
             "\(isDisabled)"
         ].joined(separator: "-")
     }
-    
+
     enum ClipModeType: String, CaseIterable {
         case none = "None"
         case showMore = "Show More"
         case scroll = "Scroll"
     }
-    
+
     var clipMode: TabsClipMode {
         switch clipModeType {
         case .none:
@@ -150,7 +150,7 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
             return .scroll
         }
     }
-    
+
     var tabsItemsIdentifier: String {
         [
             "\(numberOfTabs)",
@@ -168,11 +168,11 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
             variation?.name ?? ""
         ].joined(separator: "-")
     }
-    
+
     var tabsItems: [TabItem] {
         (1...numberOfTabs).map { index in
             let isSelected = selectedId == "tab\(index)"
-            
+
             if tabsType == .iconTabs {
                 let tabItem = SDDSTabItem(
                     label: "",
@@ -220,7 +220,7 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
             }
         }
     }
-    
+
     @ViewBuilder
     var contentRight: some View {
         if hasCounter {
@@ -231,7 +231,7 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
                 .renderingMode(.template)
         }
     }
-    
+
     var dropdownItems: [TabItem] {
         (numberOfTabs+1...numberOfTabs+3).map { index in
             let label = "Item \(index)"
@@ -252,7 +252,7 @@ final class TabsViewModel: ComponentViewModel<TabsVariationProvider> {
             return TabItem(id: "dropdown\(index)", tabItem: tabItem, label: label, isDisabled: false)
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: TabsUiState = .init()) {
         super.init(
             variationProvider: TabsVariationProvider(tabsType: uiState.tabsType, theme: theme),

@@ -14,7 +14,7 @@ final class GradientContextBuilderTests: XCTestCase {
         mockPaletteURL = GradientContextBuilderTests.fileURL(forResource: "palette", withExtension: "json")
         gradientJsonURL = GradientContextBuilderTests.fileURL(forResource: "ios_gradient", withExtension: "json")
         invalidGradinentJsonURL = GradientContextBuilderTests.fileURL(forResource: "ios_gradient_invalid", withExtension: "json")
-        
+
         let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
         scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
 
@@ -32,7 +32,7 @@ final class GradientContextBuilderTests: XCTestCase {
     func testBuildContext_ValidAlias_Success() {
         // given
         let jsonData = try! Data(contentsOf: gradientJsonURL)
-        
+
         // when
         let result = gradientContextBuilder.buildContext(from: jsonData)
 
@@ -43,7 +43,7 @@ final class GradientContextBuilderTests: XCTestCase {
                 XCTAssertNotNil(context["json"], "Context should contain 'json' key")
                 return
             }
-            
+
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: json)
                 let decoder = JSONDecoder()
@@ -61,14 +61,14 @@ final class GradientContextBuilderTests: XCTestCase {
     func testBuildContext_InvalidAlias_Failure() {
         // given
         let jsonData = try! Data(contentsOf: invalidGradinentJsonURL)
-        
+
         // when
         let result = gradientContextBuilder.buildContext(from: jsonData)
 
         // then
         XCTAssertTrue(result.isError)
     }
-    
+
     func testBuildContext_PopulateMissingColors() {
         // given
         let jsonData = """

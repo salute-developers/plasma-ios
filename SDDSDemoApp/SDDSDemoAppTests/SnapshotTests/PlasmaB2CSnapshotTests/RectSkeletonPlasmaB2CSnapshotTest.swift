@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class RectSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testRectSkeletonTestCasePlasmaB2C() async throws {
         let appearance = SkeletonAppearance(
@@ -24,7 +24,7 @@ final class RectSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             duration: 2000)
         try await runSnapshotTest(view: RectSkeletonTestCase(appearance: appearance))
     }
-    
+
     @MainActor
     func testRectSkeletonLighterPlasmaB2C() async throws {
         let appearance = SkeletonAppearance(

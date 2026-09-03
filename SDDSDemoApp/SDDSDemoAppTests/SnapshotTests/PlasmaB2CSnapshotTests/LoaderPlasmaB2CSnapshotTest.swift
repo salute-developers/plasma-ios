@@ -15,18 +15,18 @@ import UIKit
 import SwiftUI
 
 final class LoaderPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testLoaderCaseSpinnerPlasmaB2C() async throws {
         let appearance = LoaderAppearance(spinnerAppearance: Spinner.l.default.appearance)
-        
+
         try await runSnapshotTest(view: LoaderCaseSpinner(appearance: appearance))
     }
-    
+
     @MainActor
     func testLoaderCaseCircularProgressPlasmaB2C() async throws {
         let appearance = LoaderAppearance(circularProgressAppearance: CircularProgressBar.l.default.appearance)
-        
+
         try await runSnapshotTest(view: LoaderCaseCircularProgress(appearance: appearance))
     }
 }

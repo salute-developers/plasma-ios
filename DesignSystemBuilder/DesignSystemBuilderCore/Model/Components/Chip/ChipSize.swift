@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ChipSize: CodeGenerationSize {
     typealias Props = ChipProps
-    
+
     var height: String?
     var cornerRadius: String?
     var iconImageSize: String?
@@ -12,11 +12,11 @@ struct ChipSize: CodeGenerationSize {
     var contentEndPadding: String?
     var leadingInset: String?
     var trailingInset: String?
-    
+
     init(variation: ChipConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: ChipProps, id: String? = nil, nullify: Bool = false) {
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
         self.leadingInset = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
@@ -27,7 +27,7 @@ struct ChipSize: CodeGenerationSize {
         self.iconImageSize = SizeContextBuilder(x: props.contentStartSize?.value, y: props.contentStartSize?.value, style: .size, nullify: nullify).context
         self.buttonImageSize = SizeContextBuilder(x: props.contentEndSize?.value, y: props.contentEndSize?.value, style: .size, nullify: nullify).context
     }
-    
+
     init() {
         self.height = CGFloat.defaultContext
         self.cornerRadius = CGFloat.defaultContext

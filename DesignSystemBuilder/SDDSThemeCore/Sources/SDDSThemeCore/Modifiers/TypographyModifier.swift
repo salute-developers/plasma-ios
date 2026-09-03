@@ -6,7 +6,7 @@ import SwiftUI
 /// Параметр kerning применяется только на iOS 16 и выше.
 public struct TypographyModifier: ViewModifier {
     let token: TypographyToken
-    
+
     public func body(content: Content) -> some View {
         content
             .modifier(OS16TypographyModifier(token: token))
@@ -17,11 +17,11 @@ public struct TypographyModifier: ViewModifier {
 /// Для iOS 14, iOS 15 нет поддержки функций .fontWeight, .kerning, italic()
 struct OS16TypographyModifier: ViewModifier {
     let token: TypographyToken
-    
+
     init(token: TypographyToken) {
         self.token = token
     }
-    
+
     public func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
             content
@@ -38,7 +38,7 @@ struct OS16TypographyModifier: ViewModifier {
                 )
         }
     }
-    
+
     private var fontDescriptor: UIFontDescriptor {
         var result = UIFontDescriptor(name: token.fontName, size: token.size)
             .addingAttributes(

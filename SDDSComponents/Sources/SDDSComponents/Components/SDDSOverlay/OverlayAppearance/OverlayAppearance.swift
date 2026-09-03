@@ -7,7 +7,7 @@ public struct OverlayAppearance {
     public var backgroundColor: FillStyle
     public var blurRadius: CGFloat
     public var size: OverlaySizeConfiguration
-    
+
     public init(backgroundColor: FillStyle = .color(.clearColor), blurRadius: CGFloat = 0) {
         self.backgroundColor = backgroundColor
         self.blurRadius = blurRadius

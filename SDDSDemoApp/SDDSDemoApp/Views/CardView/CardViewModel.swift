@@ -17,7 +17,7 @@ final class CardViewModel: ComponentViewModel<CardVariationProvider> {
             self.selectVariation(variations.first)
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: CardUiState = .init()) {
         super.init(variationProvider: CardVariationProvider(theme: theme, cardType: uiState.cardType), theme: theme)
         apply(uiState: uiState)

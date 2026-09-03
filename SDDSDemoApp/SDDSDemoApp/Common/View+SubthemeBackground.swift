@@ -5,7 +5,7 @@ extension View {
     func backgroundColorForSubtheme(_ subtheme: Subtheme, colorScheme: ColorScheme) -> some View {
         self.background(backgroundColorForSubthemeColor(subtheme, colorScheme: colorScheme))
     }
-    
+
     func listRowBackgroundForSubtheme(_ subtheme: Subtheme, colorScheme: ColorScheme) -> some View {
         self.listRowBackground(backgroundColorForSubthemeColor(subtheme, colorScheme: colorScheme))
     }
@@ -23,4 +23,3 @@ func backgroundColorForSubthemeColor(_ subtheme: Subtheme, colorScheme: ColorSch
         return Color(.systemBackground)
     }
 }
-

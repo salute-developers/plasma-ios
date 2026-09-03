@@ -9,23 +9,23 @@ import SandboxSwiftUI
 struct NavigationBarView: View {
     @ObservedObject private var viewModel: NavigationBarViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: NavigationBarViewModel = NavigationBarViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         VStack(spacing: 0) {
             navigationBar
-            
+
             settingsList
         }
         .background(Color(uiColor: .systemGroupedBackground))
         .navigationTitle("Navigation Bar")
     }
-    
+
     // MARK: - Navigation Bar
-    
+
     private var navigationBar: some View {
         SDDSNavigationBar(
             type: viewModel.navigationBarType,
@@ -49,14 +49,14 @@ struct NavigationBarView: View {
         )
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
     }
-    
+
     private var contentView: some View {
         Text(viewModel.contentText)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 16)
             .background(backgroundColor)
     }
-    
+
     private var backgroundColor: Color {
         switch viewModel.navigationBarType {
         case .mainPage(let appearance):
@@ -65,7 +65,7 @@ struct NavigationBarView: View {
             return appearance.backgroundColor.color(for: colorScheme)
         }
     }
-    
+
     @ViewBuilder
     private var actionStartView: some View {
         if viewModel.hasActionLeft {
@@ -74,7 +74,7 @@ struct NavigationBarView: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private var actionEndView: some View {
         if viewModel.hasActionRight {
@@ -83,9 +83,9 @@ struct NavigationBarView: View {
             EmptyView()
         }
     }
-    
+
     // MARK: - Settings List
-    
+
     private var settingsList: some View {
         List {
             Section {
@@ -94,18 +94,18 @@ struct NavigationBarView: View {
                 textPlacementRow
                 textAlignRow
                 contentPlacementRow
-                
+
                 Toggle("Has Action Left", isOn: $viewModel.hasActionLeft)
                 Toggle("Has Action Right", isOn: $viewModel.hasActionRight)
-                
+
                 titleTextRow
                 contentTextRow
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
     }
-    
+
     @ViewBuilder
     private var variationsView: some View {
         switch viewModel.pageType {
@@ -117,9 +117,9 @@ struct NavigationBarView: View {
             }
         }
     }
-    
+
     // MARK: - Settings Rows
-    
+
     private var pageTypeRow: some View {
         HStack {
             Text("Page Type")
@@ -153,7 +153,7 @@ struct NavigationBarView: View {
             }
         }
     }
-    
+
     private var textAlignRow: some View {
         HStack {
             Text("Text Align")
@@ -173,7 +173,7 @@ struct NavigationBarView: View {
             }
         }
     }
-    
+
     private var contentPlacementRow: some View {
         HStack {
             Text("Content Placement")
@@ -190,7 +190,7 @@ struct NavigationBarView: View {
             }
         }
     }
-    
+
     private var titleTextRow: some View {
         HStack {
             Text("Title Text")
@@ -199,7 +199,7 @@ struct NavigationBarView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     private var contentTextRow: some View {
         HStack {
             Text("Content Text")
@@ -208,9 +208,9 @@ struct NavigationBarView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     // MARK: - Helper Methods
-    
+
     private func textPlacementText(_ placement: NavigationBarTextPlacement) -> String {
         switch placement {
         case .bottom:
@@ -219,7 +219,7 @@ struct NavigationBarView: View {
             return "Inline"
         }
     }
-    
+
     private func textAlignText(_ align: NavigationBarTextAlign) -> String {
         switch align {
         case .center:
@@ -230,7 +230,7 @@ struct NavigationBarView: View {
             return "Right"
         }
     }
-    
+
     private func contentPlacementText(_ placement: NavigationBarContentPlacement) -> String {
         switch placement {
         case .bottom:
@@ -239,7 +239,7 @@ struct NavigationBarView: View {
             return "Inline"
         }
     }
-    
+
     private func pageTypeText(_ type: NavigationBarPageType) -> String {
         switch type {
         case .mainPage:

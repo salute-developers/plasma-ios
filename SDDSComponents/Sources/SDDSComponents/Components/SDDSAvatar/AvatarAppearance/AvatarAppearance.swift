@@ -32,7 +32,7 @@ public struct AvatarAppearance: Hashable {
     public var badgeAppearance: BadgeAppearance?
     @ApiName("statusStyle")
     public var indicatorAppearance: IndicatorAppearance
-    
+
     public init(
         size: AvatarSizeConfiguration = ZeroAvatarSize(),
         textFillStyle: FillStyle = .color(.clearColor),
@@ -56,11 +56,11 @@ public struct AvatarAppearance: Hashable {
         self.badgeAppearance = badgeAppearance
         self.indicatorAppearance = indicatorAppearance
     }
-    
+
     public static func == (lhs: AvatarAppearance, rhs: AvatarAppearance) -> Bool {
         return lhs.id == rhs.id
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

@@ -2,7 +2,7 @@ import Foundation
 
 struct AccordionItemSize: CodeGenerationSize {
     typealias Props = AccordionItemProps
-    
+
     var shape: String?
     var paddingStart: String?
     var paddingEnd: String?
@@ -14,11 +14,11 @@ struct AccordionItemSize: CodeGenerationSize {
     var iconPadding: String?
     var iconPlacement: String?
     var iconRotation: String?
-    
+
     init(variation: AccordionItemConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: AccordionItemProps, id: String? = nil, nullify: Bool = false) {
         self.shape = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
@@ -32,7 +32,7 @@ struct AccordionItemSize: CodeGenerationSize {
         self.iconPlacement = AccordionItemPlacementContextBuilder(props.iconPlacement?.value, nullify: nullify).context
         self.iconRotation = CGFloatContextBuilder(props.iconRotation?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.shape = PathDrawerContextBuilder.defaultContext
         self.paddingStart = CGFloat.defaultContext
@@ -46,4 +46,4 @@ struct AccordionItemSize: CodeGenerationSize {
         self.iconPlacement = AccordionItemPlacementContextBuilder.defaultContext
         self.iconRotation = CGFloat.defaultContext
     }
-} 
+}

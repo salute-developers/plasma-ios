@@ -2,7 +2,7 @@ import Foundation
 
 struct EditableProps: MergeableConfiguration, Codable {
     typealias Props = EditableProps
-    
+
     var textColor: ColorKeyValue?
     var iconColor: ColorKeyValue?
     var cursorColor: ColorKeyValue?

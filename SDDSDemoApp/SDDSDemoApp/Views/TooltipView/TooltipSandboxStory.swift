@@ -9,7 +9,6 @@ enum TooltipStory: Story {
     static let title = "Tooltip"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: TooltipUiState, theme: Theme) -> some View {
         TooltipView(viewModel: TooltipViewModel(theme: theme, uiState: state))

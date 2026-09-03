@@ -19,7 +19,7 @@ public struct EditableAppearance {
     @ApiName("textStyle")
     public var textTypography: TypographyConfiguration
     public var size: EditableSizeConfiguration
-    
+
     public init(
         textColorDefault: ColorToken = .clearColor,
         textColorReadonly: ColorToken = .clearColor,

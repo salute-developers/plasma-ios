@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class TextSkeletonSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testTextSkeletonTestNoTextRandom() async throws {
         let appearance = SkeletonAppearance(
@@ -25,7 +25,7 @@ final class TextSkeletonSnapshotTest: SDDSServThemeTestCase {
         )
         try await runSnapshotTest(view: TextSkeletonTestNoTextRandom(appearance: appearance))
     }
-    
+
     @MainActor
     func testTextSkeletonTestFullWidth() async throws {
         let appearance = SkeletonAppearance(
@@ -35,7 +35,7 @@ final class TextSkeletonSnapshotTest: SDDSServThemeTestCase {
         )
         try await runSnapshotTest(view: TextSkeletonTestFullWidth(appearance: appearance))
     }
-    
+
     @MainActor
     func testTextSkeletonLigther() async throws {
         let appearance = SkeletonAppearance(

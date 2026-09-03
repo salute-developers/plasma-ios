@@ -3,7 +3,7 @@ import Foundation
 struct CellAppearance: CodeGenerationAppearance {
     typealias Variation = CellConfiguration.Variation
     typealias Props = CellProps
-    
+
     var labelTypography: String?
     var labelColor: String?
     var titleTypography: String?
@@ -19,16 +19,16 @@ struct CellAppearance: CodeGenerationAppearance {
     var radioboxAppearance: String?
     var switchAppearance: String?
     var disclosureImage: String?
-    
+
     init(variation: CellConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
-    
+
     init(props: CellProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return
         }
-        
+
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.labelColor = StatefulFillStyleContextBuilder(props.labelColor).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.titleStyle?.value, id: id, component: component).context
@@ -39,7 +39,7 @@ struct CellAppearance: CodeGenerationAppearance {
         self.disclosureTextColor = StatefulFillStyleContextBuilder(props.disclosureTextColor).context
         self.disclosureImageColor = StatefulFillStyleContextBuilder(props.disclosureIconColor).context
         self.disclosureImage = ImageContextBuilder(props.disclosureIcon?.value).context
-        
+
         if let avatarStyle = props.avatarStyle?.value {
             self.avatarAppearance = ComponentStyleContextBuilder(avatarStyle).context
         }

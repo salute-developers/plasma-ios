@@ -4,7 +4,7 @@ struct Arc: Shape {
     let startAngle: Angle
     let endAngle: Angle
     let clockwise: Bool
-    
+
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let center = CGPoint(x: rect.midX, y: rect.midY)

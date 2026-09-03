@@ -14,7 +14,7 @@ struct HierarchicalList<Data: Hashable, Content: View>: View {
     let horizontalIndent: CGFloat
     let verticalSpacing: CGFloat
     let content: (Data) -> Content
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: verticalSpacing) {
             ForEach(Array(data.enumerated()), id: \.element) { index, item in
@@ -33,7 +33,7 @@ struct HierarchicalList<Data: Hashable, Content: View>: View {
  */
 struct HierarchicalListItem<ItemView: View> {
     public let view: ItemView
-    
+
     public init(view: ItemView) {
         self.view = view
     }

@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class TextSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testTextSkeletonTestNoTextRandomPlasmaB2C() async throws {
         let appearance = SkeletonAppearance(
@@ -25,7 +25,7 @@ final class TextSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
         )
         try await runSnapshotTest(view: TextSkeletonTestNoTextRandom(appearance: appearance))
     }
-    
+
     @MainActor
     func testTextSkeletonTestFullWidthPlasmaB2C() async throws {
         let appearance = SkeletonAppearance(
@@ -35,7 +35,7 @@ final class TextSkeletonPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
         )
         try await runSnapshotTest(view: TextSkeletonTestFullWidth(appearance: appearance))
     }
-    
+
     @MainActor
     func testTextSkeletonLigtherPlasmaB2C() async throws {
         let appearance = SkeletonAppearance(

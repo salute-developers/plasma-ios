@@ -43,11 +43,11 @@ struct ScrollbarView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .scrollDisabled(true)
         .navigationTitle("Scrollbar")
     }
-    
+
     private var scrollbarData: ScrollBarData {
         .init(
             hasTrack: viewModel.hasTrack,
@@ -64,11 +64,11 @@ struct ScrollbarView: View {
             contentInsetTop: 0
         )
     }
-    
+
 }
 
 #Preview {
     NavigationView {
         ScrollbarView()
     }
-} 
+}

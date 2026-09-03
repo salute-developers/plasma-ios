@@ -29,7 +29,7 @@ public struct SkeletonAppearance {
     public var size: SkeletonSizeConfiguration
     public var duration: Double
     public var textTypography: TypographyConfiguration
-    
+
     public init(
         shape: PathDrawer = DefaultPathDrawer(),
         gradient: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
@@ -70,4 +70,4 @@ extension SkeletonAppearance: EnvironmentKey {
     public static var defaultValue: Self {
         EnvironmentValueProvider.shared.value(forKey: SkeletonAppearance.self, fallback: SkeletonAppearance())
     }
-} 
+}

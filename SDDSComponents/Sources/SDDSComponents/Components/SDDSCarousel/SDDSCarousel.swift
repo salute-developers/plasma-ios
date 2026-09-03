@@ -74,7 +74,6 @@ public struct SDDSCarousel<Content: View>: View {
         appearance.size.buttonsPlacement == .outer ? 1 : 2
     }
 
-
     public var body: some View {
         let placement = appearance.size.buttonsPlacement
         VStack(spacing: appearance.size.indicatorPadding) {

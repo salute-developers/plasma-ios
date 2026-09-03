@@ -8,10 +8,10 @@ import Foundation
  */
 public struct ToastAccessibility {
     public var textLabel: String
-    
+
     public init(
         textLabel: String = "Toast message"
     ) {
         self.textLabel = textLabel
     }
-} 
+}

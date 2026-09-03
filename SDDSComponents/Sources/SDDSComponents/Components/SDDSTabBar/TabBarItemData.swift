@@ -12,7 +12,7 @@ public struct TabBarItemData: Identifiable {
     public let appearance: TabBarItemAppearance?
     public let extra: AnyView?
     public let onTap: (() -> Void)?
-    
+
     public init(
         content: AnyView?,
         selectedContent: AnyView? = nil,

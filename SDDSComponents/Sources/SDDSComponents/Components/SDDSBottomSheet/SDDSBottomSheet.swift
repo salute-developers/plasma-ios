@@ -60,11 +60,11 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
     @Environment(\.subtheme) private var subtheme
     @Environment(\.bottomSheetExternalFooter) private var externalFooter
     private let _appearance: BottomSheetAppearance?
-    
+
     public let header: Header
     public let content: Content
     public let footer: Footer
-    
+
     public init(
         appearance: BottomSheetAppearance? = nil,
         @ViewBuilder header: () -> Header = { EmptyView() },
@@ -76,7 +76,7 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
         self.content = content()
         self.footer = footer()
     }
-    
+
     public var body: some View {
         VStack(spacing: 0) {
             header
@@ -101,15 +101,15 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
         .shape(pathDrawer: appearance.size.pathDrawer)
         .frame(maxHeight: .infinity, alignment: .top)
     }
-        
+
     var appearance: BottomSheetAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var shouldShowHandle: Bool {
         appearance.handlePlacement != .none
     }
-    
+
     private var handlePlacement: BottomSheetHandlePlacement {
         switch appearance.handlePlacement {
         case .auto:
@@ -118,11 +118,11 @@ public struct SDDSBottomSheet<Header: View, Content: View, Footer: View>: View {
             return appearance.handlePlacement
         }
     }
-    
+
     private var showHandleOutside: Bool {
         handlePlacement == .outer || handlePlacement == .auto
     }
-    
+
     private var contentOffset: CGFloat {
         shouldShowHandle && handlePlacement == .outer ? appearance.size.handleOffset + appearance.size.handleHeight : 0
     }

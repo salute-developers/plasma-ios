@@ -2,7 +2,7 @@ import Foundation
 
 struct TextAreaSize: CodeGenerationSize {
     typealias Props = TextFieldProps
-    
+
     var titleBottomPadding: String?
     var titleInnerPadding: String?
     var boxLeadingPadding: String?
@@ -27,11 +27,11 @@ struct TextAreaSize: CodeGenerationSize {
     let scrollBarPaddingTop: String?
     let scrollBarPaddingBottom: String?
     let scrollBarPaddingEnd: String?
-        
+
     init(variation: TextFieldConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: TextFieldProps, id: String? = nil, nullify: Bool = false) {
         self.titleBottomPadding = CGFloatContextBuilder(props.labelPadding?.value, nullify: nullify).context
         self.titleInnerPadding = CGFloatContextBuilder(props.labelPadding?.value, nullify: nullify).context
@@ -56,7 +56,7 @@ struct TextAreaSize: CodeGenerationSize {
         self.scrollBarPaddingBottom = CGFloatContextBuilder(props.scrollBarPaddingBottom?.value, nullify: nullify).context
         self.scrollBarPaddingEnd = CGFloatContextBuilder(props.scrollBarPaddingEnd?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.titleBottomPadding = CGFloat.defaultContext
         self.titleInnerPadding = CGFloat.defaultContext

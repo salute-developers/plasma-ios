@@ -17,7 +17,7 @@ public extension View {
         GeometryReader { geometry in
             ZStack(alignment: .bottom) {
                 self
-                
+
                 VStack(spacing: 0) {
                     SDDSTabBar(
                         items: items,

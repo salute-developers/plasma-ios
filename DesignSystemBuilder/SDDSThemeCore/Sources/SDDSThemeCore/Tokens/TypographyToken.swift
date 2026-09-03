@@ -13,25 +13,25 @@ public struct TypographyToken {
         case black
         case normal
     }
-    
+
     public enum ScreenSize: String, CaseIterable {
         case small
         case medium
         case large
     }
-    
+
     public enum Style: String {
         case normal
         case italic
     }
-    
+
     public let fontName: String
     public let weight: Weight
     public let style: Style
     public let size: CGFloat
     public let lineHeight: CGFloat
     public let kerning: CGFloat
-    
+
     public init(fontName: String, weight: Weight, style: Style, size: CGFloat, lineHeight: CGFloat, kerning: CGFloat) {
         self.fontName = fontName
         self.weight = weight
@@ -46,7 +46,7 @@ public struct AdaptiveTypographyToken {
     public let small: TypographyToken
     public let medium: TypographyToken
     public let large: TypographyToken
-    
+
     public init(small: TypographyToken, medium: TypographyToken, large: TypographyToken) {
         self.small = small
         self.medium = medium
@@ -73,7 +73,7 @@ extension AdaptiveTypographyToken: Hashable {
     }
 }
 
-func <(lhs: TypographyToken.ScreenSize, rhs: TypographyToken.ScreenSize) -> Bool {
+func < (lhs: TypographyToken.ScreenSize, rhs: TypographyToken.ScreenSize) -> Bool {
     switch (lhs, rhs) {
     case (.small, .medium), (.small, .large), (.medium, .large):
         return true

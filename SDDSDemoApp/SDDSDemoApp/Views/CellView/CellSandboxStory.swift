@@ -9,7 +9,6 @@ enum CellStory: Story {
     static let title = "Cell"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: CellUiState, theme: Theme) -> some View {
         CellView(viewModel: CellViewModel(theme: theme, uiState: state))

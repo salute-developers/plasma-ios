@@ -105,7 +105,7 @@ struct TextAreaView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("TextArea")
     }
 }

@@ -2,7 +2,7 @@ import Foundation
 
 struct TabItemDefaultProps: MergeableConfiguration, Codable {
     typealias Props = TabItemDefaultProps
-    
+
     var disableAlpha: KeyValue<Double>?
     var labelColor: ColorKeyValue?
     var valueColor: ColorKeyValue?
@@ -27,4 +27,3 @@ struct TabItemDefaultProps: MergeableConfiguration, Codable {
     var counterOffsetX: KeyValue<Double>?
     var counterOffsetY: KeyValue<Double>?
 }
-

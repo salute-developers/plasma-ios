@@ -10,7 +10,7 @@ struct PaginationDotsView: View {
     init(viewModel: PaginationDotsViewModel = PaginationDotsViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -23,14 +23,14 @@ struct PaginationDotsView: View {
                                     viewModel.previous()
                                 }
                                 .buttonStyle(.borderedProminent)
-                                
+
                                 SDDSPaginationDots(
                                     selectedIndex: viewModel.selectedIndex,
                                     totalCount: viewModel.totalCount,
                                     visibleCount: viewModel.visibleCount,
                                     appearance: viewModel.appearance
                                 )
-                                
+
                                 Button("↓") {
                                     viewModel.next()
                                 }
@@ -44,19 +44,19 @@ struct PaginationDotsView: View {
                                     visibleCount: viewModel.visibleCount,
                                     appearance: viewModel.appearance
                                 )
-                                
+
                                 HStack(spacing: 12) {
                                     Button("←") {
                                         viewModel.previous()
                                     }
                                     .buttonStyle(.borderedProminent)
-                                    
+
                                     Button("→") {
                                         viewModel.next()
                                     }
                                     .buttonStyle(.borderedProminent)
                                 }
-                            }                            
+                            }
                         }
                     }
                     Spacer()
@@ -65,10 +65,10 @@ struct PaginationDotsView: View {
                 .padding(.vertical, 20)
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
-                
+
                 valueMenuRow(
                     title: "Selected Index",
                     value: "\(viewModel.selectedIndex)"
@@ -79,7 +79,7 @@ struct PaginationDotsView: View {
                         }
                     }
                 }
-                
+
                 valueMenuRow(
                     title: "Step",
                     value: "\(viewModel.step)"
@@ -90,7 +90,7 @@ struct PaginationDotsView: View {
                         }
                     }
                 }
-                
+
                 valueMenuRow(
                     title: "Total Count",
                     value: "\(viewModel.totalCount)"
@@ -101,7 +101,7 @@ struct PaginationDotsView: View {
                         }
                     }
                 }
-                
+
                 valueMenuRow(
                     title: "Visible Count",
                     value: "\(viewModel.visibleCount)"
@@ -117,7 +117,7 @@ struct PaginationDotsView: View {
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .navigationTitle("PaginationDots")
     }
-    
+
     private func valueMenuRow(
         title: String,
         value: String,
@@ -134,7 +134,7 @@ struct PaginationDotsView: View {
             }
         }
     }
-    
+
     private var isVerticalOrientation: Bool {
         viewModel.appearance.size.orientation == .vertical
     }

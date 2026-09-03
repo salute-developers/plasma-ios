@@ -23,7 +23,7 @@ public struct TabBarContent: View {
     @State private var containerWidth: CGFloat = 0
     @State private var selectedItemOffset: CGFloat = 0
     @State private var currentSelectedIndex: Int = 0
-    
+
     public init(
         items: [TabBarItemData],
         selectedIndex: Binding<Int>,
@@ -46,11 +46,11 @@ public struct TabBarContent: View {
         self.onTabSelected = onTabSelected
         self._currentSelectedIndex = State(initialValue: selectedIndex.wrappedValue)
     }
-    
+
     public var body: some View {
         ZStack(alignment: .leading) {
             selectedContent
-            
+
             HStack(spacing: itemSpacing) {
                 ForEach(Array(items.enumerated()), id: \.offset) { index, item in
                     SDDSTabBarItem(
@@ -84,7 +84,7 @@ public struct TabBarContent: View {
             self.containerWidth = size.width
         }
     }
-    
+
     @ViewBuilder private var selectedContent: some View {
         if currentSelectedIndex < items.count, let appearance = items[currentSelectedIndex].appearance, items[currentSelectedIndex].allowSelection {
             appearance.backgroundColor
@@ -96,44 +96,44 @@ public struct TabBarContent: View {
             EmptyView()
         }
     }
-    
+
     private func updateSelectedItemOffset() {
         var offset: CGFloat = contentPaddingStart
-        
+
         for i in 0..<currentSelectedIndex {
             offset += itemSizes[i]?.width ?? 0
             offset += itemSpacing
         }
-        
+
         selectedItemOffset = offset
     }
-    
+
     private var selectedItemData: TabBarItemData {
         return items[selectedIndex]
     }
-    
+
     // MARK: - Width Calculation
-    
+
     private func calculatedItemWidth(for index: Int) -> CGFloat? {
         guard containerWidth > 0, index < items.count else { return nil }
-        
+
         let item = items[index]
-        
+
         if let contentWidth = item.contentWidth {
             return contentWidth
         }
-        
+
         return nil
     }
-    
+
     private func shouldExpandItem(at index: Int) -> Bool {
         guard index < items.count else { return false }
         let item = items[index]
-        
+
         if item.contentWidth != nil {
             return false
         }
-        
+
         return true
     }
 }

@@ -8,10 +8,10 @@ final class BottomSheetContainerViewController: UIViewController {
     private let handleView: BottomSheetHandleUIView
     private let cornerRadius: CGFloat
     private let appearance: BottomSheetAppearance
-    
+
     private var handleBottomConstraint: NSLayoutConstraint?
     private var handleTopConstraint: NSLayoutConstraint?
-    
+
     init<H: View, C: View, F: View>(
         content: SDDSBottomSheet<H, C, F>,
         cornerRadius: CGFloat,
@@ -30,7 +30,7 @@ final class BottomSheetContainerViewController: UIViewController {
         self.cornerRadius = cornerRadius
         self.handleView = BottomSheetHandleUIView(appearance: appearance)
         self.appearance = appearance
-        
+
         // Overlay-копия footer'а: рендерится во втором UIHostingController,
         // прибитом к нижней кромке контейнера через Auto Layout. Её Y берётся
         // из CA-интерполяции bottomAnchor, а не из SwiftUI layout pass'а,
@@ -43,41 +43,41 @@ final class BottomSheetContainerViewController: UIViewController {
         )
         .environment(\.subtheme, subtheme)
         self.footerOverlayHostingController = UIHostingController(rootView: AnyView(overlayView))
-        
+
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.backgroundColor = .clear
         setupHostingController()
         setupFooterOverlay()
     }
-    
+
     private func setupHostingController() {
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         hostingController.view.layer.cornerRadius = cornerRadius
         hostingController.view.clipsToBounds = false
-        
+
         addChild(hostingController)
         view.addSubview(hostingController.view)
         hostingController.didMove(toParent: self)
-        
+
         hostingController.view.addSubview(handleView)
-        
+
         handleView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             handleView.widthAnchor.constraint(equalToConstant: appearance.size.handleWidth),
             handleView.heightAnchor.constraint(equalToConstant: appearance.size.handleHeight),
             handleView.centerXAnchor.constraint(equalTo: hostingController.view.centerXAnchor)
         ])
-        
+
         let handleTotalOffset: CGFloat
         switch appearance.handlePlacement {
         case .outer, .auto:
@@ -92,47 +92,47 @@ final class BottomSheetContainerViewController: UIViewController {
             handleView.isHidden = true
             handleTotalOffset = 0
         }
-        
+
         NSLayoutConstraint.activate([
             hostingController.view.topAnchor.constraint(equalTo: view.topAnchor, constant: handleTotalOffset),
             hostingController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             hostingController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
+
     private func setupFooterOverlay() {
         let overlay = footerOverlayHostingController.view!
         overlay.translatesAutoresizingMaskIntoConstraints = false
         overlay.backgroundColor = .clear
         overlay.isUserInteractionEnabled = true
-        
+
         addChild(footerOverlayHostingController)
         view.addSubview(overlay)
         footerOverlayHostingController.didMove(toParent: self)
         // Поднимаем поверх hostingController.view, чтобы SwiftUI-footer
         // под ним не был виден во время snap-анимации.
         view.bringSubviewToFront(overlay)
-        
+
         NSLayoutConstraint.activate([
             overlay.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             overlay.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            overlay.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            overlay.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
+
     func updateHandlePosition(progress: CGFloat) {
         guard appearance.handlePlacement == .auto else { return }
-        
+
         // В outer позиции handle находится над контентом
         let outerPosition = -appearance.size.handleOffset
         // В inner позиции handle находится внутри контента, но не выше safe area
         let safeAreaTop = view.safeAreaInsets.top
         let innerPosition = max(appearance.size.handleOffset + appearance.size.handleHeight, safeAreaTop)
-        
+
         // Интерполируем между позициями
         let currentPosition = outerPosition + (innerPosition - outerPosition) * progress
-        
+
         handleBottomConstraint?.constant = currentPosition
     }
 }
@@ -150,7 +150,7 @@ private struct BottomSheetFooterOverlayView<Footer: View>: View {
     let cornerRadius: CGFloat
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
-    
+
     var body: some View {
         footer
             .applyIf(appearance.size.paddingStart > 0) {

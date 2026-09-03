@@ -83,8 +83,8 @@ struct Param: Codable {
     var explicitId: Bool = false
 
     /// Источник декларации свойства (для вставки маркеров) — НЕ сериализуется в JSON.
-    var sourceFile: String? = nil
-    var sourceLine: Int? = nil
+    var sourceFile: String?
+    var sourceLine: Int?
 
     private enum CodingKeys: String, CodingKey {
         case type, id, methodName, paramName, paramQualifiedType, paramSimpleType, valueQualifiedType, group, unmapped

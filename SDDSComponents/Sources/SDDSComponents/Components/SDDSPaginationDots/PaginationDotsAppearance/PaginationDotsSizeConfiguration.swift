@@ -30,6 +30,4 @@ struct DefaultPaginationDotsSize: PaginationDotsSizeConfiguration {
     var edgeShrinkFactor: CGFloat = 0
     var gap: CGFloat = 0
     var orientation: PaginationDotsOrientation = .horizontal
-    
-    init() {}
 }

@@ -14,9 +14,9 @@ struct TabsUiState: StoryUiState, DefaultUiState {
     var stretch: Bool = true
     var hasDivider: Bool = true
     var label: String = "Label"
-    var value: String? = nil
+    var value: String?
     var hasValue: Bool = false
-    var counterValue: Int? = nil
+    var counterValue: Int?
     var hasCounter: Bool = false
     var hasStartContentIcon: Bool = false
     var hasEndContentIcon: Bool = false

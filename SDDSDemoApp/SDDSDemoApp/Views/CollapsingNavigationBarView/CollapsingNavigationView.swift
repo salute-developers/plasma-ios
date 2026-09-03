@@ -118,7 +118,7 @@ struct CollapsingNavigationView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
-    
+
     private var labelTextColor: Color {
         Color.primary
     }

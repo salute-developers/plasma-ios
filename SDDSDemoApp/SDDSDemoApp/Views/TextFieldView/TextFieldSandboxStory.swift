@@ -9,7 +9,6 @@ enum TextFieldStory: Story {
     static let title = "TextField"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: TextFieldUiState, theme: Theme) -> some View {
         TextFieldView(viewModel: TextFieldViewModel(theme: theme, uiState: state))

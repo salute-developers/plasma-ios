@@ -68,7 +68,7 @@ struct SDDSToggle: View {
             }
         }
     }
-    
+
     private var trackColor: FillStyle {
         isOn ? onColor : offColor
     }

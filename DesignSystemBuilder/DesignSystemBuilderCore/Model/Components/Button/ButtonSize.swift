@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ButtonSize: CodeGenerationSize {
     typealias Props = ButtonProps
-    
+
     var height: String?
     var pathDrawer: String?
     var paddings: String?
@@ -11,11 +11,11 @@ struct ButtonSize: CodeGenerationSize {
     var spinnerSize: String?
     var titleHorizontalGap: String?
     var iconHorizontalGap: String?
-    
+
     init(variation: ButtonConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: ButtonProps, id: String? = nil, nullify: Bool = false) {
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
         self.titleHorizontalGap = CGFloatContextBuilder(props.valueMargin?.value, nullify: nullify).context
@@ -25,7 +25,7 @@ struct ButtonSize: CodeGenerationSize {
         self.iconSize = SizeContextBuilder(x: props.iconSize?.value, y: props.iconSize?.value, style: .size, nullify: nullify).context
         self.spinnerSize = SizeContextBuilder(x: props.spinnerSize?.value, y: props.spinnerSize?.value, style: .size, nullify: nullify).context
     }
-    
+
     init() {
         self.height = CGFloat.defaultContext
         self.pathDrawer = PathDrawerContextBuilder.defaultContext

@@ -2,7 +2,7 @@ import Foundation
 
 struct TextFieldProps: MergeableConfiguration, Codable {
     typealias Props = TextFieldProps
-    
+
     var disableAlpha: KeyValue<Double>?
     var prefixPadding: KeyValue<Double>?
     var suffixPadding: KeyValue<Double>?

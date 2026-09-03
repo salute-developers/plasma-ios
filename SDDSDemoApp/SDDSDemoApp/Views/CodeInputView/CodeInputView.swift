@@ -6,11 +6,11 @@ import SandboxSwiftUI
 struct CodeInputView: View {
     @ObservedObject private var viewModel: CodeInputViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: CodeInputViewModel = CodeInputViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -41,7 +41,7 @@ struct CodeInputView: View {
             }
             .backgroundColorForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-            
+
             List {
                 Section {
                     VariationsView(viewModel: viewModel)
@@ -56,7 +56,7 @@ struct CodeInputView: View {
         }
         .background(colorScheme == .light ? .white : .black)
     }
-    
+
     @ViewBuilder
     private var groupType: some View {
         Picker("Group Type", selection: $viewModel.selectedGroupType) {
@@ -65,7 +65,7 @@ struct CodeInputView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var code: some View {
         HStack {
@@ -75,7 +75,7 @@ struct CodeInputView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     @ViewBuilder
     private var caption: some View {
         HStack {
@@ -85,7 +85,7 @@ struct CodeInputView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     @ViewBuilder
     private var captionAlignment: some View {
         HStack {
@@ -106,7 +106,7 @@ struct CodeInputView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var popoverContent: some View {
         VStack(spacing: 8) {
@@ -126,7 +126,7 @@ struct CodeInputView: View {
         }
         .padding()
     }
-    
+
     @ViewBuilder
     private var hidden: some View {
         VStack(alignment: .leading) {

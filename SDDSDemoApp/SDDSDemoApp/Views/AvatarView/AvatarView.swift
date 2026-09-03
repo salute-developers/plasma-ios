@@ -108,7 +108,7 @@ struct AvatarView: View {
                     .buttonStyle(.borderless)
                     .foregroundColor(.red)
                 }
-                
+
                 HStack {
                     Text("Extra Placement")
                     Spacer()
@@ -124,25 +124,25 @@ struct AvatarView: View {
                     }
                 }
             }
-            
+
             if viewModel.extraPlacement != .none {
                 if viewModel.appearance.badgeAppearance != nil {
                     Section {
                         HStack {
                             Toggle("Badge", isOn: $viewModel.isBadgeEnabled)
                         }
-                        
+
                         if viewModel.isBadgeEnabled {
                             BadgeView(viewModel: viewModel.badgeViewModel)
                         }
                     }
                 }
-                
+
                 Section {
                     HStack {
                         Toggle("Counter", isOn: $viewModel.isCounterEnabled)
                     }
-                    
+
                     if viewModel.isCounterEnabled {
                         CounterView(viewModel: viewModel.counterViewModel)
                     }
@@ -150,13 +150,13 @@ struct AvatarView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .sheet(isPresented: $showImagePicker) {
             PhotoPicker(viewModel: viewModel)
         }
         .navigationTitle("Avatar")
     }
-    
+
     private var image: Image? {
         viewModel.badgeViewModel.iconVisible ? Asset.plasma24.image : nil
     }

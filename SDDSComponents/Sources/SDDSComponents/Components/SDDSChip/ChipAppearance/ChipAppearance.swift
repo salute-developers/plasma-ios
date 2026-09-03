@@ -70,8 +70,6 @@ public struct ChipAppearance: Hashable {
         )
     }
 
-    
-    
     public static func == (lhs: ChipAppearance, rhs: ChipAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.titleColor == rhs.titleColor &&
@@ -79,7 +77,7 @@ public struct ChipAppearance: Hashable {
         lhs.buttonTintColor == rhs.buttonTintColor &&
         lhs.backgroundColor == rhs.backgroundColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(titleColor)

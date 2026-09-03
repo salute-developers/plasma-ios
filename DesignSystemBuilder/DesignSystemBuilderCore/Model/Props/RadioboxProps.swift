@@ -2,7 +2,7 @@ import Foundation
 
 struct RadioboxProps: MergeableConfiguration, Codable {
     typealias Props = RadioboxProps
-    
+
     var togglePadding: KeyValue<Double>?
     var toggleBorderWidth: KeyValue<Double>?
     var toggleWidth: KeyValue<Double>?

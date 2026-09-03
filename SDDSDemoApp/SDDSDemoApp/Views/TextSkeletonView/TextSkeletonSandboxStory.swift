@@ -9,7 +9,6 @@ enum TextSkeletonStory: Story {
     static let title = "TextSkeleton"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: TextSkeletonUiState, theme: Theme) -> some View {
         TextSkeletonView(viewModel: TextSkeletonViewModel(theme: theme, uiState: state))

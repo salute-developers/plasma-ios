@@ -2,7 +2,7 @@ import Foundation
 
 struct CheckboxProps: MergeableConfiguration, Codable {
     typealias Props = CheckboxProps
-    
+
     var togglePadding: KeyValue<Double>?
     var toggleBorderWidth: KeyValue<Double>?
     var toggleWidth: KeyValue<Double>?

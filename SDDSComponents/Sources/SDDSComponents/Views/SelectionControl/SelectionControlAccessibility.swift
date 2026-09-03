@@ -7,7 +7,7 @@ public struct SelectionControlAccessibility {
     public var controlHint: String
     public var controlEnabledValue: String
     public var controlDisabledValue: String
-    
+
     public init(
         titleLabel: String = "Title",
         subtitleLabel: String = "Subtitle",

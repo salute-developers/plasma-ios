@@ -7,21 +7,21 @@ final class NoteContentBeforeArrangementContextBuilder: CodeGenerationContextBui
         case top
         case center
     }
-    
+
     let id: String?
     let component: CodeGenerationComponent
-    
+
     init(id: String?, component: CodeGenerationComponent) {
         self.id = id
         self.component = component
     }
-    
+
     var context: String? {
         let type = "\(component.rawValue)ContentBeforeArrangement"
         guard let id = id?.lastKey, let variationId = VariationId(rawValue: id) else {
             return nil
         }
-        
+
         switch variationId {
         case .top:
             return "\(type).top"
@@ -29,11 +29,9 @@ final class NoteContentBeforeArrangementContextBuilder: CodeGenerationContextBui
             return "\(type).center"
         }
     }
-    
+
     static func defaultContext(component: CodeGenerationComponent) -> String {
         let type = "\(component.rawValue)ContentBeforeArrangement"
         return "\(type).top"
     }
 }
-
-

@@ -23,12 +23,12 @@ struct ButtonGroupView: View {
             buttonsListSection
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("ButtonGroup")
     }
-    
+
     // MARK: - Preview Section
-    
+
     @ViewBuilder
     private var buttonGroupPreviewSection: some View {
         Section {
@@ -44,18 +44,18 @@ struct ButtonGroupView: View {
         }
         .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
     }
-    
+
     // MARK: - Variations Section
-    
+
     @ViewBuilder
     private var variationsSection: some View {
         Section(header: Text("ButtonGroup")) {
             VariationsView(viewModel: viewModel)
         }
     }
-    
+
     // MARK: - Configuration Section
-    
+
     @ViewBuilder
     private var configurationSection: some View {
         Section {
@@ -63,7 +63,7 @@ struct ButtonGroupView: View {
             layoutPicker
         }
     }
-    
+
     @ViewBuilder
     private var buttonGroupTypePicker: some View {
         HStack {
@@ -81,7 +81,7 @@ struct ButtonGroupView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var layoutPicker: some View {
         HStack {
@@ -99,9 +99,9 @@ struct ButtonGroupView: View {
             }
         }
     }
-    
+
     // MARK: - Basic Button Options Section
-    
+
     @ViewBuilder
     private var basicButtonOptionsSection: some View {
         if viewModel.buttonGroupType == .basic {
@@ -111,9 +111,9 @@ struct ButtonGroupView: View {
             }
         }
     }
-    
+
     // MARK: - Add Button Section
-    
+
     @ViewBuilder
     private var addButtonSection: some View {
         Section {
@@ -124,7 +124,7 @@ struct ButtonGroupView: View {
                     viewModel.addButton()
                 }
             }
-            
+
             if viewModel.subtitleEnabled && viewModel.buttonGroupType == .basic {
                 HStack {
                     TextField("Button Subtitle", text: $viewModel.subtitleValue)
@@ -132,9 +132,9 @@ struct ButtonGroupView: View {
             }
         }
     }
-    
+
     // MARK: - Buttons List Section
-    
+
     @ViewBuilder
     private var buttonsListSection: some View {
         Section {
@@ -143,7 +143,7 @@ struct ButtonGroupView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private func buttonItemView(for index: Int) -> some View {
         VStack {
@@ -168,7 +168,7 @@ struct ButtonGroupView: View {
                 }
                 .foregroundColor(.red)
             }
-            
+
             if viewModel.subtitleEnabled && viewModel.buttonGroupType == .basic {
                 HStack {
                     TextField(

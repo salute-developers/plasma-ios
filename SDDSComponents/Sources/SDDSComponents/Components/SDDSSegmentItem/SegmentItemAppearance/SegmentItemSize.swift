@@ -39,6 +39,6 @@ public struct DefaultSegmentItemSize: SegmentItemSizeConfiguration {
     public var debugDescription: String {
         return "Default SegmentItem Size"
     }
-    
+
     public init() {}
 }

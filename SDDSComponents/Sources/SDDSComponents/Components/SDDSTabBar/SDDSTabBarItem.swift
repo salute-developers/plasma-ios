@@ -14,10 +14,10 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
     let extra: Extra
     let contentWidth: CGFloat?
     let disableText: Bool
-    
+
     @State private var extraSize = CGSize.zero
     @State private var itemSize = CGSize.zero
-    
+
     public init(
         @ViewBuilder content: () -> Content,
         @ViewBuilder selectedContent: () -> Content,
@@ -37,19 +37,19 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         self._appearance = appearance
         self.extra = extra()
     }
-    
+
     public var body: some View {
         VStack(spacing: 0) {
             Spacer()
                 .frame(height: appearance.size.paddingTop)
-            
+
             if appearance.size.labelPlacement == .top {
                 label
-                
+
                 Spacer()
                     .frame(height: appearance.size.labelPadding)
             }
-            
+
             ZStack(alignment: .top) {
                 Group {
                     if isSelected {
@@ -60,7 +60,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
                 }
                 .foregroundColor(iconColor.color(for: colorScheme, subtheme: subtheme))
                 .frame(width: contentWidth ?? appearance.size.iconSize, height: appearance.size.iconSize)
-                
+
                 extra
                     .environment(\.indicatorAppearance, appearance.indicatorAppearance ?? .defaultValue)
                     .environment(\.counterAppearance, appearance.counterAppearance ?? .defaultValue)
@@ -79,7 +79,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
                     .frame(height: appearance.size.labelPadding)
                 label
             }
-            
+
             Spacer()
                 .frame(height: appearance.size.paddingBottom)
         }
@@ -92,7 +92,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
             self.itemSize = size
         }
     }
-    
+
     @ViewBuilder
     private var label: some View {
         if disableText {
@@ -104,42 +104,42 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
                 .multilineTextAlignment(.center)
         }
     }
-    
+
     // MARK: - Computed Properties
-    
+
     private var labelTypography: TypographyToken {
         appearance.labelTypography.typography(with: appearance.size) ?? .undefined
     }
-    
+
     private var backgroundColor: ColorToken {
         isSelected
             ? ColorToken.clearColor
             : appearance.backgroundColor.resolvedValue(for: Set<InteractiveState>())
     }
-    
+
     private var iconColor: ColorToken {
         appearance.iconColor.resolvedValue(
             for: isSelected ? Set([InteractiveState.selected]) : Set<InteractiveState>()
         )
     }
-    
+
     private var labelColor: ColorToken {
         appearance.labelColor.resolvedValue(
             for: isSelected ? Set([InteractiveState.selected]) : Set<InteractiveState>()
         )
     }
-    
+
     var appearance: TabBarItemAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     // MARK: - Helper Methods
-    
+
     private func calculateExtraOffsetX() -> CGFloat {
         let iconWidth = appearance.size.iconSize
         let itemWidth = itemSize.width
         let extraWidth = extraSize.width
-        
+
         // Если extra помещается в иконку, центрируем его в правом верхнем углу иконки
         if extraWidth <= iconWidth {
             return iconWidth / 2

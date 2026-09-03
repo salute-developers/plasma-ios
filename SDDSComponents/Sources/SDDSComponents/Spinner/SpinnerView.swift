@@ -5,7 +5,7 @@ struct SpinnerView: View {
     let image: Image
     let fillStyle: FillStyle
     @State var isAnimating = false
-    
+
     public var body: some View {
         image
             .renderingMode(.template)

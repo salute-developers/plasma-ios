@@ -23,7 +23,7 @@ public struct TabBarAppearance: Hashable {
     public var dividerColor: ColorToken
     public var tabBarItemAppearance: TabBarItemAppearance
     public var size: TabBarSizeConfiguration
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         backgroundBlurColor: ColorToken = .clearColor,
@@ -41,7 +41,7 @@ public struct TabBarAppearance: Hashable {
         self.tabBarItemAppearance = tabBarItemAppearance
         self.size = size
     }
-    
+
     public static func == (lhs: TabBarAppearance, rhs: TabBarAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor &&
@@ -50,7 +50,7 @@ public struct TabBarAppearance: Hashable {
         lhs.dividerColor == rhs.dividerColor &&
         lhs.tabBarItemAppearance == rhs.tabBarItemAppearance
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

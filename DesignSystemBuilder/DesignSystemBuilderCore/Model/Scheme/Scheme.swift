@@ -11,7 +11,7 @@ public struct Scheme: Codable {
     let typography: TypographyStyle?
     let fontFamily: FontFamiliesContainerStyle?
     let tokens: [Token]
-    
+
     enum CodingKeys: String, CodingKey {
         case name
         case version

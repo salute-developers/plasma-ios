@@ -6,7 +6,7 @@ public struct TabItem: Identifiable {
     public let view: AnyView
     public let label: String?
     public let isDisabled: Bool
-    
+
     public init<StartContent: View, ContentRight: View, ActionContent: View>(
         id: String = UUID().uuidString,
         tabItem: SDDSTabItem<StartContent, ContentRight, ActionContent>,
@@ -19,4 +19,3 @@ public struct TabItem: Identifiable {
         self.isDisabled = isDisabled
     }
 }
-

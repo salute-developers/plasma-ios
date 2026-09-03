@@ -11,7 +11,7 @@ final class EditableViewModel: ComponentViewModel<EditableVariationProvider> {
     @Published var textAlign: TextAlignment = .leading
     @Published var hasIcon: Bool = true
     @Published var iconPlacement: EditableIconPlacement = .relative
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: EditableUiState = .init()) {
         super.init(variationProvider: EditableVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)

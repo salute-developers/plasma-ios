@@ -8,7 +8,7 @@ struct ShowMoreDropdownModifier: ViewModifier {
     let colorScheme: ColorScheme
     let dropdownContentHeight: CGFloat
     @State private var dropdownContentHeightState: CGFloat = 0
-    
+
     func body(content: Content) -> some View {
         if isShowMoreItem,
            case .showMore(_, let dropdownItems, let maxHeight) = clipMode,
@@ -50,4 +50,3 @@ struct ShowMoreDropdownModifier: ViewModifier {
         }
     }
 }
-

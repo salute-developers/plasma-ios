@@ -15,7 +15,7 @@ extension CodeFieldAlignment {
             return .center
         }
     }
-    
+
     var textAlignment: TextAlignment {
         switch self {
         case .leading:

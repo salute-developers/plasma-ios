@@ -3,16 +3,16 @@ import SwiftUI
 
 struct SegmentSize: CodeGenerationSize {
     typealias Props = SegmentProps
-    
+
     var horizontalHeight: String?
     var verticalWidth: String?
     var paddings: String?
     var pathDrawer: String?
-    
+
     init(variation: SegmentConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: SegmentProps, id: String? = nil, nullify: Bool = false) {
         self.horizontalHeight = CGFloat.defaultContext
         self.verticalWidth = CGFloat.defaultContext
@@ -25,7 +25,7 @@ struct SegmentSize: CodeGenerationSize {
         ).context
         self.pathDrawer = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
     }
-    
+
     init() {
         self.horizontalHeight = CGFloat.defaultContext
         self.verticalWidth = CGFloat.defaultContext

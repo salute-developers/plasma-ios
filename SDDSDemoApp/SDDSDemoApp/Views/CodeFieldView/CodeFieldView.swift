@@ -6,11 +6,11 @@ import SandboxSwiftUI
 struct CodeFieldView: View {
     @ObservedObject private var viewModel: CodeFieldViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: CodeFieldViewModel = CodeFieldViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -45,7 +45,7 @@ struct CodeFieldView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
                 groupType
@@ -57,7 +57,7 @@ struct CodeFieldView: View {
         }
         .background(.tertiary)
     }
-    
+
     @ViewBuilder
     private var groupType: some View {
         Picker("Group Type", selection: $viewModel.selectedGroupType) {
@@ -66,7 +66,7 @@ struct CodeFieldView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var code: some View {
         HStack {
@@ -76,7 +76,7 @@ struct CodeFieldView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     @ViewBuilder
     private var caption: some View {
         HStack {
@@ -86,7 +86,7 @@ struct CodeFieldView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     @ViewBuilder
     private var captionAlignment: some View {
         HStack {
@@ -107,7 +107,7 @@ struct CodeFieldView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var popoverContent: some View {
         VStack(spacing: 8) {
@@ -127,7 +127,7 @@ struct CodeFieldView: View {
         }
         .padding()
     }
-    
+
     @ViewBuilder
     private var hidden: some View {
         VStack(alignment: .leading) {
@@ -138,4 +138,4 @@ struct CodeFieldView: View {
 
 #Preview {
     CodeFieldView()
-} 
+}

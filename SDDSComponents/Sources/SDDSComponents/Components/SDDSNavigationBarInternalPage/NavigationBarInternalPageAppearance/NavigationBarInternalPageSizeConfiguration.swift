@@ -28,7 +28,7 @@ public struct NavigationBarInternalPageSize: NavigationBarInternalPageSizeConfig
     public let horizontalSpacing: CGFloat
     public let textBlockTopMargin: CGFloat
     public let bottomShape: PathDrawer
-    
+
     public init(
         backIconMargin: CGFloat = 0,
         paddingStart: CGFloat = 0,
@@ -49,4 +49,3 @@ public struct NavigationBarInternalPageSize: NavigationBarInternalPageSizeConfig
         self.bottomShape = bottomShape
     }
 }
-

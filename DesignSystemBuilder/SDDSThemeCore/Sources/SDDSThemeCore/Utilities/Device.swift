@@ -1,8 +1,6 @@
 import Foundation
 import UIKit
 
-import UIKit
-
 struct Device {
     enum Size {
         case small
@@ -31,7 +29,6 @@ struct Device {
         }
     }
 }
-
 
 extension Device.Size {
     var adaptiveStyle: AdaptiveStyle {

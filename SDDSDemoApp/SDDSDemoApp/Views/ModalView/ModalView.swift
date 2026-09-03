@@ -29,7 +29,7 @@ struct ModalView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
                 Toggle("hasClose", isOn: $viewModel.hasClose)
@@ -37,7 +37,7 @@ struct ModalView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Modal")
         .modal(
             isPresented: $isPresented,
@@ -56,6 +56,3 @@ struct ModalView: View {
         }
     }
 }
-
-
-

@@ -11,7 +11,7 @@ public struct SpinnerAppearance: Hashable {
     public var startColor: StatefulFillStyle
     public var endColor: StatefulFillStyle
     public var size: SpinnerSizeConfiguration
-    
+
     public init(
         backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         strokeCap: StrokeCap = .round,
@@ -43,7 +43,7 @@ public struct SpinnerAppearance: Hashable {
             size: size
         )
     }
-    
+
     public static func == (lhs: SpinnerAppearance, rhs: SpinnerAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor &&
@@ -51,7 +51,7 @@ public struct SpinnerAppearance: Hashable {
         lhs.startColor == rhs.startColor &&
         lhs.endColor == rhs.endColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -61,4 +61,4 @@ extension SpinnerAppearance: EnvironmentKey {
     public static var defaultValue: Self {
         EnvironmentValueProvider.shared.value(forKey: SpinnerAppearance.self, fallback: SpinnerAppearance())
     }
-} 
+}

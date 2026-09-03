@@ -21,7 +21,7 @@ public protocol SwitchSizeConfiguration: SizeConfiguration, CustomDebugStringCon
     var toggleThumbPadding: CGFloat { get }
     var descriptionPadding: CGFloat { get }
     var textPadding: CGFloat { get }
-    
+
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     @ApiValue("CGFloat?(0)", zero: "CGFloat?(0)")
     var width: CGFloat? { get }
@@ -40,12 +40,12 @@ public struct DefaultSwitchSize: SwitchSizeConfiguration {
     public var descriptionPadding: CGFloat { 0 }
     public var toggleThumbPadding: CGFloat { 0 }
     public var textPadding: CGFloat { 0 }
-    public var width: CGFloat? = nil
+    public var width: CGFloat?
     public var verticalGap: CGFloat = 0
-    
+
     public var debugDescription: String {
         return "Default Size"
     }
-    
+
     public init() {}
 }

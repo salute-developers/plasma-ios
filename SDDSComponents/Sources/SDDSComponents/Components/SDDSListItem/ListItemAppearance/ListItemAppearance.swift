@@ -18,7 +18,7 @@ public struct ListItemAppearance: Hashable {
     public var disabledAlpha: CGFloat
     public var counterAppearance: CounterAppearance?
     public var size: ListItemSizeConfiguration
-    
+
     public init(
         labelTypography: TypographyConfiguration = .default,
         titleTypography: TypographyConfiguration = .default,
@@ -79,14 +79,12 @@ public struct ListItemAppearance: Hashable {
         )
     }
 
-    
-    
     public static func == (lhs: ListItemAppearance, rhs: ListItemAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.titleColor == rhs.titleColor &&
         lhs.disclosureIconColor == rhs.disclosureIconColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -96,4 +94,4 @@ extension ListItemAppearance: EnvironmentKey {
     public static var defaultValue: Self {
         EnvironmentValueProvider.shared.value(forKey: ListItemAppearance.self, fallback: ListItemAppearance())
     }
-} 
+}

@@ -22,11 +22,10 @@ public struct ZeroSelectItemSize: SelectItemSizeConfiguration {
     public var paddingBottom: CGFloat { 0 }
     public var controlMargin: CGFloat { 0 }
     public var controlSize: CGFloat { 0 }
-    
+
     public var debugDescription: String {
         "ZeroSelectItemSize"
     }
-    
+
     public init() {}
 }
-

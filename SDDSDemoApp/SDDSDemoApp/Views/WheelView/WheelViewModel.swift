@@ -31,7 +31,7 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
             }
         }
     }
-    
+
     private let sampleData: [[String]] = [
         (1...31).map { String(format: "%02d", $0) },
         ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
@@ -39,7 +39,7 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
         (0...23).map { String(format: "%02d", $0) },
         (0...59).map { String(format: "%02d", $0) }
     ]
-    
+
     init(theme: Theme = .plasmaHomeDSTheme, uiState: WheelUiState = .init()) {
         super.init(
             variationProvider: WheelVariationProvider(theme: theme),
@@ -47,28 +47,28 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
         )
         apply(uiState: uiState)
     }
-    
+
     private func updateWheels() {
         let count = min(wheelsCount, sampleData.count)
         let previousSelection = selection
-        
+
         let updatedWheels = (0..<count).map { index in
             let customLabel = index < wheelLabels.count ? wheelLabels[index] : ""
             let afterText = index < wheelTextAfter.count && !wheelTextAfter[index].isEmpty ? wheelTextAfter[index] : nil
             let items: [WheelItem]
-            
+
             if !customLabel.isEmpty {
                 items = sampleData[index].map { _ in WheelItem(text: customLabel, textAfter: afterText) }
             } else {
                 items = sampleData[index].map { WheelItem(text: $0, textAfter: afterText) }
             }
-            
+
             return WheelData(
                 items: items,
                 description: index < wheelDescriptions.count ? wheelDescriptions[index] : nil
             )
         }
-        
+
         let updatedSelection: [Int]
         if count == previousSelection.count {
             updatedSelection = zip(previousSelection, updatedWheels).map { selectedIndex, wheel in
@@ -78,7 +78,7 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
         } else {
             updatedSelection = Array(repeating: 0, count: count)
         }
-        
+
         // Keep wheels and selection in sync to avoid transient index-out-of-range crashes in SDDSWheel.
         if count > previousSelection.count {
             selection = updatedSelection
@@ -88,18 +88,18 @@ final class WheelViewModel: ComponentViewModel<WheelVariationProvider> {
             selection = updatedSelection
         }
     }
-    
+
     func updateWheelDescription(at index: Int, description: String) {
         guard index < wheelDescriptions.count else { return }
         wheelDescriptions[index] = description
         updateWheels()
     }
-    
+
     func updateWheelLabel(at index: Int, label: String) {
         guard index < wheelLabels.count else { return }
         wheelLabels[index] = label
     }
-    
+
     func updateWheelTextAfter(at index: Int, textAfter: String) {
         guard index < wheelTextAfter.count else { return }
         wheelTextAfter[index] = textAfter

@@ -26,7 +26,7 @@ public struct NavigationBarMainPageSize: NavigationBarMainPageSizeConfiguration 
     public let horizontalSpacing: CGFloat
     public let textBlockTopMargin: CGFloat
     public let bottomShape: PathDrawer
-    
+
     public init(
         paddingStart: CGFloat = 0,
         paddingEnd: CGFloat = 0,
@@ -45,4 +45,3 @@ public struct NavigationBarMainPageSize: NavigationBarMainPageSizeConfiguration 
         self.bottomShape = bottomShape
     }
 }
-

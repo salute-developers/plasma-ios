@@ -1,9 +1,14 @@
 name: Build and Deploy to TestFlight
 
+# Secrets live in the `sdds` environment. On `pull_request` they are available only for
+# branches of this repository — a PR from a fork gets no secrets and the build will fail
+# fast. That is intentional: we do not hand Apple signing material to forks.
 on:
   push:
     branches:
       - main
+  pull_request:
+    types: [labeled, synchronize]
   workflow_dispatch:
     inputs:
       lane:
@@ -28,31 +33,44 @@ on:
   repository_dispatch:
     types: [publish-demo-app]
 
+# One build per PR (or per ref): a new push to a labelled PR supersedes the running build.
+concurrency:
+  group: testflight-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
 
   build-and-deploy-main:
-    runs-on: macos-latest
+    runs-on: macos-26
     environment: sdds
+    permissions:
+      contents: read
+      pull-requests: write
+    # Build numbers come from `latest_testflight_build_number + 1`, so uploads for the same
+    # app identifier must not run in parallel. This group queues them instead of cancelling.
+    concurrency:
+      group: testflight-upload-default
+      cancel-in-progress: false
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           submodules: recursive
-        
+
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.1'
-          
+          xcode-version: '26.6'
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'
-          
+
       - name: Set up bundle
         run: bundle install
-          
+
       - name: Install the Apple certificate and provisioning profile
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.SDDS_DEMO_BUILD_CERTIFICATE_BASE64 }}
@@ -62,97 +80,133 @@ jobs:
         run: |
           chmod +x ./scripts/install_certificate_and_profile.sh
           ./scripts/install_certificate_and_profile.sh "$RUNNER_TEMP" "$BUILD_CERTIFICATE_BASE64" "$P12_PASSWORD" "$BUILD_PROVISION_PROFILE_BASE64" "$KEYCHAIN_PASSWORD"
-                    
+
       - name: Install Fastlane
         run: gem install fastlane
-
-      - name: Validate lane input
-        if: github.event_name == 'workflow_dispatch'
-        run: |
-          LANE="${{ github.event.inputs.lane || 'build_and_upload' }}"
-          if [[ "$LANE" != "build_and_upload" && "$LANE" != "update_build_version_before_release" ]]; then
-            echo "Invalid lane specified. Please choose either 'build_and_upload' or 'update_build_version_before_release'."
-            exit 1
-          fi
-          DEMO_TARGET="${{ github.event.inputs.demo_target || 'default' }}"
-          if [[ "$DEMO_TARGET" != "default" && "$DEMO_TARGET" != "sddsserv" && "$DEMO_TARGET" != "plasmab2c" && "$DEMO_TARGET" != "plasmahomeds" ]]; then
-            echo "Invalid demo_target specified. Please choose one of: default, sddsserv, plasmab2c, plasmahomeds."
-            exit 1
-          fi
 
       - name: Run Fastlane
         env:
           APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-          GITHUB_PR_NUMBER: ${{ github.event.number }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-          DEMO_TARGET: ${{ github.event.inputs.demo_target || 'default' }}
-        run: |
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            fastlane ${{ github.event.inputs.lane || 'build_and_upload' }} demo_target:${{ github.event.inputs.demo_target || 'default' }} 2>&1 | tee fastlane_output.log
-          else
-            fastlane build_and_upload demo_target:default 2>&1 | tee fastlane_output.log
-          fi
-          
+          DEMO_TARGET: default
+        run: fastlane build_and_upload demo_target:default 2>&1 | tee fastlane_output.log
+
   build-and-deploy-pr:
-    runs-on: macos-latest
+    runs-on: macos-26
     environment: sdds
-    if: github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: read
+      pull-requests: write
+    concurrency:
+      group: testflight-upload-${{ github.event.inputs.demo_target || 'default' }}
+      cancel-in-progress: false
+    # Manual run, or a pull request carrying the `testflight` label.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' &&
+       contains(github.event.pull_request.labels.*.name, 'testflight'))
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           submodules: recursive
-        
-      - name: Check required workflows status
-        if: ${{ github.event.inputs.skip_checks != 'true' }}
-        run: |
-          echo "Checking status of required workflows..."
-          
-          # Get the current branch name
-          BRANCH_NAME="${{ github.head_ref || github.ref_name }}"
-          echo "Branch: $BRANCH_NAME"
-          
-          # Check test workflow
-          TEST_STATUS=$(gh api repos/${{ github.repository }}/actions/workflows/test.yml/runs --jq '.workflow_runs[] | select(.head_branch == "'$BRANCH_NAME'" and .head_sha == "'${{ github.sha }}'") | .conclusion' | head -1)
-          echo "Test workflow status: $TEST_STATUS"
-          
-          # Check verify-snapshots workflow
-          SNAPSHOT_STATUS=$(gh api repos/${{ github.repository }}/actions/workflows/verify-snapshots.yml/runs --jq '.workflow_runs[] | select(.head_branch == "'$BRANCH_NAME'" and .head_sha == "'${{ github.sha }}'") | .conclusion' | head -1)
-          echo "Snapshot workflow status: $SNAPSHOT_STATUS"
-          
-          # Check if both workflows passed
-          if [[ "$TEST_STATUS" == "success" && "$SNAPSHOT_STATUS" == "success" ]]; then
-            echo "✅ All required workflows passed"
-          else
-            echo "❌ Required workflows failed or not completed"
-            echo "Test: $TEST_STATUS, Snapshot: $SNAPSHOT_STATUS"
-            exit 1
-          fi
+          ref: ${{ github.event.pull_request.head.sha || github.ref }}
+
+      - name: Resolve pull request and demo target
+        id: context
         env:
           GH_TOKEN: ${{ github.token }}
-          
+        run: |
+          set -euo pipefail
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            PR_NUMBER="${{ github.event.pull_request.number }}"
+            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+            BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+
+            # Optional `testflight:<theme>` label picks the demo target.
+            DEMO_TARGET=default
+            LABELS='${{ toJSON(github.event.pull_request.labels.*.name) }}'
+            for candidate in sddsserv plasmab2c plasmahomeds; do
+              if echo "$LABELS" | grep -q "\"testflight:$candidate\""; then
+                DEMO_TARGET="$candidate"
+              fi
+            done
+          else
+            BRANCH_NAME="${{ github.head_ref || github.ref_name }}"
+            HEAD_SHA="${{ github.sha }}"
+            DEMO_TARGET="${{ github.event.inputs.demo_target || 'default' }}"
+            PR_NUMBER=$(gh api "repos/${{ github.repository }}/pulls" \
+              --jq ".[] | select(.head.ref == \"$BRANCH_NAME\" and .state == \"open\") | .number" | head -1)
+            if [ -z "$PR_NUMBER" ]; then
+              echo "No open PR for branch $BRANCH_NAME — the build will run without a PR comment."
+            fi
+          fi
+
+          {
+            echo "GITHUB_PR_NUMBER=$PR_NUMBER"
+            echo "DEMO_TARGET=$DEMO_TARGET"
+            echo "HEAD_SHA=$HEAD_SHA"
+            echo "BRANCH_NAME=$BRANCH_NAME"
+          } >> "$GITHUB_ENV"
+
+          echo "PR: ${PR_NUMBER:-none}, target: $DEMO_TARGET, sha: $HEAD_SHA"
+
+      - name: Validate demo target
+        run: |
+          case "$DEMO_TARGET" in
+            default|sddsserv|plasmab2c|plasmahomeds) ;;
+            *) echo "Invalid demo_target '$DEMO_TARGET'. Use one of: default, sddsserv, plasmab2c, plasmahomeds."; exit 1 ;;
+          esac
+          LANE="${{ github.event.inputs.lane || 'build_and_upload' }}"
+          if [ "$LANE" != "build_and_upload" ] && [ "$LANE" != "update_build_version_before_release" ]; then
+            echo "Invalid lane '$LANE'. Use 'build_and_upload' or 'update_build_version_before_release'."
+            exit 1
+          fi
+
+      - name: Check required workflows status
+        if: ${{ github.event.inputs.skip_checks != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Checking status of required workflows for $HEAD_SHA on $BRANCH_NAME"
+
+          status_for() {
+            gh api "repos/${{ github.repository }}/actions/workflows/$1/runs" \
+              --jq ".workflow_runs[] | select(.head_sha == \"$HEAD_SHA\") | .conclusion" | head -1
+          }
+
+          TEST_STATUS=$(status_for test.yml)
+          SNAPSHOT_STATUS=$(status_for verify-snapshots.yml)
+          echo "Test: ${TEST_STATUS:-none}, Snapshots: ${SNAPSHOT_STATUS:-none}"
+
+          if [ "$TEST_STATUS" = "success" ] && [ "$SNAPSHOT_STATUS" = "success" ]; then
+            echo "✅ All required workflows passed"
+          else
+            echo "❌ Required workflows failed or have not completed yet"
+            exit 1
+          fi
+
       - name: Skip checks (manual override)
         if: ${{ github.event.inputs.skip_checks == 'true' }}
-        run: |
-          echo "⚠️  Skipping workflow status checks (manual override)"
-          echo "This build will proceed without verifying other workflows"
-        
+        run: echo "⚠️ Skipping workflow status checks (manual override)"
+
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.1'
-          
+          xcode-version: '26.6'
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'
-          
+
       - name: Set up bundle
         run: bundle install
-          
+
       - name: Install the Apple certificate and provisioning profile
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.SDDS_DEMO_BUILD_CERTIFICATE_BASE64 }}
@@ -162,46 +216,27 @@ jobs:
         run: |
           chmod +x ./scripts/install_certificate_and_profile.sh
           ./scripts/install_certificate_and_profile.sh "$RUNNER_TEMP" "$BUILD_CERTIFICATE_BASE64" "$P12_PASSWORD" "$BUILD_PROVISION_PROFILE_BASE64" "$KEYCHAIN_PASSWORD"
-                    
+
       - name: Install Fastlane
         run: gem install fastlane
-
-      - name: Validate lane input
-        if: github.event_name == 'workflow_dispatch'
-        run: |
-          LANE="${{ github.event.inputs.lane || 'build_and_upload' }}"
-          if [[ "$LANE" != "build_and_upload" && "$LANE" != "update_build_version_before_release" ]]; then
-            echo "Invalid lane specified. Please choose either 'build_and_upload' or 'update_build_version_before_release'."
-            exit 1
-          fi
-          DEMO_TARGET="${{ github.event.inputs.demo_target || 'default' }}"
-          if [[ "$DEMO_TARGET" != "default" && "$DEMO_TARGET" != "sddsserv" && "$DEMO_TARGET" != "plasmab2c" && "$DEMO_TARGET" != "plasmahomeds" ]]; then
-            echo "Invalid demo_target specified. Please choose one of: default, sddsserv, plasmab2c, plasmahomeds."
-            exit 1
-          fi
 
       - name: Run Fastlane
         env:
           APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-          GITHUB_PR_NUMBER: ${{ github.event.number }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-          DEMO_TARGET: ${{ github.event.inputs.demo_target || 'default' }}
         run: |
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            fastlane ${{ github.event.inputs.lane || 'build_and_upload' }} demo_target:${{ github.event.inputs.demo_target || 'default' }} 2>&1 | tee fastlane_output.log
-          else
-            fastlane build_and_upload demo_target:default 2>&1 | tee fastlane_output.log
-          fi
-          
+          LANE="${{ github.event.inputs.lane || 'build_and_upload' }}"
+          fastlane "$LANE" demo_target:"$DEMO_TARGET" 2>&1 | tee fastlane_output.log
+
       - name: Extract build info
         if: success()
         run: ./scripts/extract_build_info.sh
-          
+
       - name: Comment on PR
-        if: success()
+        if: success() && env.GITHUB_PR_NUMBER != ''
         run: ./scripts/comment_pr.sh
         env:
           VERSION: ${{ env.VERSION }}

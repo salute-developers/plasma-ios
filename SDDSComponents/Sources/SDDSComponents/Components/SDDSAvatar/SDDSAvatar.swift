@@ -14,7 +14,7 @@ import SwiftUI
 public struct AvatarExtra<Content: View> {
     let placement: AvatarExtraPlacement
     let content: Content
-    
+
     public init(placement: AvatarExtraPlacement, @ViewBuilder content: () -> Content = { EmptyView() }) {
         self.placement = placement
         self.content = content()
@@ -67,11 +67,11 @@ public struct SDDSAvatar<Content: View>: View {
     let extra: AvatarExtra<Content>
     private var _appearance: AvatarAppearance?
     private let extraContent: Content
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.avatarAppearance) private var environmentAppearance
-    
+
     public init(
         text: String,
         image: AvatarImageSource?,
@@ -90,7 +90,7 @@ public struct SDDSAvatar<Content: View>: View {
         self.extraContent = extra.content
         self.accessibility = accessibility
     }
-    
+
     public init(data: SDDSAvatarData) where Content == AnyView {
         self.text = data.text
         self.image = data.image
@@ -101,7 +101,7 @@ public struct SDDSAvatar<Content: View>: View {
         self._appearance = data.appearance
         self.accessibility = data.accessibility
     }
-    
+
     public var body: some View {
         ZStack(alignment: .top) {
             if let placeholderImage = placeholderImage {
@@ -123,7 +123,7 @@ public struct SDDSAvatar<Content: View>: View {
                     }
                 }
             }
-            
+
             if extraPlacement != .none {
                 AvatarPlacementContainer(extraPlacement: extraPlacement, extraOffset: appearance.size.extraOffset) {
                     extraContent
@@ -137,7 +137,7 @@ public struct SDDSAvatar<Content: View>: View {
         .accessibilityLabel(accessibility.label)
         .accessibilityHint(accessibility.hint)
     }
-    
+
     @ViewBuilder
     private func avatar(imageSource: AvatarImageSource) -> some View {
         AvatarPlacementContainer(extraPlacement: extraPlacement) {
@@ -145,12 +145,12 @@ public struct SDDSAvatar<Content: View>: View {
                 avatarImage(for: imageSource)
                     .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
                     .shape(pathDrawer: appearance.size.pathDrawer)
-                
+
                 indicatorView
             }
         }
     }
-    
+
     @ViewBuilder
     private var indicatorView: some View {
         if status != .hidden && (extraPlacement != .bottomRight) {
@@ -167,7 +167,7 @@ public struct SDDSAvatar<Content: View>: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private var backgroundView: some View {
         AvatarPlacementContainer(extraPlacement: extraPlacement) {
@@ -193,7 +193,7 @@ public struct SDDSAvatar<Content: View>: View {
             .frame(width: appearance.size.avatarSize.width, height: appearance.size.avatarSize.height)
         }
     }
-    
+
     @ViewBuilder
     private func avatarImage(for source: AvatarImageSource) -> some View {
         switch source {
@@ -211,15 +211,15 @@ public struct SDDSAvatar<Content: View>: View {
                 .scaledToFill()
         }
     }
-    
+
     private var gradientBackgroundColor: Color {
         colorScheme == .dark ? .black : .white
     }
-    
+
     private var statusView: some View {
         SDDSIndicator(appearance: indicatorAppearance)
     }
-    
+
     private var indicatorAppearance: IndicatorAppearance {
         var indicator = appearance.indicatorAppearance
         guard statusColor == .clearColor else {
@@ -235,7 +235,7 @@ public struct SDDSAvatar<Content: View>: View {
         )
         return indicator
     }
-    
+
     private var statusColor: ColorToken {
         switch status {
         case .online:
@@ -246,7 +246,7 @@ public struct SDDSAvatar<Content: View>: View {
             return Color.clear.token
         }
     }
-    
+
     private var textTypography: TypographyToken {
         if let typography = appearance.textTypography.typography(with: appearance.size) {
             return typography
@@ -254,11 +254,11 @@ public struct SDDSAvatar<Content: View>: View {
             fatalError("Undefined Avatar Typography")
         }
     }
-    
+
     var appearance: AvatarAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var extraPlacement: AvatarExtraPlacement {
         extra.placement
     }

@@ -9,7 +9,7 @@ enum MaskType: String, CaseIterable {
     case date = "Date"
     case time = "Time"
     case number = "Number"
-    
+
     var defaultFormat: String {
         switch self {
         case .none:
@@ -24,7 +24,7 @@ enum MaskType: String, CaseIterable {
             return "[0] [000] [000]"
         }
     }
-    
+
     var placeholder: String {
         switch self {
         case .none:
@@ -67,7 +67,7 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
             self.selectVariation(variations.first)
         }
     }
-    
+
     @Published var selectedMaskType: MaskType = .none {
         didSet {
             updateMaskFormat()
@@ -91,17 +91,17 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
             updateCurrentMask()
         }
     }
-    @Published var currentMask: TextFieldMask? = nil
+    @Published var currentMask: TextFieldMask?
     @Published var maskDisplayMode: MaskDisplayMode = .onInput
-    
+
     private func updateCurrentMask() {
         guard selectedMaskType != .none else {
             currentMask = nil
             return
         }
-        
+
         let format = customFormat.isEmpty ? selectedMaskType.defaultFormat : customFormat
-        
+
         switch selectedMaskType {
         case .none:
             currentMask = nil
@@ -133,11 +133,11 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
             }
         }
     }
-    
+
     private func updatePlaceholder() {
         isUpdatingPlaceholder = true
         defer { isUpdatingPlaceholder = false }
-        
+
         switch selectedMaskType {
         case .none:
             placeholder = "Placeholder"
@@ -155,7 +155,7 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
             placeholder = selectedMaskType.placeholder
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: MaskUiState = .init()) {
         super.init(variationProvider: TextFieldVariationProvider(layout: uiState.layout, theme: theme), theme: theme)
 
@@ -190,7 +190,7 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
         maskDisplayMode = uiState.maskDisplayMode
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     func updateMaskFormat() {
         if selectedMaskType != .none {
             if selectedMaskType != .number {
@@ -199,11 +199,11 @@ final class MaskViewModel: ComponentViewModel<TextFieldVariationProvider> {
             updatePlaceholder()
         }
     }
-    
+
     func updateValueText(_ newText: String) {
         value = .single(newText)
     }
-    
+
     override func onUpdateAppearance() {
         value = .single(textValue)
     }

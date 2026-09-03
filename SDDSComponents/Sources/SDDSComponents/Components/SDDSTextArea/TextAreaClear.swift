@@ -17,7 +17,7 @@ public struct TextAreaClear<ActionContent: View>: View {
     public let actionContent: Action<ActionContent>
     private let _appearance: TextAreaAppearance?
     public let accessibility: TextAreaAccessibility
-    
+
     public init(
         value: Binding<TextAreaValue>,
         title: String = "",
@@ -49,7 +49,7 @@ public struct TextAreaClear<ActionContent: View>: View {
         self.accessibility = accessibility
         self.actionContent = actionContent
     }
-    
+
     public var body: some View {
         SDDSTextArea(
             value: $value,

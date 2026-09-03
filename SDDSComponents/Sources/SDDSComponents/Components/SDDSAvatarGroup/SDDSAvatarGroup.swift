@@ -102,11 +102,11 @@ public struct SDDSAvatarGroup: View {
             return data
         }
     }
-    
+
     public var appearance: AvatarGroupAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private func avatarDataHidden(avatarData: SDDSAvatarData) -> SDDSAvatarData {
         SDDSAvatarData(
             text: avatarData.text,

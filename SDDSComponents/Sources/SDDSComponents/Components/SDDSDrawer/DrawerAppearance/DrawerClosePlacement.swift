@@ -6,4 +6,3 @@ public enum DrawerClosePlacement: String {
     case left
     case right
 }
-

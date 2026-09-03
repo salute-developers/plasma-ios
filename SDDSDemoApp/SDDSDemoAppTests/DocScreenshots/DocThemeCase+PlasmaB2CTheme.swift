@@ -14,11 +14,9 @@ enum PlasmaB2CThemeDocCase {
     /// Каталог темы в репозитории: Themes/<это>/docs/screenshots.
     static let directoryName = "PlasmaB2CTheme"
 
-    static func apply(completion: @escaping () -> Void) {
-        Theme.initialize {
-            applyDocDefaults()
-            completion()
-        }
+    static func apply() {
+        Theme.initialize()
+        applyDocDefaults()
     }
 
     /// Дефолты для компонентов, которых нет в `EnvironmentValueProvider+DefaultValues`

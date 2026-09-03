@@ -43,7 +43,7 @@ final class ChipGroupViewModel: ComponentViewModel<ChipGroupVariationProvider> {
         }
     }
     @Published var value: String = "Value"
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: ChipGroupUiState = .init()) {
         super.init(
             variationProvider: ChipGroupVariationProvider(
@@ -67,7 +67,7 @@ final class ChipGroupViewModel: ComponentViewModel<ChipGroupVariationProvider> {
         value = uiState.value
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     func addChip() {
         let newChip = ChipData(
             title: value,
@@ -80,11 +80,11 @@ final class ChipGroupViewModel: ComponentViewModel<ChipGroupVariationProvider> {
         )
         chips.append(newChip)
     }
-    
+
     func updateChipTitle(at index: Int, with newTitle: String) {
         guard chips.indices.contains(index) else { return }
         var updatedChip = chips[index]
-        
+
         updatedChip = ChipData(
             title: newTitle,
             isEnabled: updatedChip.isEnabled,
@@ -96,7 +96,7 @@ final class ChipGroupViewModel: ComponentViewModel<ChipGroupVariationProvider> {
         )
         chips[index] = updatedChip
     }
-    
+
     func removeChip(at index: Int) {
         guard chips.indices.contains(index) else { return }
         chips.remove(at: index)

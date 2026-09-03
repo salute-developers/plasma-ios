@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class RectSkeletonSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testRectSkeletonTestCase() async throws {
         let appearance = SkeletonAppearance(
@@ -24,7 +24,7 @@ final class RectSkeletonSnapshotTest: SDDSServThemeTestCase {
             duration: 2000)
         try await runSnapshotTest(view: RectSkeletonTestCase(appearance: appearance))
     }
-    
+
     @MainActor
     func testRectSkeletonLighter() async throws {
         let appearance = SkeletonAppearance(

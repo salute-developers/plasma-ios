@@ -9,11 +9,11 @@ import SandboxSwiftUI
 struct BadgeView: View {
     @ObservedObject private var viewModel: BadgeViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: BadgeViewModel = BadgeViewModel()) {
         self.viewModel = viewModel
     }
-        
+
     var body: some View {
         switch viewModel.componentViewLayoutMode {
         case .screen:
@@ -32,17 +32,17 @@ struct BadgeView: View {
                     }
                 }
                 .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-                
+
                 settings
             }
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-            
+
             .navigationTitle("Badge")
         case .subScreen:
             settings
         }
     }
-    
+
     private var settings: some View {
         Section {
             if viewModel.componentViewLayoutMode == .screen {
@@ -54,11 +54,11 @@ struct BadgeView: View {
             iconAlignmentSelectionView
         }
     }
-    
+
     private var image: Image? {
         viewModel.iconVisible ? Asset.plasma24.image : nil
     }
-    
+
     @ViewBuilder
     private var badgeTypeSelectionView: some View {
         HStack {
@@ -76,7 +76,7 @@ struct BadgeView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var labelTextField: some View {
         HStack {

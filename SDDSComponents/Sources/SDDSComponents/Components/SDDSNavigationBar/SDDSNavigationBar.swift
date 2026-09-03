@@ -30,25 +30,17 @@ import SwiftUI
  
  ### Main Page
  ```swift
+ // @sample: SDDSComponentsFixtures/Samples/NavigationBar/SDDSNavigationBar_Simple.swift
  SDDSNavigationBar(
-     type: .mainPage(appearance: mainPageAppearance),
+     type: .mainPage(appearance: NavigationBarMainPage.hasBackground.appearance),
      title: "Главная",
      textPlacement: .bottom,
      textAlign: .center,
      contentPlacement: .bottom,
-     actionStart: {
-         Button(action: {}) {
-             Image(systemName: "line.horizontal.3")
-         }
-     },
-     actionEnd: {
-         Button(action: {}) {
-             Image(systemName: "person.circle")
-         }
-     }
- ) {
-     Text("Контент")
- }
+     actionStart: { EmptyView() },
+     actionEnd: { EmptyView() },
+     content: { Text("Контент") }
+ )
  ```
  
  ### Internal Page с кнопкой "назад"
@@ -86,7 +78,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
     private let actionEnd: () -> ActionEnd
     private let content: () -> Content
     private let backAction: (() -> Void)?
-    
+
     public init(
         type: NavigationBarType,
         title: String,
@@ -110,7 +102,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
         self.actionEnd = actionEnd
         self.content = content
     }
-    
+
     public var body: some View {
         VStack(spacing: 0) {
             switch type {
@@ -119,7 +111,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
             case .internalPage(let appearance):
                 internalPageNavigation(appearance: appearance)
             }
-            
+
             if contentPlacement == .bottom {
                 content()
             }
@@ -135,16 +127,16 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
         }
         .shadow(navigationBarShadow)
     }
-    
+
     // MARK: - Main Page
-    
+
     @ViewBuilder
     private func mainPageNavigation(appearance: NavigationBarMainPageAppearance) -> some View {
         VStack(spacing: appearance.size.textBlockTopMargin) {
             if textPlacement == .bottom {
                 // Actions сверху
                 actionsRow()
-                
+
                 // Текст снизу по центру
                 titleContent(
                     textColor: appearance.textColor,
@@ -170,9 +162,9 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
         .padding(.top, appearance.size.paddingTop)
         .padding(.bottom, appearance.size.paddingBottom)
     }
-    
+
     // MARK: - Internal Page
-    
+
     @ViewBuilder
     private func internalPageNavigation(appearance: NavigationBarInternalPageAppearance) -> some View {
         VStack(spacing: appearance.size.textBlockTopMargin) {
@@ -183,7 +175,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                     backIconColor: appearance.backIconColor,
                     backIconMargin: appearance.size.backIconMargin
                 )
-                
+
                 // Текст снизу по центру
                 titleContent(
                     textColor: appearance.textColor,
@@ -212,9 +204,9 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
         .padding(.top, appearance.size.paddingTop)
         .padding(.bottom, appearance.size.paddingBottom)
     }
-    
+
     // MARK: - Actions
-    
+
     @ViewBuilder
     private func actionsRow() -> some View {
         HStack(spacing: 0) {
@@ -223,7 +215,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
             actionEnd()
         }
     }
-    
+
     @ViewBuilder
     private func actionsRowWithBackButton(
         backIcon: Image?,
@@ -249,9 +241,9 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
             actionEnd()
         }
     }
-    
+
     // MARK: - Title Content
-    
+
     @ViewBuilder
     private func titleContent(
         textColor: ColorToken,
@@ -266,13 +258,13 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                     .renderingMode(.template)
                     .foregroundColor(currentColor(for: textColor))
             }
-            
+
             Text(title)
                 .typography(textTypography.typography(with: size) ?? .undefined)
                 .foregroundColor(currentColor(for: textColor))
         }
     }
-    
+
     @ViewBuilder
     private func titleContentWithInlineContent(
         textColor: ColorToken,
@@ -287,17 +279,17 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                     .renderingMode(.template)
                     .foregroundColor(currentColor(for: textColor))
             }
-            
+
             Text(title)
                 .typography(textTypography.typography(with: size) ?? .undefined)
                 .foregroundColor(currentColor(for: textColor))
-            
+
             content()
                 .padding(.horizontal, 8)
                 .padding(.vertical, 4)
         }
     }
-    
+
     @ViewBuilder
     private func titleContent(
         textColor: ColorToken,
@@ -312,13 +304,13 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                     .renderingMode(.template)
                     .foregroundColor(currentColor(for: textColor))
             }
-            
+
             Text(title)
                 .typography(textTypography.typography(with: size) ?? .undefined)
                 .foregroundColor(currentColor(for: textColor))
         }
     }
-    
+
     @ViewBuilder
     private func titleContentWithInlineContent(
         textColor: ColorToken,
@@ -333,19 +325,19 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                     .renderingMode(.template)
                     .foregroundColor(currentColor(for: textColor))
             }
-            
+
             Text(title)
                 .typography(textTypography.typography(with: size) ?? .undefined)
                 .foregroundColor(currentColor(for: textColor))
-            
+
             content()
                 .padding(.horizontal, 8)
                 .padding(.vertical, 4)
         }
     }
-    
+
     // MARK: - Inline Layouts
-    
+
     @ViewBuilder
     private func inlineLayout(
         textColor: ColorToken,
@@ -386,7 +378,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                         actionEnd()
                     }
                 }
-                
+
             case .left:
                 // Текст слева, actions справа
                 titleContent(
@@ -401,7 +393,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                     actionStart()
                     actionEnd()
                 }
-                
+
             case .right:
                 // Actions слева, текст справа
                 HStack(spacing: size.horizontalSpacing) {
@@ -419,7 +411,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
             }
         }
     }
-    
+
     @ViewBuilder
     private func inlineLayoutWithBackButton(
         textColor: ColorToken,
@@ -489,7 +481,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                         actionEnd()
                     }
                 }
-                
+
             case .left:
                 // Back button + текст слева, actions справа
                 HStack(spacing: backIconMargin) {
@@ -517,7 +509,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
                     actionStart()
                     actionEnd()
                 }
-                
+
             case .right:
                 // Back button + actions слева, текст справа
                 HStack(spacing: backIconMargin) {
@@ -548,13 +540,13 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
             }
         }
     }
-    
+
     // MARK: - Helpers
-    
+
     private func currentColor(for colorToken: ColorToken) -> Color {
         return colorToken.color(for: colorScheme, subtheme: subtheme)
     }
-    
+
     private var backgroundColor: Color {
         switch type {
         case .mainPage(let appearance):
@@ -563,7 +555,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
             return currentColor(for: appearance.backgroundColor)
         }
     }
-    
+
     private var bottomShape: PathDrawer {
         switch type {
         case .mainPage(let appearance):
@@ -572,7 +564,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
             return appearance.size.bottomShape
         }
     }
-    
+
     private var navigationBarShadow: ShadowToken {
         switch type {
         case .mainPage(let appearance):
@@ -581,14 +573,14 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
             return appearance.shadow
         }
     }
-    
+
     private func cornerRadius(from pathDrawer: PathDrawer) -> CGFloat {
         if let drawer = pathDrawer as? CornerRadiusDrawer {
             return drawer.cornerRadius
         }
         return 0
     }
-    
+
     @ViewBuilder
     private func topCornerMask(cornerRadius: CGFloat, backgroundColor: Color = .clear) -> some View {
         if cornerRadius > 0 {

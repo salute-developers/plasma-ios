@@ -15,25 +15,25 @@ import UIKit
 import SwiftUI
 
 final class ScrollbarSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testScrollbarSizeMHasTrackHover() async throws {
         let appearance = ScrollBar.m.appearance
-        
+
         try await runSnapshotTest(view: ScrollbarSizeMHasTrackHover(appearance: appearance))
     }
-    
+
     @MainActor
     func testScrollbarSizeSHoverExpand() async throws {
         let appearance = ScrollBar.s.appearance
-        
+
         try await runSnapshotTest(view: ScrollbarSizeSHoverExpand(appearance: appearance))
     }
-    
+
     @MainActor
     func testScrollbarScrollDown() async throws {
         let appearance = ScrollBar.m.appearance
-        
+
         try await runSnapshotTest(view: ScrollbarScrollDown(appearance: appearance))
     }
 }

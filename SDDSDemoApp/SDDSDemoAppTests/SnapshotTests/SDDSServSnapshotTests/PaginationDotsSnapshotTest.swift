@@ -8,7 +8,7 @@ import UIKit
 import SwiftUI
 
 final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testPaginationDotsHorizontalM() async throws {
         let appearance = PaginationDotsHorizontal.m.appearance
@@ -21,7 +21,7 @@ final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalMActiveTypeLine() async throws {
         let appearance = PaginationDotsHorizontal.m.activeTypeLine.appearance
@@ -34,7 +34,7 @@ final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsVerticalM() async throws {
         let appearance = PaginationDotsVertical.m.appearance
@@ -47,7 +47,7 @@ final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsVerticalMActiveTypeLine() async throws {
         let appearance = PaginationDotsVertical.m.activeTypeLine.appearance
@@ -60,7 +60,7 @@ final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsVerticalMActiveTypeLineItemTenVisibleSeven() async throws {
         let appearance = PaginationDotsVertical.m.activeTypeLine.appearance
@@ -73,7 +73,7 @@ final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalSItemThreeVisibleThree() async throws {
         let appearance = PaginationDotsHorizontal.s.appearance
@@ -86,7 +86,7 @@ final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalSActiveTypeLine() async throws {
         let appearance = PaginationDotsHorizontal.s.activeTypeLine.appearance
@@ -99,7 +99,7 @@ final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalMItemOneVisibleOne() async throws {
         let appearance = PaginationDotsHorizontal.m.appearance
@@ -112,7 +112,7 @@ final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalMSelectedFive() async throws {
         let appearance = PaginationDotsHorizontal.m.appearance
@@ -125,5 +125,5 @@ final class PaginationDotsSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
 }

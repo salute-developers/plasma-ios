@@ -21,7 +21,7 @@ final class DropdownMenuViewModel: ComponentViewModel<DropdownMenuVariationProvi
     @Published var alignment: PopoverAlignment = .center
     @Published var autoHide: Bool = true
     @Published var buttonPosition: DropdownMenuButtonPosition = .center
-    @Published var duration: Int? = nil
+    @Published var duration: Int?
     @Published var textInput: String = "10"
     @Published var itemsCount: Int = 10
     @Published var hasDisclosure: Bool = false
@@ -58,12 +58,12 @@ final class DropdownMenuViewModel: ComponentViewModel<DropdownMenuVariationProvi
             self.itemVariation = variationProvider.itemVariations.first
         }
     }
-    
+
     var itemStyles: [AppearanceVariation<ListItemAppearance>] {
         let result = itemVariation?.styles ?? []
         return result
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: DropDownMenuUiState = .init()) {
         let provider = DropdownMenuVariationProvider(theme: theme, layout: uiState.layout)
         let itemVariation = provider.itemVariations[0]

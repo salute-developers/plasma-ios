@@ -2,7 +2,7 @@ import Foundation
 
 struct RadioboxSize: CodeGenerationSize {
     typealias Props = RadioboxProps
-    
+
     var width: String?
     var height: String?
     var toggleCheckedIconWidth: String?
@@ -14,11 +14,11 @@ struct RadioboxSize: CodeGenerationSize {
     var togglePaddings: String?
     var toggleIndeterminateIconWidth: String?
     var toggleIndeterminateIconHeight: String?
-    
+
     init(variation: ComponentConfiguration<RadioboxProps>.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: RadioboxProps, id: String? = nil, nullify: Bool = false) {
         self.width = CGFloatContextBuilder(props.toggleWidth?.value, nullify: nullify).context
         self.height = CGFloatContextBuilder(props.toggleHeight?.value, nullify: nullify).context
@@ -32,7 +32,7 @@ struct RadioboxSize: CodeGenerationSize {
         self.toggleIndeterminateIconWidth = CGFloatContextBuilder(props.toggleIndeterminateWidth?.value, nullify: nullify).context
         self.toggleIndeterminateIconHeight = CGFloatContextBuilder(props.toggleIndeterminateHeight?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.width = CGFloat.defaultContext
         self.height = CGFloat.defaultContext

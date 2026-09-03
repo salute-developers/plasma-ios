@@ -2,7 +2,7 @@ import Foundation
 
 struct BottomSheetProps: MergeableConfiguration, Codable {
     typealias Props = BottomSheetProps
-    
+
     var paddingStart: KeyValue<Double>?
     var paddingEnd: KeyValue<Double>?
     var paddingTop: KeyValue<Double>?

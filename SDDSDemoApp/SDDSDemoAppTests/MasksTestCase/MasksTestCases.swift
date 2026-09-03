@@ -19,9 +19,9 @@ import SDDSIcons
  */
 struct MaskPhonePlaceholder: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -50,9 +50,9 @@ struct MaskPhonePlaceholder: View {
  */
 struct MaskPhonePlaceholderOptional: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -81,9 +81,9 @@ struct MaskPhonePlaceholderOptional: View {
  */
 struct MaskPhoneDisabled: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -116,9 +116,9 @@ struct MaskPhoneDisabled: View {
  */
 struct MaskPhoneReadOnly: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -151,9 +151,9 @@ struct MaskPhoneReadOnly: View {
  */
 struct MaskPhoneInput: View {
     var appearance: TextFieldAppearance
-    
+
     @State var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -186,9 +186,9 @@ struct MaskPhoneInput: View {
  */
 struct MaskDate: View {
     var appearance: TextFieldAppearance
-    
+
     @State var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -221,9 +221,9 @@ struct MaskDate: View {
  */
 struct MaskDateType: View {
     var appearance: TextFieldAppearance
-    
+
     @State var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -256,9 +256,9 @@ struct MaskDateType: View {
  */
 struct MaskFullDateType: View {
     var appearance: TextFieldAppearance
-    
+
     @State var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -291,9 +291,9 @@ struct MaskFullDateType: View {
  */
 struct MaskTime: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -326,9 +326,9 @@ struct MaskTime: View {
  */
 struct MaskTimeInput: View {
     var appearance: TextFieldAppearance
-    
+
     @State var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -361,9 +361,9 @@ struct MaskTimeInput: View {
  */
 struct MaskNumber: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -394,9 +394,9 @@ struct MaskNumber: View {
  */
 struct MaskNumberInput: View {
     var appearance: TextFieldAppearance
-    
+
     @State var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -429,9 +429,9 @@ struct MaskNumberInput: View {
  */
 struct MaskPhoneTBTA: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,

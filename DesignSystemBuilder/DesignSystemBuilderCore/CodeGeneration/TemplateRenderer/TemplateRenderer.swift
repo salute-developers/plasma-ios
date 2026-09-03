@@ -39,26 +39,26 @@ private enum SwiftKeyword: String, CaseIterable {
 
 final class TemplateRenderer: Renderable {
     let paletteMapper: PaletteMapper?
-    
+
     init(paletteMapper: PaletteMapper? = nil) {
         self.paletteMapper = paletteMapper
     }
-    
+
     func render(context: [String: Any], template: StencilTemplate, removeLines: Bool = true) -> CommandResult {
         let ext = Extension()
         registerFilters(ext: ext)
         registerTags(ext: ext)
-        
+
         guard let templatesURL = Bundle.module.url(forResource: template.rawValue, withExtension: "stencil")?.deletingLastPathComponent() else {
             return .error(.codeGeneration(.templateLoadingFailed))
         }
         let templatesPath = templatesURL.path()
         let stencilEnvironment = Environment(loader: FileSystemLoader(paths: [Path(templatesPath)]), extensions: [ext])
-        
+
         guard let template = try? stencilEnvironment.loadTemplate(name: template.withStencilExt) else {
             return .error(.codeGeneration(.templateLoadingFailed))
         }
-        
+
         // Swift file generation
         do {
             let rendered = try template.render(context)
@@ -72,36 +72,36 @@ final class TemplateRenderer: Renderable {
             return .error(.codeGeneration(.renderingFailed))
         }
     }
-    
+
     func removeExtraNewlines(from content: String) -> String {
         var lines = content.components(separatedBy: .newlines)
         lines = lines.filter { $0 != "    " }
         return lines.joined(separator: "\n")
     }
-    
+
     private func registerTags(ext: Extension) {
-        ext.registerTag(Tag.ensureValueExists.rawValue) { parser, token in
+        ext.registerTag(Tag.ensureValueExists.rawValue) { _, token in
             let arguments = token.components.dropFirst().map { $0 }
             return EnsureValueExistsNode(arguments: arguments, token: token)
         }
-        ext.registerTag(Tag.ensureAnyValueExists.rawValue) { parser, token in
+        ext.registerTag(Tag.ensureAnyValueExists.rawValue) { _, token in
             let arguments = token.components.dropFirst().map { $0 }
             return EnsureAnyValueExistsNode(arguments: arguments, token: token)
         }
-        ext.registerTag(Tag.ensureDoubleNonNegative.rawValue) { parser, token in
+        ext.registerTag(Tag.ensureDoubleNonNegative.rawValue) { _, token in
             let arguments = token.components.dropFirst().map { $0 }
             return EnsureFloatNonNegativeNode(arguments: arguments, token: token)
         }
-        ext.registerTag(Tag.ensureDoubleInRange.rawValue) { parser, token in
+        ext.registerTag(Tag.ensureDoubleInRange.rawValue) { _, token in
             let arguments = token.components.dropFirst().map { $0 }
             return EnsureDoubleInRangeNode(arguments: arguments, token: token)
         }
-        ext.registerTag(Tag.ensureDouble.rawValue) { parser, token in
+        ext.registerTag(Tag.ensureDouble.rawValue) { _, token in
             let arguments = token.components.dropFirst().map { $0 }
             return EnsureFloatExistsNode(arguments: arguments, token: token)
         }
     }
-    
+
     private func registerFilters(ext: Extension) {
         ext.registerFilter(Filter.ensure.rawValue) { (value: Any?) in
             guard value != nil else {
@@ -147,7 +147,7 @@ final class TemplateRenderer: Renderable {
                 throw TemplateSyntaxError("Value \(String(describing: value)) for hex should be string")
             }
             _ = Color(hex: stringValue)
-            
+
             return stringValue
         }
         ext.registerFilter(Filter.findState.rawValue) { (value: Any?, arguments: [Any?]) in
@@ -187,17 +187,17 @@ final class TemplateRenderer: Renderable {
             guard let baseCornerRadiusKey = value as? String else {
                 throw TemplateSyntaxError("Invalid value for adjustedCornerRadius filter")
             }
-            
+
             let adjustmentValue = arguments.first.flatMap(Double.convert) ?? 0
             let adjustment = adjustmentValue > 0 ? "+ \(adjustmentValue)" : adjustmentValue < 0 ? "- \(-adjustmentValue)" : ""
-            
+
             return "ShapeToken.\(baseCornerRadiusKey.camelCase).cornerRadius \(adjustment)".trimmingCharacters(in: .whitespaces)
         }
         ext.registerFilter(Filter.paletteColor.rawValue) { [weak self] (value: Any?) in
             guard let paletteMapper = self?.paletteMapper, let value = value as? String else {
                 return value
             }
-            
+
             let color = try? self?.paletteMapper?.colorMap(value).hexWithAlpha
             return color
         }

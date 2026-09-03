@@ -19,7 +19,7 @@ public struct AutocompleteAppearance: Hashable {
     public var dropdownAppearance: DropdownMenuAppearance
     public var textFieldAppearance: TextFieldAppearance
     public var size: AutocompleteSizeConfiguration
-    
+
     public init(
         dropdownAppearance: DropdownMenuAppearance = .defaultValue,
         textFieldAppearance: TextFieldAppearance = .defaultValue,
@@ -29,13 +29,13 @@ public struct AutocompleteAppearance: Hashable {
         self.textFieldAppearance = textFieldAppearance
         self.size = size
     }
-    
+
     public static func == (lhs: AutocompleteAppearance, rhs: AutocompleteAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.dropdownAppearance == rhs.dropdownAppearance &&
         lhs.textFieldAppearance == rhs.textFieldAppearance
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -56,4 +56,3 @@ public extension EnvironmentValues {
         set { self[AutocompleteAppearance.self] = newValue }
     }
 }
-

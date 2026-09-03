@@ -11,5 +11,5 @@ struct PopoverUiState: StoryUiState, DefaultUiState {
     var triggerCentered: Bool = false
     var placementMode: PopoverPlacementMode = .strict
     var buttonPosition: PopoverButtonPosition = .center
-    var duration: Int? = nil
+    var duration: Int?
 }

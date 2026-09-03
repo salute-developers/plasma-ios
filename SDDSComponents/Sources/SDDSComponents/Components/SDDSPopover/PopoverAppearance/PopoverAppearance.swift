@@ -9,7 +9,7 @@ public struct PopoverAppearance: Hashable {
     public var backgroundColor: ColorToken
     public var shadow: ShadowToken
     public var size: PopoverSizeConfiguration
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         shadow: ShadowToken = ShadowToken(),
@@ -19,12 +19,12 @@ public struct PopoverAppearance: Hashable {
         self.shadow = shadow
         self.size = size
     }
-    
+
     public static func == (lhs: PopoverAppearance, rhs: PopoverAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

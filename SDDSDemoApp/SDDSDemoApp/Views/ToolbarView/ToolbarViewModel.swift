@@ -11,7 +11,7 @@ final class ToolbarViewModel: ComponentViewModel<ToolbarVariationProvider> {
             selectVariation(variations.first)
         }
     }
-    
+
     @Published var hasDivider: Bool = true
     @Published var slotsAmount: Int = 3 {
         didSet {
@@ -23,7 +23,7 @@ final class ToolbarViewModel: ComponentViewModel<ToolbarVariationProvider> {
             }
         }
     }
-    
+
     var slots: [ToolbarSlotData] {
         (0..<slotsAmount).map { index in
             let isFirst = index == 0
@@ -62,7 +62,7 @@ final class ToolbarViewModel: ComponentViewModel<ToolbarVariationProvider> {
             }
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: ToolbarUiState = .init()) {
         super.init(
             variationProvider: ToolbarVariationProvider(theme: theme, toolbarType: uiState.toolbarType),

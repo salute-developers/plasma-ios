@@ -12,7 +12,7 @@ import SDDSIcons
 
 struct SpinnerTestCase: View {
     var appearance: SpinnerAppearance
-    
+
     var body: some View {
         SDDSSpinner(
             isAnimating: true,

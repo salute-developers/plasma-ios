@@ -42,7 +42,7 @@ public struct NoteSize: NoteSizeConfiguration {
     public let closeEndMargin: CGFloat
     public let closeSize: CGFloat
     public let contentBeforeArrangement: NoteContentBeforeArrangement
-    
+
     public init(
         shape: PathDrawer = DefaultPathDrawer(),
         titlePaddingEnd: CGFloat = 0,

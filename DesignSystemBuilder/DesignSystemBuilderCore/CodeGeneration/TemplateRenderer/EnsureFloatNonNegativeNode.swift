@@ -7,7 +7,7 @@ class EnsureFloatNonNegativeNode: EnsureValueNode {
             throw TemplateSyntaxError("ensure_double_non_negative tag requires exactly one argument")
         }
         let variableName = arguments[0]
-        
+
         let flatContext = context.flatten()
         if let value = getValue(forKeyPath: variableName, from: flatContext), let floatValue = value as? Float, floatValue >= 0 {
             return ""
@@ -23,7 +23,7 @@ class EnsureFloatExistsNode: EnsureValueNode {
             throw TemplateSyntaxError("ensure_double_non_negative tag requires exactly one argument")
         }
         let variableName = arguments[0]
-        
+
         let flatContext = context.flatten()
         if let value = getValue(forKeyPath: variableName, from: flatContext), let floatValue = value as? Float {
             return ""

@@ -3,10 +3,10 @@ import SDDSComponents
 
 final class ListVariationProvider: VariationProvider {
     typealias Appearance = ListAppearance
-    
+
     var theme: Theme
     var layout: ListItemLayout
-    
+
     init(theme: Theme = .sdddsServTheme, layout: ListItemLayout = .listItemNormal) {
         self.theme = theme
         self.layout = layout
@@ -36,11 +36,11 @@ final class ListVariationProvider: VariationProvider {
             theme.listVariations,
             theme.listNumberedVariations,
             theme.listNormalVariations,
-            theme.listTightVariations,
+            theme.listTightVariations
         ].first(where: { !$0.isEmpty }) ?? []
     }
-    
+
     var defaultValue: ListAppearance {
         ListAppearance.defaultValue
     }
-} 
+}

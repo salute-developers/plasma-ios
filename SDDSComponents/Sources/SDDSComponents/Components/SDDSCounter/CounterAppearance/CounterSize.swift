@@ -9,7 +9,7 @@ public struct DefaultCounterSize: CounterSizeConfiguration {
     public var debugDescription: String {
         return "DefaultCounterSize"
     }
-    
+
     public init() {}
 }
 

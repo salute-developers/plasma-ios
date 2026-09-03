@@ -3,7 +3,7 @@ import SwiftUI
 
 struct BadgeSize: CodeGenerationSize {
     typealias Props = BadgeProps
-    
+
     var height: String?
     var cornerRadius: String?
     var startPadding: String?
@@ -12,11 +12,11 @@ struct BadgeSize: CodeGenerationSize {
     var startContentPadding: String?
     var endContentSize: String?
     var endContentPadding: String?
-    
+
     init(variation: BadgeConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: BadgeProps, id: String? = nil, nullify: Bool = false) {
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
         self.cornerRadius = ShapeTokenContextBuilder(shape: props.shape, nullify: nullify).context
@@ -27,7 +27,7 @@ struct BadgeSize: CodeGenerationSize {
         self.startContentPadding = CGFloatContextBuilder(props.startContentMargin?.value, nullify: nullify).context
         self.endContentPadding = CGFloatContextBuilder(props.endContentMargin?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.height = CGFloat.defaultContext
         self.cornerRadius = CGFloat.defaultContext

@@ -15,37 +15,37 @@ import UIKit
 import SwiftUI
 
 final class ListPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testListNormalSizeXlHasDisclosurePlasmaB2C() async throws {
         let appearance = ListNormal.xl.appearance
         try await runSnapshotTest(view: ListNormalSizeXlHasDisclosure(appearance: appearance))
     }
-    
+
     @MainActor
     func testListNormalSizeLPlasmaB2C() async throws {
         let appearance = ListNormal.l.appearance
         try await runSnapshotTest(view: ListNormalSizeL(appearance: appearance))
     }
-    
+
     @MainActor
     func testListNormalSizeMPlasmaB2C() async throws {
         let appearance = ListNormal.m.appearance
         try await runSnapshotTest(view: ListNormalSizeM(appearance: appearance))
     }
-    
+
     @MainActor
     func testListNormalSizeSPlasmaB2C() async throws {
         let appearance = ListNormal.s.appearance
         try await runSnapshotTest(view: ListNormalSizeS(appearance: appearance))
     }
-    
+
     @MainActor
     func testListNormalSizeXsAmountTwentyPlasmaB2C() async throws {
         let appearance = ListNormal.xs.appearance
         try await runSnapshotTest(view: ListNormalSizeXsAmountTwenty(appearance: appearance))
     }
-    
+
     @MainActor
     func testListTightSizeXsHasDisclosurePlasmaB2C() async throws {
         let appearance = ListTight.xs.appearance

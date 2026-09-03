@@ -24,7 +24,7 @@ public protocol SkeletonLineWidthProvider {
  */
 public struct FullWidthLineProvider: SkeletonLineWidthProvider {
     public init() {}
-    
+
     public func widthFactor(lineIndex: Int, lineCount: Int) -> CGFloat {
         1.0
     }
@@ -37,7 +37,7 @@ public struct FullWidthLineProvider: SkeletonLineWidthProvider {
  */
 public struct VariedWidthLineProvider: SkeletonLineWidthProvider {
     public init() {}
-    
+
     public func widthFactor(lineIndex: Int, lineCount: Int) -> CGFloat {
         if lineIndex == lineCount - 1 {
             // Последняя строка: 50% ± 15%
@@ -47,4 +47,4 @@ public struct VariedWidthLineProvider: SkeletonLineWidthProvider {
             return 0.9 + CGFloat.random(in: -0.05...0.05)
         }
     }
-} 
+}

@@ -19,7 +19,7 @@ public class Theme {
     public static let shapes = Shapes()
     public static let typographies = Typographies()
     public static let shadows = Shadows()
-    
+
     public class func initialize() {
         guard let fontsDirectoryURL = Bundle(for: self).resourceURL else {
             fatalError("Fonts directory not found in bundle")

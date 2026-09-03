@@ -20,7 +20,7 @@ public struct SwitchAccessibility {
     public var switchLabel: String
     public var switchEnabledValue: String
     public var switchDisabledValue: String
-    
+
     /**
      Инициализатор для создания параметров доступности переключателя.
      

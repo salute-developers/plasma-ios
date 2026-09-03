@@ -16,7 +16,7 @@ import SDDSIcons
 
 struct CounterSizeLDefault: View {
     var appearance: CounterAppearance
-    
+
     var body: some View {
         SDDSCounter(
             text: "123",
@@ -31,7 +31,7 @@ struct CounterSizeLDefault: View {
 
 struct CounterSizeMAccent: View {
     var appearance: CounterAppearance
-    
+
     var body: some View {
         SDDSCounter(
             text: "123",
@@ -46,7 +46,7 @@ struct CounterSizeMAccent: View {
 
 struct CounterSizeSPositive: View {
     var appearance: CounterAppearance
-    
+
     var body: some View {
         SDDSCounter(
             text: "999999999999999",
@@ -61,7 +61,7 @@ struct CounterSizeSPositive: View {
 
 struct CounterSizeXsWarning: View {
     var appearance: CounterAppearance
-    
+
     var body: some View {
         SDDSCounter(
             text: "123",
@@ -76,7 +76,7 @@ struct CounterSizeXsWarning: View {
 
 struct CounterSizeXxsNegative: View {
     var appearance: CounterAppearance
-    
+
     var body: some View {
         SDDSCounter(
             text: "123",
@@ -91,7 +91,7 @@ struct CounterSizeXxsNegative: View {
 
 struct CounterSizeLWhite: View {
     var appearance: CounterAppearance
-    
+
     var body: some View {
         SDDSCounter(
             text: "1",

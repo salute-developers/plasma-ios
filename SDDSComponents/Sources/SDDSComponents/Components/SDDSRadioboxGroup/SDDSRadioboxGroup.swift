@@ -68,7 +68,7 @@ public struct SDDSRadioboxGroup: View {
             }
         }
     }
-    
+
     var appearance: RadioboxGroupAppearance {
         _appearance ?? environmentAppearance
     }

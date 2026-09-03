@@ -18,10 +18,10 @@ public struct DefaultCardSize: CardSizeConfiguration {
     public var paddingTop: CGFloat = 16
     public var paddingBottom: CGFloat = 16
     public var pathDrawer: PathDrawer = DefaultPathDrawer()
-    
+
     public var debugDescription: String {
         return "Default Card Size"
     }
-    
+
     public init() {}
 }

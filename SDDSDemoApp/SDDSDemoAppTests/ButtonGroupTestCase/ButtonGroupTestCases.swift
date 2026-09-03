@@ -20,7 +20,7 @@ import SDDSIcons
 struct ButtonGroupLDefaultNoGap: View {
     var appearance: ButtonAppearance
     var buttonGroupAppearance: ButtonGroupAppearance
-    
+
     var body: some View {
         let buttonData = (1...5).map { index in
             ButtonData(
@@ -44,7 +44,7 @@ struct ButtonGroupLDefaultNoGap: View {
 struct ButtonGroupMDenseDefaultHorizontal: View {
     var appearance: ButtonAppearance
     var buttonGroupAppearance: ButtonGroupAppearance
-    
+
     var body: some View {
         let buttonData = (1...3).map { index in
             ButtonData(
@@ -68,7 +68,7 @@ struct ButtonGroupMDenseDefaultHorizontal: View {
 struct ButtonGroupSWideDefaultSegmentedHorizontal: View {
     var appearance: ButtonAppearance
     var buttonGroupAppearance: ButtonGroupAppearance
-    
+
     var body: some View {
         let buttonData = (1...3).map { index in
             ButtonData(
@@ -92,7 +92,7 @@ struct ButtonGroupSWideDefaultSegmentedHorizontal: View {
 struct ButtonGroupXsGapNoneDefaultVertical: View {
     var appearance: ButtonAppearance
     var buttonGroupAppearance: ButtonGroupAppearance
-    
+
     var body: some View {
         let buttonData = (1...3).map { index in
             ButtonData(
@@ -116,7 +116,7 @@ struct ButtonGroupXsGapNoneDefaultVertical: View {
 struct ButtonGroupXxsItemCountTenDefaultSegmented: View {
     var appearance: ButtonAppearance
     var buttonGroupAppearance: ButtonGroupAppearance
-    
+
     var body: some View {
         let buttonData = (1...10).map { index in
             ButtonData(
@@ -140,7 +140,7 @@ struct ButtonGroupXxsItemCountTenDefaultSegmented: View {
 struct IconButtonGroupAmountThreeHorizontal: View {
     var appearance: ButtonAppearance
     var iconButtonGroupAppearance: ButtonGroupAppearance
-    
+
     var body: some View {
         let buttonData = (1...3).map { index in
             ButtonData(
@@ -165,7 +165,7 @@ struct IconButtonGroupAmountThreeHorizontal: View {
 struct IconButtonGroupAmountThreeVertical: View {
     var appearance: ButtonAppearance
     var iconButtonGroupAppearance: ButtonGroupAppearance
-    
+
     var body: some View {
         let buttonData = (1...3).map { index in
             ButtonData(
@@ -190,7 +190,7 @@ struct IconButtonGroupAmountThreeVertical: View {
 struct IconButtonGroupAmountTenHorizontal: View {
     var appearance: ButtonAppearance
     var iconButtonGroupAppearance: ButtonGroupAppearance
-    
+
     var body: some View {
         let buttonData = (1...10).map { index in
             ButtonData(

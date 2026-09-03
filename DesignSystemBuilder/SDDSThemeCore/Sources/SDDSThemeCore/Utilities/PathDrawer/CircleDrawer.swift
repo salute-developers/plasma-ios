@@ -8,6 +8,6 @@ public final class CircleDrawer: PathDrawer {
         path.addRoundedRect(in: rect, cornerSize: CGSize(width: radius, height: radius))
         return path
     }
-    
-    public init(){}
+
+    public init() {}
 }

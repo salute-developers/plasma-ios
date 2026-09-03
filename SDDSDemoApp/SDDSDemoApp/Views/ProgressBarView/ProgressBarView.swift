@@ -27,7 +27,7 @@ struct ProgressBarView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
                 HStack {
@@ -48,7 +48,7 @@ struct ProgressBarView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("ProgressView")
     }
 }

@@ -10,7 +10,7 @@ class PassthroughView: UIView {
 
         if let hostingView = hostingView {
             let convertedPoint = convert(point, to: hostingView)
-            
+
             if let hitView = hostingView.hitTest(convertedPoint, with: event) {
                 return hostingView
             }

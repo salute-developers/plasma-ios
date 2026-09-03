@@ -5,15 +5,15 @@ final class LabelPlacementContextBuilder: CodeGenerationContextBuilder {
         case innerLabel = "inner-label"
         case outerLabel = "outer-label"
     }
-    
+
     let id: String?
     let component: CodeGenerationComponent
-    
+
     init(id: String?, component: CodeGenerationComponent) {
         self.id = id
         self.component = component
     }
-    
+
     var context: String? {
         let type = "\(component.rawValue)LabelPlacement"
         guard let id = id?.lastKey, let variationId = VariationId(rawValue: id) else {

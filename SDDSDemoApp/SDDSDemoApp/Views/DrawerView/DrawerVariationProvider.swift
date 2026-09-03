@@ -9,15 +9,15 @@ enum DrawerVariationType: String, CaseIterable {
 
 final class DrawerVariationProvider: VariationProvider {
     typealias Appearance = DrawerAppearance
-    
+
     var theme: Theme
     var variationType: DrawerVariationType
-    
+
     init(theme: Theme = .sdddsServTheme, variationType: DrawerVariationType = .inner) {
         self.theme = theme
         self.variationType = variationType
     }
-    
+
     var variations: [Variation<DrawerAppearance>] {
         switch variationType {
         case .inner:
@@ -28,7 +28,7 @@ final class DrawerVariationProvider: VariationProvider {
             return theme.drawerCloseOuterVariations
         }
     }
-    
+
     var defaultValue: DrawerAppearance {
         variations.first?.appearance ?? DrawerAppearance()
     }

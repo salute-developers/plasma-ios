@@ -43,7 +43,7 @@ public struct TabItemAppearance: Hashable {
     public var counterAppearance: CounterAppearance?
     public var actionIcon: Image?
     public var indicatorColor: ColorToken?
-    
+
     public init(
         size: TabItemSizeConfiguration = ZeroTabItemSize(),
         labelColor: ButtonColor = ButtonColor(),
@@ -70,12 +70,10 @@ public struct TabItemAppearance: Hashable {
         self.indicatorColor = indicatorColor
     }
 
-    
-    
     public static func == (lhs: TabItemAppearance, rhs: TabItemAppearance) -> Bool {
         return lhs.id == rhs.id
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

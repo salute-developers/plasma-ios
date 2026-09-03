@@ -7,7 +7,7 @@ struct SegmentElementUiState: StoryUiState, DefaultUiState {
     var appearance: String = ""
     var title: String = "Title"
     var subtitle: String = "Value"
-    var iconAttributes: ButtonIconAttributes? = nil
+    var iconAttributes: ButtonIconAttributes?
     var isDisabled: Bool = false
     var alignment: SDDSComponents.ButtonAlignment = .leading
     var isCounterVisible: Bool = false

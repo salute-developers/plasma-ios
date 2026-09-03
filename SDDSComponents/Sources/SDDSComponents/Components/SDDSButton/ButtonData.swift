@@ -29,7 +29,7 @@ public struct ButtonData: Hashable {
     public let accessibility: ButtonAccessibility
     public let isSelected: Bool
     public let action: () -> Void
-    
+
     public init(
         id: UUID = UUID(),
         title: String,
@@ -59,11 +59,11 @@ public struct ButtonData: Hashable {
         self.isSelected = isSelected
         self.action = action
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id.uuidString)
     }
-    
+
     public static func == (lhs: ButtonData, rhs: ButtonData) -> Bool {
         lhs.id == rhs.id
     }

@@ -8,15 +8,15 @@ enum ToolbarType: String, CaseIterable {
 
 final class ToolbarVariationProvider: VariationProvider {
     typealias Appearance = ToolbarAppearance
-    
+
     var theme: Theme
     var toolbarType: ToolbarType
-    
+
     init(theme: Theme = .sdddsServTheme, toolbarType: ToolbarType = .horizontal) {
         self.theme = theme
         self.toolbarType = toolbarType
     }
-    
+
     var variations: [Variation<ToolbarAppearance>] {
         switch toolbarType {
         case .horizontal:
@@ -25,7 +25,7 @@ final class ToolbarVariationProvider: VariationProvider {
             return theme.toolbarVerticalVariations
         }
     }
-    
+
     var defaultValue: ToolbarAppearance {
         ToolbarAppearance.defaultValue
     }

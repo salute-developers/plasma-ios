@@ -9,7 +9,6 @@ enum RadioboxStory: Story {
     static let title = "Radiobox"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: RadioboxUiState, theme: Theme) -> some View {
         RadioboxView(viewModel: RadioboxViewModel(theme: theme, uiState: state))

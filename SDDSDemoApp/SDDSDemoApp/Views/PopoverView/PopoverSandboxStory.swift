@@ -9,7 +9,6 @@ enum PopoverStory: Story {
     static let title = "Popover"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: PopoverUiState, theme: Theme) -> some View {
         PopoverView(

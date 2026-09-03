@@ -3,22 +3,22 @@ import Foundation
 struct CheckboxAppearance: CodeGenerationAppearance {
     typealias Variation = CheckboxConfiguration.Variation
     typealias Props = CheckboxProps
-    
-    var toggleColor: String? = nil
-    var borderColor: String? = nil
-    var titleTypography: String? = nil
-    var titleColor: String? = nil
-    var subtitleTypography: String? = nil
-    var subtitleColor: String? = nil
-    var toggleColorChecked: String? = nil
-    var toggleColorIndeterminate: String? = nil
-    var toggleIndeterminateColor: String? = nil
-    var disabledAlpha: String? = nil
-    
+
+    var toggleColor: String?
+    var borderColor: String?
+    var titleTypography: String?
+    var titleColor: String?
+    var subtitleTypography: String?
+    var subtitleColor: String?
+    var toggleColorChecked: String?
+    var toggleColorIndeterminate: String?
+    var toggleIndeterminateColor: String?
+    var disabledAlpha: String?
+
     init(variation: CheckboxConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
-    
+
     init(props: CheckboxProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return

@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class AvatarGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
-    
+
     @MainActor
     func testAvatarGroupSizeSPlasmaHomeDS() async throws {
         let appearance = Avatar.s.appearance

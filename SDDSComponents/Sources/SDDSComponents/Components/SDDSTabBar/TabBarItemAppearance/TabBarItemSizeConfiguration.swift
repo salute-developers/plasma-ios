@@ -35,11 +35,11 @@ public struct DefaultTabBarItemSize: TabBarItemSizeConfiguration {
     public var labelPadding: CGFloat = 4.0
     public var shape: PathDrawer = DefaultPathDrawer()
     public var labelPlacement: TabBarItemLabelPlacement = .bottom
-    
+
     public var debugDescription: String {
         "DefaultTabBarItemSize"
     }
-    
+
     public init() {}
 }
 
@@ -51,11 +51,11 @@ public struct ZeroTabBarItemSize: TabBarItemSizeConfiguration {
     public var labelPadding: CGFloat = 0
     public var shape: PathDrawer = DefaultPathDrawer()
     public var labelPlacement: TabBarItemLabelPlacement = .none
-    
+
     public var debugDescription: String {
         "ZeroTabBarItemSize"
     }
-    
+
     public init() {}
 }
 

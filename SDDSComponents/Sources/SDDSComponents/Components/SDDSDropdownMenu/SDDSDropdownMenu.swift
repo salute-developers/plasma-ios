@@ -6,7 +6,7 @@ public struct SDDSDropdownMenu<Content: View>: View {
     @Environment(\.subtheme) private var subtheme
     private let _appearance: DropdownMenuAppearance?
     private let content: Content
-    
+
     public init(
         @ViewBuilder content: @escaping () -> (Content),
         appearance: DropdownMenuAppearance? = nil
@@ -14,7 +14,7 @@ public struct SDDSDropdownMenu<Content: View>: View {
         self.content = content()
         self._appearance = appearance
     }
-    
+
     public var body: some View {
         content
             .applyIfLet(appearance.dividerAppearance) { content, appearance in
@@ -23,7 +23,7 @@ public struct SDDSDropdownMenu<Content: View>: View {
             .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             .shadow(appearance.shadow)
     }
-    
+
     var appearance: DropdownMenuAppearance {
         _appearance ?? environmentAppearance
     }

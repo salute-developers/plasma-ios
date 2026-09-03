@@ -25,7 +25,7 @@ private enum AnimationPhase {
 }
 
 internal struct CoreInputView: View {
-    
+
     let groups: [CodeFieldGroup]
     let validation: CodeFieldValidation
     let caption: String
@@ -33,7 +33,7 @@ internal struct CoreInputView: View {
     let keyboardType: UIKeyboardType
     let isHidden: Bool
     let showBeforeSecure: Bool
-    
+
     let valueColor: ColorToken
     let valueColorError: ColorToken
     let backgroundColor: ColorToken
@@ -46,14 +46,14 @@ internal struct CoreInputView: View {
     let dotColorError: ColorToken
     let valueTypography: TypographyToken
     let captionTypography: TypographyToken
-    
+
     let strokeColor: ColorToken?
     let strokeColorError: ColorToken?
     let strokeColorFocused: ColorToken?
     let fillColor: ColorToken?
     let fillColorError: ColorToken?
     let strokeWidth: CGFloat?
-    
+
     let itemWidth: CGFloat
     let itemHeight: CGFloat
     let itemSpacing: CGFloat
@@ -62,13 +62,13 @@ internal struct CoreInputView: View {
     let dotSize: CGFloat
     let itemShape: PathDrawer
     let groupShape: PathDrawer
-    
+
     enum InputMode {
         case field
         case input
     }
     let inputMode: InputMode
-    
+
     @Binding private var validationResult: CodeFieldValidationResult
     @Binding private var code: String
     @State private var oldCode: String
@@ -170,7 +170,7 @@ internal struct CoreInputView: View {
         self._oldCode = State(initialValue: code.wrappedValue)
         self._isAnimating = State(initialValue: isAnimating)
     }
-    
+
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
@@ -183,13 +183,13 @@ internal struct CoreInputView: View {
             .onTapGesture {
                 isFocused = true
             }
-            
+
             captionText
                 .frame(maxWidth: coreInputSize.width, alignment: captionAlignment.suiAlignment)
         }
         .background(Color.clear)
     }
-    
+
     @ViewBuilder
     private var captionText: some View {
         if !caption.isEmpty {
@@ -203,7 +203,7 @@ internal struct CoreInputView: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private var codeGroup: some View {
         HStack(spacing: totalGroupSpacing) {
@@ -216,7 +216,7 @@ internal struct CoreInputView: View {
                         String(currentCode[currentCode.index(currentCode.startIndex, offsetBy: globalIndex)]) : ""
                         let isCurrentPosition = globalIndex == cursorPosition && isFocused && !hasError && !isFullError
                         let isErrorItem = (globalIndex == errorPosition && hasError) || isFullError
-                        
+
                         item(
                             value: value,
                             isError: isErrorItem,
@@ -234,7 +234,7 @@ internal struct CoreInputView: View {
             isShaking: isShaking && isFullError
         )
     }
-    
+
     private var totalGroupSpacing: CGFloat {
         switch inputMode {
         case .field:
@@ -243,7 +243,7 @@ internal struct CoreInputView: View {
             groupSpacing
         }
     }
-    
+
     @ViewBuilder
     private func item(value: String, isError: Bool, isCurrentPosition: Bool, globalIndex: Int) -> some View {
         switch inputMode {
@@ -253,7 +253,7 @@ internal struct CoreInputView: View {
             inputItem(value: value, isError: isError, isCurrentPosition: isCurrentPosition, globalIndex: globalIndex)
         }
     }
-    
+
     @ViewBuilder
     private func fieldItem(value: String, isError: Bool, isCurrentPosition: Bool, globalIndex: Int) -> some View {
         Rectangle()
@@ -275,7 +275,7 @@ internal struct CoreInputView: View {
                 isShaking: isShaking && (globalIndex == errorPosition)
             )
     }
-    
+
     @ViewBuilder
     private func inputItem(value: String, isError: Bool, isCurrentPosition: Bool, globalIndex: Int) -> some View {
         ZStack {
@@ -326,14 +326,14 @@ internal struct CoreInputView: View {
             isShaking: isShaking && (globalIndex == errorPosition)
         )
     }
-    
+
     @ViewBuilder
     private func dot(color: ColorToken) -> some View {
         Circle()
             .fill(color.color(for: colorScheme, subtheme: subtheme))
             .frame(width: dotSize, height: dotSize)
     }
-    
+
     @ViewBuilder
     private var caret: some View {
         Rectangle()
@@ -350,7 +350,7 @@ internal struct CoreInputView: View {
                 }
             }
     }
-    
+
     @ViewBuilder
     private func symbol(value: String, isError: Bool, globalIndex: Int) -> some View {
         if isHidden {
@@ -367,14 +367,14 @@ internal struct CoreInputView: View {
                 .foregroundColor((isError ? valueColorError : valueColor).color(for: colorScheme, subtheme: subtheme))
         }
     }
-    
+
     @ViewBuilder
     private func dot(isError: Bool) -> some View {
         Circle()
             .fill((isError ? dotColorError : dotColor).color(for: colorScheme, subtheme: subtheme))
             .frame(width: dotSize, height: dotSize)
     }
-    
+
     @ViewBuilder
     private var textField: some View {
         FocusableTextField(
@@ -404,7 +404,7 @@ internal struct CoreInputView: View {
                 case .success:
                     valid = true
                 }
-                
+
                 return !isAnimating && (valid || value.isEmpty)
             },
             onEditingChanged: nil
@@ -429,22 +429,22 @@ internal struct CoreInputView: View {
             }
         }
     }
-    
+
     private func handleCodeChange(newValue: String, deleting: Bool = false) {
         guard !isAnimating else { return }
-        
+
         var finalValidationResult: CodeFieldValidationResult = .success(.initial)
-        
+
         guard let char = newValue.last else {
             cursorPosition = 0
             currentInputPosition = -1
             code = newValue
             return
         }
-        
+
         finalValidationResult = validation.validate(value: newValue, nextSymbol: char)
         let filtered = newValue.filter { validation.validate(value: newValue, nextSymbol: $0) == .success(.next) }
-        
+
         switch finalValidationResult {
         case .success(.next), .success(.initial):
             cursorPosition = filtered.count
@@ -473,44 +473,44 @@ internal struct CoreInputView: View {
             animateFullError()
             code = ""
         }
-        
+
         self.validationResult = finalValidationResult
     }
-    
+
     private func showHiddenSymbol(code: String, deleting: Bool) {
         guard isHidden && !code.isEmpty && !deleting && showBeforeSecure else {
             return
         }
-        
+
         visibleCharacters.removeAll()
-        
+
         let lastIndex = code.count - 1
         visibleCharacters.insert(lastIndex)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             visibleCharacters.remove(lastIndex)
         }
     }
-    
+
     private func backgroundColor(isError: Bool, isCurrentPosition: Bool) -> ColorToken {
         if isError {
             return backgroundColorError
         }
-        
+
         if isFocused && isCurrentPosition {
             return backgroundColorActivated
         } else {
             return backgroundColor
         }
     }
-    
+
     private func captionColor(isCaptionErrorDisplayed: Bool) -> ColorToken {
         if isCaptionErrorDisplayed {
             return captionColorError
         }
-        
+
         return captionColor
     }
-    
+
     private func globalIndex(groupIndex: Int, itemIndex: Int, groups: [CodeFieldGroup]) -> Int {
         var globalIndex = 0
         for i in 0..<groupIndex {
@@ -518,30 +518,30 @@ internal struct CoreInputView: View {
         }
         return globalIndex + itemIndex
     }
-    
+
     private func animateError() {
         isAnimating = true
         animationPhase = .colorChange
-        
+
         var delay = CoreInputAnimation.colorChangeDuration
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.animationPhase = .scaleUp
             self.isScaled = true
         }
-        
+
         delay += CoreInputAnimation.scaleUpDuration
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.animationPhase = .shaking
             self.isShaking = true
         }
-        
+
         delay += CoreInputAnimation.shakeDuration
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.animationPhase = .scaleDown
             self.isShaking = false
             self.isScaled = false
         }
-        
+
         delay += CoreInputAnimation.scaleDownDuration
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.hasError = false
@@ -553,14 +553,14 @@ internal struct CoreInputView: View {
             self.animationPhase = .idle
         }
     }
-    
+
     private func animateFullError() {
         isAnimating = true
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + CoreInputAnimation.shakeDelay) {
             self.isShaking = true
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + CoreInputAnimation.shakeDelay + CoreInputAnimation.shakeDuration) {
             self.isFullError = false
             self.isShaking = false
@@ -581,14 +581,14 @@ extension CoreInputView {
             }
             return strokeColorError
         }
-        
+
         if isFocused {
             return strokeColorFocused
         } else {
             return strokeColor
         }
     }
-    
+
     private func fillColor(isError: Bool) -> ColorToken? {
         if isError {
             return fillColorError

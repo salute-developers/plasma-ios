@@ -34,11 +34,11 @@ public struct SwitchAppearance: Hashable {
     @ApiName("toggleThumbColor")
     public var toggleThumbColor: StatefulFillStyle
     public var disabledAlpha: CGFloat
-    
+
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     @ApiValue("StatefulFillStyle(defaultValue: .color(.clearColor), values: [])", zero: "StatefulFillStyle(defaultValue: .color(.clearColor), values: [])")
     public var tintColor: StatefulFillStyle
-    
+
     public init(
         size: SwitchSizeConfiguration = DefaultSwitchSize(),
         titleTypography: TypographyConfiguration = .default,
@@ -63,7 +63,7 @@ public struct SwitchAppearance: Hashable {
         self.disabledAlpha = disabledAlpha
         self.tintColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
     }
-    
+
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         size: SwitchSizeConfiguration = DefaultSwitchSize(),
@@ -114,11 +114,11 @@ public struct SwitchAppearance: Hashable {
             disabledAlpha: disabledAlpha
         )
     }
-    
+
     public static func == (lhs: SwitchAppearance, rhs: SwitchAppearance) -> Bool {
         lhs.id == rhs.id
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

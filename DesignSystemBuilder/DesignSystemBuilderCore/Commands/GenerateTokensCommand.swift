@@ -33,10 +33,10 @@ final class GenerateTokensCommand: Command, FileWriter {
 
         super.init(name: name)
     }
-    
+
     private func createThemeDirectory() -> CommandResult {
         let fileManager = FileManager.default
-        
+
         do {
             if !fileManager.fileExists(atPath: themeURL.path()) {
                 try fileManager.createDirectory(at: themeURL, withIntermediateDirectories: false)
@@ -46,19 +46,19 @@ final class GenerateTokensCommand: Command, FileWriter {
             return .error(GeneralError.invalidThemeDirectory)
         }
     }
-    
+
     @discardableResult override func run() -> CommandResult {
         super.run()
-        
+
         var result = createThemeDirectory()
         guard !result.isError else {
             return result
         }
-        
+
         guard let jsonData = try? Data(contentsOf: schemeURL) else {
             return .error(GeneralError.invalidFilename)
         }
-        
+
         result = contextBuilder.buildContext(from: jsonData)
         guard var context = result.asDictionary else {
             return result

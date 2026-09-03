@@ -5,7 +5,7 @@ final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerTransiti
     var onBottomSheetScrollChange: OnBottomSheetScrollChange?
     var onChangeDetent: OnChangeDetent?
     var onDismiss: (() -> Void)?
-    
+
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let controller = BottomSheetPresentationController(presentedViewController: presented, presenting: presenting)
         controller.dimmingAlphaWhenFull = configuration.dimmingAlphaWhenFull

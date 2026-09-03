@@ -77,11 +77,11 @@ public struct SDDSAutocomplete<IconContent: View, ActionContent: View, RightCont
     private let _appearance: AutocompleteAppearance?
     public let layout: TextFieldLayout
     public let accessibility: TextFieldAccessibility
-    
+
     let iconContent: Action<IconContent>
     let actionContent: Action<ActionContent>
     let onMaskComplete: ((Bool) -> Void)?
-    
+
     @Binding public var isDropdownPresented: Bool
     public let items: [SDDSListItem<RightContent>]
     public let isLoading: Bool
@@ -90,19 +90,19 @@ public struct SDDSAutocomplete<IconContent: View, ActionContent: View, RightCont
     let onItemSelected: ((Int) -> Void)?
     let loaderContent: () -> LoaderContent
     let emptyStateContent: () -> EmptyStateContent
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.autocompleteAppearance) private var environmentAppearance
-    
+
     @State private var contentHeight: CGFloat = 0
     @State private var textFieldWidth: CGFloat = 0
     private let maxDropdownHeight: CGFloat = 400
-    
+
     private var calculatedContentHeight: CGFloat {
         min(contentHeight + (isLoading ? 50 : 0), maxDropdownHeight)
     }
-    
+
     public init(
         value: Binding<TextFieldValue>,
         title: String = "",
@@ -159,7 +159,7 @@ public struct SDDSAutocomplete<IconContent: View, ActionContent: View, RightCont
         self.loaderContent = loaderContent
         self.emptyStateContent = emptyStateContent
     }
-    
+
     public var body: some View {
         SDDSTextField(
             value: $value,
@@ -202,11 +202,11 @@ public struct SDDSAutocomplete<IconContent: View, ActionContent: View, RightCont
             }
         }
     }
-    
+
     var appearance: AutocompleteAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var dropdownAppearance: DropdownMenuAppearance {
         var appearance = appearance.dropdownAppearance
         var size = DefaultDropdownMenuSize()
@@ -214,10 +214,10 @@ public struct SDDSAutocomplete<IconContent: View, ActionContent: View, RightCont
         size.shape = appearance.size.shape
         size.width = textFieldWidth > 0 ? textFieldWidth : appearance.size.width
         appearance.size = size
-        
+
         return appearance
     }
-    
+
     @ViewBuilder
     private var dropdownContent: some View {
         if items.isEmpty && shouldShowEmptyState {
@@ -230,7 +230,7 @@ public struct SDDSAutocomplete<IconContent: View, ActionContent: View, RightCont
                 onItemSelected?(index)
                 isDropdownPresented = false
             }
-            
+
             Group {
                 if isLoading {
                     SDDSList(
@@ -263,4 +263,3 @@ public struct SDDSAutocomplete<IconContent: View, ActionContent: View, RightCont
         }
     }
 }
-

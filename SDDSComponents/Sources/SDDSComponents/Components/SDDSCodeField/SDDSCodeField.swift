@@ -11,7 +11,7 @@ public struct SDDSCodeField: View {
     let keyboardType: UIKeyboardType
     let isHidden: Bool
     let onCodeChanged: (String) -> Void
-    
+
     private var _appearance: CodeFieldAppearance?
     @Environment(\.codeFieldAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
@@ -20,7 +20,7 @@ public struct SDDSCodeField: View {
     @Binding private var code: String
     @State private var isFocused: Bool
     @State private var isAnimating: Bool = false
-    
+
     public init(
         code: Binding<String>,
         groups: [CodeFieldGroup],
@@ -48,7 +48,7 @@ public struct SDDSCodeField: View {
         self.isFocused = isFocused
         self._isAnimating = State(initialValue: isAnimating)
     }
-    
+
     public var body: some View {
         CoreInputView(
             code: $code,
@@ -85,7 +85,7 @@ public struct SDDSCodeField: View {
             groupShape: appearance.size.groupShape
         )
     }
-    
+
     private var appearance: CodeFieldAppearance {
         _appearance ?? environmentAppearance
     }

@@ -18,7 +18,7 @@ public struct ButtonGroupSize: ButtonGroupSizeConfiguration {
     public let spacing: CGFloat
     public let externalShape: PathDrawer
     public let internalShape: PathDrawer
-    
+
     public init(
         spacing: CGFloat = 0,
         externalShape: PathDrawer = DefaultPathDrawer(),

@@ -16,7 +16,7 @@ public struct SDDSTabs: View {
     @State private var itemWidths: [String: CGFloat] = [:]
     @State private var itemHeights: [String: CGFloat] = [:]
     @State private var itemPositions: [String: CGPoint] = [:]
-    
+
     private let _appearance: TabsAppearance?
     private let items: [TabItem]
     private let selectedId: String?
@@ -25,9 +25,9 @@ public struct SDDSTabs: View {
     private let stretch: Bool
     private let hasDivider: Bool
     private let onSelect: (String) -> Void
-    
+
     private static let tabsContainerName = "tabs_container"
-    
+
     /// Тип используемых TabItem
     public enum TabItemType {
         /// TabItem с текстом и опциональными иконками
@@ -37,7 +37,7 @@ public struct SDDSTabs: View {
         /// TabItem только с иконкой
         case icon
     }
-    
+
     /// Создает контейнер вкладок
     /// - Parameters:
     ///   - items: Массив элементов вкладок
@@ -67,7 +67,7 @@ public struct SDDSTabs: View {
         self._appearance = appearance
         self.onSelect = onSelect
     }
-    
+
     public var body: some View {
         switch appearance.size.orientation {
         case .horizontal:
@@ -76,7 +76,7 @@ public struct SDDSTabs: View {
             verticalLayout
         }
     }
-    
+
     @ViewBuilder private var horizontalLayout: some View {
         VStack(spacing: 0) {
             switch clipMode {
@@ -114,7 +114,7 @@ public struct SDDSTabs: View {
             }
         }
     }
-    
+
     @ViewBuilder private var horizontalTabsStack: some View {
         HStack(spacing: 0) {
             ForEach(Array(visibleItems.enumerated()), id: \.element.id) { index, item in
@@ -134,7 +134,7 @@ public struct SDDSTabs: View {
                                 )
                         }
                     )
-                
+
                 if index < visibleItems.count - 1 {
                     if stretch {
                         Spacer()
@@ -165,7 +165,7 @@ public struct SDDSTabs: View {
             horizontalIndicator
         }
     }
-    
+
     @ViewBuilder private var verticalLayout: some View {
         switch clipMode {
         case .none, .showMore:
@@ -205,7 +205,7 @@ public struct SDDSTabs: View {
             }
         }
     }
-    
+
     @ViewBuilder private var verticalTabsStack: some View {
         VStack(spacing: 0) {
             ForEach(Array(visibleItems.enumerated()), id: \.element.id) { index, item in
@@ -226,7 +226,7 @@ public struct SDDSTabs: View {
                                 )
                         }
                     )
-                
+
                 if index < visibleItems.count - 1 {
                     if stretch {
                         Spacer()
@@ -256,11 +256,11 @@ public struct SDDSTabs: View {
             verticalIndicator
         }
     }
-    
+
     @ViewBuilder private func tabItemView(for item: TabItem) -> some View {
         let isShowMoreItem = isShowMoreButton(item)
         let isSelected = isShowMoreItem ? true : (item.id == selectedId)
-        
+
         Button {
             if isShowMoreItem {
                 isDropdownPresented.toggle()
@@ -281,21 +281,21 @@ public struct SDDSTabs: View {
             dropdownContentHeight: dropdownContentHeight
         ))
     }
-    
+
     private func isShowMoreButton(_ item: TabItem) -> Bool {
         if case .showMore(let showMoreItem, _, _) = clipMode {
             return item.id == showMoreItem.id
         }
         return false
     }
-    
+
     private func isShowMoreButtonId(_ id: String) -> Bool {
         if case .showMore(let showMoreItem, _, _) = clipMode {
             return id == showMoreItem.id
         }
         return false
     }
-    
+
     @ViewBuilder private func overflowButton(isPrevious: Bool) -> some View {
         Button {
             if isPrevious {
@@ -306,7 +306,7 @@ public struct SDDSTabs: View {
         } label: {
             let icon = isPrevious ? appearance.overflowPrevIcon : appearance.overflowNextIcon
             let color = isPrevious ? appearance.overflowPrevIconColor : appearance.overflowNextIconColor
-            
+
             if let icon = icon {
                 icon
                     .renderingMode(.template)
@@ -316,7 +316,7 @@ public struct SDDSTabs: View {
         }
         .buttonStyle(PlainButtonStyle())
     }
-    
+
     @ViewBuilder private func horizontalScrollArrow(isPrevious: Bool) -> some View {
         let size = appearance.size.overflowIconSize
         if (isPrevious && hasPreviousItem) || (!isPrevious && hasNextItem) {
@@ -329,7 +329,7 @@ public struct SDDSTabs: View {
 
         }
     }
-    
+
     @ViewBuilder private func verticalScrollArrow(isPrevious: Bool) -> some View {
         let size = appearance.size.overflowIconSize
         if (isPrevious && hasPreviousItem) || (!isPrevious && hasNextItem) {
@@ -341,7 +341,7 @@ public struct SDDSTabs: View {
 
         }
     }
-    
+
     @ViewBuilder private var horizontalDividerView: some View {
         if hasDivider, appearance.size.dividerEnabled, let dividerAppearance = appearance.dividerAppearance {
             HStack(spacing: 0) {
@@ -353,13 +353,13 @@ public struct SDDSTabs: View {
             .frame(maxWidth: stretch ? .infinity : nil, alignment: .leading)
         }
     }
-    
+
     @ViewBuilder private func horizontalDividerSegment(for item: TabItem, at index: Int, appearance dividerAppearance: DividerAppearance) -> some View {
         let width = itemWidths[item.id] ?? 100
         Rectangle()
             .fill(dividerAppearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             .frame(width: width, height: 1)
-        
+
         if index < visibleItems.count - 1 {
             if stretch {
                 Rectangle()
@@ -373,7 +373,7 @@ public struct SDDSTabs: View {
             }
         }
     }
-    
+
     @ViewBuilder private var verticalDivider: some View {
         if hasDivider, appearance.size.dividerEnabled, let dividerAppearance = appearance.dividerAppearance {
             VStack(spacing: 0) {
@@ -383,14 +383,14 @@ public struct SDDSTabs: View {
             }
         }
     }
-    
+
     @ViewBuilder private func verticalDividerSegment(for item: TabItem, at index: Int, appearance dividerAppearance: DividerAppearance) -> some View {
         if let height = itemHeights[item.id] {
             Group {
                 Rectangle()
                     .fill(dividerAppearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: 1, height: height)
-                
+
                 if index < visibleItems.count - 1 {
                     if stretch {
                         Rectangle()
@@ -408,37 +408,37 @@ public struct SDDSTabs: View {
             EmptyView()
         }
     }
-    
+
     private func selectPreviousItem() {
         guard let selectedId = selectedId,
               let currentIndex = items.firstIndex(where: { $0.id == selectedId }),
               currentIndex > 0 else {
             return
         }
-        
+
         let previousItem = items[currentIndex - 1]
         if !previousItem.isDisabled {
             onSelect(previousItem.id)
         }
     }
-    
+
     private func selectNextItem() {
         guard let selectedId = selectedId,
               let currentIndex = items.firstIndex(where: { $0.id == selectedId }),
               currentIndex < items.count - 1 else {
             return
         }
-        
+
         let nextItem = items[currentIndex + 1]
         if !nextItem.isDisabled {
             onSelect(nextItem.id)
         }
     }
-    
+
     private var appearance: TabsAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var visibleItems: [TabItem] {
         switch clipMode {
         case .showMore(let showMoreItem, _, _):
@@ -447,7 +447,7 @@ public struct SDDSTabs: View {
             return items
         }
     }
-    
+
     private var tabItemHeight: CGFloat {
         guard let firstItemId = visibleItems.first?.id,
               let height = itemHeights[firstItemId] else {
@@ -455,7 +455,7 @@ public struct SDDSTabs: View {
         }
         return height
     }
-    
+
     private var hasPreviousItem: Bool {
         guard let selectedId = selectedId,
               let currentIndex = items.firstIndex(where: { $0.id == selectedId }) else {
@@ -463,7 +463,7 @@ public struct SDDSTabs: View {
         }
         return currentIndex > 0
     }
-    
+
     private var hasNextItem: Bool {
         guard let selectedId = selectedId,
               let currentIndex = items.firstIndex(where: { $0.id == selectedId }) else {
@@ -471,9 +471,9 @@ public struct SDDSTabs: View {
         }
         return currentIndex < items.count - 1
     }
-    
+
     @ViewBuilder private var horizontalIndicator: some View {
-        if appearance.size.indicatorEnabled, 
+        if appearance.size.indicatorEnabled,
            let selectedId = selectedId,
            !isShowMoreButtonId(selectedId),
            let selectedWidth = itemWidths[selectedId],
@@ -489,9 +489,9 @@ public struct SDDSTabs: View {
                 .animation(.easeInOut(duration: 0.3), value: position.x)
         }
     }
-    
+
     @ViewBuilder private var verticalIndicator: some View {
-        if appearance.size.indicatorEnabled, 
+        if appearance.size.indicatorEnabled,
            let selectedId = selectedId,
            !isShowMoreButtonId(selectedId),
            let selectedHeight = itemHeights[selectedId],
@@ -507,5 +507,5 @@ public struct SDDSTabs: View {
                 .animation(.easeInOut(duration: 0.3), value: position.y)
         }
     }
-    
+
 }

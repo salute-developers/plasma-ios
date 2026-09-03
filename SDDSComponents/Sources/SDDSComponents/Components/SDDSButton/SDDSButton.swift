@@ -94,9 +94,9 @@ public struct SDDSButton<Counter: View>: View {
     @State private var isAnimating: Bool = false
     @State private var isHighlighted: Bool = false
     @State private var isHovered: Bool = false
-    
+
     public var action: () -> Void
-    
+
     public init(
         title: String,
         subtitle: String,
@@ -126,7 +126,7 @@ public struct SDDSButton<Counter: View>: View {
         self.action = action
         self.counter = counter()
     }
-    
+
     public var body: some View {
         ZStack {
             Button {
@@ -168,7 +168,7 @@ public struct SDDSButton<Counter: View>: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var basicButton: some View {
         HStack(spacing: 0) {
@@ -215,7 +215,7 @@ public struct SDDSButton<Counter: View>: View {
         .padding(.leading, appearance.size.paddings.leading)
         .padding(.trailing, appearance.size.paddings.trailing)
     }
-    
+
     @ViewBuilder
     private var equilateralButton: some View {
         Group {
@@ -227,7 +227,7 @@ public struct SDDSButton<Counter: View>: View {
         }
         .frame(width: appearance.size.height, height: appearance.size.height)
     }
-    
+
     @ViewBuilder
     private var icon: some View {
         if let iconAttributes = iconAttributes {
@@ -251,7 +251,7 @@ public struct SDDSButton<Counter: View>: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private var spinner: some View {
         if let spinnerImage = spinnerImage, isLoading {
@@ -260,7 +260,7 @@ public struct SDDSButton<Counter: View>: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private func value(for text: String, typographyToken: TypographyToken, textColor: StatefulFillStyle) -> some View {
         let textView = Text(text)
@@ -318,15 +318,15 @@ private extension SDDSButton {
                 .opacity(backgroundOpacity)
         }
     }
-    
+
     func hasIconAttributes() -> Bool {
         return iconAttributes != nil
     }
-    
+
     var backgroundOpacity: Double {
         isDisabled ? Opacity.fourty : 1.0
     }
-    
+
     var contentOpacity: Double {
         if isDisabled {
             return appearance.disabledAlpha
@@ -337,15 +337,15 @@ private extension SDDSButton {
             return 1.0
         }
     }
-    
+
     var isCentered: Bool {
         layoutMode.isCentered
     }
-    
+
     var isSideBySide: Bool {
         layoutMode.isSideBySide && (!subtitle.isEmpty || iconAttributes != nil)
     }
-    
+
     var isEquilateral: Bool {
         switch buttonStyle {
         case .icon:
@@ -354,7 +354,7 @@ private extension SDDSButton {
             return false
         }
     }
-    
+
     var isCircle: Bool {
         switch buttonStyle {
         case .icon:
@@ -363,27 +363,27 @@ private extension SDDSButton {
             return false
         }
     }
-    
+
     func shouldShowRightAlignedIcon() -> Bool {
         return isIconRightAligned && hasIconAttributes()
     }
-    
+
     func shouldShowLeftAlignedIcon() -> Bool {
         return !shouldShowRightAlignedIcon() && hasIconAttributes()
     }
-    
+
     func hasTitleOrSubtitle() -> Bool {
         return !title.isEmpty || !subtitle.isEmpty
     }
-    
+
     var isOnlyTitleAndImage: Bool {
         layoutMode.isSideBySide && !title.isEmpty && subtitle.isEmpty && iconAttributes != nil
     }
-    
+
     var isIconRightAligned: Bool {
         iconAttributes?.alignment == .trailing || (iconAttributes?.alignment == .leading && isOnlyTitleAndImage)
     }
-    
+
     var titleTypography: TypographyToken {
         if let typography = appearance.titleTypography.typography(with: appearance.size) {
             return typography
@@ -391,7 +391,7 @@ private extension SDDSButton {
             fatalError("Undefined Button Typography for size \(appearance.size.debugDescription).")
         }
     }
-    
+
     var subtitleTypography: TypographyToken {
         if let typography = appearance.subtitleTypography.typography(with: appearance.size) {
             return typography
@@ -399,14 +399,14 @@ private extension SDDSButton {
             fatalError("Undefined Button Typography for size \(appearance.size.debugDescription). Using a default value.")
         }
     }
-    
+
     var spacer: some View {
         GeometryReader { geometry in
             Color.clear
                 .frame(width: geometry.size.width)
         }
     }
-    
+
     var appearance: ButtonAppearance {
         _appearance ?? environmentAppearance
     }

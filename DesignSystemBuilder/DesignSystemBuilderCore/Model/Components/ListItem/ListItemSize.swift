@@ -2,7 +2,7 @@ import Foundation
 
 struct ListItemSize: CodeGenerationSize {
     typealias Props = ListItemProps
-    
+
     var shape: String?
     var height: String?
     var contentPaddingEnd: String?
@@ -11,11 +11,11 @@ struct ListItemSize: CodeGenerationSize {
     var paddingEnd: String?
     var paddingTop: String?
     var paddingBottom: String?
-    
+
     init(variation: ListItemConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: ListItemProps, id: String? = nil, nullify: Bool = false) {
         self.shape = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
@@ -26,7 +26,7 @@ struct ListItemSize: CodeGenerationSize {
         self.paddingTop = CGFloatContextBuilder(props.paddingTop?.value, nullify: nullify).context
         self.paddingBottom = CGFloatContextBuilder(props.paddingBottom?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.shape = PathDrawerContextBuilder.defaultContext
         self.height = CGFloat.defaultContext
@@ -37,4 +37,4 @@ struct ListItemSize: CodeGenerationSize {
         self.paddingTop = CGFloat.defaultContext
         self.paddingBottom = CGFloat.defaultContext
     }
-} 
+}

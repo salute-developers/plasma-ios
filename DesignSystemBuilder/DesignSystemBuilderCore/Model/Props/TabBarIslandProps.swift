@@ -2,7 +2,7 @@ import Foundation
 
 struct TabBarIslandProps: MergeableConfiguration, Codable {
     typealias Props = TabBarIslandProps
-    
+
     var topShape: ShapeKeyValue?
     var bottomShape: ShapeKeyValue?
     var paddingStart: KeyValue<Double>?

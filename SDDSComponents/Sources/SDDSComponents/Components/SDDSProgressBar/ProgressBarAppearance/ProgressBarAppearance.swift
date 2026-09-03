@@ -20,7 +20,7 @@ public struct ProgressBarAppearance: Hashable {
     @ApiName("backgroundColor")
     public var trackColor: ColorToken
     public var disabledAlpha: CGFloat
-    
+
     public init(
         size: ProgressBarSizeConfiguration = ZeroProgressBarSize(),
         tintFillStyle: FillStyle = .color(.clearColor),
@@ -32,14 +32,14 @@ public struct ProgressBarAppearance: Hashable {
         self.trackColor = trackColor
         self.disabledAlpha = disabledAlpha
     }
-    
+
     public static func == (lhs: ProgressBarAppearance, rhs: ProgressBarAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.tintFillStyle == rhs.tintFillStyle &&
         lhs.trackColor == rhs.trackColor &&
         lhs.disabledAlpha == rhs.disabledAlpha
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(tintFillStyle)

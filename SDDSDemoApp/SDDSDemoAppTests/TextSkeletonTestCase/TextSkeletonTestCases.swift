@@ -12,7 +12,7 @@ import SDDSIcons
 
 struct TextSkeletonTestNoTextRandom: View {
     var appearance: SkeletonAppearance
-    
+
     var body: some View {
         SDDSTextSkeleton(
             appearance: appearance,
@@ -27,7 +27,7 @@ struct TextSkeletonTestNoTextRandom: View {
 
 struct TextSkeletonTestFullWidth: View {
     var appearance: SkeletonAppearance
-    
+
     var body: some View {
         SDDSTextSkeleton(
             appearance: appearance,

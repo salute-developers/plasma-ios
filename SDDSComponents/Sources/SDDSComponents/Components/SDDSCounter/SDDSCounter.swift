@@ -20,12 +20,11 @@ import SwiftUI
 ## Пример использования
 
 ```swift
-// Создание счетчика с предупреждающим стилем
+// @sample: SDDSComponentsFixtures/Samples/Counter/SDDSCounter_Simple.swift
 SDDSCounter(
     text: "1",
-    appearance: Counter.l.warning.appearance,
     isAnimating: false,
-    isHighlighted: true,
+    isHighlighted: false,
     isHovered: false,
     isSelected: false
 )
@@ -35,16 +34,16 @@ SDDSCounter(
 public struct SDDSCounter: View {
     public let text: String
     private let _appearance: CounterAppearance?
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.counterAppearance) private var environmentAppearance
-    
+
     var isAnimating: Bool
     var isHighlighted: Bool
     var isHovered: Bool
     var isSelected: Bool
-    
+
     public init(
         text: String,
         appearance: CounterAppearance? = nil,
@@ -60,7 +59,7 @@ public struct SDDSCounter: View {
         self.isHovered = isHovered
         self.isSelected = isSelected
     }
-    
+
     public var body: some View {
         ZStack {
             if isAuto {
@@ -74,7 +73,7 @@ public struct SDDSCounter: View {
         .fillBackground(currentFillStyle(for: appearance.backgroundColor), colorScheme: colorScheme, subtheme: subtheme)
         .cornerRadius(cornerRadius)
     }
-    
+
     public var counterAutomationSize: some View {
         textView(
             text: text,
@@ -83,7 +82,7 @@ public struct SDDSCounter: View {
         )
         .fixedSize()
     }
-    
+
     @ViewBuilder
     public var counterMinimumSize: some View {
         FillStyleShape(Circle(), style: currentFillStyle(for: appearance.backgroundColor))
@@ -93,7 +92,7 @@ public struct SDDSCounter: View {
             counterColor: appearance.textColor
         )
     }
-    
+
     public func textView(text: String, typographyToken: TypographyToken, counterColor: StatefulFillStyle) -> some View {
         Text(text)
             .typography(typographyToken)
@@ -105,7 +104,7 @@ private extension SDDSCounter {
     var cornerRadius: CGFloat {
         return appearance.size.height / 2
     }
-    
+
     var textTypography: TypographyToken {
         if let typography = appearance.textTypography.typography(with: appearance.size) {
             return typography
@@ -113,7 +112,7 @@ private extension SDDSCounter {
             fatalError(undefinedTypographyErrorText(sizeDescription: appearance.size.debugDescription))
         }
     }
-    
+
     func currentFillStyle(for counterColor: StatefulFillStyle) -> FillStyle {
         var activeStates = Set<InteractiveState>()
         if isSelected { activeStates.insert(.selected) }
@@ -121,11 +120,11 @@ private extension SDDSCounter {
         if isHovered { activeStates.insert(.hovered) }
         return counterColor.resolvedValue(for: activeStates)
     }
-    
+
     var isAuto: Bool {
         text.count > 1
     }
-    
+
     var appearance: CounterAppearance {
         _appearance ?? environmentAppearance
     }

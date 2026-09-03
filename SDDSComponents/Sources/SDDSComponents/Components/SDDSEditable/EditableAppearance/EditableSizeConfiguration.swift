@@ -10,7 +10,7 @@ public protocol EditableSizeConfiguration {
 public struct EditableSize: EditableSizeConfiguration {
     public var iconSize: CGFloat
     public var iconMargin: CGFloat
-    
+
     public init(
         iconSize: CGFloat = 0,
         iconMargin: CGFloat = 0

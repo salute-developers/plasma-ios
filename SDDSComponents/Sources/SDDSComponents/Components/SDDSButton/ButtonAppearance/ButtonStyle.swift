@@ -14,7 +14,7 @@ import Combine
 public enum ButtonStyle: String, CaseIterable {
     /// Базовый стиль кнопки.
     case basic
-    
+
     /// Стиль кнопки в виде иконки
     case icon
 }

@@ -9,7 +9,6 @@ enum DividerStory: Story {
     static let title = "Divider"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: DividerUiState, theme: Theme) -> some View {
         DividerView(viewModel: DividerViewModel(theme: theme, uiState: state))

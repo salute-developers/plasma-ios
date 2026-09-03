@@ -10,6 +10,8 @@
 		05576652849947BA27B606FE /* SDDSToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187657C8382C0CE951A23CE8 /* SDDSToolbar.swift */; };
 		13E00601A36CB47A69548094 /* SDDSEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8196C1FD75E347D4B48BE1 /* SDDSEditable.swift */; };
 		252F5C8710D4BEA1FEB9392A /* EditableIconPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E5C7F39A8F29B1265DBD49 /* EditableIconPlacement.swift */; };
+		4165239612B6632539A1C7FF /* StatefulValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE77E9FCEC149416869BA9B /* StatefulValueTests.swift */; };
+		65CA159190877B2EF1F24AAB /* EmbeddedFontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6F07B48CB3DDB46B281E3 /* EmbeddedFontTests.swift */; };
 		690780F82D3EB93100CED628 /* SDDSSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780F72D3EB92C00CED628 /* SDDSSegment.swift */; };
 		690780FA2D3EB9CD00CED628 /* SDDSSegmentItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */; };
 		690D46502DA6B94F00693950 /* SelectionControlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690D464F2DA6B94F00693950 /* SelectionControlType.swift */; };
@@ -431,7 +433,9 @@
 		81FD6D512D6E2635002A6E51 /* IndicatorSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D502D6E2630002A6E51 /* IndicatorSizeConfiguration.swift */; };
 		81FD6D5B2D6E285C002A6E51 /* SDDSIndicatorPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD6D5A2D6E2859002A6E51 /* SDDSIndicatorPreview.swift */; };
 		87703491CFAAB43CA7181EDD /* EditableAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB6901E4687076177DAC67 /* EditableAppearance.swift */; };
+		A0377632DA4D4198B1EF4143 /* AppearanceVariationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF09052CC0755A15C6BDF8 /* AppearanceVariationTests.swift */; };
 		A65F512043CE4B85EE17B781 /* EditableSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC215BA1C274BE1561B125E /* EditableSizeConfiguration.swift */; };
+		C3662863D962D0278B77814B /* SizeKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACA9CDA4A4A8B9C134B7FBC /* SizeKeyTests.swift */; };
 		EFEDEF8FED18AF0F44B86BAA /* ToolbarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6B938885660A69F77AFA /* ToolbarSizeConfiguration.swift */; };
 /* End PBXBuildFile section */
 
@@ -512,6 +516,7 @@
 		0EDB6901E4687076177DAC67 /* EditableAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EditableAppearance.swift; sourceTree = "<group>"; };
 		187657C8382C0CE951A23CE8 /* SDDSToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SDDSToolbar.swift; sourceTree = "<group>"; };
 		54E5C7F39A8F29B1265DBD49 /* EditableIconPlacement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EditableIconPlacement.swift; sourceTree = "<group>"; };
+		5AD6F07B48CB3DDB46B281E3 /* EmbeddedFontTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EmbeddedFontTests.swift; sourceTree = "<group>"; };
 		690780F72D3EB92C00CED628 /* SDDSSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegment.swift; sourceTree = "<group>"; };
 		690780F92D3EB9BB00CED628 /* SDDSSegmentItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSSegmentItemData.swift; sourceTree = "<group>"; };
 		690D464F2DA6B94F00693950 /* SelectionControlType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionControlType.swift; sourceTree = "<group>"; };
@@ -1360,7 +1365,10 @@
 		81FD6D4D2D6E2603002A6E51 /* IndicatorAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorAppearance.swift; sourceTree = "<group>"; };
 		81FD6D502D6E2630002A6E51 /* IndicatorSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorSizeConfiguration.swift; sourceTree = "<group>"; };
 		81FD6D5A2D6E2859002A6E51 /* SDDSIndicatorPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSIndicatorPreview.swift; sourceTree = "<group>"; };
+		8FE77E9FCEC149416869BA9B /* StatefulValueTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatefulValueTests.swift; sourceTree = "<group>"; };
+		AACA9CDA4A4A8B9C134B7FBC /* SizeKeyTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SizeKeyTests.swift; sourceTree = "<group>"; };
 		BB8196C1FD75E347D4B48BE1 /* SDDSEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SDDSEditable.swift; sourceTree = "<group>"; };
+		CFAF09052CC0755A15C6BDF8 /* AppearanceVariationTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppearanceVariationTests.swift; sourceTree = "<group>"; };
 		DFC215BA1C274BE1561B125E /* EditableSizeConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EditableSizeConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2714,9 +2722,13 @@
 			isa = PBXGroup;
 			children = (
 				818FE93E2C3C403F00F64958 /* SDDSComponentsTests.swift */,
+				8FE77E9FCEC149416869BA9B /* StatefulValueTests.swift */,
+				CFAF09052CC0755A15C6BDF8 /* AppearanceVariationTests.swift */,
+				AACA9CDA4A4A8B9C134B7FBC /* SizeKeyTests.swift */,
+				5AD6F07B48CB3DDB46B281E3 /* EmbeddedFontTests.swift */,
 			);
 			path = SDDSComponentsTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		8191DEFF2EAF97E9006E36F5 /* NoteAppearance */ = {
 			isa = PBXGroup;
@@ -4733,6 +4745,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				818FE93F2C3C403F00F64958 /* SDDSComponentsTests.swift in Sources */,
+				4165239612B6632539A1C7FF /* StatefulValueTests.swift in Sources */,
+				A0377632DA4D4198B1EF4143 /* AppearanceVariationTests.swift in Sources */,
+				C3662863D962D0278B77814B /* SizeKeyTests.swift in Sources */,
+				65CA159190877B2EF1F24AAB /* EmbeddedFontTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

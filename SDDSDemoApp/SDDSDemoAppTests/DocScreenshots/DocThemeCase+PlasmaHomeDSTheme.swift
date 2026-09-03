@@ -14,11 +14,9 @@ enum PlasmaHomeDSThemeDocCase {
     /// Каталог темы в репозитории: Themes/<это>/docs/screenshots.
     static let directoryName = "PlasmaHomeDSTheme"
 
-    static func apply(completion: @escaping () -> Void) {
-        Theme.initialize {
-            applyDocDefaults()
-            completion()
-        }
+    static func apply() {
+        Theme.initialize()
+        applyDocDefaults()
     }
 
     /// Дефолты для компонентов, которых нет в `EnvironmentValueProvider+DefaultValues`

@@ -3,35 +3,35 @@ import Foundation
 final class DownloadCommand: Command {
     let fileURL: URL
     let outputURL: URL?
-    
+
     private let dispatchQueue = DispatchQueue(label: "ru.sdds.DownloadCommand")
     private let urlSession: URLSession
     private let fileManager: FileManager
-    
+
     init(fileURL: URL,
          outputURL: URL? = nil,
          urlSession: URLSession = URLSession.shared,
          fileManager: FileManager = FileManager.default
     ) {
-        
+
         self.fileURL = fileURL
         self.outputURL = outputURL
         self.urlSession = urlSession
         self.fileManager = fileManager
-        
+
         super.init(name: "Download \(fileURL)")
     }
-    
+
     @discardableResult override func run() -> CommandResult {
         super.run()
-        
+
         if let outputURL = outputURL, fileManager.fileExists(atPath: outputURL.path()) {
             return .success
         }
-        
+
         return download()
     }
-    
+
     private func download() -> CommandResult {
         switch fileURL.scheme {
         case "file":
@@ -42,7 +42,7 @@ final class DownloadCommand: Command {
             .error(.nsError(URLError(.badURL)))
         }
     }
-    
+
     private func downloadFromLocalSource() -> CommandResult {
         do {
             if let outputURL = outputURL {
@@ -62,10 +62,10 @@ final class DownloadCommand: Command {
             return .error(.nsError(error))
         }
     }
-    
+
     private func downloadFromRemoteSource() -> CommandResult {
         let urlRequest = URLRequest(url: fileURL)
-        
+
         var result: Result<CommandResult, Error> = .failure(URLError(.unknown))
         let group = DispatchGroup()
         group.enter()
@@ -78,12 +78,12 @@ final class DownloadCommand: Command {
                 result = .failure(error)
                 return
             }
-            
+
             guard let url = url, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 result = .failure(URLError(.badServerResponse))
                 return
             }
-            
+
             do {
                 if let outputURL = self.outputURL {
                     try self.fileManager.createDirectory(at: outputURL.deletingLastPathComponent(), withIntermediateDirectories: true)
@@ -103,7 +103,7 @@ final class DownloadCommand: Command {
         }
         task.resume()
         group.wait()
-        
+
         switch result {
         case .success(let commandResult):
             return commandResult

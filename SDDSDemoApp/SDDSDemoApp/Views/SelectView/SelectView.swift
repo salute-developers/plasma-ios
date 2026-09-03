@@ -20,27 +20,27 @@ struct SelectView: View {
             .frame(height: 320)
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .listRowInsets(.init())
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
-                
+
                 Picker("Trigger", selection: $viewModel.triggerKind) {
                     Text("TextField").tag(SelectTriggerKind.textField)
                     Text("Button").tag(SelectTriggerKind.button)
                 }
-                
+
                 Picker("Mode", selection: $viewModel.mode) {
                     ForEach(SelectDemoMode.allCases, id: \.self) { mode in
                         Text(mode.rawValue.capitalized).tag(mode)
                     }
                 }
-                
+
                 Picker("Layout", selection: $viewModel.layout) {
                     ForEach(SelectDemoLayout.allCases, id: \.self) { layout in
                         Text(layout.rawValue.capitalized).tag(layout)
                     }
                 }
-                
+
                 HStack {
                     Text("Trigger Position")
                     Spacer()
@@ -55,11 +55,11 @@ struct SelectView: View {
                         Text(viewModel.triggerPosition.rawValue)
                     }
                 }
-                
+
                 placementSelectionView
                 alignmentSelectionView
                 placementModeSelectionView
-                
+
                 Toggle("Disabled", isOn: $viewModel.disabled)
                 Toggle("Read only", isOn: $viewModel.readOnly)
                 Toggle("Loading", isOn: $viewModel.isLoading)
@@ -71,7 +71,7 @@ struct SelectView: View {
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .navigationTitle("Select")
     }
-    
+
     @ViewBuilder
     private func selectForPosition(_ position: SelectTriggerPosition) -> some View {
         switch position {
@@ -143,7 +143,7 @@ struct SelectView: View {
             }
         }
     }
-    
+
     private var selectControl: some View {
         SDDSSelect(
             triggerStyle: triggerStyle,
@@ -218,7 +218,7 @@ struct SelectView: View {
         )
         .frame(width: 260, alignment: .leading)
     }
-    
+
     private var triggerStyle: SelectTriggerStyle {
         switch viewModel.triggerKind {
         case .textField:
@@ -267,7 +267,7 @@ struct SelectView: View {
             )
         }
     }
-    
+
     private var searchIconAsset: ImageAsset {
         let iconWidth = viewModel.appearance.textFieldAppearance.size.iconSize.width
         if iconWidth <= 16 {
@@ -278,7 +278,7 @@ struct SelectView: View {
             return Asset.search36
         }
     }
-    
+
     private var disclosureIconAsset: ImageAsset {
         let iconWidth = viewModel.appearance.textFieldAppearance.size.iconActionSize.width
         if viewModel.isDropdownPresented {
@@ -316,7 +316,7 @@ struct SelectView: View {
             }
         }
     }
-    
+
     private var alignmentSelectionView: some View {
         HStack {
             Text("Alignment")
@@ -333,7 +333,7 @@ struct SelectView: View {
             }
         }
     }
-    
+
     private var placementModeSelectionView: some View {
         HStack {
             Text("Placement Mode")
@@ -350,17 +350,17 @@ struct SelectView: View {
             }
         }
     }
-    
+
     private var headerFooterTypography: TypographyToken {
         let cellAppearance = viewModel.appearance.selectItemAppearance.cellAppearance
         return cellAppearance.titleTypography.typography(with: cellAppearance.size) ?? .undefined
     }
-    
+
     private var loaderSpinnerAppearance: SpinnerAppearance {
         if let appearance = loaderVisibleSpinnerAppearance {
             return appearance
         }
-        
+
         return SpinnerAppearance(
             startColor: ColorToken(
                 id: "selectLoaderStartFallback",
@@ -375,7 +375,7 @@ struct SelectView: View {
             size: DefaultSpinnerSize(size: 16)
         )
     }
-    
+
     private var loaderVisibleSpinnerAppearance: SpinnerAppearance? {
         let appearances: [SpinnerAppearance] = viewModel.theme.spinnerVariations.flatMap { variation in
             if variation.styles.isEmpty {
@@ -383,13 +383,13 @@ struct SelectView: View {
             }
             return variation.styles.map(\.appearance)
         }
-        
+
         guard var visible = appearances.first(
             where: { $0.startColor.resolvedDefaultValue() != .color(.clearColor) || $0.endColor.resolvedDefaultValue() != .color(.clearColor) }
         ) else {
             return nil
         }
-        
+
         let resolvedSize = min(visible.size.size, 16)
         visible.size = DefaultSpinnerSize(
             size: resolvedSize,
@@ -405,4 +405,3 @@ struct SelectView: View {
         SelectView()
     }
 }
-

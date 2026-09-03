@@ -15,7 +15,7 @@ import SDDSIcons
  */
 struct ScrollbarSizeMHasTrackHover: View {
     var appearance: ScrollbarAppearance
-    
+
     var body: some View {
         SDDSScrollbar(
             appearance: appearance,
@@ -35,7 +35,7 @@ struct ScrollbarSizeMHasTrackHover: View {
  */
 struct ScrollbarSizeSHoverExpand: View {
     var appearance: ScrollbarAppearance
-    
+
     var body: some View {
         SDDSScrollbar(
             appearance: appearance,
@@ -55,7 +55,7 @@ struct ScrollbarSizeSHoverExpand: View {
  */
 struct ScrollbarScrollDown: View {
     var appearance: ScrollbarAppearance
-    
+
     var body: some View {
         SDDSScrollbar(
             appearance: appearance,

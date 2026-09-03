@@ -6,7 +6,7 @@ import SDDSApiInfo
 @ApiInfo(components: ["SegmentItemCounter"])
 public struct CounterAppearance: Modifiable {
     public typealias ModifiableType = Self
-    
+
     public var size: CounterSizeConfiguration
     @ApiName("labelStyle")
     public var textTypography: TypographyConfiguration
@@ -41,8 +41,6 @@ public struct CounterAppearance: Modifiable {
         )
     }
 
-    
-    
     public func modify(_ value: CounterAppearance) -> CounterAppearance {
         var result = self
         result.textTypography = value.textTypography
@@ -57,4 +55,3 @@ extension CounterAppearance: EnvironmentKey {
         EnvironmentValueProvider.shared.value(forKey: CounterAppearance.self, fallback: CounterAppearance())
     }
 }
-

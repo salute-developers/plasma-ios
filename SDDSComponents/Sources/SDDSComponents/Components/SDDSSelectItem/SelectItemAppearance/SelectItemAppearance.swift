@@ -20,7 +20,7 @@ public struct SelectItemAppearance {
     public var checkboxAppearance: CheckboxAppearance?
     public var icon: Image?
     public var size: SelectItemSizeConfiguration
-    
+
     public init(
         itemType: SelectItemType = .single,
         iconColor: ColorToken = .clearColor,
@@ -41,7 +41,6 @@ public struct SelectItemAppearance {
         self.size = size
     }
 
-    
 }
 
 extension SelectItemAppearance: EnvironmentKey {
@@ -49,4 +48,3 @@ extension SelectItemAppearance: EnvironmentKey {
         SelectItemAppearance()
     }
 }
-

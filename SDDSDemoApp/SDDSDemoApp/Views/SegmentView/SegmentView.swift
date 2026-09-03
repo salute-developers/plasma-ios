@@ -41,14 +41,14 @@ struct SegmentView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .onAppear {
             viewModel.updateAppearance()
         }
     }
-    
+
     // MARK: - Segment Element
-    
+
     @ViewBuilder
     private var value: some View {
         HStack {
@@ -57,7 +57,7 @@ struct SegmentView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     @ViewBuilder
     private var helperText: some View {
         HStack {
@@ -66,14 +66,14 @@ struct SegmentView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     @ViewBuilder
     private var icon: some View {
         HStack {
             Toggle("Icon", isOn: $viewModel.isIconVisible)
         }
     }
-    
+
     @ViewBuilder
     private var iconAlignment: some View {
         HStack {
@@ -90,15 +90,14 @@ struct SegmentView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var strech: some View {
         HStack {
             Toggle("Strech", isOn: $viewModel.stretch)
         }
     }
-    
-    
+
     @ViewBuilder
     private var segment: some View {
         GeometryReader { geometry in
@@ -117,14 +116,14 @@ struct SegmentView: View {
         }
         .frame(height: viewModel.segmentHeight)
     }
-        
+
     @ViewBuilder
     private var isDisabled: some View {
         HStack {
             Toggle("Disabled", isOn: $viewModel.isDisabled)
         }
     }
-    
+
     @ViewBuilder
     private var counter: some View {
         Group {
@@ -136,7 +135,7 @@ struct SegmentView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var stackOrientation: some View {
         HStack {
@@ -147,7 +146,7 @@ struct SegmentView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var addSingleItem: some View {
         HStack {
@@ -156,7 +155,7 @@ struct SegmentView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var maxElementsAdditionalWindow: some View {
         ForEach(viewModel.data.indices, id: \.self) { index in
@@ -171,14 +170,14 @@ struct SegmentView: View {
             }
         }
     }
-        
+
     @ViewBuilder
     private var background: some View {
         HStack {
             Toggle("Has Background", isOn: $viewModel.hasBackground)
         }
     }
-    
+
     @ViewBuilder
     private var counterText: some View {
         HStack {

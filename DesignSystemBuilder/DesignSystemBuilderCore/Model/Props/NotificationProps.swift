@@ -2,7 +2,7 @@ import Foundation
 
 struct NotificationProps: MergeableConfiguration {
     typealias Props = NotificationProps
-    
+
     var backgroundColor: ColorKeyValue?
     var closeColor: ColorKeyValue?
     var closeAlignment: KeyValue<String>?

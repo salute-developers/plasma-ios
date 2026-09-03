@@ -4,7 +4,7 @@ import SwiftUI
 struct NoteSize: CodeGenerationSize {
     typealias Variation = NoteConfiguration.Variation
     typealias Props = NoteProps
-    
+
     var shape: String?
     var titlePaddingEnd: String?
     var iconSize: String?
@@ -19,11 +19,11 @@ struct NoteSize: CodeGenerationSize {
     var closeEndMargin: String?
     var closeSize: String?
     var contentBeforeArrangement: String?
-    
+
     init(variation: NoteConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: NoteProps, id: String? = nil, nullify: Bool = false) {
         self.shape = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
         self.titlePaddingEnd = CGFloatContextBuilder(props.titlePaddingEnd?.value, nullify: nullify).context
@@ -43,7 +43,7 @@ struct NoteSize: CodeGenerationSize {
             component: .note
         ).context
     }
-    
+
     init() {
         self.shape = PathDrawerContextBuilder.defaultContext
         self.titlePaddingEnd = CGFloat.defaultContext
@@ -61,5 +61,3 @@ struct NoteSize: CodeGenerationSize {
         self.contentBeforeArrangement = NoteContentBeforeArrangementContextBuilder.defaultContext(component: .note)
     }
 }
-
-

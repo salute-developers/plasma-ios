@@ -3,21 +3,21 @@ import Foundation
 struct AvatarAppearance: CodeGenerationAppearance {
     typealias Variation = AvatarConfiguration.Variation
     typealias Props = AvatarProps
-    
-    var backgroundFillStyle: String? = nil
-    var textFillStyle: String? = nil
-    var onlineStatusColor: String? = nil
-    var offlineStatusColor: String? = nil
-    var textTypography: String? = nil
-    var indicatorAppearance: String? = nil
-    var badgeAppearance: String? = nil
-    var counterAppearance: String? = nil
-    var backgroundOpacity: String? = nil
-    
+
+    var backgroundFillStyle: String?
+    var textFillStyle: String?
+    var onlineStatusColor: String?
+    var offlineStatusColor: String?
+    var textTypography: String?
+    var indicatorAppearance: String?
+    var badgeAppearance: String?
+    var counterAppearance: String?
+    var backgroundOpacity: String?
+
     init(variation: AvatarConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
-    
+
     init(props: AvatarProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return
@@ -28,7 +28,7 @@ struct AvatarAppearance: CodeGenerationAppearance {
         self.onlineStatusColor = ColorTokenContextBuilder(props.activeStatusColor, hasDefault: false).context
         self.offlineStatusColor = ColorTokenContextBuilder(props.inactiveStatusColor, hasDefault: false).context
         self.textTypography = TypographyTokenContextBuilder(string: props.textStyle?.value, id: id, component: component).context
-        
+
         if let indicatorAppearance = props.statusStyle?.value {
             self.indicatorAppearance = ComponentStyleContextBuilder(indicatorAppearance).context
         }

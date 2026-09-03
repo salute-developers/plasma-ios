@@ -12,4 +12,4 @@ struct ModalProps: MergeableConfiguration, Codable {
     var paddingBottom: KeyValue<Double>?
     var shape: ShapeKeyValue?
     var shadow: ShadowKeyValue?
-} 
+}

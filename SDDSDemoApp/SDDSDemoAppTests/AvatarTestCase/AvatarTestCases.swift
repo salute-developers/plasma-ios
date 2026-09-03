@@ -14,7 +14,7 @@ import SDDSIcons
  */
 struct AvatarSizeM: View {
     var appearance: AvatarAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "MS",
@@ -29,7 +29,7 @@ struct AvatarSizeM: View {
 
 struct AvatarSizeXxl: View {
     var appearance: AvatarAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "",
@@ -44,7 +44,7 @@ struct AvatarSizeXxl: View {
 
 struct AvatarGroupSizeS: View {
     var appearance: AvatarAppearance
-    
+
     var body: some View {
         SDDSAvatarGroup(
             data: exampleAvatars(with: appearance),
@@ -58,7 +58,7 @@ struct AvatarGroupSizeS: View {
 }
 
 func exampleAvatars(with appearance: AvatarAppearance) -> [SDDSAvatarData] {
-    (1...2).map { i in
+    (1...2).map { _ in
         SDDSAvatarData(
             text: "MS",
             image: .image(Image.image("checker")),
@@ -69,7 +69,7 @@ func exampleAvatars(with appearance: AvatarAppearance) -> [SDDSAvatarData] {
         )
     }
 }
-    
+
 func lastAvatarData(with appearance: AvatarAppearance) -> SDDSAvatarData {
     SDDSAvatarData(
         text: "+3",
@@ -93,7 +93,7 @@ struct DefaultAvatarGroupSize: AvatarGroupSizeConfiguration {
 struct AvatarSizeXxlCounterTopLeft: View {
     var appearance: AvatarAppearance
     var counterAppearance: CounterAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "MS",
@@ -122,7 +122,7 @@ struct AvatarSizeXxlCounterTopLeft: View {
 struct AvatarSizeLCounterTopRight: View {
     var appearance: AvatarAppearance
     var counterAppearance: CounterAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "MS",
@@ -151,7 +151,7 @@ struct AvatarSizeLCounterTopRight: View {
 struct AvatarSizeMCounterBottomRight: View {
     var appearance: AvatarAppearance
     var counterAppearance: CounterAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "",
@@ -180,7 +180,7 @@ struct AvatarSizeMCounterBottomRight: View {
 struct AvatarSizeSCounterBottomLeft: View {
     var appearance: AvatarAppearance
     var counterAppearance: CounterAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "MS",
@@ -209,7 +209,7 @@ struct AvatarSizeSCounterBottomLeft: View {
 struct AvatarSizeXxlBadgeTopLeft: View {
     var appearance: AvatarAppearance
     var badgeAppearance: BadgeAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "",
@@ -237,7 +237,7 @@ struct AvatarSizeXxlBadgeTopLeft: View {
 struct AvatarSizeXxlBadgeBottomRight: View {
     var appearance: AvatarAppearance
     var badgeAppearance: BadgeAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "MS",
@@ -265,7 +265,7 @@ struct AvatarSizeXxlBadgeBottomRight: View {
 struct AvatarSizeLBadgeTopRight: View {
     var appearance: AvatarAppearance
     var badgeAppearance: BadgeAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "MS",
@@ -293,7 +293,7 @@ struct AvatarSizeLBadgeTopRight: View {
 struct AvatarSizeMBadgeBottomLeft: View {
     var appearance: AvatarAppearance
     var badgeAppearance: BadgeAppearance
-    
+
     var body: some View {
         SDDSAvatar(
             text: "MS",

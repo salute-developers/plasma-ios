@@ -42,9 +42,9 @@ public struct SDDSSpinner: View {
     @Environment(\.subtheme) private var subtheme
     private let isAnimating: Bool
     private let _appearance: SpinnerAppearance?
-    
+
     @State private var rotation: Double = 0
-    
+
     public init(
         isAnimating: Bool = true,
         appearance: SpinnerAppearance? = nil
@@ -52,18 +52,18 @@ public struct SDDSSpinner: View {
         self.isAnimating = isAnimating
         self._appearance = appearance
     }
-    
+
     public init(data: SDDSSpinnerData) {
         self.init(isAnimating: data.isAnimating, appearance: data.appearance)
     }
-    
+
     public var body: some View {
         ZStack {
             if !backgroundIsClear {
                 Circle()
                     .stroke(appearance.backgroundColor.resolvedDefaultValue().representativeColor(for: colorScheme, subtheme: subtheme), lineWidth: lineThickness)
             }
-            
+
             spinnerArc
                 .stroke(
                     AngularGradient(
@@ -82,9 +82,9 @@ public struct SDDSSpinner: View {
                 )
                 .rotationEffect(.degrees(rotation))
                 .animation(
-                    isAnimating ? 
+                    isAnimating ?
                         .linear(duration: 1.0)
-                        .repeatForever(autoreverses: false) : 
+                        .repeatForever(autoreverses: false) :
                         .default,
                     value: rotation
                 )
@@ -103,7 +103,7 @@ public struct SDDSSpinner: View {
             }
         }
     }
-    
+
     private var spinnerArc: some Shape {
         Arc(
             startAngle: .degrees(0),
@@ -111,38 +111,38 @@ public struct SDDSSpinner: View {
             clockwise: false
         )
     }
-    
+
     private var angle: CGFloat {
         // Рассчитываем угол с учетом strokeCap закруглений
         let radius = appearance.size.size / 2.0 - lineThickness / 2.0 // радиус дуги
-        
+
         // Для strokeCap.round закругление равно половине толщины линии
         let capRadius = lineThickness / 2.0
-        
+
         // Расстояние от центра до края закругления
         let capDistance = radius + capRadius
-        
+
         // Угол, который занимает одно закругление
         let capAngle = (capRadius / capDistance) * (180.0 / .pi)
-        
+
         // Нужен зазор между закруглениями (минимум 1pt)
         let minGapPoints: CGFloat = 1.0
         let gapAngle = (minGapPoints / capDistance) * (180.0 / .pi)
-        
+
         // Общий угол для двух закруглений + зазор
         let totalGapAngle = capAngle * 2.0 + gapAngle
-        
+
         return appearance.size.angle - totalGapAngle
     }
-    
+
     private var appearance: SpinnerAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var backgroundIsClear: Bool {
         appearance.backgroundColor.resolvedDefaultValue() == .color(.clearColor)
     }
-    
+
     private var lineThickness: CGFloat {
         let minSpinnerThickness: CGFloat = 1.5
         let minSpinnerSize: CGFloat = 16
@@ -154,4 +154,4 @@ extension SDDSSpinner: Equatable {
     public static func == (lhs: SDDSSpinner, rhs: SDDSSpinner) -> Bool {
         return lhs.appearance == rhs.appearance && lhs.isAnimating == rhs.isAnimating
     }
-} 
+}

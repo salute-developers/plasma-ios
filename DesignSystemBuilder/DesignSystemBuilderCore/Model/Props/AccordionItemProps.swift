@@ -2,7 +2,7 @@ import Foundation
 
 struct AccordionItemProps: MergeableConfiguration, Codable {
     typealias Props = AccordionItemProps
-    
+
     var shape: ShapeKeyValue?
     var paddingStart: KeyValue<Double>?
     var paddingEnd: KeyValue<Double>?
@@ -21,4 +21,4 @@ struct AccordionItemProps: MergeableConfiguration, Codable {
     var backgroundColor: ColorKeyValue?
     var iconPlacement: KeyValue<String>?
     var iconRotation: KeyValue<Double>?
-} 
+}

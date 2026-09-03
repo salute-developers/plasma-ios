@@ -25,7 +25,7 @@ struct RadioboxGroupView: View {
 
             Section(header: Text("Configuration")) {
                 VariationsView(viewModel: viewModel)
-                
+
                 ForEach(viewModel.radioboxViewModels.indices, id: \.self) { index in
                     VStack(alignment: .leading) {
                         Text("Radiobox \(index + 1) Configuration")
@@ -54,7 +54,7 @@ struct RadioboxGroupView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("RadioboxGroup")
     }
 }

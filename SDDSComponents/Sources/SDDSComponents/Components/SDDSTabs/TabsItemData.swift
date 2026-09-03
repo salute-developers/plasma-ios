@@ -11,7 +11,7 @@ public struct TabsItemData: Identifiable {
     public let startContent: AnyView?
     public let contentRight: AnyView?
     public let actionContent: AnyView?
-    
+
     /// Создает элемент вкладки
     /// - Parameters:
     ///   - id: Уникальный идентификатор
@@ -45,4 +45,3 @@ public struct TabsItemData: Identifiable {
         self.actionContent = actionContent
     }
 }
-

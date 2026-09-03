@@ -34,7 +34,7 @@ import SDDSComponentsFixtures
 final class DocSampleScreenshotTests: XCTestCase {
 
     /// Тема → каталог в репозитории.
-    private let themes: [(directory: String, apply: (@escaping () -> Void) -> Void)] = [
+    private let themes: [(directory: String, apply: () -> Void)] = [
         (SDDSServThemeDocCase.directoryName, SDDSServThemeDocCase.apply),
         (PlasmaHomeDSThemeDocCase.directoryName, PlasmaHomeDSThemeDocCase.apply),
         (PlasmaB2CThemeDocCase.directoryName, PlasmaB2CThemeDocCase.apply)
@@ -47,11 +47,7 @@ final class DocSampleScreenshotTests: XCTestCase {
         let repoRoot = URL(fileURLWithPath: root)
 
         for theme in themes {
-            // Ждём инициализации: она грузит шрифты темы, без них текст
-            // отрисовался бы системным фолбэком.
-            let ready = expectation(description: "theme \(theme.directory) initialized")
-            theme.apply { ready.fulfill() }
-            wait(for: [ready], timeout: 30)
+            theme.apply()
 
             let known = knownComponentPrefixes(repoRoot: repoRoot, theme: theme.directory)
             guard !known.isEmpty else {

@@ -55,9 +55,9 @@ public struct SDDSButtonGroup: View {
     let flat: Bool
     @State private var buttonSizes: [UUID: CGSize] = [:]
     @State private var containerHeight: CGFloat = 0
-    
+
     @Environment(\.buttonGroupAppearance) private var environmentAppearance
-    
+
     public init(
         data: [ButtonData],
         appearance: ButtonGroupAppearance? = nil,
@@ -69,7 +69,7 @@ public struct SDDSButtonGroup: View {
         self.layout = layout
         self.flat = flat
     }
-    
+
     private func createButtonView(for buttonData: ButtonData, pathDrawer: PathDrawer) -> some View {
         Group {
             switch buttonData.buttonStyle {
@@ -100,7 +100,7 @@ public struct SDDSButtonGroup: View {
             }
         }
     }
-    
+
     private func buttonAppearance(buttonData: ButtonData, pathDrawer: PathDrawer) -> ButtonAppearance {
         var buttonAppearance = buttonData.appearance
         var size = DefaultButtonSize(size: buttonAppearance.size)
@@ -110,7 +110,7 @@ public struct SDDSButtonGroup: View {
         buttonAppearance.size = size
         return buttonAppearance
     }
-    
+
     var appearance: ButtonGroupAppearance {
         _appearance ?? environmentAppearance
     }
@@ -119,7 +119,7 @@ public struct SDDSButtonGroup: View {
         GeometryReader { geometry in
             let maxWidth = geometry.size.width - appearance.size.spacing * 2
             let maxHeight = geometry.size.height - appearance.size.spacing * 2
-            
+
             Group {
                 switch layout {
                 case .horizontal:
@@ -158,7 +158,7 @@ public struct SDDSButtonGroup: View {
         .applyIf(flat, transform: { $0.frame(width: maxCalculatedWidth) })
         .applyIf(flat && layout == .vertical, transform: { $0.frame(height: maxCalculatedHeight) })
     }
-                 
+
     private var maxCalculatedWidth: CGFloat {
         switch layout {
         case .horizontal:
@@ -167,7 +167,7 @@ public struct SDDSButtonGroup: View {
             return calculateVerticalLayoutWidth()
         }
     }
-    
+
     private func calculateVerticalLayoutWidth() -> CGFloat {
         var maxWidth: CGFloat = 0
         for buttonData in data {
@@ -175,7 +175,7 @@ public struct SDDSButtonGroup: View {
         }
         return maxWidth
     }
-    
+
     private var maxCalculatedHeight: CGFloat {
         switch layout {
         case .horizontal:
@@ -184,7 +184,7 @@ public struct SDDSButtonGroup: View {
             return calculateVerticalLayoutHeight()
         }
     }
-    
+
     private func calculateVerticalLayoutHeight() -> CGFloat {
         var totalHeight: CGFloat = 0
         for (index, buttonData) in data.enumerated() {
@@ -195,11 +195,11 @@ public struct SDDSButtonGroup: View {
         }
         return totalHeight
     }
-    
+
     private func calculateHorizontalLayoutHeight() -> CGFloat {
         let rows = layoutRows(maxWidth: .infinity, data: data).rows
         var totalHeight: CGFloat = 0
-        
+
         for (index, row) in rows.enumerated() {
             var rowHeight: CGFloat = 0
             for buttonData in row {
@@ -210,10 +210,10 @@ public struct SDDSButtonGroup: View {
                 totalHeight += appearance.size.spacing
             }
         }
-        
+
         return totalHeight
     }
-    
+
     private func layoutRows(maxWidth: CGFloat, data: [ButtonData]) -> (rows: [[ButtonData]], currentRowWidth: CGFloat) {
         var rows: [[ButtonData]] = []
         var currentRow: [ButtonData] = []
@@ -249,7 +249,7 @@ public struct SDDSButtonGroup: View {
         }
         return size.width
     }
-    
+
     private func calculateButtonHeight(for buttonData: ButtonData) -> CGFloat {
         guard let size = buttonSizes[buttonData.id] else {
             return 0

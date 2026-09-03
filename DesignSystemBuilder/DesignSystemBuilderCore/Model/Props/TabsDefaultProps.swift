@@ -2,7 +2,7 @@ import Foundation
 
 struct TabsDefaultProps: MergeableConfiguration, Codable {
     typealias Props = TabsDefaultProps
-    
+
     var dividerEnabled: KeyValue<Bool>?
     var indicatorEnabled: KeyValue<Bool>?
     var indicatorThickness: KeyValue<Double>?

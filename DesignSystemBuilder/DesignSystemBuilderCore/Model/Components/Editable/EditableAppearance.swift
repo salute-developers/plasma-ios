@@ -3,7 +3,7 @@ import Foundation
 struct EditableAppearance: CodeGenerationAppearance {
     typealias Variation = EditableConfiguration.Variation
     typealias Props = EditableProps
-    
+
     var textColorDefault: String?
     var textColorReadonly: String?
     var iconColorDefault: String?
@@ -11,16 +11,16 @@ struct EditableAppearance: CodeGenerationAppearance {
     var cursorColor: String?
     var disabledAlpha: Double?
     var textTypography: String?
-    
+
     init(variation: EditableConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
-    
+
     init(props: EditableProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return
         }
-        
+
         self.textColorDefault = ColorTokenContextBuilder(props.textColor).context
         self.textColorReadonly = ColorTokenContextBuilder(props.textColor?.value(for: [.readonly])).context
         self.iconColorDefault = ColorTokenContextBuilder(props.iconColor).context

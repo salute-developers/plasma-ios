@@ -9,7 +9,7 @@ enum TextSkeletonKind: String, CaseIterable {
     case display
     case header
     case text
-    
+
     var title: String {
         switch self {
         case .default:
@@ -29,7 +29,7 @@ enum TextSkeletonKind: String, CaseIterable {
 enum TextSkeletonLineProviderType: String, CaseIterable {
     case fullWidth
     case varied
-    
+
     var provider: SkeletonLineWidthProvider {
         switch self {
         case .fullWidth:
@@ -40,7 +40,7 @@ enum TextSkeletonLineProviderType: String, CaseIterable {
     }
 }
 
-final class TextSkeletonViewModel: ComponentViewModel<TextSkeletonVariationProvider>  {
+final class TextSkeletonViewModel: ComponentViewModel<TextSkeletonVariationProvider> {
     let lineSpacing: CGFloat = 1.0
     let title: String = "TextSkeleton"
     @Published var selectedKind: TextSkeletonKind = .default {
@@ -74,7 +74,7 @@ final class TextSkeletonViewModel: ComponentViewModel<TextSkeletonVariationProvi
         }
     }
     @Published var textHidden = true
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: TextSkeletonUiState = .init()) {
         super.init(
             variationProvider: TextSkeletonVariationProvider(theme: theme, kind: uiState.selectedKind),

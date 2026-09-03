@@ -28,11 +28,11 @@ struct RectSkeletonView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .listStyle(.plain)
         .navigationTitle("RectSkeleton")
     }
-    
+
     private var skeletonThemeID: String {
         "\(viewModel.theme.rawValue)-\(String(describing: viewModel.subtheme))"
     }
@@ -42,4 +42,4 @@ struct RectSkeletonView: View {
     NavigationView {
         RectSkeletonView()
     }
-} 
+}

@@ -115,7 +115,6 @@ if let data = try? Data(contentsOf: URL(fileURLWithPath: overridesArg)),
 let scanner = Scanner(table: table, moduleName: moduleName)
 let scanned = scanner.scan(only: onlyFilter)
 
-
 if args.contains("--emit-marker-plan") {
     struct MarkerPlanItem: Codable {
         let component: String

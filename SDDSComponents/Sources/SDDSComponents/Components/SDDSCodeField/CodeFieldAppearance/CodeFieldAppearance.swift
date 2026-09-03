@@ -26,7 +26,7 @@ public struct CodeFieldAppearance {
     public var captionTypography: TypographyConfiguration
     public var valueTypography: TypographyConfiguration
     public var size: CodeFieldSizeConfiguration
-    
+
     public init(
         valueColor: ColorToken = .clearColor,
         valueColorError: ColorToken = .clearColor,

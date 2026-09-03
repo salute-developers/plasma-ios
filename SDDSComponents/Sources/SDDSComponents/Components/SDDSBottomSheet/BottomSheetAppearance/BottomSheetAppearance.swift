@@ -10,7 +10,7 @@ public struct BottomSheetAppearance {
     public var backgroundColor: ColorToken
     public var handleColor: ColorToken
     public var handlePlacement: BottomSheetHandlePlacement
-    
+
     public init(size: BottomSheetSizeConfiguration = DefaultBottomSheetSize(),
                 backgroundColor: ColorToken = .clearColor,
                 handleColor: ColorToken = .clearColor,

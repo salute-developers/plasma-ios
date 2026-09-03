@@ -29,7 +29,7 @@ struct CheckboxView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
                 HStack {
@@ -38,14 +38,14 @@ struct CheckboxView: View {
                     TextField("Checkbox Title", text: $viewModel.title)
                         .multilineTextAlignment(.trailing)
                 }
-                
+
                 HStack {
                     Text("Subtitle")
                     Spacer()
                     TextField("Checkbox Subtitle", text: $viewModel.subtitle)
                         .multilineTextAlignment(.trailing)
                 }
-                
+
                 HStack {
                     Text("State")
                     Spacer()
@@ -59,14 +59,14 @@ struct CheckboxView: View {
                         Text(viewModel.state.rawValue.capitalized)
                     }
                 }
-                
+
                 HStack {
                     Toggle("Enabled", isOn: $viewModel.isEnabled)
                 }
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Checkbox")
     }
 }
@@ -74,4 +74,3 @@ struct CheckboxView: View {
 #Preview {
     CheckboxView()
 }
-

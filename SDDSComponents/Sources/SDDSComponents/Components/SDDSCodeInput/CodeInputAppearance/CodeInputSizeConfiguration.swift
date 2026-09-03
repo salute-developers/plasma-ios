@@ -26,7 +26,7 @@ public struct CodeInputSize: CodeInputSizeConfiguration {
     public let itemSpacing: CGFloat
     public let groupSpacing: CGFloat
     public let captionPadding: CGFloat
-    
+
     public init(
         itemHeight: CGFloat = 0,
         itemWidth: CGFloat = 0,

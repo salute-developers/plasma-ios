@@ -9,11 +9,11 @@ import SandboxSwiftUI
 struct NoteCompactView: View {
     @ObservedObject private var viewModel: NoteCompactViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: NoteCompactViewModel = NoteCompactViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -22,10 +22,10 @@ struct NoteCompactView: View {
                     .listRowBackground(Color.clear)
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
-                
+
                 titleField
                 textField
                 actionToggle
@@ -35,13 +35,13 @@ struct NoteCompactView: View {
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .navigationTitle("Note Compact")
     }
-    
+
     @ViewBuilder
     private var noteCompactPreview: some View {
         noteCompactContent
             .environment(\.noteCompactAppearance, viewModel.appearance)
     }
-    
+
     @ViewBuilder
     private var noteCompactContent: some View {
         switch (viewModel.hasContentBefore, viewModel.hasAction) {
@@ -105,7 +105,7 @@ struct NoteCompactView: View {
             )
         }
     }
-    
+
     @ViewBuilder
     private var actionButton: some View {
         if let linkButtonAppearance = viewModel.appearance.linkButtonAppearance {
@@ -119,9 +119,9 @@ struct NoteCompactView: View {
             )
         }
     }
-    
+
     // MARK: - UI Elements
-    
+
     private var titleField: some View {
         HStack {
             Text("Title")
@@ -131,7 +131,7 @@ struct NoteCompactView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     private var textField: some View {
         HStack {
             Text("Text")
@@ -141,13 +141,13 @@ struct NoteCompactView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     private var actionToggle: some View {
         HStack {
             Toggle("Has Action", isOn: $viewModel.hasAction)
         }
     }
-    
+
     private var contentBeforeToggle: some View {
         HStack {
             Toggle("Content Before", isOn: $viewModel.hasContentBefore)

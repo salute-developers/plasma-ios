@@ -2,7 +2,7 @@ import Foundation
 
 struct ToolbarProps: MergeableConfiguration, Codable {
     typealias Props = ToolbarProps
-    
+
     var backgroundColor: ColorKeyValue?
     var dividerStyle: KeyValue<String>?
     var orientation: KeyValue<String>?

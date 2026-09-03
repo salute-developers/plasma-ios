@@ -7,13 +7,13 @@ extension Color {
         let hexConverter = HexConverter()
         let result = hexConverter.from(hex: hex)
         self.init(
-            red: result.red / 255.0, 
+            red: result.red / 255.0,
             green: result.green / 255.0,
             blue: result.blue / 255.0,
             opacity: result.alpha / 255.0
         )
     }
-    
+
     var hex: String? {
         guard let components = self.cgColor?.components,
               let colorSpaceModel = self.cgColor?.colorSpace?.model,

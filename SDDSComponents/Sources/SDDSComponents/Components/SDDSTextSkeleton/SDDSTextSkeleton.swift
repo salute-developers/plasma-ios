@@ -21,20 +21,12 @@ import SwiftUI
  ## Пример использования
 
  ```swift
- SDDSTextSkeleton(
-     appearance: SkeletonAppearance(
-         shape: CornerRadiusDrawer(cornerRadius: 4),
-         gradient: .gradient(.skeletonGradient),
-         duration: 2000
-     ),
-     lineCount: 3,
-     textTypography: .semibold14,
-     lineWidthProvider: FullWidthLineProvider()
- )
+ // @sample: SDDSComponentsFixtures/Samples/TextSkeleton/SDDSTextSkeleton_Simple.swift
+ SDDSTextSkeleton()
  ```
  */
 public struct SDDSTextSkeleton: View {
-    
+
     @Environment(\.skeletonAppearance) private var environmentAppearance
     @Environment(\.subtheme) private var subtheme
     private let lineCount: Int
@@ -43,7 +35,7 @@ public struct SDDSTextSkeleton: View {
     private let lineSpacing: CGFloat
     private let isAnimationEnabled: Bool
     private var _appearance: SkeletonAppearance?
-    
+
     public init(
         appearance: SkeletonAppearance? = nil,
         lineCount: Int = 3,
@@ -59,18 +51,18 @@ public struct SDDSTextSkeleton: View {
         self.lineSpacing = lineSpacing
         self.isAnimationEnabled = isAnimationEnabled
     }
-    
+
     private var appearance: SkeletonAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     public var body: some View {
         VStack(alignment: .leading, spacing: totalLineSpacing) {
             ForEach(0..<lineCount, id: \.self) { index in
                 GeometryReader { geometry in
                     let geometryWidth = geometry.size.width
                     let width = geometryWidth * lineWidthProvider.widthFactor(lineIndex: index, lineCount: lineCount)
-                    
+
                     SDDSRectSkeleton(
                         appearance: appearance,
                         isAnimationEnabled: isAnimationEnabled
@@ -83,18 +75,18 @@ public struct SDDSTextSkeleton: View {
             }
         }
     }
-    
+
     private var totalLineSpacing: CGFloat {
         let font = effectiveTypography.uiFont
         let result = font.leading + lineSpacing
 
         return result
     }
-    
+
     private var effectiveTypography: TypographyToken {
         appearance.textTypography.typography(with: appearance.size) ?? textTypography
     }
-    
+
     private var resolvedLineHeight: CGFloat {
         max(effectiveTypography.lineHeight, effectiveTypography.uiFont.lineHeight)
     }

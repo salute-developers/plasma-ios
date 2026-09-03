@@ -9,7 +9,6 @@ enum NoteStory: Story {
     static let title = "Note"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: NoteUiState, theme: Theme) -> some View {
         NoteView(viewModel: NoteViewModel(theme: theme, uiState: state))

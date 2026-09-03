@@ -45,4 +45,4 @@ public struct ZeroModalSize: ModalSizeConfiguration {
     public var shadow: ShadowToken { ShadowToken() }
     public var debugDescription: String { "ZeroModalSize" }
     public init() {}
-} 
+}

@@ -5,10 +5,10 @@ let package = Package(
     name: "SandboxDemoTheme",
     platforms: [
         .iOS(.v15),
-        .macOS(.v10_15),
+        .macOS(.v10_15)
     ],
     products: [
-        .library(name: "SandboxDemoTheme", targets: ["SandboxDemoTheme"]),
+        .library(name: "SandboxDemoTheme", targets: ["SandboxDemoTheme"])
     ],
     dependencies: [
         .package(path: "../SandboxCore"),
@@ -16,7 +16,7 @@ let package = Package(
         .package(path: "../../DesignSystemBuilder/SDDSThemeCore"),
         .package(path: "../../Themes/SDDSservTheme"),
         .package(path: "../../Themes/PlasmaB2CTheme"),
-        .package(path: "../../Themes/PlasmaHomeDSTheme"),
+        .package(path: "../../Themes/PlasmaHomeDSTheme")
     ],
     targets: [
         .target(
@@ -27,9 +27,9 @@ let package = Package(
                 .product(name: "SDDSThemeCore", package: "SDDSThemeCore"),
                 .product(name: "SDDSServTheme", package: "SDDSServTheme"),
                 .product(name: "PlasmaB2CTheme", package: "PlasmaB2CTheme"),
-                .product(name: "PlasmaHomeDSTheme", package: "PlasmaHomeDSTheme"),
+                .product(name: "PlasmaHomeDSTheme", package: "PlasmaHomeDSTheme")
             ],
             path: "Sources/SandboxDemoTheme"
-        ),
+        )
     ]
 )

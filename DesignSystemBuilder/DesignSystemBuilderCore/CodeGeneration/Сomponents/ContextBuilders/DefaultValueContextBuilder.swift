@@ -3,7 +3,7 @@ import SwiftUI
 
 enum SDDSComponentsType: String {
     case buttonColor = "ButtonColor"
-    
+
     var defaultContext: String {
         switch self {
         case .buttonColor:
@@ -22,11 +22,11 @@ extension CGFloat {
     static var defaultOptionalContext: String {
         "CGFloat?(0)"
     }
-    
+
     static var defaultContext: String {
         "CGFloat(0)"
     }
-    
+
     var context: String {
         "CGFloat(\(self))"
     }
@@ -55,7 +55,6 @@ extension FillStyle {
         "FillStyle()"
     }
 }
-
 
 extension Int {
     static var defaultContext: String {

@@ -5,7 +5,7 @@ import SDDSThemeCore
 public enum FillStyle: Hashable {
     case color(ColorToken)
     case gradient(GradientToken)
-    
+
     public static func == (lhs: FillStyle, rhs: FillStyle) -> Bool {
         switch (lhs, rhs) {
         case (.color(let lhsColor), .color(let rhsColor)):
@@ -16,7 +16,7 @@ public enum FillStyle: Hashable {
             return false
         }
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         switch self {
         case .color(let color):

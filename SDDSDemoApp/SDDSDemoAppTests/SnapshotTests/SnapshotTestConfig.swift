@@ -13,7 +13,7 @@ import SwiftUI
  */
 
 extension SnapshotTestConfig {
-    
+
     static let iPhone13Mini = SnapshotDeviceGroup.custom(
         width: 375,
         height: 812,
@@ -26,7 +26,7 @@ extension SnapshotTestConfig {
  Запуск в светлой и темной теме
  */
 enum SnapshotTestConfig {
-    
+
     static let testTheme: [(name: String, scheme: ColorScheme)] = [
         ("Light", .light),
         ("Dark", .dark)
@@ -45,14 +45,14 @@ func runSnapshotTest(
     landscape: Bool = false
 ) async throws {
     let baseName = extractTestName(from: function)
-    
+
     let deviceGroup: SnapshotDeviceGroup
     if landscape {
         deviceGroup = SnapshotTestConfig.iPhone13Mini.landscape
     } else {
         deviceGroup = SnapshotTestConfig.iPhone13Mini
     }
-    
+
     // Определяем режим на основе environment variable
     let snapshotMode: SnapshotMode = {
         if let modeString = ProcessInfo.processInfo.environment["SNAPSHOT_MODE"] {
@@ -61,7 +61,7 @@ func runSnapshotTest(
         // По умолчанию используем .verify
         return .verify
     }()
-    
+
     for (themeName, scheme) in SnapshotTestConfig.testTheme {
         await Xct.snapshotAsync(
             testName: "\(baseName)_\(themeName)",

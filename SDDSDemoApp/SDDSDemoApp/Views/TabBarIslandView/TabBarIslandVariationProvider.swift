@@ -11,15 +11,15 @@ enum TabBarIslandType: String, CaseIterable {
 
 final class TabBarIslandVariationProvider: VariationProvider {
     typealias Appearance = TabBarIslandAppearance
-    
+
     var theme: Theme
     var tabBarIslandType: TabBarIslandType
-    
+
     init(theme: Theme = .sdddsServTheme, tabBarIslandType: TabBarIslandType) {
         self.theme = theme
         self.tabBarIslandType = tabBarIslandType
     }
-    
+
     var variations: [Variation<TabBarIslandAppearance>] {
         switch tabBarIslandType {
         case .tabbar:
@@ -34,7 +34,7 @@ final class TabBarIslandVariationProvider: VariationProvider {
             theme.tabBarIslandHasLabelSolidVariations
         }
     }
-    
+
     var defaultValue: TabBarIslandAppearance {
         TabBarIslandAppearance.defaultValue
     }

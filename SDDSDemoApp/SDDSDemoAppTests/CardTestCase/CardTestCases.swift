@@ -16,7 +16,7 @@ import SDDSIcons
 
 struct CardLHorizontal: View {
     var apperance: CardAppearance
-    
+
     var body: some View {
         SDDSCard(
             appearance: apperance
@@ -29,7 +29,7 @@ struct CardLHorizontal: View {
 
 struct CardMVertical: View {
     var appearance: CardAppearance
-    
+
     var body: some View {
         SDDSCard(
             appearance: appearance
@@ -42,7 +42,7 @@ struct CardMVertical: View {
 
 struct CardSHorizontal: View {
     var appearance: CardAppearance
-    
+
     var body: some View {
         SDDSCard(
             appearance: appearance
@@ -55,7 +55,7 @@ struct CardSHorizontal: View {
 
 struct CardLClearVertical: View {
     var appearance: CardAppearance
-    
+
     var body: some View {
         SDDSCard(
             appearance: appearance
@@ -68,7 +68,7 @@ struct CardLClearVertical: View {
 
 struct CardMClearHorizontal: View {
     var appearance: CardAppearance
-    
+
     var body: some View {
         SDDSCard(appearance: appearance) {
             verticalView
@@ -79,7 +79,7 @@ struct CardMClearHorizontal: View {
 
 struct CardSClearVertical: View {
     var appearance: CardAppearance
-    
+
     var body: some View {
         SDDSCard(appearance: appearance) {
             verticalView

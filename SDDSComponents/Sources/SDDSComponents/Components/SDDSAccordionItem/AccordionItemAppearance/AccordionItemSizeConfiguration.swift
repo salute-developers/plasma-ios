@@ -29,7 +29,7 @@ public struct DefaultAccordionItemSize: AccordionItemSizeConfiguration {
     public var iconPadding: CGFloat = 12.0
     public var iconPlacement: AccordionItemPlacement = .start
     public var iconRotation: CGFloat = 180.0
-    
+
     public var debugDescription: String {
         "DefaultAccordionItemSize"
     }
@@ -39,51 +39,51 @@ public struct ZeroAccordionItemSize: AccordionItemSizeConfiguration {
     public var shape: PathDrawer {
         DefaultPathDrawer()
     }
-    
+
     public var paddingStart: CGFloat {
         0
     }
-    
+
     public var paddingEnd: CGFloat {
         0
     }
-    
+
     public var paddingTop: CGFloat {
         0
     }
-    
+
     public var paddingBottom: CGFloat {
         0
     }
-    
+
     public var contentPaddingStart: CGFloat {
         0
     }
-    
+
     public var contentPaddingEnd: CGFloat {
         0
     }
-    
+
     public var contentPaddingBottom: CGFloat {
         0
     }
-    
+
     public var iconPadding: CGFloat {
         0
     }
-    
+
     public var iconPlacement: AccordionItemPlacement {
         .start
     }
-    
+
     public var iconRotation: CGFloat {
         0
     }
-    
+
     public var debugDescription: String {
         "ZeroAccordionItemSize"
     }
-    
+
     public init() {}
 }
 
@@ -91,4 +91,4 @@ public enum AccordionItemPlacement: String, CaseIterable {
     @ApiDefault
     case start
     case end
-} 
+}

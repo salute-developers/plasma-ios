@@ -10,10 +10,10 @@ final class TemplateRendererTests: XCTestCase {
         templateRenderer = TemplateRenderer()
         let bundle = Bundle.module
         templatesURL = bundle.resourceURL
-        
+
         let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
         let scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
-        
+
         contextBuilder = GeneralContextBuilder(kind: .shape, metaScheme: scheme)
     }
     static var shapesURL: URL {
@@ -28,10 +28,10 @@ final class TemplateRendererTests: XCTestCase {
         let template = StencilTemplate.shapeToken
         let jsonData = try! Data(contentsOf: TemplateRendererTests.shapesURL)
         let context = contextBuilder.buildContext(from: jsonData).asDictionary ?? [:]
-        
+
         // when
         let result = templateRenderer.render(context: context, template: template)
-        
+
         // then
         switch result {
         case .generated(let renderedContent):
@@ -41,7 +41,7 @@ final class TemplateRendererTests: XCTestCase {
             XCTFail("Expected successful rendering of shapes based on JSON")
         }
     }
-    
+
     func testRenderShapesFromJSON_Failure() {
         // given
         let template = StencilTemplate.shapeToken
@@ -53,10 +53,10 @@ final class TemplateRendererTests: XCTestCase {
         ]
         let modifiedJsonData = try! JSONSerialization.data(withJSONObject: json)
         let context = contextBuilder.buildContext(from: modifiedJsonData).asDictionary ?? [:]
-        
+
         // when
         let result = templateRenderer.render(context: context, template: template)
-        
+
         // then
         switch result {
         case .error:
@@ -64,7 +64,7 @@ final class TemplateRendererTests: XCTestCase {
         default:
             XCTFail("Expected failure in rendering due to manipulated JSON")
         }
-        
+
     }
 }
 
@@ -77,7 +77,7 @@ private extension TemplateRendererTests {
                 )
         """
     }
-    
+
     var cornerRadius32: String {
         """
                 let base = Self(

@@ -4,14 +4,14 @@ import XCTest
 final class DecodeCommandTests: XCTestCase {
     /// SUT
     var decodeCommand: DecodeCommand<Scheme>!
-    
+
     func testDecodeCommand_Success() {
         // given
         decodeCommand = DecodeCommand(url: DecodeCommandTests.schemeURL)
-        
+
         // when
         let result = decodeCommand.run()
-        
+
         // then
         switch result {
         case .value(let scheme as Scheme):
@@ -21,14 +21,14 @@ final class DecodeCommandTests: XCTestCase {
             XCTFail("Expected a successful decoding result with a Scheme value")
         }
     }
-    
+
     func testDecodeCommand_Failure() {
         // given
         decodeCommand = DecodeCommand(url: DecodeCommandTests.invalidURL)
-        
+
         // when
         let result = decodeCommand.run()
-        
+
         // then
         switch result {
         case .error:
@@ -47,7 +47,7 @@ private extension DecodeCommandTests {
         }
         return url
     }
-    
+
     static var invalidURL: URL {
         let bundle = Bundle.module
         guard let url = bundle.url(forResource: "empty", withExtension: "json") else {

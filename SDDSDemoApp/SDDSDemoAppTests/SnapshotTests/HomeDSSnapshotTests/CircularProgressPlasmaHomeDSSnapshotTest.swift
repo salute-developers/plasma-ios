@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class CircularProgressPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
-    
+
     @MainActor
     func testCircularProgressXxlDefaultHomeDS() async throws {
         let appearance = CircularProgressBar.xxl.default.appearance

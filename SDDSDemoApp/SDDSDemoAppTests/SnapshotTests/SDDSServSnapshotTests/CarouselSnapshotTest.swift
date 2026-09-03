@@ -8,7 +8,7 @@ import UIKit
 
 @MainActor
 final class CarouselSnapshotTest: SDDSServThemeTestCase {
-    
+
     func testCarouselButtonsPlacementInner() async throws {
         let appearance = Carousel.buttonsPlacementInner.appearance
         try await runSnapshotTest(
@@ -41,7 +41,7 @@ final class CarouselSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     func testCarouselStartButtonsPlacementInner() async throws {
         let appearance = Carousel.buttonsPlacementInner.appearance
         try await runSnapshotTest(
@@ -53,7 +53,7 @@ final class CarouselSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-        
+
     func testCarouselCenterButtonsPlacementOuter() async throws {
         var appearance = Carousel.buttonsPlacementOuter.appearance
         appearance.size = DefaultCarouselSize(
@@ -63,7 +63,7 @@ final class CarouselSnapshotTest: SDDSServThemeTestCase {
             prevButtonPadding: appearance.size.prevButtonPadding,
             buttonsPlacement: appearance.size.buttonsPlacement
         )
-        
+
         try await runSnapshotTest(
             view: CarouselSnapshotCase(
                 appearance: appearance,
@@ -74,7 +74,7 @@ final class CarouselSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     func testCarouselEndButtonPlacementInner() async throws {
         let appearance = Carousel.buttonsPlacementInner.appearance
         try await runSnapshotTest(
@@ -87,7 +87,7 @@ final class CarouselSnapshotTest: SDDSServThemeTestCase {
             )
         )
     }
-    
+
     func testCarouselCenterButtonsPlacementInner() async throws {
         let appearance = Carousel.buttonsPlacementInner.appearance
         try await runSnapshotTest(

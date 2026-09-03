@@ -61,7 +61,7 @@ final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: 
         self.outputDirectoryURL = outputDirectoryURL
         self.templateRender = templateRender
         self.themeConfig = themeConfig
-        
+
         super.init(name: "Generate \(themeConfig.name)Theme.\(component.rawValue) component")
     }
 
@@ -75,10 +75,10 @@ final class GenerateComponentCommand<Props: MergeableConfiguration, Appearance: 
         guard let jsonData = ComponentConfigSource.data(for: component, themeConfig: themeConfig) else {
             return .error(GeneralError.schemeNotFound)
         }
-        
+
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
+
         do {
             let configuration = try decoder.decode(ComponentConfiguration<Props>.self, from: jsonData)
             let builder = ComponentContextBuilderImpl<Props, Appearance, Size>(

@@ -4,7 +4,7 @@ import SwiftUI
 struct DrawerSize: CodeGenerationSize {
     typealias Variation = DrawerConfiguration.Variation
     typealias Props = DrawerProps
-    
+
     var paddingStart: String?
     var paddingEnd: String?
     var paddingTop: String?
@@ -14,11 +14,11 @@ struct DrawerSize: CodeGenerationSize {
     var closeIconOffsetY: String?
     var closeIconSize: String?
     var closeIconPlacement: String?
-    
+
     init(variation: DrawerConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: DrawerProps, id: String? = nil, nullify: Bool = false) {
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
         self.paddingEnd = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context
@@ -30,7 +30,7 @@ struct DrawerSize: CodeGenerationSize {
         self.closeIconSize = ImageSizeContextBuilder(props.closeIcon?.value, nullify: nullify).context
         self.closeIconPlacement = DrawerCloseIconPlacementContextBuilder(id: props.closeIconPlacement?.value, component: .drawerCloseInner).context
     }
-    
+
     init() {
         self.paddingStart = CGFloat.defaultContext
         self.paddingEnd = CGFloat.defaultContext
@@ -43,4 +43,3 @@ struct DrawerSize: CodeGenerationSize {
         self.closeIconPlacement = DrawerCloseIconPlacementContextBuilder.defaultContext
     }
 }
-

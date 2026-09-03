@@ -47,7 +47,7 @@ struct SDDSFormItem_WithHint: View {
 // @DocSample
 struct SDDSFormVertical_Simple: View {
     var body: some View {
-        SDDSFormVertical() {
+        SDDSFormVertical {
             SDDSFormItem(
                 title: { Text("First") },
                 optional: { EmptyView() },
@@ -73,7 +73,7 @@ struct SDDSFormVertical_Simple: View {
 // @DocSample
 struct SDDSFormHorizontal_Simple: View {
     var body: some View {
-        SDDSFormHorizontal() {
+        SDDSFormHorizontal {
             SDDSFormItem(
                 title: { Text("Left") },
                 optional: { EmptyView() },

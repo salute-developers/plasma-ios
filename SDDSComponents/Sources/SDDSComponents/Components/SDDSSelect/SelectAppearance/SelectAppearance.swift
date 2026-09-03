@@ -10,7 +10,7 @@ public struct SelectAppearance {
     public var buttonAppearance: ButtonAppearance
     public var selectItemAppearance: SelectItemAppearance
     public var size: SelectSizeConfiguration
-    
+
     public init(
         dropdownAppearance: DropdownMenuAppearance = .defaultValue,
         textFieldAppearance: TextFieldAppearance = .defaultValue,
@@ -31,4 +31,3 @@ extension SelectAppearance: EnvironmentKey {
         SelectAppearance()
     }
 }
-

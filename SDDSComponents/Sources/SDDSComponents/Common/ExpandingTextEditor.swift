@@ -15,7 +15,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
     let showsVerticalScrollIndicator: Bool
     let dynamicHeight: Bool
     let numberOfLines: Int
-    let onChange: (_ newText: String) -> ()
+    let onChange: (_ newText: String) -> Void
 
     init(text: Binding<String>,
          textHeight: Binding<CGFloat>,
@@ -31,7 +31,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
          showsVerticalScrollIndicator: Bool = true,
          dynamicHeight: Bool = true,
          numberOfLines: Int = 0,
-         onChange: @escaping (_ newText: String) -> ()
+         onChange: @escaping (_ newText: String) -> Void
     ) {
         _text = text
         _textHeight = textHeight
@@ -52,7 +52,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = .clear
-        
+
         let textView = ObservableUITextView()
         textView.delegate = context.coordinator
         textView.isScrollEnabled = !dynamicHeight
@@ -67,16 +67,16 @@ struct ExpandingTextEditor: UIViewRepresentable {
             context.coordinator.contentSizeChanged(textView)
         }
         updateTextViewProperties(textView: textView)
-        
+
         containerView.addSubview(textView)
-        
+
         NSLayoutConstraint.activate([
             textView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             textView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             textView.topAnchor.constraint(equalTo: containerView.topAnchor),
             textView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         ])
-        
+
         return containerView
     }
 
@@ -84,9 +84,9 @@ struct ExpandingTextEditor: UIViewRepresentable {
         guard let textView = uiView.subviews.first as? UITextView else {
             return
         }
-        
+
         updateTextViewProperties(textView: textView)
-                
+
         DispatchQueue.main.async {
             if isFocused {
                 if !textView.isFirstResponder {
@@ -95,18 +95,18 @@ struct ExpandingTextEditor: UIViewRepresentable {
             } else {
                 textView.resignFirstResponder()
             }
-            
+
             textView.text = text
 
             self.updateHeight(textView)
         }
     }
-    
+
     private func updateHeight(_ textView: UITextView) {
         guard dynamicHeight else {
             return
         }
-        
+
         var fixedWidth = textView.bounds.size.width
         let size = CGSize(width: fixedWidth, height: .greatestFiniteMagnitude)
         let estimatedSize = textView.sizeThatFits(size)
@@ -116,7 +116,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
             textHeight = newHeight
         }
     }
-    
+
     private func updateTextViewProperties(textView: UITextView) {
         textView.textContainerInset = UIEdgeInsets(
             top: paddingInsets.top,
@@ -146,18 +146,18 @@ struct ExpandingTextEditor: UIViewRepresentable {
         func textViewDidChange(_ textView: UITextView) {
             parent.text = textView.text
             parent.updateHeight(textView)
-            
+
             parent.onChange(textView.text)
         }
-        
+
         func textViewDidBeginEditing(_ textView: UITextView) {
             parent.isFocused = true
         }
-        
+
         func textViewDidEndEditing(_ textView: UITextView) {
             parent.isFocused = false
         }
-        
+
         func contentSizeChanged(_ textView: UITextView) {
             parent.isScrolling = true
             DispatchQueue.main.async {
@@ -169,7 +169,7 @@ struct ExpandingTextEditor: UIViewRepresentable {
 
 private class ObservableUITextView: UITextView {
     var onContentSizeChanged: (() -> Void)?
-    
+
     override var contentSize: CGSize {
         didSet {
             if contentSize != oldValue {

@@ -1,36 +1,18 @@
 # CLAUDE.md — SDDSDemoApp
 
-Демо-приложение / песочница компонентов SDDS. Два режима: общая песочница со всеми темами
-и DS-изолированные схемы (одна схема = одна тема).
+Демо-приложение / песочница компонентов. Два режима: общая песочница со всеми темами и
+DS-изолированные схемы (одна схема = одна тема).
 
-## Структура
+**Запуск, список схем, выбор DS и пошаговое подключение новой темы — [README.md](README.md).**
 
-- `SDDSDemoApp/` — исходники приложения.
-- `SDDSDemoAppStatic/` — вариант со статической линковкой.
-- `SDDSDemoAppTests/` — тесты.
-- `SDDSDemoApp.xcodeproj`, `README.md`.
+## Что нужно помнить агенту
 
-## Запуск
-
-Через Xcode: открыть корневой `SDDS.xcworkspace`, выбрать схему и симулятор, `Cmd+R`.
-Схемы: `SDDSDemoApp` (все темы), `SDDSDemoAppSDDSServ`, `SDDSDemoAppPlasmaB2C`,
-`SDDSDemoAppPlasmaHomeDS`.
-
-Через CLI (из папки `SDDSDemoApp`):
-```sh
-xcodebuild -scheme SDDSDemoApp -destination 'generic/platform=iOS Simulator' build
-xcodebuild -scheme SDDSDemoAppPlasmaHomeDS -destination 'generic/platform=iOS Simulator' build
-```
-
-## Выбор DS
-
-Выбор дизайн-системы — через переменную окружения `SANDBOX_DS_PROFILE` и флаги компиляции
-`SANDBOX_DS_*` в DS-изолированных схемах. Подробности и подключение новой темы — в
-[README.md](README.md).
-
-## Грабли
-
-- Требуются установленные iOS Simulator runtime и заранее собранные зависимости.
+- Требуются установленные iOS Simulator runtime и заранее собранные зависимости
+  (`scripts/build_all_static_dependencies.sh`).
 - DS-изолированные схемы завязаны на конкретную тему из `Themes/*` — тема должна быть
   сгенерирована и подключена.
+- Выбор DS — через `SANDBOX_DS_PROFILE` и compile-флаги `SANDBOX_DS_*`; разбор профиля в
+  `Common/Sandbox/SandboxDesignSystemProfile.swift`, регистрация в `SandboxBootstrap.swift`.
+- Stories генерируются `scripts/generate_sandbox_stories.py` (он же в Build Phases) — новый
+  экран без регистрации в песочнице не появится.
 - Коммит-скоуп: `sdds-icore/sandbox`.

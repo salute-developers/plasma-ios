@@ -17,13 +17,13 @@ import SDDSThemeCore
  ## Пример использования
 
  ```swift
- // Простая карточка с текстом
- SDDSCard(appearance: Card.m.default.appearance) {
-      VStack(alignment: .leading, spacing: 8) {
-          Text("Header")
-          Text("Description")
-      }
-  }
+ // @sample: SDDSComponentsFixtures/Samples/Card/SDDSCard_Simple.swift
+ SDDSCard {
+     VStack(alignment: .leading, spacing: 8) {
+         Text("Header")
+         Text("Description")
+     }
+ }
  ```
  */
 
@@ -33,15 +33,15 @@ public struct SDDSCard<Content: View>: View {
     @Environment(\.subtheme) private var subtheme
     private let _appearance: CardAppearance?
     private let backgroundColor: Color?
-    
+
     public let content: Content
-    
+
     public init(appearance: CardAppearance? = nil, backgroundColor: Color? = nil, @ViewBuilder content: () -> Content) {
         self._appearance = appearance
         self.backgroundColor = backgroundColor
         self.content = content()
     }
-    
+
     public var body: some View {
         content
             .applyIf(appearance.size.paddingTop > 0) {
@@ -59,7 +59,7 @@ public struct SDDSCard<Content: View>: View {
             .background(backgroundColor ?? appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             .shape(pathDrawer: appearance.size.pathDrawer)
     }
-    
+
     private var appearance: CardAppearance {
         _appearance ?? environmentAppearance
     }

@@ -15,7 +15,7 @@ public struct ScrollBarData {
     public let scrollBarTrackColor: ColorToken
     public let scrollBarThumbColor: ColorToken
     public let contentInsetTop: CGFloat
-    
+
     public init(
          hasTrack: Bool = true,
          hoverExpand: Bool = true,

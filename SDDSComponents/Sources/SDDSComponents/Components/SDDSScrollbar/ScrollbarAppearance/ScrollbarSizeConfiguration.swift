@@ -19,10 +19,10 @@ public protocol ScrollbarSizeConfiguration {
 public struct DefaultScrollbarSize: ScrollbarSizeConfiguration {
     public let width: CGFloat = 2.0
     public let hoverExpandFactor: CGFloat = 2.0
-    
+
     public var shape: any PathDrawer {
         CircleDrawer()
     }
-    
+
     public init() {}
 }

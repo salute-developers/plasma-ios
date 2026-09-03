@@ -3,7 +3,7 @@ import Foundation
 
 final class ContextBuilderMock: ContexBuilder {
     var stubbedResult: CommandResult = .empty
-    
+
     func buildContext(from data: Data) -> CommandResult {
         stubbedResult
     }

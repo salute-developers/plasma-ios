@@ -4,14 +4,14 @@ import XCTest
 class Validator: SchemeTokenNameValidator {}
 
 class SchemeTokenNameValidatorTests: XCTestCase {
-    
+
     var validator: Validator!
     var scheme: Scheme!
 
     override func setUp() {
         super.setUp()
         validator = Validator()
-        
+
         let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
         scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
     }
@@ -23,25 +23,25 @@ class SchemeTokenNameValidatorTests: XCTestCase {
         XCTAssertNoThrow(try validator.validateTokenName("screen-s.display.l.normal", .typography, scheme: scheme))
         XCTAssertNoThrow(try validator.validateTokenName("down.soft.s", .shadow, scheme: scheme))
     }
-    
+
     func testValidateMissingTokens() {
-        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.color.token", .color, scheme: scheme)) { error in
+        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.color.token", .color, scheme: scheme)) { _ in
             XCTAssertTrue(true)
         }
-        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.gradient.token", .gradient, scheme: scheme)) { error in
+        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.gradient.token", .gradient, scheme: scheme)) { _ in
             XCTAssertTrue(true)
         }
-        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.shape.token", .shape, scheme: scheme)) { error in
+        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.shape.token", .shape, scheme: scheme)) { _ in
             XCTAssertTrue(true)
         }
-        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.typography.token", .typography, scheme: scheme)) { error in
+        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.typography.token", .typography, scheme: scheme)) { _ in
             XCTAssertTrue(true)
         }
-        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.shadow.token", .shadow, scheme: scheme)) { error in
+        XCTAssertThrowsError(try validator.validateTokenName("nonexistent.shadow.token", .shadow, scheme: scheme)) { _ in
             XCTAssertTrue(true)
         }
     }
-    
+
     func testValidateDuplicateTokens() {
         let duplicateTokens = [
             Token(type: .color, name: "dark.text.default.primary-hover", tags: ["dark", "text", "default", "primary-hover"], displayName: "textPrimaryHover", description: "Основной цвет текста", enabled: true),
@@ -55,22 +55,22 @@ class SchemeTokenNameValidatorTests: XCTestCase {
             Token(type: .shadow, name: "down.soft.s", tags: ["down", "soft", "s"], displayName: "shadowDownSoftS", description: "shadow down soft s", enabled: true),
             Token(type: .shadow, name: "down.soft.s", tags: ["down", "soft", "s"], displayName: "shadowDownSoftS", description: "shadow down soft s", enabled: true)
         ]
-        
+
         let duplicateScheme = Scheme(name: "caldera_online", version: "0.1.0", color: Style(mode: [.dark], category: [.text], subcategory: [.default]), gradient: Style(mode: [.dark], category: [.text], subcategory: [.default]), shadow: ShadowStyle(direction: [.down], kind: [.soft], size: [.small]), shape: ShapeStyle(kind: [.round], size: [.xxs]), typography: TypographyStyle(screen: [.screenS], kind: [.display], size: [.large], weight: [.normal]), fontFamily: FontFamiliesContainerStyle(kind: [.text]), tokens: duplicateTokens)
-        
-        XCTAssertThrowsError(try validator.validateTokenName("dark.text.default.primary-hover", .color, scheme: duplicateScheme)) { error in
+
+        XCTAssertThrowsError(try validator.validateTokenName("dark.text.default.primary-hover", .color, scheme: duplicateScheme)) { _ in
             XCTAssertTrue(true)
         }
-        XCTAssertThrowsError(try validator.validateTokenName("dark.text.default.accent-gradient-hover", .gradient, scheme: duplicateScheme)) { error in
+        XCTAssertThrowsError(try validator.validateTokenName("dark.text.default.accent-gradient-hover", .gradient, scheme: duplicateScheme)) { _ in
             XCTAssertTrue(true)
         }
-        XCTAssertThrowsError(try validator.validateTokenName("round.xxs", .shape, scheme: duplicateScheme)) { error in
+        XCTAssertThrowsError(try validator.validateTokenName("round.xxs", .shape, scheme: duplicateScheme)) { _ in
             XCTAssertTrue(true)
         }
-        XCTAssertThrowsError(try validator.validateTokenName("screen-s.display.l.normal", .typography, scheme: duplicateScheme)) { error in
+        XCTAssertThrowsError(try validator.validateTokenName("screen-s.display.l.normal", .typography, scheme: duplicateScheme)) { _ in
             XCTAssertTrue(true)
         }
-        XCTAssertThrowsError(try validator.validateTokenName("down.soft.s", .shadow, scheme: duplicateScheme)) { error in
+        XCTAssertThrowsError(try validator.validateTokenName("down.soft.s", .shadow, scheme: duplicateScheme)) { _ in
             XCTAssertTrue(true)
         }
     }

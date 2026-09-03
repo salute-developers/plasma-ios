@@ -22,7 +22,7 @@ public struct TextFieldData {
     public let actionContent: (() -> AnyView)?
     public let onMaskComplete: ((Bool) -> Void)?
     public let onInputFrameChange: ((CGRect) -> Void)?
-    
+
     public init(
         title: String = "",
         optionalTitle: String = "",

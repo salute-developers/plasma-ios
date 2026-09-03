@@ -16,7 +16,7 @@ import SDDSIcons
 
 struct IndicatorLDefault: View {
     var appearance: IndicatorAppearance
-    
+
     var body: some View {
         SDDSIndicator(
             appearance: appearance
@@ -26,7 +26,7 @@ struct IndicatorLDefault: View {
 
 struct IndicatorMAccent: View {
     var appearance: IndicatorAppearance
-    
+
     var body: some View {
         SDDSIndicator(
             appearance: appearance
@@ -36,7 +36,7 @@ struct IndicatorMAccent: View {
 
 struct IndicatorSInactove: View {
     var appearance: IndicatorAppearance
-    
+
     var body: some View {
         SDDSIndicator(
             appearance: appearance
@@ -46,7 +46,7 @@ struct IndicatorSInactove: View {
 
 struct IndicatorLPositive: View {
     var appearance: IndicatorAppearance
-    
+
     var body: some View {
         SDDSIndicator(
             appearance: appearance
@@ -56,7 +56,7 @@ struct IndicatorLPositive: View {
 
 struct IndicatorLWarning: View {
     var appearance: IndicatorAppearance
-    
+
     var body: some View {
         SDDSIndicator(
             appearance: appearance
@@ -66,7 +66,7 @@ struct IndicatorLWarning: View {
 
 struct IndicatorLNegative: View {
     var appearance: IndicatorAppearance
-    
+
     var body: some View {
         SDDSIndicator(
             appearance: appearance

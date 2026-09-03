@@ -11,7 +11,7 @@ final class AvatarGroupViewModel: ComponentViewModel<AvatarGroupVariationProvide
     @Published var borderWidth: CGFloat = 4
     @Published var spacing: CGFloat = 15
     var avatarViewModel = AvatarViewModel()
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: AvatarGroupUiState = .init()) {
         super.init(variationProvider: AvatarGroupVariationProvider(theme: theme), theme: theme)
         avatarViewModel = AvatarViewModel(theme: theme)
@@ -28,7 +28,7 @@ final class AvatarGroupViewModel: ComponentViewModel<AvatarGroupVariationProvide
         spacing = uiState.spacing
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     var sizeConfiguration: AvatarGroupSizeConfiguration {
           DefaultAvatarGroupSize(
               maxDisplayingAvatarCount: maxDisplayingAvatarCount,
@@ -77,7 +77,7 @@ final class AvatarGroupViewModel: ComponentViewModel<AvatarGroupVariationProvide
     var defaultAccessibility: AvatarAccessibility {
         AvatarAccessibility(label: "User Avatar", hint: "Displays user status and initials or image")
     }
-    
+
     func updateAppearance() {
         appearance.avatarAppearance = avatarViewModel.appearance
     }

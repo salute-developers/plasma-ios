@@ -17,11 +17,11 @@ struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: Vie
     @ViewBuilder var placeholderBeforeContent: () -> PlaceholderBeforeContent
     @ViewBuilder var placeholderContent: () -> PlaceholderContent
     @ViewBuilder var placeholderAfterContent: () -> PlaceholderAfterContent
-    
+
     let onEditingChanged: ((Bool) -> Void)
     let onMaskComplete: ((Bool) -> Void)?
     var textFieldConfiguration: (FocusableTextField) -> TextFieldContent
-    
+
     var body: some View {
         ZStack(alignment: .leading) {
             // Показываем placeholder в зависимости от режима
@@ -51,7 +51,7 @@ struct PlaceholderTextField<TextFieldContent: View, PlaceholderAfterContent: Vie
             .id("\(readOnly)-\(mask?.format(input: "") ?? "none")-\(maskDisplayMode.rawValue)")
         }
     }
-    
+
     private var shouldShowPlaceholder: Bool {
         if maskDisplayMode == .always && mask != nil {
             return true

@@ -4,7 +4,7 @@ import SwiftUI
 struct TabBarItemSize: CodeGenerationSize {
     typealias Variation = TabBarItemConfiguration.Variation
     typealias Props = TabBarItemProps
-    
+
     var minHeight: String?
     var paddingTop: String?
     var paddingBottom: String?
@@ -12,11 +12,11 @@ struct TabBarItemSize: CodeGenerationSize {
     var labelPadding: String?
     var shape: String?
     var labelPlacement: String?
-    
+
     init(variation: TabBarItemConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: TabBarItemProps, id: String? = nil, nullify: Bool = false) {
         self.minHeight = CGFloatContextBuilder(props.minHeight?.value, nullify: nullify).context
         self.paddingTop = CGFloatContextBuilder(props.paddingTop?.value, nullify: nullify).context
@@ -34,7 +34,7 @@ struct TabBarItemSize: CodeGenerationSize {
         }
         self.labelPlacement = TabBarLabelPlacementContextBuilder(id: props.labelPlacement?.value, component: .tabBarItemSolid).context
     }
-    
+
     init() {
         self.minHeight = CGFloat.defaultContext
         self.paddingTop = CGFloat.defaultContext

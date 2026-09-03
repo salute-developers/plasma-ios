@@ -79,17 +79,17 @@ public struct SDDSSegment: View {
     public let isDisabled: Bool
     public let stretch: Bool
     public let hasBackground: Bool
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.segmentAppearance) private var environmentAppearance
-    
+
     @Binding public var selectedItemId: UUID?
 
     @State var isAnimating: Bool = false
     @State var isHighlighted: Bool = false
     @State var isHovered: Bool = false
-    
+
     public init(
         items: [SDDSSegmentItemData<AnyView>],
         appearance: SegmentAppearance? = nil,
@@ -109,7 +109,7 @@ public struct SDDSSegment: View {
         self.stretch = stretch
         self.hasBackground = hasBackground
     }
-    
+
     public var body: some View {
         Group {
             switch layoutOrientation {
@@ -124,7 +124,7 @@ public struct SDDSSegment: View {
         .shape(pathDrawer: appearance.size.pathDrawer)
         .disabled(isDisabled)
     }
-    
+
     public var horizontalOrientation: some View {
         HStack(spacing: 0) {
             ForEach(items, id: \.self) { segmentData in
@@ -150,7 +150,7 @@ public struct SDDSSegment: View {
             $0.frame(height: horizontalHeight)
         }
     }
-    
+
     public var verticalOrientation: some View {
         VStack(spacing: 0) {
             ForEach(items, id: \.self) { segmentData in
@@ -179,29 +179,29 @@ public struct SDDSSegment: View {
             $0.frame(height: verticalWidth)
         }
     }
-    
+
     private var horizontalHeight: CGFloat {
         items.map({ $0.appearance.size.height }).max() ?? 0
     }
-    
+
     private var verticalWidth: CGFloat {
         items.map({ $0.appearance.size.width }).max() ?? 0
     }
-    
+
     private func currentColor(for counterColor: ButtonColor) -> Color {
         var activeStates = Set<InteractiveState>()
         if isHighlighted { activeStates.insert(.pressed) }
         if isHovered { activeStates.insert(.hovered) }
         return counterColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
     }
-    
+
     private var backgroundColor: Color {
         if let backgroundColor = appearance.backgroundColor, hasBackground {
             return currentColor(for: backgroundColor)
         }
         return .clear
     }
-    
+
     var appearance: SegmentAppearance {
         _appearance ?? environmentAppearance
     }

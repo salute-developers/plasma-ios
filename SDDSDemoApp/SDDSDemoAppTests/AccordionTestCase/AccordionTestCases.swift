@@ -17,9 +17,9 @@ import SDDSIcons
 /**
  Accordion общий тест-кейс
  */
-struct AccordionCommonVariation : View {
+struct AccordionCommonVariation: View {
     var appearance: AccordionAppearance
-    
+
     var body: some View {
         SDDSAccordion(
             items: [
@@ -28,7 +28,7 @@ struct AccordionCommonVariation : View {
                     content: "Content text",
                     isExpanded: true,
                     onToggle: {
-                        isExpanded in
+                        _ in
                     }
                 ),
                 AccordionData(
@@ -38,7 +38,7 @@ struct AccordionCommonVariation : View {
                 AccordionData(
                     title: "Title",
                     content: "Content text"
-                ),
+                )
             ],
             appearance: appearance
         )
@@ -48,9 +48,9 @@ struct AccordionCommonVariation : View {
 /**
  PLASMA-T2095
  */
-struct AccordionSolidActionStartSizeM : View {
+struct AccordionSolidActionStartSizeM: View {
     var appearance: AccordionAppearance
-    
+
     var body: some View {
         SDDSAccordion(
             items: (0..<10).map { index in
@@ -59,7 +59,7 @@ struct AccordionSolidActionStartSizeM : View {
                     content: "Content text",
                     isExpanded: index == 0,
                     onToggle: {
-                        isExpanded in
+                        _ in
                     }
                 )
             },
@@ -71,9 +71,9 @@ struct AccordionSolidActionStartSizeM : View {
 /**
  PLASMA-T2096
  */
-struct AccordionClearActionEndSizeSHasDivider : View {
+struct AccordionClearActionEndSizeSHasDivider: View {
     var appearance: AccordionAppearance
-    
+
     var body: some View {
         SDDSAccordion(
             items: [
@@ -82,7 +82,7 @@ struct AccordionClearActionEndSizeSHasDivider : View {
                     content: "Content text",
                     isExpanded: true,
                     onToggle: {
-                        isExpanded in
+                        _ in
                     }
                 ),
                 AccordionData(
@@ -92,7 +92,7 @@ struct AccordionClearActionEndSizeSHasDivider : View {
                 AccordionData(
                     title: "Title",
                     content: "Content text"
-                ),
+                )
             ],
             showDividers: true,
             appearance: appearance
@@ -103,9 +103,9 @@ struct AccordionClearActionEndSizeSHasDivider : View {
 /**
  PLASMA-T2097
  */
-struct AccordionClearActionStartSizeXs : View {
+struct AccordionClearActionStartSizeXs: View {
     var appearance: AccordionAppearance
-    
+
     var body: some View {
         SDDSAccordion(
             items: [
@@ -114,7 +114,7 @@ struct AccordionClearActionStartSizeXs : View {
                     content: "Content text",
                     isExpanded: true,
                     onToggle: {
-                        isExpanded in
+                        _ in
                     }
                 ),
                 AccordionData(
@@ -124,7 +124,7 @@ struct AccordionClearActionStartSizeXs : View {
                 AccordionData(
                     title: "Title",
                     content: "Content text"
-                ),
+                )
             ],
             showDividers: false,
             appearance: appearance
@@ -135,9 +135,9 @@ struct AccordionClearActionStartSizeXs : View {
 /**
  PLASMA-T2098
  */
-struct AccordionSolidActionEndSizeLNoText : View {
+struct AccordionSolidActionEndSizeLNoText: View {
     var appearance: AccordionAppearance
-    
+
     var body: some View {
         SDDSAccordion(
             items: [
@@ -146,7 +146,7 @@ struct AccordionSolidActionEndSizeLNoText : View {
                     content: "",
                     isExpanded: true,
                     onToggle: {
-                        isExpanded in
+                        _ in
                     }
                 ),
                 AccordionData(
@@ -156,7 +156,7 @@ struct AccordionSolidActionEndSizeLNoText : View {
                 AccordionData(
                     title: "Title",
                     content: "Content text"
-                ),
+                )
             ],
             appearance: appearance
         )
@@ -166,18 +166,18 @@ struct AccordionSolidActionEndSizeLNoText : View {
 /**
  PLASMA-T2099
  */
-struct AccordionSolidActionEndSizeLAmountTen : View {
+struct AccordionSolidActionEndSizeLAmountTen: View {
     var appearance: AccordionAppearance
-    
+
     var body: some View {
         SDDSAccordion(
-            items: (0...10).map { index in
+            items: (0...10).map { _ in
                 AccordionData(
                     title: "Title",
                     content: "Content text",
                     isExpanded: true,
                     onToggle: {
-                        isExpanded in
+                        _ in
                     }
                 )
             },
@@ -189,18 +189,18 @@ struct AccordionSolidActionEndSizeLAmountTen : View {
 /**
  PLASMA-T2100
  */
-struct AccordionClearActionStartSizeH2 : View {
+struct AccordionClearActionStartSizeH2: View {
     var appearance: AccordionAppearance
-    
+
     var body: some View {
         SDDSAccordion(
-            items: (0...10).map { index in
+            items: (0...10).map { _ in
                 AccordionData(
                     title: "Title",
                     content: "Content text",
                     isExpanded: true,
                     onToggle: {
-                        isExpanded in
+                        _ in
                     }
                 )
             },
@@ -212,9 +212,9 @@ struct AccordionClearActionStartSizeH2 : View {
 /**
  PLASMA-T2103
  */
-struct AccordionClearActionEndSizeH4 : View {
+struct AccordionClearActionEndSizeH4: View {
     var appearance: AccordionAppearance
-    
+
     var body: some View {
         SDDSAccordion(
             items: [
@@ -223,7 +223,7 @@ struct AccordionClearActionEndSizeH4 : View {
                     content: "Content text",
                     isExpanded: true,
                     onToggle: {
-                        isExpanded in
+                        _ in
                     }
                 ),
                 AccordionData(
@@ -233,7 +233,7 @@ struct AccordionClearActionEndSizeH4 : View {
                 AccordionData(
                     title: "Title",
                     content: "Content text"
-                ),
+                )
             ],
             showDividers: true,
             appearance: appearance
@@ -244,9 +244,9 @@ struct AccordionClearActionEndSizeH4 : View {
 /**
  PLASMA-T2107
  */
-struct AccordionSolidActionEndLongTextSizeL : View {
+struct AccordionSolidActionEndLongTextSizeL: View {
     var appearance: AccordionAppearance
-    
+
     var body: some View {
         SDDSAccordion(
             items: [
@@ -260,7 +260,7 @@ struct AccordionSolidActionEndLongTextSizeL : View {
                     """,
                     isExpanded: true,
                     onToggle: {
-                        isExpanded in
+                        _ in
                     }
                 ),
                 AccordionData(
@@ -280,7 +280,7 @@ struct AccordionSolidActionEndLongTextSizeL : View {
                     nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                     """
-                ),
+                )
             ],
             appearance: appearance
         )

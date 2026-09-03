@@ -5,7 +5,7 @@ enum CodeFieldGroupType: String, CaseIterable {
     case four = "Four"
     case five = "Five"
     case six = "Six"
-    
+
     var groups: [CodeFieldGroup] {
         switch self {
         case .four:
@@ -16,7 +16,7 @@ enum CodeFieldGroupType: String, CaseIterable {
             return CodeFieldGroup.six
         }
     }
-    
+
     var displayName: String {
         switch self {
         case .four:

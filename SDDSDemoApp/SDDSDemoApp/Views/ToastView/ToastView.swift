@@ -58,10 +58,10 @@ struct ToastView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Toast")
     }
-    
+
     @ViewBuilder
     var contentStart: some View {
         if viewModel.contentStartEnabled {
@@ -69,7 +69,7 @@ struct ToastView: View {
                 .renderingMode(.template)
         }
     }
-    
+
     @ViewBuilder
     var contentEnd: some View {
         if viewModel.contentEndEnabled {
@@ -77,7 +77,7 @@ struct ToastView: View {
                 .renderingMode(.template)
         }
     }
-    
+
     private func present() {
         guard !viewModel.text.isEmpty || viewModel.contentStartEnabled else {
             return
@@ -90,4 +90,4 @@ struct ToastView: View {
     NavigationView {
         ToastView()
     }
-} 
+}

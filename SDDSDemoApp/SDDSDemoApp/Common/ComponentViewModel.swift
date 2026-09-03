@@ -4,7 +4,7 @@ import SDDSComponents
 import SDDSThemeCore
 
 class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
-    
+
     @Published var variation: Variation<Provider.Appearance>? {
         didSet {
             if let style = variation?.styles.first {
@@ -34,7 +34,7 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
         }
     }
     @Published var subtheme: Subtheme = .none
-    
+
     weak var delegate: ViewModelDelegate?
     let variationProvider: Provider
     let componentViewLayoutMode: ComponentViewLayoutMode
@@ -47,43 +47,43 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
     ) {
         let variations = variationProvider.variations
         let variation = variations.first
-        
+
         self.componentViewLayoutMode = componentViewLayoutMode
         self.variation = variation
         self.style = variation?.styles.first
         self.appearance = variationProvider.defaultValue
         self.theme = theme
         self.variationProvider = variationProvider
-        
+
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
     }
-    
+
     func selectTheme(_ theme: Theme) {
         self.theme = theme
     }
-    
+
     func selectVariation(_ variation: Variation<Provider.Appearance>?) {
         self.variation = variation
     }
-    
+
     func selectStyle(_ style: AppearanceVariation<Provider.Appearance>) {
         self.style = style
     }
-    
+
     func selectSubtheme(_ subtheme: Subtheme) {
         self.subtheme = subtheme
     }
-    
+
     var variations: [Variation<Provider.Appearance>] {
         variationProvider.variations
     }
-    
+
     var styles: [AppearanceVariation<Provider.Appearance>] {
         return variation?.styles ?? []
     }
-    
+
     func onUpdateAppearance() {
         delegate?.updateAppearance()
     }
@@ -97,8 +97,7 @@ class ComponentViewModel<Provider: VariationProvider>: ObservableObject {
 
         if
             let variation,
-            let style = variation.styles.first(where: { $0.name == appearance })
-        {
+            let style = variation.styles.first(where: { $0.name == appearance }) {
             selectStyle(style)
         }
     }

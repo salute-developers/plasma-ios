@@ -88,8 +88,8 @@ private struct TooltipWithDynamicWidth<ContentStart: View, Trigger: View>: View 
     let contentStart: () -> ContentStart
     let trigger: () -> Trigger
 
-    @State private var measuredWidth: CGFloat? = nil
-    @State private var triggerWidth: CGFloat? = nil
+    @State private var measuredWidth: CGFloat?
+    @State private var triggerWidth: CGFloat?
 
     var body: some View {
         ZStack {

@@ -24,17 +24,16 @@ import SwiftUI
  ## Пример использования
 
  ```swift
+ // @sample: SDDSComponentsFixtures/Samples/Drawer/SDDSDrawer_Simple.swift
  SDDSDrawer(
-     appearance: DrawerCloseInner.m.default.appearance,
-     header: {
-         Text("Header")
-     },
-     content: {
-         Text("Content")
-     },
-     footer: {
-         Text("Footer")
-     }
+     backgroundColor: nil,
+     onClose: nil,
+     closePlacement: .right,
+     hasHeader: false,
+     hasFooter: false,
+     header: { EmptyView() },
+     content: { Text("Content") },
+     footer: { EmptyView() }
  )
  ```
  */
@@ -48,13 +47,13 @@ public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
     private let closePlacement: DrawerClosePlacement
     private let hasHeader: Bool
     private let hasFooter: Bool
-    
+
     public let header: Header
     public let content: Content
     public let footer: Footer
-    
+
     @State private var contentWidth: CGFloat = 0
-    
+
     public init(
         appearance: DrawerAppearance? = nil,
         backgroundColor: Color? = nil,
@@ -76,7 +75,7 @@ public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
         self.content = content()
         self.footer = footer()
     }
-    
+
     public var bodyContent: some View {
         VStack(spacing: 0) {
             if !isHeaderEmpty || (shouldShowCloseButton && size.closeIconPlacement != .outer) {
@@ -90,12 +89,12 @@ public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
                             Spacer().frame(width: size.closeIconHeaderPadding)
                         }
                     }
-                    
+
                     if !isHeaderEmpty {
                         headerView
                             .frame(maxWidth: .infinity)
                     }
-                    
+
                     if closePlacement == .right && shouldShowCloseButton && size.closeIconPlacement != .outer {
                         if isHeaderEmpty {
                             Spacer()
@@ -109,20 +108,20 @@ public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
                 .frame(width: contentWidth > 0 ? contentWidth : nil)
                 .fixedSize(horizontal: true, vertical: false)
             }
-            
+
             contentView
                 .readSize { size in
                     if contentWidth != size.width {
                         contentWidth = size.width
                     }
                 }
-            
+
             if !isFooterEmpty {
                 footerView
             }
         }
     }
-    
+
     public var body: some View {
         Group {
             if size.closeIconPlacement == .outer && shouldShowCloseButton {
@@ -145,7 +144,7 @@ public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
             $0.shadow(appearance.shadow!)
         }
     }
-    
+
     @ViewBuilder
     private var drawerContent: some View {
         bodyContent
@@ -157,42 +156,42 @@ public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
                 (backgroundColor ?? appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
             )
     }
-    
+
     private var appearance: DrawerAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var size: DrawerSizeConfiguration {
         appearance.size
     }
-    
+
     private var shouldShowCloseButton: Bool {
         size.closeIconPlacement != .none && onClose != nil && appearance.closeIcon != nil
     }
-    
+
     private var isHeaderEmpty: Bool {
         !hasHeader
     }
-    
+
     private var isFooterEmpty: Bool {
         !hasFooter
     }
-    
+
     @ViewBuilder
     private var headerView: some View {
         header
     }
-    
+
     @ViewBuilder
     private var contentView: some View {
         content
     }
-    
+
     @ViewBuilder
     private var footerView: some View {
         footer
     }
-    
+
     @ViewBuilder
     private var closeButton: some View {
         if let closeIcon = appearance.closeIcon {
@@ -212,4 +211,3 @@ public struct SDDSDrawer<Header: View, Content: View, Footer: View>: View {
         }
     }
 }
-

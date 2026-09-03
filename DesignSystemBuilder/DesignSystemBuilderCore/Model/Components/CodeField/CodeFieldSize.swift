@@ -3,7 +3,7 @@ import SwiftUI
 
 struct CodeFieldSize: CodeGenerationSize {
     typealias Props = CodeFieldProps
-    
+
     var itemSpacing: String?
     var groupSpacing: String?
     var itemShape: String?
@@ -12,11 +12,11 @@ struct CodeFieldSize: CodeGenerationSize {
     var width: String?
     var height: String?
     var dotSize: String?
-    
+
     init(variation: CodeFieldConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: CodeFieldProps, id: String? = nil, nullify: Bool = false) {
         self.itemSpacing = CGFloatContextBuilder(props.itemSpacing?.value, nullify: nullify).context
         self.groupSpacing = CGFloatContextBuilder(props.groupSpacing?.value, nullify: nullify).context
@@ -27,7 +27,7 @@ struct CodeFieldSize: CodeGenerationSize {
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
         self.dotSize = CGFloatContextBuilder(props.dotSize?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.itemSpacing = CGFloat.defaultContext
         self.groupSpacing = CGFloat.defaultContext

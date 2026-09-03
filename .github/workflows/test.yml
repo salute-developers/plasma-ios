@@ -1,16 +1,22 @@
 name: Code Quality Check / Perform Unit Testing
 
 on:
+  # Прогоны на обеих ветках, чтобы бейджи в README имели что показывать
+  # и на develop (её клонируют по умолчанию), и на main (released).
+  push:
+    branches:
+      - develop
+      - main
   pull_request:
   
 concurrency:
   # New commit on branch cancels running workflows of the same branch
-  group: ${{ github.workflow }}-${{ github.head_ref }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-26
     environment: sdds
 
     steps:
@@ -22,9 +28,34 @@ jobs:
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: 'latest'
+          # Держим одну версию Xcode во всех воркфлоу, кроме verify-snapshots:
+          # там она запинена отдельно, потому что снапшоты зависят от рендера ОС.
+          xcode-version: '26.6'
           
+      # Примеры в doc-комментариях генерируются из фикстур: расхождение — ошибка,
+      # чинится прогоном `dsbuilder docs sync-comments --repo-root .`.
+      - name: Check doc-comment examples
+        run: |
+          cd DesignSystemBuilder && ./build_cli.sh
+          ./build/dsbuilder/dsbuilder docs sync-comments --repo-root .. --check
+
       - name: Run tests
         run: |
           ./scripts/run_tests.rb
+
+      # Покрытие собирается, но порогом не является и бейджа не имеет — цифра по
+      # SDDSComponents считается только по объектникам, которые втянул тестовый бинарь
+      # (статическая линковка), поэтому она не отражает покрытие библиотеки целиком.
+      - name: Coverage report
+        if: always()
+        run: ./scripts/coverage_summary.rb >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: build/test-results
+          retention-days: 7
+          if-no-files-found: ignore
 

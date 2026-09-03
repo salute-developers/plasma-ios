@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class AvatarGroupPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testAvatarGroupSizeSPlasmaB2C() async throws {
         let appearance = Avatar.s.appearance

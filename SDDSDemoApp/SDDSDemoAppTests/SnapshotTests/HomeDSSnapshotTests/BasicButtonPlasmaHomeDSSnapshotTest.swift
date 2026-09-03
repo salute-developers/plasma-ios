@@ -15,58 +15,58 @@ import UIKit
 import SwiftUI
 
 final class BasicButtonPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
-    
+
     @MainActor
     func testButtonMDefaultPlasmaHomeDS() async throws {
         let appearance = BasicButton.m.default.appearance
         try await runSnapshotTest(view: ButtonLDefault(appearance: appearance))
     }
-    
+
     @MainActor
     func testButtonSWarningPlasmaHomeDS() async throws {
         let appearance = BasicButton.s.warning.appearance
         try await runSnapshotTest(view: ButtonSWarning(appearance: appearance))
     }
-    
+
     @MainActor
     func testButtonSClearPlasmaHomeDS() async throws {
         let appearance = BasicButton.s.clear.appearance
         try await runSnapshotTest(view: ButtonXsDark(appearance: appearance))
     }
-    
+
     @MainActor
     func testButtonIsLoadingPlasmaHomeDS() async throws {
         let appearance = BasicButton.m.default.appearance
         try await runSnapshotTest(view: ButtonLIsLoading(appearance: appearance))
     }
-    
+
     @MainActor
     func testButtonIsDisabledPlasmaHomeDS() async throws {
         let appearance = BasicButton.m.default.appearance
         try await runSnapshotTest(view: ButtonLIsDisabled(appearance: appearance))
     }
-    
+
     @MainActor
     func testButtonMSecondaryPlasmaHomeDS() async throws {
         let appearance = BasicButton.m.secondary.appearance
         try await runSnapshotTest(view: ButtonLSecondary(appearance: appearance))
     }
-    
+
     @MainActor
     func testButtonMClearSpaceBetweenPlasmaHomeDS() async throws {
         let appearance = BasicButton.m.clear.appearance
         try await runSnapshotTest(view: ButtonMClearSpaceBetween(appearance: appearance))
     }
-    
+
     @MainActor
     func testButtonSPositiveLongTextPlasmaHomeDS() async throws {
         let appearance = BasicButton.s.default.appearance
         try await runSnapshotTest(view: ButtonSPositiveLongText(appearance: appearance))
     }
-        
+
     @MainActor
     func testButtonSNegativePlasmaHomeDS() async throws {
         let appearance = BasicButton.s.negative.appearance
-        try await runSnapshotTest(view:ButtonXxsDefault(appearance: appearance))
+        try await runSnapshotTest(view: ButtonXxsDefault(appearance: appearance))
     }
 }

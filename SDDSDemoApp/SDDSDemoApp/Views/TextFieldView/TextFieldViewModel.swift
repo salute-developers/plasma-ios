@@ -24,7 +24,7 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
             self.selectVariation(variations.first)
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: TextFieldUiState = .init()) {
         super.init(variationProvider: TextFieldVariationProvider(layout: uiState.layout, theme: theme), theme: theme)
 
@@ -52,7 +52,7 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
         layout = uiState.layout
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     var chips: [ChipData] {
         get {
             if case let .multiple(_, chips) = value {
@@ -88,7 +88,7 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
     func updateChipTitle(at index: Int, with newTitle: String) {
         guard chips.indices.contains(index) else { return }
         var updatedChip = chips[index]
-        
+
         updatedChip = ChipData(
             title: newTitle,
             isEnabled: updatedChip.isEnabled,
@@ -108,7 +108,7 @@ final class TextFieldViewModel: ComponentViewModel<TextFieldVariationProvider> {
             value = .single(textValue)
         }
     }
-    
+
     override func onUpdateAppearance() {
         chips = []
         value = .single(textValue)

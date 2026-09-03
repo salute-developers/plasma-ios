@@ -4,7 +4,7 @@ import SwiftUI
 public final class EnvironmentValueProvider {
 
     public static let shared = EnvironmentValueProvider()
-    
+
     private var values: [String: Any] = [:]
 
     public func set<Value>(value: Value, forKey key: any EnvironmentKey.Type) {

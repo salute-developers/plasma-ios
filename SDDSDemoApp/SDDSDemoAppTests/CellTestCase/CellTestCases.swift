@@ -35,7 +35,7 @@ struct CellSizeLAvatarHasDisclosure: View {
 
 struct CellSizeMTitleAvatar: View {
     var appearance: CellAppearance
-    
+
     var body: some View {
         SDDSCell(
             appearance: appearance,
@@ -54,7 +54,7 @@ struct CellSizeMTitleAvatar: View {
 
 struct CellSizeSSubtitleHasDisclosure: View {
     var appearance: CellAppearance
-    
+
     var body: some View {
         SDDSCell(
             appearance: appearance,
@@ -71,7 +71,7 @@ struct CellSizeSSubtitleHasDisclosure: View {
 
 struct CellSizeXsLabelAvatar: View {
     var appearance: CellAppearance
-    
+
     var body: some View {
         SDDSCell(
             appearance: appearance,
@@ -90,7 +90,7 @@ struct CellSizeXsLabelAvatar: View {
 
 struct CellLHasDisclosureText: View {
     var appearance: CellAppearance
-    
+
     var body: some View {
         SDDSCell(
             appearance: appearance,
@@ -108,7 +108,7 @@ struct CellLHasDisclosureText: View {
 struct CellSizeMAvatarIcon: View {
     var appearance: CellAppearance
     var iconButtonAppearance: ButtonAppearance
-    
+
     var body: some View {
         SDDSCell(
             appearance: appearance,
@@ -138,7 +138,7 @@ struct CellSizeMAvatarIcon: View {
 struct CellSizeSIconHasDisclosureText: View {
     var appearance: CellAppearance
     var iconButtonAppearance: ButtonAppearance
-    
+
     var body: some View {
         SDDSCell(
             appearance: appearance,
@@ -165,7 +165,7 @@ struct CellSizeSIconHasDisclosureText: View {
 
 struct CellSizeXsRadioboxAvatar: View {
     var appearance: CellAppearance
-    
+
     var body: some View {
         SDDSCell(
             appearance: appearance,
@@ -186,7 +186,7 @@ struct CellSizeXsRadioboxAvatar: View {
 
 struct CellSizeLSwitchCheckbox: View {
     var appearance: CellAppearance
-    
+
     var body: some View {
         SDDSCell(
             appearance: appearance,
@@ -207,7 +207,7 @@ struct CellSizeLSwitchCheckbox: View {
 
 struct CellSizeMCheckboxHasDisclosure: View {
     var appearance: CellAppearance
-    
+
     var body: some View {
         SDDSCell(
             appearance: appearance,

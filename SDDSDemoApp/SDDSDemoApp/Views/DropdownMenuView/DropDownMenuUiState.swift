@@ -8,14 +8,14 @@ struct DropDownMenuUiState: StoryUiState, DefaultUiState {
     var alignment: PopoverAlignment = .center
     var autoHide: Bool = true
     var buttonPosition: DropdownMenuButtonPosition = .center
-    var duration: Int? = nil
+    var duration: Int?
     var textInput: String = "10"
     var itemsCount: Int = 10
     var hasDisclosure: Bool = false
     var dividerEnabled: Bool = false
     var itemAppearance: ListItemAppearance = .init()
-    var itemStyle: AppearanceVariation<ListItemAppearance>? = nil
-    var itemVariation: Variation<ListItemAppearance>? = nil
+    var itemStyle: AppearanceVariation<ListItemAppearance>?
+    var itemVariation: Variation<ListItemAppearance>?
     var placementMode: PopoverPlacementMode = .loose
     var layout: DropDownMenuLayout = .normal
 }

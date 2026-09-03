@@ -13,7 +13,7 @@ public enum ButtonAlignment: String, CaseIterable {
      Иконка выравнивается по левому краю.
      */
     case leading
-    
+
     /**
      Иконка выравнивается по правому краю.
      */

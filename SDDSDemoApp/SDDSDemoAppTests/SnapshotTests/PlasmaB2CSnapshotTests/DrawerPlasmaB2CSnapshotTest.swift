@@ -15,14 +15,14 @@ import UIKit
 import SwiftUI
 
 final class DrawerPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testDrawerCloseInnerLeftHasHeaderPlasmaB2C() async throws {
         let appearance = DrawerCloseInner.m.appearance
         let listAppearance = ListNormal.m.appearance
         try await runSnapshotTest(view: DrawerCloseLeftHasHeader(appearance: appearance, listAppearance: listAppearance))
     }
-    
+
     @MainActor
     func testDrawerCloseOuterRightHasFooter() async throws {
         let appearance = DrawerCloseOuter.m.hasShadow.appearance
@@ -34,21 +34,21 @@ final class DrawerPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             overlayColor: Color.black.opacity(0.4))
         )
     }
-    
+
     @MainActor
     func testDrawerCloseNoneLeftHasHeaderFooterPlasmaB2C() async throws {
         let appearance = DrawerCloseNone.m.appearance
         let listAppearance = ListNormal.m.appearance
         try await runSnapshotTest(view: DrawerCloseNoneHasHeaderFooter(appearance: appearance, listAppearance: listAppearance))
     }
-    
+
     @MainActor
     func testDrawerCloseInnerIconRightNoHeaderFooterPlasmaB2C() async throws {
         let appearance = DrawerCloseInner.m.appearance
         let listAppearance = ListNormal.m.appearance
         try await runSnapshotTest(view: DrawerCloseIconRightNoHeaderFooter(appearance: appearance, listAppearance: listAppearance))
     }
-    
+
     @MainActor
     func testDrawerHasPeakOffSetPlasmaB2C() async throws {
         let appearance = DrawerCloseInner.m.appearance

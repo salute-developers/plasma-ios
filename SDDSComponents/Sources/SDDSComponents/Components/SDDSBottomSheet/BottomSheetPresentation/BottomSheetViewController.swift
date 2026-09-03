@@ -5,15 +5,15 @@ import SDDSThemeCore
 struct BottomSheetViewController<Header: View, Content: View, Footer: View>: UIViewControllerRepresentable {
     @Binding var isPresented: Bool
     @Binding var detent: BottomSheetDetent?
-    
+
     let content: SDDSBottomSheet<Header, Content, Footer>
     let configuration: BottomSheetPresentationConfiguration
     let subtheme: SubthemeData
-    
+
     func makeUIViewController(context: Context) -> UIViewController {
         UIViewController()
     }
-    
+
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         if isPresented {
             let pathDrawer = content.appearance.size.pathDrawer as? CornerRadiusDrawer
@@ -25,7 +25,7 @@ struct BottomSheetViewController<Header: View, Content: View, Footer: View>: UIV
                 subtheme: subtheme
             )
             containerViewController.modalPresentationStyle = .custom
-            
+
             let transitioningDelegate = context.coordinator.transitioningDelegate
             transitioningDelegate.configuration = configuration
             transitioningDelegate.onDismiss = {
@@ -39,7 +39,7 @@ struct BottomSheetViewController<Header: View, Content: View, Footer: View>: UIV
                 self.detent = detent
             }
             containerViewController.transitioningDelegate = transitioningDelegate
-            
+
             if uiViewController.presentedViewController == nil {
                 uiViewController.present(containerViewController, animated: true)
             }
@@ -49,15 +49,15 @@ struct BottomSheetViewController<Header: View, Content: View, Footer: View>: UIV
             }
         }
     }
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
-    
+
     class Coordinator: NSObject {
         let transitioningDelegate = BottomSheetTransitioningDelegate()
         var parent: BottomSheetViewController
-        
+
         init(parent: BottomSheetViewController) {
             self.parent = parent
         }

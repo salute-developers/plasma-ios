@@ -22,7 +22,6 @@ final class UniversalGeneratorFileParityTests: XCTestCase {
         super.tearDown()
     }
 
-
     func testMetaAndFixturesAreAvailable() throws {
         XCTAssertTrue(ApiMetaStore.shared.isLoaded, "ios-api-meta.json must load from \(Self.metaURL.path)")
         let fixtures = try FileManager.default.contentsOfDirectory(at: Self.fixturesURL, includingPropertiesForKeys: nil)
@@ -84,14 +83,13 @@ final class UniversalGeneratorFileParityTests: XCTestCase {
 
     private static let staleTypedReference: Set<CodeGenerationComponent> = [
         .collapsingNavigationBarInternalPage,
-        .collapsingNavigationBarMainPage,
+        .collapsingNavigationBarMainPage
     ]
 
     private static let expectedSkips: Set<String> = [
         "CollapsingNavigationBarInternalPage (typed model is stale)",
-        "CollapsingNavigationBarMainPage (typed model is stale)",
+        "CollapsingNavigationBarMainPage (typed model is stale)"
     ]
-
 
     private func compare(typed: GenerationResult, universal: GenerationResult, component: CodeGenerationComponent) -> String? {
         switch (typed, universal) {
@@ -139,7 +137,6 @@ final class UniversalGeneratorFileParityTests: XCTestCase {
         return lines.joined(separator: "\n")
     }
 
-
     private enum GenerationResult {
         case generated([String: String])
         case failed(String)
@@ -165,7 +162,6 @@ final class UniversalGeneratorFileParityTests: XCTestCase {
             return .failed("\(error)")
         }
     }
-
 
     private static var testsURL: URL {
         URL(fileURLWithPath: #file).deletingLastPathComponent()
@@ -198,7 +194,7 @@ enum KnownTypedDefects {
         // Значение есть в конфиге (`labelPlacement: none`), но типизированный путь берёт
         // его из id вариации и поэтому теряет. Универсальный читает конфиг.
         "= TextFieldLabelPlacement.none",
-        "= TextAreaLabelPlacement.none",
+        "= TextAreaLabelPlacement.none"
     ]
 
     /// Типизированный путь пишет case без имени типа (`.multiple`), универсальный —

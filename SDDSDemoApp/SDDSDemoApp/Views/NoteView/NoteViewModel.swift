@@ -9,7 +9,7 @@ final class NoteViewModel: ComponentViewModel<NoteVariationProvider> {
     @Published var text: String = "Text"
     @Published var hasContentBefore: Bool = true
     @Published var hasAction: Bool = true
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: NoteUiState = .init()) {
         super.init(variationProvider: NoteVariationProvider(theme: theme), theme: theme)
 

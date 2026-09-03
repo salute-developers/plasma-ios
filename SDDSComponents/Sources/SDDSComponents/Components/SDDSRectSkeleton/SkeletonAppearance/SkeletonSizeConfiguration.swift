@@ -17,4 +17,4 @@ public struct ZeroSkeletonSizeConfiguration: SkeletonSizeConfiguration {
         "ZeroSkeletonSizeConfiguration"
     }
     public init() {}
-} 
+}

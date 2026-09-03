@@ -26,7 +26,7 @@ struct TooltipView: View {
             .onTapGesture {
                 isTooltipPresented = false
             }
-            
+
             Section {
                 buttonPositionView
                 placementSelectionView
@@ -41,18 +41,18 @@ struct TooltipView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Tooltip")
     }
-    
+
     private var duration: TimeInterval? {
         viewModel.autoHide ? 3.0 : nil
     }
-    
+
     private var width: CGFloat? {
         nil
     }
-    
+
     @ViewBuilder
     private var tooltipContent: some View {
         if viewModel.contentStartEnabled {
@@ -64,7 +64,7 @@ struct TooltipView: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private func buttonForPosition(_ position: PopoverButtonPosition) -> some View {
         switch position {
@@ -268,7 +268,7 @@ struct TooltipView: View {
             }
         }
     }
-    
+
     private var placementSelectionView: some View {
         HStack {
             Text("Placement")
@@ -285,7 +285,7 @@ struct TooltipView: View {
             }
         }
     }
-    
+
     private var buttonPositionView: some View {
         HStack {
             Text("Button Position")
@@ -302,7 +302,7 @@ struct TooltipView: View {
             }
         }
     }
-    
+
     private var alignmentSelectionView: some View {
         HStack {
             Text("Alignment")
@@ -319,27 +319,27 @@ struct TooltipView: View {
             }
         }
     }
-    
+
     private var autoHideToggle: some View {
         Toggle("Auto Hide", isOn: $viewModel.autoHide)
     }
-    
+
     private var contentStartToggle: some View {
         Toggle("Content Start Enabled", isOn: $viewModel.contentStartEnabled)
     }
-    
+
     private var tailEnabledToggle: some View {
         Toggle("Tail Enabled", isOn: $viewModel.tailEnabled)
     }
-    
+
     private var triggerCenteredToggle: some View {
         Toggle("Trigger Centered", isOn: $viewModel.triggerCentered)
     }
-    
+
     private var textField: some View {
         TextField("Text", text: $viewModel.text)
     }
-    
+
     private var placementModeSelectionView: some View {
         HStack {
             Text("Placement Mode")
@@ -356,7 +356,7 @@ struct TooltipView: View {
             }
         }
     }
-    
+
     private var containerPadding: CGFloat {
         24.0
     }
@@ -366,7 +366,7 @@ struct TooltipView: View {
             presentTooltip()
         }
     }
-    
+
     private func presentTooltip() {
         guard !viewModel.text.isEmpty || viewModel.contentStartEnabled else {
             return

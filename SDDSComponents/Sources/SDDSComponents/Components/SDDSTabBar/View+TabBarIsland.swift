@@ -14,7 +14,7 @@ public extension View {
     ) -> some View {
         ZStack(alignment: .bottom) {
             self
-            
+
             VStack(spacing: 0) {
                 SDDSTabBarIsland(
                     items: items,

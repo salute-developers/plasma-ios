@@ -2,7 +2,7 @@ import Foundation
 
 struct SwitchSize: CodeGenerationSize {
     typealias Props = SwitchProps
-    
+
     var toggleTrackPathDrawer: String?
     var toggleThumbPathDrawer: String?
     var toggleTrackWidth: String?
@@ -12,17 +12,17 @@ struct SwitchSize: CodeGenerationSize {
     var toggleThumbPadding: String?
     var descriptionPadding: String?
     var textPadding: String?
-    
+
     @available(*, deprecated, message: "")
     var width: String?
-    
+
     @available(*, deprecated, message: "")
     var verticalGap: String?
-    
+
     init(variation: ComponentConfiguration<SwitchProps>.Variation, nullify: Bool) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: SwitchProps, id: String? = nil, nullify: Bool = false) {
         self.toggleTrackPathDrawer = PathDrawerContextBuilder(shape: props.toggleTrackShape, nullify: nullify).context
         self.toggleThumbPathDrawer = PathDrawerContextBuilder(shape: props.toggleThumbShape, nullify: nullify).context
@@ -36,7 +36,7 @@ struct SwitchSize: CodeGenerationSize {
         self.width = CGFloat.defaultOptionalContext
         self.verticalGap = CGFloat.defaultContext
     }
-    
+
     init() {
         self.toggleTrackWidth = CGFloat.defaultContext
         self.toggleTrackHeight = CGFloat.defaultContext

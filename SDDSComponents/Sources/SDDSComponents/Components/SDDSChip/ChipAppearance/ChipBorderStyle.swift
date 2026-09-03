@@ -9,7 +9,7 @@ import Foundation
 public enum ComponentShapeStyle: Hashable {
     case cornered
     case pilled
-    
+
     public func hash(into hasher: inout Hasher) {
         switch self {
         case .cornered:

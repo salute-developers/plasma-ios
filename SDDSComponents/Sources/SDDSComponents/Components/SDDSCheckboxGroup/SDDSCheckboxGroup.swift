@@ -2,8 +2,8 @@ import Foundation
 import SwiftUI
 import SDDSApiInfo
 
-public typealias CheckboxGroupOnChange = ((_ index: Int, _ state: SelectionControlState) -> ())
-public typealias CheckboxGroupOnParentChange = ((_ state: SelectionControlState) -> ())
+public typealias CheckboxGroupOnChange = ((_ index: Int, _ state: SelectionControlState) -> Void)
+public typealias CheckboxGroupOnParentChange = ((_ state: SelectionControlState) -> Void)
 
 /**
  `CheckboxGroupBehaviour` определяет поведение группы чекбоксов.
@@ -79,10 +79,10 @@ public struct SDDSCheckboxGroup: View {
     let size: CheckboxGroupSizeConfiguration
     private let _appearance: CheckboxGroupAppearance?
     @Environment(\.checkboxGroupAppearance) private var environmentAppearnce
-    
+
     public init(behaviour: CheckboxGroupBehaviour, size: CheckboxGroupSizeConfiguration, appearance: CheckboxGroupAppearance? = nil) {
         self.behaviour = behaviour
-        
+
         switch behaviour {
         case .hierarchical(let parent, let children, _, _):
             self._parentState = State(initialValue: parent.state.wrappedValue)
@@ -94,7 +94,7 @@ public struct SDDSCheckboxGroup: View {
         self._appearance = appearance
         self.size = size
     }
-    
+
     public var body: some View {
         VStack(spacing: appearance.size.verticalSpacing) {
             switch behaviour {
@@ -151,7 +151,7 @@ public struct SDDSCheckboxGroup: View {
             }
         }
     }
-    
+
     private func updateParentState(_ newState: SelectionControlState) {
         parentState = newState
         childStates = Array(repeating: newState, count: childStates.count)
@@ -161,7 +161,7 @@ public struct SDDSCheckboxGroup: View {
             }
         }
     }
-    
+
     private func updateChildState(_ newState: SelectionControlState, at index: Int) {
         childStates[index] = newState
         if case .hierarchical(let parent, let children, _, _) = behaviour {
@@ -176,7 +176,7 @@ public struct SDDSCheckboxGroup: View {
             parent.state.wrappedValue = parentState ?? .deselected
         }
     }
-    
+
     private var appearance: CheckboxGroupAppearance {
         _appearance ?? environmentAppearnce
     }
@@ -186,7 +186,7 @@ public enum SDDSCheckboxGroupSize: String, CheckboxGroupSizeConfiguration, CaseI
     case large
     case medium
     case small
-    
+
     public var horizontalIndent: CGFloat {
         switch self {
         case .large:
@@ -197,7 +197,7 @@ public enum SDDSCheckboxGroupSize: String, CheckboxGroupSizeConfiguration, CaseI
             24
         }
     }
-    
+
     public var verticalSpacing: CGFloat {
         switch self {
         case .large:
@@ -208,7 +208,7 @@ public enum SDDSCheckboxGroupSize: String, CheckboxGroupSizeConfiguration, CaseI
             5
         }
     }
-    
+
     public var debugDescription: String {
         return rawValue
     }

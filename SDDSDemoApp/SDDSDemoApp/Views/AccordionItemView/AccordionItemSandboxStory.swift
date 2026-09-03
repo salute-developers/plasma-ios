@@ -9,7 +9,6 @@ enum AccordionItemStory: Story {
     static let title = "AccordionItem"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: AccordionItemUiState, theme: Theme) -> some View {
         AccordionItemView(viewModel: AccordionItemViewModel(theme: theme, uiState: state))

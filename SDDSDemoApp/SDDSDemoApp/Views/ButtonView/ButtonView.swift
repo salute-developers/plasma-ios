@@ -18,7 +18,7 @@ struct ButtonView: View {
     init(viewModel: ButtonViewModel = ButtonViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -63,7 +63,7 @@ struct ButtonView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 HStack {
                     Text("Button Type")
@@ -135,7 +135,7 @@ struct ButtonView: View {
 
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Button")
     }
 }

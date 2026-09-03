@@ -6,8 +6,8 @@ struct AvatarUiState: StoryUiState, DefaultUiState {
     var variant: String = ""
     var appearance: String = ""
     var text: String = "AB"
-    var image: AvatarImageSource? = nil
-    var placeholderImage: AvatarImageSource? = nil
+    var image: AvatarImageSource?
+    var placeholderImage: AvatarImageSource?
     var status: AvatarStatus = .online
     var extraPlacement: AvatarExtraPlacement = .none
     var accessibility: AvatarAccessibility = AvatarAccessibility()

@@ -2,12 +2,12 @@ import Foundation
 
 struct NotificationContentProps: MergeableConfiguration, Codable {
     typealias Props = NotificationContentProps
-    
+
     // Цвета для разных состояний
     var iconColor: ColorKeyValue?
     var titleColor: ColorKeyValue?
     var textColor: ColorKeyValue?
-    
+
     // Размеры и отступы
     var iconSize: KeyValue<Double>?
     var buttonGroupTopPadding: KeyValue<Double>?
@@ -20,15 +20,15 @@ struct NotificationContentProps: MergeableConfiguration, Codable {
     var textBoxStartPadding: KeyValue<Double>?
     var textBoxTopPadding: KeyValue<Double>?
     var buttonGroupStartPadding: KeyValue<Double>?
-    
+
     // Типографика
     var titleStyle: KeyValue<String>?
     var textStyle: KeyValue<String>?
-    
+
     // Enum значения
     var buttonLayout: KeyValue<String>?
     var iconPlacement: KeyValue<String>?
-    
+
     // Стили вложенных компонентов
     var buttonGroupStyle: ComponentStyleKeyValue<ButtonGroupProps>?
 }

@@ -9,7 +9,6 @@ enum RectSkeletonStory: Story {
     static let title = "RectSkeleton"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: RectSkeletonUiState, theme: Theme) -> some View {
         RectSkeletonView(viewModel: RectSkeletonViewModel(theme: theme, uiState: state))

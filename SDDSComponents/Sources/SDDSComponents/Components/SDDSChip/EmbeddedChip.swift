@@ -9,12 +9,9 @@ public struct EmbeddedChip: View {
     let appearance: ChipAppearance
     let accessibility: ChipAccessibility
     let removeAction: () -> Void
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
-
-    
-
 
     public init(
         title: String,
@@ -32,7 +29,7 @@ public struct EmbeddedChip: View {
         self.accessibility = accessibility
         self.removeAction = removeAction
     }
-    
+
     public var body: some View {
         SDDSChip(
             title: title,

@@ -11,7 +11,7 @@ struct PopoverView: View {
     init(viewModel: PopoverViewModel = PopoverViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -25,7 +25,7 @@ struct PopoverView: View {
             .onTapGesture {
                 isPopoverPresented = false
             }
-            
+
             Section {
                 buttonPositionView
                 placementSelectionView
@@ -38,14 +38,14 @@ struct PopoverView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Popover")
     }
-    
+
     private var duration: TimeInterval? {
         viewModel.autoHide ? 3.0 : nil
     }
-    
+
     @ViewBuilder
     private var popoverContent: some View {
         VStack(spacing: 8) {
@@ -65,7 +65,7 @@ struct PopoverView: View {
         }
         .padding()
     }
-    
+
     @ViewBuilder
     private func buttonForPosition(_ position: PopoverButtonPosition) -> some View {
         switch position {
@@ -266,7 +266,7 @@ struct PopoverView: View {
             }
         }
     }
-    
+
     private var placementSelectionView: some View {
         HStack {
             Text("Placement")
@@ -283,7 +283,7 @@ struct PopoverView: View {
             }
         }
     }
-    
+
     private var buttonPositionView: some View {
         HStack {
             Text("Button Position")
@@ -300,7 +300,7 @@ struct PopoverView: View {
             }
         }
     }
-    
+
     private var alignmentSelectionView: some View {
         HStack {
             Text("Alignment")
@@ -317,19 +317,19 @@ struct PopoverView: View {
             }
         }
     }
-    
+
     private var autoHideToggle: some View {
         Toggle("Auto Hide", isOn: $viewModel.autoHide)
     }
-    
+
     private var tailEnabledToggle: some View {
         Toggle("Tail Enabled", isOn: $viewModel.tailEnabled)
     }
-    
+
     private var triggerCenteredToggle: some View {
         Toggle("Trigger Centered", isOn: $viewModel.triggerCentered)
     }
-    
+
     private var placementModeSelectionView: some View {
         HStack {
             Text("Placement Mode")
@@ -346,7 +346,7 @@ struct PopoverView: View {
             }
         }
     }
-    
+
     private var containerPadding: CGFloat {
         24.0
     }
@@ -356,4 +356,4 @@ struct PopoverView: View {
     NavigationView {
         PopoverView()
     }
-} 
+}

@@ -50,7 +50,7 @@ final class ContextVariationUtility {
         guard let viewSection = config["view"] as? JSON else {
             throw ConfigError.viewNotFound(viewName)
         }
-        
+
         guard let thisView = viewSection[viewName] as? JSON else {
             throw ConfigError.viewNotFound(viewName)
         }
@@ -92,8 +92,7 @@ final class ContextVariationUtility {
         for (key, sourceValue) in source {
             if
                 let sourceDict = sourceValue as? JSON,
-                let targetDict = target[key] as? JSON
-            {
+                let targetDict = target[key] as? JSON {
                 var mergedDict = targetDict
                 deepMerge(target: &mergedDict, source: sourceDict)
                 target[key] = mergedDict

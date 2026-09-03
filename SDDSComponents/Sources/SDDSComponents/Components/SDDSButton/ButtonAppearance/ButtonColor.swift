@@ -16,7 +16,7 @@ public struct ButtonColor: Hashable {
     public var selectedColor: ColorToken {
         didSet { rawStatefulColor = nil }
     }
-    
+
     private var rawStatefulColor: StatefulColor?
 
     public init(

@@ -84,9 +84,9 @@ struct TabItemView: View {
                         Text(viewModel.tabItemType.rawValue)
                     }
                 }
-                
+
                 VariationsView(viewModel: viewModel)
-                
+
                 if viewModel.tabItemType != .iconTabItem {
                     HStack {
                         Text("Label")
@@ -94,9 +94,9 @@ struct TabItemView: View {
                         TextField("Label", text: $viewModel.label)
                             .multilineTextAlignment(.trailing)
                     }
-                    
+
                     Toggle("Has Value", isOn: $viewModel.hasValue)
-                
+
                 if viewModel.hasValue {
                     HStack {
                         Text("Value")
@@ -108,9 +108,9 @@ struct TabItemView: View {
                         .multilineTextAlignment(.trailing)
                     }
                 }
-                
+
                 Toggle("Has Counter", isOn: $viewModel.hasCounter)
-                
+
                 if viewModel.hasCounter {
                     HStack {
                         Text("Counter Value")
@@ -126,16 +126,16 @@ struct TabItemView: View {
                     }
                 }
                 }
-                
+
                 Toggle("Selected", isOn: $viewModel.isSelected)
-                
+
                 Toggle("Disabled", isOn: $viewModel.isDisabled)
-                
+
                 if viewModel.tabItemType != .iconTabItem {
                     Toggle("Has Start Content (Icon)", isOn: $viewModel.hasStartContent)
                     Toggle("Has End Content (Icon)", isOn: $viewModel.hasEndContent)
                 }
-                
+
                 HStack {
                     Text("Orientation")
                     Spacer()
@@ -148,7 +148,7 @@ struct TabItemView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Tab Item")
     }
 }

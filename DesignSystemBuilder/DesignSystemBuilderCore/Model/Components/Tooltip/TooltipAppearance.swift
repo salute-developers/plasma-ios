@@ -24,4 +24,4 @@ struct TooltipAppearance: CodeGenerationAppearance {
         self.shadow = ShadowTokenContextBuilder(shadow: props.shadow).context
         self.textTypography = TypographyTokenContextBuilder(string: props.textStyle?.value, id: id, component: component).context
     }
-} 
+}

@@ -33,10 +33,10 @@ public struct ZeroListSize: ListSizeConfiguration {
     public var paddingStart: CGFloat { 0 }
     public var paddingTop: CGFloat { 0 }
     public var shape: PathDrawer { DefaultPathDrawer() }
-    
+
     public var debugDescription: String {
         "ZeroListSize"
     }
-    
+
     public init() {}
-} 
+}

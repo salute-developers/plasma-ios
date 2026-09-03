@@ -11,7 +11,7 @@ public enum ToastPosition: String, CaseIterable {
     case bottomStart = "Bottom Start"
     case bottomCenter = "Bottom Center"
     case bottomEnd = "Bottom End"
-    
+
     var horizontalAlignment: HorizontalAlignment {
         switch self {
         case .topStart, .centerStart, .bottomStart:
@@ -22,7 +22,7 @@ public enum ToastPosition: String, CaseIterable {
             return .trailing
         }
     }
-    
+
     var verticalAlignment: VerticalAlignment {
         switch self {
         case .topStart, .topCenter, .topEnd:
@@ -33,7 +33,7 @@ public enum ToastPosition: String, CaseIterable {
             return .bottom
         }
     }
-    
+
     var stackDirection: StackDirection {
         switch self {
         case .topStart, .topCenter, .topEnd:

@@ -16,7 +16,7 @@ final class TypographyContextBuilder: ContexBuilder, SchemeTokenNameValidator {
         self.metaScheme = metaScheme
         self.fontFamilyOverride = fontFamilyOverride
     }
-    
+
     func buildContext(from data: Data) -> CommandResult {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
@@ -38,18 +38,18 @@ final class TypographyContextBuilder: ContexBuilder, SchemeTokenNameValidator {
 // MARK: - Transform keys
 extension TypographyContextBuilder {
     func prepareContext(fromDictionary dictionary: [String: Any], transform: (_ json: [String: Any]) -> ([String: Any])) throws -> CommandResult {
-        
+
         var result = [String: [String: Any]]()
         for key in dictionary.keys {
             try validateTokenName(key, .typography, scheme: metaScheme)
             var tokenDictionary = dictionary[key] as? [String: Any]
-            
+
             let fontFamilyRefKey = "fontFamilyRef"
             guard let weight = TypographyToken.Weight(rawValue: tokenDictionary?["weight"] as? String ?? ""),
                   let style = TypographyToken.Style(rawValue: tokenDictionary?["style"] as? String ?? "") else {
                 return .error(GeneralError.invalidTokenFormat)
             }
-            
+
             let fontFamilyRef = tokenDictionary?[fontFamilyRefKey] as? String ?? ""
             guard let fontName = findFont(with: fontFamilyRef, weight: weight, style: style) else {
                 continue
@@ -65,29 +65,29 @@ extension TypographyContextBuilder {
             case .systemSFPro:
                 tokenDictionary?["fontName"] = "SF Pro"
             }
-            
+
             // Transform the dictionary keys for code generation format
             var components = key.keyComponents
             guard let screenSize = ScreenSize(rawValue: components.first ?? "") else {
                 return .error(GeneralError.invalidScreenSize)
             }
-            
+
             components.removeFirst()
             let newKey = components.camelCase
             var screenSizeDictionary = result[newKey, default: [:]]
             screenSizeDictionary[screenSize.tokenValue.rawValue] = tokenDictionary
-            
+
             result[newKey] = screenSizeDictionary
         }
-        
+
         let fallbackScreenResult = populateMissingScreenSizes(&result)
         if fallbackScreenResult.isError {
             return fallbackScreenResult
         }
-        
+
         return .dictionary(transform(result))
     }
-    
+
     private func populateMissingScreenSizes(_ dictionary: inout [String: [String: Any]]) -> CommandResult {
         guard !dictionary.isEmpty else {
             Logger.printText("Missing screen sizes")
@@ -101,7 +101,7 @@ extension TypographyContextBuilder {
                     availableSizes.insert(screenSize)
                 }
             }
-            
+
             for screenSize in TypographyToken.ScreenSize.allCases {
                 if value[screenSize.rawValue] == nil {
                     Logger.printText("Finding fallback screen size for \(key)...")
@@ -117,7 +117,7 @@ extension TypographyContextBuilder {
         }
         return .success
     }
-    
+
     private func findFont(with fontFamilyRef: String, weight: TypographyToken.Weight, style: TypographyToken.Style) -> String? {
         guard let heading = FontFamily.Key(rawValue: fontFamilyRef.keyComponents.last ?? ""),
               let fontFamily = fontFamiliesContainer.items[heading],
@@ -125,31 +125,31 @@ extension TypographyContextBuilder {
             Logger.printText("Font with family ref: \(fontFamilyRef), weight: \(weight.rawValue), style: \(style.rawValue) is not found")
             return nil
         }
-        
+
         return font.fontName
     }
-    
+
     private func getFallbackScreenSize(for missingSize: TypographyToken.ScreenSize, in availableSizes: Set<TypographyToken.ScreenSize>) -> TypographyToken.ScreenSize? {
         let screenSizesOrder: [TypographyToken.ScreenSize] = [.small, .medium, .large]
-        
+
         guard let missingIndex = screenSizesOrder.firstIndex(of: missingSize) else {
             return nil
         }
-        
+
         // Check for the previous sizes
         for index in stride(from: missingIndex - 1, through: 0, by: -1) {
             if availableSizes.contains(screenSizesOrder[index]) {
                 return screenSizesOrder[index]
             }
         }
-        
+
         // Check for the next sizes
         for index in missingIndex + 1..<screenSizesOrder.count {
             if availableSizes.contains(screenSizesOrder[index]) {
                 return screenSizesOrder[index]
             }
         }
-        
+
         return nil
     }
 }

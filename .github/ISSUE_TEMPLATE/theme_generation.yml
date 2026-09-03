@@ -1,0 +1,71 @@
+name: Theme generation problem
+description: dsbuilder produced wrong, missing or non-compiling theme code
+labels: ["bug", "theme-builder"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for problems in generated `Themes/*` output or in the `dsbuilder` CLI itself.
+        For a component behaving badly at runtime, use the bug report instead.
+
+  - type: input
+    id: theme
+    attributes:
+      label: Theme
+      placeholder: SDDSServTheme
+    validations:
+      required: true
+
+  - type: input
+    id: cli_version
+    attributes:
+      label: dsbuilder version
+      description: Release tag of `dsbuilder-cli-<tag>.zip`, or the commit you built from.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Generation mode
+      options:
+        - Default (themes subcommand)
+        - Standalone bundle (--standalone)
+        - Standalone with components (--standalone --components)
+        - Sources from a release (--sources-version)
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Config
+      description: The JSON config you passed to the CLI, with any credentials removed.
+      render: json
+    validations:
+      required: true
+
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and output
+      description: The exact invocation and the CLI output, including any warnings about skipped variations.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: generated
+    attributes:
+      label: What was generated
+      description: The offending part of the generated file, and which file it is.
+      render: swift
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations:
+      required: true

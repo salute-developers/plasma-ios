@@ -27,10 +27,10 @@ public struct DefaultBottomSheetSize: BottomSheetSizeConfiguration {
     public var handleWidth: CGFloat = 48
     public var handleHeight: CGFloat = 6
     public var handleOffset: CGFloat = 6
-    
+
     public var debugDescription: String {
         return "Default BottomSheet Size"
     }
-    
+
     public init() {}
 }

@@ -21,7 +21,7 @@ struct AutocompleteView: View {
             .frame(height: 300)
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .listRowInsets(.init())
-            
+
             Section {
                 layoutPicker
                 fieldAlignmentView
@@ -33,7 +33,7 @@ struct AutocompleteView: View {
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .navigationTitle("Autocomplete")
     }
-    
+
     @ViewBuilder
     private func autocompleteForPosition(_ position: AutocompleteFieldAlignment) -> some View {
         switch position {
@@ -105,7 +105,7 @@ struct AutocompleteView: View {
             }
         }
     }
-    
+
     private var autocompleteField: some View {
         SDDSAutocomplete(
             value: $viewModel.value,
@@ -161,11 +161,11 @@ struct AutocompleteView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 24, height: 24)
                         .foregroundColor(.secondary)
-                    
+
                     Text("Ничего не найдено")
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(.primary)
-                    
+
                     Text("Попробуйте изменить запрос")
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(.secondary)
@@ -180,7 +180,7 @@ struct AutocompleteView: View {
             viewModel.handleValueChangedForDropdown()
         }
     }
-    
+
     private var loaderSpinnerAppearance: SpinnerAppearance {
         if let appearance = loaderSmallSpinnerAppearance {
             return appearance
@@ -250,7 +250,7 @@ struct AutocompleteView: View {
             }
         }
     }
-    
+
     private var fieldAlignmentView: some View {
         HStack {
             Text("Field Alignment")
@@ -267,15 +267,15 @@ struct AutocompleteView: View {
             }
         }
     }
-    
+
     private var withEmptyStateToggle: some View {
         Toggle("With Empty State", isOn: $viewModel.withEmptyState)
     }
-    
+
     private var showLoadingToggle: some View {
         Toggle("Show Loading", isOn: $viewModel.showLoading)
     }
-    
+
 }
 
 #Preview {
@@ -283,4 +283,3 @@ struct AutocompleteView: View {
         AutocompleteView()
     }
 }
-

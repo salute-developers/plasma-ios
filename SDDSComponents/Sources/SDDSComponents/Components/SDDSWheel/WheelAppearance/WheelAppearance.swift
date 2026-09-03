@@ -7,12 +7,12 @@ import SDDSApiInfo
  `WheelAppearance` определяет внешний вид компонента Wheel.
  */
 @ApiInfo
-public struct WheelAppearance {    
+public struct WheelAppearance {
     // Цвета текста
     public var itemTextColor: ColorToken
     public var itemTextAfterColor: ColorToken
     public var descriptionColor: ColorToken
-    
+
     // Цвета иконок управления
     @ApiName("controlIconUpColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
@@ -20,31 +20,31 @@ public struct WheelAppearance {
     @ApiName("controlIconDownColor")
     @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
     public var controlIconDownColor: ButtonColor
-    
+
     // Цвет разделителя
     public var separatorColor: ColorToken
-    
+
     // Цвет индикатора выбранного элемента
     public var selectionIndicatorColor: ColorToken
-    
+
     // Типографика
     public var itemTextTypography: TypographyConfiguration
     public var itemTextAfterTypography: TypographyConfiguration
     public var descriptionTypography: TypographyConfiguration
-    
+
     // Иконки
     public var controlIconUp: Image?
     public var controlIconDown: Image?
-    
+
     // Вложенный компонент
     public var dividerAppearance: DividerAppearance?
-    
+
     // Стиль разделителя
     public var dividerStyle: WheelDividerStyle
-    
+
     // Размеры
     public var size: WheelSizeConfiguration
-    
+
     public init(
         itemTextColor: ColorToken = .clearColor,
         itemTextAfterColor: ColorToken = .clearColor,
@@ -79,7 +79,6 @@ public struct WheelAppearance {
         self.size = size
     }
 
-    
 }
 
 // MARK: - Environment Key

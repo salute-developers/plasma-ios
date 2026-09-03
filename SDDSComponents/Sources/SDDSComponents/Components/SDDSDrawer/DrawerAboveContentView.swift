@@ -14,14 +14,14 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
     let header: () -> Header
     let content: () -> Content
     let footer: () -> Footer
-    
+
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
     @State private var drawerHeight: CGFloat = 0
     @State private var drawerWidth: CGFloat = 0
     @State private var hasAppeared: Bool = false
     @State private var initialDragOffset: CGFloat = 0
-    
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -36,7 +36,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
                         closeDrawer(geometry: geometry)
                     }
                 }
-                
+
                 drawerContainer(geometry: geometry)
                 .simultaneousGesture(
                     DragGesture(minimumDistance: 0)
@@ -56,7 +56,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private func drawerContainer(geometry: GeometryProxy) -> some View {
         Group {
@@ -67,7 +67,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private func verticalContainer(geometry: GeometryProxy) -> some View {
         VStack {
@@ -82,7 +82,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .offset(y: currentOffset(geometry: geometry) + peekOffsetForVertical())
     }
-    
+
     @ViewBuilder
     private func horizontalContainer(geometry: GeometryProxy) -> some View {
         HStack {
@@ -97,7 +97,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .offset(x: currentOffset(geometry: geometry) + peekOffsetForHorizontal())
     }
-    
+
     private func peekOffsetForVertical() -> CGFloat {
         guard let peekOffset = peekOffset else { return 0 }
         switch alignment {
@@ -109,7 +109,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             return 0
         }
     }
-    
+
     private func peekOffsetForHorizontal() -> CGFloat {
         guard let peekOffset = peekOffset else { return 0 }
         switch alignment {
@@ -121,7 +121,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             return 0
         }
     }
-    
+
     @ViewBuilder
     private func drawerView(geometry: GeometryProxy) -> some View {
         SDDSDrawer(
@@ -141,13 +141,13 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             drawerWidth = size.width
         }
     }
-    
+
     private func handleDragChanged(value: DragGesture.Value) {
         if !isDragging {
             isDragging = true
             initialDragOffset = dragOffset
         }
-        
+
         switch alignment {
         case .top:
             let translation = value.translation.height
@@ -207,7 +207,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             }
         }
     }
-    
+
     private func handlePeekOffsetDragChanged(
         translation: CGFloat,
         maxOffset: CGFloat,
@@ -236,15 +236,15 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             }
         }
     }
-    
+
     private func handleDragEnded(value: DragGesture.Value, geometry: GeometryProxy) {
         isDragging = false
-        
+
         let threshold: CGFloat = 80
         let velocityThreshold: CGFloat = 300
-        
+
         let shouldClose: Bool
-        
+
         switch alignment {
         case .top:
             let velocity = value.velocity.height
@@ -315,7 +315,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
                 shouldClose = (velocity > velocityThreshold && dragOffset > 0) || dragOffset > threshold
             }
         }
-        
+
         if shouldClose {
             closeDrawer(geometry: geometry)
         } else {
@@ -324,7 +324,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             }
         }
     }
-    
+
     private func handlePeekOffsetDragEnded(
         velocity: CGFloat,
         translation: CGFloat,
@@ -338,7 +338,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
         let shouldExpand: Bool
         let shouldClose: Bool
         let shouldCollapse: Bool
-        
+
         if wasExpanded {
             shouldExpand = false
             if isPositiveExpanded {
@@ -358,7 +358,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             }
             shouldCollapse = false
         }
-        
+
         if shouldClose {
             closeDrawer(geometry: geometry)
         } else if shouldExpand {
@@ -379,15 +379,15 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
             }
         }
     }
-    
+
     private func currentOffset(geometry: GeometryProxy) -> CGFloat {
         return dragOffset
     }
-    
+
     private func closeDrawer(geometry: GeometryProxy) {
         let screenWidth = geometry.size.width
         let screenHeight = geometry.size.height
-        
+
         let finalOffset: CGFloat
         switch alignment {
         case .top:
@@ -399,21 +399,21 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
         case .right:
             finalOffset = screenWidth
         }
-        
+
         withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
             dragOffset = finalOffset
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             isPresented = false
             onClose?()
         }
     }
-    
+
     private func initializeDrawerPosition() {
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
-        
+
         switch alignment {
         case .top:
             dragOffset = -screenHeight
@@ -424,7 +424,7 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
         case .right:
             dragOffset = screenWidth
         }
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
                 dragOffset = 0
@@ -432,4 +432,3 @@ struct DrawerAboveContentView<Header: View, Content: View, Footer: View>: View {
         }
     }
 }
-

@@ -49,10 +49,10 @@ struct NotificationView: View {
                 }
                 Toggle("hasClose", isOn: $viewModel.hasClose)
             }
-        
+
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Notification")
         .notification(
             isPresented: $isPresented,
@@ -66,7 +66,7 @@ struct NotificationView: View {
             }
         )
     }
-    
+
     private func present() {
         guard !viewModel.text.isEmpty || viewModel.hasClose else {
             return

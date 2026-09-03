@@ -25,11 +25,11 @@ public struct SDDSIndicator: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     private let _appearance: IndicatorAppearance?
-    
+
     public init(appearance: IndicatorAppearance? = nil) {
         self._appearance = appearance
     }
-    
+
     public var body: some View {
         FillStyleShape(
             appearance.size.pathDrawer.path(in: CGRect(x: 0, y: 0, width: width, height: height)),
@@ -37,15 +37,15 @@ public struct SDDSIndicator: View {
         )
         .frame(width: width, height: height)
     }
-    
+
     private var width: CGFloat {
         appearance.size.width
     }
-    
+
     private var height: CGFloat {
         appearance.size.height
     }
-    
+
     var appearance: IndicatorAppearance {
         _appearance ?? environmentAppearance
     }

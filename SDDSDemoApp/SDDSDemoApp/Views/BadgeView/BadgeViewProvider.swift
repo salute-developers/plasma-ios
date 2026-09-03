@@ -12,15 +12,15 @@ enum BadgeType: String, CaseIterable {
 
 final class BadgeVariationProvider: VariationProvider {
     typealias Appearance = BadgeAppearance
-    
+
     var theme: Theme
     var badgeType: BadgeType
-    
+
     init(theme: Theme = .sdddsServTheme, badgeType: BadgeType) {
         self.theme = theme
         self.badgeType = badgeType
     }
-    
+
     var variations: [Variation<BadgeAppearance>] {
         switch badgeType {
         case .badge:
@@ -37,7 +37,7 @@ final class BadgeVariationProvider: VariationProvider {
             theme.iconBadgeTransparentVariations
         }
     }
-    
+
     var defaultValue: BadgeAppearance {
         BadgeAppearance.defaultValue
     }

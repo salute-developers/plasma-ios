@@ -70,7 +70,6 @@ final class SymbolTable {
     }
 }
 
-
 struct MarkerSet {
     var apiInfo = false
     var component: String?

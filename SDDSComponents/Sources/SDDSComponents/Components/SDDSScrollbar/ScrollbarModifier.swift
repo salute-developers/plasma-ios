@@ -15,13 +15,13 @@ import SDDSThemeCore
 struct ScrollBarModifier: ViewModifier {
     let scrollBarData: ScrollBarData
     let direction: SDDSScrollDirection
-    
+
     init(scrollBarData: ScrollBarData, direction: SDDSScrollDirection = .vertical, isScrollingToBottom: Binding<Bool>) {
         self.scrollBarData = scrollBarData
         self.direction = direction
         self._isScrollingToBottom = isScrollingToBottom
     }
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Binding private var isScrollingToBottom: Bool
@@ -41,7 +41,7 @@ struct ScrollBarModifier: ViewModifier {
     private var scrollBarOffsetIdentifier = "scrollBarOffsetIdentifier"
     private var contentIdentifier = "ScrollBarContentIdentifier"
 
-    func body(content: Content) -> some View{
+    func body(content: Content) -> some View {
         ZStack {
             ScrollViewReader { scrollProxy in
                 ScrollView(showsIndicators: false) {
@@ -90,7 +90,7 @@ struct ScrollBarModifier: ViewModifier {
                             previousOffset = value
                             offset = value
                             lastScrollTime = Date()
-                            
+
                             if !isInitialized {
                                 isInitialized = true
                             } else if offsetChanged && !isScrolling {
@@ -122,7 +122,7 @@ struct ScrollBarModifier: ViewModifier {
                 .animation(.easeInOut(duration: SDDSScrollbarConstants.fadeInAnimationDuration), value: opacity > 0)
         }
     }
-    
+
     private var scrollbar: some View {
         GeometryReader { geometry in
             let currentScrollViewHeight = geometry.frame(in: .local).height
@@ -174,7 +174,7 @@ struct ScrollBarModifier: ViewModifier {
             }
         }
     }
-    
+
     private func createScrollbarAppearance() -> ScrollbarAppearance {
         var appearance = ScrollbarAppearance()
         appearance.thumbColor = scrollBarData.scrollBarThumbColor
@@ -183,24 +183,24 @@ struct ScrollBarModifier: ViewModifier {
         appearance.size = customSize
         return appearance
     }
-    
+
     private var calculatedOffset: CGFloat {
         let scrollOffset = offset
-        
+
         let maxScrollOffset = contentHeight - scrollViewHeight
-        
+
         if maxScrollOffset <= 0 {
             return scrollBarData.scrollBarPaddingTop
         }
-        
+
         let value = min(max(scrollOffset / maxScrollOffset, -1.4), 2.6)
-        
+
         let thumbHeightOffset = thumbHeight
         let thumbOffset = value * (trackHeight - thumbHeightOffset)
-        
+
         return thumbOffset
     }
-    
+
     private var trackHeight: CGFloat {
         var result = scrollBarData.totalHeight - scrollBarData.scrollBarPaddingBottom - scrollBarData.scrollBarPaddingTop
         return result
@@ -211,7 +211,7 @@ struct ScrollBarModifier: ViewModifier {
         let thumbHeight = ((scrollBarData.totalHeight / contentLength) * scrollBarData.totalHeight)
         return min(thumbHeight, SDDSScrollbarConstants.thumbHeightMultiplier * trackHeight)
     }
-    
+
 }
 
 private struct ViewOffsetKey: PreferenceKey {
@@ -232,11 +232,11 @@ private struct ScrollOffsetPreferenceKey: PreferenceKey {
 private struct CustomScrollbarSize: ScrollbarSizeConfiguration {
     let width: CGFloat
     let hoverExpandFactor: CGFloat = 2.0
-    
+
     init(width: CGFloat) {
         self.width = width
     }
-    
+
     var shape: PathDrawer {
         CircleDrawer()
     }

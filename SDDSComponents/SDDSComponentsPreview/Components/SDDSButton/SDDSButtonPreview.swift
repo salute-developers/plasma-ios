@@ -20,7 +20,7 @@ struct SDDSButtonPreview: PreviewProvider {
         )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Basic Button")
-        
+
         LinkButton(
             title: "Label",
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -33,7 +33,7 @@ struct SDDSButtonPreview: PreviewProvider {
         )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Link Button")
-        
+
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
@@ -45,7 +45,7 @@ struct SDDSButtonPreview: PreviewProvider {
         )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Icon Button")
-        
+
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
             isDisabled: false,
@@ -58,5 +58,5 @@ struct SDDSButtonPreview: PreviewProvider {
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Icon Button – Pilled")
     }
-    
+
 }

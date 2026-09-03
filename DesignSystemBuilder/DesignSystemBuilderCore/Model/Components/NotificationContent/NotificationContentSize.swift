@@ -4,7 +4,7 @@ import SwiftUI
 struct NotificationContentSize: CodeGenerationSize {
     typealias Variation = NotificationContentConfiguration.Variation
     typealias Props = NotificationContentProps
-    
+
     var iconSize: String?
     var buttonGroupTopPadding: String?
     var textPadding: String?
@@ -16,11 +16,11 @@ struct NotificationContentSize: CodeGenerationSize {
     var textBoxStartPadding: String?
     var textBoxTopPadding: String?
     var buttonGroupStartPadding: String?
-    
+
     init(variation: NotificationContentConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: NotificationContentProps, id: String? = nil, nullify: Bool = false) {
         self.iconSize = CGFloatContextBuilder(props.iconSize?.value, nullify: nullify).context
         self.buttonGroupTopPadding = CGFloatContextBuilder(props.buttonGroupTopPadding?.value, nullify: nullify).context
@@ -34,7 +34,7 @@ struct NotificationContentSize: CodeGenerationSize {
         self.textBoxTopPadding = CGFloatContextBuilder(props.textBoxTopPadding?.value, nullify: nullify).context
         self.buttonGroupStartPadding = CGFloatContextBuilder(props.buttonGroupStartPadding?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.iconSize = CGFloat.defaultContext
         self.buttonGroupTopPadding = CGFloat.defaultContext

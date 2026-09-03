@@ -14,7 +14,7 @@ public struct AccordionItemAppearance: Hashable {
     public var openedIcon: Image?
     public var backgroundColor: ColorToken
     public var size: AccordionItemSizeConfiguration
-    
+
     public init(
         titleTypography: TypographyConfiguration = .default,
         contentTextTypography: TypographyConfiguration = .default,
@@ -34,13 +34,13 @@ public struct AccordionItemAppearance: Hashable {
         self.backgroundColor = backgroundColor
         self.size = size
     }
-    
+
     public static func == (lhs: AccordionItemAppearance, rhs: AccordionItemAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.titleColor == rhs.titleColor &&
         lhs.contentTextColor == rhs.contentTextColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -50,4 +50,4 @@ extension AccordionItemAppearance: EnvironmentKey {
     public static var defaultValue: Self {
         EnvironmentValueProvider.shared.value(forKey: AccordionItemAppearance.self, fallback: AccordionItemAppearance())
     }
-} 
+}

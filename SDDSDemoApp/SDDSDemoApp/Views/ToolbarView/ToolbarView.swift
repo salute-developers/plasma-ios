@@ -7,11 +7,11 @@ import SandboxSwiftUI
 struct ToolbarView: View {
     @ObservedObject private var viewModel: ToolbarViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: ToolbarViewModel = ToolbarViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -29,7 +29,7 @@ struct ToolbarView: View {
             }
             .listRowBackground(Color.clear)
             .background(.clear)
-            
+
             Section {
                 toolbarTypeSelection
                 VariationsView(viewModel: viewModel)
@@ -44,7 +44,7 @@ struct ToolbarView: View {
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .navigationTitle("Toolbar")
     }
-    
+
     @ViewBuilder
     private var toolbarTypeSelection: some View {
         HStack {

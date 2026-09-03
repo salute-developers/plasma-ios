@@ -28,9 +28,9 @@ public struct SegmentItemView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
     }
-    
+
     public var segmentView: some View {
         HStack {
             Spacer()
@@ -58,7 +58,7 @@ public struct SegmentItemView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     public var subtitle: some View {
         HStack {
             Text("Value")
@@ -66,7 +66,7 @@ public struct SegmentItemView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     public var alignment: some View {
         HStack {
             Text("icon Alignment")
@@ -82,25 +82,25 @@ public struct SegmentItemView: View {
             }
         }
     }
-    
+
     public var disabled: some View {
         HStack {
             Toggle("Disabled", isOn: $viewModel.isDisabled)
         }
     }
-    
+
     public var iconVisible: some View {
         HStack {
             Toggle("Icon Visible", isOn: $viewModel.iconVisible)
         }
     }
-    
+
     public var selected: some View {
         HStack {
             Toggle("Selected", isOn: $viewModel.isSelected)
         }
     }
-    
+
     @ViewBuilder
     private var counter: some View {
         Group {

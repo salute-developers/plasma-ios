@@ -20,7 +20,7 @@ public struct DefaultPopoverSize: PopoverSizeConfiguration {
     public var tailWidth: CGFloat = 20
     public var tailPadding: CGFloat = 20
     public var width: CGFloat = 182
-    
+
     public var debugDescription: String {
         "DefaultPopoverSize"
     }
@@ -33,10 +33,10 @@ public struct ZeroPopoverSize: PopoverSizeConfiguration {
     public var tailWidth: CGFloat = 0
     public var tailPadding: CGFloat = 0
     public var width: CGFloat = 0
-    
+
     public var debugDescription: String {
         "ZeroPopoverSize"
     }
-    
+
     public init() {}
 }

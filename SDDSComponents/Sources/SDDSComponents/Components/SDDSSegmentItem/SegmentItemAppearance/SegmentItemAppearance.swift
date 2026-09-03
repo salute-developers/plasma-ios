@@ -31,7 +31,7 @@ public struct SegmentItemAppearance {
     public var backgroundColor: ButtonColor
     public var disabledAlpha: CGFloat
     public var counterAppearance: CounterAppearance
-    
+
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         size: SegmentItemSizeConfiguration = DefaultSegmentItemSize(),
@@ -60,7 +60,7 @@ public struct SegmentItemAppearance {
         self.disabledAlpha = disabledAlpha
         self.counterAppearance = counterAppearance
     }
-    
+
     public init(
         size: SegmentItemSizeConfiguration = DefaultSegmentItemSize(),
         shapeStyle: ComponentShapeStyle = .cornered,
@@ -88,7 +88,6 @@ public struct SegmentItemAppearance {
         self.iconColor = ButtonColor()
     }
 
-    
 }
 
 extension SegmentItemAppearance: EnvironmentKey {

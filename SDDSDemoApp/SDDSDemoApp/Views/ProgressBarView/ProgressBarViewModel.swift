@@ -15,7 +15,7 @@ final class ProgressBarViewModel: ComponentViewModel<ProgressBarVariationProvide
             }
         }
     }
-    
+
     @Published var progressString: String = "50" {
         didSet {
             if !isUpdatingProgressString {
@@ -28,12 +28,12 @@ final class ProgressBarViewModel: ComponentViewModel<ProgressBarVariationProvide
         }
     }
     @Published var isEnabled: Bool = true
-    
+
     // MARK: - Screen properties
-    
+
     private var isUpdatingProgress = false
     private var isUpdatingProgressString = false
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: ProgressBarUiState = .init()) {
         super.init(variationProvider: ProgressBarVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)

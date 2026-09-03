@@ -2,7 +2,7 @@ import Foundation
 
 struct ChipProps: MergeableConfiguration, Codable {
     typealias Props = ChipProps
-    
+
     var shape: ShapeKeyValue?
     var labelStyle: KeyValue<String>?
     var height: KeyValue<Double>?

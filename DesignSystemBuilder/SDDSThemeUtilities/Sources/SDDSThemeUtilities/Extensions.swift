@@ -11,17 +11,17 @@ public extension String {
     var camelCase: String {
         return tokenComponents.camelCase
     }
-    
+
     var tokenComponents: [String] {
         let result = self.replacingOccurrences(of: "-", with: ".")
         let components = result.keyComponents
         return components
     }
-    
+
     var keyComponents: [String] {
         self.components(separatedBy: ".")
     }
-    
+
     var fileExtension: FileExtension? {
         FileExtension(rawValue: keyComponents.last ?? "")
     }
@@ -56,13 +56,13 @@ public extension String {
         let cleaned = self
             .replacingOccurrences(of: "(", with: "")
             .replacingOccurrences(of: ")", with: "")
-        
+
         let parts = cleaned.components(separatedBy: ":")
-        
+
         guard parts.count == 2 else { return nil }
-        
+
         let part = parts[0].components(separatedBy: " ")
-        
+
         return "(" + part[0] + ":" + " \(type)" + ")"
     }
 }

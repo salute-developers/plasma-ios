@@ -215,8 +215,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<AvatarGroupProps, AvatarGroupAppearance, AvatarGroupSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .circularProgressBar:
             GenerateComponentCommand<CircularProgressBarProps, CircularProgressBarAppearance, CircularProgressBarSize>(
-                component: self, 
-                outputDirectoryURL: outputURL, 
+                component: self,
+                outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
         case .progressBar:
@@ -269,20 +269,20 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<CodeInputProps, CodeInputAppearance, CodeInputSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .notificationContent:
             GenerateComponentCommand<NotificationContentProps, NotificationContentAppearance, NotificationContentSize>(
-                component: self, 
-                outputDirectoryURL: outputURL, 
+                component: self,
+                outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
         case .basicButtonGroup:
             GenerateComponentCommand<ButtonGroupProps, ButtonGroupAppearance, ButtonGroupSize>(
-                component: self, 
-                outputDirectoryURL: outputURL, 
+                component: self,
+                outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
         case .iconButtonGroup:
             GenerateComponentCommand<ButtonGroupProps, ButtonGroupAppearance, ButtonGroupSize>(
-                component: self, 
-                outputDirectoryURL: outputURL, 
+                component: self,
+                outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
         case .wheel:
@@ -293,14 +293,14 @@ extension CodeGenerationComponent {
             )
         case .navigationBarMainPage:
             GenerateComponentCommand<NavigationBarMainPageProps, NavigationBarMainPageAppearance, NavigationBarMainPageSize>(
-                component: self, 
-                outputDirectoryURL: outputURL, 
+                component: self,
+                outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
         case .navigationBarInternalPage:
             GenerateComponentCommand<NavigationBarInternalPageProps, NavigationBarInternalPageAppearance, NavigationBarInternalPageSize>(
-                component: self, 
-                outputDirectoryURL: outputURL, 
+                component: self,
+                outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
         case .note:
@@ -315,8 +315,8 @@ extension CodeGenerationComponent {
             )
         case .tabItemDefault, .tabItemHeader, .iconTabItem:
             GenerateComponentCommand<TabItemDefaultProps, TabItemDefaultAppearance, TabItemDefaultSize>(
-                component: self, 
-                outputDirectoryURL: outputURL, 
+                component: self,
+                outputDirectoryURL: outputURL,
                 themeConfig: themeConfig
             )
         case .drawerCloseInner, .drawerCloseNone, .drawerCloseOuter:

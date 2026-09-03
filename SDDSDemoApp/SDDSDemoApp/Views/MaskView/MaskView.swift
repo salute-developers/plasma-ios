@@ -57,17 +57,17 @@ struct MaskView: View {
                         Text(type.rawValue).tag(type)
                     }
                 }
-                
+
                 if viewModel.selectedMaskType != .none {
                     Picker("Display Mode", selection: $viewModel.maskDisplayMode) {
                         ForEach(MaskDisplayMode.allCases, id: \.self) { mode in
                             Text(mode.rawValue.capitalized).tag(mode)
                         }
                     }
-                    
+
                     if viewModel.selectedMaskType == .number {
                         Stepper("Fraction Digits: \(viewModel.numberFractionDigits)", value: $viewModel.numberFractionDigits, in: 0...10)
-                        
+
                         Picker("Decimal Separator", selection: $viewModel.numberDecimalSeparator) {
                             Text(",").tag(",")
                             Text(".").tag(".")
@@ -79,14 +79,14 @@ struct MaskView: View {
                             .disableAutocorrection(true)
                     }
                 }
-                
+
                 Picker("Layout", selection: $viewModel.layout) {
                     ForEach(TextFieldLayout.allCases, id: \.self) { layout in
                         Text(layout.rawValue.capitalized).tag(layout)
                     }
                 }
                 VariationsView(viewModel: viewModel)
-                
+
                 TextField("Title", text: $viewModel.title)
                 TextField("Optional Title", text: $viewModel.optionalTitle)
                 TextField("Placeholder", text: $viewModel.placeholder)
@@ -119,4 +119,3 @@ struct MaskView: View {
         MaskView()
     }
 }
-

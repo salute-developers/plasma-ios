@@ -21,7 +21,7 @@ public struct TabBarIslandAppearance: Hashable {
     public var shadow: ShadowToken
     public var tabBarItemAppearance: TabBarItemAppearance
     public var size: TabBarIslandSizeConfiguration
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         backgroundBlurColor: ColorToken = .clearColor,
@@ -37,7 +37,7 @@ public struct TabBarIslandAppearance: Hashable {
         self.tabBarItemAppearance = tabBarItemAppearance
         self.size = size
     }
-    
+
     public static func == (lhs: TabBarIslandAppearance, rhs: TabBarIslandAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor &&
@@ -45,7 +45,7 @@ public struct TabBarIslandAppearance: Hashable {
         lhs.backgroundBlurRadius == rhs.backgroundBlurRadius &&
         lhs.tabBarItemAppearance == rhs.tabBarItemAppearance
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

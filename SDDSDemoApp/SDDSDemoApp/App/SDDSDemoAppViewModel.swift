@@ -16,80 +16,33 @@ final class SDDSDemoAppViewModel: ObservableObject {
     @Published var isInitialized = false
 
     private let profile: SandboxDesignSystemProfile
-    private var initializationCount = 0
-    private let totalThemes: Int
 
     init(profile: SandboxDesignSystemProfile) {
         self.profile = profile
-        self.totalThemes = profile.supportedThemes.count
     }
 
+    /// К возврату из метода все темы профиля инициализированы.
     func initializeThemes() {
         guard !isInitialized else { return }
 
         #if SANDBOX_DS_SERV
-        SDDSServTheme.Theme.initialize(
-            tenant: TenantStorage.shared.tenant(for: .sdddsServTheme)
-        ) { [weak self] in
-            self?.isInitialized = true
-        }
-        return
+        SDDSServTheme.Theme.initialize(tenant: TenantStorage.shared.tenant(for: .sdddsServTheme))
         #elseif SANDBOX_DS_PLASMA_B2C
-        PlasmaB2CTheme.Theme.initialize(
-            tenant: TenantStorage.shared.tenant(for: .plasmaB2CTheme)
-        ) { [weak self] in
-            self?.isInitialized = true
-        }
-        return
+        PlasmaB2CTheme.Theme.initialize(tenant: TenantStorage.shared.tenant(for: .plasmaB2CTheme))
         #elseif SANDBOX_DS_PLASMA_HOME_DS
-        PlasmaHomeDSTheme.Theme.initialize(
-            tenant: TenantStorage.shared.tenant(for: .plasmaHomeDSTheme)
-        ) { [weak self] in
-            self?.isInitialized = true
-        }
-        return
-        #endif
-
-        #if !SANDBOX_DS_SERV && !SANDBOX_DS_PLASMA_B2C && !SANDBOX_DS_PLASMA_HOME_DS
-        if totalThemes == 0 {
-            isInitialized = true
-            return
-        }
-
+        PlasmaHomeDSTheme.Theme.initialize(tenant: TenantStorage.shared.tenant(for: .plasmaHomeDSTheme))
+        #else
         if profile.supportedThemes.contains(.sdddsServTheme) {
-            SDDSServTheme.Theme.initialize(
-                tenant: TenantStorage.shared.tenant(for: .sdddsServTheme)
-            ) { [weak self] in
-                self?.themeDidInitialize()
-            }
+            SDDSServTheme.Theme.initialize(tenant: TenantStorage.shared.tenant(for: .sdddsServTheme))
         }
-
         if profile.supportedThemes.contains(.plasmaB2CTheme) {
-            PlasmaB2CTheme.Theme.initialize(
-                tenant: TenantStorage.shared.tenant(for: .plasmaB2CTheme)
-            ) { [weak self] in
-                self?.themeDidInitialize()
-            }
+            PlasmaB2CTheme.Theme.initialize(tenant: TenantStorage.shared.tenant(for: .plasmaB2CTheme))
         }
-
         if profile.supportedThemes.contains(.plasmaHomeDSTheme) {
-            PlasmaHomeDSTheme.Theme.initialize(
-                tenant: TenantStorage.shared.tenant(for: .plasmaHomeDSTheme)
-            ) { [weak self] in
-                self?.themeDidInitialize()
-            }
+            PlasmaHomeDSTheme.Theme.initialize(tenant: TenantStorage.shared.tenant(for: .plasmaHomeDSTheme))
         }
         #endif
-    }
 
-    private func themeDidInitialize() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.initializationCount += 1
-
-            if self.initializationCount >= self.totalThemes {
-                self.isInitialized = true
-            }
-        }
+        isInitialized = true
     }
 }

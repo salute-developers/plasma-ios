@@ -61,7 +61,7 @@ struct TextFieldView: View {
                     }
                 }
                 VariationsView(viewModel: viewModel)
-                
+
                 TextField("Title", text: $viewModel.title)
                 TextField("Optional Title", text: $viewModel.optionalTitle)
                 TextField("Placeholder", text: $viewModel.placeholder)
@@ -95,7 +95,7 @@ struct TextFieldView: View {
                 }
                 Toggle("Icon", isOn: $viewModel.iconViewEnabled)
                 Toggle("Action", isOn: $viewModel.iconActionViewEnabled)
-                
+
                 Button("Add Chip") {
                     viewModel.addChip()
                 }
@@ -105,7 +105,7 @@ struct TextFieldView: View {
                         TextField(
                             "Chip \(index + 1)",
                             text: Binding(
-                                get: { 
+                                get: {
                                     guard !viewModel.chips.isEmpty else {
                                         return ""
                                     }
@@ -126,7 +126,7 @@ struct TextFieldView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("TextField")
     }
 }

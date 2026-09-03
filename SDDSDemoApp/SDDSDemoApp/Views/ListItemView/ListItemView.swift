@@ -7,11 +7,11 @@ import SandboxSwiftUI
 struct ListItemView: View {
     @ObservedObject private var viewModel: ListItemViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: ListItemViewModel = ListItemViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -27,7 +27,7 @@ struct ListItemView: View {
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .listRowInsets(EdgeInsets())
-            
+
             Section {
                 Picker("Layout", selection: $viewModel.layout) {
                     ForEach(ListItemLayout.itemLayouts, id: \.self) { layout in
@@ -74,10 +74,10 @@ struct ListItemView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
     }
 }
 
 #Preview {
     ListItemView()
-} 
+}

@@ -5,15 +5,15 @@ import SDDSThemeCore
 
 final class TabItemViewModel: ComponentViewModel<TabItemVariationProvider> {
     typealias Appearance = TabItemAppearance
-    
+
     @Published var label: String = "Label"
-    @Published var value: String? = nil
+    @Published var value: String?
     @Published var hasValue: Bool = false {
         didSet {
             value = hasValue ? "Value" : nil
         }
     }
-    @Published var counterValue: Int? = nil
+    @Published var counterValue: Int?
     @Published var hasCounter: Bool = false {
         didSet {
             counterValue = hasCounter ? 5 : nil
@@ -30,7 +30,7 @@ final class TabItemViewModel: ComponentViewModel<TabItemVariationProvider> {
             self.selectVariation(variations.first)
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: TabItemUiState = .init()) {
         super.init(
             variationProvider: TabItemVariationProvider(tabItemType: uiState.tabItemType, theme: theme),
@@ -58,4 +58,3 @@ final class TabItemViewModel: ComponentViewModel<TabItemVariationProvider> {
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }
-

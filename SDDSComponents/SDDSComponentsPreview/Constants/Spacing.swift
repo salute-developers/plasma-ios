@@ -22,7 +22,7 @@ public enum Spacing {
 
     public enum Button {
         public static let previewWidth: CGFloat = 200
-        
+
         public enum Height {
             public static let large: CGFloat = Spacing.fiftySix
             public static let medium: CGFloat = Spacing.fourtyEight
@@ -38,7 +38,7 @@ public enum Spacing {
             public static let extraSmall: CGFloat = Spacing.eight
             public static let extraExtraSmall: CGFloat = Spacing.six
         }
-        
+
         public enum Padding {
             public static let large = EdgeInsets(top: Spacing.eleven, leading: Spacing.twentyTwo, bottom: Spacing.eleven, trailing: Spacing.twentyFour)
             public static let medium = EdgeInsets(top: Spacing.eleven, leading: Spacing.twenty, bottom: Spacing.eleven, trailing: Spacing.twenty)
@@ -46,7 +46,7 @@ public enum Spacing {
             public static let extraSmall = EdgeInsets(top: Spacing.eleven, leading: Spacing.twelve, bottom: Spacing.eleven, trailing: Spacing.twelve)
             public static let extraExtraSmall = EdgeInsets(top: Spacing.five, leading: Spacing.ten, bottom: Spacing.five, trailing: Spacing.ten)
         }
-        
+
         public enum IconSize {
             public static let large = CGSize(width: Spacing.twentyFour, height: Spacing.twentyFour)
             public static let medium = CGSize(width: Spacing.twentyFour, height: Spacing.twentyFour)
@@ -54,7 +54,7 @@ public enum Spacing {
             public static let extraSmall = CGSize(width: Spacing.sixteen, height: Spacing.sixteen)
             public static let extraExtraSmall = CGSize(width: Spacing.sixteen, height: Spacing.sixteen)
         }
-        
+
         public enum SpinnerSize {
             public static let large = CGSize(width: Spacing.twentyTwo, height: Spacing.twentyTwo)
             public static let medium = CGSize(width: Spacing.twentyTwo, height: Spacing.twentyTwo)
@@ -62,7 +62,7 @@ public enum Spacing {
             public static let extraSmall = CGSize(width: Spacing.sixteen, height: Spacing.sixteen)
             public static let extraExtraSmall = CGSize(width: Spacing.twelve, height: Spacing.twelve)
         }
-        
+
         public enum Gap {
             public static let large: CGFloat = Spacing.eight
             public static let medium: CGFloat = Spacing.six

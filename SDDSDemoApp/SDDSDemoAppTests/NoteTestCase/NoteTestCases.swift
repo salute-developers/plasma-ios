@@ -17,7 +17,7 @@ import SDDSIcons
 /**
  PLASMA-T2315
  */
-struct NoteCompactLDefaultTitleTextHasAction : View {
+struct NoteCompactLDefaultTitleTextHasAction: View {
     var appearance: NoteCompactAppearance
     var linkButtonAppearance: ButtonAppearance
     @Environment(\.colorScheme) private var colorScheme
@@ -42,7 +42,7 @@ struct NoteCompactLDefaultTitleTextHasAction : View {
 /**
  PLASMA-T2316
  */
-struct NoteCompactMPositiveTitleTextHasClose : View {
+struct NoteCompactMPositiveTitleTextHasClose: View {
     var appearance: NoteCompactAppearance
     @Environment(\.colorScheme) private var colorScheme
     var body: some View {
@@ -61,7 +61,7 @@ struct NoteCompactMPositiveTitleTextHasClose : View {
 /**
  PLASMA-T2317
  */
-struct NoteSNegativeTitleTextHasAction : View {
+struct NoteSNegativeTitleTextHasAction: View {
     var appearance: NoteAppearance
     var linkButtonAppearance: ButtonAppearance
     @Environment(\.colorScheme) private var colorScheme
@@ -86,7 +86,7 @@ struct NoteSNegativeTitleTextHasAction : View {
 /**
  PLASMA-T2318
  */
-struct NoteXsWarningTitleTextHasClose : View {
+struct NoteXsWarningTitleTextHasClose: View {
     var appearance: NoteAppearance
     @Environment(\.colorScheme) private var colorScheme
     var body: some View {
@@ -105,7 +105,7 @@ struct NoteXsWarningTitleTextHasClose : View {
 /**
  PLASMA-T2319
  */
-struct NoteCompactLInfoTitleLongTextHasClose : View {
+struct NoteCompactLInfoTitleLongTextHasClose: View {
     var appearance: NoteCompactAppearance
     @Environment(\.colorScheme) private var colorScheme
     var body: some View {
@@ -124,7 +124,7 @@ struct NoteCompactLInfoTitleLongTextHasClose : View {
 /**
  PLASMA-T2320
  */
-struct NoteLDefaultLongTitleTextHasActionHasClose : View {
+struct NoteLDefaultLongTitleTextHasActionHasClose: View {
     var appearance: NoteAppearance
     var linkButtonAppearance: ButtonAppearance
     @Environment(\.colorScheme) private var colorScheme
@@ -149,7 +149,7 @@ struct NoteLDefaultLongTitleTextHasActionHasClose : View {
 /**
  PLASMA-T2321
  */
-struct NoteCompactLScalableDefaultTitleTextHasAction : View {
+struct NoteCompactLScalableDefaultTitleTextHasAction: View {
     var appearance: NoteCompactAppearance
     var linkButtonAppearance: ButtonAppearance
     @Environment(\.colorScheme) private var colorScheme
@@ -180,7 +180,7 @@ struct NoteCompactLScalableDefaultTitleTextHasAction : View {
 /**
  PLASMA-T2322
  */
-struct NoteXsScalableInfoHasClose : View {
+struct NoteXsScalableInfoHasClose: View {
     var appearance: NoteAppearance
     @Environment(\.colorScheme) private var colorScheme
     var body: some View {
@@ -205,7 +205,7 @@ struct NoteXsScalableInfoHasClose : View {
 /**
  PLASMA-T2181
  */
-struct NoteNoTextNoTitle : View {
+struct NoteNoTextNoTitle: View {
     var appearance: NoteAppearance
     @Environment(\.colorScheme) private var colorScheme
     var body: some View {
@@ -224,12 +224,12 @@ struct NoteNoTextNoTitle : View {
 private let longTitle = "Lorem Ipsum is simply dummy text of the printing and typesetting"
 
 private let longText = """
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-when an unknown printer took a galley of type and scrambled it to make a type 
-specimen book. It has survived not only five centuries, but also the leap into 
-electronic typesetting, remaining essentially unchanged. It was popularised in 
-the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-and more recently with desktop publishing software like Aldus PageMaker including 
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type
+specimen book. It has survived not only five centuries, but also the leap into
+electronic typesetting, remaining essentially unchanged. It was popularised in
+the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+and more recently with desktop publishing software like Aldus PageMaker including
 versions of Lorem Ipsum.
 """

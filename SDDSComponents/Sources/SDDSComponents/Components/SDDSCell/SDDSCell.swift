@@ -45,22 +45,22 @@ import SwiftUI
 public struct SDDSCell<LeftContent: View, RightContent: View>: View {
     private let _appearance: CellAppearance?
     public let alignment: CellContentAlignment
-    
+
     public let label: String
     public let title: String
     public let subtitle: String
-    
+
     public let disclosureEnabled: Bool
     public let disclosureImage: Image?
     public let disclosureText: String
-    
+
     public let leftContent: LeftContent
     public let rightContent: RightContent
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.cellAppearance) private var environmentAppearance
-    
+
     public init(
         appearance: CellAppearance? = nil,
         alignment: CellContentAlignment = .center,
@@ -84,7 +84,7 @@ public struct SDDSCell<LeftContent: View, RightContent: View>: View {
         self.leftContent = leftContent()
         self.rightContent = rightContent()
     }
-    
+
     public var body: some View {
         HStack(alignment: contentAlignment, spacing: 0) {
             leftContent
@@ -124,7 +124,7 @@ extension SDDSCell {
             }
             .frame(maxWidth: .infinity)
     }
-    
+
     // MARK: - Other additional view
     @ViewBuilder
     private func value(for value: String, typography: TypographyToken, textColor: StatefulFillStyle) -> some View {
@@ -132,7 +132,7 @@ extension SDDSCell {
             .typography(typography)
             .fillForeground(style: textColor.resolvedDefaultValue())
     }
-    
+
     // MARK: - Disclosure
     @ViewBuilder
     private var disclosure: some View {
@@ -144,7 +144,7 @@ extension SDDSCell {
             disclosureImage
         }
     }
-    
+
     @ViewBuilder
     private var defaultDisclosure: some View {
         HStack(spacing: 0) {
@@ -159,7 +159,7 @@ extension SDDSCell {
             }
         }
     }
-    
+
     // MARK: - Typography
     private func typographyToken(for text: TypographyConfiguration) -> TypographyToken {
         if let typography = text.typography(with: appearance.size) {
@@ -168,7 +168,7 @@ extension SDDSCell {
             fatalError("Undefined Cell Typography for size \(appearance.size.debugDescription).")
         }
     }
-    
+
     // MARK: - Alignment
     private var contentAlignment: VerticalAlignment {
         switch alignment {
@@ -180,7 +180,7 @@ extension SDDSCell {
             return .bottom
         }
     }
-    
+
     var appearance: CellAppearance {
         _appearance ?? environmentAppearance
     }

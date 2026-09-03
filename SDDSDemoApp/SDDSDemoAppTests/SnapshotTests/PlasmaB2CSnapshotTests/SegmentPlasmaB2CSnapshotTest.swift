@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class SegmentPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testSegmentSizeLPrimaryPlasmaB2C() async throws {
         let segmentItemAppearance = SegmentItem.l.primary.appearance
@@ -70,7 +70,7 @@ final class SegmentPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
         let segmentItemAppearance = SegmentItem.l.primary.appearance
         let segmentAppearance = Segment.l.primary.appearance
         let counterAppearance = Counter.s.accent.appearance
-        try await runSnapshotTest(view:SegmentSizeLCounter(
+        try await runSnapshotTest(view: SegmentSizeLCounter(
             segmentItemAppearance: segmentItemAppearance,
             segmentAppearance: segmentAppearance,
             counterAppearance: counterAppearance)

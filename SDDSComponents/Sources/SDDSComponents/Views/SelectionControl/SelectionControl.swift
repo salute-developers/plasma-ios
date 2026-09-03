@@ -11,7 +11,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
     let selectionControlToggle: SelectionControlToggle
     let appearance: AppearanceType
     let accessibility: SelectionControlAccessibility
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     var body: some View {
@@ -23,7 +23,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                     .accessibilityValue(Text(accessibilityValue))
                     .accessibilityHint(Text(accessibility.controlHint))
                     .accessibilityAddTraits(.isButton)
-                
+
                 if title.isEmpty {
                     subtitleText
                 } else {
@@ -32,7 +32,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             }
             HStack(spacing: appearance.size.horizontalGap) {
                 Spacer().frame(width: appearance.size.width)
-                
+
                 if !title.isEmpty {
                     subtitleText
                 }
@@ -45,7 +45,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
         }
         .disabled(!isEnabled)
     }
-    
+
     @ViewBuilder
     private var titleText: some View {
         let titleStyle = appearance.titleColor(for: isEnabled)
@@ -56,7 +56,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             .accessibilityLabel(Text(accessibility.titleLabel))
             .accessibilityValue(Text(title))
     }
-    
+
     @ViewBuilder
     private var subtitleText: some View {
         if let subtitle = subtitle {
@@ -71,7 +71,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private func toggleImage(image: Image) -> some View {
         image
@@ -79,7 +79,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             .renderingMode(.original)
             .aspectRatio(contentMode: .fit)
     }
-    
+
     private var image: Image? {
         guard case .images(let selectionControlStateImages) = selectionControlToggle else {
             return nil
@@ -93,7 +93,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             return selectionControlStateImages.indeterminateImage
         }
     }
-    
+
     @ViewBuilder
     private var controlView: some View {
         ZStack {
@@ -137,14 +137,14 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             )
         }
     }
-    
+
     @ViewBuilder
     private func icon(icon: PathDrawer, iconColor: FillStyle, width: CGFloat, height: CGFloat) -> some View {
         icon.path(in: CGRect(x: 0, y: 0, width: width, height: height))
             .fillForeground(style: iconColor)
             .frame(width: width, height: height)
     }
-    
+
     @ViewBuilder
     private var borderView: some View {
         let borderStyle = resolvedFillStyle(for: appearance.borderColor)
@@ -158,7 +158,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             )
         shapeStroke(shape, style: borderStyle, lineWidth: appearance.size.lineWidth)
     }
-    
+
     @ViewBuilder
     private var fillView: some View {
         let fillStyle = appearance.toggleStatefulColor.resolvedValue(for: selectionStateActiveStates)
@@ -211,7 +211,7 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
                 .mask(path.stroke(style: StrokeStyle(lineWidth: lineWidth)))
         }
     }
-    
+
     // MARK: - Accessibility
     private var accessibilityValue: String {
         switch state {
@@ -221,27 +221,27 @@ struct SelectionControl<AppearanceType: SelectionControlAppearance>: View {
             return accessibility.controlDisabledValue
         }
     }
-    
+
     private var titleTypography: TypographyToken {
         appearance.titleTypography.typography(with: appearance.size) ?? .undefined
     }
-    
+
     private var subtitleTypography: TypographyToken {
         appearance.subtitleTypography.typography(with: appearance.size) ?? .undefined
     }
-    
+
     private var paddings: CGFloat {
         appearance.size.togglePaddings + appearance.size.togglePaddings
     }
-    
+
     private var toggleWidth: CGFloat {
         appearance.size.width - paddings - appearance.size.lineWidth
     }
-    
+
     private var toggleHeight: CGFloat {
         appearance.size.height - paddings - appearance.size.lineWidth
     }
-    
+
     private var rectLocation: CGFloat {
         appearance.size.lineWidth / 2
     }
@@ -256,7 +256,7 @@ extension SelectionControlState {
             false
         }
     }
-    
+
     var isIndeterminate: Bool {
         switch self {
         case .indeterminate:
@@ -265,7 +265,7 @@ extension SelectionControlState {
             false
         }
     }
-    
+
     func nextState() -> SelectionControlState {
         if isSelected {
             return .deselected
@@ -273,7 +273,7 @@ extension SelectionControlState {
         if isIndeterminate {
             return .selected
         }
-        
+
         return .selected
     }
 }

@@ -46,4 +46,4 @@ struct TooltipSize: CodeGenerationSize {
         self.paddingBottom = CGFloat.defaultContext
         self.pathDrawer = PathDrawerContextBuilder.defaultContext
     }
-} 
+}

@@ -13,7 +13,7 @@ public extension TypographyToken {
             kerning: 0
         )
     }
-    
+
     static var semibold16: TypographyToken {
         .init(
             fontName: "SF Pro",
@@ -24,7 +24,7 @@ public extension TypographyToken {
             kerning: 0
         )
     }
-    
+
     static var semibold14: TypographyToken {
         .init(
             fontName: "SF Pro",
@@ -35,7 +35,7 @@ public extension TypographyToken {
             kerning: 0
         )
     }
-    
+
     static var semibold12: TypographyToken {
         .init(
             fontName: "SF Pro",
@@ -46,7 +46,7 @@ public extension TypographyToken {
             kerning: 0
         )
     }
-    
+
     static var semibold8: TypographyToken {
         .init(
             fontName: "SF Pro",
@@ -57,7 +57,7 @@ public extension TypographyToken {
             kerning: 0
         )
     }
-    
+
     static var undefined: TypographyToken {
         .init(
             fontName: "SF Pro",
@@ -77,26 +77,26 @@ public extension ColorToken {
             lightColor: .black
         )
     }
-    
+
     static var clearColor: ColorToken {
         Color.clear.token
     }
-    
+
     static var titleColor: ColorToken {
         .init(
             darkColor: .black,
             lightColor: .white
         )
     }
-    
+
     static var greenColor: ColorToken {
         Color.green.token
     }
-    
+
     static var subtitleColor: ColorToken {
         Color.white.opacity(0.3).token
     }
-    
+
     static var backgroundColor: ColorToken {
         .init(
             darkColor: Color(red: 249.0/255.0, green: 249.0/255.0, blue: 249.0/255.0, opacity: 1.0),
@@ -118,7 +118,7 @@ public extension ColorToken {
             lightColor: self.lightColor.opacity(opacity)
         )
     }
-    
+
     var buttonColor: ButtonColor {
         ButtonColor(defaultColor: self)
     }

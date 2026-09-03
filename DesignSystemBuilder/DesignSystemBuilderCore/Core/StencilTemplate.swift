@@ -14,13 +14,13 @@ enum StencilTemplate: String {
     case shadows = "Shadows"
     case typographies = "Typographies"
     case gradients = "Gradients"
-    
+
     // MARK: - Components
     case componentSize = "ComponentSize"
     case componentBaseVariations = "Component+BaseVariations"
     case componentVariations = "Component+Variations"
     case componentTypography = "ComponentTypography"
-    
+
     var withStencilExt: String {
         rawValue + ".stencil"
     }

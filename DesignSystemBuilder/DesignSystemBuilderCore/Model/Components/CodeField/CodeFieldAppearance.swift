@@ -3,29 +3,29 @@ import Foundation
 struct CodeFieldAppearance: CodeGenerationAppearance {
     typealias Variation = CodeFieldConfiguration.Variation
     typealias Props = CodeFieldProps
-    
-    var valueColor: String? = nil
-    var valueColorError: String? = nil
-    var captionColor: String? = nil
-    var captionColorError: String? = nil
-    var dotColor: String? = nil
-    var dotColorError: String? = nil
-    var cursorColor: String? = nil
-    var backgroundColor: String? = nil
-    var backgroundColorActivated: String? = nil
-    var backgroundColorError: String? = nil
-    var captionTypography: String? = nil
-    var valueTypography: String? = nil
-    
+
+    var valueColor: String?
+    var valueColorError: String?
+    var captionColor: String?
+    var captionColorError: String?
+    var dotColor: String?
+    var dotColorError: String?
+    var cursorColor: String?
+    var backgroundColor: String?
+    var backgroundColorActivated: String?
+    var backgroundColorError: String?
+    var captionTypography: String?
+    var valueTypography: String?
+
     init(variation: CodeFieldConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
-    
+
     init(props: CodeFieldProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return
         }
-        
+
         self.valueColor = ColorTokenContextBuilder(props.valueColor).context
         self.valueColorError = ColorTokenContextBuilder(props.valueColor?.value(for: .error)).context
         self.cursorColor = ColorTokenContextBuilder(props.cursorColor).context
@@ -39,4 +39,4 @@ struct CodeFieldAppearance: CodeGenerationAppearance {
         self.captionTypography = TypographyTokenContextBuilder(string: props.captionStyle?.value, id: id, component: component).context
         self.valueTypography = TypographyTokenContextBuilder(string: props.valueStyle?.value, id: id, component: component).context
     }
-} 
+}

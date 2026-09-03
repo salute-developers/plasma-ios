@@ -9,7 +9,6 @@ enum WheelStory: Story {
     static let title = "Wheel"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: WheelUiState, theme: Theme) -> some View {
         WheelView(

@@ -18,11 +18,11 @@ import SDDSIcons
  PLASMA-T2271
  */
 struct TabsFiveDividerScroll: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "1"
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -37,7 +37,7 @@ struct TabsFiveDividerScroll: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -72,12 +72,12 @@ struct TabsFiveDividerScroll: View {
  PLASMA-T2272
  */
 struct TabsTwentyIconStartValueHasActionCounter: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
-    
+
     @State private var selectedId: String? = "1"
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -92,7 +92,7 @@ struct TabsTwentyIconStartValueHasActionCounter: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<20).map { index in
             let item = SDDSTabItem(
@@ -125,11 +125,11 @@ struct TabsTwentyIconStartValueHasActionCounter: View {
  PLASMA-T2273
  */
 struct TabsFiveIconEndStretchHasDivider: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "1"
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -144,7 +144,7 @@ struct TabsFiveIconEndStretchHasDivider: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -177,11 +177,11 @@ struct TabsFiveIconEndStretchHasDivider: View {
  PLASMA-T2274
  */
 struct TabsTenShowAllCounter: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "3"
-    
+
     var body: some View {
         let showMoreTab = TabItem(
             id: "showMore",
@@ -221,7 +221,7 @@ struct TabsTenShowAllCounter: View {
         TabDropDownView(items: items, selectedId: $selectedId, maxHeight: 200)
             .padding(.top, 8)
     }
-    
+
     private var items: [TabItem] {
         (0..<3).map { index in
             let item = SDDSTabItem(
@@ -268,11 +268,11 @@ struct TabsTenShowAllCounter: View {
 }
 
 struct TabsHasDividerStretch: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "2"
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -287,7 +287,7 @@ struct TabsHasDividerStretch: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -322,11 +322,11 @@ struct TabsHasDividerStretch: View {
  PLASMA-T2276
  */
 struct TabsDisabled: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = ""
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -341,7 +341,7 @@ struct TabsDisabled: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -376,11 +376,11 @@ struct TabsDisabled: View {
  PLASMA-T2277
  */
 struct TabsValueFiveScrollHasDivider: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = ""
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -395,7 +395,7 @@ struct TabsValueFiveScrollHasDivider: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -430,11 +430,11 @@ struct TabsValueFiveScrollHasDivider: View {
  PLASMA-T2278
  */
 struct TabsTwoValueStretch: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "1"
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -449,7 +449,7 @@ struct TabsTwoValueStretch: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<2).map { index in
             let item = SDDSTabItem(
@@ -484,11 +484,11 @@ struct TabsTwoValueStretch: View {
  PLASMA-T2279
  */
 struct TabsOneValueShowAllHasAction: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "0"
-    
+
     var body: some View {
         let showMoreTab = TabItem(
             id: "showMore",
@@ -525,7 +525,7 @@ struct TabsOneValueShowAllHasAction: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<1).map { index in
             let item = SDDSTabItem(
@@ -560,11 +560,11 @@ struct TabsOneValueShowAllHasAction: View {
  PLASMA-T2280
  */
 struct TabsFiveIconEndValueHasActionScrollCounter: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "1"
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -579,7 +579,7 @@ struct TabsFiveIconEndValueHasActionScrollCounter: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -612,11 +612,11 @@ struct TabsFiveIconEndValueHasActionScrollCounter: View {
  PLASMA-T2281
  */
 struct TabsValueShowAll: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "3"
-    
+
     var body: some View {
         let showMoreTab = TabItem(
             id: "showMore",
@@ -656,7 +656,7 @@ struct TabsValueShowAll: View {
         TabDropDownView(items: items, selectedId: $selectedId, maxHeight: 200)
             .padding(.top, 8)
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -706,11 +706,11 @@ struct TabsValueShowAll: View {
  PLASMA-T2283
  */
 struct IconTabsFiveHasActionScroll: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "1"
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -725,7 +725,7 @@ struct IconTabsFiveHasActionScroll: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -758,11 +758,11 @@ struct IconTabsFiveHasActionScroll: View {
  PLASMA-T2284
  */
 struct IconTabsFiveStretchCounter: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "1"
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -777,7 +777,7 @@ struct IconTabsFiveStretchCounter: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -811,11 +811,11 @@ struct IconTabsFiveStretchCounter: View {
  PLASMA-T2285
  */
 struct IconTabsShowAllHasAction: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "..."
-    
+
     var body: some View {
         let showMoreTab = TabItem(
             id: "...",
@@ -855,7 +855,7 @@ struct IconTabsShowAllHasAction: View {
         TabDropDownView(items: items, selectedId: $selectedId, maxHeight: 200)
             .padding(.top, 8)
     }
-    
+
     private var items: [TabItem] {
         (0..<3).map { index in
             let item = SDDSTabItem(
@@ -909,11 +909,11 @@ struct IconTabsShowAllHasAction: View {
  PLASMA-T2286
  */
 struct IconTabsVerticalHasActionScrollCounter: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = "1"
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -928,7 +928,7 @@ struct IconTabsVerticalHasActionScrollCounter: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(
@@ -959,11 +959,11 @@ struct IconTabsVerticalHasActionScrollCounter: View {
 }
 
 struct IconTabsHorizontalHasActionScrollDisabled: View {
-    
+
     var appearance: TabsAppearance
     var tabItemAppearance: TabItemAppearance
     @State private var selectedId: String? = ""
-    
+
     var body: some View {
         SDDSTabs(
             items: items,
@@ -978,7 +978,7 @@ struct IconTabsHorizontalHasActionScrollDisabled: View {
             }
         )
     }
-    
+
     private var items: [TabItem] {
         (0..<5).map { index in
             let item = SDDSTabItem(

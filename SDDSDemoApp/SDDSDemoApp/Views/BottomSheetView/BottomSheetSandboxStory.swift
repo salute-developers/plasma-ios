@@ -9,7 +9,6 @@ enum BottomSheetStory: Story {
     static let title = "BottomSheet"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: BottomSheetUiState, theme: Theme) -> some View {
         BottomSheetView(viewModel: BottomSheetViewModel(theme: theme, uiState: state))

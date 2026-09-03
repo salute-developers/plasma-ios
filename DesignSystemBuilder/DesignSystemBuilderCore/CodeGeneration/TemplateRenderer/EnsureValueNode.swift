@@ -26,7 +26,7 @@ class EnsureValueNode: NodeType {
                 break
             }
         }
-        
+
         return value
     }
 }

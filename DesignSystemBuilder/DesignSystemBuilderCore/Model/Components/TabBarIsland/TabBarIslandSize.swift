@@ -4,7 +4,7 @@ import SwiftUI
 struct TabBarIslandSize: CodeGenerationSize {
     typealias Variation = TabBarIslandConfiguration.Variation
     typealias Props = TabBarIslandProps
-    
+
     var topShape: String?
     var bottomShape: String?
     var paddingStart: String?
@@ -14,11 +14,11 @@ struct TabBarIslandSize: CodeGenerationSize {
     var contentPaddingTop: String?
     var contentPaddingBottom: String?
     var itemSpacing: String?
-    
+
     init(variation: TabBarIslandConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: TabBarIslandProps, id: String? = nil, nullify: Bool = false) {
         self.topShape = PathDrawerContextBuilder(shape: props.topShape, nullify: nullify).context
         self.bottomShape = PathDrawerContextBuilder(shape: props.bottomShape, nullify: nullify).context
@@ -30,7 +30,7 @@ struct TabBarIslandSize: CodeGenerationSize {
         self.contentPaddingBottom = CGFloatContextBuilder(props.contentPaddingBottom?.value, nullify: nullify).context
         self.itemSpacing = CGFloatContextBuilder(props.itemSpacing?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.topShape = PathDrawerContextBuilder.defaultContext
         self.bottomShape = PathDrawerContextBuilder.defaultContext

@@ -16,7 +16,7 @@ import SDDSIcons
 
 struct ButtonLDefault: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -33,7 +33,7 @@ struct ButtonLDefault: View {
 
 struct ButtonMAccent: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -51,7 +51,7 @@ struct ButtonMAccent: View {
 
 struct ButtonSWarning: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -69,7 +69,7 @@ struct ButtonSWarning: View {
 
 struct ButtonXsDark: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -87,7 +87,7 @@ struct ButtonXsDark: View {
 
 struct ButtonLIsLoading: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -104,7 +104,7 @@ struct ButtonLIsLoading: View {
 
 struct ButtonLIsDisabled: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -121,7 +121,7 @@ struct ButtonLIsDisabled: View {
 
 struct ButtonLSecondary: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -139,7 +139,7 @@ struct ButtonLSecondary: View {
 
 struct ButtonMClearSpaceBetween: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -157,7 +157,7 @@ struct ButtonMClearSpaceBetween: View {
 
 struct ButtonSPositiveLongText: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "LabelLabelLabelLabelLabelLabelLabelLabel",
@@ -175,7 +175,7 @@ struct ButtonSPositiveLongText: View {
 
 struct ButtonXlDefault: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -192,7 +192,7 @@ struct ButtonXlDefault: View {
 
 struct ButtonXxsDefault: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         BasicButton(
             title: "Label",
@@ -210,7 +210,7 @@ struct ButtonXxsDefault: View {
 
 struct IсonButtonLDefault: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -226,7 +226,7 @@ struct IсonButtonLDefault: View {
 
 struct IconButtonMAccent: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -242,7 +242,7 @@ struct IconButtonMAccent: View {
 
 struct IconButtonSWarning: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -258,7 +258,7 @@ struct IconButtonSWarning: View {
 
 struct IconButtonXsDark: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -274,7 +274,7 @@ struct IconButtonXsDark: View {
 
 struct IconButtonIsLoading: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -290,7 +290,7 @@ struct IconButtonIsLoading: View {
 
 struct IconButtonIsDisabled: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -306,7 +306,7 @@ struct IconButtonIsDisabled: View {
 
 struct IconButtonLSecondaryPilled: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -322,7 +322,7 @@ struct IconButtonLSecondaryPilled: View {
 
 struct IconButtonMClear: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -338,7 +338,7 @@ struct IconButtonMClear: View {
 
 struct IconButtonSPositive: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -354,7 +354,7 @@ struct IconButtonSPositive: View {
 
 struct IconButtonXsNegativePilledIsLoading: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -370,7 +370,7 @@ struct IconButtonXsNegativePilledIsLoading: View {
 
 struct IconButtonLWhite: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -386,7 +386,7 @@ struct IconButtonLWhite: View {
 
 struct IconButtonXlDefault: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -402,7 +402,7 @@ struct IconButtonXlDefault: View {
 
 struct IconButtonXxsDefault: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         IconButton(
             iconAttributes: .init(image: Image.image("plasma"), alignment: .leading),
@@ -418,7 +418,7 @@ struct IconButtonXxsDefault: View {
 
 struct LinkButtonLDefault: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         LinkButton(
             title: "Label",
@@ -434,7 +434,7 @@ struct LinkButtonLDefault: View {
 
 struct LinkButtonLIsLoading: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         LinkButton(
             title: "Label",
@@ -450,7 +450,7 @@ struct LinkButtonLIsLoading: View {
 
 struct LinkButtonLSecondary: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         LinkButton(
             title: "Label",
@@ -466,7 +466,7 @@ struct LinkButtonLSecondary: View {
 
 struct LinkButtonMAccent: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         LinkButton(
             title: "Label",
@@ -483,7 +483,7 @@ struct LinkButtonMAccent: View {
 
 struct LinkButtonLIsDisabled: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         LinkButton(
             title: "Label",
@@ -499,7 +499,7 @@ struct LinkButtonLIsDisabled: View {
 
 struct LinkButtonSWarning: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         LinkButton(
             title: "Label",
@@ -516,7 +516,7 @@ struct LinkButtonSWarning: View {
 
 struct LinkButtonXsNegative: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         LinkButton(
             title: "Label",
@@ -532,7 +532,7 @@ struct LinkButtonXsNegative: View {
 
 struct LinkButtonXlDefault: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         LinkButton(
             title: "Label",
@@ -548,7 +548,7 @@ struct LinkButtonXlDefault: View {
 
 struct LinkButtonXxsDefault: View {
     var appearance: ButtonAppearance
-    
+
     var body: some View {
         LinkButton(
             title: "Label",
@@ -562,4 +562,3 @@ struct LinkButtonXxsDefault: View {
         )
     }
 }
-

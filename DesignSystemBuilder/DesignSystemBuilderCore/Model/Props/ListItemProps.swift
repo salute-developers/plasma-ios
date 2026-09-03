@@ -2,7 +2,7 @@ import Foundation
 
 struct ListItemProps: MergeableConfiguration, Codable {
     typealias Props = ListItemProps
-    
+
     var shape: ShapeKeyValue?
     var height: KeyValue<Double>?
     var disableAlpha: KeyValue<Double>?
@@ -22,4 +22,4 @@ struct ListItemProps: MergeableConfiguration, Codable {
     var disclosureIconColor: ColorKeyValue?
     var backgroundColor: ColorKeyValue?
     var counterStyle: ComponentStyleKeyValue<CounterProps>?
-} 
+}

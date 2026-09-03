@@ -77,7 +77,7 @@ public struct TextFieldAppearance {
     public var titleTextAlignment: TextAlignment
     @ApiName("labelStyle")
     public var titleTypography: TypographyConfiguration
-    
+
     public init(
         size: TextFieldSizeConfiguration = ZeroTextFieldSize(),
         chipGroupAppearance: ChipGroupAppearance = ChipGroupAppearance(),
@@ -211,7 +211,7 @@ extension TextFieldAppearance {
             lhs.titleColor == rhs.titleColor &&
             lhs.titleTextAlignment == rhs.titleTextAlignment
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(chipAppearance)

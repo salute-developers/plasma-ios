@@ -21,4 +21,3 @@ public enum GeneralError: Error {
     case codeGeneration(CodeGenerationError)
     case emptyData
 }
-

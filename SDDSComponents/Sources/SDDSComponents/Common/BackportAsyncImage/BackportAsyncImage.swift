@@ -55,7 +55,7 @@ public struct BackportAsyncImage<Content: View>: View {
     public init<I, P>(url: URL?,
                       scale: CGFloat = 1,
                       @ViewBuilder content: @escaping (Image) -> I,
-                      @ViewBuilder placeholder: @escaping () -> P) where Content == _ConditionalContent<I, P>, I : View, P : View {
+                      @ViewBuilder placeholder: @escaping () -> P) where Content == _ConditionalContent<I, P>, I: View, P: View {
         self.url = url
         self.scale = scale
         self.transaction = Transaction()
@@ -115,7 +115,7 @@ private final class Provider: ObservableObject {
 
                 withTransaction(transaction) {
                     self?.phase = self?.image(from: data, scale: scale)
-                        .map{ AsyncImagePhase.success($0) }
+                        .map { AsyncImagePhase.success($0) }
                         ?? .empty
                 }
             }

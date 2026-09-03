@@ -13,21 +13,21 @@ import SwiftUI
 
  ## Пример использования
 ```swift
-@State var isPresent: Bool = true
- 
-MyView()
-    .overlay(isPresent: $isPresent, appearance: Overlay.default.appearance)
+// @sample: SDDSComponentsFixtures/Samples/Overlay/SDDSOverlay_Simple.swift
+SDDSOverlay(isPresented: $isPresented) {
+    Text("Content")
+}
 ```
 */
 public struct SDDSOverlay<Content: View>: View {
     @Binding public var isPresented: Bool
     private let _appearance: OverlayAppearance?
     private let content: () -> Content
-    
+
     @Environment(\.overlayAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
-    
+
     public init(
         isPresented: Binding<Bool> = .constant(false),
         appearance: OverlayAppearance? = nil,
@@ -37,7 +37,7 @@ public struct SDDSOverlay<Content: View>: View {
         self._appearance = appearance
         self.content = content
     }
-    
+
     public var body: some View {
         if isPresented {
             content()
@@ -54,11 +54,11 @@ public struct SDDSOverlay<Content: View>: View {
             content()
         }
     }
-    
+
     private var appearance: OverlayAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     @ViewBuilder
     private var backgroundView: some View {
         switch appearance.backgroundColor {

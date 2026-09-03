@@ -23,7 +23,7 @@ public struct ChipData: Hashable {
     public var appearance: ChipAppearance
     public let accessibility: ChipAccessibility
     public let removeAction: () -> Void
-    
+
     public init(id: UUID = UUID(), title: String, isEnabled: Bool, iconImage: Image?, buttonImage: Image?, appearance: ChipAppearance = ChipAppearance(), accessibility: ChipAccessibility, removeAction: @escaping () -> Void) {
         self.id = id
         self.title = title
@@ -34,11 +34,11 @@ public struct ChipData: Hashable {
         self.accessibility = accessibility
         self.removeAction = removeAction
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id.uuidString)
     }
-    
+
     public static func == (lhs: ChipData, rhs: ChipData) -> Bool {
         lhs.id == rhs.id
     }

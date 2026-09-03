@@ -4,7 +4,7 @@ import SwiftUI
 struct ToolbarSize: CodeGenerationSize {
     typealias Variation = ToolbarConfiguration.Variation
     typealias Props = ToolbarProps
-    
+
     var paddingStart: String?
     var paddingEnd: String?
     var paddingTop: String?
@@ -13,11 +13,11 @@ struct ToolbarSize: CodeGenerationSize {
     var slotPadding: String?
     var dividerMargin: String?
     var orientation: String?
-    
+
     init(variation: ToolbarConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: ToolbarProps, id: String? = nil, nullify: Bool = false) {
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
         self.paddingEnd = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context
@@ -28,7 +28,7 @@ struct ToolbarSize: CodeGenerationSize {
         self.dividerMargin = CGFloatContextBuilder(props.dividerMargin?.value, nullify: nullify).context
         self.orientation = ToolbarOrientationContextBuilder(id: props.orientation?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.paddingStart = CGFloat.defaultContext
         self.paddingEnd = CGFloat.defaultContext

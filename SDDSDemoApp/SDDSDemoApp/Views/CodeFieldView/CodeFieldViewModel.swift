@@ -5,7 +5,7 @@ import SDDSThemeCore
 
 final class CodeFieldViewModel: ComponentViewModel<CodeFieldVariationProvider> {
     private let captionFailureText = "Invalid code"
-    
+
     @Published var code: String = ""
     @Published var caption: String = "Enter the code"
     @Published var captionAlignment: CodeFieldAlignment = .center
@@ -18,7 +18,7 @@ final class CodeFieldViewModel: ComponentViewModel<CodeFieldVariationProvider> {
     @Published var validationResult: CodeFieldValidationResult = .success(.initial)
     @Published var isHidden = false
     @Published var validation: CodeFieldValidation = CodeFieldDisabledValidation()
-    
+
     private var validCode: String {
         switch selectedGroupType {
         case .four:
@@ -29,7 +29,7 @@ final class CodeFieldViewModel: ComponentViewModel<CodeFieldVariationProvider> {
             "123456"
         }
     }
-    
+
     var captionText: String {
         switch validationResult {
         case .success(.validated):
@@ -40,15 +40,15 @@ final class CodeFieldViewModel: ComponentViewModel<CodeFieldVariationProvider> {
             return caption
         }
     }
-    
+
     var availableGroupTypes: [CodeFieldGroupType] {
         CodeFieldGroupType.allCases
     }
-    
+
     var selectedGroups: [CodeFieldGroup] {
         selectedGroupType.groups
     }
-    
+
     private func updateCaption(validationResult: CodeFieldValidationResult) {
         switch validationResult {
         case .success(.validated):
@@ -59,7 +59,7 @@ final class CodeFieldViewModel: ComponentViewModel<CodeFieldVariationProvider> {
             break
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: CodeFieldUiState = .init()) {
         super.init(variationProvider: CodeFieldVariationProvider(theme: theme), theme: theme)
 

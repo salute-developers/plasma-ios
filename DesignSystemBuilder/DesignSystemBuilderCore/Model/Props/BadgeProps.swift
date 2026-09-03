@@ -2,7 +2,7 @@ import Foundation
 
 struct BadgeProps: MergeableConfiguration, Codable {
     typealias Props = BadgeProps
-    
+
     var shape: ShapeKeyValue?
     var labelStyle: KeyValue<String>?
     var height: KeyValue<Double>?

@@ -1,48 +1,64 @@
 {
-  "generatedAt": "2026-03-05T00:00:00Z",
+  "generatedAt": "2026-09-03T08:29:56Z",
   "sourceRepo": "salute-developers/plasma-ios",
   "libraries": [
-    {
-      "name": "SDDSIcons",
-      "version": "0.26.0",
-      "assetFileName": "SDDSIcons.xcframework.zip",
-      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-04-03-2026/SDDSIcons.xcframework.zip",
-      "releaseTag": "release-04-03-2026"
-    },
-    {
-      "name": "SDDSComponents",
-      "version": "0.34.0",
-      "assetFileName": "SDDSComponents.xcframework.zip",
-      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-04-03-2026/SDDSComponents.xcframework.zip",
-      "releaseTag": "release-04-03-2026"
-    },
     {
       "name": "SDDSThemeCore",
       "version": "0.15.0",
       "assetFileName": "SDDSThemeCore.xcframework.zip",
-      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-18-02-2026/SDDSThemeCore.xcframework.zip",
-      "releaseTag": "release-18-02-2026"
+      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-01-09-2026/SDDSThemeCore.xcframework.zip",
+      "releaseTag": "release-01-09-2026"
     },
     {
-      "name": "SDDSServTheme",
-      "version": "0.23.0",
-      "assetFileName": "SDDSServTheme.xcframework.zip",
-      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-04-03-2026/SDDSServTheme.xcframework.zip",
-      "releaseTag": "release-04-03-2026"
+      "name": "SDDSComponents",
+      "version": "0.42.0",
+      "assetFileName": "SDDSComponents.xcframework.zip",
+      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-01-09-2026/SDDSComponents.xcframework.zip",
+      "releaseTag": "release-01-09-2026"
     },
     {
-      "name": "PlasmaB2CTheme",
-      "version": "0.23.0",
-      "assetFileName": "PlasmaB2CTheme.xcframework.zip",
-      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-04-03-2026/PlasmaB2CTheme.xcframework.zip",
-      "releaseTag": "release-04-03-2026"
+      "name": "SDDSIcons",
+      "version": "0.25.0",
+      "assetFileName": "SDDSIcons.xcframework.zip",
+      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-19-08-2026/SDDSIcons.xcframework.zip",
+      "releaseTag": "release-19-08-2026",
+      "notes": "Not attached to release-01-09-2026; this is the newest published build, from release-19-08-2026."
     },
     {
       "name": "InputMask",
-      "version": "1.0.1",
+      "version": "1.0",
       "assetFileName": "InputMask.xcframework.zip",
-      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-18-02-2026/InputMask.xcframework.zip",
-      "releaseTag": "release-18-02-2026"
+      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-01-09-2026/InputMask.xcframework.zip",
+      "releaseTag": "release-01-09-2026"
+    },
+    {
+      "name": "SDDSServTheme",
+      "version": "0.31.0",
+      "assetFileName": "SDDSServTheme.xcframework.zip",
+      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-01-09-2026/SDDSServTheme.xcframework.zip",
+      "releaseTag": "release-01-09-2026"
+    },
+    {
+      "name": "PlasmaB2CTheme",
+      "version": "0.31.0",
+      "assetFileName": "PlasmaB2CTheme.xcframework.zip",
+      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-01-09-2026/PlasmaB2CTheme.xcframework.zip",
+      "releaseTag": "release-01-09-2026"
+    },
+    {
+      "name": "PlasmaHomeDSTheme",
+      "version": "0.17.0",
+      "assetFileName": "PlasmaHomeDSTheme.xcframework.zip",
+      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-01-09-2026/PlasmaHomeDSTheme.xcframework.zip",
+      "releaseTag": "release-01-09-2026"
+    },
+    {
+      "name": "design-system-builder-cli",
+      "version": "release-01-09-2026",
+      "assetFileName": "dsbuilder-cli-release-01-09-2026.zip",
+      "downloadUrl": "https://github.com/salute-developers/plasma-ios/releases/download/release-01-09-2026/dsbuilder-cli-release-01-09-2026.zip",
+      "releaseTag": "release-01-09-2026",
+      "notes": "The dsbuilder CLI has no version of its own, so the release tag is used. The asset name embeds the tag, so release_sync cannot carry it forward to a newer release automatically."
     }
   ]
 }

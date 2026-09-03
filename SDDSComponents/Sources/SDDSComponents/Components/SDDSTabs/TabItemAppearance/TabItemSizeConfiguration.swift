@@ -58,10 +58,10 @@ public struct ZeroTabItemSize: TabItemSizeConfiguration {
     public var actionIconSize: CGFloat = 0
     public var counterOffsetX: CGFloat = 0
     public var counterOffsetY: CGFloat = 0
-    
+
     public var debugDescription: String {
         return "Zero TabItem Size"
     }
-    
+
     public init() {}
 }

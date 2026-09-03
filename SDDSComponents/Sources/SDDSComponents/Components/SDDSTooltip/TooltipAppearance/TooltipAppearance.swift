@@ -36,7 +36,7 @@ public struct TooltipAppearance: Hashable {
     public var shadow: ShadowToken
     public var textTypography: TypographyConfiguration?
     public var size: TooltipSizeConfiguration
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         textColor: ColorToken = .clearColor,
@@ -52,13 +52,13 @@ public struct TooltipAppearance: Hashable {
         self.size = size
         self.textTypography = textTypography
     }
-    
+
     public static func == (lhs: TooltipAppearance, rhs: TooltipAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-} 
+}

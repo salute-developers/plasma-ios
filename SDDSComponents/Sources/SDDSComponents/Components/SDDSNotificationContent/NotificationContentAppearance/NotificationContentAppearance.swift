@@ -18,7 +18,7 @@ public struct NotificationContentAppearance {
     public var iconPlacement: NotificationContentIconPlacement
     public var buttonGroupAppearance: ButtonGroupAppearance?
     public var size: NotificationContentSizeConfiguration
-    
+
     public init(
         iconColor: ColorToken = .clearColor,
         titleColor: ColorToken = .clearColor,

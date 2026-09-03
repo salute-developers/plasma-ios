@@ -6,14 +6,14 @@ public struct GradientModifier: ViewModifier {
     let colorScheme: ColorScheme
     let offset: CGFloat
     let subtheme: SubthemeData
-    
+
     public init(token: GradientToken, offset: CGFloat = 0, colorScheme: ColorScheme, subtheme: SubthemeData = SubthemeData()) {
         self.token = token
         self.offset = offset
         self.colorScheme = colorScheme
         self.subtheme = subtheme
     }
-    
+
     public func body(content: Content) -> some View {
         ZStack {
             content

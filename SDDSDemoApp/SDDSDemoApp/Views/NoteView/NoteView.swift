@@ -9,11 +9,11 @@ import SandboxSwiftUI
 struct NoteView: View {
     @ObservedObject private var viewModel: NoteViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: NoteViewModel = NoteViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -22,10 +22,10 @@ struct NoteView: View {
                     .listRowBackground(Color.clear)
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
-                
+
                 titleField
                 textField
                 actionToggle
@@ -35,13 +35,13 @@ struct NoteView: View {
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .navigationTitle("Note")
     }
-    
+
     @ViewBuilder
     private var notePreview: some View {
         noteContent
             .environment(\.noteAppearance, viewModel.appearance)
     }
-    
+
     @ViewBuilder
     private var noteContent: some View {
         switch (viewModel.hasContentBefore, viewModel.hasAction) {
@@ -105,7 +105,7 @@ struct NoteView: View {
             )
         }
     }
-    
+
     @ViewBuilder
     private var actionButton: some View {
         if let linkButtonAppearance = viewModel.appearance.linkButtonAppearance {
@@ -119,9 +119,9 @@ struct NoteView: View {
             )
         }
     }
-    
+
     // MARK: - UI Elements
-    
+
     private var titleField: some View {
         HStack {
             Text("Title")
@@ -131,7 +131,7 @@ struct NoteView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     private var textField: some View {
         HStack {
             Text("Text")
@@ -141,13 +141,13 @@ struct NoteView: View {
                 .multilineTextAlignment(.trailing)
         }
     }
-    
+
     private var actionToggle: some View {
         HStack {
             Toggle("Has Action", isOn: $viewModel.hasAction)
         }
     }
-    
+
     private var contentBeforeToggle: some View {
         HStack {
             Toggle("Content Before", isOn: $viewModel.hasContentBefore)

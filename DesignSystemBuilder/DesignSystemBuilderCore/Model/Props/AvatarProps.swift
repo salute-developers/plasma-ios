@@ -2,7 +2,7 @@ import Foundation
 
 struct AvatarProps: MergeableConfiguration, Codable {
     typealias Props = AvatarProps
-    
+
     var shape: ShapeKeyValue?
     var background: ColorKeyValue?
     var activeStatusColor: ColorKeyValue?

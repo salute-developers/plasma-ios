@@ -14,19 +14,19 @@ public struct NavigationBarInternalPageAppearance {
     public var actionEndColor: ColorToken
     public var textColor: ColorToken
     public var backgroundColor: ColorToken
-    
+
     // Иконка
     public var backIcon: Image?
-    
+
     // Типографика
     public var textTypography: TypographyConfiguration
-    
+
     // Тень
     public var shadow: ShadowToken
-    
+
     // Размеры
     public var size: NavigationBarInternalPageSizeConfiguration
-    
+
     public init(
         backIconColor: ColorToken = .clearColor,
         actionStartColor: ColorToken = .clearColor,

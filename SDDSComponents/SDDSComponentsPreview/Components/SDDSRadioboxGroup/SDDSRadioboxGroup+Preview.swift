@@ -17,7 +17,7 @@ struct SDDSRadioboxGroupPreview: PreviewProvider {
                 accessibility: SelectionControlAccessibility()
             )
         }
-        
+
         return SDDSRadioboxGroup(radioboxData: radioboxData, size: SDDSRadioboxGroupSize.large, appearance: RadioboxGroup.m.appearance)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("SDDSRadioboxGroup Preview")

@@ -9,7 +9,6 @@ enum DrawerStory: Story {
     static let title = "Drawer"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: DrawerUiState, theme: Theme) -> some View {
         DrawerView(viewModel: DrawerViewModel(theme: theme, uiState: state))

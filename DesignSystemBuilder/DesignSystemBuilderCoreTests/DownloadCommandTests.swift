@@ -6,7 +6,7 @@ import OHHTTPStubsSwift
 final class DownloadCommandTests: XCTestCase {
     /// SUT
     var downloadSchemeCommand: DownloadCommand!
-    
+
     // Mocks
     var fileManager: FileManager!
     private var outputURL: URL!
@@ -19,7 +19,7 @@ final class DownloadCommandTests: XCTestCase {
         let schemeURL = DownloadCommandTests.schemeURL
         outputURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("scheme.json")
         try? fileManager.removeItem(at: outputURL)
-        
+
         downloadSchemeCommand = DownloadCommand(fileURL: schemeURL, outputURL: outputURL, fileManager: fileManager)
     }
 
@@ -29,10 +29,10 @@ final class DownloadCommandTests: XCTestCase {
             let stubData = "{\"key\": \"value\"}".data(using: .utf8)!
             return HTTPStubsResponse(data: stubData, statusCode: 200, headers: ["Content-Type": "application/json"])
         }
-        
+
         // when
         let result = downloadSchemeCommand.run()
-        
+
         // then
         // Команда с заданным outputURL пишет файл и возвращает .success,
         // содержимое проверяем на диске.
@@ -55,7 +55,7 @@ final class DownloadCommandTests: XCTestCase {
 
         // when
         let result = downloadSchemeCommand.run()
-        
+
         // then
         switch result {
         case .data(let data):
@@ -71,20 +71,20 @@ final class DownloadCommandTests: XCTestCase {
     func testDownloadCommand_Failure_InvalidURL() {
         // given
         let invalidURL = DownloadCommandTests.testURL
-        
+
         downloadSchemeCommand = DownloadCommand(fileURL: invalidURL, outputURL: nil, fileManager: fileManager)
 
         let host = NSMutableString(string: invalidURL.absoluteString)
             .replacingOccurrences(of: invalidURL.scheme ?? "", with: "")
             .replacingOccurrences(of: "://", with: "")
-        
+
         stub(condition: isHost(host)) { _ in
             return HTTPStubsResponse(error: URLError(.unsupportedURL))
         }
-        
+
         // when
         let result = downloadSchemeCommand.run()
-        
+
         // then
         switch result {
         case .error:

@@ -7,7 +7,7 @@ import SDDSServTheme
 
 struct TextAreaClearPreview: PreviewProvider {
     static var previews: some View {
-        let chips = (1...12).map { index in
+        let chips = (1...12).map { _ in
             ChipData(
                 title: "ChipTitle",
                 isEnabled: true,
@@ -18,7 +18,7 @@ struct TextAreaClearPreview: PreviewProvider {
                 removeAction: {}
             )
         }
-        
+
         return Group {
             TextAreaClear(
                 value: .constant(.single("Value")),
@@ -35,7 +35,7 @@ struct TextAreaClearPreview: PreviewProvider {
             .previewDisplayName("Outer Label")
             .previewLayout(.sizeThatFits)
             .padding()
-            
+
             TextAreaClear(
                 value: .constant(.multiple("", chips)),
                 title: "Title",
@@ -52,7 +52,7 @@ struct TextAreaClearPreview: PreviewProvider {
             .padding()
         }
     }
-    
+
     @ViewBuilder
     private static var iconView: some View {
         Image.image("textFieldIcon")
@@ -60,13 +60,13 @@ struct TextAreaClearPreview: PreviewProvider {
             .resizable()
             .aspectRatio(contentMode: .fit)
     }
-    
+
     @ViewBuilder
     private static var iconActionView: some View {
         Image.image("textFieldIconAction")
             .renderingMode(.template)
             .resizable()
             .aspectRatio(contentMode: .fit)
-        
+
     }
 }

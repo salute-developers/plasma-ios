@@ -18,7 +18,7 @@ public struct ScrollbarAppearance: Hashable {
     public var size: ScrollbarSizeConfiguration
     public var thumbColor: ColorToken
     public var trackColor: ColorToken
-    
+
     public init(
         size: ScrollbarSizeConfiguration = DefaultScrollbarSize(),
         thumbColor: ColorToken = .clearColor,
@@ -28,13 +28,13 @@ public struct ScrollbarAppearance: Hashable {
         self.thumbColor = thumbColor
         self.trackColor = trackColor
     }
-    
+
     public static func == (lhs: ScrollbarAppearance, rhs: ScrollbarAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.thumbColor == rhs.thumbColor &&
         lhs.trackColor == rhs.trackColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -44,4 +44,4 @@ extension ScrollbarAppearance: EnvironmentKey {
     public static var defaultValue: Self {
         EnvironmentValueProvider.shared.value(forKey: ScrollbarAppearance.self, fallback: ScrollbarAppearance())
     }
-} 
+}

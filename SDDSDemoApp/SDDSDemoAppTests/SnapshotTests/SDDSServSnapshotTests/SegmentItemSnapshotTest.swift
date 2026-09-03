@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class SegmentItemSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testSegmentItemSizeLPrimary() async throws {
         let appearance = SegmentItem.l.primary.appearance

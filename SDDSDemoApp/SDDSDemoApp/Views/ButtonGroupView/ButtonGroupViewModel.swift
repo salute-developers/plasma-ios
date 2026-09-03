@@ -24,11 +24,11 @@ final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvide
     @Published var subtitleEnabled: Bool = true
     @Published var value: String = "Button"
     @Published var subtitleValue: String = "Subtitle"
-    
+
     var currentAppearance: ButtonGroupAppearance {
         appearance
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: ButtonGroupUiState = .init()) {
         super.init(
             variationProvider: ButtonGroupVariationProvider(buttonGroupType: uiState.buttonGroupType, theme: theme),
@@ -49,10 +49,10 @@ final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvide
         subtitleValue = uiState.subtitleValue
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     func addButton() {
         let newButton: ButtonData
-        
+
         switch buttonGroupType {
         case .basic:
             newButton = ButtonData(
@@ -85,14 +85,14 @@ final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvide
                 action: {}
             )
         }
-        
+
         buttons.append(newButton)
     }
-    
+
     func updateButtonTitle(at index: Int, with newTitle: String) {
         guard buttons.indices.contains(index) else { return }
         var updatedButton = buttons[index]
-        
+
         updatedButton = ButtonData(
             title: newTitle,
             subtitle: updatedButton.subtitle,
@@ -109,11 +109,11 @@ final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvide
         )
         buttons[index] = updatedButton
     }
-    
+
     func updateButtonSubtitle(at index: Int, with newSubtitle: String) {
         guard buttons.indices.contains(index) else { return }
         var updatedButton = buttons[index]
-        
+
         updatedButton = ButtonData(
             title: updatedButton.title,
             subtitle: newSubtitle,
@@ -130,17 +130,17 @@ final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvide
         )
         buttons[index] = updatedButton
     }
-    
+
     func removeButton(at index: Int) {
         guard buttons.indices.contains(index) else { return }
         buttons.remove(at: index)
     }
-    
+
     override func onUpdateAppearance() {
         for index in buttons.indices {
             var updatedButton = buttons[index]
             let buttonAppearance = appearance.buttonAppearance ?? ButtonAppearance()
-            
+
             updatedButton = ButtonData(
                 title: updatedButton.title,
                 subtitle: updatedButton.subtitle,
@@ -158,13 +158,13 @@ final class ButtonGroupViewModel: ComponentViewModel<ButtonGroupVariationProvide
             buttons[index] = updatedButton
         }
     }
-    
+
     private func updateButtonsAppearance() {
         for index in buttons.indices {
             var updatedButton = buttons[index]
             let buttonAppearance = appearance.buttonAppearance ?? ButtonAppearance()
             let newButtonStyle: SDDSComponents.ButtonStyle = buttonGroupType == .basic ? .basic : .icon
-            
+
             updatedButton = ButtonData(
                 title: updatedButton.title,
                 subtitle: updatedButton.subtitle,

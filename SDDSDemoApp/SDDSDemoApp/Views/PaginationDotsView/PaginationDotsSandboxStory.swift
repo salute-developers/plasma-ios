@@ -9,7 +9,6 @@ enum PaginationDotsStory: Story {
     static let title = "PaginationDots"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: PaginationDotsUiState, theme: Theme) -> some View {
         PaginationDotsView(

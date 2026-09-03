@@ -17,7 +17,7 @@ import SDDSIcons
 /**
  PLASMA-T2105
  */
-struct CodeInputLCodeLengthFourCaptionLeft : View {
+struct CodeInputLCodeLengthFourCaptionLeft: View {
     var appearance: CodeInputAppearance
     @State private var code: String = ""
     @State private var validationResult: CodeFieldValidationResult = .success(.initial)
@@ -41,7 +41,7 @@ struct CodeInputLCodeLengthFourCaptionLeft : View {
 /**
  PLASMA-T2106
  */
-struct CodeInputMCodeLengthFiveCaptionCenter : View {
+struct CodeInputMCodeLengthFiveCaptionCenter: View {
    var appearance: CodeInputAppearance
    @State private var code: String = ""
    @State private var validationResult: CodeFieldValidationResult = .success(.initial)
@@ -65,7 +65,7 @@ struct CodeInputMCodeLengthFiveCaptionCenter : View {
 /**
  PLASMA-T2108
  */
-struct CodeInputSCodeLengthSix : View {
+struct CodeInputSCodeLengthSix: View {
    var appearance: CodeInputAppearance
    @State private var code: String = ""
    @State private var validationResult: CodeFieldValidationResult = .success(.initial)
@@ -89,7 +89,7 @@ struct CodeInputSCodeLengthSix : View {
 /**
  PLASMA-T2109
  */
-struct CodeInputSCodeLengthSixNoCaption : View {
+struct CodeInputSCodeLengthSixNoCaption: View {
    var appearance: CodeInputAppearance
    @State private var code: String = ""
    @State private var validationResult: CodeFieldValidationResult = .success(.initial)
@@ -113,7 +113,7 @@ struct CodeInputSCodeLengthSixNoCaption : View {
 /**
  PLASMA-T2110
  */
-struct CodeInputMCodeLengthSixHidden : View {
+struct CodeInputMCodeLengthSixHidden: View {
    var appearance: CodeInputAppearance
    @State private var code: String = "1"
    @State private var validationResult: CodeFieldValidationResult = .success(.initial)
@@ -137,7 +137,7 @@ struct CodeInputMCodeLengthSixHidden : View {
 /**
  PLASMA-T2111
  */
-struct CodeInputLInputLetterError : View {
+struct CodeInputLInputLetterError: View {
    var appearance: CodeInputAppearance
    @State private var code: String = "q"
    @State private var validationResult: CodeFieldValidationResult = .success(.initial)
@@ -161,7 +161,7 @@ struct CodeInputLInputLetterError : View {
 /**
  PLASMA-T2115
  */
-struct CodeInputLInputWrongCode : View {
+struct CodeInputLInputWrongCode: View {
    var appearance: CodeInputAppearance
    @State private var code: String = "222333"
    @State private var validationResult: CodeFieldValidationResult = .success(.initial)
@@ -185,7 +185,7 @@ struct CodeInputLInputWrongCode : View {
 /**
  PLASMA-T2221
  */
-struct CodeInputCorrectCode : View {
+struct CodeInputCorrectCode: View {
    var appearance: CodeInputAppearance
    @State private var code: String = "1234"
    @State private var validationResult: CodeFieldValidationResult = .success(.initial)
@@ -209,7 +209,7 @@ struct CodeInputCorrectCode : View {
 /**
  PLASMA-T2244
  */
-struct CodeInputCaptionLongText : View {
+struct CodeInputCaptionLongText: View {
    var appearance: CodeInputAppearance
    @State private var code: String = ""
    @State private var validationResult: CodeFieldValidationResult = .success(.initial)

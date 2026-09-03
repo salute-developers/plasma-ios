@@ -2,7 +2,7 @@ import Foundation
 
 struct CounterProps: MergeableConfiguration, Codable {
     typealias Props = CounterProps
-    
+
     var labelStyle: KeyValue<String>?
     var minWidth: KeyValue<Double>?
     var minHeight: KeyValue<Double>?

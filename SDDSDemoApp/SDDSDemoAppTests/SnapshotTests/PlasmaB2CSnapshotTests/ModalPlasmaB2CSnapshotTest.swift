@@ -15,13 +15,13 @@ import UIKit
 import SwiftUI
 
 final class ModalPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testModalUseNativeBlackOutHasClosePlasmaB2C() async throws {
         let appearance = Modal.default.appearance
         try await runSnapshotTest(view: ModalUseNativeBlackOutHasClose(appearance: appearance))
     }
-    
+
     @MainActor
     func testModalWithoutNativeBlackOutPlasmaB2C() async throws {
         let appearance = Modal.default.appearance

@@ -1,6 +1,12 @@
 name: Verify snapshot tests
 
 on:
+  # Прогоны на обеих ветках, чтобы бейджи в README имели что показывать
+  # и на develop (её клонируют по умолчанию), и на main (released).
+  push:
+    branches:
+      - develop
+      - main
   pull_request:
     branches:
       - main
@@ -11,7 +17,7 @@ on:
       - test/*
   
 concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:

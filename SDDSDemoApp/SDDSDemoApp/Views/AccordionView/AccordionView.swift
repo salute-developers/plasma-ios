@@ -6,11 +6,11 @@ import SandboxSwiftUI
 
 struct AccordionView: View {
     @ObservedObject private var viewModel: AccordionViewModel
-    
+
     init(viewModel: AccordionViewModel = AccordionViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         VStack {
             SDDSAccordion(
@@ -59,7 +59,7 @@ struct AccordionView: View {
                 }
             }
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-            
+
         }
         .background(.tertiary)
     }
@@ -67,4 +67,4 @@ struct AccordionView: View {
 
 #Preview {
     AccordionView()
-} 
+}

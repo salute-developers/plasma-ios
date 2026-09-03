@@ -3,7 +3,7 @@ import Foundation
 struct SelectItemAppearance: CodeGenerationAppearance {
     typealias Variation = SelectItemConfiguration.Variation
     typealias Props = SelectItemProps
-    
+
     var itemType: String?
     var iconColor: String?
     var backgroundColor: String?
@@ -11,30 +11,29 @@ struct SelectItemAppearance: CodeGenerationAppearance {
     var cellAppearance: String?
     var checkboxAppearance: String?
     var icon: String?
-    
+
     init(variation: SelectItemConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
-    
+
     init(props: SelectItemProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return
         }
-        
+
         self.itemType = props.itemType?.value.map { ".\($0)" }
         self.iconColor = ColorTokenContextBuilder(props.iconColor).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
         self.backgroundColor = ButtonColorContextBuilder(statefulColor: props.backgroundColor).context
-        
+
         if let cellStyle = props.cellStyle?.value {
             self.cellAppearance = ComponentStyleContextBuilder(cellStyle).context
         }
-        
+
         if let checkboxStyle = props.checkboxStyle?.value {
             self.checkboxAppearance = ComponentStyleContextBuilder(checkboxStyle).context
         }
-        
+
         self.icon = ImageContextBuilder(props.icon?.value).context
     }
 }
-

@@ -4,7 +4,7 @@ import SwiftUI
 struct NavigationBarMainPageSize: CodeGenerationSize {
     typealias Variation = NavigationBarMainPageConfiguration.Variation
     typealias Props = NavigationBarMainPageProps
-    
+
     var paddingStart: String?
     var paddingEnd: String?
     var paddingTop: String?
@@ -12,11 +12,11 @@ struct NavigationBarMainPageSize: CodeGenerationSize {
     var horizontalSpacing: String?
     var textBlockTopMargin: String?
     var bottomShape: String?
-    
+
     init(variation: NavigationBarMainPageConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: NavigationBarMainPageProps, id: String? = nil, nullify: Bool = false) {
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
         self.paddingEnd = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context
@@ -26,7 +26,7 @@ struct NavigationBarMainPageSize: CodeGenerationSize {
         self.textBlockTopMargin = CGFloatContextBuilder(props.textBlockTopMargin?.value, nullify: nullify).context
         self.bottomShape = PathDrawerContextBuilder(shape: props.bottomShape, nullify: nullify).context
     }
-    
+
     init() {
         self.paddingStart = CGFloat.defaultContext
         self.paddingEnd = CGFloat.defaultContext
@@ -37,4 +37,3 @@ struct NavigationBarMainPageSize: CodeGenerationSize {
         self.bottomShape = PathDrawerContextBuilder.defaultContext
     }
 }
-

@@ -5,13 +5,13 @@ public struct ShakeModifier: ViewModifier {
     let amount: CGFloat
     let shakes: Int
     let isShaking: Bool
-    
+
     public init(amount: CGFloat, shakes: Int, isShaking: Bool) {
         self.amount = amount
         self.shakes = shakes
         self.isShaking = isShaking
     }
-    
+
     public func body(content: Content) -> some View {
         content
             .modifier(ShakeEffect(amount: amount, shakes: isShaking ? shakes : 0))
@@ -23,13 +23,13 @@ struct ShakeEffect: GeometryEffect {
     var amount: CGFloat
     var shakes: Int
     var animatableData: CGFloat
-    
+
     init(amount: CGFloat, shakes: Int) {
         self.amount = amount
         self.shakes = shakes
         self.animatableData = CGFloat(shakes)
     }
-    
+
     func effectValue(size: CGSize) -> ProjectionTransform {
         ProjectionTransform(CGAffineTransform(translationX:
             amount * sin(CGFloat(animatableData) * CGFloat(shakes) * CGFloat.pi * CGFloat(shakes)),

@@ -39,10 +39,10 @@ extension PopoverPlacement {
     ) -> PopoverPlacement {
         guard mode == .loose else { return initial }
         if fits(initial) { return initial }
-        
+
         let opposite = initial.oppositePlacement
         if fits(opposite) { return opposite }
-        
+
         for placement in initial.clockwiseOrder where placement != initial && placement != opposite {
             if fits(placement) {
                 return placement
@@ -50,7 +50,7 @@ extension PopoverPlacement {
         }
         return initial
     }
-    
+
     private var oppositePlacement: PopoverPlacement {
         switch self {
         case .top: return .bottom
@@ -59,7 +59,7 @@ extension PopoverPlacement {
         case .end: return .start
         }
     }
-    
+
     private var clockwiseOrder: [PopoverPlacement] {
         switch self {
         case .top: return [.top, .end, .bottom, .start]
@@ -72,7 +72,7 @@ extension PopoverPlacement {
 
 // MARK: - Environment Keys
 struct SDDSPopover<Content: View>: View {
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     private let appearance: PopoverAppearance
@@ -90,12 +90,12 @@ struct SDDSPopover<Content: View>: View {
     private let placementCheckSize: CGSize?
     private let fitCalculationMode: PopoverFitCalculationMode
     @Binding private var isPresented: Bool
-    
+
     @State private var popoverSize: CGSize = .zero
     @State private var contentSize: CGSize = .zero
     @State private var isIntersectingWindow: Bool = true
     @State private var placementState: PopoverPlacement
-    
+
     init(
         isPresented: Binding<Bool>,
         appearance: PopoverAppearance,
@@ -130,7 +130,7 @@ struct SDDSPopover<Content: View>: View {
         self.fitCalculationMode = fitCalculationMode
         _placementState = State(initialValue: placement)
     }
-    
+
     public var body: some View {
         ZStack(alignment: .center) {
             content
@@ -148,7 +148,7 @@ struct SDDSPopover<Content: View>: View {
                 .background(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
                 .shape(pathDrawer: appearance.size.pathDrawer)
                 .shadow(appearance.shadow)
-            
+
             if tailEnabled {
                 PopoverTailShape(
                     placement: placementState,
@@ -175,7 +175,7 @@ struct SDDSPopover<Content: View>: View {
             }
         )
         .background(
-            GeometryReader { geo in
+            GeometryReader { _ in
                 Color.clear
                     .onAppear { updateIntersection() }
                     .onChange(of: placementState) { _ in updateIntersection() }
@@ -201,7 +201,7 @@ struct SDDSPopover<Content: View>: View {
             onClose?()
         }
     }
-    
+
     private var tailPadding: CGFloat {
         appearance.size.tailPadding
     }
@@ -215,7 +215,7 @@ struct SDDSPopover<Content: View>: View {
         let isLandscape: Bool = UIScreen.main.bounds.width > UIScreen.main.bounds.height
         let verticalExtraOffset: CGFloat = 0
         let triggerWidthFactor: CGFloat = ignoreTrigger ? 1.0 : 2.0
-        
+
         switch placement {
         case .top:
             switch alignment {
@@ -298,7 +298,7 @@ struct SDDSPopover<Content: View>: View {
             }
         }
     }
-    
+
     private var tailOffset: CGFloat {
         tailEnabled ? appearance.size.tailHeight : 0
     }
@@ -328,7 +328,7 @@ struct SDDSPopover<Content: View>: View {
         guard let window = UIApplication.shared.keyWindow else {
             return false
         }
-        
+
         let screenBounds = window.bounds
         let triggerFrame = popoverSizeCalculator.frame
         let offset = offset(
@@ -358,7 +358,7 @@ struct SDDSPopover<Content: View>: View {
 
         return screenBounds.contains(popoverFrame)
     }
-    
+
     private var currentPopoverSize: CGSize {
         if let contentHeight = contentHeight {
             return CGSize(width: popoverSize.width, height: popoverSize.height)

@@ -21,10 +21,10 @@ public extension View {
             onClose: onClose,
             content: content
         )
-        
+
         return ZStack {
             self
-            
+
             if isPresented.wrappedValue {
                 color(useNativeBlackout: useNativeBlackout)
                 .ignoresSafeArea()
@@ -36,7 +36,7 @@ public extension View {
             }
         }
     }
-    
+
     private func color(useNativeBlackout: Bool) -> Color {
         if useNativeBlackout {
             Color.black.opacity(0.3)
@@ -44,7 +44,7 @@ public extension View {
             Color.clear
         }
     }
-    
+
     private func showModal<Content: View>(
         params: ModalParams<Content>
     ) {
@@ -80,4 +80,4 @@ private struct ModalParams<Content: View> {
     let onShow: (() -> Void)?
     let onClose: (() -> Void)?
     let content: () -> Content
-} 
+}

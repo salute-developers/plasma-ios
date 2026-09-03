@@ -3,7 +3,7 @@ import Foundation
 struct CodeInputAppearance: CodeGenerationAppearance {
     typealias Variation = CodeInputConfiguration.Variation
     typealias Props = CodeInputProps
-    
+
     var codeColor: String?
     var codeColorError: String?
     var captionColor: String?
@@ -15,16 +15,16 @@ struct CodeInputAppearance: CodeGenerationAppearance {
     var fillColorError: String?
     var codeTypography: String?
     var captionTypography: String?
-    
+
     init(variation: CodeInputConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
-    
+
     init(props: CodeInputProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return
         }
-        
+
         self.codeColor = ColorTokenContextBuilder(props.codeColor).context
         self.codeColorError = ColorTokenContextBuilder(props.codeColor?.value(for: .error)).context
         self.captionColor = ColorTokenContextBuilder(props.captionColor).context

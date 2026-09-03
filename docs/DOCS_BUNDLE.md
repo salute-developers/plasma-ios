@@ -92,7 +92,7 @@ xcodebuild test -project SDDSDemoApp/SDDSDemoApp.xcodeproj \
 
 Без переменной тест пропускается, поэтому обычные прогоны репозиторий не трогают.
 
-Тема применяется публичным `Theme.initialize(onComplete:)`: он кладёт дефолтные
+Тема применяется публичным `Theme.initialize()`: он кладёт дефолтные
 appearance в общий `EnvironmentValueProvider` и грузит шрифты темы. Сэмпл рисуется под
 темой, если **не передаёт `appearance` явно**. Тема-зависимыми оставлены те, где
 вариация — суть примера (`Image` 1:1 / 16:9, `Select` single / multiple) и где параметр

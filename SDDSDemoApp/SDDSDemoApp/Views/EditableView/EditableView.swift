@@ -21,23 +21,23 @@ struct EditableView: View {
                 Spacer()
             }
             .background(Color.clear)
-            
+
             List {
                 Section {
                     VariationsView(viewModel: viewModel)
-                    
+
                     TextField("Text", text: $viewModel.text)
                     Toggle("Enabled", isOn: $viewModel.enabled)
                     Toggle("Read only", isOn: $viewModel.readOnly)
                     Toggle("Single line", isOn: $viewModel.singleLine)
                     Toggle("Icon", isOn: $viewModel.hasIcon)
-                    
+
                     Picker("Text align", selection: $viewModel.textAlign) {
                         Text("Start").tag(TextAlignment.leading)
                         Text("Center").tag(TextAlignment.center)
                         Text("End").tag(TextAlignment.trailing)
                     }
-                    
+
                     Picker("Icon placement", selection: $viewModel.iconPlacement) {
                         ForEach(EditableIconPlacement.allCases, id: \.self) { placement in
                             Text(placement.rawValue.capitalized).tag(placement)
@@ -48,7 +48,7 @@ struct EditableView: View {
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         }
     }
-    
+
     @ViewBuilder
     private var editable: some View {
         if viewModel.hasIcon {

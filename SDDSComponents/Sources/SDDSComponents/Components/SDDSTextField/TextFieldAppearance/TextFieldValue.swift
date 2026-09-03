@@ -6,7 +6,7 @@ public enum TextFieldValue: Equatable {
     case single(String)
     /// Множественное значение с чипсами.
     case multiple(String, [ChipData])
-    
+
     public static func == (lhs: TextFieldValue, rhs: TextFieldValue) -> Bool {
         switch (lhs, rhs) {
         case (.single(let lhs), .single(let rhs)):
@@ -17,7 +17,7 @@ public enum TextFieldValue: Equatable {
             return false
         }
     }
-    
+
     public var text: String {
         switch self {
         case .single(let text):
@@ -26,7 +26,7 @@ public enum TextFieldValue: Equatable {
             return text
         }
     }
-    
+
     public func updated(with text: String) -> TextFieldValue {
         switch self {
         case .single:

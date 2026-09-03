@@ -19,15 +19,11 @@ import SwiftUI
  ## Пример использования
 
  ```swift
+ // @sample: SDDSComponentsFixtures/Samples/Toast/SDDSToast_Simple.swift
  SDDSToast(
-     text: "Toast message",
-     contentStart: {
-         Image(systemName: "info.circle")
-     },
-     contentEnd: {
-         Image(systemName: "xmark")
-     },
-     appearance: Toast.m.default.appearance
+     text: "Текст тоста",
+     contentEndPosition: .topRight,
+     onClose: nil
  )
  ```
  */
@@ -37,7 +33,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
     let contentEnd: ContentEnd
     let duration: TimeInterval?
     let contentEndPosition: ToastContentEndPosition
-    let onClose: (() -> ())?
+    let onClose: (() -> Void)?
     private let _appearance: ToastAppearance?
     let accessibility: ToastAccessibility
     @State private var isVisible: Bool = false
@@ -46,7 +42,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.toastAppearance) private var environmentAppearance
-    
+
     public init(
         @ViewBuilder contentStart: () -> ContentStart,
         @ViewBuilder content: () -> Content,
@@ -54,7 +50,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
         duration: TimeInterval = 3.0,
         appearance: ToastAppearance? = nil,
         contentEndPosition: ToastContentEndPosition,
-        onClose: (() -> ())?,
+        onClose: (() -> Void)?,
         accessibility: ToastAccessibility = ToastAccessibility()
     ) {
         self.contentStart = contentStart()
@@ -66,18 +62,18 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
         self.contentEndPosition = contentEndPosition
         self.accessibility = accessibility
     }
-    
+
     public var body: some View {
         HStack(spacing: 0) {
             Spacer()
                 .frame(width: appearance.size.paddingStart)
-            
+
             HStack(spacing: appearance.size.contentStartPadding) {
                 contentStart
                     .foregroundColor(appearance.contentStartColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: appearance.size.contentStartSize, height: appearance.size.contentStartSize)
                     .accessibilityHidden(true)
-                
+
                 HStack(spacing: appearance.size.contentEndPadding) {
                     content
                         .typography(appearance.textTypography?.typography(with: appearance.size) ?? .undefined)
@@ -93,7 +89,7 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
                         .measureSize { size in
                             contentHeight = size.height
                         }
-                    
+
                     switch contentEndPosition {
                     case .centerRight:
                         contentEndView
@@ -128,15 +124,15 @@ public struct SDDSToast<ContentStart: View, Content: View, ContentEnd: View>: Vi
             onClose?()
         }
     }
-    
+
     private var textTypography: TypographyToken? {
         appearance.textTypography?.typography(with: appearance.size)
     }
-    
+
     var appearance: ToastAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     @ViewBuilder
     private var contentEndView: some View {
         contentEnd
@@ -156,7 +152,7 @@ extension SDDSToast where ContentStart == EmptyView, ContentEnd == EmptyView, Co
     public init(
         text: String,
         contentEndPosition: ToastContentEndPosition,
-        onClose: (() -> ())?,
+        onClose: (() -> Void)?,
         appearance: ToastAppearance? = nil,
         accessibility: ToastAccessibility = ToastAccessibility()
     ) {
@@ -177,7 +173,7 @@ extension SDDSToast where ContentEnd == EmptyView, Content == Text {
         text: String,
         @ViewBuilder contentStart: () -> ContentStart,
         contentEndPosition: ToastContentEndPosition,
-        onClose: (() -> ())?,
+        onClose: (() -> Void)?,
         appearance: ToastAppearance? = nil,
         accessibility: ToastAccessibility = ToastAccessibility()
     ) {
@@ -198,7 +194,7 @@ extension SDDSToast where ContentStart == EmptyView, Content == Text {
         text: String,
         @ViewBuilder contentEnd: () -> ContentEnd,
         contentEndPosition: ToastContentEndPosition,
-        onClose: (() -> ())?,
+        onClose: (() -> Void)?,
         appearance: ToastAppearance? = nil,
         accessibility: ToastAccessibility = ToastAccessibility()
     ) {
@@ -228,4 +224,4 @@ extension View {
             }
         )
     }
-} 
+}

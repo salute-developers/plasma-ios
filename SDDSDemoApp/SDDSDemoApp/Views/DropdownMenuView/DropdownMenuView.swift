@@ -28,13 +28,13 @@ struct DropdownMenuView: View {
             .onTapGesture {
                 isDropdownMenuPresented = false
             }
-            .onChange(of: contentHeight) { newHeight in
+            .onChange(of: contentHeight) { _ in
                 isDropdownMenuPresented = false
                 DispatchQueue.main.async {
                     isDropdownMenuPresented = true
                 }
             }
-            
+
             Section {
                 layout
                 buttonPositionView
@@ -52,7 +52,7 @@ struct DropdownMenuView: View {
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         .navigationTitle("DropdownMenu")
     }
-    
+
     @ViewBuilder
     private var dropdownItemStyle: some View {
         HStack {
@@ -73,7 +73,7 @@ struct DropdownMenuView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var layout: some View {
         Picker("Layout", selection: $viewModel.layout) {
@@ -82,11 +82,11 @@ struct DropdownMenuView: View {
             }
         }
     }
-    
+
     private var duration: TimeInterval? {
         viewModel.autoHide ? 3.0 : nil
     }
-    
+
     @ViewBuilder
     private func dropdownMenuContent() -> some View {
         SDDSList(
@@ -102,11 +102,11 @@ struct DropdownMenuView: View {
         .backgroundColorForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
         .clipped()
     }
-    
+
     private var listHeight: CGFloat {
         min(contentHeight, maxHeight)
     }
-    
+
     private var listItems: [SDDSListItem<EmptyView>] {
         let items = (0..<viewModel.itemsCount).map { index in
             SDDSListItem(
@@ -117,10 +117,10 @@ struct DropdownMenuView: View {
                 onTap: {}
             )
         }
-        
+
         return items
     }
-        
+
     @ViewBuilder
     private func buttonForPosition(_ position: DropdownMenuButtonPosition) -> some View {
         switch position {
@@ -295,7 +295,7 @@ struct DropdownMenuView: View {
             }
         }
     }
-    
+
     private var placementSelectionView: some View {
         HStack {
             Text("Placement")
@@ -312,7 +312,7 @@ struct DropdownMenuView: View {
             }
         }
     }
-    
+
     private var buttonPositionView: some View {
         HStack {
             Text("Button Position")
@@ -329,7 +329,7 @@ struct DropdownMenuView: View {
             }
         }
     }
-    
+
     private var alignmentSelectionView: some View {
         HStack {
             Text("Alignment")
@@ -346,24 +346,24 @@ struct DropdownMenuView: View {
             }
         }
     }
-    
+
     private var itemsCount: some View {
         TextField("Count", text: $viewModel.textInput)
             .keyboardType(.numberPad)
     }
-    
+
     private var autoHideToggle: some View {
         Toggle("Auto Hide", isOn: $viewModel.autoHide)
     }
-    
+
     private var hasDisclosure: some View {
         Toggle("Has Disclosure", isOn: $viewModel.hasDisclosure)
     }
-    
+
     private var dividerEnabled: some View {
         Toggle("Divider Enabled", isOn: $viewModel.dividerEnabled)
     }
-    
+
     private var placementModeSelectionView: some View {
         HStack {
             Text("Placement Mode")

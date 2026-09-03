@@ -9,7 +9,7 @@ final class ToastViewModel: ComponentViewModel<ToastVariationProvider> {
     @Published var contentEndEnabled: Bool = true
     @Published var position: ToastPosition = .topCenter
     @Published var duration: TimeInterval = 3000
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: ToastUiState = .init()) {
         super.init(variationProvider: ToastVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)
@@ -24,4 +24,3 @@ final class ToastViewModel: ComponentViewModel<ToastVariationProvider> {
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }
-

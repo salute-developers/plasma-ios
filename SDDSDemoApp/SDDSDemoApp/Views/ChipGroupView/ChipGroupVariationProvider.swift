@@ -3,17 +3,17 @@ import SDDSComponents
 
 final class ChipGroupVariationProvider: VariationProvider {
     typealias Appearance = ChipGroupAppearance
-    
+
     var theme: Theme
     var gapStyle: ChipGroupGapStyle
     var chipGroupStyle: ChipGroupStyle
-    
+
     init(theme: Theme = .sdddsServTheme, gapStyle: ChipGroupGapStyle, chipGroupStyle: ChipGroupStyle) {
         self.theme = theme
         self.gapStyle = gapStyle
         self.chipGroupStyle = chipGroupStyle
     }
-    
+
     var variations: [Variation<ChipGroupAppearance>] {
         switch chipGroupStyle {
         case .default:
@@ -28,7 +28,7 @@ final class ChipGroupVariationProvider: VariationProvider {
             return theme.embeddedChipGroupDenseVariations
         }
     }
-    
+
     var defaultValue: ChipGroupAppearance {
         ChipGroupAppearance.defaultValue
     }

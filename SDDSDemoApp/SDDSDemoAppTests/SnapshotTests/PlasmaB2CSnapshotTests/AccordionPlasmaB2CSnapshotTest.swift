@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testAccordionSolidActionEndSizeLPlasmaB2C() async throws {
         let appearance = AccordionSolidActionEnd.l.appearance
@@ -27,7 +27,7 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionStartSizeMPlasmaB2C() async throws {
         let appearance = AccordionSolidActionStart.m.appearance
@@ -39,11 +39,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionEndSizeSHasDividerPlasmaB2C() async throws {
         let appearance = AccordionClearActionEnd.s.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -52,11 +52,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionStartSizeXsPlasmaB2C() async throws {
         let appearance = AccordionClearActionStart.xs.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -65,11 +65,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionEndSizeLNoTextPlasmaB2C() async throws {
         let appearance = AccordionSolidActionEnd.l.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -78,11 +78,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionEndSizeLAmountTenPlasmaB2C() async throws {
         let appearance = AccordionSolidActionEnd.l.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -91,11 +91,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionStartSizeH2PlasmaB2C() async throws {
         let appearance = AccordionClearActionStart.h2.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -104,11 +104,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionEndSizeH2PlasmaB2C() async throws {
         let appearance = AccordionSolidActionEnd.h2.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -117,11 +117,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionStartSizeH3PlasmaB2C() async throws {
         let appearance = AccordionSolidActionStart.h3.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -130,11 +130,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionEndSizeH4PlasmaB2C() async throws {
         let appearance = AccordionClearActionEnd.h4.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -143,11 +143,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionStartSizeH5PlasmaB2C() async throws {
         let appearance = AccordionClearActionStart.h5.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -156,11 +156,11 @@ final class AccordionPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionEndLongTextSizeLPlasmaB2C() async throws {
         let appearance = AccordionSolidActionEnd.l.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {

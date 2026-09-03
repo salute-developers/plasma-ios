@@ -40,7 +40,7 @@ public struct NoteCompactSize: NoteCompactSizeConfiguration {
     public let closeStartMargin: CGFloat
     public let closeSize: CGFloat
     public let contentBeforeArrangement: NoteCompactContentBeforeArrangement
-    
+
     public init(
         shape: PathDrawer = DefaultPathDrawer(),
         iconSize: CGFloat = 0,

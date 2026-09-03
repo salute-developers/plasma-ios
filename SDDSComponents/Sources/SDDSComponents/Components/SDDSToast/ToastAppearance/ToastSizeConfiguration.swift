@@ -39,4 +39,4 @@ public struct ZeroToastSize: ToastSizeConfiguration {
     public var shape: PathDrawer = DefaultPathDrawer()
     public var debugDescription: String { "ZeroToastSize" }
     public init() {}
-} 
+}

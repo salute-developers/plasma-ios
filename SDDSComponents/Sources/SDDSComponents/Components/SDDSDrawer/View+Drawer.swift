@@ -118,7 +118,7 @@ private extension View {
         } else {
             ZStack {
                 self
-                
+
                 if isPresented.wrappedValue {
                     DrawerAboveContentView(
                         isPresented: isPresented,
@@ -139,6 +139,6 @@ private extension View {
             }
         }
     }
-    
+
 }
 // swiftlint:enable function_parameter_count

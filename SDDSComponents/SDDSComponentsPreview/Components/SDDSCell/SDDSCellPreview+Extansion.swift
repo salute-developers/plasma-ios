@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSComponents
 import SDDSServTheme
 
-extension CellPreview {    
+extension CellPreview {
     static var checkbox: some View {
         SDDSCheckbox(
             state: .constant(.indeterminate),
@@ -12,7 +12,7 @@ extension CellPreview {
             isEnabled: true
         )
     }
-    
+
     static var radiobox: some View {
         SDDSRadiobox(
             isSelected: .constant(true),
@@ -21,7 +21,7 @@ extension CellPreview {
             isEnabled: true
         )
     }
-    
+
     static var avatar: some View {
         SDDSAvatar(
             text: "",
@@ -31,7 +31,7 @@ extension CellPreview {
             accessibility: AvatarAccessibility()
         )
     }
-    
+
     static var `switch`: SDDSSwitch {
         SDDSSwitch(
             title: "",

@@ -7,7 +7,7 @@ import SDDSApiInfo
 public struct AvatarGroupAppearance {
     public var size: AvatarGroupSizeConfiguration
     public var avatarAppearance: AvatarAppearance
-    
+
     public init(
         size: AvatarGroupSizeConfiguration = ZeroAvatarGroupSize(),
         avatarAppearance: AvatarAppearance = AvatarAppearance()
@@ -24,7 +24,7 @@ public struct ZeroAvatarGroupSize: AvatarGroupSizeConfiguration {
     public var debugDescription: String {
         "ZeroAvatarGroupSize"
     }
-    
+
     public init() {}
 }
 
@@ -33,4 +33,3 @@ extension AvatarGroupAppearance: EnvironmentKey {
         EnvironmentValueProvider.shared.value(forKey: AvatarGroupAppearance.self, fallback: AvatarGroupAppearance())
     }
 }
-

@@ -35,7 +35,7 @@ struct WheelView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
                 HStack {
@@ -85,7 +85,7 @@ struct WheelView: View {
                     }
                 }
             }
-            
+
             Section(header: Text("Custom Labels")) {
                 ForEach(0..<min(viewModel.wheelsCount, viewModel.wheelLabels.count), id: \.self) { index in
                     HStack {
@@ -100,7 +100,7 @@ struct WheelView: View {
                     }
                 }
             }
-            
+
             Section(header: Text("Text After")) {
                 ForEach(0..<min(viewModel.wheelsCount, viewModel.wheelTextAfter.count), id: \.self) { index in
                     HStack {
@@ -115,7 +115,7 @@ struct WheelView: View {
                     }
                 }
             }
-            
+
             Section(header: Text("Descriptions")) {
                 ForEach(0..<min(viewModel.wheelsCount, viewModel.wheelDescriptions.count), id: \.self) { index in
                     HStack {
@@ -132,10 +132,10 @@ struct WheelView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Wheel")
     }
-    
+
     private func dividerStyleText(_ style: WheelDividerStyle) -> String {
         switch style {
         case .empty:

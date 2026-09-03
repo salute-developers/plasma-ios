@@ -17,11 +17,11 @@ import SDDSIcons
 /**
  PLASMA-T2026
  */
-struct CodeFieldLCaptionLeftLengthFour : View {
+struct CodeFieldLCaptionLeftLengthFour: View {
     var appearance: CodeFieldAppearance
     @State private var code: String = ""
     @State private var validationResult: CodeFieldValidationResult = .success(.initial)
-    
+
     var body: some View {
         SDDSCodeField(
             code: $code,
@@ -34,7 +34,7 @@ struct CodeFieldLCaptionLeftLengthFour : View {
             isFocused: true,
             appearance: appearance,
             isAnimating: false,
-            onCodeChanged: { code in }
+            onCodeChanged: { _ in }
         )
     }
 }
@@ -42,11 +42,11 @@ struct CodeFieldLCaptionLeftLengthFour : View {
 /**
  PLASMA-T2027
  */
-struct CodeFieldMSegmentedLengthFive : View {
+struct CodeFieldMSegmentedLengthFive: View {
     var appearance: CodeFieldAppearance
     @State private var code: String = ""
     @State private var validationResult: CodeFieldValidationResult = .success(.initial)
-    
+
     var body: some View {
         SDDSCodeField(
             code: $code,
@@ -58,7 +58,7 @@ struct CodeFieldMSegmentedLengthFive : View {
             keyboardType: .numberPad,
             appearance: appearance,
             isAnimating: false,
-            onCodeChanged: { code in }
+            onCodeChanged: { _ in }
         )
     }
 }
@@ -66,11 +66,11 @@ struct CodeFieldMSegmentedLengthFive : View {
 /**
  PLASMA-T2028
  */
-struct CodeFieldLLengthSixNoCaption : View {
+struct CodeFieldLLengthSixNoCaption: View {
     var appearance: CodeFieldAppearance
     @State private var code: String = ""
     @State private var validationResult: CodeFieldValidationResult = .success(.initial)
-    
+
     var body: some View {
         SDDSCodeField(
             code: $code,
@@ -82,7 +82,7 @@ struct CodeFieldLLengthSixNoCaption : View {
             keyboardType: .numberPad,
             appearance: appearance,
             isAnimating: false,
-            onCodeChanged: { code in }
+            onCodeChanged: { _ in }
         )
     }
 }
@@ -90,11 +90,11 @@ struct CodeFieldLLengthSixNoCaption : View {
 /**
  PLASMA-T2029
  */
-struct CodeFieldMSegmentedLengthSix : View {
+struct CodeFieldMSegmentedLengthSix: View {
     var appearance: CodeFieldAppearance
     @State private var code: String = ""
     @State private var validationResult: CodeFieldValidationResult = .success(.initial)
-    
+
     var body: some View {
         SDDSCodeField(
             code: $code,
@@ -106,7 +106,7 @@ struct CodeFieldMSegmentedLengthSix : View {
             keyboardType: .numberPad,
             appearance: appearance,
             isAnimating: false,
-            onCodeChanged: { code in }
+            onCodeChanged: { _ in }
         )
     }
 }
@@ -114,11 +114,11 @@ struct CodeFieldMSegmentedLengthSix : View {
 /**
  PLASMA-T2218
  */
-struct CodeFieldLInputWrongCode : View {
+struct CodeFieldLInputWrongCode: View {
     var appearance: CodeFieldAppearance
     @State private var code: String = "2222"
     @State private var validationResult: CodeFieldValidationResult = .success(.initial)
-    
+
     var body: some View {
         SDDSCodeField(
             code: $code,
@@ -130,7 +130,7 @@ struct CodeFieldLInputWrongCode : View {
             keyboardType: .numberPad,
             appearance: appearance,
             isAnimating: false,
-            onCodeChanged: { code in }
+            onCodeChanged: { _ in }
         )
     }
 }
@@ -138,11 +138,11 @@ struct CodeFieldLInputWrongCode : View {
 /**
  PLASMA-T2219
  */
-struct CodeFieldLInputLetterError : View {
+struct CodeFieldLInputLetterError: View {
     var appearance: CodeFieldAppearance
     @State private var code: String = "q"
     @State private var validationResult: CodeFieldValidationResult = .success(.initial)
-    
+
     var body: some View {
         SDDSCodeField(
             code: $code,
@@ -154,7 +154,7 @@ struct CodeFieldLInputLetterError : View {
             keyboardType: .numberPad,
             appearance: appearance,
             isAnimating: false,
-            onCodeChanged: { code in }
+            onCodeChanged: { _ in }
         )
     }
 }

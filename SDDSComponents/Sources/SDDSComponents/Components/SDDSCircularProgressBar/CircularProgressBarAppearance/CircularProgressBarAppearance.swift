@@ -12,7 +12,7 @@ public struct CircularProgressBarAppearance: Hashable {
     public var valueTypography: TypographyConfiguration
     public var indicatorColor: FillStyle
     public var size: CircularProgressBarSizeConfiguration
-    
+
     public init(
         valueColor: ColorToken = .clearColor,
         valueEnabled: Bool = false,
@@ -28,7 +28,7 @@ public struct CircularProgressBarAppearance: Hashable {
         self.valueTypography = valueTypography
         self.size = size
     }
-    
+
     public static func == (lhs: CircularProgressBarAppearance, rhs: CircularProgressBarAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.valueColor == rhs.valueColor &&
@@ -36,7 +36,7 @@ public struct CircularProgressBarAppearance: Hashable {
         lhs.trackColor == rhs.trackColor &&
         lhs.indicatorColor == rhs.indicatorColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

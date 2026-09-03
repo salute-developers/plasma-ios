@@ -24,20 +24,20 @@ public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugString
 
 public struct ZeroChipGroupSize: ChipGroupSizeConfiguration {
     public var gap: CGFloat = 0
-    
+
     public var lineSpacing: CGFloat = 0
-    
+
     public var debugDescription: String {
         return "ZeroChipGroupSize"
     }
-    
+
     public func insets(for gap: ChipGroupGap) -> EdgeInsets {
         EdgeInsets()
     }
-    
+
     public var maxColumns: Int = 0
-    
+
     public var alignment: ChipGroupAlignment = .left
-    
+
     public init() {}
 }

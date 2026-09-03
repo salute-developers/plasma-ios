@@ -21,7 +21,7 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
             self.selectVariation(variations.first)
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: TextAreaUiState = .init()) {
         super.init(variationProvider: TextAreaVariationProvider(layout: uiState.layout, theme: theme), theme: theme)
 
@@ -46,7 +46,7 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
         layout = uiState.layout
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     var isDynamicHeight: Bool {
         switch heightMode {
         case .fixed(let cGFloat):
@@ -114,17 +114,17 @@ final class TextAreaViewModel: ComponentViewModel<TextAreaVariationProvider> {
             value = .single(textValue)
         }
     }
-    
+
     func removeChip(with id: UUID) {
         chips = chips.filter { $0.id != id }
         if chips.isEmpty {
             value = .single(textValue)
         }
     }
-    
+
     override func onUpdateAppearance() {
         chips = []
         value = .single(textValue)
     }
-    
+
 }

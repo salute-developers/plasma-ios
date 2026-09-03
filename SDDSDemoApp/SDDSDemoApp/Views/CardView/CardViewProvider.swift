@@ -9,15 +9,15 @@ enum CardType: String, CaseIterable {
 
 final class CardVariationProvider: VariationProvider {
     typealias Appearance = CardAppearance
-    
+
     var theme: Theme
     var cardType: CardType
-    
+
     init(theme: Theme = .sdddsServTheme, cardType: CardType) {
         self.theme = theme
         self.cardType = cardType
     }
-    
+
     var variations: [Variation<CardAppearance>] {
         switch cardType {
         case .card:
@@ -28,7 +28,7 @@ final class CardVariationProvider: VariationProvider {
             theme.cardClearVariations
         }
     }
-    
+
     var defaultValue: CardAppearance {
         variations.first?.appearance ?? CardAppearance()
     }

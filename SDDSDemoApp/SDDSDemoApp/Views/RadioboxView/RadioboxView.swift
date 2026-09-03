@@ -29,7 +29,7 @@ struct RadioboxView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
                 HStack {
@@ -38,28 +38,28 @@ struct RadioboxView: View {
                     TextField("Radiobox Title", text: $viewModel.title)
                         .multilineTextAlignment(.trailing)
                 }
-                
+
                 HStack {
                     Text("Subtitle")
                     Spacer()
                     TextField("Radiobox Subtitle", text: $viewModel.subtitle)
                         .multilineTextAlignment(.trailing)
                 }
-                
+
                 HStack {
                     Text("State")
                     Spacer()
                     Toggle("Selected", isOn: $viewModel.isSelected)
                 }
-                
+
                 HStack {
                     Toggle("Enabled", isOn: $viewModel.isEnabled)
                 }
-                
+
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Radiobox")
     }
 }

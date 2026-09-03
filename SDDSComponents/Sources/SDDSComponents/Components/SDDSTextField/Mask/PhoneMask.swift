@@ -4,11 +4,11 @@ import Foundation
 public enum PhoneMask: Equatable, Hashable {
     /// Российский номер телефона: +7 000 000-00-00
     case russia
-    
+
     /// Произвольный формат телефона с указанием маски
     /// - Parameter format: Формат маски (например, "+7 ([000]) [000]-[00]-[00]")
     case custom(format: String)
-    
+
     /// Возвращает строку формата маски для InputMask
     public var format: String {
         switch self {
@@ -18,7 +18,7 @@ public enum PhoneMask: Equatable, Hashable {
             return format
         }
     }
-    
+
     /// Префикс номера (код страны)
     public var prefix: String {
         switch self {
@@ -32,7 +32,7 @@ public enum PhoneMask: Equatable, Hashable {
             return ""
         }
     }
-    
+
     /// Пример отображения маски
     public var placeholder: String {
         switch self {
@@ -44,4 +44,3 @@ public enum PhoneMask: Equatable, Hashable {
         }
     }
 }
-

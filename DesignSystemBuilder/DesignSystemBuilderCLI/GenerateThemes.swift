@@ -70,7 +70,7 @@ struct GenerateThemes: ParsableCommand {
 
     func run() throws {
         UniversalRuntime.isEnabled = !typedGenerator
-        
+
         let config: DesignSystemBuilderConfiguration
         do {
             if let configArg = configArg {
@@ -92,7 +92,7 @@ struct GenerateThemes: ParsableCommand {
             print("❌ \(usingDefaultConfigurationMessage)")
             config = DesignSystemBuilderConfiguration()
         }
-        
+
         let app = App(
             config: config,
             sourcePath: #file,
@@ -109,7 +109,7 @@ struct GenerateThemes: ParsableCommand {
         )
         app.run()
     }
-    
+
     private var usingDefaultConfigurationMessage = "Using default configuration..."
     private var usingExternalConfigurationMessage = "Using configuration provided via command line argument..."
 }

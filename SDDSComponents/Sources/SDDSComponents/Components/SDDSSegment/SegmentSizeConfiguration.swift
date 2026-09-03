@@ -21,6 +21,6 @@ public struct SegmentZeroSize: SegmentSizeConfiguration {
     public var verticalWidth: CGFloat = 0
     public var pathDrawer: PathDrawer = DefaultPathDrawer()
     public let paddings: EdgeInsets = .init()
-    
+
     public init() {}
 }

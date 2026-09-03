@@ -16,7 +16,7 @@ import SDDSIcons
 
 struct SegmentItemSizeLPrimary: View {
     var segmentItemAppearance: SegmentItemAppearance
-    
+
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -35,7 +35,7 @@ struct SegmentItemSizeLPrimary: View {
 
 struct SegmentItemSizeMSecondaryPilled: View {
     var segmentItemAppearance: SegmentItemAppearance
-    
+
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -54,7 +54,7 @@ struct SegmentItemSizeMSecondaryPilled: View {
 
 struct SegmentItemSizeSPrimary: View {
     var segmentItemAppearance: SegmentItemAppearance
-    
+
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -74,7 +74,7 @@ struct SegmentItemSizeSPrimary: View {
 struct SegmentItemSizeXsCounter: View {
     var segmentItemAppearance: SegmentItemAppearance
     var counterAppearance: CounterAppearance
-    
+
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -102,7 +102,7 @@ struct SegmentItemSizeXsCounter: View {
 
 struct SegmentItemSizeDisabled: View {
     var segmentItemAppearance: SegmentItemAppearance
-    
+
     var body: some View {
         SDDSSegmentItem(
             title: "Label",
@@ -119,13 +119,11 @@ struct SegmentItemSizeDisabled: View {
     }
 }
 
-
-
 struct SegmentSizeLPrimary: View {
     var segmentItemAppearance: SegmentItemAppearance
     var segmentAppearance: SegmentAppearance
-    
-    let ids = [UUID(),UUID(), UUID()]
+
+    let ids = [UUID(), UUID(), UUID()]
     var body: some View {
         SDDSSegment(
             items: (0..<3).map { index in
@@ -154,8 +152,8 @@ struct SegmentSizeLPrimary: View {
 struct SegmentSizeMSecondaryPilled: View {
     var segmentItemAppearance: SegmentItemAppearance
     var segmentAppearance: SegmentAppearance
-    
-    let ids = [UUID(),UUID(), UUID()]
+
+    let ids = [UUID(), UUID(), UUID()]
     var body: some View {
         SDDSSegment(
             items: (0..<2).map { index in
@@ -184,8 +182,8 @@ struct SegmentSizeMSecondaryPilled: View {
 struct SegmentSizeS: View {
     var segmentItemAppearance: SegmentItemAppearance
     var segmentAppearance: SegmentAppearance
-    
-    let ids = [UUID(),UUID(), UUID()]
+
+    let ids = [UUID(), UUID(), UUID()]
     var body: some View {
         SDDSSegment(
             items: (0..<3).map { index in
@@ -214,8 +212,8 @@ struct SegmentSizeS: View {
 struct SegmentSizeXs: View {
     var segmentItemAppearance: SegmentItemAppearance
     var segmentAppearance: SegmentAppearance
-    
-    let ids = [UUID(),UUID(), UUID()]
+
+    let ids = [UUID(), UUID(), UUID()]
     var body: some View {
         SDDSSegment(
             items: (0..<3).map { index in
@@ -244,8 +242,8 @@ struct SegmentSizeXs: View {
 struct SegmentSizeLVertical: View {
     var segmentItemAppearance: SegmentItemAppearance
     var segmentAppearance: SegmentAppearance
-    
-    let ids = [UUID(),UUID(), UUID()]
+
+    let ids = [UUID(), UUID(), UUID()]
     var body: some View {
         SDDSSegment(
             items: (0..<3).map { index in
@@ -274,8 +272,8 @@ struct SegmentSizeLVertical: View {
 struct SegmentDisabled: View {
     var segmentItemAppearance: SegmentItemAppearance
     var segmentAppearance: SegmentAppearance
-    
-    let ids = [UUID(),UUID(), UUID()]
+
+    let ids = [UUID(), UUID(), UUID()]
     var body: some View {
         SDDSSegment(
             items: (0..<3).map { index in
@@ -304,8 +302,8 @@ struct SegmentDisabled: View {
 struct SegmentSizeSStretch: View {
     var segmentItemAppearance: SegmentItemAppearance
     var segmentAppearance: SegmentAppearance
-    
-    let ids = [UUID(),UUID(), UUID()]
+
+    let ids = [UUID(), UUID(), UUID()]
     var body: some View {
         SDDSSegment(
             items: (0..<3).map { index in
@@ -335,8 +333,8 @@ struct SegmentSizeLCounter: View {
     var segmentItemAppearance: SegmentItemAppearance
     var segmentAppearance: SegmentAppearance
     var counterAppearance: CounterAppearance
-    
-    let ids = [UUID(),UUID(), UUID()]
+
+    let ids = [UUID(), UUID(), UUID()]
     var body: some View {
         SDDSSegment(
             items: (0..<2).map { index in
@@ -349,7 +347,7 @@ struct SegmentSizeLCounter: View {
                     counterEnabled: true,
                     appearance: segmentItemAppearance,
                     counter: {
-                        AnyView (
+                        AnyView(
                             SDDSCounter(
                                 text: "123",
                                 appearance: counterAppearance,

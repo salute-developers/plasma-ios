@@ -40,4 +40,4 @@ struct ToastSize: CodeGenerationSize {
         self.paddingBottom = CGFloat.defaultContext
         self.shape = PathDrawerContextBuilder.defaultContext
     }
-} 
+}

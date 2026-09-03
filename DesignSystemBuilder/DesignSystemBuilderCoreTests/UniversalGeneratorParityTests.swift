@@ -71,7 +71,6 @@ final class UniversalGeneratorParityTests: XCTestCase {
         assertParity(typed: typedMirrorFields(typed), universal: universal.fields, scope: "Size")
     }
 
-
     private func typedMirrorFields(_ value: Any) -> [String: String] {
         var out: [String: String] = [:]
         for child in Mirror(reflecting: value).children {

@@ -13,7 +13,7 @@ final class BadgeViewModel: ComponentViewModel<BadgeVariationProvider> {
             self.selectVariation(variations.first)
         }
     }
-    
+
     var badgeStyle: BadgeStyle {
         switch badgeType {
         case .badge, .badgeClear, .badgeTransparent:
@@ -22,7 +22,7 @@ final class BadgeViewModel: ComponentViewModel<BadgeVariationProvider> {
             return .icon
         }
     }
-    
+
     init(
         theme: Theme = .sdddsServTheme,
         uiState: BadgeUiState = .init(),

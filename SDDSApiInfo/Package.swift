@@ -4,7 +4,7 @@ import CompilerPluginSupport
 
 let package = Package(
     name: "SDDSApiInfo",
-    platforms: [.iOS(.v14), .macOS(.v10_15)],
+    platforms: [.iOS(.v15), .macOS(.v10_15)],
     products: [.library(name: "SDDSApiInfo", targets: ["SDDSApiInfo"])],
     dependencies: [.package(url: "https://github.com/swiftlang/swift-syntax.git", from: "601.0.0")],
     targets: [

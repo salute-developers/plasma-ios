@@ -20,7 +20,7 @@ final class DrawerViewModel: ComponentViewModel<DrawerVariationProvider> {
             }
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: DrawerUiState = .init()) {
         super.init(
             variationProvider: DrawerVariationProvider(theme: theme, variationType: uiState.variationType),
@@ -41,4 +41,3 @@ final class DrawerViewModel: ComponentViewModel<DrawerVariationProvider> {
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }
-

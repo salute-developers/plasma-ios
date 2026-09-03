@@ -12,14 +12,14 @@ public struct SDDSSelectItem<LeftContent: View, RightContent: View>: View {
     public let onTap: (() -> Void)?
     public let leftContent: LeftContent
     public let rightContent: RightContent
-    
+
     @Environment(\.selectItemAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
-    
+
     @State private var isHovered: Bool = false
     @State private var isHighlighted: Bool = false
-    
+
     public init(
         label: String = "",
         title: String = "",
@@ -41,7 +41,7 @@ public struct SDDSSelectItem<LeftContent: View, RightContent: View>: View {
         self.leftContent = leftContent()
         self.rightContent = rightContent()
     }
-    
+
     public var body: some View {
         SDDSCell(
             appearance: appearance.cellAppearance,
@@ -81,15 +81,15 @@ public struct SDDSSelectItem<LeftContent: View, RightContent: View>: View {
             isHovered = hovering
         }
     }
-    
+
     private var appearance: SelectItemAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var resolvedHeight: CGFloat? {
         appearance.size.height > 0 ? appearance.size.height : nil
     }
-    
+
     private func currentColor(for buttonColor: ButtonColor) -> Color {
         var activeStates = Set<InteractiveState>()
         if isSelected { activeStates.insert(.selected) }
@@ -97,7 +97,7 @@ public struct SDDSSelectItem<LeftContent: View, RightContent: View>: View {
         if isHovered { activeStates.insert(.hovered) }
         return buttonColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
     }
-    
+
     @ViewBuilder
     private var selectionControl: some View {
         switch appearance.itemType {
@@ -131,10 +131,10 @@ private struct SelectItemCheckboxControl: View {
     let isEnabled: Bool
     let size: CGFloat
     let appearance: CheckboxAppearance
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
-    
+
     var body: some View {
         ZStack {
             if isSelected {
@@ -158,22 +158,22 @@ private struct SelectItemCheckboxControl: View {
         .frame(width: size, height: size)
         .opacity(isEnabled ? 1.0 : appearance.disabledAlpha)
     }
-    
+
     private var sizeScale: CGFloat {
         guard appearance.size.width > 0 else { return 1.0 }
         return size / appearance.size.width
     }
-    
+
     private var iconWidth: CGFloat {
         let width = appearance.size.toggleCheckedIconWidth * sizeScale
         return max(width, 0)
     }
-    
+
     private var iconHeight: CGFloat {
         let height = appearance.size.toggleCheckedIconHeight * sizeScale
         return max(height, 0)
     }
-    
+
     private var togglePath: Path {
         appearance.size.togglePathDrawer.path(
             in: CGRect(
@@ -184,27 +184,27 @@ private struct SelectItemCheckboxControl: View {
             )
         )
     }
-    
+
     private var paddings: CGFloat {
         appearance.size.togglePaddings * sizeScale * 2
     }
-    
+
     private var innerControlWidth: CGFloat {
         max(size - paddings, 0)
     }
-    
+
     private var innerControlHeight: CGFloat {
         max(size - paddings, 0)
     }
-    
+
     private var borderPathWidth: CGFloat {
         max(innerControlWidth - appearance.size.lineWidth, 0)
     }
-    
+
     private var borderPathHeight: CGFloat {
         max(innerControlHeight - appearance.size.lineWidth, 0)
     }
-    
+
     private var rectLocation: CGFloat {
         appearance.size.lineWidth / 2
     }
@@ -233,4 +233,3 @@ private struct SelectItemCheckboxControl: View {
         }
     }
 }
-

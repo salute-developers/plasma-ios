@@ -20,43 +20,43 @@ public protocol ButtonSizeConfiguration: SizeConfiguration, CustomDebugStringCon
      Высота кнопки.
      */
     var height: CGFloat { get }
-    
+
     /**
      Shape token скругления углов кнопки.
      */
     @ApiName("shape")
     var pathDrawer: PathDrawer { get }
-    
+
     /**
      Внутренние отступы кнопки.
      */
     @ApiValue("insets(_, paddingStart, _, paddingEnd)")
     var paddings: EdgeInsets { get }
-    
+
     /**
      Размер иконки, отображаемой в кнопке.
      */
     @ApiValue("size(iconSize, iconSize)")
     var iconSize: CGSize { get }
-    
+
     /**
      Размер спиннера загрузки в кнопке.
      */
     @ApiValue("size(spinnerSize, spinnerSize)")
     var spinnerSize: CGSize { get }
-    
+
     /**
      Горизонтальный промежуток между иконкой и текстом кнопки.
      */
     @ApiName("iconMargin")
     var iconHorizontalGap: CGFloat { get }
-    
+
     /**
      Горизонтальный промежуток между заголовком и подзаголовком кнопки.
      */
     @ApiName("valueMargin")
     var titleHorizontalGap: CGFloat { get }
-    
+
 }
 
 public struct DefaultButtonSize: ButtonSizeConfiguration {
@@ -70,9 +70,9 @@ public struct DefaultButtonSize: ButtonSizeConfiguration {
     public var debugDescription: String {
         return "Default Button Size"
     }
-    
+
     public init() {}
-    
+
     public init(size: ButtonSizeConfiguration) {
         self.height = size.height
         self.iconSize = size.iconSize

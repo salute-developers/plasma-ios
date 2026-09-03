@@ -11,9 +11,9 @@ final class TooltipViewModel: ComponentViewModel<TooltipVariationProvider> {
     @Published var triggerCentered: Bool = false
     @Published var placementMode: PopoverPlacementMode = .strict
     @Published var buttonPosition: PopoverButtonPosition = .center
-    @Published var duration: Int? = nil
+    @Published var duration: Int?
     @Published var text: String = "Tooltip text"
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: TooltipUiState = .init()) {
         super.init(variationProvider: TooltipVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)

@@ -17,7 +17,7 @@ struct ToolbarNoDivider: View {
     let appearance: ToolbarAppearance
     let buttonAppearance: ButtonAppearance
     let iconButtonAppearance: ButtonAppearance
-    
+
     var body: some View {
         VStack {
             SDDSToolbar(
@@ -34,7 +34,7 @@ struct ToolbarHasDivider: View {
     let appearance: ToolbarAppearance
     let buttonAppearance: ButtonAppearance
     let iconButtonAppearance: ButtonAppearance
-    
+
     var body: some View {
         VStack {
             SDDSToolbar(
@@ -67,7 +67,7 @@ private func toolbarData(
             )
         )
     ]
-    
+
     return [
         ToolbarSlotData(views: iconButtons),
         ToolbarSlotData(

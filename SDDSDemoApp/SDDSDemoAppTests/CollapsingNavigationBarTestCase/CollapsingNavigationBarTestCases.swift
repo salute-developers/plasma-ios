@@ -19,7 +19,7 @@ import SDDSIcons
  */
 struct CollapsingNavBarTitleDescStartAbsoulte: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     var body: some View {
         SDDSCollapsingNavigationBar(
             appearance: appearance,
@@ -60,7 +60,7 @@ struct CollapsingNavBarTitleDescStartAbsoulte: View {
  */
 struct CollapsingNavBarLongExpandedTitleDesc: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     var body: some View {
         ZStack(alignment: .top) {
             SDDSCollapsingNavigationBar(
@@ -112,9 +112,9 @@ struct CollapsingNavBarLongExpandedTitleDesc: View {
  */
 struct CollapsingNavBarLongContent: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     var body: some View {
-        
+
         SDDSCollapsingNavigationBar(
             appearance: appearance,
             expandedTitle: {
@@ -123,7 +123,7 @@ struct CollapsingNavBarLongContent: View {
                 }.padding(.top, 120)
             },
             expandedDescription: {
-                
+
                 Text("Description")
             },
             collapsedTitle: {
@@ -149,7 +149,7 @@ struct CollapsingNavBarLongContent: View {
                 }
             }
         )
-        
+
     }
 }
 
@@ -158,7 +158,7 @@ struct CollapsingNavBarLongContent: View {
  */
 struct CollapsingNavBarNoActionStartRelative: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     var body: some View {
         SDDSCollapsingNavigationBar(
             appearance: appearance,
@@ -199,19 +199,19 @@ struct CollapsingNavBarNoActionStartRelative: View {
  */
 struct CollapsingNavigationBarLongDescriptionCollapsed: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     @ObservedObject var state: CollapsingNavigationBarState
-    
+
     init(appearance: CollapsingNavigationBarAppearance) {
         self.appearance = appearance
-        
+
         let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
-        
+
         collapsedState.heightOffset = collapsedState.heightOffsetLimit
         collapsedState.contentOffset = -collapsedState.heightOffsetLimit
         self.state = collapsedState
     }
-    
+
     var body: some View {
         ZStack(alignment: .top) {
             SDDSCollapsingNavigationBar(
@@ -232,9 +232,9 @@ struct CollapsingNavigationBarLongDescriptionCollapsed: View {
                 collapsedDescription: {
                     VStack {
                         Text("""
-There is no one who loves 
-pain itself, who seeks 
-after it, and wants to have it, 
+There is no one who loves
+pain itself, who seeks
+after it, and wants to have it,
 simply because it is pain...
 """)
                         .opacity(1)
@@ -268,19 +268,19 @@ simply because it is pain...
  */
 struct CollapsingNavigationBarNoActionStartAbsolute: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     @ObservedObject var state: CollapsingNavigationBarState
-    
+
     init(appearance: CollapsingNavigationBarAppearance) {
         self.appearance = appearance
-        
+
         let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
-        
+
         collapsedState.heightOffset = collapsedState.heightOffsetLimit
         collapsedState.contentOffset = -collapsedState.heightOffsetLimit
         self.state = collapsedState
     }
-    
+
     var body: some View {
         ZStack(alignment: .top) {
             SDDSCollapsingNavigationBar(
@@ -322,19 +322,19 @@ struct CollapsingNavigationBarNoActionStartAbsolute: View {
  */
 struct CollapsingNavigationBarCollapsedTextEndAbsolute: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     @ObservedObject var state: CollapsingNavigationBarState
-    
+
     init(appearance: CollapsingNavigationBarAppearance) {
         self.appearance = appearance
-        
+
         let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
-        
+
         collapsedState.heightOffset = collapsedState.heightOffsetLimit
         collapsedState.contentOffset = -collapsedState.heightOffsetLimit
         self.state = collapsedState
     }
-    
+
     var body: some View {
         ZStack(alignment: .top) {
             SDDSCollapsingNavigationBar(
@@ -376,19 +376,19 @@ struct CollapsingNavigationBarCollapsedTextEndAbsolute: View {
  */
 struct CollapsingNavigationBarEndAbsolute: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     @ObservedObject var state: CollapsingNavigationBarState
-    
+
     init(appearance: CollapsingNavigationBarAppearance) {
         self.appearance = appearance
-        
+
         let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
-        
+
         collapsedState.heightOffset = collapsedState.heightOffsetLimit
         collapsedState.contentOffset = -collapsedState.heightOffsetLimit
         self.state = collapsedState
     }
-    
+
     var body: some View {
         ZStack(alignment: .top) {
             SDDSCollapsingNavigationBar(
@@ -430,19 +430,19 @@ struct CollapsingNavigationBarEndAbsolute: View {
  */
 struct CollapsingNavigationBarStartAbsolute: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     @ObservedObject var state: CollapsingNavigationBarState
-    
+
     init(appearance: CollapsingNavigationBarAppearance) {
         self.appearance = appearance
-        
+
         let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
-        
+
         collapsedState.heightOffset = collapsedState.heightOffsetLimit
         collapsedState.contentOffset = -collapsedState.heightOffsetLimit
         self.state = collapsedState
     }
-    
+
     var body: some View {
         ZStack(alignment: .top) {
             SDDSCollapsingNavigationBar(
@@ -484,19 +484,19 @@ struct CollapsingNavigationBarStartAbsolute: View {
  */
 struct CollapsingNavigationBarCollapsedCenterAbsolute: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     @ObservedObject var state: CollapsingNavigationBarState
-    
+
     init(appearance: CollapsingNavigationBarAppearance) {
         self.appearance = appearance
-        
+
         let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
-        
+
         collapsedState.heightOffset = collapsedState.heightOffsetLimit
         collapsedState.contentOffset = -collapsedState.heightOffsetLimit
         self.state = collapsedState
     }
-    
+
     var body: some View {
         ZStack {
             SDDSCollapsingNavigationBar(
@@ -548,19 +548,19 @@ struct CollapsingNavigationBarCollapsedCenterAbsolute: View {
  */
 struct CollapsingNavigationBarCollapsedEndAbsolute: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     @ObservedObject var state: CollapsingNavigationBarState
-    
+
     init(appearance: CollapsingNavigationBarAppearance) {
         self.appearance = appearance
-        
+
         let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
-        
+
         collapsedState.heightOffset = collapsedState.heightOffsetLimit
         collapsedState.contentOffset = -collapsedState.heightOffsetLimit
         self.state = collapsedState
     }
-    
+
     var body: some View {
         ZStack(alignment: .top) {
             SDDSCollapsingNavigationBar(
@@ -635,18 +635,18 @@ private let longTitle = "There is no one who loves pain itself, who seeks after 
 
 struct CollapsingNavBarCollapsed: View {
     let appearance: CollapsingNavigationBarAppearance
-    
+
     @ObservedObject var state: CollapsingNavigationBarState
-    
+
     init(appearance: CollapsingNavigationBarAppearance) {
         self.appearance = appearance
-        
+
         let collapsedState = CollapsingNavigationBarState(heightOffsetLimit: -120)
         collapsedState.heightOffset = collapsedState.heightOffsetLimit
         collapsedState.contentOffset = -collapsedState.heightOffsetLimit
         self.state = collapsedState
     }
-    
+
     var body: some View {
         SDDSCollapsingNavigationBar(
             appearance: appearance,

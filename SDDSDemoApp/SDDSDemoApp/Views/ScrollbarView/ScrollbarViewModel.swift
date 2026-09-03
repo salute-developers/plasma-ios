@@ -17,7 +17,7 @@ final class ScrollbarViewModel: ComponentViewModel<ScrollbarVariationProvider> {
         hoverExpand = uiState.hoverExpand
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     var text: String {
         return
 """

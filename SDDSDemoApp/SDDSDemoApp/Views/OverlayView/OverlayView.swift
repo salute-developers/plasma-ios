@@ -7,11 +7,11 @@ import SandboxSwiftUI
 struct OverlayView: View {
     @ObservedObject private var viewModel: OverlayViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: OverlayViewModel = OverlayViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         List {
             Section {
@@ -20,7 +20,7 @@ struct OverlayView: View {
                     .overlay(isPresented: $viewModel.isPresent, appearance: viewModel.appearance)
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
                 VStack {
@@ -37,9 +37,9 @@ struct OverlayView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
     }
-    
+
     private var segmentView: some View {
         guard !viewModel.theme.segmentVariations.isEmpty, !viewModel.theme.segmentItemVariations.isEmpty else {
             return AnyView(

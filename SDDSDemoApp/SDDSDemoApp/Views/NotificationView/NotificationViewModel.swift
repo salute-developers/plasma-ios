@@ -12,7 +12,7 @@ final class NotificationViewModel: ComponentViewModel<NotificationVariationProvi
             self.selectVariation(variations.first)
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: NotificationUiState = .init()) {
         super.init(
             variationProvider: NotificationVariationProvider(theme: theme, layout: uiState.layout),

@@ -31,8 +31,7 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     public var checkedIconColor: StatefulFillStyle
     public var toggleIndeterminateIcon: PathDrawer?
     public var toggleIndeterminateIconColor: StatefulFillStyle
-    
-    
+
     public init(
         size: SelectionControlSizeConfiguration = ZeroSelectionControlSize(),
         titleTypography: TypographyConfiguration = .default,
@@ -104,11 +103,11 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
             toggleIndeterminateIconColor: toggleIndeterminateIconColor.statefulColor.statefulFillStyle
         )
     }
-    
+
     public static func == (lhs: CheckboxAppearance, rhs: CheckboxAppearance) -> Bool {
         lhs.id == rhs.id
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

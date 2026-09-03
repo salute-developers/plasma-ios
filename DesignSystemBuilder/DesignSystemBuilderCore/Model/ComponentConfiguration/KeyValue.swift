@@ -38,7 +38,7 @@ struct KeyValue<T: Codable>: Codable {
     let `default`: Double?
     let value: T?
     let states: [ValueState<T>]?
-    
+
     func value(for statesSet: [ComponentState]) -> ValueState<T>? {
         let requestedStates = Set(statesSet)
         let defaultState = ValueState<T>(state: [], value: value)

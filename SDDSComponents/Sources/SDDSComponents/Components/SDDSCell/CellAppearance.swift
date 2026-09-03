@@ -42,7 +42,7 @@ public struct CellAppearance {
     public var checkboxAppearance: CheckboxAppearance
     public var radioboxAppearance: RadioboxAppearance
     public var switchAppearance: SwitchAppearance
-    
+
     public init(
         size: CellSizeConfiguration = ZeroCellSize(),
         labelTypography: TypographyConfiguration = .default,

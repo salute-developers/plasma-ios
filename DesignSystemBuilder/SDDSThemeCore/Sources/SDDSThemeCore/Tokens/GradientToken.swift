@@ -5,7 +5,7 @@ public struct LinearGradient {
     public let locations: [CGFloat]
     public let colors: [Color]
     public let angle: CGFloat
-    
+
     public init(locations: [CGFloat], colors: [Color], angle: CGFloat) {
         self.locations = locations
         self.colors = colors
@@ -19,7 +19,7 @@ public struct RadialGradient {
     public let center: CGPoint
     public let startRadius: CGFloat
     public let endRadius: CGFloat
-    
+
     public init(locations: [CGFloat], colors: [Color], center: CGPoint, startRadius: CGFloat, endRadius: CGFloat) {
         self.locations = locations
         self.colors = colors
@@ -35,7 +35,7 @@ public struct AngularGradient {
     public let startAngle: CGFloat
     public let endAngle: CGFloat
     public let center: CGPoint
-    
+
     public init(locations: [CGFloat], colors: [Color], startAngle: CGFloat, endAngle: CGFloat, center: CGPoint) {
         self.locations = locations
         self.colors = colors
@@ -47,7 +47,7 @@ public struct AngularGradient {
 
 public struct PlainColor {
     public let background: Color
-    
+
     public init(background: Color) {
         self.background = background
     }
@@ -105,7 +105,7 @@ public struct GradientToken {
     public let description: String
     public let darkGradients: [GradientKind]
     public let lightGradients: [GradientKind]
-    
+
     public init(id: String = "", description: String = "", darkGradients: [GradientKind] = [], lightGradients: [GradientKind] = []) {
         self.id = id
         self.description = description

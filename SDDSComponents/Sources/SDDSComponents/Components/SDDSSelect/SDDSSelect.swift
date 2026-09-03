@@ -17,7 +17,7 @@ public struct SelectOption: Identifiable, Hashable {
     public let subtitle: String
     public let isSelected: Bool
     public let isEnabled: Bool
-    
+
     public init(
         id: UUID = UUID(),
         label: String = "",
@@ -57,23 +57,23 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
     public let triggerAlignment: PopoverAlignment
     public let placementMode: PopoverPlacementMode
     public let onOptionTap: ((Int) -> Void)?
-    
+
     private let headerContent: () -> HeaderContent
     private let footerContent: () -> FooterContent
     private let loaderContent: () -> LoaderContent
     private let emptyStateContent: () -> EmptyStateContent
-    
+
     @Environment(\.selectAppearance) private var environmentAppearance
-    
+
     @State private var triggerWidth: CGFloat = 0
     @State private var triggerHeight: CGFloat = 0
     @State private var measuredTextFieldInputFrame: CGRect = .zero
     @State private var contentHeight: CGFloat = 0
     @State private var loaderHeight: CGFloat = 0
     @State private var dropdownScrollOffset: CGFloat = 0
-    
+
     private let maxDropdownHeight: CGFloat = 400
-    
+
     public init(
         triggerStyle: SelectTriggerStyle = .textField(TextFieldData()),
         text: String = "",
@@ -117,7 +117,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
         self.loaderContent = loaderContent
         self.emptyStateContent = emptyStateContent
     }
-    
+
     public var body: some View {
         stableTrigger
             .id("selectTrigger")
@@ -159,11 +159,11 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 resetMeasuredDropdownState()
             }
     }
-    
+
     @ViewBuilder
     private var stableTrigger: some View {
         ZStack(alignment: .leading) {
-            if case .textField(_) = triggerStyle, triggerWidth > 1, triggerHeight > 1 {
+            if case .textField = triggerStyle, triggerWidth > 1, triggerHeight > 1 {
                 Color.clear
                     .frame(width: triggerWidth, height: triggerHeight)
             }
@@ -180,18 +180,18 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 }
         }
     }
-    
+
     private var appearance: SelectAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var calculatedContentHeight: CGFloat? {
         let optionHeight = appearance.selectItemAppearance.size.height
         let estimatedOptionsHeight = optionHeight > 0 ? CGFloat(options.count) * optionHeight : 0
         let estimatedLoaderHeight = isLoading ? loaderHeight : 0
-        
+
         let measuredHeight = contentHeight + estimatedLoaderHeight
-        
+
         let baseHeight: CGFloat
         if options.isEmpty {
             baseHeight = measuredHeight
@@ -205,7 +205,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
         }
         return min(baseHeight, maxDropdownHeight)
     }
-    
+
     private var resolvedListHeight: CGFloat? {
         if let calculatedContentHeight {
             return calculatedContentHeight
@@ -214,7 +214,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
         guard optionHeight > 0, !options.isEmpty else { return nil }
         return min(CGFloat(options.count) * optionHeight, maxDropdownHeight)
     }
-    
+
     private var resolvedDropdownWidth: CGFloat? {
         let width = triggerWidth > 0 ? triggerWidth : appearance.dropdownAppearance.size.width
         return width > 0 ? width : nil
@@ -229,11 +229,11 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
         guard let height, height > 0 else { return nil }
         return CGSize(width: width, height: height)
     }
-    
+
     private var selectionContentId: String {
         options.map { $0.isSelected ? "1" : "0" }.joined()
     }
-    
+
     private var textFieldTriggerRenderKey: String {
         let chipIDs = chips.map { $0.id.uuidString }.joined(separator: ",")
         return "\(resolvedSelectionMode)-\(text)-\(chipIDs)"
@@ -245,14 +245,14 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
             set: { isDropdownPresented = $0 }
         )
     }
-    
+
     private var resolvedSelectionMode: SelectSelectionMode {
         if let selectionMode {
             return selectionMode
         }
         return appearance.selectItemAppearance.itemType == .single ? .single : .multiple
     }
-    
+
     private var textFieldTriggerAppearance: TextFieldAppearance {
         var adjustedAppearance = resolvedTextFieldData.appearance ?? appearance.textFieldAppearance
         if isDropdownPresented && !readOnly && !disabled {
@@ -268,25 +268,25 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
         }
         return adjustedAppearance
     }
-    
+
     private var resolvedTextFieldData: TextFieldData {
         switch triggerStyle {
         case .textField(let data):
             return data
-        case .button(_):
+        case .button:
             return TextFieldData()
         }
     }
-    
+
     private var resolvedButtonData: ButtonData {
         switch triggerStyle {
         case .button(let data):
             return data
-        case .textField(_):
+        case .textField:
             return ButtonData(title: "", appearance: appearance.buttonAppearance, action: {})
         }
     }
-    
+
     private var textFieldTriggerValue: TextFieldValue {
         switch resolvedSelectionMode {
         case .single:
@@ -298,7 +298,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
             return .multiple("", resolvedChips)
         }
     }
-    
+
     private var resolvedChips: [ChipData] {
         let chipAppearance = appearance.textFieldAppearance.chipAppearance
         return chips.map { chip in
@@ -314,7 +314,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
             )
         }
     }
-    
+
     private var buttonTitle: String {
         switch resolvedSelectionMode {
         case .single:
@@ -324,22 +324,22 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
             return titles.isEmpty ? resolvedButtonData.title : titles
         }
     }
-    
+
     private var resolvedButtonTitle: String {
         let availableWidth = max(buttonContentAvailableWidth, 0)
         return truncated(buttonTitle, maxWidth: availableWidth)
     }
-    
+
     private var buttonContentAvailableWidth: CGFloat {
         let widthBase = triggerWidth > 0 ? triggerWidth : appearance.dropdownAppearance.size.width
         let paddings = appearance.buttonAppearance.size.paddings
         return widthBase - paddings.leading - paddings.trailing
     }
-    
+
     @ViewBuilder
     private var trigger: some View {
         switch triggerStyle {
-        case .textField(_):
+        case .textField:
             let textFieldData = resolvedTextFieldData
             SDDSTextField(
                 value: .constant(textFieldTriggerValue),
@@ -390,7 +390,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 }
             )
             .frame(maxWidth: .infinity, alignment: .leading)
-        case .button(_):
+        case .button:
             let buttonData = resolvedButtonData
             SDDSButton(
                 title: resolvedButtonTitle,
@@ -419,26 +419,26 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
             .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
-    
+
     private func toggleDropdownIfAllowed() {
         guard !disabled, !readOnly else { return }
         isDropdownPresented.toggle()
     }
-    
+
     private func handleTextFieldTriggerTap() {
         guard !disabled, !readOnly else { return }
         isDropdownPresented.toggle()
     }
-    
+
     private func handleTriggerTap() {
         switch triggerStyle {
-        case .textField(_):
+        case .textField:
             handleTextFieldTriggerTap()
-        case .button(_):
+        case .button:
             toggleDropdownIfAllowed()
         }
     }
-    
+
     private var dropdownAppearance: DropdownMenuAppearance {
         let selectAppearance = appearance
         var appearance = selectAppearance.dropdownAppearance
@@ -447,15 +447,15 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
         size.shape = appearance.size.shape
         size.width = triggerWidth > 0 ? triggerWidth : appearance.size.width
         appearance.size = size
-        
+
         return appearance
     }
-    
+
     private var textFieldTriggerFrameInsets: EdgeInsets {
-        guard case .textField(_) = triggerStyle else {
+        guard case .textField = triggerStyle else {
             return .init()
         }
-        
+
         if measuredTextFieldInputFrame.width > 1, measuredTextFieldInputFrame.height > 1,
            triggerWidth > 1, triggerHeight > 1 {
             let top = max(measuredTextFieldInputFrame.minY, 0)
@@ -464,29 +464,29 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
             let trailing = max(triggerWidth - measuredTextFieldInputFrame.maxX, 0)
             return EdgeInsets(top: top, leading: leading, bottom: bottom, trailing: trailing)
         }
-        
+
         let textFieldAppearance = resolvedTextFieldData.appearance ?? appearance.textFieldAppearance
         let textFieldData = resolvedTextFieldData
         let titleTypography = textFieldAppearance.titleTypography
             .typography(with: textFieldAppearance.size)
         let captionTypography = textFieldAppearance.captionTypography
             .typography(with: textFieldAppearance.size)
-        
+
         let hasOuterTitle = textFieldAppearance.labelPlacement == .outer && !resolvedTextFieldData.title.isEmpty
         let hasCaption = !resolvedTextFieldData.caption.isEmpty
-        
+
         let rawTopInset = hasOuterTitle
             ? textFieldAppearance.size.titleBottomPadding + (titleTypography?.lineHeight ?? 0)
             : 0
         let rawBottomInset = hasCaption
             ? textFieldAppearance.size.captionTopPadding + (captionTypography?.lineHeight ?? 0)
             : 0
-        
+
         // Match SDDSTextField.fieldView vertical size:
         // fieldHeight (+ dividerHeight when clear layout and divider enabled).
         let fieldViewHeight = textFieldAppearance.size.fieldHeight
             + ((textFieldData.layout == .clear && textFieldData.divider) ? textFieldAppearance.size.dividerHeight : 0)
-        
+
         let normalizedInsets = normalizedInputInsets(
             top: rawTopInset,
             bottom: rawBottomInset,
@@ -495,11 +495,11 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
             hasOuterTitle: hasOuterTitle,
             hasCaption: hasCaption
         )
-        
+
         // Anchor popover to the input box area, not full textfield (title+caption).
         return EdgeInsets(top: normalizedInsets.top, leading: 0, bottom: normalizedInsets.bottom, trailing: 0)
     }
-    
+
     private func normalizedInputInsets(
         top: CGFloat,
         bottom: CGFloat,
@@ -510,7 +510,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
     ) -> (top: CGFloat, bottom: CGFloat) {
         let measuredNonFieldHeight = max(measuredTotalHeight - fieldHeight, 0)
         let rawTotal = max(top + bottom, 0)
-        
+
         if measuredNonFieldHeight > 0 {
             if hasOuterTitle && hasCaption {
                 if rawTotal > 0 {
@@ -525,17 +525,17 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 return (0, measuredNonFieldHeight)
             }
         }
-        
+
         return (top, bottom)
     }
-    
+
     @ViewBuilder
     private var dropdownContent: some View {
         VStack(spacing: 0) {
             if !isHeaderEmpty {
                 headerContent()
             }
-            
+
             if options.isEmpty {
                 if shouldShowEmptyState {
                     emptyStateContent()
@@ -548,7 +548,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 Group {
                     ScrollView {
                         LazyVStack(spacing: 0) {
-                            ForEach(Array(options.enumerated()), id: \.element.id) { index, option in
+                            ForEach(Array(options.enumerated()), id: \.element.id) { _, option in
                                 SDDSSelectItem(
                                     label: option.label,
                                     title: option.title,
@@ -560,7 +560,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                                 )
 
                             }
-                            
+
                             if isLoading {
                                 loaderContent()
                                     .readSize { size in
@@ -591,12 +591,12 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                                 guard abs(value.translation.height) < 8, abs(value.translation.width) < 8 else { return }
                                 let itemHeight = appearance.selectItemAppearance.size.height
                                 guard itemHeight > 0 else { return }
-                                
+
                                 let adjustedY = value.location.y + dropdownScrollOffset
                                 let index = Int(adjustedY / itemHeight)
                                 guard index >= 0, index < options.count else { return }
                                 guard options[index].isEnabled, !disabled, !readOnly else { return }
-                                
+
                                 handleOptionTap(index)
                             }
                     )
@@ -605,7 +605,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .frame(maxHeight: maxDropdownHeight)
             }
-            
+
             if !isFooterEmpty {
                 footerContent()
             }
@@ -613,60 +613,60 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
         .shape(pathDrawer: appearance.dropdownAppearance.size.shape)
         .clipped()
     }
-    
+
     private var isHeaderEmpty: Bool {
         HeaderContent.self == EmptyView.self
     }
-    
+
     private var isFooterEmpty: Bool {
         FooterContent.self == EmptyView.self
     }
-    
+
     private func handleOptionTap(_ index: Int) {
         onOptionTap?(index)
         if closeOnSingleSelection && resolvedSelectionMode == .single && appearance.selectItemAppearance.itemType == .single {
             isDropdownPresented = false
         }
     }
-    
+
     private var dropdownLayoutKey: String {
         "\(triggerStyleKindKey)-\(resolvedSelectionMode)-\(appearance.selectItemAppearance.size.height)-\(isLoading)-\(shouldShowEmptyState)-\(options.count)"
     }
-    
+
     private var triggerStyleKindKey: String {
         switch triggerStyle {
-        case .textField(_):
+        case .textField:
             return "textField"
-        case .button(_):
+        case .button:
             return "button"
         }
     }
-    
+
     private func resetMeasuredDropdownState() {
         contentHeight = 0
         loaderHeight = 0
         dropdownScrollOffset = 0
     }
-    
+
     private func truncated(_ text: String, maxWidth: CGFloat) -> String {
         guard maxWidth > 0 else { return text }
         guard let typography = appearance.buttonAppearance.titleTypography.typography(with: appearance.buttonAppearance.size) else {
             return text
         }
-        
+
         let font = typography.uiFont
         let attributes: [NSAttributedString.Key: Any] = [.font: font]
-        
+
         let textWidth = (text as NSString).size(withAttributes: attributes).width
         if textWidth <= maxWidth {
             return text
         }
-        
+
         let ellipsis = "..."
         let ellipsisWidth = (ellipsis as NSString).size(withAttributes: attributes).width
         let targetWidth = max(maxWidth - ellipsisWidth, 0)
         let characters = Array(text)
-        
+
         var low = 0
         var high = characters.count
         while low < high {
@@ -679,8 +679,7 @@ public struct SDDSSelect<HeaderContent: View, FooterContent: View, LoaderContent
                 high = mid - 1
             }
         }
-        
+
         return String(characters.prefix(low)) + ellipsis
     }
 }
-

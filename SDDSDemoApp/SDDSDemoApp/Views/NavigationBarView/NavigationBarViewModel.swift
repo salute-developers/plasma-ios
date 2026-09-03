@@ -20,9 +20,9 @@ final class NavigationBarViewModel: ComponentViewModel<NavigationBarMainPageVari
             }
         }
     }
-    
+
     var internalPageViewModel: ComponentViewModel<NavigationBarInternalPageVariationProvider>?
-    
+
     var navigationBarType: NavigationBarType {
         switch pageType {
         case .mainPage:
@@ -31,7 +31,7 @@ final class NavigationBarViewModel: ComponentViewModel<NavigationBarMainPageVari
             return .internalPage(appearance: internalPageViewModel?.appearance ?? NavigationBarInternalPageAppearance())
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: NavigationBarUiState = .init()) {
         let provider = NavigationBarMainPageVariationProvider(theme: theme)
         super.init(variationProvider: provider, theme: theme)
@@ -64,30 +64,30 @@ final class NavigationBarViewModel: ComponentViewModel<NavigationBarMainPageVari
             appearance: uiState.appearance
         )
     }
-    
+
     private func subscribeToInternalPageViewModel() {
         guard let internalPageViewModel = internalPageViewModel else { return }
-        
+
         internalPageViewModel.objectWillChange
             .sink { [weak self] _ in
                 self?.objectWillChange.send()
             }
             .store(in: &cancellables)
     }
-    
+
     override func selectTheme(_ theme: Theme) {
         super.selectTheme(theme)
         internalPageViewModel?.selectTheme(theme)
     }
-    
+
     private func updateVariationProvider() {
         let currentTheme = theme
-        
+
         // Очищаем старые подписки
         cancellables.removeAll()
-        
+
         internalPageViewModel = ComponentViewModel(variationProvider: NavigationBarInternalPageVariationProvider(theme: currentTheme))
-        
+
         if let internalPageViewModel = internalPageViewModel,
            let firstVariation = internalPageViewModel.variations.first {
             internalPageViewModel.selectVariation(firstVariation)
@@ -95,11 +95,11 @@ final class NavigationBarViewModel: ComponentViewModel<NavigationBarMainPageVari
         if let firstVariation = variations.first {
             selectVariation(firstVariation)
         }
-        
+
         // Подписываемся на новый internalPageViewModel
         subscribeToInternalPageViewModel()
     }
-    
+
     func selectVariation(at index: Int) {
         switch pageType {
         case .mainPage:
@@ -111,39 +111,39 @@ final class NavigationBarViewModel: ComponentViewModel<NavigationBarMainPageVari
             internalPageViewModel.selectVariation(internalPageViewModel.variations[index])
         }
     }
-    
+
     func updateTextPlacement(_ placement: NavigationBarTextPlacement) {
         textPlacement = placement
-        
+
         // Если выбран bottom, то align может быть только center
         if placement == .bottom && textAlign != .center {
             textAlign = .center
         }
-        
+
         // Если выбран inline content, принудительно ставим inline placement и center align
         if contentPlacement == .inline {
             textPlacement = .inline
             textAlign = .center
         }
     }
-    
+
     func updateTextAlign(_ align: NavigationBarTextAlign) {
         textAlign = align
-        
+
         // Left и Right работают только с inline placement
         if (align == .left || align == .right) && textPlacement != .inline {
             textPlacement = .inline
         }
-        
+
         // С inline content только center
         if contentPlacement == .inline {
             textAlign = .center
         }
     }
-    
+
     func updateContentPlacement(_ placement: NavigationBarContentPlacement) {
         contentPlacement = placement
-        
+
         // Inline content только с inline placement и center align
         if placement == .inline {
             textPlacement = .inline

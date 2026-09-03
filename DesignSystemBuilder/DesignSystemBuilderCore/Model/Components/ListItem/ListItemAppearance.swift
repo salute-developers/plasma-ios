@@ -3,7 +3,7 @@ import Foundation
 struct ListItemAppearance: CodeGenerationAppearance {
     typealias Variation = ListItemConfiguration.Variation
     typealias Props = ListItemProps
-    
+
     var labelTypography: String?
     var titleTypography: String?
     var subtitleTypography: String?
@@ -15,16 +15,16 @@ struct ListItemAppearance: CodeGenerationAppearance {
     var backgroundColor: String?
     var disabledAlpha: String?
     var counterAppearance: String?
-    
+
     init(variation: ListItemConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
-    
+
     init(props: ListItemProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return
         }
-        
+
         self.labelTypography = TypographyTokenContextBuilder(string: props.labelStyle?.value, id: id, component: component).context
         self.titleTypography = TypographyTokenContextBuilder(string: props.titleStyle?.value, id: id, component: component).context
         self.subtitleTypography = TypographyTokenContextBuilder(string: props.subtitleStyle?.value, id: id, component: component).context
@@ -35,9 +35,9 @@ struct ListItemAppearance: CodeGenerationAppearance {
         self.disclosureIcon = ImageContextBuilder(props.disclosureIcon?.value).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
         self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
-        
+
         if let counterStyle = props.counterStyle?.value {
             self.counterAppearance = ComponentStyleContextBuilder(counterStyle).context
         }
     }
-} 
+}

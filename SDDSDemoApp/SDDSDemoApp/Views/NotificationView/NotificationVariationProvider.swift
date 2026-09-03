@@ -8,15 +8,15 @@ enum NotificationLayout: String, CaseIterable {
 
 final class NotificationVariationProvider: VariationProvider {
     typealias Appearance = NotificationAppearance
-    
+
     var theme: Theme
     var layout: NotificationLayout
-    
+
     init(theme: Theme = .sdddsServTheme, layout: NotificationLayout) {
         self.theme = theme
         self.layout = layout
     }
-    
+
     var variations: [Variation<NotificationAppearance>] {
         switch layout {
         case .compact:
@@ -25,7 +25,7 @@ final class NotificationVariationProvider: VariationProvider {
             theme.notificationLooseVariations
         }
     }
-    
+
     var defaultValue: NotificationAppearance {
         theme.notificationCompactVariations.first?.appearance ?? NotificationAppearance()
     }

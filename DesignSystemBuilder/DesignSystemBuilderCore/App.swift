@@ -230,10 +230,7 @@ public final class App {
             InstallFontsCommand(
                 fontFamiliesContainer: fontFamiliesContainer,
                 fontsURL: fontsURL(config: themeConfig),
-                copyFontsScriptURL: copyFontsScriptURL,
-                registerFontsScriptURL: registerFontsScriptURL,
                 sddsDesignSystemBuilderXcodeProjectURL: xcodeProjectURL,
-                themePlistURL: themePlistURL(config: themeConfig),
                 fontFamilyOverride: themeConfig.fontFamilyOverride
             )
         ]

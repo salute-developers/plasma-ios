@@ -10,15 +10,15 @@ enum TabBarType: String, CaseIterable {
 
 final class TabBarVariationProvider: VariationProvider {
     typealias Appearance = TabBarAppearance
-    
+
     var theme: Theme
     var tabBarType: TabBarType
-    
+
     init(theme: Theme = .sdddsServTheme, tabBarType: TabBarType) {
         self.theme = theme
         self.tabBarType = tabBarType
     }
-    
+
     var variations: [Variation<TabBarAppearance>] {
         switch tabBarType {
         case .solid:
@@ -31,7 +31,7 @@ final class TabBarVariationProvider: VariationProvider {
             theme.tabBarHasLabelSolidVariations
         }
     }
-    
+
     var defaultValue: TabBarAppearance {
         TabBarAppearance.defaultValue
     }

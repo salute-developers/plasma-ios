@@ -2,7 +2,7 @@ import Foundation
 
 struct CodeFieldProps: MergeableConfiguration, Codable {
     typealias Props = CodeFieldProps
-    
+
     var itemSpacing: KeyValue<Double>?
     var groupSpacing: KeyValue<Double>?
     var valueColor: ColorKeyValue?
@@ -18,4 +18,4 @@ struct CodeFieldProps: MergeableConfiguration, Codable {
     var height: KeyValue<Double>?
     var captionStyle: KeyValue<String>?
     var valueStyle: KeyValue<String>?
-} 
+}

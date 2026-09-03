@@ -22,7 +22,7 @@ struct ChipGroupView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-            
+
             Section(header: Text("ChipGroup")) {
                 VariationsView(viewModel: viewModel)
             }
@@ -39,7 +39,6 @@ struct ChipGroupView: View {
             Toggle("Icon Image", isOn: $viewModel.iconImageEnabled)
             Toggle("Button Image", isOn: $viewModel.buttomImageEnabled)
 
-            
             Section {
                 ForEach(viewModel.chips.indices, id: \.self) { index in
                     HStack {
@@ -74,7 +73,7 @@ struct ChipGroupView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("ChipGroup")
     }
 }

@@ -10,7 +10,7 @@ class EnsureDoubleInRangeNode: EnsureValueNode {
         guard let minValue = Double(arguments[1]), let maxValue = Double(arguments[2]) else {
             throw TemplateSyntaxError("Invalid range for ensure_double_in_range")
         }
-        
+
         let flatContext = context.flatten()
         if let value = getValue(forKeyPath: variableName, from: flatContext), let doubleValue = value as? Double, doubleValue >= minValue, doubleValue <= maxValue {
             return ""

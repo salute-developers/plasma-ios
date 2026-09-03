@@ -4,7 +4,7 @@ public struct SegmentItemAccessibility {
     public var label: String
     public var hint: String
     public var value: String
-    
+
     /**
      Инициализатор для создания параметров доступности кнопки.
      
@@ -18,7 +18,7 @@ public struct SegmentItemAccessibility {
         self.hint = hint
         self.value = value
     }
-    
+
     /**
      Инициализатор для создания параметров доступности кнопки с пустыми значениями.
      */

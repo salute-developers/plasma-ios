@@ -9,7 +9,6 @@ enum NavigationBarStory: Story {
     static let title = "NavigationBar"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: NavigationBarUiState, theme: Theme) -> some View {
         NavigationBarView(viewModel: NavigationBarViewModel(theme: theme, uiState: state))

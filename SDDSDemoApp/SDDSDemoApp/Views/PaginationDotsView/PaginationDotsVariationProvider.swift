@@ -3,13 +3,13 @@ import SDDSComponents
 
 final class PaginationDotsVariationProvider: VariationProvider {
     typealias Appearance = PaginationDotsAppearance
-    
+
     var theme: Theme
-    
+
     init(theme: Theme = .sdddsServTheme) {
         self.theme = theme
     }
-    
+
     var variations: [Variation<PaginationDotsAppearance>] {
         let horizontal = theme.paginationDotsHorizontalVariations.map {
             Variation(
@@ -29,7 +29,7 @@ final class PaginationDotsVariationProvider: VariationProvider {
         }
         return horizontal + vertical
     }
-    
+
     var defaultValue: PaginationDotsAppearance {
         PaginationDotsAppearance.defaultValue
     }

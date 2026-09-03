@@ -127,7 +127,7 @@ final class TokenMetaResolverTests: XCTestCase {
         let tokens = [
             token(.color, "dark.text.primary"),
             token(.fontFamily, "display"),
-            token(.color, "dark.x", enabled: false),
+            token(.color, "dark.x", enabled: false)
         ]
         let entries = resolver(color: ["textPrimary": ["dark": "#080808"]]).entries(for: tokens)
         XCTAssertEqual(entries.count, 1)

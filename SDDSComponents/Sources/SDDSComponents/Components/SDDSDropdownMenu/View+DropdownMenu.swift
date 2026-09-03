@@ -79,13 +79,13 @@ public extension View {
             content: content
         )
     }
-    
+
     private func popoverSize(from appearance: DropdownMenuAppearance) -> PopoverSizeConfiguration {
         var size = ZeroPopoverSize()
         size.pathDrawer = appearance.size.shape
         size.width = appearance.size.width
         size.offset = appearance.size.offset
-        
+
         return size
     }
 }

@@ -10,7 +10,7 @@ public struct SDDSCodeInput: View {
     let captionAlignment: CodeFieldAlignment
     let keyboardType: UIKeyboardType
     let isHidden: Bool
-    
+
     private var _appearance: CodeInputAppearance?
     @Environment(\.codeInputAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
@@ -19,7 +19,7 @@ public struct SDDSCodeInput: View {
     @Binding private var code: String
     @State private var isFocused: Bool
     @State private var isAnimating: Bool = false
-    
+
     public init(
         code: Binding<String>,
         groups: [CodeFieldGroup],
@@ -45,7 +45,7 @@ public struct SDDSCodeInput: View {
         self.isFocused = isFocused
         self._isAnimating = State(initialValue: isAnimating)
     }
-    
+
     public var body: some View {
         CoreInputView(
             code: $code,
@@ -88,7 +88,7 @@ public struct SDDSCodeInput: View {
             groupShape: DefaultPathDrawer()
         )
     }
-    
+
     private var appearance: CodeInputAppearance {
         _appearance ?? environmentAppearance
     }

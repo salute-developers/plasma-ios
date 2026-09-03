@@ -23,7 +23,7 @@ public extension AdaptiveTypographyToken {
     var tokens: [TypographyToken] {
         [small, medium, large]
     }
-    
+
 }
 
 public extension AdaptiveTypographyToken {

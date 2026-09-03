@@ -11,7 +11,7 @@ public struct LinkButton: View {
     public let layoutMode: ButtonLayoutMode
     public let accessibility: ButtonAccessibility
     public var action: () -> Void
-    
+
     public init(
         title: String,
         iconAttributes: ButtonIconAttributes? = nil,
@@ -33,7 +33,7 @@ public struct LinkButton: View {
         self.accessibility = accessibility
         self.action = action
     }
-    
+
     public var body: some View {
         SDDSButton(
             title: title,

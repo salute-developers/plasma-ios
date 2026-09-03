@@ -41,9 +41,9 @@ public struct SDDSChipGroup: View {
     let flat: Bool
     let gap: ChipGroupGap
     @Binding var height: CGFloat
-    
+
     @Environment(\.chipGroupAppearance) private var environmentAppearance
-    
+
     public init(
         data: [ChipData],
         appearance: ChipGroupAppearance? = nil,
@@ -91,15 +91,15 @@ public struct SDDSChipGroup: View {
         .frame(height: height)
         .applyIf(flat, transform: { $0.frame(width: maxCalculatedWidth) })
     }
-                 
+
     private var maxCalculatedWidth: CGFloat {
         return layoutRows(maxWidth: .infinity, data: data).currentRowWidth
     }
-    
+
     private var inset: CGFloat {
         appearance.size.lineSpacing
     }
-    
+
     private var size: ChipGroupSizeConfiguration {
         return appearance.size
     }
@@ -151,13 +151,13 @@ public struct SDDSChipGroup: View {
         let titleTypography = chipData.appearance.titleTypography.typography(with: chipData.appearance.size) ?? .undefined
         let textWidth = chipData.title.size(withAttributes: [.font: titleTypography.uiFont]).width
         totalWidth += textWidth
-        
+
         if let _ = chipData.buttonImage {
             totalWidth += chipData.appearance.size.buttonImageSize.width
             totalWidth += chipData.appearance.size.contentEndPadding
         }
         totalWidth += chipData.appearance.size.trailingInset
-        
+
         return totalWidth
     }
 
@@ -167,7 +167,7 @@ public struct SDDSChipGroup: View {
         var result = CGFloat(rows.count) * rowHeight
         result += CGFloat(rows.count - 1) * appearance.size.lineSpacing
         result += (appearance.size.lineSpacing + appearance.size.lineSpacing)
-        
+
         return result
     }
 
@@ -177,7 +177,7 @@ public struct SDDSChipGroup: View {
         }
         return chipData.appearance.size.height
     }
-    
+
     var appearance: ChipGroupAppearance {
         _appearance ?? environmentAppearance
     }

@@ -12,11 +12,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -27,11 +27,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -47,11 +47,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -62,11 +62,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -82,11 +82,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -97,11 +97,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -117,11 +117,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -132,11 +132,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -152,11 +152,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -167,11 +167,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -187,11 +187,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -202,11 +202,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -222,11 +222,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -237,11 +237,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -257,11 +257,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -272,11 +272,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -292,11 +292,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -307,11 +307,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -327,11 +327,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -342,11 +342,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -362,11 +362,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -377,11 +377,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -397,11 +397,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -412,11 +412,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -432,11 +432,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -447,11 +447,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -467,11 +467,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -482,11 +482,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -502,11 +502,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -517,11 +517,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -537,11 +537,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -552,11 +552,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -572,11 +572,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -587,11 +587,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -607,11 +607,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -622,11 +622,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -642,11 +642,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -657,11 +657,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -677,11 +677,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -692,11 +692,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -712,11 +712,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -727,11 +727,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -747,11 +747,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -762,11 +762,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -782,11 +782,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -797,11 +797,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -817,11 +817,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -832,11 +832,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -852,11 +852,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -867,11 +867,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -887,11 +887,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -902,11 +902,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -922,11 +922,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -937,11 +937,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -957,11 +957,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -972,11 +972,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -992,11 +992,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1007,11 +1007,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1027,11 +1027,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1042,11 +1042,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1062,11 +1062,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -1077,11 +1077,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -1097,11 +1097,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1112,11 +1112,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1132,11 +1132,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1147,11 +1147,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1167,11 +1167,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1182,11 +1182,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1202,11 +1202,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1217,11 +1217,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1237,11 +1237,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1252,11 +1252,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1272,11 +1272,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1287,11 +1287,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1307,11 +1307,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1322,11 +1322,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1342,11 +1342,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1357,11 +1357,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1377,11 +1377,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1392,11 +1392,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1412,11 +1412,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1427,11 +1427,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1447,11 +1447,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1462,11 +1462,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1482,11 +1482,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1497,11 +1497,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1517,11 +1517,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1532,11 +1532,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1552,11 +1552,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1567,11 +1567,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1587,11 +1587,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -1602,11 +1602,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -1622,11 +1622,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1637,11 +1637,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1657,11 +1657,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1672,11 +1672,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1692,11 +1692,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1707,11 +1707,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1727,11 +1727,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1742,11 +1742,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1762,11 +1762,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1777,11 +1777,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1797,11 +1797,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1812,11 +1812,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1832,11 +1832,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1847,11 +1847,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1867,11 +1867,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1882,11 +1882,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1902,11 +1902,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1917,11 +1917,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1937,11 +1937,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1952,11 +1952,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1972,11 +1972,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -1987,11 +1987,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2007,11 +2007,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2022,11 +2022,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2042,11 +2042,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2057,11 +2057,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2077,11 +2077,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2092,11 +2092,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2112,11 +2112,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -2127,11 +2127,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -2147,11 +2147,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2162,11 +2162,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2182,11 +2182,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2197,11 +2197,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2217,11 +2217,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2232,11 +2232,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2252,11 +2252,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2267,11 +2267,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2287,11 +2287,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2302,11 +2302,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2322,11 +2322,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2337,11 +2337,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2357,11 +2357,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2372,11 +2372,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2392,11 +2392,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2407,11 +2407,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2427,11 +2427,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2442,11 +2442,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2462,11 +2462,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2477,11 +2477,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2497,11 +2497,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2512,11 +2512,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2532,33 +2532,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF5C")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF0A")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
-                            Color(UIColor(hex: "#FFFFFF5C")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF0A")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C")),
+                            Color(UIColor(hex: "#FFFFFF52")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF0A")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF52")),
+                            Color(UIColor(hex: "#FFFFFF5C")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF0A")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF52")),
                             Color(UIColor(hex: "#FFFFFF5C"))
                         ],
                         angle: 90.0
@@ -2569,33 +2569,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0808085C")), 
-                            Color(UIColor(hex: "#08080852")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#0808080A")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#08080852")), 
-                            Color(UIColor(hex: "#0808085C")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#0808080A")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C")),
+                            Color(UIColor(hex: "#08080852")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#0808080A")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#08080852")),
+                            Color(UIColor(hex: "#0808085C")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#0808080A")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#08080852")),
                             Color(UIColor(hex: "#0808085C"))
                         ],
                         angle: 90.0
@@ -2611,11 +2611,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2626,11 +2626,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2646,11 +2646,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2661,11 +2661,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2681,33 +2681,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF17")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF03")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF17")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF03")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF03")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF17")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF03")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF14")),
                             Color(UIColor(hex: "#FFFFFF17"))
                         ],
                         angle: 90.0
@@ -2718,33 +2718,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#08080817")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080803")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#08080817")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080803")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080803")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#08080817")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080803")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080814")),
                             Color(UIColor(hex: "#08080817"))
                         ],
                         angle: 90.0
@@ -2760,11 +2760,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2775,11 +2775,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2795,11 +2795,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2810,11 +2810,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2830,11 +2830,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2845,11 +2845,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2865,11 +2865,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2880,11 +2880,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2900,11 +2900,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2915,11 +2915,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2935,11 +2935,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2950,11 +2950,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2970,11 +2970,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -2985,11 +2985,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3005,11 +3005,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3020,11 +3020,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3040,11 +3040,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -3055,11 +3055,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -3075,11 +3075,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3090,11 +3090,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3110,11 +3110,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3125,11 +3125,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3145,11 +3145,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3160,11 +3160,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3180,11 +3180,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3195,11 +3195,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3215,11 +3215,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3230,11 +3230,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3250,11 +3250,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3265,11 +3265,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3285,11 +3285,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3300,11 +3300,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3320,11 +3320,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3335,11 +3335,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3355,11 +3355,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3370,11 +3370,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3390,11 +3390,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3405,11 +3405,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3425,11 +3425,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3440,11 +3440,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3460,33 +3460,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0808085C")), 
-                            Color(UIColor(hex: "#08080852")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#0808080A")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#08080852")), 
-                            Color(UIColor(hex: "#0808085C")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#0808080A")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C")),
+                            Color(UIColor(hex: "#08080852")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#0808080A")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#08080852")),
+                            Color(UIColor(hex: "#0808085C")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#0808080A")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#08080852")),
                             Color(UIColor(hex: "#0808085C"))
                         ],
                         angle: 90.0
@@ -3497,33 +3497,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF5C")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF0A")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
-                            Color(UIColor(hex: "#FFFFFF5C")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF0A")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C")),
+                            Color(UIColor(hex: "#FFFFFF52")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF0A")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF52")),
+                            Color(UIColor(hex: "#FFFFFF5C")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF0A")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF52")),
                             Color(UIColor(hex: "#FFFFFF5C"))
                         ],
                         angle: 90.0
@@ -3539,11 +3539,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3554,11 +3554,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3574,11 +3574,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3589,11 +3589,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3609,33 +3609,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#08080817")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080803")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#08080817")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080803")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080803")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#08080817")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080803")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080814")),
                             Color(UIColor(hex: "#08080817"))
                         ],
                         angle: 90.0
@@ -3646,33 +3646,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF17")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF03")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF17")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF03")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF03")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF17")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF03")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF14")),
                             Color(UIColor(hex: "#FFFFFF17"))
                         ],
                         angle: 90.0
@@ -3688,11 +3688,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3703,11 +3703,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3723,11 +3723,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3738,11 +3738,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3758,11 +3758,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3773,11 +3773,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3793,11 +3793,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3808,11 +3808,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3828,11 +3828,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3843,11 +3843,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3863,11 +3863,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3878,11 +3878,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3898,11 +3898,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3913,11 +3913,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3933,11 +3933,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3948,11 +3948,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -3968,11 +3968,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -3983,11 +3983,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -4003,11 +4003,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4018,11 +4018,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4038,11 +4038,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4053,11 +4053,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4073,11 +4073,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4088,11 +4088,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4108,11 +4108,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4123,11 +4123,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4143,11 +4143,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4158,11 +4158,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4178,11 +4178,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4193,11 +4193,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4213,11 +4213,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4228,11 +4228,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4248,11 +4248,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4263,11 +4263,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4283,11 +4283,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4298,11 +4298,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4318,11 +4318,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4333,11 +4333,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4353,11 +4353,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4368,11 +4368,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4388,33 +4388,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF5C")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF0A")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
-                            Color(UIColor(hex: "#FFFFFF5C")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF0A")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C")),
+                            Color(UIColor(hex: "#FFFFFF52")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF0A")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF52")),
+                            Color(UIColor(hex: "#FFFFFF5C")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF0A")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF52")),
                             Color(UIColor(hex: "#FFFFFF5C"))
                         ],
                         angle: 90.0
@@ -4425,33 +4425,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF5C")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF0A")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
-                            Color(UIColor(hex: "#FFFFFF5C")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF0A")), 
-                            Color(UIColor(hex: "#FFFFFF33")), 
-                            Color(UIColor(hex: "#FFFFFF52")), 
+                            Color(UIColor(hex: "#FFFFFF5C")),
+                            Color(UIColor(hex: "#FFFFFF52")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF0A")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF52")),
+                            Color(UIColor(hex: "#FFFFFF5C")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF0A")),
+                            Color(UIColor(hex: "#FFFFFF33")),
+                            Color(UIColor(hex: "#FFFFFF52")),
                             Color(UIColor(hex: "#FFFFFF5C"))
                         ],
                         angle: 90.0
@@ -4467,11 +4467,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4482,11 +4482,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4502,11 +4502,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4517,11 +4517,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4537,33 +4537,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF17")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF03")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF17")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF03")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF03")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF17")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF03")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF14")),
                             Color(UIColor(hex: "#FFFFFF17"))
                         ],
                         angle: 90.0
@@ -4574,33 +4574,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF17")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF03")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF17")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF03")), 
-                            Color(UIColor(hex: "#FFFFFF0D")), 
-                            Color(UIColor(hex: "#FFFFFF14")), 
+                            Color(UIColor(hex: "#FFFFFF17")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF03")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF17")),
+                            Color(UIColor(hex: "#FFFFFF14")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF03")),
+                            Color(UIColor(hex: "#FFFFFF0D")),
+                            Color(UIColor(hex: "#FFFFFF14")),
                             Color(UIColor(hex: "#FFFFFF17"))
                         ],
                         angle: 90.0
@@ -4616,11 +4616,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4631,11 +4631,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4651,11 +4651,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4666,11 +4666,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4686,11 +4686,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4701,11 +4701,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4721,11 +4721,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4736,11 +4736,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4756,11 +4756,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4771,11 +4771,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4791,11 +4791,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4806,11 +4806,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4826,11 +4826,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4841,11 +4841,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4861,11 +4861,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4876,11 +4876,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4896,11 +4896,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -4911,11 +4911,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -4931,11 +4931,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4946,11 +4946,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4966,11 +4966,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -4981,11 +4981,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5001,11 +5001,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5016,11 +5016,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5036,11 +5036,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5051,11 +5051,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5071,11 +5071,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5086,11 +5086,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5106,11 +5106,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5121,11 +5121,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5141,11 +5141,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5156,11 +5156,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5176,11 +5176,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5191,11 +5191,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5211,11 +5211,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5226,11 +5226,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5246,11 +5246,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5261,11 +5261,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5281,11 +5281,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5296,11 +5296,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5316,33 +5316,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0808085C")), 
-                            Color(UIColor(hex: "#08080852")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#0808080A")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#08080852")), 
-                            Color(UIColor(hex: "#0808085C")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#0808080A")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C")),
+                            Color(UIColor(hex: "#08080852")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#0808080A")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#08080852")),
+                            Color(UIColor(hex: "#0808085C")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#0808080A")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#08080852")),
                             Color(UIColor(hex: "#0808085C"))
                         ],
                         angle: 90.0
@@ -5353,33 +5353,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0808085C")), 
-                            Color(UIColor(hex: "#08080852")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#0808080A")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#08080852")), 
-                            Color(UIColor(hex: "#0808085C")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#0808080A")), 
-                            Color(UIColor(hex: "#08080833")), 
-                            Color(UIColor(hex: "#08080852")), 
+                            Color(UIColor(hex: "#0808085C")),
+                            Color(UIColor(hex: "#08080852")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#0808080A")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#08080852")),
+                            Color(UIColor(hex: "#0808085C")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#0808080A")),
+                            Color(UIColor(hex: "#08080833")),
+                            Color(UIColor(hex: "#08080852")),
                             Color(UIColor(hex: "#0808085C"))
                         ],
                         angle: 90.0
@@ -5395,11 +5395,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5410,11 +5410,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5430,11 +5430,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5445,11 +5445,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5465,33 +5465,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#08080817")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080803")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#08080817")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080803")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080803")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#08080817")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080803")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080814")),
                             Color(UIColor(hex: "#08080817"))
                         ],
                         angle: 90.0
@@ -5502,33 +5502,33 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
-                            0.0625, 
-                            0.125, 
-                            0.25, 
-                            0.375, 
-                            0.4375, 
-                            0.5, 
-                            0.5625, 
-                            0.625, 
-                            0.75, 
-                            0.875, 
-                            0.9375, 
+                            0,
+                            0.0625,
+                            0.125,
+                            0.25,
+                            0.375,
+                            0.4375,
+                            0.5,
+                            0.5625,
+                            0.625,
+                            0.75,
+                            0.875,
+                            0.9375,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#08080817")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080803")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#08080817")), 
-                            Color(UIColor(hex: "#08080814")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080803")), 
-                            Color(UIColor(hex: "#0808080D")), 
-                            Color(UIColor(hex: "#08080814")), 
+                            Color(UIColor(hex: "#08080817")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080803")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#08080817")),
+                            Color(UIColor(hex: "#08080814")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080803")),
+                            Color(UIColor(hex: "#0808080D")),
+                            Color(UIColor(hex: "#08080814")),
                             Color(UIColor(hex: "#08080817"))
                         ],
                         angle: 90.0
@@ -5544,11 +5544,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5559,11 +5559,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5579,11 +5579,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5594,11 +5594,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5614,11 +5614,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5629,11 +5629,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5649,11 +5649,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5664,11 +5664,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5684,11 +5684,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5699,11 +5699,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5719,11 +5719,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5734,11 +5734,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5754,11 +5754,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5769,11 +5769,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5789,11 +5789,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5804,11 +5804,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5824,11 +5824,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -5839,11 +5839,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -5859,11 +5859,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5874,11 +5874,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5894,11 +5894,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5909,11 +5909,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5929,11 +5929,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5944,11 +5944,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5964,11 +5964,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5979,11 +5979,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -5999,11 +5999,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6014,11 +6014,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6034,11 +6034,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6049,11 +6049,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6069,11 +6069,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6084,11 +6084,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6104,11 +6104,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6119,11 +6119,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6139,11 +6139,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6154,11 +6154,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6174,11 +6174,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6189,11 +6189,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6209,11 +6209,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6224,11 +6224,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6244,11 +6244,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -6259,11 +6259,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -6279,11 +6279,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6294,11 +6294,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6314,11 +6314,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6329,11 +6329,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6349,11 +6349,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6364,11 +6364,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6384,11 +6384,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6399,11 +6399,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6419,11 +6419,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6434,11 +6434,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6454,11 +6454,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6469,11 +6469,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6489,11 +6489,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6504,11 +6504,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6524,11 +6524,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6539,11 +6539,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6559,11 +6559,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6574,11 +6574,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6594,11 +6594,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6609,11 +6609,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6629,11 +6629,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6644,11 +6644,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6664,11 +6664,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -6679,11 +6679,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#1A9E32FF")), 
+                            Color(UIColor(hex: "#1A9E32FF")),
                             Color(UIColor(hex: "#04C6C9FF"))
                         ],
                         angle: 315.0
@@ -6699,11 +6699,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6714,11 +6714,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6734,11 +6734,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6749,11 +6749,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6769,11 +6769,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6784,11 +6784,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6804,11 +6804,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6819,11 +6819,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6839,11 +6839,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6854,11 +6854,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6874,11 +6874,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6889,11 +6889,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6909,11 +6909,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6924,11 +6924,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6944,11 +6944,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6959,11 +6959,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6979,11 +6979,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -6994,11 +6994,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7014,11 +7014,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7029,11 +7029,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7049,11 +7049,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7064,11 +7064,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7084,11 +7084,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -7099,11 +7099,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#0D8523FF")), 
+                            Color(UIColor(hex: "#0D8523FF")),
                             Color(UIColor(hex: "#0DA8ABFF"))
                         ],
                         angle: 315.0
@@ -7119,11 +7119,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7134,11 +7134,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7154,11 +7154,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7169,11 +7169,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7189,11 +7189,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7204,11 +7204,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7224,11 +7224,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7239,11 +7239,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7259,11 +7259,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7274,11 +7274,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7294,11 +7294,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7309,11 +7309,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7329,11 +7329,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7344,11 +7344,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7364,11 +7364,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7379,11 +7379,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7399,11 +7399,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7414,11 +7414,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7434,11 +7434,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7449,11 +7449,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7469,11 +7469,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7484,11 +7484,11 @@ public extension GradientToken {
                 .linear(
                     LinearGradient(
                         locations: [
-                            0, 
+                            0,
                             1
                         ],
                         colors: [
-                            Color(UIColor(hex: "#FFFFFF")), 
+                            Color(UIColor(hex: "#FFFFFF")),
                             Color(UIColor(hex: "#000000"))
                         ],
                         angle: 90.0
@@ -7701,6 +7701,6 @@ public extension GradientToken {
         textOnLightPromoGradientHover,
         textOnLightPromoMinorGradient,
         textOnLightPromoMinorGradientActive,
-        textOnLightPromoMinorGradientHover,
+        textOnLightPromoMinorGradientHover
     ]
 }

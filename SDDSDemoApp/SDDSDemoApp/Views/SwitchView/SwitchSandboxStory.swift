@@ -9,7 +9,6 @@ enum SwitchStory: Story {
     static let title = "Switch"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: SwitchUiState, theme: Theme) -> some View {
         SwitchView(viewModel: SwitchViewModel(theme: theme, uiState: state))

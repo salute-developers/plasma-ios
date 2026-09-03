@@ -12,10 +12,10 @@ final class ColorContextBuilderTests: XCTestCase {
         mockPaletteURL = GradientContextBuilderTests.fileURL(forResource: "palette", withExtension: "json")
         let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
         scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
-        
+
         colorContextBuilder = ColorContextBuilder(paletteURL: mockPaletteURL, metaScheme: scheme)
     }
-    
+
     static func fileURL(forResource resource: String, withExtension ext: String) -> URL {
         let bundle = Bundle.module
         guard let url = bundle.url(forResource: resource, withExtension: ext) else {
@@ -53,7 +53,7 @@ final class ColorContextBuilderTests: XCTestCase {
             XCTFail("Expected successful context build")
         }
     }
-    
+
     func testBuildContext_ValidAliasWithAlpha_Success() {
         // given
         let jsonData = """
@@ -99,7 +99,7 @@ final class ColorContextBuilderTests: XCTestCase {
         // then
         XCTAssertTrue(result.isError, "Should fail due to an invalid color alias")
     }
-    
+
     func testBuildContext_InvalidAliasFormat_Failure() {
         // given
         let jsonData = """
@@ -133,7 +133,7 @@ final class ColorContextBuilderTests: XCTestCase {
         // then
         XCTAssertTrue(result.isError, "Should fail due to missing palette data")
     }
-    
+
     func testPopulateMissingColors() {
         // given
         var colors: [String: Any] = [
@@ -148,10 +148,10 @@ final class ColorContextBuilderTests: XCTestCase {
                 "dark": "#333333"
             ]
         ]
-        
+
         // when
         colorContextBuilder.populateMissingColors(&colors)
-        
+
         // then
         if let primary = colors["primary"] as? [String: Any] {
             XCTAssertEqual(primary["light"] as? String, "#FFFFFF", "Primary light color should be #FFFFFF")
@@ -159,14 +159,14 @@ final class ColorContextBuilderTests: XCTestCase {
         } else {
             XCTFail("Primary color dictionary is missing")
         }
-        
+
         if let secondary = colors["secondary"] as? [String: Any] {
             XCTAssertEqual(secondary["dark"] as? String, "#000000", "Secondary dark color should be #000000")
             XCTAssertEqual(secondary["light"] as? String, "#000000", "Secondary light color should fallback to #000000")
         } else {
             XCTFail("Secondary color dictionary is missing")
         }
-        
+
         if let tertiary = colors["tertiary"] as? [String: Any] {
             XCTAssertEqual(tertiary["light"] as? String, "#CCCCCC", "Tertiary light color should be #CCCCCC")
             XCTAssertEqual(tertiary["dark"] as? String, "#333333", "Tertiary dark color should be #333333")

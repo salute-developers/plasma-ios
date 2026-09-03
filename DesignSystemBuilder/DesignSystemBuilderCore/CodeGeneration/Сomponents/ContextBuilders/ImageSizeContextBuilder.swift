@@ -3,7 +3,7 @@ import Foundation
 final class ImageSizeContextBuilder: CodeGenerationContextBuilder {
     let string: String?
     let nullify: Bool
-    
+
     init(_ string: String?, nullify: Bool = false) {
         self.string = string
         self.nullify = nullify

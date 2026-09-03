@@ -58,7 +58,7 @@ jobs:
   analyze-swift:
     name: Analyze Swift
     if: ${{ github.event_name != 'pull_request' }}
-    runs-on: macos-14
+    runs-on: macos-26
     environment: sdds
     permissions:
       security-events: write
@@ -75,7 +75,9 @@ jobs:
       - name: Set up Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.1'
+          # Держим одну версию Xcode во всех воркфлоу, кроме verify-snapshots:
+          # там она запинена отдельно, потому что снапшоты зависят от рендера ОС.
+          xcode-version: '26.6'
 
       - name: Install the Apple certificate and provisioning profile
         env:

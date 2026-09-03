@@ -9,14 +9,14 @@ final class ListItemViewModel: ComponentViewModel<ListItemVariationProvider> {
     @Published var counterText: String = "1"
     @Published var rightContentEnabled: Bool = true
     @Published var disabled: Bool = false
-    
+
     @Published var layout: ListItemLayout = .listItemNormal {
         didSet {
             variationProvider.layout = layout
             self.selectVariation(variations.first)
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: ListItemUiState = .init()) {
         super.init(variationProvider: ListItemVariationProvider(theme: theme, layout: uiState.layout), theme: theme)
         apply(uiState: uiState)
@@ -33,4 +33,3 @@ final class ListItemViewModel: ComponentViewModel<ListItemVariationProvider> {
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }
-

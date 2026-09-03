@@ -19,7 +19,6 @@ public struct ZeroAutocompleteSize: AutocompleteSizeConfiguration {
     public var debugDescription: String {
         "ZeroAutocompleteSize"
     }
-    
+
     public init() {}
 }
-

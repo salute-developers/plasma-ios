@@ -8,15 +8,15 @@ enum AutocompleteLayout: String, CaseIterable {
 
 final class AutocompleteVariationProvider: VariationProvider {
     typealias Appearance = AutocompleteAppearance
-    
+
     var theme: Theme
     var layout: AutocompleteLayout = .normal
-    
+
     init(theme: Theme = .sdddsServTheme, layout: AutocompleteLayout = .normal) {
         self.theme = theme
         self.layout = layout
     }
-    
+
     var variations: [Variation<AutocompleteAppearance>] {
         switch layout {
         case .normal:
@@ -25,9 +25,8 @@ final class AutocompleteVariationProvider: VariationProvider {
             theme.autocompleteTightVariations
         }
     }
-    
+
     var defaultValue: AutocompleteAppearance {
         variations.first?.appearance ?? AutocompleteAppearance()
     }
 }
-

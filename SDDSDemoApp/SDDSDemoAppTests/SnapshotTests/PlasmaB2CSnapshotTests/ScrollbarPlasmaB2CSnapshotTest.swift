@@ -15,25 +15,25 @@ import UIKit
 import SwiftUI
 
 final class ScrollbarPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testScrollbarSizeMHasTrackHoverPlasmaB2C() async throws {
         let appearance = ScrollBar.m.appearance
-        
+
         try await runSnapshotTest(view: ScrollbarSizeMHasTrackHover(appearance: appearance))
     }
-    
+
     @MainActor
     func testScrollbarSizeSHoverExpandPlasmaB2C() async throws {
         let appearance = ScrollBar.s.appearance
-        
+
         try await runSnapshotTest(view: ScrollbarSizeSHoverExpand(appearance: appearance))
     }
-    
+
     @MainActor
     func testScrollbarScrollDownPlasmaB2C() async throws {
         let appearance = ScrollBar.m.appearance
-        
+
         try await runSnapshotTest(view: ScrollbarScrollDown(appearance: appearance))
     }
 }

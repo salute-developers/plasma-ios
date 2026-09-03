@@ -19,7 +19,7 @@ struct SDDSOverlayPreview: PreviewProvider {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-    
+
     static var previews: some View {
         basicButton
             .overlay(
@@ -31,7 +31,7 @@ struct SDDSOverlayPreview: PreviewProvider {
             )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("View without overlay")
-        
+
         basicButton
             .overlay(
                 isPresented: .constant(true),
@@ -42,7 +42,7 @@ struct SDDSOverlayPreview: PreviewProvider {
             )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("View with blur")
-        
+
         basicButton
             .overlay(
                 isPresented: .constant(true),
@@ -53,7 +53,7 @@ struct SDDSOverlayPreview: PreviewProvider {
             )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("View with backgroundColor")
-        
+
         basicButton
             .overlay(
                 isPresented: .constant(true),

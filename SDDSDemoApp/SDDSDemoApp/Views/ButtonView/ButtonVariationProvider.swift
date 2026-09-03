@@ -3,15 +3,15 @@ import SDDSComponents
 
 final class ButtonVariationProvider: VariationProvider {
     typealias Appearance = ButtonAppearance
-    
+
     var buttonType: SDDSButtonType
     var theme: Theme
-    
+
     init(buttonType: SDDSButtonType, theme: Theme = .sdddsServTheme) {
         self.buttonType = buttonType
         self.theme = theme
     }
-    
+
     var variations: [Variation<ButtonAppearance>] {
         switch buttonType {
         case .basic:
@@ -22,7 +22,7 @@ final class ButtonVariationProvider: VariationProvider {
             theme.iconButtonVariations
         }
     }
-    
+
     var defaultValue: ButtonAppearance {
         ButtonAppearance.defaultValue
     }

@@ -16,7 +16,7 @@ public struct ChipGroupAppearance {
     public var chipAppearance: ChipAppearance
     public var gap: ChipGroupGap
     public var disabledAlpha: CGFloat
-    
+
     public init(
         size: ChipGroupSizeConfiguration = ZeroChipGroupSize(),
         gap: ChipGroupGap = .dense,

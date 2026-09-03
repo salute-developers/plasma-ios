@@ -79,7 +79,7 @@ struct VariationsView<Provider: VariationProvider>: View {
             }
         }
     }
-    
+
     private func subthemeName(_ subtheme: Subtheme) -> String {
         switch subtheme {
         case .default:
@@ -94,7 +94,7 @@ struct VariationsView<Provider: VariationProvider>: View {
             return "None"
         }
     }
-    
+
     private var themes: [Theme] {
         let variationProvider = viewModel.variationProvider
         let selectedTheme = variationProvider.theme
@@ -109,7 +109,7 @@ struct VariationsView<Provider: VariationProvider>: View {
         variationProvider.theme = selectedTheme
         return result
     }
-    
+
     private var allSubthemes: [Subtheme] {
         [.default, .onDark, .onLight, .inverse, .none]
     }
@@ -118,4 +118,3 @@ struct VariationsView<Provider: VariationProvider>: View {
 #Preview {
     VariationsView(viewModel: .init(variationProvider: ButtonVariationProvider(buttonType: .basic)))
 }
-

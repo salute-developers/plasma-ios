@@ -3,7 +3,7 @@ import Foundation
 
 struct ReadSizeModifier: ViewModifier {
     var onChange: (CGSize) -> Void
-    
+
     func body(content: Content) -> some View {
         content
             .overlay(
@@ -28,7 +28,7 @@ extension View {
 
 struct SizePreferenceKey: PreferenceKey {
     static var defaultValue: CGSize = .zero
-    
+
     static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
         value = nextValue()
     }

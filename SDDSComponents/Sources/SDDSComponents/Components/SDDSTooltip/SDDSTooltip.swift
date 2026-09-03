@@ -17,13 +17,19 @@ import SDDSThemeCore
  ## Пример использования
 
  ```swift
- SDDSTooltip(
-     width: nil,
-     appearance: Tooltip.default.appearance,
-     text: "Текст подсказки"
- ) {
-     Image(systemName: "info.circle")
- }
+ // @sample: SDDSComponentsFixtures/Samples/Tooltip/SDDSTooltip_Simple.swift
+ Image(systemName: "info.circle")
+     .tooltip(
+         isPresented: $isPresented,
+         appearance: Tooltip.m.appearance,
+         width: nil,
+         text: "Текст подсказки",
+         placement: .top,
+         alignment: .start,
+         tailEnabled: true
+     ) {
+         Image(systemName: "info.circle")
+     }
  ```
  */
 struct SDDSTooltip<ContentStart: View>: View {
@@ -31,12 +37,12 @@ struct SDDSTooltip<ContentStart: View>: View {
     let appearance: TooltipAppearance
     let text: String
     let contentStart: () -> ContentStart
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @State private var textSize: CGSize = .zero
     @State private var tooltipSize: CGSize = .zero
-    
+
     var body: some View {
         ZStack {
             if !text.isEmpty {
@@ -54,12 +60,11 @@ struct SDDSTooltip<ContentStart: View>: View {
                     .hidden()
             }
 
-            
             HStack(spacing: appearance.size.contentStartPadding) {
                 contentStart()
                     .tint(appearance.contentStartColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: appearance.size.contentStartSize, height: appearance.size.contentStartSize)
-                
+
                 if !text.isEmpty {
                     Text(text)
                         .typography(textTypography)
@@ -86,7 +91,7 @@ struct SDDSTooltip<ContentStart: View>: View {
             self.tooltipSize = size
         }
     }
-    
+
     /**
      Вычисляет ширину tooltip на основе переданного значения или автоматически на основе содержимого.
      
@@ -103,11 +108,11 @@ struct SDDSTooltip<ContentStart: View>: View {
                 appearance.size.contentStartSize,
                 appearance.size.contentStartPadding
             ]
-            
+
             return paddings.reduce(0, +)
         }
     }
-    
+
     /**
      Вычисляет высоту tooltip на основе высоты текста.
      
@@ -117,7 +122,7 @@ struct SDDSTooltip<ContentStart: View>: View {
         let result = max(textSize.height, textTypography.lineHeight)
         return result
     }
-    
+
     /**
      Получает типографику для текста tooltip.
      

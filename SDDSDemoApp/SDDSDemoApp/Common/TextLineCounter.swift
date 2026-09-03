@@ -44,12 +44,12 @@ struct TextLineCounter: UIViewRepresentable {
         uiView.font = font
         uiView.preferredMaxLayoutWidth = width
         uiView.attributedText = attributedText()
-        
+
         DispatchQueue.main.async {
             updateLineCount(label: uiView)
         }
     }
-    
+
     private func updateLineCount(label: UILabel) {
         let size = label.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude))
         let baseLineHeight = lineHeight ?? font.lineHeight
@@ -57,7 +57,7 @@ struct TextLineCounter: UIViewRepresentable {
         let lines = Int(round(size.height / effectiveLineHeight))
         onUpdate(lines)
     }
-    
+
     private func attributedText() -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
@@ -66,7 +66,7 @@ struct TextLineCounter: UIViewRepresentable {
             paragraphStyle.minimumLineHeight = lineHeight
             paragraphStyle.maximumLineHeight = lineHeight
         }
-        
+
         return NSAttributedString(
             string: text,
             attributes: [

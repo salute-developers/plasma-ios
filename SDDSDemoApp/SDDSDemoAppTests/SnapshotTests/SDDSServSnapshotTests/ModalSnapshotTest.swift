@@ -15,13 +15,13 @@ import UIKit
 import SwiftUI
 
 final class ModalSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testModalUseNativeBlackOutHasClose() async throws {
         let appearance = Modal.default.appearance
         try await runSnapshotTest(view: ModalUseNativeBlackOutHasClose(appearance: appearance))
     }
-    
+
     @MainActor
     func testModalWithoutNativeBlackOut() async throws {
         let appearance = Modal.default.appearance

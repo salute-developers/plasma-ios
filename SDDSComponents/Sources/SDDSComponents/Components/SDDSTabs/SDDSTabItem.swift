@@ -70,7 +70,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
     private let startContent: StartContent
     private let contentRight: ContentRight
     private let actionContent: ActionContent
-    
+
     public init(
         label: String,
         value: String? = nil,
@@ -100,7 +100,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
         self.contentRight = contentRight()
         self.actionContent = actionContent()
     }
-    
+
     public var body: some View {
         switch orientation {
         case .horizontal:
@@ -109,7 +109,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
             verticalLayout
         }
     }
-    
+
     @ViewBuilder private var horizontalLayout: some View {
         VStack(spacing: 0) {
             if isIconTabItem {
@@ -128,18 +128,18 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                                 .padding(.trailing, appearance.size.valuePadding)
                         }
                     }
-                    
+
                     Text(label)
                         .foregroundStyle(contentColor(for: appearance.labelColor))
                         .typography(labelTypography)
-                    
+
                     if let value = value {
                         Text(value)
                             .foregroundStyle(contentColor(for: appearance.valueColor))
                             .typography(valueTypography)
                             .padding(.leading, appearance.size.valuePadding)
                     }
-                    
+
                     if hasContentRight {
                          if let counterValue = counterValue, let counterAppearance = appearance.counterAppearance {
                             SDDSCounter(
@@ -161,7 +161,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                     } else {
                         EmptyView()
                     }
-                    
+
                     if hasActionContent {
                         if !(actionContent is EmptyView) {
                             actionContent
@@ -183,7 +183,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                 .padding(.trailing, appearance.size.paddingEnd)
                 .opacity(isDisabled ? appearance.size.disableAlpha : 1.0)
             }
-            
+
             if isSelected {
                 Rectangle()
                     .fill(indicatorColor.color(for: colorScheme, subtheme: subtheme))
@@ -191,7 +191,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
             }
         }
     }
-    
+
     @ViewBuilder private var verticalLayout: some View {
         HStack(spacing: 0) {
             // Selection Indicator (Left)
@@ -200,7 +200,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                     .fill(indicatorColor.color(for: colorScheme, subtheme: subtheme))
                     .frame(width: indicatorThickness)
             }
-            
+
             if isIconTabItem {
                 iconTabItemContent
                     .frame(minHeight: appearance.size.minHeight)
@@ -219,12 +219,12 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                                 .padding(.trailing, appearance.size.valuePadding)
                         }
                     }
-                    
+
                     // Label
                     Text(label)
                         .foregroundStyle(contentColor(for: appearance.labelColor))
                         .typography(labelTypography)
-                    
+
                     // Value
                     if let value = value {
                         Text(value)
@@ -232,7 +232,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                             .typography(valueTypography)
                             .padding(.leading, appearance.size.valuePadding)
                     }
-                    
+
                     // Content Right (Counter або Custom View)
                     if hasContentRight {
                         if let counterValue = counterValue, let counterAppearance = appearance.counterAppearance {
@@ -255,7 +255,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                     } else {
                         EmptyView()
                     }
-                    
+
                     // Action Content
                     if hasActionContent {
                         if !(actionContent is EmptyView) {
@@ -280,41 +280,41 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
             }
         }
     }
-    
+
     private var appearance: TabItemAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var indicatorThickness: CGFloat {
         tabsEnvironmentAppearance.size.indicatorThickness
     }
-    
+
     private var indicatorColor: ColorToken {
         appearance.indicatorColor ?? tabsEnvironmentAppearance.indicatorColor
     }
-    
+
     private func contentColor(for buttonColor: ButtonColor) -> Color {
         var activeStates = Set<InteractiveState>()
         if isSelected { activeStates.insert(.selected) }
         return buttonColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
     }
-    
+
     private func actionContentColor(for buttonColor: ButtonColor) -> Color {
         buttonColor.color(for: [], colorScheme: colorScheme, subtheme: subtheme)
     }
-    
+
     private var labelTypography: TypographyToken {
         appearance.labelTypography.typography(with: appearance.size) ?? .undefined
     }
-    
+
     private var valueTypography: TypographyToken {
         appearance.valueTypography.typography(with: appearance.size) ?? .undefined
     }
-    
+
     private var isIconTabItem: Bool {
         return label.isEmpty && value == nil
     }
-    
+
     @ViewBuilder private var iconTabItemContent: some View {
         HStack(spacing: 0) {
             if hasStartContent {
@@ -335,7 +335,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                         }
                     }
             }
-            
+
             if hasActionContent {
                 if let actionIcon = appearance.actionIcon {
                     actionIcon

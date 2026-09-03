@@ -1,15 +1,15 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
     name: "SDDSComponentsPreview",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v15)
     ],
     products: [
         .library(
             name: "SDDSComponentsPreview",
-            targets: ["SDDSComponentsPreview"]),
+            targets: ["SDDSComponentsPreview"])
     ],
     dependencies: [
         .package(name: "SDDSComponents", path: "../"),

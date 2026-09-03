@@ -9,7 +9,6 @@ enum CounterStory: Story {
     static let title = "Counter"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: CounterUiState, theme: Theme) -> some View {
         CounterView(viewModel: CounterViewModel(theme: theme, uiState: state))

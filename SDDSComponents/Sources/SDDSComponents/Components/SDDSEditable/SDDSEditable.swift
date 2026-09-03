@@ -3,7 +3,7 @@ import SwiftUI
 
 public struct SDDSEditable<IconContent: View>: View {
     @Binding private var text: String
-    
+
     private let enabled: Bool
     private let readOnly: Bool
     private let singleLine: Bool
@@ -11,16 +11,16 @@ public struct SDDSEditable<IconContent: View>: View {
     private let iconPlacement: EditableIconPlacement
     private let _appearance: EditableAppearance?
     private let iconContent: Action<IconContent>
-    
+
     @Environment(\.editableAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
-    
+
     @State private var isFocused: Bool = false
     @State private var textHeight: CGFloat = 0
     @State private var availableWidth: CGFloat = 0
     @FocusState private var isMultilineTextEditorFocused: Bool
-    
+
     public init(
         text: Binding<String>,
         enabled: Bool = true,
@@ -40,7 +40,7 @@ public struct SDDSEditable<IconContent: View>: View {
         self._appearance = appearance
         self.iconContent = iconContent
     }
-    
+
     public var body: some View {
         Group {
             switch iconPlacement {
@@ -81,7 +81,7 @@ public struct SDDSEditable<IconContent: View>: View {
             ensureReadonlyUnfocused()
         }
     }
-    
+
     private var field: some View {
         Group {
             if singleLine {
@@ -169,7 +169,7 @@ public struct SDDSEditable<IconContent: View>: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var iconBase: some View {
         if shouldShowIcon {
@@ -195,7 +195,7 @@ public struct SDDSEditable<IconContent: View>: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private var iconWithMargin: some View {
         if shouldShowIcon {
@@ -209,20 +209,20 @@ public struct SDDSEditable<IconContent: View>: View {
             EmptyView()
         }
     }
-    
+
     private var typography: TypographyToken {
         appearance.textTypography.typography(with: appearance.size) ?? .undefined
     }
-    
+
     private var textWidth: CGFloat {
         let size = (text as NSString).size(withAttributes: [.font: typography.uiFont])
         return ceil(size.width)
     }
-    
+
     private var iconWidth: CGFloat {
         appearance.size.iconSize
     }
-    
+
     private var contentFieldWidth: CGFloat {
         max(defaultMinWidth, textWidth + defaultCursorWidth + textHorizontalInsetsCompensation)
     }
@@ -242,14 +242,14 @@ public struct SDDSEditable<IconContent: View>: View {
         let iconWidth = iconPlacement == .relative ? iconContainerWidth : 0
         return visibleFieldWidth + iconWidth
     }
-    
+
     private var iconContainerWidth: CGFloat {
         if iconPlacement == .relative {
             return shouldReserveRelativeIconSpace ? (iconWidth + effectiveIconMargin) : 0
         }
         return shouldShowIcon ? (iconWidth + effectiveIconMargin) : 0
     }
-    
+
     private var defaultMinWidth: CGFloat {
         10
     }
@@ -281,11 +281,11 @@ public struct SDDSEditable<IconContent: View>: View {
     private var hasIconContent: Bool {
         iconWidth > 0 && IconContent.self != EmptyView.self
     }
-    
+
     private var textColor: ColorToken {
         readOnly ? appearance.textColorReadonly : appearance.textColorDefault
     }
-    
+
     private var iconColor: ColorToken {
         readOnly ? appearance.iconColorReadonly : appearance.iconColorDefault
     }
@@ -357,7 +357,6 @@ public struct SDDSEditable<IconContent: View>: View {
         return max(0, textViewDefaultLineFragmentPadding - defaultCursorWidth) + 1.5
     }
 
-
     private var multilineTextVerticalInsets: CGFloat {
         textViewDefaultTextContainerInset.top + textViewDefaultTextContainerInset.bottom
     }
@@ -374,7 +373,7 @@ public struct SDDSEditable<IconContent: View>: View {
     private var resolvedLineHeight: CGFloat {
         max(typography.lineHeight, ceil(typography.uiFont.lineHeight))
     }
-    
+
     private var appearance: EditableAppearance {
         _appearance ?? environmentAppearance
     }

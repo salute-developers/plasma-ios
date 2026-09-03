@@ -20,7 +20,7 @@ import SDDSIcons
 struct DrawerCloseLeftHasHeader: View {
     let appearance: DrawerAppearance
     var listAppearance: ListAppearance
-    
+
     var body: some View {
         ZStack {
             SDDSDrawer(
@@ -50,7 +50,7 @@ struct DrawerCloseRightHasFooter: View {
     var listAppearance: ListAppearance
     let hasOverlay: Bool
     let overlayColor: Color
-    
+
     var body: some View {
         ZStack {
             if hasOverlay {
@@ -83,7 +83,7 @@ struct DrawerCloseRightHasFooter: View {
 struct DrawerCloseNoneHasHeaderFooter: View {
     let appearance: DrawerAppearance
     var listAppearance: ListAppearance
-    
+
     var body: some View {
         ZStack {
             SDDSDrawer(
@@ -113,7 +113,7 @@ struct DrawerCloseNoneHasHeaderFooter: View {
 struct DrawerCloseIconRightNoHeaderFooter: View {
     let appearance: DrawerAppearance
     var listAppearance: ListAppearance
-    
+
     var body: some View {
         ZStack {
             SDDSDrawer(
@@ -140,7 +140,7 @@ struct DrawerHasPeakOffSet: View {
     let appearance: DrawerAppearance
     var listAppearance: ListAppearance
     let peakOffSet: CGFloat
-    
+
     var body: some View {
         ZStack {
             SDDSDrawer(
@@ -163,7 +163,7 @@ struct DrawerHasPeakOffSet: View {
 
 internal struct ListForDrawer: View {
     var listAppearance: ListAppearance
-    
+
     var body: some View {
         SDDSList(
             items: (1...6).map { index in

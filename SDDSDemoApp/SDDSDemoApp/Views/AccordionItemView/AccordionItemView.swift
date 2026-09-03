@@ -6,11 +6,11 @@ import SandboxSwiftUI
 
 struct AccordionItemView: View {
     @ObservedObject private var viewModel: AccordionItemViewModel
-    
+
     init(viewModel: AccordionItemViewModel = AccordionItemViewModel()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         VStack {
             SDDSAccordionItem(
@@ -23,7 +23,7 @@ struct AccordionItemView: View {
                 }
             )
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-            
+
             Spacer()
             List {
                 Section {
@@ -56,7 +56,7 @@ struct AccordionItemView: View {
                 }
             }
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-            
+
         }
         .background(.tertiary)
     }
@@ -64,4 +64,4 @@ struct AccordionItemView: View {
 
 #Preview {
     AccordionItemView()
-} 
+}

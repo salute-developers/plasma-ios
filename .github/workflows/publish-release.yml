@@ -105,6 +105,12 @@ jobs:
         run: |
           NOTES="$RUNNER_TEMP/release-notes.md"
           printf '%s\n' "${CHANGELOG}" > "$NOTES"
+          # Инструкция по запуску демо на симуляторе едет в каждый релиз — так же, как
+          # apk-installation-instructions на Android.
+          if [ -f .github/templates/simulator-app-instructions.md ]; then
+            printf '\n---\n\n' >> "$NOTES"
+            cat .github/templates/simulator-app-instructions.md >> "$NOTES"
+          fi
           if grep -qE '[^[:space:]]' "$NOTES"; then
             gh release create "${TAG}" --draft --title "${TAG}" --notes-file "$NOTES" --generate-notes
           else
@@ -119,3 +125,26 @@ jobs:
       - name: Publish release
         if: ${{ !inputs.dry_run }}
         run: gh release edit "${TAG}" --draft=false
+
+      # release-manifest.json is what client sync scripts read. Regenerate it from the
+      # release that was just published, so it can never claim a version or URL that was
+      # not actually shipped. A protected branch may reject the push — that must not fail
+      # an already published release, hence continue-on-error.
+      - name: Update release manifest
+        if: ${{ !inputs.dry_run }}
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          bundle exec ruby scripts/release/update_release_manifest.rb "${TAG}"
+          if git diff --quiet -- release-manifest.json; then
+            echo "release-manifest.json already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add release-manifest.json
+          git commit -m "chore(sdds-ios/build-system): update release manifest for ${TAG}"
+          git push origin "HEAD:${GITHUB_REF_NAME}" || {
+            echo "::warning::Could not push the updated release-manifest.json. Run 'ruby scripts/release/update_release_manifest.rb ${TAG}' locally and open a PR."
+            exit 1
+          }

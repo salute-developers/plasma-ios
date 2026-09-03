@@ -50,13 +50,13 @@ public struct SDDSTabBar: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.safeAreaInsets) private var safeAreaInsets
-    
+
     @State private var contentSize: CGSize = .zero
     private let _appearance: TabBarAppearance?
     private let items: [TabBarItemData]
     @Binding private var selectedIndex: Int
     private let onTabSelected: ((Int) -> Void)?
-    
+
     public init(
         items: [TabBarItemData],
         selectedIndex: Binding<Int>,
@@ -68,7 +68,7 @@ public struct SDDSTabBar: View {
         self._appearance = appearance
         self.onTabSelected = onTabSelected
     }
-    
+
     public var body: some View {
         VStack(spacing: 0) {
             TabBarContent(
@@ -82,7 +82,7 @@ public struct SDDSTabBar: View {
                 tabBarItemAppearance: appearance.tabBarItemAppearance,
                 onTabSelected: onTabSelected
             )
-            
+
             Rectangle()
                 .fill(.clear)
                 .frame(maxWidth: .infinity)
@@ -102,17 +102,17 @@ public struct SDDSTabBar: View {
         }
         .shadow(appearance.shadow)
     }
-    
+
     // MARK: - Background Layers
-    
+
     @ViewBuilder
     private var backgroundLayers: some View {
         Rectangle()
             .fill(backgroundColor.color(for: colorScheme, subtheme: subtheme))
     }
-    
+
     // MARK: - Computed Properties
-    
+
     private var topPathDrawer: PathDrawer {
         if let drawer = appearance.size.topShape as? CornerRadiusDrawer {
             return CornerRadiusDrawer(cornerRadius: drawer.cornerRadius, cornerType: .specific(CornerRadiusDrawerType.top))
@@ -120,11 +120,11 @@ public struct SDDSTabBar: View {
             return appearance.size.topShape
         }
     }
-    
+
     private var appearance: TabBarAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var backgroundColor: ColorToken {
         appearance.backgroundColor
     }

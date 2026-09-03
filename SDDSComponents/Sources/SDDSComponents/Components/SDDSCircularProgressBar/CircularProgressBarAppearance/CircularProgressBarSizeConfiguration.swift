@@ -14,11 +14,11 @@ public struct DefaultCircularProgressBarSize: CircularProgressBarSizeConfigurati
     public var height: CGFloat
     public var trackThickness: CGFloat
     public var progressThickness: CGFloat
-    
+
     public var debugDescription: String {
         "DefaultCircularProgressBarSize"
     }
-    
+
     public init(
         width: CGFloat = 88,
         height: CGFloat = 88,
@@ -37,10 +37,10 @@ public struct ZeroCircularProgressBarSize: CircularProgressBarSizeConfiguration 
     public var height: CGFloat { 0 }
     public var trackThickness: CGFloat { 0 }
     public var progressThickness: CGFloat { 0 }
-    
+
     public var debugDescription: String {
         "ZeroCircularProgressBarSize"
     }
-    
+
     public init() {}
 }

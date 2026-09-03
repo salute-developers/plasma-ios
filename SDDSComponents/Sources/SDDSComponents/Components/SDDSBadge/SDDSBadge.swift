@@ -19,35 +19,25 @@ import SDDSThemeCore
  ## Пример использования
 
  ```swift
- // Базовый бейдж
-SDDSBadge(
+ // @sample: SDDSComponentsFixtures/Samples/Badge/SDDSBadge_Simple.swift
+ SDDSBadge(
      label: "Label",
      image: nil,
      alignment: .leading,
-     style: .basic,
-     appearance: Badge.m.default.appearance
- )
-
- // Бейдж с иконкой и акцентным стилем
-SDDSBadge(
-     label: "Label",
-     image: nil,
-     alignment: .leading,
-     style: .icon,
-     appearance: Badge.m.accent.appearance
+     style: .basic
  )
  ```
  */
 public struct SDDSBadge: View {
     @Environment(\.badgeAppearance) private var environmentAppearance
     private let _appearance: BadgeAppearance?
-    
+
     let label: String
     let image: Image?
     let alignment: BadgeAlignment
     let style: BadgeStyle
     let action: (() -> Void)?
-    
+
     public init(
         label: String,
         image: Image?,
@@ -63,7 +53,7 @@ public struct SDDSBadge: View {
         self.action = action
         self._appearance = appearance
     }
-    
+
     public var body: some View {
         SDDSButton(
             title: label,
@@ -79,14 +69,14 @@ public struct SDDSBadge: View {
             action: { action?() }
         )
     }
-    
+
     private var iconAttributes: ButtonIconAttributes? {
         if let image = image {
             return .init(image: image, alignment: alignment.buttonAlignment)
         }
         return nil
     }
-    
+
     private var buttonAppearance: ButtonAppearance {
         let iconColor: StatefulFillStyle
         let iconSize: CGSize
@@ -103,7 +93,7 @@ public struct SDDSBadge: View {
         }
         return appearance.buttonAppearance(iconColor: iconColor, iconSize: iconSize, iconPadding: iconPadding)
     }
-    
+
     var appearance: BadgeAppearance {
         _appearance ?? environmentAppearance
     }

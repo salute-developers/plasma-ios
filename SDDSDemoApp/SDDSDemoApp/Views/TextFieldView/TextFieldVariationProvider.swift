@@ -3,15 +3,15 @@ import SDDSComponents
 
 final class TextFieldVariationProvider: VariationProvider {
     typealias Appearance = TextFieldAppearance
-    
+
     var layout: TextFieldLayout
     var theme: Theme
-    
+
     init(layout: TextFieldLayout, theme: Theme = .sdddsServTheme) {
         self.layout = layout
         self.theme = theme
     }
-    
+
     var variations: [Variation<TextFieldAppearance>] {
         switch layout {
         case .clear:
@@ -20,7 +20,7 @@ final class TextFieldVariationProvider: VariationProvider {
             theme.textFieldVariations
         }
     }
-    
+
     var defaultValue: TextFieldAppearance {
         TextFieldAppearance.defaultValue
     }

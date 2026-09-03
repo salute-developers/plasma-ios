@@ -16,7 +16,7 @@ import SDDSIcons
 
 struct ProgressBarDefault: View {
     var appearance: ProgressBarAppearance
-    
+
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.25),
@@ -28,7 +28,7 @@ struct ProgressBarDefault: View {
 
 struct ProgressBarSecondary: View {
     var appearance: ProgressBarAppearance
-    
+
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.25),
@@ -40,7 +40,7 @@ struct ProgressBarSecondary: View {
 
 struct ProgressBarWarning: View {
     var appearance: ProgressBarAppearance
-    
+
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.25),
@@ -52,7 +52,7 @@ struct ProgressBarWarning: View {
 
 struct ProgressBarPositive: View {
     var appearance: ProgressBarAppearance
-    
+
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.5),
@@ -64,7 +64,7 @@ struct ProgressBarPositive: View {
 
 struct ProgressBarNegative: View {
     var appearance: ProgressBarAppearance
-    
+
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.99),
@@ -76,7 +76,7 @@ struct ProgressBarNegative: View {
 
 struct ProgressBarGradient: View {
     var appearance: ProgressBarAppearance
-    
+
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.5),
@@ -88,7 +88,7 @@ struct ProgressBarGradient: View {
 
 struct ProgressBarDefaultValueOne: View {
     var appearance: ProgressBarAppearance
-    
+
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.01),
@@ -100,7 +100,7 @@ struct ProgressBarDefaultValueOne: View {
 
 struct ProgressBarAccent: View {
     var appearance: ProgressBarAppearance
-    
+
     var body: some View {
         SDDSProgressView(
             progress: .constant(1),
@@ -112,7 +112,7 @@ struct ProgressBarAccent: View {
 
 struct ProgressBarInfo: View {
     var appearance: ProgressBarAppearance
-    
+
     var body: some View {
         SDDSProgressView(
             progress: .constant(0.5),

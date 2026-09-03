@@ -16,7 +16,7 @@ final class TypographyContextBuilderTests: XCTestCase {
         mockFontFamiliesContainer = FontFamiliesContainer(items: [
             .display: FontFamily(name: "SBSansDisplay", fonts: displayFonts)
         ])
-        
+
         let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
         let scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
 
@@ -109,7 +109,7 @@ final class TypographyContextBuilderTests: XCTestCase {
             XCTFail("Expected failure due to invalid screen size")
         }
     }
-    
+
     func testBuildContext_FallbackScreenSize_SmallAndLarge() {
         // given
         let jsonData = """

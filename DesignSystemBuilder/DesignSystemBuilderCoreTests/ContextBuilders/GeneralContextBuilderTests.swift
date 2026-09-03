@@ -3,10 +3,10 @@ import XCTest
 
 final class GeneralContextBuilderTests: XCTestCase {
     var contextBuilder: GeneralContextBuilder!
-    
+
     override func setUp() {
         super.setUp()
-        
+
         let metaURL = GradientContextBuilderTests.fileURL(forResource: "meta", withExtension: "json")
         let scheme = DecodeCommand<Scheme>(url: metaURL).run().asScheme!
         contextBuilder = GeneralContextBuilder(kind: .shape, metaScheme: scheme)
@@ -26,7 +26,7 @@ final class GeneralContextBuilderTests: XCTestCase {
 
         // when
         let result = contextBuilder.buildContext(from: data)
-        
+
         // then
         switch result {
         case .dictionary(let context):
@@ -51,7 +51,7 @@ final class GeneralContextBuilderTests: XCTestCase {
 
         // when
         let result = contextBuilder.buildContext(from: data)
-        
+
         // then
         switch result {
         case .error:
@@ -67,7 +67,7 @@ final class GeneralContextBuilderTests: XCTestCase {
 
         // when
         let result = contextBuilder.buildContext(from: data)
-        
+
         // then
         switch result {
         case .error:

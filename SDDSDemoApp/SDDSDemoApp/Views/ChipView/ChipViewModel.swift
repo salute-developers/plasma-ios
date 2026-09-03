@@ -8,9 +8,9 @@ final class ChipViewModel: ComponentViewModel<ChipVariationProvider> {
     @Published var isEnabled: Bool = true
     @Published var iconImageEnabled: Bool = true
     @Published var buttomImageEnabled: Bool = true
-    @Published var iconImage: Image? = nil
-    @Published var buttonImage: Image? = nil
-    
+    @Published var iconImage: Image?
+    @Published var buttonImage: Image?
+
     init(theme: Theme = .sdddsServTheme, uiState: ChipUiState = .init()) {
         super.init(variationProvider: ChipVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)
@@ -37,11 +37,11 @@ final class ChipViewModel: ComponentViewModel<ChipVariationProvider> {
     var removeAction: () -> Void {
         { print("Chip removed") }
     }
-    
+
     func setIconImage() {
         iconImage = Asset.plasma24.image
     }
-    
+
     func setButtonImage() {
         buttonImage = Asset.close24.image
     }

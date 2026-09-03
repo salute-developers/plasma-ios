@@ -9,7 +9,6 @@ enum CheckboxStory: Story {
     static let title = "Checkbox"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: CheckboxUiState, theme: Theme) -> some View {
         CheckboxView(viewModel: CheckboxViewModel(theme: theme, uiState: state))

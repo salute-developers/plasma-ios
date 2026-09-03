@@ -21,7 +21,7 @@ final class HostingCarouselCell: UICollectionViewCell {
             host.view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             host.view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             host.view.topAnchor.constraint(equalTo: contentView.topAnchor),
-            host.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            host.view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
 
         if let parentViewController {

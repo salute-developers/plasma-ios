@@ -7,11 +7,11 @@ import SandboxSwiftUI
 struct SpinnerView: View {
     @ObservedObject private var viewModel: SpinnerViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: SpinnerViewModel = .init()) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         switch viewModel.componentViewLayoutMode {
         case .screen:
@@ -27,23 +27,23 @@ struct SpinnerView: View {
                     }
                 }
                 .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-                
+
                 Section {
                     settings
                 }
-                
+
                 Section {
                     VariationsView(viewModel: viewModel)
                 }
             }
             .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-            
+
             .navigationTitle("Spinner")
         case .subScreen:
             settings
         }
     }
-    
+
     @ViewBuilder
     private var settings: some View {
         VStack(alignment: .leading) {

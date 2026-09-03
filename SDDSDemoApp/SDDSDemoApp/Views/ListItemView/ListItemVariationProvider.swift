@@ -7,11 +7,11 @@ public enum ListItemLayout: String, CaseIterable {
     case listItem
     case listNumbered
     case listNumberedItem
-    
+
     static var listLayouts: [ListItemLayout] {
         [.listItemNormal, .listItemTight, .listItem, .listNumbered]
     }
-    
+
     static var itemLayouts: [ListItemLayout] {
         [.listItemNormal, .listItemTight, .listItem, .listNumberedItem]
     }
@@ -19,10 +19,10 @@ public enum ListItemLayout: String, CaseIterable {
 
 final class ListItemVariationProvider: VariationProvider {
     typealias Appearance = ListItemAppearance
-    
+
     var theme: Theme
     var layout: ListItemLayout
-    
+
     init(theme: Theme = .sdddsServTheme, layout: ListItemLayout = .listItemNormal) {
         self.theme = theme
         self.layout = layout
@@ -42,8 +42,8 @@ final class ListItemVariationProvider: VariationProvider {
             theme.listNumberedItemVariations
         }
     }
-    
+
     var defaultValue: ListItemAppearance {
         ListItemAppearance.defaultValue
     }
-} 
+}

@@ -12,4 +12,3 @@ import SDDSServTheme
         appearance: Badge.m.accent.appearance
     )
 }
-

@@ -16,7 +16,7 @@ import SDDSIcons
 
 struct ChipSizeLDefaultHasClear: View {
     var appearance: ChipAppearance
-    
+
     var body: some View {
         SDDSChip(
             title: "Label",
@@ -31,7 +31,7 @@ struct ChipSizeLDefaultHasClear: View {
 
 struct ChipSizeMSecondaryPilled: View {
     var appearance: ChipAppearance
-    
+
     var body: some View {
         SDDSChip(
             title: "Label",
@@ -46,7 +46,7 @@ struct ChipSizeMSecondaryPilled: View {
 
 struct ChipSizeSAccent: View {
     var appearance: ChipAppearance
-    
+
     var body: some View {
         SDDSChip(
             title: "Label",
@@ -61,7 +61,7 @@ struct ChipSizeSAccent: View {
 
 struct ChipSizeXsDefaultIcon: View {
     var appearance: ChipAppearance
-    
+
     var body: some View {
         SDDSChip(
             title: "Label",
@@ -76,7 +76,7 @@ struct ChipSizeXsDefaultIcon: View {
 
 struct ChipSizeLDisabled: View {
     var appearance: ChipAppearance
-    
+
     var body: some View {
         SDDSChip(
             title: "Label",
@@ -92,7 +92,7 @@ struct ChipSizeLDisabled: View {
 struct ChipGroupLDense: View {
     var appearance: ChipAppearance
     var chipGroupAppearance: ChipGroupAppearance
-    
+
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(
@@ -117,7 +117,7 @@ struct ChipGroupLDense: View {
 struct ChipGroupMSecondary: View {
     var appearance: ChipAppearance
     var chipGroupAppearance: ChipGroupAppearance
-    
+
     var body: some View {
         let chipData = (0..<20).map { _ in
             ChipData(
@@ -142,7 +142,7 @@ struct ChipGroupMSecondary: View {
 struct ChipGroupSAccent: View {
     var appearance: ChipAppearance
     var chipGroupAppearance: ChipGroupAppearance
-    
+
     var body: some View {
         let chipData = (0..<20).map { _ in
             ChipData(
@@ -167,7 +167,7 @@ struct ChipGroupSAccent: View {
 struct ChipGroupXs: View {
     var appearance: ChipAppearance
     var chipGroupAppearance: ChipGroupAppearance
-    
+
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(
@@ -192,7 +192,7 @@ struct ChipGroupXs: View {
 struct ChipGroupLSecondaryPilled: View {
     var appearance: ChipAppearance
     var chipGroupAppearance: ChipGroupAppearance
-    
+
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(
@@ -217,7 +217,7 @@ struct ChipGroupLSecondaryPilled: View {
 struct ChipGroupMAccentWide: View {
     var appearance: ChipAppearance
     var chipGroupAppearance: ChipGroupAppearance
-    
+
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(
@@ -242,7 +242,7 @@ struct ChipGroupMAccentWide: View {
 struct ChipGroupLSecondaryHasClose: View {
     var appearance: ChipAppearance
     var chipGroupAppearance: ChipGroupAppearance
-    
+
     var body: some View {
         let chipData = (0..<5).map { _ in
             ChipData(

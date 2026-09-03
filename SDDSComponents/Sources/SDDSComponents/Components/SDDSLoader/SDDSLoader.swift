@@ -11,13 +11,13 @@ public struct SDDSLoader: View {
     @Environment(\.loaderAppearance) private var loaderAppearance
     @Environment(\.spinnerData) private var spinnerData
     @Environment(\.circularProgressBarData) private var circularProgressBarData
-    
+
     private let _appearance: LoaderAppearance?
-    
+
     public init(appearance: LoaderAppearance) {
         self._appearance = appearance
     }
-        
+
     public var body: some View {
         if let spinnerData = spinnerData {
             SDDSSpinner(
@@ -41,7 +41,7 @@ public struct SDDSLoader: View {
             SDDSSpinner(appearance: SpinnerAppearance.defaultValue)
         }
     }
-    
+
     var appearance: LoaderAppearance {
         _appearance ?? loaderAppearance
     }

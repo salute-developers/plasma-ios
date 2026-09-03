@@ -12,7 +12,7 @@ final class ButtonColorContextBuilder: CodeGenerationContextBuilder {
     private let selectedColor: ColorState?
     private let statefulSource: ColorKeyValue?
     private let outputType: OutputType
-    
+
     init(
         defaultColor: ColorKeyValue?,
         highlightedColor: ColorState?,
@@ -36,12 +36,12 @@ final class ButtonColorContextBuilder: CodeGenerationContextBuilder {
         self.statefulSource = statefulColor
         self.outputType = outputType
     }
-    
+
     var context: String? {
         if defaultColor == nil && highlightedColor == nil && hoveredColor == nil && statefulSource == nil {
             return nil
         }
-        
+
         let clearColor = "ColorToken.clearColor"
         if let statefulSource {
             let defaultToken = ColorTokenContextBuilder(statefulSource, hasDefault: true).context ?? clearColor

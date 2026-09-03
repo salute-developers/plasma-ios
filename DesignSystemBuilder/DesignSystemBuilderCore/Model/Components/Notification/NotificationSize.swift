@@ -2,18 +2,18 @@ import Foundation
 
 struct NotificationSize: CodeGenerationSize {
     typealias Props = NotificationProps
-    
+
     var closeSize: String?
     var paddingStart: String?
     var paddingEnd: String?
     var paddingTop: String?
     var paddingBottom: String?
     var shape: String?
-    
+
     init(variation: NotificationConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: NotificationProps, id: String? = nil, nullify: Bool = false) {
         self.closeSize = CGFloatContextBuilder(props.closeSize?.value, nullify: nullify).context
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
@@ -22,7 +22,7 @@ struct NotificationSize: CodeGenerationSize {
         self.paddingBottom = CGFloatContextBuilder(props.paddingBottom?.value, nullify: nullify).context
         self.shape = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
     }
-    
+
     init() {
         self.closeSize = CGFloat.defaultContext
         self.paddingStart = CGFloat.defaultContext
@@ -31,4 +31,4 @@ struct NotificationSize: CodeGenerationSize {
         self.paddingBottom = CGFloat.defaultContext
         self.shape = PathDrawerContextBuilder.defaultContext
     }
-} 
+}

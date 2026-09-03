@@ -20,14 +20,14 @@ public struct AccordionData: Identifiable {
     public let content: String
     public var isExpanded: Bool
     public let appearance: AccordionItemAppearance?
-    public let onToggle: ((Bool) -> ())?
-    
+    public let onToggle: ((Bool) -> Void)?
+
     public init(
         title: String = "",
         content: String = "",
         isExpanded: Bool = false,
         appearance: AccordionItemAppearance? = nil,
-        onToggle: ((Bool) -> ())? = nil
+        onToggle: ((Bool) -> Void)? = nil
     ) {
         self.title = title
         self.content = content
@@ -35,4 +35,4 @@ public struct AccordionData: Identifiable {
         self.appearance = appearance
         self.onToggle = onToggle
     }
-} 
+}

@@ -2,7 +2,7 @@ import Foundation
 
 struct SegmentProps: MergeableConfiguration, Codable {
     typealias Props = SegmentProps
-    
+
     var shape: ShapeKeyValue?
     var backgroundColor: ColorKeyValue?
     var segmentItemStyle: KeyValue<String>?

@@ -6,13 +6,13 @@ import SDDSIcons
 
 final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
     @Published var data: [SDDSSegmentItemData<AnyView>] = []
-    
+
     // MARK: - Segment Element
     @Published var value: String = "Value"
     @Published var helperText: String = "Helper Text"
-    
+
     // MARK: - Icon
-    @Published var iconAttributes: ButtonIconAttributes? = nil
+    @Published var iconAttributes: ButtonIconAttributes?
     @Published var isIconVisible: Bool = false {
         didSet {
             self.updateIcon()
@@ -23,11 +23,11 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
             self.updateIcon()
         }
     }
-    
+
     // MARK: - Counter
     @Published var isCounterVisible: Bool = true
     @Published var counterText: String = "1"
-    
+
     // MARK: - Segment
     @Published var isDisabled: Bool = false {
         didSet {
@@ -37,10 +37,10 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
     @Published var layoutOrientation: SegmentLayoutOrientation = .horizontal
     @Published var stretch: Bool = false
     @Published var hasBackground: Bool = true
-    
+
     // MARK: - Other state
     @Published var selectedItemId: UUID?
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: SegmentUiState = .init()) {
         super.init(variationProvider: SegmentVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)
@@ -65,18 +65,18 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
         updateItems()
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     // MARK: - Private
     private func selectSegmentItem(id: UUID) {
         self.selectedItemId = id
     }
-        
+
     // MARK: - Updates
-    
+
     private func updateIcon() {
         self.iconAttributes = isIconVisible ? .init(image: Asset.plasma24.image, alignment: self.alignment) : nil
     }
-    
+
     var segmentHeight: CGFloat {
         switch layoutOrientation {
         case .horizontal:
@@ -85,7 +85,7 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
             return appearance.segmentItemAppearance.size.height * CGFloat(data.count)
         }
     }
-    
+
     private func updateItems() {
         self.data = data.map { item in
             var item = item
@@ -93,7 +93,7 @@ final class SegmentViewModel: ComponentViewModel<SegmentVariationProvider> {
             return item
         }
     }
-    
+
     func updateAppearance() {
         self.selectedItemId = nil
         self.data = []
@@ -123,7 +123,7 @@ extension SegmentViewModel {
         }
         self.data += [item]
     }
-    
+
     func removeItem(id: UUID) {
         self.data = data.filter { $0.id != id }
     }

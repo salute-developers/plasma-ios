@@ -1,0 +1,71 @@
+name: Feature request
+description: Propose a new component, property, API change or token
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of change is this?
+      options:
+        - New component
+        - New property or variation on an existing component
+        - Public API change
+        - New or changed design token
+        - Tooling (dsbuilder, scripts, CI)
+    validations:
+      required: true
+
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      placeholder: SDDSSegment
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to build that is hard or impossible today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would the API look like? Sketch the call site.
+      render: swift
+    validations:
+      required: true
+
+  - type: input
+    id: reference
+    attributes:
+      label: Reference
+      description: Design source, or the equivalent in the Android or web implementation.
+      placeholder: "https://github.com/salute-developers/plasma-android/..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: themes
+    attributes:
+      label: Which themes need this?
+      multiple: true
+      options:
+        - SDDSServTheme
+        - PlasmaB2CTheme
+        - PlasmaHomeDSTheme
+        - All themes
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and this is not a duplicate
+          required: true

@@ -7,7 +7,7 @@ final class WindowOverlayService: NSObject {
     private var scene: UIWindowScene? {
         UIApplication.shared.connectedScenes.first as? UIWindowScene
     }
-    
+
     private var tapGesture: UITapGestureRecognizer?
     private var onClose: (() -> Void)?
     private var lastFrame: CGRect = .zero
@@ -21,28 +21,28 @@ final class WindowOverlayService: NSObject {
     private var protectedTapFrame: CGRect?
     private var triggerTapFrame: CGRect?
     private var onTriggerTap: (() -> Void)?
-    
+
     private override init() {
         super.init()
     }
-    
+
     private func getExistingWindow() -> UIWindow? {
         return scene?.windows.first
     }
-    
+
     private func setupToastContainer() {
         guard let window = scene?.windows.first else { return }
-        
+
         if toastContainerView == nil {
             toastContainerView = PassthroughView(frame: window.bounds)
             toastContainerView?.backgroundColor = .clear
-            
+
             window.addSubview(toastContainerView!)
         }
-        
+
         toastContainerView?.frame = window.bounds
     }
-    
+
     private func setupOrientationObserver() {
         NotificationCenter.default.addObserver(
             self,
@@ -51,7 +51,7 @@ final class WindowOverlayService: NSObject {
             object: nil
         )
     }
-    
+
     private func removeOrientationObserver() {
         NotificationCenter.default.removeObserver(
             self,
@@ -59,7 +59,7 @@ final class WindowOverlayService: NSObject {
             object: nil
         )
     }
-    
+
     func show<Content: View>(
         @ViewBuilder content: @escaping () -> Content,
         at frame: CGRect,
@@ -73,7 +73,7 @@ final class WindowOverlayService: NSObject {
             print("No existing window found")
             return
         }
-        
+
         self.lastFrame = frame
         self.contentBuilder = { AnyView(
             content()
@@ -83,7 +83,7 @@ final class WindowOverlayService: NSObject {
         self.protectedTapFrame = protectedTapFrame
         self.triggerTapFrame = triggerTapFrame
         self.onTriggerTap = onTriggerTap
-        
+
         if overlayHostingController != nil {
             updateContent(
                 in: existingWindow,
@@ -96,28 +96,28 @@ final class WindowOverlayService: NSObject {
             )
             return
         }
-        
+
         setupOrientationObserver()
-        
+
         setupOverlayContainer(in: existingWindow)
-        
+
         let hosting = createHostingController(for: frame, window: existingWindow)
         overlayHostingController = hosting
-        
+
         if let container = overlayContainerView {
             hosting.view.frame = calculateViewFrame(for: frame, in: existingWindow)
             hosting.view.backgroundColor = UIColor.clear
             hosting.view.isUserInteractionEnabled = true
             container.addSubview(hosting.view)
-            
+
             if let containerView = container as? OverlayContainerView {
                 containerView.contentView = hosting.view
             }
-            
+
             setupTapGesture()
         }
     }
-    
+
     private func setupOverlayContainer(in window: UIWindow) {
         if overlayContainerView == nil {
             let containerView = OverlayContainerView(frame: window.bounds)
@@ -131,12 +131,12 @@ final class WindowOverlayService: NSObject {
             containerView.contentView = overlayHostingController?.view
         }
     }
-    
+
     private func setupTapGesture() {
         if let oldGesture = tapGesture, let container = overlayContainerView {
             container.removeGestureRecognizer(oldGesture)
         }
-        
+
         if hideOnTap, let container = overlayContainerView {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideGesture))
             tapGesture.cancelsTouchesInView = false
@@ -147,11 +147,11 @@ final class WindowOverlayService: NSObject {
             self.tapGesture = nil
         }
     }
-    
+
     private func calculateViewFrame(for frame: CGRect, in window: UIWindow) -> CGRect {
         return frame
     }
-    
+
     private func updateContent<Content: View>(
         in window: UIWindow,
         frame: CGRect,
@@ -169,67 +169,66 @@ final class WindowOverlayService: NSObject {
         self.protectedTapFrame = protectedTapFrame
         self.triggerTapFrame = triggerTapFrame
         self.onTriggerTap = onTriggerTap
-        
+
         if let existingController = overlayHostingController {
             let baseContent = contentBuilder?() ?? AnyView(EmptyView())
             let newContent = baseContent
                 .frame(width: frame.width, height: frame.height)
                 .ignoresSafeArea(.all)
-            
+
             existingController.rootView = AnyView(newContent)
             existingController.view.frame = calculateViewFrame(for: frame, in: window)
-            
+
             if let containerView = overlayContainerView as? OverlayContainerView {
                 containerView.contentView = existingController.view
             }
-            
+
             setupTapGesture()
         } else {
             let hosting = createHostingController(for: frame, window: window)
             overlayHostingController = hosting
-            
+
             if let container = overlayContainerView {
                 hosting.view.frame = calculateViewFrame(for: frame, in: window)
                 hosting.view.backgroundColor = UIColor.clear
                 hosting.view.isUserInteractionEnabled = true
                 container.addSubview(hosting.view)
-                
+
                 if let containerView = container as? OverlayContainerView {
                     containerView.contentView = hosting.view
                 }
-                
+
                 setupTapGesture()
             }
         }
     }
-    
 
     @objc private func orientationDidChange() {
         guard let window = getExistingWindow(), let content = self.contentBuilder else { return }
         overlayContainerView?.frame = window.bounds
-        
+
         if let existingController = overlayHostingController {
             let baseContent = contentBuilder?() ?? AnyView(EmptyView())
             let newContent = baseContent
                 .frame(width: lastFrame.width, height: lastFrame.height)
                 .ignoresSafeArea(.all)
-            
+
             existingController.rootView = AnyView(newContent)
             existingController.view.frame = calculateViewFrame(for: lastFrame, in: window)
         } else {
             let hosting = createHostingController(for: lastFrame, window: window)
             overlayHostingController = hosting
-            
+
             if let container = overlayContainerView {
                 hosting.view.frame = calculateViewFrame(for: lastFrame, in: window)
                 hosting.view.backgroundColor = UIColor.clear
                 hosting.view.isUserInteractionEnabled = true
                 container.addSubview(hosting.view)
-                
+
                 if let containerView = container as? OverlayContainerView {
                     containerView.contentView = hosting.view
                 }
-                
+
                 setupTapGesture()
             }
         }
@@ -245,16 +244,16 @@ final class WindowOverlayService: NSObject {
         hosting.view.backgroundColor = UIColor.clear
         return hosting
     }
-    
+
     @objc private func hideGesture(_ gesture: UITapGestureRecognizer) {
         guard hideOnTap, gesture.state == .ended else { return }
-        
+
         guard let container = overlayContainerView,
               let hostingView = overlayHostingController?.view else {
             hide()
             return
         }
-        
+
         let location = gesture.location(in: container)
         if let triggerTapFrame, triggerTapFrame.contains(location) {
             onTriggerTap?()
@@ -264,16 +263,16 @@ final class WindowOverlayService: NSObject {
             return
         }
         let hostingLocation = container.convert(location, to: hostingView)
-        
+
         if hostingView.bounds.contains(hostingLocation) {
             if let hitView = hostingView.hitTest(hostingLocation, with: nil) {
                 return
             }
         }
-        
+
         hide()
     }
-    
+
     func hide() {
         removeOrientationObserver()
         overlayHostingController?.view.removeFromSuperview()
@@ -289,7 +288,7 @@ final class WindowOverlayService: NSObject {
         onTriggerTap = nil
         onClose?()
     }
-    
+
     func updateContentIfVisible<Content: View>(
         @ViewBuilder content: @escaping () -> Content,
         at frame: CGRect? = nil,
@@ -298,11 +297,11 @@ final class WindowOverlayService: NSObject {
         onTriggerTap: (() -> Void)? = nil,
         onClose: (() -> Void)? = nil
     ) {
-        if let window = getExistingWindow(), 
+        if let window = getExistingWindow(),
            let existingController = overlayHostingController,
            existingController.view.superview != nil {
             self.contentBuilder = { AnyView(content()) }
-            
+
             let targetFrame = frame ?? lastFrame
             self.lastFrame = targetFrame
             self.protectedTapFrame = protectedTapFrame
@@ -311,19 +310,19 @@ final class WindowOverlayService: NSObject {
             if let onClose = onClose {
                 self.onClose = onClose
             }
-            
+
             RunLoop.main.perform(inModes: [.common]) { [weak self, weak existingController] in
                 guard let self = self, let existingController = existingController,
                       let window = self.getExistingWindow(),
                       existingController.view.superview != nil else {
                     return
                 }
-                
+
                 let baseContent = self.contentBuilder?() ?? AnyView(EmptyView())
                 let newContent = baseContent
                     .frame(width: targetFrame.width, height: targetFrame.height)
                     .ignoresSafeArea(.all)
-                
+
                 existingController.rootView = AnyView(newContent)
                 existingController.view.frame = self.calculateViewFrame(for: targetFrame, in: window)
             }
@@ -346,17 +345,17 @@ final class WindowOverlayService: NSObject {
             )
         }
     }
-    
+
     private func updateStackedToasts() {
         guard !stackedToasts.isEmpty else {
             hostingController?.view.removeFromSuperview()
             hostingController = nil
             return
         }
-        
+
         guard let firstToast = stackedToasts.first else { return }
         let position = firstToast.position
-        
+
         let stackView = VStack(spacing: 8) {
             if position.stackDirection == .down {
                 ForEach(stackedToasts) { toast in
@@ -374,10 +373,10 @@ final class WindowOverlayService: NSObject {
         }
         .padding(.zero)
         .animation(.easeInOut(duration: 0.3), value: stackedToasts.count)
-        
+
         let stackViewContainer = stackView
             .background(Color.clear)
-        
+
         let horizontalContainer = Group {
             switch position.horizontalAlignment {
             case .leading:
@@ -400,7 +399,7 @@ final class WindowOverlayService: NSObject {
                 EmptyView()
             }
         }
-        
+
         let hostingView = AnyView(
             Group {
                 switch position.verticalAlignment {
@@ -425,12 +424,12 @@ final class WindowOverlayService: NSObject {
                 }
             }
         )
-        
+
         if hostingController == nil {
             hostingController = UIHostingController(rootView: hostingView)
             hostingController?.view.backgroundColor = .clear
             hostingController?.view.isUserInteractionEnabled = true
-            
+
             setupToastContainer()
             toastContainerView?.hostingView = hostingController!.view
             toastContainerView?.addSubview(hostingController!.view)
@@ -439,7 +438,7 @@ final class WindowOverlayService: NSObject {
             hostingController?.rootView = hostingView
         }
     }
-    
+
     func showInStack<Content: View>(
         @ViewBuilder content: @escaping () -> Content,
         id: ToastID,
@@ -454,45 +453,45 @@ final class WindowOverlayService: NSObject {
             duration: duration,
             onClose: onClose
         )
-        
+
         withAnimation(.easeInOut(duration: 0.3)) {
         stackedToasts.append(toast)
             updateStackedToasts()
         }
-        
+
         if duration > 0 {
             DispatchQueue.main.asyncAfter(deadline: .now() + duration) { [weak self] in
                 self?.hideInStack(id: id)
             }
         }
     }
-    
+
     func hideInStack(id: ToastID) {
         guard let index = stackedToasts.firstIndex(where: { $0.id == id }) else {
             return
         }
-        
+
         let toast = stackedToasts.remove(at: index)
         toast.onClose?()
-        
+
         withAnimation(.easeInOut(duration: 0.3)) {
             updateStackedToasts()
         }
-        
+
         if stackedToasts.isEmpty {
             toastContainerView?.removeFromSuperview()
             toastContainerView = nil
         }
     }
-    
+
     func hideAllInStack() {
         stackedToasts.forEach { $0.onClose?() }
-        
+
         withAnimation(.easeInOut(duration: 0.3)) {
         stackedToasts.removeAll()
         updateStackedToasts()
         }
-        
+
         toastContainerView?.removeFromSuperview()
         toastContainerView = nil
     }
@@ -505,17 +504,17 @@ final class WindowOverlayService: NSObject {
         let hostingController = UIHostingController(rootView: contentView)
         hostingController.view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         hostingController.view.layoutIfNeeded()
-        
+
         let size = hostingController.view.systemLayoutSizeFitting(
             CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height),
             withHorizontalFittingPriority: .fittingSizeLevel,
             verticalFittingPriority: .fittingSizeLevel
         )
-        
+
         let x = (UIScreen.main.bounds.width - size.width) / 2
         let y = (UIScreen.main.bounds.height - size.height) / 2
         let frame = CGRect(x: x, y: y, width: size.width, height: size.height)
-        
+
         show(
             content: { contentView },
             at: frame,
@@ -530,7 +529,7 @@ extension WindowOverlayService: UIGestureRecognizerDelegate {
               let hostingView = overlayHostingController?.view else {
             return true
         }
-        
+
         let location = touch.location(in: container)
         if let triggerTapFrame, triggerTapFrame.contains(location) {
             return true
@@ -539,14 +538,13 @@ extension WindowOverlayService: UIGestureRecognizerDelegate {
             return false
         }
         let hostingLocation = container.convert(location, to: hostingView)
-        
+
         if hostingView.bounds.contains(hostingLocation) {
             if let hitView = hostingView.hitTest(hostingLocation, with: nil) {
                 return false
             }
         }
-        
+
         return true
     }
 }
-

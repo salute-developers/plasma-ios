@@ -10,7 +10,7 @@ import SDDSApiInfo
 public struct ButtonGroupAppearance {
     public var buttonAppearance: ButtonAppearance?
     public var size: ButtonGroupSizeConfiguration
-    
+
     public init(
         buttonAppearance: ButtonAppearance? = nil,
         size: ButtonGroupSizeConfiguration = ButtonGroupSize()

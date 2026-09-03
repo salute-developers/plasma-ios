@@ -1,55 +1,128 @@
 # ``SDDSComponents``
 
-Библиотека объединяет в себе набор решений по адаптации дизайн-системы SDDS для приложений iOS.
+Библиотека UI-компонентов дизайн-системы SDDS для iOS: SwiftUI и UIKit.
 
 @Metadata {
     @PageColor(green)
 }
 
+## Overview
+
+Компонент отвечает за поведение и вёрстку, а весь внешний вид приходит из темы через
+структуру `*Appearance`. Одна и та же ``BasicButton`` в разных темах выглядит по-разному,
+хотя код вызова не меняется.
+
+```swift
+BasicButton(
+    title: "Оплатить",
+    subtitle: "",
+    appearance: SDDSServTheme.BasicButton.l.accent.appearance,
+    layoutMode: .wrapContent,
+    action: {}
+)
+```
+
+Если `appearance` не передать, компонент возьмёт значение из `EnvironmentValueProvider` —
+его заполняет `Theme.initialize()` подключённой темы.
+
 ## Topics
 
-- ``SDDSCircularProgressBar``
+### С чего начать
 
-- ``SDDSBottomSheet``
+- <doc:GettingStarted>
+- <doc:Theming>
+- <doc:CustomTheme>
 
-- ``SDDSCard``
+### Кнопки
 
-- ``SDDSBadge``
+- ``BasicButton``
+- ``IconButton``
+- ``LinkButton``
+- ``SDDSButton``
+- ``SDDSButtonGroup``
 
-- ``SDDSIndicator``
-
-- ``SDDSCell``
-
-- ``SDDSSegment``
-
-- ``SDDSSegmentItem``
-
-- ``SDDSCounter``
-
-- ``SDDSTextArea``
+### Поля ввода
 
 - ``SDDSTextField``
+- ``SDDSTextArea``
+- ``SDDSCodeField``
+- ``SDDSCodeInput``
+- ``SDDSAutocomplete``
+- ``SDDSSelect``
+- ``SDDSSelectItem``
+- ``SDDSEditable``
+- ``SDDSWheel``
+- ``SDDSFormItem``
+- ``SDDSFormHorizontal``
+- ``SDDSFormVertical``
 
-- ``SDDSAvatarGroup``
+### Выбор
 
-- ``SDDSAvatar``
-
+- ``SDDSCheckbox``
+- ``SDDSCheckboxGroup``
+- ``SDDSRadiobox``
 - ``SDDSRadioboxGroup``
-
+- ``SDDSSwitch``
+- ``SDDSSegment``
+- ``SDDSSegmentItem``
+- ``SDDSChip``
 - ``SDDSChipGroup``
 
-- ``SDDSCheckboxGroup``
+### Навигация
 
-- ``SDDSChip``
+- ``SDDSNavigationBar``
+- ``SDDSTabs``
+- ``SDDSTabItem``
+- ``SDDSTabBar``
+- ``SDDSTabBarIsland``
+- ``SDDSTabBarItem``
+- ``SDDSToolbar``
+- ``SDDSDropdownMenu``
+- ``SDDSPaginationDots``
 
-- ``SDDSProgressView``
+### Обратная связь и оверлеи
 
-- ``SDDSRadiobox``
-
-- ``SDDSSwitch``
-
-- ``SDDSButton``
-
-- ``SDDSDivider``
-
+- ``SDDSToast``
+- ``SDDSNote``
+- ``SDDSNoteCompact``
+- ``SDDSModal``
+- ``SDDSBottomSheet``
+- ``SDDSDrawer``
 - ``SDDSOverlay``
+
+### Раскладка
+
+- ``SDDSCard``
+- ``SDDSCardContent``
+- ``SDDSCell``
+- ``SDDSList``
+- ``SDDSListItem``
+- ``SDDSDivider``
+- ``SDDSCarousel``
+- ``SDDSAccordion``
+- ``SDDSAccordionItem``
+- ``SDDSScrollbar``
+
+### Отображение данных
+
+- ``SDDSAvatar``
+- ``SDDSAvatarGroup``
+- ``SDDSBadge``
+- ``SDDSCounter``
+- ``SDDSIndicator``
+- ``SDDSProgressView``
+- ``SDDSCircularProgressBar``
+- ``SDDSSpinner``
+- ``SDDSLoader``
+- ``SDDSRectSkeleton``
+- ``SDDSTextSkeleton``
+- ``SDDSImage``
+- ``SDDSIcon``
+- ``SDDSText``
+
+### Модель внешнего вида
+
+- ``AppearanceVariation``
+- ``ComponentAppearanceVariation``
+- ``Variation``
+- ``BindingProperty``

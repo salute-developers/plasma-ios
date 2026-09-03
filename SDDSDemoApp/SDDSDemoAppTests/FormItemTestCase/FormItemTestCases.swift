@@ -96,7 +96,7 @@ struct FormItemCommonCase: View {
  */
 struct FormItemLDefault: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance
@@ -109,7 +109,7 @@ struct FormItemLDefault: View {
  */
 struct FormItemMRequredStartPositive: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance,
@@ -125,7 +125,7 @@ struct FormItemMRequredStartPositive: View {
  */
 struct FormItemSRequiredEndNegative: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance,
@@ -138,7 +138,7 @@ struct FormItemSRequiredEndNegative: View {
  */
 struct FormItemXsTitleTopWarning: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance,
@@ -153,7 +153,7 @@ struct FormItemXsTitleTopWarning: View {
  */
 struct FormItemLTitleTopRequiredStartDefault: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance,
@@ -168,7 +168,7 @@ struct FormItemLTitleTopRequiredStartDefault: View {
  */
 struct FormItemLTitleTopRequiredEndPositive: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance,
@@ -184,7 +184,7 @@ struct FormItemLTitleTopRequiredEndPositive: View {
  */
 struct FormItemLTitleStartNegative: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance,
@@ -201,7 +201,7 @@ struct FormItemLTitleStartNegative: View {
  */
 struct FormItemLTitleStartRequiredStartWarning: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance,
@@ -216,7 +216,7 @@ struct FormItemLTitleStartRequiredStartWarning: View {
  */
 struct FormItemLTitleStartRequiredEndDefault: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance,
@@ -231,7 +231,7 @@ struct FormItemLTitleStartRequiredEndDefault: View {
  */
 struct FormItemDisabledXsTitleStartRequiredStartPositive: View {
     var appearance: FormItemAppearance
-    
+
     var body: some View {
         FormItemCommonCase(
             appearance: appearance,
@@ -244,8 +244,8 @@ struct FormItemDisabledXsTitleStartRequiredStartPositive: View {
 }
 
 private let longText = """
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-when an unknown printer took a galley of type and scrambled it to make a type 
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type
 specimen book.
 """

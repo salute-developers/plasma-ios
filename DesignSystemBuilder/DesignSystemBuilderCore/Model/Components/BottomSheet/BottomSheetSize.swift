@@ -2,7 +2,7 @@ import Foundation
 
 struct BottomSheetSize: CodeGenerationSize {
     typealias Props = BottomSheetProps
-    
+
     var paddingStart: String?
     var paddingEnd: String?
     var paddingTop: String?
@@ -12,11 +12,11 @@ struct BottomSheetSize: CodeGenerationSize {
     var handleWidth: String?
     var handleHeight: String?
     var handleOffset: String?
-    
+
     init(variation: ComponentConfiguration<BottomSheetProps>.Variation, nullify: Bool) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: BottomSheetProps, id: String? = nil, nullify: Bool = false) {
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
         self.paddingEnd = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context
@@ -28,7 +28,7 @@ struct BottomSheetSize: CodeGenerationSize {
         self.handleHeight = CGFloatContextBuilder(props.handleHeight?.value, nullify: nullify).context
         self.handleOffset = CGFloatContextBuilder(props.handleOffset?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.paddingStart = CGFloat.defaultContext
         self.paddingEnd = CGFloat.defaultContext

@@ -46,7 +46,7 @@ public struct SDDSRadiobox: View {
     let accessibility: SelectionControlAccessibility
     private var _appearance: RadioboxAppearance?
     @Environment(\.radioboxAppearance) private var environmentAppearance
-    
+
     public init(
         isSelected: Binding<Bool>,
         title: String,
@@ -84,11 +84,11 @@ public struct SDDSRadiobox: View {
             accessibility: accessibility
         )
     }
-    
+
     var appearance: RadioboxAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var selectionControlToggle: SelectionControlToggle {
         guard let images = images else {
             return .pathDrawer

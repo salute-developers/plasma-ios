@@ -22,7 +22,7 @@ public struct DesignSystemBuilderConfiguration: Codable {
         case sddsOs = "SDDSOS"
         case sddsServTheme = "SDDSServ"
     }
-    
+
     /// Sentinel-флаг подмены семейства шрифтов на этапе генерации темы.
     /// Используется, когда тема не должна тянуть проприетарный шрифт из
     /// upstream-схемы (например, по compliance-причинам — санкционные риски,
@@ -103,14 +103,14 @@ public struct DesignSystemBuilderConfiguration: Codable {
             self.url = URL(string: url)!
         }
     }
-    
+
     public var paletteURL: URL = URL(string: "https://raw.githubusercontent.com/salute-developers/plasma/dev/packages/plasma-colors/palette/general.json")!
     public var themes: [ThemeConfiguration] = [
         Theme.sddsServTheme,
         Theme.plasmaB2C,
         Theme.plasmaHomeDS
     ].map { $0.themeConfiguration }
-    
+
     public init() {}
 }
 
@@ -126,7 +126,7 @@ public extension DesignSystemBuilderConfiguration.Theme {
                 ]
             )
         case .plasmaB2C:
-            //.init(name: self.rawValue, url: themeURL(name: "plasma_b2c_ACTUAL_TYPOGRAPHY"))
+            // .init(name: self.rawValue, url: themeURL(name: "plasma_b2c_ACTUAL_TYPOGRAPHY"))
             .init(name: self.rawValue, url: themeURL(name: "plasma_b2c"))
         case .plasmaGiga:
             .init(name: self.rawValue, url: themeURL(name: "plasma_giga"))
@@ -176,7 +176,7 @@ public extension DesignSystemBuilderConfiguration.Theme {
             .init(name: self.rawValue, url: themeURL(name: "default"))
         }
     }
-    
+
     static var baseURL: String {
         "https://github.com/salute-developers/theme-converter/raw/refs/heads/main/themes"
     }

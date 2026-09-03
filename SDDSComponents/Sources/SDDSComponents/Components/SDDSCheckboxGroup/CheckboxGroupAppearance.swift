@@ -6,7 +6,7 @@ import SDDSApiInfo
 public struct CheckboxGroupAppearance {
     public var size: CheckboxGroupSizeConfiguration
     public var checkboxAppearance: CheckboxAppearance
-    
+
     public init(
         size: CheckboxGroupSizeConfiguration = ZeroCheckboxGruopSize(),
         checkboxAppearance: CheckboxAppearance = CheckboxAppearance()
@@ -28,6 +28,6 @@ public struct ZeroCheckboxGruopSize: CheckboxGroupSizeConfiguration {
     public var debugDescription: String {
         "ZeroCheckboxGruopSize"
     }
-    
+
     public init() {}
 }

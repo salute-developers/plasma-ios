@@ -40,7 +40,6 @@ public struct PaginationDotsAppearance {
         )
     }
 
-    
 }
 
 extension PaginationDotsAppearance: EnvironmentKey {

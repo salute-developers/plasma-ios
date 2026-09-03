@@ -25,4 +25,3 @@ public struct SandboxStoryDetailView: View {
             .navigationTitle(descriptor.title)
     }
 }
-

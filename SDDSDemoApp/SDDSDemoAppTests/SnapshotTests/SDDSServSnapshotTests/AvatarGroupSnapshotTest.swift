@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class AvatarGroupSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testAvatarGroupSizeS() async throws {
         let appearance = Avatar.s.appearance

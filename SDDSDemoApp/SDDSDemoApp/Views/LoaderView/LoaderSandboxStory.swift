@@ -9,7 +9,6 @@ enum LoaderStory: Story {
     static let title = "Loader"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: LoaderUiState, theme: Theme) -> some View {
         LoaderView(viewModel: LoaderViewModel(theme: theme, uiState: state))

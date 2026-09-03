@@ -171,9 +171,7 @@ struct Reconciler {
                 let pnorm = Self.normalize(param.methodName)
                 let pbase = Self.base(pnorm)
                 var score = 0
-                if pnorm == fnorm { score = 100 }
-                else if pbase == fbase && !fbase.isEmpty { score = 80 }
-                else if !fbase.isEmpty && (pbase.contains(fbase) || fbase.contains(pbase)) { score = 40 }
+                if pnorm == fnorm { score = 100 } else if pbase == fbase && !fbase.isEmpty { score = 80 } else if !fbase.isEmpty && (pbase.contains(fbase) || fbase.contains(pbase)) { score = 40 }
                 if param.type == field.category { score += 15 }
                 // Согласование alias по категориям (config `*Style` ↔ Appearance typography/component_style).
                 if field.id.lowercased().hasSuffix("style") && (param.type == "typography" || param.type == "component_style") { score += 10 }

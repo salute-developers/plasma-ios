@@ -8,7 +8,7 @@
 
 **Tech Stack:** GitHub Actions (`macos-26`, `maxim-lobanov/setup-xcode@v1` with Xcode 26.6), bash, existing Ruby scripts (`build_xcframeworks.rb`, `build_themes.rb`), `gh` CLI, `ditto`.
 
-Spec: `docs/superpowers/specs/2026-09-02-release-ci-publish-design.md`.
+Spec: `docs/plans/2026-09-02-release-ci-publish-design.md`.
 
 ## Global Constraints
 

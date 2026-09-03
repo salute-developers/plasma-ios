@@ -3,9 +3,9 @@ import SDDSComponents
 
 final class CodeInputVariationProvider: VariationProvider {
     typealias Appearance = CodeInputAppearance
-    
+
     var theme: Theme
-    
+
     init(theme: Theme = .sdddsServTheme) {
         self.theme = theme
     }
@@ -13,7 +13,7 @@ final class CodeInputVariationProvider: VariationProvider {
     var variations: [Variation<CodeInputAppearance>] {
         theme.codeInputVariations
     }
-    
+
     var defaultValue: CodeInputAppearance {
         CodeInputAppearance()
     }

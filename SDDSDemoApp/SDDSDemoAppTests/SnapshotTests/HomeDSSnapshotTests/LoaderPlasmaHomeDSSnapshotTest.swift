@@ -15,18 +15,18 @@ import UIKit
 import SwiftUI
 
 final class LoaderPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
-    
+
     @MainActor
     func testLoaderCaseSpinnerHomeDS() async throws {
         let appearance = LoaderAppearance(spinnerAppearance: Spinner.m.default.appearance)
-        
+
         try await runSnapshotTest(view: LoaderCaseSpinner(appearance: appearance))
     }
-    
+
     @MainActor
     func testLoaderCaseCircularProgressHomeDS() async throws {
         let appearance = LoaderAppearance(circularProgressAppearance: CircularProgressBar.l.default.appearance)
-        
+
         try await runSnapshotTest(view: LoaderCaseCircularProgress(appearance: appearance))
     }
 }

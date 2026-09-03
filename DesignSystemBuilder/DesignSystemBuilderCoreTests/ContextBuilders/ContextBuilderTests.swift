@@ -43,7 +43,7 @@ class ContextBuilderTests: XCTestCase {
             default:
                 XCTFail("Ожидалась ошибка, которую выставил стаб (.decoding), получено \(error)")
             }
-            
+
         } else {
             XCTFail("Expected error result from stubbed context builder")
         }

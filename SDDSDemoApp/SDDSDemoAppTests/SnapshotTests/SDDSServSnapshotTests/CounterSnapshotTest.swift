@@ -15,37 +15,37 @@ import UIKit
 import SwiftUI
 
 final class CounterSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testCounterSizeLDefault() async throws {
         let appearance = Counter.l.default.appearance
         try await runSnapshotTest(view: CounterSizeLDefault(appearance: appearance))
     }
-    
+
     @MainActor
     func testCounterSizeMAccent() async throws {
         let appearance = Counter.m.accent.appearance
         try await runSnapshotTest(view: CounterSizeMAccent(appearance: appearance))
     }
-    
+
     @MainActor
     func testCounterSizeSPositive() async throws {
         let appearance = Counter.s.positive.appearance
         try await runSnapshotTest(view: CounterSizeSPositive(appearance: appearance))
     }
-    
+
     @MainActor
     func testCounterSizeXsWarning() async throws {
         let appearance = Counter.xs.warning.appearance
         try await runSnapshotTest(view: CounterSizeXsWarning(appearance: appearance))
     }
-    
+
     @MainActor
     func testCounterSizeXxsNegative() async throws {
         let appearance = Counter.xxs.negative.appearance
         try await runSnapshotTest(view: CounterSizeXxsNegative(appearance: appearance))
     }
-    
+
     @MainActor
     func testCounterSizeLWhite() async throws {
         let appearance = Counter.l.white.appearance

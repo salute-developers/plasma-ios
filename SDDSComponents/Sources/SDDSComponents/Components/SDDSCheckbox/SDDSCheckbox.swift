@@ -33,7 +33,7 @@ public struct SDDSCheckbox: View {
     let images: SelectionControlStateImages?
     private var _appearance: CheckboxAppearance?
     @Environment(\.checkboxAppearance) private var environmentAppearance
-    
+
     public init(
         state: Binding<SelectionControlState>,
         title: String,
@@ -51,7 +51,7 @@ public struct SDDSCheckbox: View {
         self.images = images
         self.accessibility = accessibility
     }
-    
+
     /**
      Инициализатор для создания чекбокса на основе данных структуры `CheckboxData`.
      
@@ -67,7 +67,7 @@ public struct SDDSCheckbox: View {
         self.images = data.images
         self.accessibility = data.accessibility
     }
-    
+
     public var body: some View {
         SelectionControl(
             state: $state,
@@ -80,11 +80,11 @@ public struct SDDSCheckbox: View {
             accessibility: accessibility
         )
     }
-    
+
     var appearance: CheckboxAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var selectionControlToggle: SelectionControlToggle {
         guard let images = images else {
             return .pathDrawer

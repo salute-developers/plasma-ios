@@ -24,7 +24,7 @@ public struct DropdownMenuAppearance: Hashable {
     public var backgroundColor: ColorToken
     public var shadow: ShadowToken
     public var size: DropdownMenuSizeConfiguration
-    
+
     public init(
         listAppearance: ListAppearance = .defaultValue,
         dividerAppearance: DividerAppearance? = nil,
@@ -38,13 +38,13 @@ public struct DropdownMenuAppearance: Hashable {
         self.shadow = shadow
         self.size = size
     }
-    
+
     public static func == (lhs: DropdownMenuAppearance, rhs: DropdownMenuAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.listAppearance == rhs.listAppearance &&
         lhs.backgroundColor == rhs.backgroundColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -54,4 +54,4 @@ extension DropdownMenuAppearance: EnvironmentKey {
     public static var defaultValue: Self {
         DropdownMenuAppearance(listAppearance: .defaultValue)
     }
-} 
+}

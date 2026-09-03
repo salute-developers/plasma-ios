@@ -19,7 +19,7 @@ import SDDSIcons
  */
 struct TextFieldSizeLDefaultRequiredStartInnerLabel: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -51,7 +51,7 @@ struct TextFieldSizeLDefaultRequiredStartInnerLabel: View {
  */
 struct TextFieldSizeMSuccessOuterOptional: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -81,7 +81,7 @@ struct TextFieldSizeMSuccessOuterOptional: View {
  */
 struct TextFieldSizeSWarningRequiredEndInnerLabel: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -111,7 +111,7 @@ struct TextFieldSizeSWarningRequiredEndInnerLabel: View {
  */
 struct TextFieldSizeXsErrorInnerOptional: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -139,7 +139,7 @@ struct TextFieldSizeXsErrorInnerOptional: View {
  */
 struct TextFieldSizeLSuccessRequiredStartOuterLabel: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -171,7 +171,7 @@ struct TextFieldSizeLSuccessRequiredStartOuterLabel: View {
  */
 struct TextFieldSizeMWarningInnerOptional: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -203,7 +203,7 @@ struct TextFieldSizeMWarningInnerOptional: View {
  */
 struct TextFieldReadOnly: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -235,7 +235,7 @@ struct TextFieldReadOnly: View {
  */
 struct TextFieldSizeXsSuccessOptionalOuterLabel: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -267,7 +267,7 @@ struct TextFieldSizeXsSuccessOptionalOuterLabel: View {
  */
 struct TextFieldDisabled: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -299,7 +299,7 @@ struct TextFieldDisabled: View {
  */
 struct TextFieldSizeMErrorOptionalOuterLabel: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -331,7 +331,7 @@ struct TextFieldSizeMErrorOptionalOuterLabel: View {
  */
 struct TextFieldSizeSWarningRequiredEndInnerLabelFocused: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -364,7 +364,7 @@ struct TextFieldSizeSWarningRequiredEndInnerLabelFocused: View {
 struct TextFieldSizeMSuccessChipsOptionalInnerLabel: View {
     var appearance: TextFieldAppearance
     var chipAppearance: ChipAppearance
-    
+
     @State private var value: TextFieldValue
     init(
         appearance: TextFieldAppearance,
@@ -374,7 +374,7 @@ struct TextFieldSizeMSuccessChipsOptionalInnerLabel: View {
         self.chipAppearance = chipAppearance
         self._value = State(initialValue: TextFieldValue.multiple("", chips(with: chipAppearance)))
     }
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -406,7 +406,7 @@ struct TextFieldSizeMSuccessChipsOptionalInnerLabel: View {
 struct TextFieldSizeSDefaultChipsRequiredEndOuterLabel: View {
     var appearance: TextFieldAppearance
     var chipAppearance: ChipAppearance
-    
+
     @State private var value: TextFieldValue
     init(
         appearance: TextFieldAppearance,
@@ -416,7 +416,7 @@ struct TextFieldSizeSDefaultChipsRequiredEndOuterLabel: View {
         self.chipAppearance = chipAppearance
         self._value = State(initialValue: TextFieldValue.multiple("", chips(with: chipAppearance)))
     }
-    
+
     var body: some View {
         SDDSTextField(
             value: $value,
@@ -447,7 +447,7 @@ struct TextFieldSizeSDefaultChipsRequiredEndOuterLabel: View {
  */
 struct TextFieldClearSizeLErrorOptionalInnerLabel: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -479,7 +479,7 @@ struct TextFieldClearSizeLErrorOptionalInnerLabel: View {
  */
 struct TextFieldClearSizeMWarningInnerLabelRequiredStart: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -511,7 +511,7 @@ struct TextFieldClearSizeMWarningInnerLabelRequiredStart: View {
  */
 struct TextFieldClearSizeSDefaultOptionalOuter: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -543,7 +543,7 @@ struct TextFieldClearSizeSDefaultOptionalOuter: View {
  */
 struct TextFieldClearSizeXsSuccessOuterLabelRequireEnd: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -575,7 +575,7 @@ struct TextFieldClearSizeXsSuccessOuterLabelRequireEnd: View {
  */
 struct TextFieldClearSizeLInnerLabelRequiredEnd: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -607,7 +607,7 @@ struct TextFieldClearSizeLInnerLabelRequiredEnd: View {
  */
 struct TextFieldClearSizeMErrorInnerRequiredStart: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -639,7 +639,7 @@ struct TextFieldClearSizeMErrorInnerRequiredStart: View {
  */
 struct TextFieldClearSizeLErrorTBTA: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -671,7 +671,7 @@ struct TextFieldClearSizeLErrorTBTA: View {
  */
 struct TextFieldInputText: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("абвгдежзabcdefg@#643!#")
     var body: some View {
         SDDSTextField(
@@ -732,7 +732,7 @@ struct TextFieldSecureEntryInputText: View {
  */
 struct TextFieldSizeXlDefaultOptionalInnerLabel: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -764,7 +764,7 @@ struct TextFieldSizeXlDefaultOptionalInnerLabel: View {
  */
 struct TextFieldSizeLTBTA: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -796,7 +796,7 @@ struct TextFieldSizeLTBTA: View {
  */
 struct TextFieldSizeLRequiredStartOuterLabelDisabled: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(
@@ -828,7 +828,7 @@ struct TextFieldSizeLRequiredStartOuterLabelDisabled: View {
  */
 struct TextFieldSizeLTBTAEmptyValue: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("")
     var body: some View {
         SDDSTextField(
@@ -860,7 +860,7 @@ struct TextFieldSizeLTBTAEmptyValue: View {
  */
 struct TextFieldSizeLTBTACyrillic: View {
     var appearance: TextFieldAppearance
-    
+
     @State private var value = TextFieldValue.single("Value")
     var body: some View {
         SDDSTextField(

@@ -8,7 +8,7 @@ struct SegmentUiState: StoryUiState, DefaultUiState {
     var data: [SDDSSegmentItemData<AnyView>] = []
     var value: String = "Value"
     var helperText: String = "Helper Text"
-    var iconAttributes: ButtonIconAttributes? = nil
+    var iconAttributes: ButtonIconAttributes?
     var isIconVisible: Bool = false
     var alignment: SDDSComponents.ButtonAlignment = .leading
     var isCounterVisible: Bool = true

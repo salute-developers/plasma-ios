@@ -4,4 +4,3 @@ enum NavigationBarPageType: Equatable {
     case mainPage
     case internalPage
 }
-

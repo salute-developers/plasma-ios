@@ -12,6 +12,6 @@ struct TooltipUiState: StoryUiState, DefaultUiState {
     var triggerCentered: Bool = false
     var placementMode: PopoverPlacementMode = .strict
     var buttonPosition: PopoverButtonPosition = .center
-    var duration: Int? = nil
+    var duration: Int?
     var text: String = "Tooltip text"
 }

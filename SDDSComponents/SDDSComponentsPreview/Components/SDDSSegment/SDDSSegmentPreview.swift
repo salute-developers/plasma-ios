@@ -7,11 +7,11 @@ struct SDDSSegmentPreview: PreviewProvider {
     static var previews: some View {
         let ids = [UUID(), UUID(), UUID()]
         var selectedId = ids[0]
-        
+
         func selectItem(_ id: UUID) {
             selectedId = id
         }
-        
+
         let items = [
             SDDSSegmentItemData(
                 id: ids[0],

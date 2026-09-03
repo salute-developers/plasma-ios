@@ -4,13 +4,13 @@ final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
     let string: String
     let appearance: String?
     let nullify: Bool
-    
+
     init(_ string: String?, appearance: String? = nil, nullify: Bool = false) {
         self.string = string ?? ""
         self.appearance = appearance
         self.nullify = nullify
     }
-    
+
     var context: String? {
         let comma = "."
         let parts = string.components(separatedBy: ".")
@@ -39,23 +39,23 @@ final class ComponentStyleContextBuilder: CodeGenerationContextBuilder {
             ComponentStyleCatalog.reportSkipped(style: string)
             return nullify ? "nil" : ""
         }
-        
+
         var result = [String]()
         result += [component.rawValue]
         result += variations
-        
+
         if variations.isEmpty {
             result += ["default"]
         }
         result += ["appearance"]
-        
+
         if let appearance = appearance {
             let modifyString = """
             modify(\(appearance))
             """
             result += [modifyString]
         }
-        
+
         return result.joined(separator: comma)
     }
 }

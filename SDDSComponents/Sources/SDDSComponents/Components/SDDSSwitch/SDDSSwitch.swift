@@ -19,14 +19,12 @@ import SwiftUI
 
  ## Пример использования
  ```swift
- @State isOn: Bool = true
- 
+ // @sample: SDDSComponentsFixtures/Samples/Switch/SDDSSwitch_Simple.swift
  SDDSSwitch(
      title: "Label",
      subtitle: "Description",
      isOn: $isOn,
      isEnabled: true,
-     appearance: Switch.l.appearance,
      switchAccessibility: SwitchAccessibility()
  )
 ```
@@ -67,11 +65,11 @@ public struct SDDSSwitch: View {
         self._appearance = appearance
         self.switchAccessibility = switchAccessibility
     }
-    
+
     public var body: some View {
         content
     }
-    
+
     private var content: some View {
         VStack(alignment: .leading, spacing: appearance.size.descriptionPadding) {
             HStack(spacing: appearance.size.textPadding) {
@@ -126,7 +124,7 @@ public struct SDDSSwitch: View {
             fatalError("Undefined Switch Typography for size \(appearance.size.debugDescription). Using a default value.")
         }
     }
-    
+
     @ViewBuilder
     private var subtitleText: some View {
         let subtitleStyle = appearance.subtitleColor(for: isEnabled)
@@ -152,7 +150,7 @@ public struct SDDSSwitch: View {
                 .mask(path.stroke(style: StrokeStyle(lineWidth: 1)))
         }
     }
-    
+
     var appearance: SwitchAppearance {
         _appearance ?? environmentAppearance
     }

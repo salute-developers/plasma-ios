@@ -7,7 +7,7 @@ import SDDSApiInfo
 public struct RadioboxGroupAppearance {
     public var size: RadioboxGroupSizeConfiguration
     public var radioboxAppearance: RadioboxAppearance
-    
+
     public init(
         size: RadioboxGroupSizeConfiguration = ZeroRadioboxGroupSize(),
         radioboxAppearance: RadioboxAppearance = RadioboxAppearance()
@@ -25,11 +25,11 @@ extension RadioboxGroupAppearance: EnvironmentKey {
 
 public struct ZeroRadioboxGroupSize: RadioboxGroupSizeConfiguration {
     public var verticalSpacing: CGFloat
-    
+
     public var debugDescription: String {
         "ZeroRadioboxGroupSize"
     }
-    
+
     public init(verticalSpacing: CGFloat = 0) {
         self.verticalSpacing = verticalSpacing
     }

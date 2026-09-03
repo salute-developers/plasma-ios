@@ -29,7 +29,7 @@ struct LoaderView: View {
                 }
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
-                        
+
             Section {
                 HStack {
                     Text("Loader Type")
@@ -46,11 +46,11 @@ struct LoaderView: View {
                     }
                 }
             }
-            
+
             Section("Loader") {
                 VariationsView(viewModel: viewModel)
             }
-            
+
             Section(viewModel.loaderType.rawValue) {
                 switch viewModel.loaderType {
                 case .spinner:
@@ -61,17 +61,17 @@ struct LoaderView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("Loader")
     }
-    
+
     private var spinnerData: SDDSSpinnerData {
         .init(
             isAnimating: viewModel.spinnerViewModel.isAnimating,
             appearance: viewModel.appearance.spinnerAppearance
         )
     }
-    
+
     private var circularProgressBarData: SDDSCircularProgressBarData {
         let circularProgressViewModel = viewModel.circularProgressViewModel
         return .init(
@@ -81,7 +81,7 @@ struct LoaderView: View {
             appearance: viewModel.appearance.circularProgressAppearance
         )
     }
-    
+
     private var circularProgressBarContent: AnyView? {
         if viewModel.circularProgressViewModel.customContent {
             AnyView(icon)
@@ -89,7 +89,7 @@ struct LoaderView: View {
             nil
         }
     }
-    
+
     private var icon: some View {
         Asset.close24.image
             .renderingMode(.template)

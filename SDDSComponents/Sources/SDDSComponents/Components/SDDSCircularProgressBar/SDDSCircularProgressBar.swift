@@ -35,7 +35,7 @@ public struct SDDSCircularProgressBar: View {
     private let hasTrack: Bool
     private let _appearance: CircularProgressBarAppearance?
     private let content: AnyView?
-    
+
     public init(
         progress: Double,
         suffix: String = "%",
@@ -49,7 +49,7 @@ public struct SDDSCircularProgressBar: View {
         self.content = content
         self._appearance = appearance
     }
-    
+
     public init(data: SDDSCircularProgressBarData) {
         self.init(
             progress: data.progress,
@@ -59,16 +59,16 @@ public struct SDDSCircularProgressBar: View {
             content: data.content
         )
     }
-    
+
     public var body: some View {
         ZStack {
             if hasTrack {
                 Circle()
                     .stroke(appearance.trackColor.color(for: colorScheme, subtheme: subtheme), lineWidth: appearance.size.trackThickness)
             }
-            
+
             indicator
-            
+
             if let content = content {
                 content
             } else {
@@ -81,7 +81,7 @@ public struct SDDSCircularProgressBar: View {
         }
         .frame(width: appearance.size.width, height: appearance.size.height)
     }
-    
+
     @ViewBuilder
     private var indicator: some View {
         switch appearance.indicatorColor {
@@ -108,14 +108,14 @@ public struct SDDSCircularProgressBar: View {
             }
         }
     }
-    
+
     private func gradient(token: GradientToken, for colorScheme: ColorScheme, subtheme: SubthemeData) -> GradientToken {
         guard !subtheme.isNone else {
             return token
         }
         return subtheme.gradientMapper(subtheme.subtheme, token)
     }
-    
+
     private var indicatorCircle: some Shape {
         Arc(
             startAngle: .degrees(270),
@@ -123,11 +123,11 @@ public struct SDDSCircularProgressBar: View {
             clockwise: false
         )
     }
-    
+
     private var appearance: CircularProgressBarAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var valueTypography: TypographyToken? {
         appearance.valueTypography.typography(with: appearance.size)
     }

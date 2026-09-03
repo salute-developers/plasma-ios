@@ -19,7 +19,7 @@ public protocol SelectionControlAppearance {
     var toggleColorIndeterminate: StatefulFillStyle { get }
     var toggleIndeterminateIcon: PathDrawer? { get }
     var toggleIndeterminateIconColor: StatefulFillStyle { get }
-    
+
     func titleColor(for isEnabled: Bool) -> FillStyle
     func subtitleColor(for isEnabled: Bool) -> FillStyle
     var toggleStatefulColor: StatefulFillStyle { get }

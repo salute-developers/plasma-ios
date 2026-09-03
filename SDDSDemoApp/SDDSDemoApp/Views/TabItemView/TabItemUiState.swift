@@ -5,9 +5,9 @@ struct TabItemUiState: StoryUiState, DefaultUiState {
     var variant: String = ""
     var appearance: String = ""
     var label: String = "Label"
-    var value: String? = nil
+    var value: String?
     var hasValue: Bool = false
-    var counterValue: Int? = nil
+    var counterValue: Int?
     var hasCounter: Bool = false
     var isSelected: Bool = false
     var isDisabled: Bool = false

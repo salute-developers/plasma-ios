@@ -5,7 +5,7 @@ struct ColorKeyValue: Codable {
     let `default`: String?
     let alpha: Double?
     let states: [ColorState]?
-    
+
     func value(for statesSet: [ComponentState]) -> ColorState? {
         let requestedStates = Set(statesSet)
         let defaultState = ColorState(state: [], value: `default`)

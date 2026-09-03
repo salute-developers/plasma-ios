@@ -1,0 +1,41 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci(sdds-ios/build-system)"
+    labels: ["dependencies", "ci"]
+
+  - package-ecosystem: swift
+    directory: /DesignSystemBuilder
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "build(sdds-icore/theme-builder)"
+    labels: ["dependencies"]
+
+  - package-ecosystem: swift
+    directory: /Tools/SDDSApiInfoGenerator
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "build(sdds-icore/theme-builder)"
+    labels: ["dependencies"]
+
+  - package-ecosystem: npm
+    directory: /.github/actions/preprocessing-release-changelog
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci(sdds-ios/build-system)"
+    labels: ["dependencies", "ci"]
+
+  - package-ecosystem: npm
+    directory: /docusaurus/common-template
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "chore(sdds-ios/build-system)"
+    labels: ["dependencies"]

@@ -4,15 +4,15 @@ import SDDSThemeCore
 
 final class TextSkeletonVariationProvider: VariationProvider {
     typealias Appearance = SkeletonAppearance
-    
+
     var theme: Theme
     var kind: TextSkeletonKind
-    
+
     init(theme: Theme = .sdddsServTheme, kind: TextSkeletonKind = .default) {
         self.theme = theme
         self.kind = kind
     }
-    
+
     var variations: [Variation<SkeletonAppearance>] {
         switch kind {
         case .default:
@@ -27,8 +27,8 @@ final class TextSkeletonVariationProvider: VariationProvider {
             theme.textSkeletonTextVariations
         }
     }
-    
+
     var defaultValue: SkeletonAppearance {
         variations.first?.appearance ?? SkeletonAppearance()
     }
-} 
+}

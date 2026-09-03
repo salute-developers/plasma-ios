@@ -68,7 +68,7 @@ public extension View {
             contentEnd: contentEnd
         )
     }
-} 
+}
 
 /**
  Модификатор для отображения тостов с произвольным содержимым.
@@ -128,7 +128,7 @@ extension View {
             content: content,
             contentEnd: contentEnd
         )
-        
+
         return self
             .task(id: isPresented.wrappedValue) {
                 if isPresented.wrappedValue {
@@ -136,7 +136,7 @@ extension View {
                 }
             }
     }
-    
+
     private func showToast<ContentStart: View, Content: View, ContentEnd: View>(
         params: ToastParams<ContentStart, Content, ContentEnd>
     ) {

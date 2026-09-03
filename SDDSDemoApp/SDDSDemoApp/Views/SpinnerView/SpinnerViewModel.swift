@@ -28,8 +28,4 @@ final class SpinnerViewModel: ComponentViewModel<SpinnerVariationProvider> {
         isAnimating = uiState.isAnimating
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
-    override func onUpdateAppearance() {
-        super.onUpdateAppearance()
-    }
-} 
+}

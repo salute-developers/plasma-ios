@@ -5,10 +5,10 @@ import SDDSThemeCore
 
 final class AvatarViewModel: ComponentViewModel<AvatarVariationProvider> {
     typealias Appearance = AvatarAppearance
-    
+
     @Published var text: String = "AB"
-    @Published var image: AvatarImageSource? = nil
-    @Published var placeholderImage: AvatarImageSource? = nil
+    @Published var image: AvatarImageSource?
+    @Published var placeholderImage: AvatarImageSource?
     @Published var status: AvatarStatus = .online
     @Published var extraPlacement: AvatarExtraPlacement = .none {
         didSet {
@@ -70,7 +70,7 @@ final class AvatarViewModel: ComponentViewModel<AvatarVariationProvider> {
         isCounterEnabled = uiState.isCounterEnabled
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     private func updatePlacement() {
         if !isBadgeEnabled && !isCounterEnabled {
             extraPlacement = .none
@@ -79,7 +79,7 @@ final class AvatarViewModel: ComponentViewModel<AvatarVariationProvider> {
             extraPlacement = .topRight
         }
     }
-    
+
     private func updateExtra() {
         if extraPlacement != .none && !isBadgeEnabled {
             isBadgeEnabled = true

@@ -18,7 +18,7 @@ struct PopoverTailShape: Shape {
             tailPadding: tailPadding
         )
     }
-    
+
     func createTailPath(
         placement: PopoverPlacement,
         alignment: PopoverAlignment,
@@ -28,7 +28,7 @@ struct PopoverTailShape: Shape {
         tailPadding: CGFloat
     ) -> Path {
         var path = Path()
-        
+
         let arc1Rect = CGRect(x: -tailWidth, y: -tailHeight * 2, width: tailWidth, height: tailHeight * 2)
         path.addArc(
             center: CGPoint(x: arc1Rect.midX, y: arc1Rect.midY),
@@ -48,7 +48,7 @@ struct PopoverTailShape: Shape {
             endAngle: .degrees(180),
             clockwise: false
         )
-        
+
         path.closeSubpath()
 
         // Transform
@@ -75,7 +75,7 @@ struct PopoverTailShape: Shape {
 
         return path.applying(transform)
     }
-    
+
     func getTailTranslationX(
         placement: PopoverPlacement,
         alignment: PopoverAlignment,

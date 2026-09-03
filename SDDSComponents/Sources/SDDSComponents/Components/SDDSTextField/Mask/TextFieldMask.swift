@@ -35,7 +35,7 @@ public enum TextFieldMask: Equatable, Hashable {
     /// - Количество символов ограничивается форматом номера телефона
     /// - Код страны выводится в международном формате
     case phone(PhoneMask)
-    
+
     /// Маска для даты
     /// - Parameter mask: Тип маски даты (по умолчанию `.short` - ДД.ММ.ГГ)
     ///
@@ -43,7 +43,7 @@ public enum TextFieldMask: Equatable, Hashable {
     /// - Поддерживает только цифры по умолчанию
     /// - При необходимости можно добавить символьные значения через `.custom`
     case date(DateMask)
-    
+
     /// Маска для времени
     /// - Parameter mask: Тип маски времени (по умолчанию `.short` - 00:00)
     ///
@@ -51,7 +51,7 @@ public enum TextFieldMask: Equatable, Hashable {
     /// - Поддерживает только цифры по умолчанию
     /// - При необходимости можно добавить символьные значения через `.custom`
     case time(TimeMask)
-    
+
     /// Маска для чисел
     /// - Parameter mask: Тип маски числа (integer или decimal)
     ///
@@ -60,7 +60,7 @@ public enum TextFieldMask: Equatable, Hashable {
     /// - Формат маски динамически генерируется на основе введенного текста
     /// - Использует NumberFormatter для форматирования с разделителями тысяч
     case number(NumberMask)
-    
+
     /// Возвращает строку формата маски для InputMask
     /// - Parameter input: Входной текст для динамических масок (например, NumberMask)
     /// - Returns: Формат маски. Для статических масок возвращает формат, для динамических - формат на основе input
@@ -76,7 +76,7 @@ public enum TextFieldMask: Equatable, Hashable {
             return numberMask.format(input: input)
         }
     }
-    
+
     /// Возвращает пример отображения маски
     public var placeholder: String {
         switch self {
@@ -90,7 +90,7 @@ public enum TextFieldMask: Equatable, Hashable {
             return numberMask.placeholder
         }
     }
-    
+
     /// Проверяет, является ли маска динамической (требует обновления формата при изменении текста)
     public var isDynamic: Bool {
         switch self {
@@ -100,7 +100,7 @@ public enum TextFieldMask: Equatable, Hashable {
             return false
         }
     }
-    
+
     /// Проверяет, является ли маска полной (все обязательные символы введены)
     /// - Parameters:
     ///   - text: Текст для проверки
@@ -118,25 +118,24 @@ public extension TextFieldMask {
     static var russianPhone: TextFieldMask {
         .phone(.russia)
     }
-    
+
     /// Дата в формате ДД.ММ.ГГ
     static var shortDate: TextFieldMask {
         .date(.short)
     }
-    
+
     /// Дата в формате ДД.ММ.ГГГГ
     static var fullDate: TextFieldMask {
         .date(.full)
     }
-    
+
     /// Время в формате 00:00
     static var shortTime: TextFieldMask {
         .time(.short)
     }
-    
+
     /// Время в формате 00:00:00
     static var fullTime: TextFieldMask {
         .time(.withSeconds)
     }
 }
-

@@ -13,25 +13,26 @@ import SwiftUI
 
  ## Пример использования
 ```swift
-    SDDSDivider(appearance: Divider.default.appearance)
+// @sample: SDDSComponentsFixtures/Samples/Divider/SDDSDivider_Simple.swift
+SDDSDivider()
 ```
 */
 public struct SDDSDivider: View {
     private let _appearance: DividerAppearance?
-    
+
     @Environment(\.dividerAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     public init(appearance: DividerAppearance? = nil) {
         self._appearance = appearance
     }
-    
+
     public var body: some View {
         appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme)
             .frame(height: appearance.thickness)
             .shape(pathDrawer: appearance.shape)
     }
-    
+
     private var appearance: DividerAppearance {
         _appearance ?? environmentAppearance
     }

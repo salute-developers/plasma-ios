@@ -63,7 +63,7 @@ public extension View {
             }
         )
     }
-    
+
     func notification<Content: View>(
         isPresented: Binding<Bool>,
         appearance: NotificationAppearance,
@@ -98,13 +98,13 @@ public extension View {
             }
         )
     }
-    
+
     private func toastAppearance(from notificationAppearance: NotificationAppearance) -> ToastAppearance {
         var appearance = ToastAppearance()
         appearance.backgroundColor = notificationAppearance.backgroundColor
         appearance.textColor = nil
         appearance.contentEndColor = notificationAppearance.closeColor
-        
+
         var size = ZeroToastSize()
         size.contentEndSize = notificationAppearance.size.closeSize
         size.paddingEnd = notificationAppearance.size.paddingEnd
@@ -113,7 +113,7 @@ public extension View {
         size.paddingBottom = notificationAppearance.size.paddingBottom
         size.shape = notificationAppearance.size.shape
         appearance.size = size
-        
+
         return appearance
     }
 }

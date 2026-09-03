@@ -9,7 +9,6 @@ enum CheckboxGroupStory: Story {
     static let title = "CheckboxGroup"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: CheckboxGroupUiState, theme: Theme) -> some View {
         CheckboxGroupView(viewModel: CheckboxGroupViewModel(theme: theme, uiState: state))

@@ -4,14 +4,14 @@ import SDDSComponents
 
 public enum ChipGroupSize: ChipGroupSizeConfiguration, Hashable {
     public var gap: CGFloat { 0 }
-    
+
     public var lineSpacing: CGFloat { 0 }
-    
+
     case large
     case medium
     case small
     case extraSmall
-    
+
     public var debugDescription: String {
         switch self {
         case .large:
@@ -24,7 +24,7 @@ public enum ChipGroupSize: ChipGroupSizeConfiguration, Hashable {
             return "extraSmall"
         }
     }
-    
+
     public func insets(for gap: ChipGroupGap) -> EdgeInsets {
         switch gap {
         case .dense:
@@ -33,11 +33,11 @@ public enum ChipGroupSize: ChipGroupSizeConfiguration, Hashable {
             return EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
         }
     }
-    
+
     public var maxColumns: Int {
         8
     }
-    
+
     public var alignment: ChipGroupAlignment {
         return .left
     }

@@ -7,7 +7,7 @@ struct FontFamily: Codable {
         case text
         case body
     }
-    
+
     let name: String
     let fonts: [Font]
 }

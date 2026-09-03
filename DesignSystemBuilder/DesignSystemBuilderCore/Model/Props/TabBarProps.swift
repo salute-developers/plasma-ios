@@ -2,7 +2,7 @@ import Foundation
 
 struct TabBarProps: MergeableConfiguration, Codable {
     typealias Props = TabBarProps
-    
+
     var contentPaddingStart: KeyValue<Double>?
     var contentPaddingEnd: KeyValue<Double>?
     var contentPaddingTop: KeyValue<Double>?

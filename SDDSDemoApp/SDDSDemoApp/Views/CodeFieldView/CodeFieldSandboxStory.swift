@@ -9,7 +9,6 @@ enum CodeFieldStory: Story {
     static let title = "CodeField"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: CodeFieldUiState, theme: Theme) -> some View {
         CodeFieldView(viewModel: CodeFieldViewModel(theme: theme, uiState: state))

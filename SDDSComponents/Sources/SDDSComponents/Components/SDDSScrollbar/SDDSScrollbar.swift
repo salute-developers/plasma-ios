@@ -83,13 +83,13 @@ public struct SDDSScrollbar: View {
     private let onThumbDrag: ((CGFloat) -> Void)?
     private let onLongPressChanged: ((Bool) -> Void)?
     private let direction: SDDSScrollDirection
-    
+
     @State private var isLongPressed = false
     @State private var longPressTimer: Timer?
     @State private var dragStartOffset: CGFloat = 0
     @State private var isDragging: Bool = false
     @State private var isHovered: Bool = false
-    
+
     public init(
         appearance: ScrollbarAppearance? = nil,
         hasTrack: Bool = true,
@@ -115,7 +115,7 @@ public struct SDDSScrollbar: View {
         self.onThumbDrag = onThumbDrag
         self.onLongPressChanged = onLongPressChanged
     }
-    
+
     public var body: some View {
         ZStack(alignment: direction == .vertical ? .top : .leading) {
             Rectangle()
@@ -126,7 +126,7 @@ public struct SDDSScrollbar: View {
                 .shape(pathDrawer: appearance.size.shape)
                 .foregroundColor(appearance.trackColor.color(for: colorScheme, subtheme: subtheme))
                 .hiddenIf(!hasTrack)
-            
+
             Rectangle()
                 .frame(
                     width: direction == .vertical ? currentWidth : max(1.0, thumbHeight),
@@ -195,34 +195,34 @@ public struct SDDSScrollbar: View {
         .offset(x: direction == .vertical ? horizontalOffset : 0,
                 y: direction == .horizontal ? horizontalOffset : 0)
     }
-    
+
     private var trackLength: CGFloat {
         direction == .vertical ? currentWidth : trackHeight
     }
-    
+
     private var currentWidth: CGFloat {
         let baseWidth = appearance.size.width
         var finalWidth = baseWidth
-        
+
         guard hoverExpand else {
             return finalWidth
         }
-        
+
         if isHovered {
             finalWidth *= appearance.size.hoverExpandFactor
         }
-        
+
         if isLongPressed {
             finalWidth *= SDDSScrollbarConstants.longPressScaleMultiplier
         }
-        
+
         return finalWidth
     }
-    
+
     private var horizontalOffset: CGFloat {
         return (hoverExpand && isLongPressed) ? currentWidth * SDDSScrollbarConstants.longPressHorizontalOffsetMultiplier : 0
     }
-    
+
     private func handleLongPress(isPressing: Bool) {
         if isPressing {
             longPressTimer = Timer.scheduledTimer(withTimeInterval: SDDSScrollbarConstants.longPressDuration, repeats: false) { _ in
@@ -240,7 +240,7 @@ public struct SDDSScrollbar: View {
             onLongPressChanged?(false)
         }
     }
-    
+
     var appearance: ScrollbarAppearance {
         _appearance ?? environmentAppearance
     }

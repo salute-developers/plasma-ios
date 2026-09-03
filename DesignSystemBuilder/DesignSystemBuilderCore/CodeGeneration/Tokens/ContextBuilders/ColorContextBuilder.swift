@@ -4,7 +4,7 @@ import SDDSThemeUtilities
 struct ColorMap {
     let hex: String?
     let alpha: CGFloat?
-    
+
     init(hex: String?, alpha: CGFloat? = nil) {
         self.hex = hex
         self.alpha = alpha
@@ -24,20 +24,20 @@ extension ColorMap {
 final class ColorContextBuilder: ContexBuilder, ThemeContext, ColorContext, SchemeTokenNameValidator {
     let paletteURL: URL
     let metaScheme: Scheme
-    
+
     private lazy var paletteJson: [String: Any]? = {
         guard let data = try? Data(contentsOf: paletteURL) else {
             return nil
         }
-        
+
         return try? JSONSerialization.jsonObject(with: data) as? [String: Any]
     }()
-    
+
     init(paletteURL: URL, metaScheme: Scheme) {
         self.paletteURL = paletteURL
         self.metaScheme = metaScheme
     }
-    
+
     func buildContext(from data: Data) -> CommandResult {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
@@ -67,7 +67,7 @@ extension ColorContextBuilder {
         var result = [String: Any]()
         for key in dictionary.keys {
             try validateTokenName(key, .color, scheme: metaScheme)
-            
+
             let components = key.tokenComponents
             guard components.count > 1 else {
                 return .failure(GeneralError.invalidColorTokenFormat)
@@ -86,7 +86,7 @@ extension ColorContextBuilder {
                 guard var hexValue = colorMap.hex, !hexValue.isEmpty else {
                     return .failure(GeneralError.invalidHex)
                 }
-                
+
                 let hexWithAlpha = colorMap.hexWithAlpha
                 guard hexWithAlpha?.isEmpty == false else {
                     return .failure(GeneralError.invalidHex)
@@ -96,7 +96,7 @@ extension ColorContextBuilder {
             }
         }
         populateMissingColors(&result)
-        
+
         return .success(result)
     }
 }

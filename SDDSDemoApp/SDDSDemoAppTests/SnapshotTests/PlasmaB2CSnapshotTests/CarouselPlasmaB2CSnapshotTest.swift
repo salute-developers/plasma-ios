@@ -8,7 +8,7 @@ import UIKit
 
 @MainActor
 final class CarouselPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     func testCarouselButtonsPlacementInnerPlasmaB2C() async throws {
         let appearance = Carousel.buttonsPlacementInner.appearance
         try await runSnapshotTest(
@@ -41,7 +41,7 @@ final class CarouselPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     func testCarouselStartButtonsPlacementInnerPlasmaB2C() async throws {
         let appearance = Carousel.buttonsPlacementInner.appearance
         try await runSnapshotTest(
@@ -53,7 +53,7 @@ final class CarouselPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-        
+
     func testCarouselCenterButtonsPlacementOuterPlasmaB2C() async throws {
         var appearance = Carousel.buttonsPlacementOuter.appearance
         appearance.size = DefaultCarouselSize(
@@ -63,7 +63,7 @@ final class CarouselPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             prevButtonPadding: appearance.size.prevButtonPadding,
             buttonsPlacement: appearance.size.buttonsPlacement
         )
-        
+
         try await runSnapshotTest(
             view: CarouselSnapshotCase(
                 appearance: appearance,
@@ -74,7 +74,7 @@ final class CarouselPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     func testCarouselEndButtonPlacementInnerPlasmaB2C() async throws {
         let appearance = Carousel.buttonsPlacementInner.appearance
         try await runSnapshotTest(
@@ -87,7 +87,7 @@ final class CarouselPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     func testCarouselCenterButtonsPlacementInnerPlasmaB2C() async throws {
         let appearance = Carousel.buttonsPlacementInner.appearance
         try await runSnapshotTest(

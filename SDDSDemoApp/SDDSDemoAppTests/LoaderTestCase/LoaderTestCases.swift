@@ -14,9 +14,9 @@ import SDDSIcons
  Тест-кейсы для компонента [Loader]
  */
 
-struct LoaderCaseSpinner : View {
+struct LoaderCaseSpinner: View {
     var appearance: LoaderAppearance
-    
+
     var body: some View {
         SDDSLoader(appearance: appearance)
         .environment(
@@ -29,9 +29,9 @@ struct LoaderCaseSpinner : View {
     }
 }
 
-struct LoaderCaseCircularProgress : View {
+struct LoaderCaseCircularProgress: View {
     var appearance: LoaderAppearance
-    
+
     var body: some View {
         SDDSLoader(appearance: appearance)
         .environment(

@@ -33,11 +33,10 @@ public struct ZeroDrawerSize: DrawerSizeConfiguration {
     public var closeIconOffsetY: CGFloat = 0
     public var closeIconSize: CGFloat = 0
     public var closeIconPlacement: DrawerCloseIconPlacement = .none
-    
+
     public var debugDescription: String {
         return "ZeroDrawerSize"
     }
-    
+
     public init() {}
 }
-

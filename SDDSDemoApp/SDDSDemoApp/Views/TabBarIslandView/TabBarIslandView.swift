@@ -8,11 +8,11 @@ import SandboxSwiftUI
 struct TabBarIslandView: View {
     @ObservedObject private var viewModel: TabBarIslandViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: TabBarIslandViewModel = TabBarIslandViewModel()) {
         self.viewModel = viewModel
     }
-        
+
     var body: some View {
         List {
             Section {
@@ -24,7 +24,7 @@ struct TabBarIslandView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .tabBarIsland(
             items: viewModel.tabBarItems,
             selectedIndex: $viewModel.selectedIndex,
@@ -32,7 +32,7 @@ struct TabBarIslandView: View {
         )
         .navigationTitle("TabBar Island")
     }
-    
+
     @ViewBuilder
     private var tabBarTypeSelectionView: some View {
         HStack {
@@ -50,7 +50,7 @@ struct TabBarIslandView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var countView: some View {
         HStack {
@@ -60,7 +60,7 @@ struct TabBarIslandView: View {
                 .keyboardType(.numberPad)
         }
     }
-    
+
     @ViewBuilder
     private var extraSelectionView: some View {
         HStack {
@@ -78,7 +78,7 @@ struct TabBarIslandView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var customWidth: some View {
         HStack {

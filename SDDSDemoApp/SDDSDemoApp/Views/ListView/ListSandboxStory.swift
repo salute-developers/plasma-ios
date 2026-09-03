@@ -9,7 +9,6 @@ enum ListStory: Story {
     static let title = "List"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: ListUiState, theme: Theme) -> some View {
         ListView(viewModel: ListViewModel(theme: theme, uiState: state))

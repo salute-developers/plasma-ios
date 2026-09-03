@@ -12,7 +12,7 @@ public struct ChipAccessibility {
     public var titleLabel: String
     public var removeButtonLabel: String
     public var removeButtonHint: String
-    
+
     public init(
         titleLabel: String = "Chip Label",
         removeButtonLabel: String = "Remove",

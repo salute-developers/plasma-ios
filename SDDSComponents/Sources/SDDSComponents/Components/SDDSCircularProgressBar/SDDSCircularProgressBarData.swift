@@ -7,7 +7,7 @@ public struct SDDSCircularProgressBarData {
     public var hasTrack: Bool
     public var content: AnyView?
     public var appearance: CircularProgressBarAppearance?
-    
+
     public init(progress: Double = 0, suffix: String = "%", hasTrack: Bool = false, content: AnyView? = nil, appearance: CircularProgressBarAppearance? = nil) {
         self.progress = progress
         self.suffix = suffix
@@ -18,7 +18,7 @@ public struct SDDSCircularProgressBarData {
 }
 
 extension SDDSCircularProgressBarData: EnvironmentKey {
-    public static var defaultValue: SDDSCircularProgressBarData? = nil
+    public static var defaultValue: SDDSCircularProgressBarData?
 }
 
 public extension EnvironmentValues {

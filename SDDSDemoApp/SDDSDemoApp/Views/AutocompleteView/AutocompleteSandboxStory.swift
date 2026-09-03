@@ -9,7 +9,6 @@ enum AutocompleteStory: Story {
     static let title = "Autocomplete"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: AutocompleteUiState, theme: Theme) -> some View {
         AutocompleteView(viewModel: AutocompleteViewModel(theme: theme, uiState: state))

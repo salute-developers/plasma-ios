@@ -24,9 +24,9 @@ final class OverlayViewModel: ComponentViewModel<OverlayVariationProvider> {
             }
         }
     }
-    
+
     let ids =  [UUID(), UUID(), UUID(), UUID()]
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: OverlayUiState = .init()) {
         super.init(variationProvider: OverlayVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)

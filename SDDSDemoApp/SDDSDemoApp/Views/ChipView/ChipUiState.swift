@@ -9,6 +9,6 @@ struct ChipUiState: StoryUiState, DefaultUiState {
     var isEnabled: Bool = true
     var iconImageEnabled: Bool = true
     var buttomImageEnabled: Bool = true
-    var iconImage: Image? = nil
-    var buttonImage: Image? = nil
+    var iconImage: Image?
+    var buttonImage: Image?
 }

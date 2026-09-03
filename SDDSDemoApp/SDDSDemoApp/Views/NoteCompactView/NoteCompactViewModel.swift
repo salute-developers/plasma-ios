@@ -9,7 +9,7 @@ final class NoteCompactViewModel: ComponentViewModel<NoteCompactVariationProvide
     @Published var text: String = "Text"
     @Published var hasContentBefore: Bool = true
     @Published var hasAction: Bool = true
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: NoteCompactUiState = .init()) {
         super.init(variationProvider: NoteCompactVariationProvider(theme: theme), theme: theme)
 

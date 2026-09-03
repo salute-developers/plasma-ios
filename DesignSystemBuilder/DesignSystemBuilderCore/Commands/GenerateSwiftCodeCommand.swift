@@ -20,30 +20,30 @@ final class GenerateSwiftCodeCommand: Command, FileWriter {
 
     @discardableResult override func run() -> CommandResult {
         super.run()
-        
+
         guard let jsonData = try? Data(contentsOf: jsonURL) else {
             return .error(GeneralError.invalidFilename)
         }
-        
+
         guard let jsonDictionary = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any] else {
             return .error(GeneralError.decoding)
         }
-        
+
         for template in templates {
             let result = templateRender.render(context: jsonDictionary, template: template, removeLines: false)
-            
+
             guard let generatedContent = result.asGenerated else {
                 return result
             }
-            
+
             let filename = template.rawValue + ".swift"
             let saveResult = saveFile(content: generatedContent, outputURL: outputDirectoryURL, filename: filename)
-            
+
             if saveResult.isError {
                 return saveResult
             }
         }
-        
+
         return .success
     }
 }

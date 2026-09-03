@@ -80,10 +80,10 @@ public struct SDDSListItem<RightContent: View>: View {
     private let rightContent: RightContent
     private let rightContentEnabled: Bool
     private let disabled: Bool
-    private let onTap: (() -> ())?
+    private let onTap: (() -> Void)?
     @State private var isHighlighted: Bool = false
     @State private var isHovered: Bool = false
-    
+
     public init(
         label: String? = nil,
         title: String = "",
@@ -93,7 +93,7 @@ public struct SDDSListItem<RightContent: View>: View {
         rightContentEnabled: Bool = true,
         disabled: Bool = false,
         appearance: ListItemAppearance? = nil,
-        onTap: (() -> ())? = nil
+        onTap: (() -> Void)? = nil
     ) {
         self.label = label
         self.title = title
@@ -105,7 +105,7 @@ public struct SDDSListItem<RightContent: View>: View {
         self.onTap = onTap
         self._appearance = appearance
     }
-    
+
     public var body: some View {
         Group {
             HStack(spacing: 0) {
@@ -147,7 +147,7 @@ public struct SDDSListItem<RightContent: View>: View {
             isHovered = hovering
         }
     }
-    
+
     @ViewBuilder var disclosure: some View {
         if let disclosureIcon = appearance.disclosureIcon {
             let icon = disclosureIcon
@@ -170,19 +170,19 @@ public struct SDDSListItem<RightContent: View>: View {
     }
 
     private var fallbackDisclosureIconSize: CGFloat { 24 }
-    
+
     var appearance: ListItemAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var contentOpacity: CGFloat {
         disabled ? appearance.disabledAlpha : 1.0
     }
-    
+
     private var resolvedHeight: CGFloat? {
         appearance.size.height > 0 ? appearance.size.height : nil
     }
-    
+
     @ViewBuilder
     private var textContent: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -201,19 +201,19 @@ public struct SDDSListItem<RightContent: View>: View {
             }
         }
     }
-    
+
     private var titleTypography: TypographyToken {
         appearance.titleTypography.typography(with: appearance.size) ?? .undefined
     }
-    
+
     private var labelTypography: TypographyToken {
         appearance.labelTypography.typography(with: appearance.size) ?? .undefined
     }
-    
+
     private var resolvedSubtitleTypography: TypographyToken? {
         appearance.subtitleTypography?.typography(with: appearance.size)
     }
-    
+
     private func currentFillStyle(for fillStyle: StatefulFillStyle) -> FillStyle {
         var activeStates = Set<InteractiveState>()
         if isHovered { activeStates.insert(.hovered) }

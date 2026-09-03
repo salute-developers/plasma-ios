@@ -13,14 +13,14 @@ final class AccordionViewModel: ComponentViewModel<AccordionVariationProvider> {
         }
     }
     @Published var showDividers: Bool = false
-    
+
     @Published var layout: AccordionLayout = .solidActionEnd {
         didSet {
             variationProvider.layout = layout
             self.selectVariation(variations.first)
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: AccordionUiState = .init()) {
         super.init(
             variationProvider: AccordionVariationProvider(theme: theme, layout: uiState.layout),
@@ -37,7 +37,7 @@ final class AccordionViewModel: ComponentViewModel<AccordionVariationProvider> {
         layout = uiState.layout
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     var accordionItems: [AccordionData] {
         (0..<itemsCount).map { index in
             AccordionData(
@@ -51,7 +51,7 @@ final class AccordionViewModel: ComponentViewModel<AccordionVariationProvider> {
             )
         }
     }
-    
+
     var canChangeDividers: Bool {
         layout == .clearActionEnd || layout == .clearActionStart
     }

@@ -2,7 +2,7 @@ import Foundation
 
 struct CheckboxSize: CodeGenerationSize {
     typealias Props = CheckboxProps
-    
+
     var width: String?
     var height: String?
     var toggleCheckedIconWidth: String?
@@ -14,11 +14,11 @@ struct CheckboxSize: CodeGenerationSize {
     var togglePaddings: String?
     var toggleIndeterminateIconWidth: String?
     var toggleIndeterminateIconHeight: String?
-    
+
     init(variation: ComponentConfiguration<CheckboxProps>.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: CheckboxProps, id: String? = nil, nullify: Bool = false) {
         self.width = CGFloatContextBuilder(props.toggleWidth?.value, nullify: nullify).context
         self.height = CGFloatContextBuilder(props.toggleHeight?.value, nullify: nullify).context
@@ -34,7 +34,7 @@ struct CheckboxSize: CodeGenerationSize {
         self.toggleIndeterminateIconWidth = CGFloatContextBuilder(props.toggleIconWidth?.value(for: .indeterminate), nullify: nullify).context
         self.toggleIndeterminateIconHeight = CGFloatContextBuilder(props.toggleIconHeight?.value(for: .indeterminate), nullify: nullify).context
     }
-    
+
     init() {
         self.width = CGFloat.defaultContext
         self.height = CGFloat.defaultContext

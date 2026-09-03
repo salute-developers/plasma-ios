@@ -70,7 +70,7 @@ final class SegmentSnapshotTest: SDDSServThemeTestCase {
         let segmentItemAppearance = SegmentItem.l.primary.appearance
         let segmentAppearance = Segment.l.primary.appearance
         let counterAppearance = Counter.s.accent.appearance
-        try await runSnapshotTest(view:SegmentSizeLCounter(
+        try await runSnapshotTest(view: SegmentSizeLCounter(
             segmentItemAppearance: segmentItemAppearance,
             segmentAppearance: segmentAppearance,
             counterAppearance: counterAppearance)

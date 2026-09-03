@@ -12,7 +12,7 @@ import SwiftUI
 public struct ProgressBarAccessibility {
     public let progressLabel: String
     public let progressHint: String
-    
+
     /**
      Инициализатор для создания параметров доступности прогресс-бара.
      

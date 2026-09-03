@@ -10,7 +10,7 @@ import Foundation
 public enum TextAreaValue: Equatable {
     case single(String)
     case multiple(String, [ChipData])
-    
+
     public static func == (lhs: TextAreaValue, rhs: TextAreaValue) -> Bool {
         switch (lhs, rhs) {
         case (.single(let lhs), .single(let rhs)):
@@ -21,7 +21,7 @@ public enum TextAreaValue: Equatable {
             return false
         }
     }
-    
+
     public var text: String {
         switch self {
         case .single(let text):
@@ -30,7 +30,7 @@ public enum TextAreaValue: Equatable {
             return text
         }
     }
-    
+
     public func updated(with text: String) -> TextAreaValue {
         switch self {
         case .single:

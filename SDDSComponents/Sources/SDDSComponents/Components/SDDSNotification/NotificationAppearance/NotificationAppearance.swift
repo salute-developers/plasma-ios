@@ -24,7 +24,7 @@ public struct NotificationAppearance: Hashable {
     public var backgroundColor: ColorToken
     public var closeColor: ColorToken
     public var size: NotificationSizeConfiguration
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         closeColor: ColorToken = .clearColor,
@@ -34,12 +34,12 @@ public struct NotificationAppearance: Hashable {
         self.closeColor = closeColor
         self.size = size
     }
-    
+
     public static func == (lhs: NotificationAppearance, rhs: NotificationAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -49,4 +49,4 @@ extension NotificationAppearance: EnvironmentKey {
     public static var defaultValue: Self {
         EnvironmentValueProvider.shared.value(forKey: NotificationAppearance.self, fallback: NotificationAppearance())
     }
-} 
+}

@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class ButtonGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
-    
+
     @MainActor
     func testButtonGroupMDefaultNoGapHomeDS() async throws {
         let appearance = BasicButton.m.default.appearance
@@ -26,7 +26,7 @@ final class ButtonGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance), landscape: true
         )
     }
-    
+
     @MainActor
     func testButtonGroupMDenseDefaultHorizontalHomeDS() async throws {
         let appearance = BasicButton.m.default.appearance
@@ -37,7 +37,7 @@ final class ButtonGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance)
         )
     }
-    
+
     @MainActor
     func testButtonGroupSWideDefaultSegmentedHorizontalHomeDS() async throws {
         let appearance = BasicButton.s.default.appearance
@@ -48,7 +48,7 @@ final class ButtonGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance)
         )
     }
-    
+
     @MainActor
     func testButtonGroupXsGapNoneDefaultVerticalHomeDS() async throws {
         let appearance = BasicButton.xs.default.appearance
@@ -59,7 +59,7 @@ final class ButtonGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance)
         )
     }
-    
+
     @MainActor
     func testButtonGroupXsItemCountTenDefaultSegmentedHomeDS() async throws {
         let appearance = BasicButton.xs.default.appearance
@@ -68,7 +68,7 @@ final class ButtonGroupPlasmaHomeDSSnapshotTest: PlasmaHomeDSThemeTestCase {
         try await runSnapshotTest(
             view: ButtonGroupXxsItemCountTenDefaultSegmented(
             appearance: appearance,
-            buttonGroupAppearance: buttonGroupAppearance),landscape: true
+            buttonGroupAppearance: buttonGroupAppearance), landscape: true
         )
     }
 }

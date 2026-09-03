@@ -7,8 +7,8 @@ import SDDSServTheme
 struct SDDSChipGroupPreview: PreviewProvider {
     static var previews: some View {
         let chipAccessibility = ChipAccessibility()
-        
-        let chipData = (1...32).map { index in
+
+        let chipData = (1...32).map { _ in
             ChipData(
                 title: "Label",
                 isEnabled: true,
@@ -19,7 +19,7 @@ struct SDDSChipGroupPreview: PreviewProvider {
                 removeAction: {}
             )
         }
-        
+
         return SDDSChipGroup(
                 data: chipData,
                 appearance: ChipGroupWide.s.accent.appearance

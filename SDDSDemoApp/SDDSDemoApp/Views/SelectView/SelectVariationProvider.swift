@@ -13,11 +13,11 @@ enum SelectDemoMode: String, CaseIterable {
 
 final class SelectVariationProvider: VariationProvider {
     typealias Appearance = SelectAppearance
-    
+
     var theme: Theme
     var layout: SelectDemoLayout
     var mode: SelectDemoMode
-    
+
     init(
         theme: Theme = .sdddsServTheme,
         layout: SelectDemoLayout = .normal,
@@ -27,7 +27,7 @@ final class SelectVariationProvider: VariationProvider {
         self.layout = layout
         self.mode = mode
     }
-    
+
     var variations: [Variation<SelectAppearance>] {
         switch (mode, layout) {
         case (.single, .normal):
@@ -40,9 +40,8 @@ final class SelectVariationProvider: VariationProvider {
             return theme.selectMultipleTightVariations
         }
     }
-    
+
     var defaultValue: SelectAppearance {
         variations.first?.appearance ?? SelectAppearance()
     }
 }
-

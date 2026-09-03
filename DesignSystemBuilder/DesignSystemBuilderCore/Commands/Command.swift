@@ -6,15 +6,15 @@ public protocol Runnable {
 
 class Command: Runnable {
     let name: String
-    
+
     init(name: String) {
         self.name = name
     }
-    
+
     @discardableResult func run() -> CommandResult {
         Logger.printLine()
         Logger.printText(name)
-        
+
         return .empty
     }
 }
@@ -59,13 +59,13 @@ extension Command {
         guard let jsonDictionary = try? JSONSerialization.jsonObject(with: jsonData) as? [String: Any] else {
             return .error(GeneralError.decoding)
         }
-        
+
         let result = renderer.render(context: jsonDictionary, template: input.template, removeLines: false)
-        
+
         guard let generatedContent = result.asGenerated else {
             return result
         }
-        
+
         let filename: String
         if let component = input.component {
             filename = input.template.generatedFileName(component: component)
@@ -73,14 +73,14 @@ extension Command {
             filename = input.template.rawValue + ".swift"
         }
         let saveResult = fileWriter.saveFile(content: generatedContent, outputURL: outputURL, filename: filename)
-        
+
         if saveResult.isError {
             return saveResult
         }
-        
+
         return .success
     }
-    
+
     func generate(renderer: Renderable, inputs: [CodeGenerationInput], outputURL: URL, fileWriter: FileWriter) -> CommandResult {
         for input in inputs {
             let result = generate(renderer: renderer, input: input, outputURL: outputURL, fileWriter: fileWriter)
@@ -88,7 +88,7 @@ extension Command {
                 return result
             }
         }
-                
+
         return .success
     }
 }
@@ -102,7 +102,7 @@ extension CommandResult {
             return nil
         }
     }
-    
+
     var isError: Bool {
         switch self {
         case .error:
@@ -111,7 +111,7 @@ extension CommandResult {
             false
         }
     }
-    
+
     var asDictionary: [String: Any]? {
         switch self {
         case .dictionary(let value):
@@ -120,7 +120,7 @@ extension CommandResult {
             nil
         }
     }
-    
+
     var asGenerated: String? {
         switch self {
         case .generated(let value):
@@ -129,7 +129,7 @@ extension CommandResult {
             nil
         }
     }
-    
+
     var asURL: URL? {
         switch self {
         case .url(let value):
@@ -138,7 +138,7 @@ extension CommandResult {
             nil
         }
     }
-    
+
     var asSchemeDirectory: SchemeDirectory? {
         switch self {
         case .schemeDirectory(let value):
@@ -147,7 +147,7 @@ extension CommandResult {
             return nil
         }
     }
-    
+
     var asFontFamiliesContainer: FontFamiliesContainer? {
         switch self {
         case .value(let fontFamily):
@@ -156,7 +156,7 @@ extension CommandResult {
             return nil
         }
     }
-    
+
     var asScheme: Scheme? {
         switch self {
         case .value(let scheme):

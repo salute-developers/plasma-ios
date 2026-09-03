@@ -8,15 +8,15 @@ protocol PopoverSizeCalculator {
 
 final class PopoverSizeCalculatorImpl: PopoverSizeCalculator {
     let frame: CGRect
-    
+
     init(frame: CGRect) {
         self.frame = frame
     }
-    
+
     var position: CGPoint {
         return frame.origin
     }
-    
+
     func offset(placement: PopoverPlacement) -> CGSize {
         switch placement {
         case .end:

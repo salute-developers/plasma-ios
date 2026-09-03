@@ -11,7 +11,7 @@ public struct SchemeDirectory {
         case typography = "ios/ios_typography"
         case spacing = "ios/ios_spacing"
     }
-    
+
     var urls: [Path: URL] = [:]
 }
 

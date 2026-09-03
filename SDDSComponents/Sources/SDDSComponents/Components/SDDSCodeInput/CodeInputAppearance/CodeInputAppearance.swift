@@ -24,7 +24,7 @@ public struct CodeInputAppearance {
     public var codeTypography: TypographyConfiguration
     public var captionTypography: TypographyConfiguration
     public var size: CodeInputSizeConfiguration
-    
+
     public init(
         codeColor: ColorToken = .clearColor,
         codeColorError: ColorToken = .clearColor,

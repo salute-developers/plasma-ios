@@ -14,7 +14,7 @@ struct SDDSCheckboxGroupPreview: PreviewProvider {
             appearance: Checkbox.m.default.appearance,
             accessibility: SelectionControlAccessibility()
         )
-        
+
         let childData = (0..<5).map { index in
             CheckboxData(
                 state: .constant(.deselected),
@@ -25,7 +25,7 @@ struct SDDSCheckboxGroupPreview: PreviewProvider {
                 accessibility: SelectionControlAccessibility()
             )
         }
-        
+
         return Group {
             SDDSCheckboxGroup(
                 behaviour: .hierarchical(parent: parentData, child: childData),
@@ -36,7 +36,7 @@ struct SDDSCheckboxGroupPreview: PreviewProvider {
                 .previewDisplayName("SDDSCheckboxGroup with Parent")
                 .padding()
                 .debug()
-            
+
             SDDSCheckboxGroup(
                 behaviour: .default(data: childData),
                 size: SDDSCheckboxGroupSize.large,

@@ -34,7 +34,7 @@ public struct NotificationContentSize: NotificationContentSizeConfiguration {
     public let textBoxStartPadding: CGFloat
     public let textBoxTopPadding: CGFloat
     public let buttonGroupStartPadding: CGFloat
-    
+
     public init(
         iconSize: CGFloat = 0,
         buttonGroupTopPadding: CGFloat = 0,

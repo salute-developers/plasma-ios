@@ -100,6 +100,7 @@
 		81FC47C42D93163000A83F87 /* CircleDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47BA2D93163000A83F87 /* CircleDrawer.swift */; };
 		81FC47C52D93163000A83F87 /* PathDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC47BE2D93163000A83F87 /* PathDrawer.swift */; };
 		81FC49282D931CAE00A83F87 /* EnvironmentValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FC49262D931CAE00A83F87 /* EnvironmentValueProvider.swift */; };
+		B5D85083D2ECD77EF1BD8859 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = A8AD876F459D4725FA83D20C /* Documentation.docc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +238,7 @@
 		81FC47BD2D93163000A83F87 /* IndeterminateDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateDrawer.swift; sourceTree = "<group>"; };
 		81FC47BE2D93163000A83F87 /* PathDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathDrawer.swift; sourceTree = "<group>"; };
 		81FC49262D931CAE00A83F87 /* EnvironmentValueProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValueProvider.swift; sourceTree = "<group>"; };
+		A8AD876F459D4725FA83D20C /* Documentation.docc */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		EF856C3C56D98E1C7C96BBD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -326,9 +328,10 @@
 				8180A49A2C0F71A500009AF5 /* Tokens */,
 				8180A4B32C0F71A500009AF5 /* Utilities */,
 				8180A4B52C0F71A500009AF5 /* Views */,
+				A8AD876F459D4725FA83D20C /* Documentation.docc */,
 			);
-			path = SDDSThemeCore;
-			sourceTree = "<group>";
+			path = SDDSThemeCore/Sources/SDDSThemeCore;
+			sourceTree = SOURCE_ROOT;
 		};
 		816E04A02C58DD3800EE7A7F /* Sources */ = {
 			isa = PBXGroup;
@@ -844,6 +847,7 @@
 				8180A58C2C11C05E00009AF5 /* FontsService.swift in Sources */,
 				81BBE2102D759FE400612681 /* HexConverter.swift in Sources */,
 				8180A5A82C11C35500009AF5 /* ShapeToken.swift in Sources */,
+				B5D85083D2ECD77EF1BD8859 /* Documentation.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

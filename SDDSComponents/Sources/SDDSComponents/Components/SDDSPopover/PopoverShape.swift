@@ -6,7 +6,7 @@ struct PopoverShape: Shape {
     let tailHeight: CGFloat
     let tailPosition: PopoverPlacement
     let tailAlignment: PopoverAlignment
-    
+
     func path(in rect: CGRect) -> Path {
         let cornerRadius = getCornerRadius()
         let mainRect = rect.insetBy(dx: 0, dy: tailHeight)
@@ -18,7 +18,7 @@ struct PopoverShape: Shape {
             return path
         }
     }
-    
+
     private func getCornerRadius() -> CGFloat {
         if let drawer = pathDrawer as? CornerRadiusDrawer {
             return drawer.cornerRadius
@@ -26,7 +26,7 @@ struct PopoverShape: Shape {
             return 0
         }
     }
-    
+
     // Только для bottom: строим Path с хвостиком как частью контура
     private func pathWithBottomTail(in mainRect: CGRect, fullRect: CGRect, cornerRadius: CGFloat) -> Path {
         let r1 = tailHeight / 2
@@ -73,4 +73,4 @@ struct PopoverShape: Shape {
         return path
     }
 }
- 
+

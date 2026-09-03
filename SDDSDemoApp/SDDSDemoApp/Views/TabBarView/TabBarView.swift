@@ -8,11 +8,11 @@ import SandboxSwiftUI
 struct TabBarView: View {
     @ObservedObject private var viewModel: TabBarViewModel
     @Environment(\.colorScheme) private var colorScheme
-    
+
     init(viewModel: TabBarViewModel = TabBarViewModel()) {
         self.viewModel = viewModel
     }
-        
+
     var body: some View {
         List {
             Section {
@@ -29,7 +29,7 @@ struct TabBarView: View {
         .modifier(TabBarContainerModifier(viewModel: viewModel))
         .navigationTitle("TabBar")
     }
-    
+
     @ViewBuilder
     private var tabBarTypeSelectionView: some View {
         HStack {
@@ -47,7 +47,7 @@ struct TabBarView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var countView: some View {
         HStack {
@@ -57,7 +57,7 @@ struct TabBarView: View {
                 .keyboardType(.numberPad)
         }
     }
-    
+
     @ViewBuilder
     private var extraSelectionView: some View {
         HStack {
@@ -75,7 +75,7 @@ struct TabBarView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var customWidth: some View {
         HStack {

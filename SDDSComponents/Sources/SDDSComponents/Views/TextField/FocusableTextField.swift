@@ -16,7 +16,7 @@ struct FocusableTextField: UIViewRepresentable {
     let enableSelection: Bool
     let onEditingChanged: ((Bool) -> Void)?
     let onMaskComplete: ((Bool) -> Void)?
-    
+
     init(text: Binding<String>,
          isFocused: Binding<Bool>,
          textColor: Color,
@@ -47,7 +47,7 @@ struct FocusableTextField: UIViewRepresentable {
         self.onEditingChanged = onEditingChanged
         self.onMaskComplete = onMaskComplete
     }
-    
+
     private var uiTextField: UITextField {
         guard enableSelection else {
             return NonSelectableTextField()
@@ -62,18 +62,18 @@ struct FocusableTextField: UIViewRepresentable {
         init(_ parent: FocusableTextField) {
             self.parent = parent
         }
-        
+
         func updateMaskFormat(for text: String) {
             guard let mask = parent.mask, mask.isDynamic else {
                 return
             }
-            
+
             let newFormat = mask.format(input: text)
             if let listener = maskListener {
                 listener.primaryMaskFormat = newFormat
             }
         }
-        
+
         func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
             !parent.readOnly
         }
@@ -82,19 +82,19 @@ struct FocusableTextField: UIViewRepresentable {
             guard parent.enableSelection else {
                 return
             }
-            
+
             // Если маска не используется, обновляем текст напрямую
             // При использовании маски текст обновляется через onMaskedTextChangedCallback
             if maskListener == nil {
                 parent.text = textField.text ?? ""
             }
         }
-        
+
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             guard !parent.readOnly else {
                 return false
             }
-            
+
             // Если маска используется, всегда возвращаем true
             // MaskedTextInputListener сам контролирует логику изменений
             if let listener = maskListener {
@@ -109,7 +109,7 @@ struct FocusableTextField: UIViewRepresentable {
                 }
                 return listener.textField(textField, shouldChangeCharactersIn: range, replacementString: string)
             }
-            
+
             // Без маски используем обычную логику
             return (parent.onShouldChange?(string) ?? true)
         }
@@ -125,7 +125,7 @@ struct FocusableTextField: UIViewRepresentable {
             parent.isFocused = false
             parent.onEditingChanged?(false)
         }
-        
+
         @objc func textFieldDidChange(_ textField: UITextField) {
             // Если маска не используется, обновляем текст напрямую
             // Если маска используется, текст обновляется через onMaskedTextChangedCallback
@@ -133,7 +133,7 @@ struct FocusableTextField: UIViewRepresentable {
                 parent.text = textField.text ?? ""
             }
         }
-        
+
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             // Вызывается либо напрямую (без маски), либо через проксирование от MaskedTextInputListener
             parent.isFocused = false
@@ -148,10 +148,10 @@ struct FocusableTextField: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = .clear
-        
+
         let textField = uiTextField
         textField.translatesAutoresizingMaskIntoConstraints = false
-        
+
         // Настройка маски, если она указана
         if let mask = mask {
             let initialFormat = mask.format(input: text)
@@ -160,36 +160,36 @@ struct FocusableTextField: UIViewRepresentable {
                 autocomplete: true,
                 autocompleteOnFocus: false
             )
-            
+
             // Callback для обновления текста через coordinator.
             // Обновляем синхронно: ширина поля вычисляется из этого текста, а маска
             // вставляет разделители, поэтому при отложенном обновлении SwiftUI мерил
             // ширину по старому тексту — рамка выходила уже содержимого и прижимала
             // каретку к своему правому краю (заметнее всего на числовой маске,
             // где разделители появляются по ходу набора).
-            maskListener.onMaskedTextChangedCallback = { textInput, value, complete, _ in
+            maskListener.onMaskedTextChangedCallback = { textInput, _, complete, _ in
                 let newText = textInput.allText
                 context.coordinator.parent.text = newText
                 context.coordinator.parent.onMaskComplete?(complete)
             }
-            
+
             context.coordinator.maskListener = maskListener
         }
-        
+
         textField.delegate = context.coordinator
         textField.addTarget(context.coordinator, action: #selector(context.coordinator.textFieldDidChange), for: .editingChanged)
-        
+
         configure(textField)
-        
+
         containerView.addSubview(textField)
-        
+
         NSLayoutConstraint.activate([
             textField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             textField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             textField.topAnchor.constraint(equalTo: containerView.topAnchor),
             textField.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         ])
-        
+
         return containerView
     }
 
@@ -197,7 +197,7 @@ struct FocusableTextField: UIViewRepresentable {
         guard let textField = view.subviews.first as? UITextField else {
             return
         }
-        
+
         // Обновляем текст только если он отличается от текущего
         if textField.text != text {
             if let maskListener = context.coordinator.maskListener {
@@ -213,7 +213,7 @@ struct FocusableTextField: UIViewRepresentable {
                 textField.text = text
             }
         }
-        
+
         configure(textField)
 
         DispatchQueue.main.async {
@@ -240,7 +240,7 @@ struct FocusableTextField: UIViewRepresentable {
         if textField.isSecureTextEntry != resolvedSecureEntry {
             textField.isSecureTextEntry = resolvedSecureEntry
         }
-        
+
         let nsTextAlignment: NSTextAlignment
         switch textAlignment {
         case .center:
@@ -250,7 +250,7 @@ struct FocusableTextField: UIViewRepresentable {
         case .trailing:
             nsTextAlignment = .right
         }
-        
+
         textField.textAlignment = nsTextAlignment
         textField.tintColor = readOnly ? .clear : UIColor(cursorColor)
         textField.font = typography.uiFont

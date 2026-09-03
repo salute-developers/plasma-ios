@@ -28,6 +28,4 @@ struct DefaultBadgeSize: BadgeSizeConfiguration {
     var endContentSize: CGSize = .zero
     var endContentPadding: CGFloat = 0
     var cornerRadius: CGFloat = 0
-    
-    init() {}
 }

@@ -19,7 +19,7 @@ import SDDSIcons
  */
 struct ListNormalSizeXlHasDisclosure: View {
     var appearance: ListAppearance
-    
+
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -38,7 +38,7 @@ struct ListNormalSizeXlHasDisclosure: View {
  */
 struct ListNormalSizeL: View {
     var appearance: ListAppearance
-    
+
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -58,7 +58,7 @@ struct ListNormalSizeL: View {
  */
 struct ListCounter: View {
     var appearance: ListAppearance
-    
+
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -79,7 +79,7 @@ struct ListCounter: View {
  */
 struct ListNormalSizeM: View {
     var appearance: ListAppearance
-    
+
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -99,7 +99,7 @@ struct ListNormalSizeM: View {
  */
 struct ListNormalSizeS: View {
     var appearance: ListAppearance
-    
+
     var body: some View {
         SDDSList(
             items: (1...3).map { index in
@@ -119,7 +119,7 @@ struct ListNormalSizeS: View {
  */
 struct ListNormalSizeXsAmountTwenty: View {
     var appearance: ListAppearance
-    
+
     var body: some View {
         SDDSList(
             items: (1...20).map { index in
@@ -139,7 +139,7 @@ struct ListNormalSizeXsAmountTwenty: View {
  */
 struct ListTightSizeXsHasDisclosure: View {
     var appearance: ListAppearance
-    
+
     var body: some View {
         SDDSList(
             items: (1...3).map { index in

@@ -24,7 +24,7 @@ final class ButtonViewModel: ComponentViewModel<ButtonVariationProvider> {
     }
     @Published var label: String = "Label"
     @Published var value: String = "Value"
-    @Published var iconAttributes: ButtonIconAttributes? = nil
+    @Published var iconAttributes: ButtonIconAttributes?
     @Published var isDisabled: Bool = false
     @Published var isLoading: Bool = false
     @Published var spinnerImage: Image = Image("spinner")
@@ -36,15 +36,15 @@ final class ButtonViewModel: ComponentViewModel<ButtonVariationProvider> {
             self.selectVariation(variations.first)
         }
     }
-    
+
     private func setIconAttributes(alignment: SDDSComponents.ButtonAlignment) {
         iconAttributes = iconAttributes(with: alignment)
     }
-    
+
     private func iconAttributes(with alignment: SDDSComponents.ButtonAlignment) -> ButtonIconAttributes {
         .init(image: Asset.plasma24.image, alignment: alignment)
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: ButtonUiState = .init()) {
         super.init(
             variationProvider: ButtonVariationProvider(buttonType: uiState.buttonType, theme: theme),

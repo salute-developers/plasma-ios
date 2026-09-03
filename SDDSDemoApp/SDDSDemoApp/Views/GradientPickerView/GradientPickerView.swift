@@ -5,9 +5,9 @@ import SDDSThemeCore
 struct GradientPickerView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentationMode) var presentationMode
-    
+
     @Binding private var selectedGradient: GradientToken?
-    
+
     init(selectedGradient: Binding<GradientToken?> = .constant(nil)) {
         _selectedGradient = selectedGradient
     }

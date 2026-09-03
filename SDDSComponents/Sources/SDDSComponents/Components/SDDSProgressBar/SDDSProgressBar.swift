@@ -33,11 +33,11 @@ public struct SDDSProgressView: View {
     let isEnabled: Bool
     private let _appearance: ProgressBarAppearance?
     let accessibility: ProgressBarAccessibility
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.progressBarAppearance) private var environmentAppearance
-    
+
     public init(
         progress: Binding<Double>,
         isEnabled: Bool = true,
@@ -49,7 +49,7 @@ public struct SDDSProgressView: View {
         self._appearance = appearance
         self.accessibility = accessibility
     }
-    
+
     public var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -57,7 +57,7 @@ public struct SDDSProgressView: View {
                 appearance.size.pathDrawer
                     .path(in: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: geometry.size.width, height: appearance.size.indicatorHeight)))
                     .fill(appearance.trackColor.color(for: colorScheme, subtheme: subtheme))
-                
+
                 // Progress indicator
                 rectangle(CGFloat(normalizedProgress) * geometry.size.width)
             }
@@ -70,7 +70,7 @@ public struct SDDSProgressView: View {
         .disabled(!isEnabled)
         .applyIf(!isEnabled) { $0.opacity(appearance.disabledAlpha) }
     }
-    
+
     @ViewBuilder
     private func rectangle(_ progressWidth: CGFloat) -> some View {
         switch appearance.tintFillStyle {
@@ -86,7 +86,7 @@ public struct SDDSProgressView: View {
                 .frame(width: progressWidth, height: appearance.size.indicatorHeight)
         }
     }
-    
+
     private var normalizedProgress: Double {
         max(min(progress, 1.0), 0.0)
     }

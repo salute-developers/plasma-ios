@@ -12,4 +12,3 @@ public enum DrawerCloseIconPlacement {
     case none
     case outer
 }
-

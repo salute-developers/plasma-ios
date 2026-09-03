@@ -8,7 +8,7 @@ import UIKit
 import SwiftUI
 
 final class PaginationDotsPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testPaginationDotsHorizontalMPlasmaB2C() async throws {
         let appearance = PaginationDotsHorizontal.m.appearance
@@ -21,7 +21,7 @@ final class PaginationDotsPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalMActiveTypeLinePlasmaB2C() async throws {
         let appearance = PaginationDotsHorizontal.m.activeTypeLine.appearance
@@ -34,7 +34,7 @@ final class PaginationDotsPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsVerticalMPlasmaB2C() async throws {
         let appearance = PaginationDotsVertical.m.appearance
@@ -47,7 +47,7 @@ final class PaginationDotsPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsVerticalMActiveTypeLinePlasmaB2C() async throws {
         let appearance = PaginationDotsVertical.m.activeTypeLine.appearance
@@ -60,7 +60,7 @@ final class PaginationDotsPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsVerticalMActiveTypeLineItemTenVisibleSevenPlasmaB2C() async throws {
         let appearance = PaginationDotsVertical.m.activeTypeLine.appearance
@@ -73,7 +73,7 @@ final class PaginationDotsPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalSItemThreeVisibleThreePlasmaB2C() async throws {
         let appearance = PaginationDotsHorizontal.s.appearance
@@ -86,7 +86,7 @@ final class PaginationDotsPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalSActiveTypeLinePlasmaB2C() async throws {
         let appearance = PaginationDotsHorizontal.s.activeTypeLine.appearance
@@ -99,7 +99,7 @@ final class PaginationDotsPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalMItemOneVisibleOnePlasmaB2C() async throws {
         let appearance = PaginationDotsHorizontal.m.appearance
@@ -112,7 +112,7 @@ final class PaginationDotsPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             )
         )
     }
-    
+
     @MainActor
     func testPaginationDotsHorizontalMSelectedFivePlasmaB2C() async throws {
         let appearance = PaginationDotsHorizontal.m.appearance

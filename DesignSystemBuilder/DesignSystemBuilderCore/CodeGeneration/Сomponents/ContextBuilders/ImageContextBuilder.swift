@@ -2,7 +2,7 @@ import Foundation
 
 final class ImageContextBuilder: CodeGenerationContextBuilder {
     let string: String?
-    
+
     init(_ string: String?) {
         self.string = string
     }

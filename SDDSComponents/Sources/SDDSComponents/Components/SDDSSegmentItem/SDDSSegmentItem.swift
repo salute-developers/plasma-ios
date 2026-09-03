@@ -61,9 +61,9 @@ public struct SDDSSegmentItem<Counter: View>: View {
     public let counter: Counter
     public let counterWidthCalculator: CounterWidthCalculator?
     public var action: () -> Void
-    
+
     @Environment(\.segmentItemAppearance) private var environmentAppearance
-    
+
     public init(item: SDDSSegmentItemData<Counter>) {
         self.id = item.id
         self.title = item.title
@@ -80,7 +80,7 @@ public struct SDDSSegmentItem<Counter: View>: View {
         self.counter = item.counter
         self.action = item.action
     }
-    
+
     public init(
         id: UUID = UUID(),
         title: String,
@@ -112,7 +112,7 @@ public struct SDDSSegmentItem<Counter: View>: View {
         self.counterWidthCalculator = counterWidthCalculator
         self.action = action
     }
-    
+
     public var body: some View {
         SDDSButton(
             title: title,
@@ -129,7 +129,7 @@ public struct SDDSSegmentItem<Counter: View>: View {
             action: action
         )
     }
-    
+
     private var buttonAppearance: ButtonAppearance {
         .init(
             size: buttonSize,
@@ -143,7 +143,7 @@ public struct SDDSSegmentItem<Counter: View>: View {
             disabledAlpha: appearance.disabledAlpha
         )
     }
-    
+
     private var buttonSize: ButtonSizeConfiguration {
         var size = DefaultButtonSize()
         size.height = appearance.size.height
@@ -160,11 +160,11 @@ extension SDDSSegmentItem {
     private var hasIconAttributes: Bool {
         iconAttributes != nil
     }
-    
+
     private var hasSubtitle: Bool {
         !subtitle.isEmpty
     }
-    
+
     @ViewBuilder
     private var counterView: some View {
         if counterEnabled {
@@ -185,7 +185,7 @@ extension SDDSSegmentItem {
             EmptyView()
         }
     }
-    
+
     var appearance: SegmentItemAppearance {
         _appearance ?? environmentAppearance
     }

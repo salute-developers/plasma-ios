@@ -9,7 +9,6 @@ enum TabsStory: Story {
     static let title = "Tabs"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: TabsUiState, theme: Theme) -> some View {
         TabsView(viewModel: TabsViewModel(theme: theme, uiState: state))

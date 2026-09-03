@@ -3,17 +3,17 @@ import SDDSComponents
 
 final class SegmentItemVariationProvider: VariationProvider {
     typealias Appearance = SegmentItemAppearance
-    
+
     var theme: Theme
-    
+
     init(theme: Theme = .sdddsServTheme) {
         self.theme = theme
     }
-    
+
     var variations: [Variation<SegmentItemAppearance>] {
         theme.segmentItemVariations
     }
-    
+
     var defaultValue: SegmentItemAppearance {
         SegmentItemAppearance.defaultValue
     }

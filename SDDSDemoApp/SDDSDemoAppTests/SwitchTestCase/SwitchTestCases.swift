@@ -17,7 +17,7 @@ import SDDSIcons
 
 struct SwitchSizeL: View {
     var appearance: SwitchAppearance
-    
+
     var body: some View {
         SDDSSwitch(
             title: "Label",
@@ -32,7 +32,7 @@ struct SwitchSizeL: View {
 
 struct SwitchSizeM: View {
     var appearance: SwitchAppearance
-    
+
     var body: some View {
         SDDSSwitch(
             title: "Label",
@@ -47,7 +47,7 @@ struct SwitchSizeM: View {
 
 struct SwitchSizeS: View {
     var appearance: SwitchAppearance
-    
+
     var body: some View {
         SDDSSwitch(
             title: "",
@@ -62,7 +62,7 @@ struct SwitchSizeS: View {
 
 struct SwitchSizeDisabled: View {
     var appearance: SwitchAppearance
-    
+
     var body: some View {
         SDDSSwitch(
             title: "Label",
@@ -77,7 +77,7 @@ struct SwitchSizeDisabled: View {
 
 struct SwitchSizeDisabledOff: View {
     var appearance: SwitchAppearance
-    
+
     var body: some View {
         SDDSSwitch(
             title: "Label",

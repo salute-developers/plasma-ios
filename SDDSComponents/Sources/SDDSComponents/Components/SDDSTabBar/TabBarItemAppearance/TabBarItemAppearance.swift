@@ -31,7 +31,7 @@ public struct TabBarItemAppearance: Hashable {
     public var counterAppearance: CounterAppearance?
     public var indicatorAppearance: IndicatorAppearance?
     public var size: TabBarItemSizeConfiguration
-    
+
     public init(
         labelColor: ButtonColor = ButtonColor(),
         iconColor: ButtonColor = ButtonColor(),
@@ -50,15 +50,13 @@ public struct TabBarItemAppearance: Hashable {
         self.size = size
     }
 
-    
-    
     public static func == (lhs: TabBarItemAppearance, rhs: TabBarItemAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.labelColor == rhs.labelColor &&
         lhs.iconColor == rhs.iconColor &&
         lhs.backgroundColor == rhs.backgroundColor
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

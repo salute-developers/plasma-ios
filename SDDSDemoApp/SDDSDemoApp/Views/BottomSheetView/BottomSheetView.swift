@@ -30,7 +30,7 @@ struct BottomSheetView: View {
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .background(Color(.systemGroupedBackground))
             .listRowInsets(.init())
-            
+
             Section {
                 VariationsView(viewModel: viewModel)
                 headerToggle
@@ -41,7 +41,7 @@ struct BottomSheetView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("BottomSheet")
         .bottomSheet(
             isPresented: $viewModel.isBottomSheetPresented,
@@ -79,7 +79,7 @@ struct BottomSheetView: View {
             )
         }
     }
-        
+
     @ViewBuilder
     private var content: some View {
         VStack(spacing: 0) {
@@ -93,13 +93,13 @@ struct BottomSheetView: View {
         }
         .frame(maxWidth: .infinity)
     }
-    
+
     @ViewBuilder
     private var text: some View {
         Text(viewModel.placeholder)
             .padding([.top, .bottom], 12)
     }
-    
+
     @ViewBuilder
     private var header: some View {
         if viewModel.isHeaderEnabled {
@@ -113,7 +113,7 @@ struct BottomSheetView: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private var footer: some View {
         if viewModel.isFooterEnabled {
@@ -128,31 +128,31 @@ struct BottomSheetView: View {
             EmptyView()
         }
     }
-    
+
     private var footerToogle: some View {
         HStack {
             Toggle("Footer", isOn: $viewModel.isFooterEnabled)
         }
     }
-    
+
     private var headerToggle: some View {
         HStack {
             Toggle("Header", isOn: $viewModel.isHeaderEnabled)
         }
     }
-    
+
     private var footerFixedToogle: some View {
         HStack {
             Toggle("Footer Fixed", isOn: $viewModel.isFooterFixed)
         }
     }
-    
+
     private var headerFixedToggle: some View {
         HStack {
             Toggle("Header Fixed", isOn: $viewModel.isHeaderFixed)
         }
     }
-    
+
     private var handlePositionPicker: some View {
         HStack {
             Text("Handle Placement")
@@ -169,28 +169,28 @@ struct BottomSheetView: View {
             }
         }
     }
-        
+
     private var contentHeight: CGFloat {
         var totalHeight: CGFloat = 0
-        
+
         if viewModel.isHeaderEnabled && !viewModel.isHeaderFixed {
             let headerTextHeight: CGFloat = 34
             let dividerHeight: CGFloat = 1
             let paddingHeight: CGFloat = 12
             totalHeight += headerTextHeight + dividerHeight + paddingHeight
         }
-        
+
         let textHeight: CGFloat = 224
         let textPadding: CGFloat = 24
         totalHeight += textHeight + textPadding
-        
+
         if viewModel.isFooterEnabled && !viewModel.isFooterFixed {
             totalHeight += footerHeight
         }
-        
+
         return totalHeight
     }
-    
+
     private var footerHeight: CGFloat {
         let footerTextHeight: CGFloat = 13
         let dividerHeight: CGFloat = 1

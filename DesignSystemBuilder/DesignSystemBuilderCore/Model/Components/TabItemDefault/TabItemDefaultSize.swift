@@ -3,7 +3,7 @@ import Foundation
 struct TabItemDefaultSize: CodeGenerationSize {
     typealias Variation = TabItemDefaultConfiguration.Variation
     typealias Props = TabItemDefaultProps
-    
+
     var disableAlpha: String?
     var minHeight: String?
     var startContentSize: String?
@@ -19,11 +19,11 @@ struct TabItemDefaultSize: CodeGenerationSize {
     var actionIconSize: String?
     var counterOffsetX: String?
     var counterOffsetY: String?
-    
+
     init(variation: TabItemDefaultConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: TabItemDefaultProps, id: String? = nil, nullify: Bool = false) {
         self.disableAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: nullify).context
         self.minHeight = CGFloatContextBuilder(props.minHeight?.value, nullify: nullify).context
@@ -41,7 +41,7 @@ struct TabItemDefaultSize: CodeGenerationSize {
         self.counterOffsetX = CGFloatContextBuilder(props.counterOffsetX?.value, nullify: nullify).context
         self.counterOffsetY = CGFloatContextBuilder(props.counterOffsetY?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.disableAlpha = CGFloat.defaultContext
         self.minHeight = CGFloat.defaultContext
@@ -60,5 +60,3 @@ struct TabItemDefaultSize: CodeGenerationSize {
         self.counterOffsetY = CGFloat.defaultContext
     }
 }
-
-

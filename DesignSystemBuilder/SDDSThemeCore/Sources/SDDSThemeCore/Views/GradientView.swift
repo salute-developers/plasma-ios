@@ -3,7 +3,7 @@ import SwiftUI
 public struct GradientView: View {
     private let kinds: [GradientKind]
     private let offset: CGFloat = 0
-    
+
     public init(colorScheme: ColorScheme, token: GradientToken, offset: CGFloat = 0, subtheme: SubthemeData = SubthemeData()) {
         var gradientToken = token
         if !subtheme.isNone {
@@ -11,7 +11,7 @@ public struct GradientView: View {
         }
         self.kinds = gradientToken.kind(for: colorScheme)
     }
-    
+
     public var body: some View {
         ZStack {
             ForEach(0..<kinds.count, id: \.self) { index in
@@ -20,7 +20,7 @@ public struct GradientView: View {
             }
         }
     }
-    
+
     private func view(with kind: GradientKind) -> some View {
         Group {
             switch kind {
@@ -35,7 +35,7 @@ public struct GradientView: View {
             }
         }
     }
-    
+
     private func gradient(token: GradientToken, for colorScheme: ColorScheme, subtheme: SubthemeData) -> GradientToken {
         guard !subtheme.isNone else {
             return token

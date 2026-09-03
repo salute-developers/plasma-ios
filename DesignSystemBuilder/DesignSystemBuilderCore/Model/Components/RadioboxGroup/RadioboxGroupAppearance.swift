@@ -4,12 +4,12 @@ struct RadioboxGroupAppearance: CodeGenerationAppearance {
     typealias Variation = RadioboxGroupConfiguration.Variation
     typealias Props = RadioboxGroupProps
 
-    var radioboxAppearance: String? = nil
-  
+    var radioboxAppearance: String?
+
     init(variation: RadioboxGroupConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
-    
+
     init(props: RadioboxGroupProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return

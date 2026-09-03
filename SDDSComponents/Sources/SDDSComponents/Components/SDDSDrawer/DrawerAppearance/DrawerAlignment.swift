@@ -11,4 +11,3 @@ public enum DrawerAlignment: String, CaseIterable {
     case left
     case right
 }
-

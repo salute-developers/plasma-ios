@@ -45,7 +45,7 @@ public struct SegmentAppearance {
         self.segmentItemAppearance = segmentItemAppearance
         self.disabledAlpha = disabledAlpha
     }
-    
+
     public init(
         size: SegmentSizeConfiguration = SegmentZeroSize(),
         backgroundColor: ButtonColor? = ButtonColor(),
@@ -57,7 +57,6 @@ public struct SegmentAppearance {
         self.disabledAlpha = 0
     }
 
-    
 }
 
 extension SegmentAppearance: EnvironmentKey {

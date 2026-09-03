@@ -2,7 +2,7 @@ import Foundation
 
 protocol MergeableConfiguration: Codable {
     associatedtype Props: Codable
-    
+
     func merge(rhs: Props) -> Props
 }
 

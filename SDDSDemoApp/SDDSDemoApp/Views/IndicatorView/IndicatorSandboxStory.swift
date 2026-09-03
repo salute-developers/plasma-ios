@@ -9,7 +9,6 @@ enum IndicatorStory: Story {
     static let title = "Indicator"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: IndicatorUiState, theme: Theme) -> some View {
         IndicatorView(viewModel: IndicatorViewModel(theme: theme, uiState: state))

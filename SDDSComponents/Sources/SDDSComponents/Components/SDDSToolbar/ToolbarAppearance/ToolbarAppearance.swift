@@ -9,12 +9,12 @@ import SDDSApiInfo
 @ApiInfo(components: ["ToolbarHorizontal", "ToolbarVertical"])
 public struct ToolbarAppearance: Hashable {
     private let id = UUID()
-    
+
     public var backgroundColor: ColorToken
     public var shadow: ShadowToken
     public var dividerAppearance: DividerAppearance?
     public var size: ToolbarSizeConfiguration
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         shadow: ShadowToken = ShadowToken(),
@@ -26,13 +26,13 @@ public struct ToolbarAppearance: Hashable {
         self.dividerAppearance = dividerAppearance
         self.size = size
     }
-    
+
     public static func == (lhs: ToolbarAppearance, rhs: ToolbarAppearance) -> Bool {
         lhs.id == rhs.id &&
         lhs.backgroundColor == rhs.backgroundColor &&
         lhs.dividerAppearance == rhs.dividerAppearance
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

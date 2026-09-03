@@ -13,16 +13,16 @@ public struct NavigationBarMainPageAppearance {
     public var actionEndColor: ColorToken
     public var textColor: ColorToken
     public var backgroundColor: ColorToken
-    
+
     // Типографика
     public var textTypography: TypographyConfiguration
-    
+
     // Тень
     public var shadow: ShadowToken
-    
+
     // Размеры
     public var size: NavigationBarMainPageSizeConfiguration
-    
+
     public init(
         actionStartColor: ColorToken = .clearColor,
         actionEndColor: ColorToken = .clearColor,

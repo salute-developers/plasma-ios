@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 
-
 public struct IconButton: View {
     public let iconAttributes: ButtonIconAttributes?
     public let isDisabled: Bool
@@ -11,7 +10,7 @@ public struct IconButton: View {
     public let accessibility: ButtonAccessibility
     public var action: () -> Void
     private var _appearance: ButtonAppearance?
-    
+
     public init(
         iconAttributes: ButtonIconAttributes? = nil,
         isDisabled: Bool = false,
@@ -31,7 +30,7 @@ public struct IconButton: View {
         self.accessibility = accessibility
         self.action = action
     }
-    
+
     public var body: some View {
         SDDSButton(
             title: "",

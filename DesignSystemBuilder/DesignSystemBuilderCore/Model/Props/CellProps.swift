@@ -2,7 +2,7 @@ import Foundation
 
 struct CellProps: MergeableConfiguration, Codable {
     typealias Props = CellProps
-    
+
     var contentPaddingStart: KeyValue<Double>?
     var contentPaddingEnd: KeyValue<Double>?
     var labelStyle: KeyValue<String>?

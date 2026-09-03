@@ -16,7 +16,7 @@ import SDDSIcons
 
 struct CheckBoxSizeLNegative: View {
     var appearance: CheckboxAppearance
-    
+
     var body: some View {
         SDDSCheckbox(
             state: .constant(.selected),
@@ -30,7 +30,7 @@ struct CheckBoxSizeLNegative: View {
 
 struct CheckBoxSizeLNegativeUnchecked: View {
     var appearance: CheckboxAppearance
-    
+
     var body: some View {
         SDDSCheckbox(
             state: .constant(.deselected),
@@ -44,7 +44,7 @@ struct CheckBoxSizeLNegativeUnchecked: View {
 
 struct CheckBoxSizeM: View {
     var appearance: CheckboxAppearance
-    
+
     var body: some View {
         SDDSCheckbox(
             state: .constant(.selected),
@@ -71,7 +71,7 @@ struct CheckBoxSizeS: View {
 
 struct CheckBoxSizeSDisabled: View {
     var appearance: CheckboxAppearance
-    
+
     var body: some View {
         SDDSCheckbox(
             state: .constant(.selected),
@@ -85,7 +85,7 @@ struct CheckBoxSizeSDisabled: View {
 
 struct CheckBoxSizeMIndeterminate: View {
     var appearance: CheckboxAppearance
-    
+
     var body: some View {
         SDDSCheckbox(
             state: .constant(.indeterminate),
@@ -99,7 +99,7 @@ struct CheckBoxSizeMIndeterminate: View {
 
 struct CheckBoxSizeMNoLabelNoDescription: View {
     var appearance: CheckboxAppearance
-    
+
     var body: some View {
         SDDSCheckbox(
             state: .constant(.selected),
@@ -114,7 +114,7 @@ struct CheckBoxSizeMNoLabelNoDescription: View {
 struct CheckBoxGroupSizeM: View {
     var appearance: CheckboxAppearance
     var checkBoxGroupAppearance: CheckboxGroupAppearance
-    
+
     var body: some View {
         let parent = CheckboxData(
             state: .constant(.selected),
@@ -123,8 +123,8 @@ struct CheckBoxGroupSizeM: View {
             isEnabled: true,
             appearance: appearance
        )
-        
-        let child = (0..<2).map { index in
+
+        let child = (0..<2).map { _ in
             CheckboxData(
                 state: .constant(.selected),
                 title: "Label",
@@ -146,7 +146,7 @@ struct CheckBoxGroupSizeM: View {
 struct CheckBoxGroupSizeS: View {
     var appearance: CheckboxAppearance
     var checkBoxGroupAppearance: CheckboxGroupAppearance
-    
+
     var body: some View {
         let parent = CheckboxData(
             state: .constant(.indeterminate),
@@ -155,8 +155,8 @@ struct CheckBoxGroupSizeS: View {
             isEnabled: true,
             appearance: appearance
        )
-        
-        let children: [CheckboxData] = (0..<1).flatMap { index in
+
+        let children: [CheckboxData] = (0..<1).flatMap { _ in
             [
                 CheckboxData(
                 state: .constant(.selected),
@@ -187,7 +187,7 @@ struct CheckBoxGroupSizeS: View {
 struct CheckBoxGroupSizeMDisabled: View {
     var appearance: CheckboxAppearance
     var checkBoxGroupAppearance: CheckboxGroupAppearance
-    
+
     var body: some View {
         let parent = CheckboxData(
             state: .constant(.deselected),
@@ -196,8 +196,8 @@ struct CheckBoxGroupSizeMDisabled: View {
             isEnabled: false,
             appearance: appearance
        )
-        
-        let child = (0..<2).map { index in
+
+        let child = (0..<2).map { _ in
             CheckboxData(
                 state: .constant(.deselected),
                 title: "Label",

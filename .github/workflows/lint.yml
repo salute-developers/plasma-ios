@@ -1,25 +1,37 @@
 name: Code Quality Check / Perform static analysis
 
 on:
+  # Прогоны на обеих ветках, чтобы бейджи в README имели что показывать
+  # и на develop (её клонируют по умолчанию), и на main (released).
+  push:
+    branches:
+      - develop
+      - main
   pull_request:
     paths:
       - '.github/workflows/lint.yml'
       - '.swiftlint.yml'
       - '**/*.swift'
-      
+
 concurrency:
   # New commit on branch cancels running workflows of the same branch
-  group: ${{ github.workflow }}-${{ github.head_ref }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
   cancel-in-progress: true
 
 jobs:
   SwiftLint:
     runs-on: ubuntu-latest
+    # Pinned so CI and `./lint.sh` locally report the same violations. Bump together with
+    # the version developers install via Homebrew.
+    container:
+      image: ghcr.io/realm/swiftlint:0.63.2
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      
+
       - name: Run SwiftLint
-        uses: norio-nomura/action-swiftlint@3.2.1
+        # Exits non-zero on `error`-severity violations only; size rules are warning-only by
+        # design (see .swiftlint.yml), so growth is surfaced without blocking the PR.
+        run: swiftlint lint --reporter github-actions-logging

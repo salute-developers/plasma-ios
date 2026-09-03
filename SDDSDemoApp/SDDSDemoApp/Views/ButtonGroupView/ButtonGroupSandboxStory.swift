@@ -9,7 +9,6 @@ enum ButtonGroupStory: Story {
     static let title = "ButtonGroup"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: ButtonGroupUiState, theme: Theme) -> some View {
         ButtonGroupView(viewModel: ButtonGroupViewModel(theme: theme, uiState: state))

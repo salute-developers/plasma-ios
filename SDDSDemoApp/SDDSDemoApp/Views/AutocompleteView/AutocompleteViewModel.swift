@@ -24,17 +24,17 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
     @Published var listItems: [SDDSListItem<EmptyView>] = []
     @Published var shouldShowEmptyState: Bool = false
     @Published var isDropdownPresented: Bool = false
-    
+
     /// When user picks an item, `value` updates and `.onChange` runs; without this we would reopen the dropdown because text stays non-empty.
     private var suppressNextDropdownAutoOpen = false
-    
+
     @Published var layout: AutocompleteLayout = .normal {
         didSet {
             variationProvider.layout = layout
             self.selectVariation(variations.first)
         }
     }
-    
+
     let allNames: [String] = [
         "Иван Петров",
         "Мария Смирнова",
@@ -47,14 +47,14 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
         "Андрей Соколов",
         "Татьяна Кузнецова"
     ]
-    
+
     var searchText: String {
         if case .single(let text) = value {
             return text
         }
         return ""
     }
-    
+
     var filteredNames: [String] {
         if searchText.isEmpty {
             return allNames
@@ -63,12 +63,11 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
             name.localizedCaseInsensitiveContains(searchText)
         }
     }
-    
-    
+
     private func updateListItems() {
         updateListItems(with: value)
     }
-    
+
     func updateListItems(with value: TextFieldValue) {
         let currentSearchText: String
         if case .single(let text) = value {
@@ -76,7 +75,7 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
         } else {
             currentSearchText = ""
         }
-        
+
         // Если текст пустой, не показываем элементы и не открываем dropdown
         guard !currentSearchText.isEmpty else {
             listItems = []
@@ -84,21 +83,21 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
             isDropdownPresented = false
             return
         }
-        
+
         // Фильтруем только если есть текст
         let filtered = allNames.filter { name in
             name.localizedCaseInsensitiveContains(currentSearchText)
         }
-        
+
         let currentShouldShowEmptyState: Bool
         if withEmptyState && !currentSearchText.isEmpty {
             currentShouldShowEmptyState = filtered.isEmpty
         } else {
             currentShouldShowEmptyState = false
         }
-        
+
         shouldShowEmptyState = currentShouldShowEmptyState
-        
+
         if currentShouldShowEmptyState {
             listItems = []
         } else {
@@ -113,12 +112,12 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
             }
         }
     }
-    
+
     /// Call before applying `value` from a dropdown row so `.onChange` does not force the menu open again.
     func markDropdownItemSelectionPending() {
         suppressNextDropdownAutoOpen = true
     }
-    
+
     /// Run after `value` changes from the text field: refresh list and open dropdown when typing (not after list selection).
     func handleValueChangedForDropdown() {
         updateListItems(with: value)
@@ -131,7 +130,7 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
             isDropdownPresented = true
         }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: AutocompleteUiState = .init()) {
         super.init(
             variationProvider: AutocompleteVariationProvider(theme: theme, layout: uiState.layout),
@@ -173,4 +172,3 @@ final class AutocompleteViewModel: ComponentViewModel<AutocompleteVariationProvi
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
 }
-

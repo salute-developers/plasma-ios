@@ -5,21 +5,31 @@ import SwiftUI
 public class Theme {
     static let name = "PlasmaB2CTheme"
     
-    public class func initialize(onComplete: @escaping () -> Void = {}) {
+    /// Инициализация темы. Шрифты вшиты в исходники, поэтому синхронная.
+    public class func initialize() {
         EnvironmentValueProvider.shared.setDefaultValues()
-        let fonts = FontsManifest.fonts.map { fontInfo in
-            SDDSThemeCore.FontInfo(url: fontInfo.url, weight: fontInfo.weight, style: fontInfo.style, filename: fontInfo.filename)
-        }
-        FontsService.shared.initialize(fonts: fonts) { _ in
-            onComplete()
-        }
+        FontsService.shared.register(embeddedFonts: FontsManifest.embedded)
     }
 
+    /// У темы нет тенантов, поэтому параметр не влияет ни на что.
+    public class func initialize(tenant: Tenant) {
+        initialize()
+    }
+
+    /// Совместимость с асинхронным API: колбэк вызывается на следующем тике.
+    @available(*, deprecated, message: "Use initialize() — theme initialization is synchronous")
+    public class func initialize(onComplete: @escaping () -> Void) {
+        initialize()
+        DispatchQueue.main.async { onComplete() }
+    }
+
+    @available(*, deprecated, message: "Use initialize(tenant:) — theme initialization is synchronous")
     public class func initialize(
         tenant: Tenant,
-        onComplete: @escaping () -> Void = {}
+        onComplete: @escaping () -> Void
     ) {
-        initialize(onComplete: onComplete)
+        initialize(tenant: tenant)
+        DispatchQueue.main.async { onComplete() }
     }
 
     public class func subtheme(_ subtheme: Subtheme) -> SubthemeData {

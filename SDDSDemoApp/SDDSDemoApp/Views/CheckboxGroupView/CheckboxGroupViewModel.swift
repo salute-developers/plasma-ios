@@ -9,7 +9,7 @@ final class CheckboxGroupViewModel: ComponentViewModel<CheckboxGroupVariationPro
         }
     }
     @Published var groupBehaviour: CheckboxGroupBehaviour?
-    
+
     @Published var states: [Int: SelectionControlState] = [:]
 
     var checkboxData: [CheckboxData] {
@@ -21,7 +21,7 @@ final class CheckboxGroupViewModel: ComponentViewModel<CheckboxGroupVariationPro
            }))
        }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: CheckboxGroupUiState = .init()) {
         super.init(variationProvider: CheckboxGroupVariationProvider(theme: theme), theme: theme)
         delegate = self
@@ -35,7 +35,7 @@ final class CheckboxGroupViewModel: ComponentViewModel<CheckboxGroupVariationPro
         }
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     func update() {
         checkboxViewModels = (0..<3).map { [weak self] index in
             self?.states[Int(index)] = .deselected
@@ -49,19 +49,19 @@ final class CheckboxGroupViewModel: ComponentViewModel<CheckboxGroupVariationPro
         }
         updateGroupBehaviour()
     }
-    
+
     func update(at index: Int, to newState: SelectionControlState) {
         states[index] = newState
         updateGroupBehaviour()
     }
-    
+
     func updateGroupBehaviour() {
         self.groupBehaviour = .default(data: checkboxData, onChange: { [weak self] index, state in
             self?.states[index] = state
             self?.updateGroupBehaviour()
         })
     }
-    
+
     func updateAppearance() {
         checkboxViewModels = checkboxViewModels.map { item in
             var itemViewModel = item

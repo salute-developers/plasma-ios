@@ -9,15 +9,15 @@ enum SDDSTabsType: String, CaseIterable {
 
 final class TabsVariationProvider: VariationProvider {
     typealias Appearance = TabsAppearance
-    
+
     var tabsType: SDDSTabsType
     var theme: Theme
-    
+
     init(tabsType: SDDSTabsType, theme: Theme = .sdddsServTheme) {
         self.tabsType = tabsType
         self.theme = theme
     }
-    
+
     var variations: [Variation<TabsAppearance>] {
         switch tabsType {
         case .tabsDefault:
@@ -28,9 +28,8 @@ final class TabsVariationProvider: VariationProvider {
             theme.iconTabsVariations
         }
     }
-    
+
     var defaultValue: TabsAppearance {
         TabsAppearance.defaultValue
     }
 }
-

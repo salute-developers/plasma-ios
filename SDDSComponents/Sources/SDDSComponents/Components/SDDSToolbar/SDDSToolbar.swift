@@ -7,7 +7,7 @@ import SwiftUI
 public struct ToolbarSlotData: Identifiable {
     public let id: UUID
     public let views: [AnyView]
-    
+
     public init(id: UUID = UUID(), views: [AnyView]) {
         self.id = id
         self.views = views
@@ -30,12 +30,12 @@ public struct SDDSToolbar: View {
     @Environment(\.toolbarAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
-    
+
     private let _appearance: ToolbarAppearance?
     private let slots: [ToolbarSlotData]
     private let slotsAmount: Int
     private let hasDivider: Bool
-    
+
     public init(
         slots: [ToolbarSlotData],
         slotsAmount: Int,
@@ -47,7 +47,7 @@ public struct SDDSToolbar: View {
         self.hasDivider = hasDivider
         self._appearance = appearance
     }
-    
+
     public var body: some View {
         Group {
             switch appearance.size.orientation {
@@ -69,11 +69,11 @@ public struct SDDSToolbar: View {
         .shape(pathDrawer: appearance.size.shape)
         .shadow(appearance.shadow)
     }
-    
+
     private var appearance: ToolbarAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var normalizedSlots: [ToolbarSlotData] {
         guard slotsAmount > 0 else {
             return []
@@ -85,21 +85,21 @@ public struct SDDSToolbar: View {
             return ToolbarSlotData(views: [])
         }
     }
-    
+
     private var shouldShowDivider: Bool {
         hasDivider && normalizedSlots.count > 1 && appearance.dividerAppearance != nil
     }
-    
+
     private func slotPadding(for index: Int) -> EdgeInsets {
         let isSingle = normalizedSlots.count == 1
         if isSingle {
             return EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         }
-        
+
         let value = appearance.size.slotPadding
         let isFirst = index == 0
         let isLast = index == normalizedSlots.count - 1
-        
+
         switch appearance.size.orientation {
         case .horizontal:
             if isFirst {
@@ -119,7 +119,7 @@ public struct SDDSToolbar: View {
             return EdgeInsets(top: value, leading: 0, bottom: value, trailing: 0)
         }
     }
-    
+
     private func dividerPadding() -> EdgeInsets {
         switch appearance.size.orientation {
         case .horizontal:
@@ -128,21 +128,21 @@ public struct SDDSToolbar: View {
             return EdgeInsets(top: 0, leading: appearance.size.dividerMargin, bottom: 0, trailing: appearance.size.dividerMargin)
         }
     }
-    
+
     @ViewBuilder
     private var horizontalLayout: some View {
         HStack(spacing: 0) {
             slotStack
         }
     }
-    
+
     @ViewBuilder
     private var verticalLayout: some View {
         VStack(spacing: 0) {
             slotStack
         }
     }
-    
+
     @ViewBuilder
     private var slotStack: some View {
         ForEach(Array(normalizedSlots.enumerated()), id: \.element.id) { index, slot in
@@ -152,7 +152,7 @@ public struct SDDSToolbar: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private func slotView(_ slot: ToolbarSlotData, index: Int) -> some View {
         Group {
@@ -173,7 +173,7 @@ public struct SDDSToolbar: View {
         }
         .padding(slotPadding(for: index))
     }
-    
+
     @ViewBuilder
     private var dividerView: some View {
         if let dividerAppearance = appearance.dividerAppearance {

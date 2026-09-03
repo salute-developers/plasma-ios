@@ -28,7 +28,7 @@ public struct SDDSModal<Content: View>: View {
     private let closeImage: Image?
     private let appearance: ModalAppearance
     private let onClose: () -> Void
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     public init(
@@ -42,11 +42,11 @@ public struct SDDSModal<Content: View>: View {
         self.appearance = appearance
         self.onClose = onClose
     }
-    
+
     public var body: some View {
         ZStack(alignment: .topTrailing) {
             content()
-            
+
             if let closeImage = closeImage {
                 Button(action: onClose) {
                     closeImage
@@ -64,4 +64,4 @@ public struct SDDSModal<Content: View>: View {
         .shape(pathDrawer: appearance.size.shape)
         .shadow(appearance.size.shadow)
     }
-} 
+}

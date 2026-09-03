@@ -11,7 +11,7 @@ final class SwitchViewModel: ComponentViewModel<SwitchVariationProvider> {
     @Published var isOn: Bool = true
     @Published var isEnabled: Bool = true
     @Published var switchAccessibility: SwitchAccessibility = SwitchAccessibility()
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: SwitchUiState = .init()) {
         super.init(variationProvider: SwitchVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)

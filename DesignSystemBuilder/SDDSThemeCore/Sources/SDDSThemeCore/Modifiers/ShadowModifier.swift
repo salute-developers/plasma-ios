@@ -3,7 +3,7 @@ import SwiftUI
 /// Модификатор для применения токена теней
 public struct ShadowModifier: ViewModifier {
     let token: ShadowToken
-    
+
     public func body(content: Content) -> some View {
         if token.layers.isEmpty {
             content
@@ -29,7 +29,7 @@ public struct ShadowModifier: ViewModifier {
             }
         }
     }
-    
+
     private func layer(_ index: Int) -> ShadowToken.Layer {
         token.layers[index]
     }
@@ -54,7 +54,7 @@ struct ShadowDemoView: View {
             )
         ]
     )
-    
+
     var body: some View {
         Rectangle()
             .fill(Color.green)

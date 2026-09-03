@@ -37,11 +37,11 @@ public struct DefaultTabBarIslandSize: TabBarIslandSizeConfiguration {
     public var contentPaddingTop: CGFloat = 8.0
     public var contentPaddingBottom: CGFloat = 8.0
     public var itemSpacing: CGFloat = 8.0
-    
+
     public var debugDescription: String {
         "DefaultTabBarIslandSize"
     }
-    
+
     public init() {}
 }
 
@@ -55,10 +55,10 @@ public struct ZeroTabBarIslandSize: TabBarIslandSizeConfiguration {
     public var contentPaddingTop: CGFloat = 0
     public var contentPaddingBottom: CGFloat = 0
     public var itemSpacing: CGFloat = 0
-    
+
     public var debugDescription: String {
         "ZeroTabBarIslandSize"
     }
-    
+
     public init() {}
 }

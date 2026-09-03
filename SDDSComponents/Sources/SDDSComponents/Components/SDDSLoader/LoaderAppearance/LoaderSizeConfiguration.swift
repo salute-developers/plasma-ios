@@ -10,9 +10,9 @@ public protocol LoaderSizeConfiguration: SizeConfiguration, CustomDebugStringCon
  Размеры определяются через spinnerAppearance и circularProgressAppearance.
  */
 public struct DefaultLoaderSizeConfiguration: LoaderSizeConfiguration {
-    
+
     public init() {}
-    
+
     public var debugDescription: String {
         "DefaulLoaderSizeConfiguration"
     }

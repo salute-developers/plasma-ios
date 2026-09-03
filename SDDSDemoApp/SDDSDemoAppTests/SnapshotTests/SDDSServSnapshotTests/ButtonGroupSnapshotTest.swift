@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class ButtonGroupSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testButtonGroupLDefaultNoGap() async throws {
         let appearance = BasicButton.l.default.appearance
@@ -26,7 +26,7 @@ final class ButtonGroupSnapshotTest: SDDSServThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance), landscape: true
         )
     }
-    
+
     @MainActor
     func testButtonGroupMDenseDefaultHorizontal() async throws {
         let appearance = BasicButton.m.default.appearance
@@ -37,7 +37,7 @@ final class ButtonGroupSnapshotTest: SDDSServThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance)
         )
     }
-    
+
     @MainActor
     func testButtonGroupSWideDefaultSegmentedHorizontal() async throws {
         let appearance = BasicButton.s.default.appearance
@@ -48,7 +48,7 @@ final class ButtonGroupSnapshotTest: SDDSServThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance)
         )
     }
-    
+
     @MainActor
     func testButtonGroupXsGapNoneDefaultVertical() async throws {
         let appearance = BasicButton.xs.default.appearance
@@ -59,7 +59,7 @@ final class ButtonGroupSnapshotTest: SDDSServThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance)
         )
     }
-    
+
     @MainActor
     func testButtonGroupXxsItemCountTenDefaultSegmented() async throws {
         let appearance = BasicButton.xxs.default.appearance

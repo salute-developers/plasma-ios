@@ -2,7 +2,7 @@ import Foundation
 
 struct SelectItemSize: CodeGenerationSize {
     typealias Props = SelectItemProps
-    
+
     var shape: String?
     var height: String?
     var paddingStart: String?
@@ -11,11 +11,11 @@ struct SelectItemSize: CodeGenerationSize {
     var paddingBottom: String?
     var controlMargin: String?
     var controlSize: String?
-    
+
     init(variation: SelectItemConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: SelectItemProps, id: String? = nil, nullify: Bool = false) {
         self.shape = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
         self.height = CGFloatContextBuilder(props.height?.value, nullify: nullify).context
@@ -26,7 +26,7 @@ struct SelectItemSize: CodeGenerationSize {
         self.controlMargin = CGFloatContextBuilder(props.controlMargin?.value, nullify: nullify).context
         self.controlSize = CGFloatContextBuilder(props.controlSize?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.shape = PathDrawerContextBuilder.defaultContext
         self.height = CGFloat.defaultContext
@@ -38,4 +38,3 @@ struct SelectItemSize: CodeGenerationSize {
         self.controlSize = CGFloat.defaultContext
     }
 }
-

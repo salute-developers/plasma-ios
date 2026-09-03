@@ -19,7 +19,7 @@ enum Component: String {
     case circularProgressBar = "circular-progress-bar"
     case popover = "popover"
     case toast = "toast"
-    
+
     var componentName: String {
         switch self {
         case .embeddedChip:

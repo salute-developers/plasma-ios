@@ -31,9 +31,9 @@ struct CheckboxGroupView: View {
                     VStack(alignment: .leading) {
                         Text("Checkbox \(index + 1) Configuration")
                             .font(.headline)
-                        
+
                         Toggle("Is Enabled", isOn: $viewModel.checkboxViewModels[index].isEnabled)
-                        
+
                         Picker("State", selection: Binding(get: {
                             viewModel.states[index] ?? .deselected
                         }, set: { value in
@@ -63,7 +63,7 @@ struct CheckboxGroupView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .navigationTitle("CheckboxGroup")
     }
 }

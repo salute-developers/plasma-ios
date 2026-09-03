@@ -20,14 +20,8 @@ import UIKit
  ## Пример использования
 
  ```swift
- SDDSRectSkeleton(
-     appearance: SkeletonAppearance(
-         shape: CornerRadiusDrawer(cornerRadius: 8),
-         gradient: .gradient(.skeletonGradient),
-         duration: 2000
-     )
- )
- .frame(width: 200, height: 100)
+ // @sample: SDDSComponentsFixtures/Samples/RectSkeleton/SDDSRectSkeleton_Simple.swift
+ SDDSRectSkeleton()
  ```
  */
 public struct SDDSRectSkeleton: View {
@@ -38,7 +32,7 @@ public struct SDDSRectSkeleton: View {
     @State private var phase: CGFloat = -1.0
     private let isAnimationEnabled: Bool
     private var _appearance: SkeletonAppearance?
-    
+
     public init(
         appearance: SkeletonAppearance? = nil,
         isAnimationEnabled: Bool = true
@@ -46,15 +40,15 @@ public struct SDDSRectSkeleton: View {
         self._appearance = appearance
         self.isAnimationEnabled = isAnimationEnabled
     }
-    
+
     private var appearance: SkeletonAppearance {
         _appearance ?? environmentAppearance
     }
-    
+
     private var resolvedGradient: FillStyle {
         appearance.gradient.resolvedDefaultValue()
     }
-    
+
     /**
      Конвертирует миллисекунды в секунды для анимации.
      
@@ -64,10 +58,10 @@ public struct SDDSRectSkeleton: View {
     private func msToSeconds(_ ms: Double) -> Double {
         ms / 1000.0
     }
-    
+
     public var body: some View {
         Group {
-            GeometryReader { geometry in
+            GeometryReader { _ in
                 HStack(spacing: 0) {
                     ForEach(0..<3) { _ in
                         gradient
@@ -85,7 +79,7 @@ public struct SDDSRectSkeleton: View {
             animate()
         }
     }
-    
+
     /**
      Создает градиентный элемент для анимации.
      
@@ -110,7 +104,7 @@ public struct SDDSRectSkeleton: View {
                 .frame(width: screenWidth)
         }
     }
-    
+
     @ViewBuilder
     private func blinkingColor(_ colorToken: ColorToken, at date: Date) -> some View {
         let color = colorToken.color(for: colorScheme, subtheme: subtheme)
@@ -119,7 +113,7 @@ public struct SDDSRectSkeleton: View {
         let animatedAlpha = min(1.0, baseAlpha + (0.08 * blinkProgress(at: date)))
         Color(uiColor.withAlphaComponent(animatedAlpha))
     }
-    
+
     /**
      Запускает анимацию скелетона.
      
@@ -139,33 +133,33 @@ public struct SDDSRectSkeleton: View {
             phase = -1.0
         }
     }
-    
+
     private func animateGradient() {
         let targetPhase: CGFloat = layoutDirection == .rightToLeft ? -2.0 : 0
         let initialPhase: CGFloat = layoutDirection == .rightToLeft ? -1.0 : -1.0
         phase = initialPhase
-        
+
         withAnimation(.linear(duration: durationInSeconds).repeatForever(autoreverses: false)) {
             phase = targetPhase
         }
     }
-    
+
     private func blinkProgress(at date: Date) -> CGFloat {
         let duration = max(durationInSeconds, 0.001)
         let cycleDuration = duration * 2.0
         let positionInCycle = date.timeIntervalSinceReferenceDate.truncatingRemainder(dividingBy: cycleDuration)
-        
+
         if positionInCycle <= duration {
             return CGFloat(positionInCycle / duration)
         } else {
             return CGFloat((cycleDuration - positionInCycle) / duration)
         }
     }
-    
+
     private var restartAnimationKey: String {
         "\(colorScheme == .dark ? "dark" : "light")-\(String(describing: subtheme.subtheme))-\(layoutDirection == .rightToLeft ? "rtl" : "ltr")-\(durationInSeconds)-\(fillStyleAnimationKey)"
     }
-    
+
     private var fillStyleAnimationKey: String {
         switch resolvedGradient {
         case .color(let colorToken):
@@ -174,7 +168,7 @@ public struct SDDSRectSkeleton: View {
             "gradient-\(gradientToken.id)"
         }
     }
-    
+
     /**
      Получает длительность анимации в секундах.
      
@@ -183,7 +177,7 @@ public struct SDDSRectSkeleton: View {
     private var durationInSeconds: TimeInterval {
         msToSeconds(appearance.duration)
     }
-    
+
     /**
      Получает ширину экрана для расчета анимации.
      
@@ -209,4 +203,4 @@ extension EnvironmentValues {
         get { self[SkeletonAppearanceKey.self] }
         set { self[SkeletonAppearanceKey.self] = newValue }
     }
-} 
+}

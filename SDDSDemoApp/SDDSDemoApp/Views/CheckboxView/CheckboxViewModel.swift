@@ -10,7 +10,7 @@ final class CheckboxViewModel: ComponentViewModel<CheckboxVariationProvider> {
     @Published var subtitle: String = ""
     @Published var state: SelectionControlState = .deselected
     @Published var isEnabled: Bool = true
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: CheckboxUiState = .init()) {
         super.init(variationProvider: CheckboxVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)

@@ -42,8 +42,8 @@ public struct ZeroSelectionControlSize: SelectionControlSizeConfiguration {
     public var togglePathDrawer: PathDrawer = DefaultPathDrawer()
     public var lineWidth: CGFloat { 0 }
     public var togglePaddings: CGFloat { 0 }
-    
+
     public var debugDescription: String { "ZeroSelectionControlSize " }
-    
+
     public init() {}
 }

@@ -52,7 +52,7 @@ public struct SDDSTabBarIsland: View {
     private let items: [TabBarItemData]
     @Binding private var selectedIndex: Int
     private let onTabSelected: ((Int) -> Void)?
-    
+
     public init(
         items: [TabBarItemData],
         selectedIndex: Binding<Int>,
@@ -64,7 +64,7 @@ public struct SDDSTabBarIsland: View {
         self._appearance = appearance
         self.onTabSelected = onTabSelected
     }
-    
+
     public var body: some View {
         TabBarContent(
             items: items,
@@ -82,7 +82,7 @@ public struct SDDSTabBarIsland: View {
         .padding([.trailing], appearance.size.paddingEnd)
         .shadow(appearance.shadow)
     }
-    
+
     private var topPathDrawer: PathDrawer {
         if let drawer = appearance.size.topShape as? CornerRadiusDrawer {
             return CornerRadiusDrawer(cornerRadius: drawer.cornerRadius, cornerType: .specific(CornerRadiusDrawerType.top))
@@ -90,7 +90,7 @@ public struct SDDSTabBarIsland: View {
             return appearance.size.topShape
         }
     }
-    
+
     private var bottomPathDrawer: PathDrawer {
         if let drawer = appearance.size.bottomShape as? CornerRadiusDrawer {
             return CornerRadiusDrawer(cornerRadius: drawer.cornerRadius, cornerType: .specific(CornerRadiusDrawerType.bottom))
@@ -98,9 +98,9 @@ public struct SDDSTabBarIsland: View {
             return appearance.size.topShape
         }
     }
-    
+
     // MARK: - Background Layers
-    
+
     @ViewBuilder
     private var backgroundLayers: some View {
         GeometryReader { geometry in
@@ -108,7 +108,7 @@ public struct SDDSTabBarIsland: View {
                 backgroundHalf
                     .shape(pathDrawer: topPathDrawer)
                     .frame(height: geometry.size.height / 2)
-                
+
                 backgroundHalf
                     .shape(pathDrawer: bottomPathDrawer)
                     .frame(height: geometry.size.height / 2)
@@ -116,15 +116,15 @@ public struct SDDSTabBarIsland: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var backgroundHalf: some View {
         Rectangle()
             .fill(appearance.backgroundColor.color(for: colorScheme, subtheme: subtheme))
     }
-    
+
     // MARK: - Computed Properties
-    
+
     private var appearance: TabBarIslandAppearance {
         _appearance ?? environmentAppearance
     }

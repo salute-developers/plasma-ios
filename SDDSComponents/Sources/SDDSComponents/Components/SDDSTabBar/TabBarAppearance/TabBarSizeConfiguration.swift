@@ -33,11 +33,11 @@ public struct DefaultTabBarSize: TabBarSizeConfiguration {
     public var itemSpacing: CGFloat = 8.0
     public var topShape: PathDrawer = DefaultPathDrawer()
     public var dividerThickness: CGFloat = 1.0
-    
+
     public var debugDescription: String {
         "DefaultTabBarSize"
     }
-    
+
     public init() {}
 }
 
@@ -49,10 +49,10 @@ public struct ZeroTabBarSize: TabBarSizeConfiguration {
     public var itemSpacing: CGFloat = 0
     public var topShape: PathDrawer = DefaultPathDrawer()
     public var dividerThickness: CGFloat = 0
-    
+
     public var debugDescription: String {
         "ZeroTabBarSize"
     }
-    
+
     public init() {}
 }

@@ -23,7 +23,7 @@ public struct CheckboxData: Hashable {
     let images: SelectionControlStateImages?
     let appearance: CheckboxAppearance
     let accessibility: SelectionControlAccessibility
-    
+
     public init(
         state: Binding<SelectionControlState>,
         title: String,
@@ -41,12 +41,12 @@ public struct CheckboxData: Hashable {
         self.images = images
         self.accessibility = accessibility
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id.uuidString)
         hasher.combine(state.wrappedValue.rawValue)
     }
-    
+
     public static func == (lhs: CheckboxData, rhs: CheckboxData) -> Bool {
         lhs.id == rhs.id && lhs.state.wrappedValue == rhs.state.wrappedValue
     }

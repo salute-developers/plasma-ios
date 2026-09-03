@@ -49,9 +49,9 @@ struct TabsView: View {
                         Text(viewModel.tabsType.rawValue)
                     }
                 }
-                
+
                 VariationsView(viewModel: viewModel)
-                
+
                 HStack {
                     Text("Clip Mode")
                     Spacer()
@@ -65,7 +65,7 @@ struct TabsView: View {
                         Text(viewModel.clipModeType.rawValue)
                     }
                 }
-                
+
                 if viewModel.clipModeType == .showMore && viewModel.tabsType != .iconTabs {
                     HStack {
                         Text("Show All Text")
@@ -74,7 +74,7 @@ struct TabsView: View {
                             .multilineTextAlignment(.trailing)
                     }
                 }
-                
+
                 HStack {
                     Text("Number of Tabs")
                     Spacer()
@@ -84,11 +84,11 @@ struct TabsView: View {
                         in: 1...100
                     )
                 }
-                
+
                 Toggle("Stretch", isOn: $viewModel.stretch)
                 Toggle("Has Divider", isOn: $viewModel.hasDivider)
             }
-            
+
             Section {
                 if viewModel.tabsType != .iconTabs {
                     HStack {
@@ -97,9 +97,9 @@ struct TabsView: View {
                         TextField("Label", text: $viewModel.label)
                             .multilineTextAlignment(.trailing)
                     }
-                    
+
                     Toggle("Has Value", isOn: $viewModel.hasValue)
-                    
+
                     if viewModel.hasValue {
                         HStack {
                             Text("Value")
@@ -111,7 +111,7 @@ struct TabsView: View {
                             .multilineTextAlignment(.trailing)
                         }
                     }
-                    
+
                     if viewModel.tabsType == .tabsDefault {
                         Toggle("Has Start Content Icon", isOn: $viewModel.hasStartContentIcon)
                         if viewModel.appearance.size.orientation == .horizontal {
@@ -120,24 +120,24 @@ struct TabsView: View {
                     }
                 }
                 Toggle("Has Action", isOn: $viewModel.hasAction)
-                
+
                 if viewModel.tabsType != .tabsHeader {
                     counter
                 }
-                
+
                 Toggle("Disabled", isOn: $viewModel.isDisabled)
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .id(viewModel.tabsType)
         .navigationTitle("Tabs")
     }
-    
+
     @ViewBuilder
     private var counter: some View {
         Toggle("Has \(viewModel.counterName)", isOn: $viewModel.hasCounter)
-        
+
         if viewModel.hasCounter {
             HStack {
                 Text("\(viewModel.counterName) Value")

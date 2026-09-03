@@ -37,10 +37,10 @@ public struct ZeroTabsSize: TabsSizeConfiguration {
     public var orientation: TabsOrientation = .horizontal
     public var overflowIconSize: CGFloat = 0
     public var disclosureIconSize: CGFloat = 0
-    
+
     public var debugDescription: String {
         return "Zero Tabs Size"
     }
-    
+
     public init() {}
 }

@@ -12,7 +12,7 @@ import SDDSIcons
 
 struct RectSkeletonTestCase: View {
     var appearance: SkeletonAppearance
-    
+
     var body: some View {
         SDDSRectSkeleton(
             appearance: appearance,

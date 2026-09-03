@@ -5,7 +5,7 @@ import SDDSThemeCore
 final class ModalViewModel: ComponentViewModel<ModalVariationProvider> {
     @Published var hasClose: Bool = true
     @Published var useNativeBlackout: Bool = false
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: ModalUiState = .init()) {
         super.init(variationProvider: ModalVariationProvider(theme: theme), theme: theme)
         apply(uiState: uiState)

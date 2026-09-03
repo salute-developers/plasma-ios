@@ -22,6 +22,6 @@ struct MaskUiState: StoryUiState, DefaultUiState {
     var customFormat: String = ""
     var numberFractionDigits: Int = 2
     var numberDecimalSeparator: String = ","
-    var currentMask: TextFieldMask? = nil
+    var currentMask: TextFieldMask?
     var maskDisplayMode: MaskDisplayMode = .onInput
 }

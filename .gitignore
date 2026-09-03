@@ -118,3 +118,9 @@ iOSInjectionProject/
 
 ## Ассеты релиза (scripts/release/build_release.sh)
 release-artifacts/
+
+# Артефакты упавших снапшот-тестов: iOSSnapshotTestCase кладёт их рядом с эталонами.
+# Эталоны (`*_375x812@3x.png`) трекаются, результаты сравнения — нет.
+*_diff.png
+*_merge.png
+*_new.png

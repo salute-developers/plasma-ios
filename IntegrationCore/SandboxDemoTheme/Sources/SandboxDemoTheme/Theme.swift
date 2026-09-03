@@ -10,11 +10,11 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
     case sdddsServTheme
     case plasmaB2CTheme
     case plasmaHomeDSTheme
-    
+
     public var name: String {
         rawValue.capitalized
     }
-    
+
     public func subtheme(_ subtheme: Subtheme) -> SubthemeData {
         switch self {
         case .sdddsServTheme:
@@ -82,7 +82,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.BasicButton.all
         }
     }
-    
+
     public var iconButtonVariations: [Variation<ButtonAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -93,7 +93,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.IconButton.all
         }
     }
-    
+
     public var linkButtonVariations: [Variation<ButtonAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -104,7 +104,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.LinkButton.all
         }
     }
-    
+
     public var textFieldVariations: [Variation<TextFieldAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -115,7 +115,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.TextField.all
         }
     }
-    
+
     public var textFieldClearVariations: [Variation<TextFieldAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -126,7 +126,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var textAreaVariations: [Variation<TextAreaAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -137,7 +137,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var textAreaClearVariations: [Variation<TextAreaAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -148,7 +148,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var editableVariations: [Variation<EditableAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -159,7 +159,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Editable.all
         }
     }
-    
+
     public var avatarVariations: [Variation<AvatarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -170,7 +170,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Avatar.all
         }
     }
-    
+
     public var avatarGroupVariations: [Variation<AvatarGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -181,7 +181,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.AvatarGroup.all
         }
     }
-    
+
     public var counterVariations: [Variation<CounterAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -192,7 +192,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Counter.all
         }
     }
-    
+
     public var chipGroupVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -203,7 +203,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var chipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -214,7 +214,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.ChipGroupDense.all
         }
     }
-    
+
     public var chipGroupWideVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -225,7 +225,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.ChipGroupWide.all
         }
     }
-    
+
     public var embeddedChipGroupDenseVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -236,7 +236,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var embeddedChipGroupWideVariations: [Variation<ChipGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -247,7 +247,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var checkboxVariations: [Variation<CheckboxAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -258,7 +258,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Checkbox.all
         }
     }
-    
+
     public var checkboxGroupVariations: [Variation<CheckboxGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -269,7 +269,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.CheckboxGroup.all
         }
     }
-    
+
     public var radioboxVariations: [Variation<RadioboxAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -280,7 +280,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Radiobox.all
         }
     }
-    
+
     public var radioboxGroupVariations: [Variation<RadioboxGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -291,7 +291,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.RadioboxGroup.all
         }
     }
-    
+
     public var chipVariations: [Variation<ChipAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -302,7 +302,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Chip.all
         }
     }
-    
+
     public var embeddedChipVariations: [Variation<ChipAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -313,7 +313,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var progressBarVariations: [Variation<ProgressBarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -324,7 +324,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var segmentItemVariations: [Variation<SegmentItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -335,7 +335,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var segmentVariations: [Variation<SegmentAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -346,7 +346,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var switchVariations: [Variation<SwitchAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -357,7 +357,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Switch.all
         }
     }
-    
+
     public var badgeVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -368,7 +368,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Badge.all
         }
     }
-    
+
     public var badgeClearVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -379,7 +379,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.BadgeClear.all
         }
     }
-    
+
     public var badgeTransparentVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -390,7 +390,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.BadgeTransparent.all
         }
     }
-    
+
     public var iconBadgeVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -401,7 +401,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.IconBadge.all
         }
     }
-    
+
     public var iconBadgeClearVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -412,7 +412,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.IconBadgeClear.all
         }
     }
-    
+
     public var iconBadgeTransparentVariations: [Variation<BadgeAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -423,7 +423,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.IconBadgeTransparent.all
         }
     }
-    
+
     public var indicatorVariations: [Variation<IndicatorAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -434,7 +434,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Indicator.all
         }
     }
-    
+
     public var paginationDotsHorizontalVariations: [Variation<PaginationDotsAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -445,7 +445,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var paginationDotsVerticalVariations: [Variation<PaginationDotsAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -489,7 +489,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Image.all
         }
     }
-    
+
     public var cellVariations: [Variation<CellAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -500,7 +500,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Cell.all
         }
     }
-    
+
     public var cardSolidVariations: [Variation<CardAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -511,7 +511,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var cardVariations: [Variation<CardAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -522,7 +522,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Card.all
         }
     }
-    
+
     public var cardClearVariations: [Variation<CardAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -533,7 +533,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var bottomSheetVariations: [Variation<BottomSheetAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -544,7 +544,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.BottomSheet.all
         }
     }
-    
+
     public var circularProgressBarVariations: [Variation<CircularProgressBarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -555,7 +555,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.CircularProgressBar.all
         }
     }
-    
+
     public var dividerVariations: [Variation<DividerAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -566,7 +566,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Divider.all
         }
     }
-    
+
     public var overlayVariations: [Variation<OverlayAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -577,7 +577,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Overlay.all
         }
     }
-    
+
     public var popoverVariations: [Variation<PopoverAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -588,7 +588,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var tooltipVariations: [Variation<TooltipAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -599,7 +599,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Tooltip.all
         }
     }
-    
+
     public var toastVariations: [Variation<ToastAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -610,7 +610,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Toast.all
         }
     }
-    
+
     public var modalVariations: [Variation<ModalAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -621,7 +621,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var notificationCompactVariations: [Variation<NotificationAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -632,7 +632,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var notificationLooseVariations: [Variation<NotificationAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -643,7 +643,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var rectSkeletonVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -654,7 +654,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.RectSkeleton.all
         }
     }
-    
+
     public var textSkeletonVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -665,7 +665,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.TextSkeleton.all
         }
     }
-    
+
     public var textSkeletonBodyVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .plasmaHomeDSTheme:
@@ -674,7 +674,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var textSkeletonDisplayVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .plasmaHomeDSTheme:
@@ -683,7 +683,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var textSkeletonHeaderVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .plasmaHomeDSTheme:
@@ -692,7 +692,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var textSkeletonTextVariations: [Variation<SkeletonAppearance>] {
         switch self {
         case .plasmaHomeDSTheme:
@@ -701,7 +701,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var listItemVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -712,7 +712,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.ListItem.all
         }
     }
-    
+
     public var listNumberedItemVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme, .plasmaB2CTheme:
@@ -721,7 +721,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.ListNumberedItem.all
         }
     }
-    
+
     public var listItemNormalVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -732,7 +732,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var listItemTightVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -743,7 +743,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var listVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -754,7 +754,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.List.all
         }
     }
-    
+
     public var listNumberedVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme, .plasmaB2CTheme:
@@ -763,7 +763,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.ListNumbered.all
         }
     }
-    
+
     public var listNormalVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -774,7 +774,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var listTightVariations: [Variation<ListAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -785,7 +785,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var scrollbarVariations: [Variation<ScrollbarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -796,7 +796,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var dropdownMenuNormalVariations: [Variation<DropdownMenuAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -807,7 +807,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var dropdownMenuTightVariations: [Variation<DropdownMenuAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -818,7 +818,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var dropdownItemNormalVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -829,7 +829,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var dropdownItemTightVariations: [Variation<ListItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -840,7 +840,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var accordionItemClearActionStartVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -851,7 +851,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var accordionItemClearActionEndVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -862,7 +862,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var accordionItemSolidActionStartVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -873,7 +873,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var accordionItemSolidActionEndVariations: [Variation<AccordionItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -884,7 +884,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var accordionClearActionStartVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -895,7 +895,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var accordionClearActionEndVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -906,7 +906,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var accordionSolidActionStartVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -917,7 +917,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var accordionSolidActionEndVariations: [Variation<AccordionAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -928,7 +928,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var spinnerVariations: [Variation<SpinnerAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -939,7 +939,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Spinner.all
         }
     }
-    
+
     public var loaderVariations: [Variation<LoaderAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -950,7 +950,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.Loader.all
         }
     }
-    
+
     public var codeFieldVariations: [Variation<CodeFieldAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -961,7 +961,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var tabBarIslandSolidVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -972,7 +972,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var tabBarIslandClearVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -983,7 +983,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var tabBarIslandHasLabelClearVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -994,7 +994,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var tabBarIslandHasLabelSolidVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1005,7 +1005,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var tabBarSolidVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1016,7 +1016,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var tabBarVariations: [Variation<TabBarIslandAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1027,7 +1027,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             PlasmaHomeDSTheme.TabBar.all
         }
     }
-    
+
     public var tabBarClearVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1038,7 +1038,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var tabBarHasLabelClearVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1049,7 +1049,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var tabBarHasLabelSolidVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1071,7 +1071,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var basicButtonGroupVariations: [Variation<ButtonGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1082,7 +1082,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return PlasmaHomeDSTheme.BasicButtonGroup.all
         }
     }
-    
+
     public var iconButtonGroupVariations: [Variation<ButtonGroupAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1093,7 +1093,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return PlasmaHomeDSTheme.IconButtonGroup.all
         }
     }
-    
+
     public var wheelVariations: [Variation<WheelAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1104,7 +1104,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return PlasmaHomeDSTheme.Wheel.all
         }
     }
-    
+
     public var navigationBarMainPageVariations: [Variation<NavigationBarMainPageAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1126,7 +1126,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return PlasmaHomeDSTheme.Note.all
         }
     }
-    
+
     public var navigationBarInternalPageVariations: [Variation<NavigationBarInternalPageAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1170,7 +1170,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return PlasmaHomeDSTheme.NoteCompact.all
         }
     }
-    
+
     public var tabsDefaultVariations: [Variation<TabsAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1181,7 +1181,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var drawerCloseInnerVariations: [Variation<DrawerAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1192,7 +1192,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var tabsHeaderVariations: [Variation<TabsAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1203,7 +1203,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var drawerCloseNoneVariations: [Variation<DrawerAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1214,7 +1214,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var iconTabsVariations: [Variation<TabsAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1225,7 +1225,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var tabItemDefaultVariations: [Variation<TabItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1236,7 +1236,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var tabItemHeaderVariations: [Variation<TabItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1247,7 +1247,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var iconTabItemVariations: [Variation<TabItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1258,7 +1258,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var drawerCloseOuterVariations: [Variation<DrawerAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1269,7 +1269,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             return []
         }
     }
-    
+
     public var autocompleteNormalVariations: [Variation<AutocompleteAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1280,7 +1280,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var autocompleteTightVariations: [Variation<AutocompleteAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1291,7 +1291,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var selectSingleNormalVariations: [Variation<SelectAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1300,7 +1300,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var selectSingleTightVariations: [Variation<SelectAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1309,7 +1309,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var selectMultipleNormalVariations: [Variation<SelectAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1318,7 +1318,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var selectMultipleTightVariations: [Variation<SelectAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1327,7 +1327,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var selectItemSingleNormalVariations: [Variation<SelectItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1336,7 +1336,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var selectItemSingleTightVariations: [Variation<SelectItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1345,7 +1345,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var selectItemMultipleNormalVariations: [Variation<SelectItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1354,7 +1354,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var selectItemMultipleTightVariations: [Variation<SelectItemAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1363,7 +1363,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var toolbarHorizontalVariations: [Variation<ToolbarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1374,7 +1374,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
             []
         }
     }
-    
+
     public var toolbarVerticalVariations: [Variation<ToolbarAppearance>] {
         switch self {
         case .sdddsServTheme:
@@ -1397,14 +1397,14 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
 
-    public func initialize(tenant: Tenant, onComplete: @escaping () -> Void = {}) {
+    public func initialize(tenant: Tenant) {
         switch self {
         case .sdddsServTheme:
-            SDDSServTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
+            SDDSServTheme.Theme.initialize(tenant: tenant)
         case .plasmaB2CTheme:
-            PlasmaB2CTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
+            PlasmaB2CTheme.Theme.initialize(tenant: tenant)
         case .plasmaHomeDSTheme:
-            PlasmaHomeDSTheme.Theme.initialize(tenant: tenant, onComplete: onComplete)
+            PlasmaHomeDSTheme.Theme.initialize(tenant: tenant)
         }
     }
 }

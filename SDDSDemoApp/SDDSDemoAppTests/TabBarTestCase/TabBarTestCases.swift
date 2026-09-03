@@ -16,13 +16,13 @@ import SDDSIcons
 struct TabBarClearLDefaultExtraTypeNone: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -46,13 +46,13 @@ struct TabBarClearLDefaultExtraTypeNone: View {
 struct TabBarHasLabelClearMSecondaryCounter: View {
     var appearance: TabBarAppearance
     @State var selecetedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -76,13 +76,13 @@ struct TabBarHasLabelClearMSecondaryCounter: View {
 struct TabBarHasLabelSolidLAccentIndicator: View {
     var appearance: TabBarAppearance
     @State var selecetedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -106,13 +106,13 @@ struct TabBarHasLabelSolidLAccentIndicator: View {
 struct TabBarIslandClearLShadowDefault: View {
     var appearance: TabBarIslandAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBarIsland(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -130,19 +130,18 @@ struct TabBarIslandClearLShadowDefault: View {
     }
 }
 
-
 /**
  PLASMA-T2186
  */
 struct TabBarIslandHasLabelClearLShadowSecondaryCounter: View {
     var appearance: TabBarIslandAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3).ignoresSafeArea()
             SDDSTabBarIsland(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -166,13 +165,13 @@ struct TabBarIslandHasLabelClearLShadowSecondaryCounter: View {
 struct TabBarHasLabelSolidLShadowAccentCounter: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -195,10 +194,10 @@ struct TabBarHasLabelSolidLShadowAccentCounter: View {
 struct TabBarIslandSolidLDefaultCounter: View {
     var appearance: TabBarIslandAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         SDDSTabBarIsland(
-            items: (0..<6).map { index in
+            items: (0..<6).map { _ in
                 TabBarItemData(
                     content: AnyView(iconForTest),
                     selectedContent: AnyView(selectedIcon),
@@ -219,13 +218,13 @@ struct TabBarIslandSolidLDefaultCounter: View {
 struct TabBarSolidLRoundedDefaultIndicator: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -249,13 +248,13 @@ struct TabBarSolidLRoundedDefaultIndicator: View {
 struct TabBarClearMRoundedSecondaryCounter: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -279,13 +278,13 @@ struct TabBarClearMRoundedSecondaryCounter: View {
 struct TabBarHasLabelClearLRoundedAccentCounter: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -309,13 +308,13 @@ struct TabBarHasLabelClearLRoundedAccentCounter: View {
 struct TabBarHasLabelSolidLDividerDefaultCounter: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -339,13 +338,13 @@ struct TabBarHasLabelSolidLDividerDefaultCounter: View {
 struct TabBarSolidLDividerSecondarytCounter: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -369,13 +368,13 @@ struct TabBarSolidLDividerSecondarytCounter: View {
 struct TabBarClearLDividerAccenttCounter: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -399,13 +398,13 @@ struct TabBarClearLDividerAccenttCounter: View {
 struct TabBarClearLDividerRoundedDefault: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -429,13 +428,13 @@ struct TabBarClearLDividerRoundedDefault: View {
 struct TabBarClearLDividerRoundedSecondary: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -459,13 +458,13 @@ struct TabBarClearLDividerRoundedSecondary: View {
 struct TabBarSolidLDividerRoundedAccent: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 1
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -489,13 +488,13 @@ struct TabBarSolidLDividerRoundedAccent: View {
 struct TabBarSolidLShadowRoundedAccent: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -519,13 +518,13 @@ struct TabBarSolidLShadowRoundedAccent: View {
 struct TabBarSolidLShadowRoundedSecondary: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -549,13 +548,13 @@ struct TabBarSolidLShadowRoundedSecondary: View {
 struct TabBarSolidLShadowRoundedDefault: View {
     var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
-    
+
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
             SDDSTabBar(
-                items: (0..<5).map { index in
+                items: (0..<5).map { _ in
                     TabBarItemData(
                         content: AnyView(iconForTest),
                         selectedContent: AnyView(selectedIcon),
@@ -579,10 +578,10 @@ struct TabBarSolidLShadowRoundedDefault: View {
 struct TabBarIslandIndicator: View {
     var appearance: TabBarIslandAppearance
     @State var selectedIndex: Int = 1
-    
+
     var body: some View {
         SDDSTabBarIsland(
-            items: (0..<3).map { index in
+            items: (0..<3).map { _ in
                 TabBarItemData(
                     content: AnyView(iconForTest),
                     selectedContent: AnyView(selectedIcon),
@@ -604,7 +603,7 @@ struct TabBarIslandCustomWeight: View {
     var appearance: TabBarIslandAppearance
     var customWidthEnabled: Bool = true
     @State var selectedIndex: Int = 1
-    
+
     var body: some View {
         SDDSTabBarIsland(
             items: tabBarItems,
@@ -612,9 +611,9 @@ struct TabBarIslandCustomWeight: View {
             appearance: appearance
         )
     }
-    
+
     private var tabBarItems: [TabBarItemData] {
-        var result = (0..<2).map { index in
+        var result = (0..<2).map { _ in
             TabBarItemData(
                 content: AnyView(iconForTest),
                 selectedContent: AnyView(selectedIcon),

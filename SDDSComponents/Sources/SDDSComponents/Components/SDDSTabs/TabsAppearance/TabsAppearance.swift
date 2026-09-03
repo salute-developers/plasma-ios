@@ -37,7 +37,7 @@ public struct TabsAppearance: Hashable {
     public var dropdownMenuAppearance: DropdownMenuAppearance?
     public var disclosureTextTypography: TypographyConfiguration
     public var disclosureIcon: Image?
-    
+
     public init(
         size: TabsSizeConfiguration = ZeroTabsSize(),
         disclosureColor: ButtonColor = ButtonColor(),
@@ -66,12 +66,10 @@ public struct TabsAppearance: Hashable {
         self.disclosureIcon = disclosureIcon
     }
 
-    
-    
     public static func == (lhs: TabsAppearance, rhs: TabsAppearance) -> Bool {
         return lhs.id == rhs.id
     }
-    
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

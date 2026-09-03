@@ -28,7 +28,7 @@ public struct CodeFieldSize: CodeFieldSizeConfiguration {
     public let itemShape: PathDrawer
     public let groupShape: PathDrawer
     public let dotSize: CGFloat
-    
+
     public init(
         width: CGFloat = 0,
         height: CGFloat = 0,

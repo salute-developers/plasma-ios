@@ -13,32 +13,36 @@
   документационного бандла (`DesignSystemBuilder`);
 - сгенерированные пакеты тем (`Themes/*`) и демо-песочница (`SDDSDemoApp`).
 
-Платформа: iOS 14+, `swift-tools-version:5.3`. Пакеты — локальные SwiftPM (path-based),
+Платформа: iOS 15+, `swift-tools-version:5.9`. Пакеты — локальные SwiftPM (path-based),
 объединены в `SDDS.xcworkspace`.
 
 ## Карта пакетов
 
-| Путь | Что это | Детальный гайд |
+| Путь | Что это | Гайд |
 |---|---|---|
-| `SDDSComponents/` | Библиотека компонентов (SwiftUI+UIKit), ~387 файлов | [CLAUDE.md](SDDSComponents/CLAUDE.md) |
-| `SDDSApiInfo/` | Маркерные макросы разметки API стилей (`@ApiName`, …) | — |
-| `Tools/SDDSApiInfoGenerator/` | Сканер `*Appearance` → `ios-api-meta.json` | [CLAUDE.md](Tools/SDDSApiInfoGenerator/CLAUDE.md) |
-| `DesignSystemBuilder/` | macOS CLI `dsbuilder` (темы + докбандл) и `SDDSThemeCore` | [CLAUDE.md](DesignSystemBuilder/CLAUDE.md) |
-| `DesignSystemBuilder/SDDSThemeCore/` | Рантайм-типы токенов (портируемое ядро) | [CLAUDE.md](DesignSystemBuilder/SDDSThemeCore/CLAUDE.md) |
-| `SDDSDemoApp/` | Демо/песочница компонентов, схемы per-DS | [CLAUDE.md](SDDSDemoApp/CLAUDE.md) |
-| `SDDSIcons/` | Asset-бандл иконок (swiftgen) | [CLAUDE.md](SDDSIcons/CLAUDE.md) |
-| `Themes/` | Сгенерированные пакеты тем (коммитятся) | [CLAUDE.md](Themes/CLAUDE.md) |
-| `IntegrationCore/` | SandboxCore / SandboxDemoTheme / SandboxSwiftUI | [CLAUDE.md](IntegrationCore/CLAUDE.md) |
-| `scripts/` | Ruby/Bash: сборка, релиз, генерация | [CLAUDE.md](scripts/CLAUDE.md) |
-| `SDDSComponentsFixtures/` | Тестовые фикстуры для компонентов | — |
-| `Vendor/InputMask/` | Git submodule (RedMadRobot input-mask-ios) | — |
+| `SDDSComponents/` | Библиотека компонентов (SwiftUI+UIKit) | [README](SDDSComponents/README.md) · [CLAUDE](SDDSComponents/CLAUDE.md) |
+| `SDDSApiInfo/` | Маркерные макросы разметки API стилей (`@ApiName`, …) | [README](SDDSApiInfo/README.md) |
+| `Tools/SDDSApiInfoGenerator/` | Сканер `*Appearance` → `ios-api-meta.json` | [README](Tools/SDDSApiInfoGenerator/README.md) · [CLAUDE](Tools/SDDSApiInfoGenerator/CLAUDE.md) |
+| `DesignSystemBuilder/` | macOS CLI `dsbuilder` (темы + докбандл) | [README](DesignSystemBuilder/README.md) · [CLAUDE](DesignSystemBuilder/CLAUDE.md) |
+| `DesignSystemBuilder/SDDSThemeCore/` | Рантайм-типы токенов (портируемое ядро) | [README](DesignSystemBuilder/SDDSThemeCore/README.md) · [CLAUDE](DesignSystemBuilder/SDDSThemeCore/CLAUDE.md) |
+| `SDDSDemoApp/` | Демо/песочница компонентов, схемы per-DS | [README](SDDSDemoApp/README.md) · [CLAUDE](SDDSDemoApp/CLAUDE.md) |
+| `SDDSIcons/` | Asset-бандл иконок (swiftgen) | [README](SDDSIcons/README.md) · [CLAUDE](SDDSIcons/CLAUDE.md) |
+| `Themes/` | Сгенерированные пакеты тем (коммитятся) | [README](Themes/README.md) · [CLAUDE](Themes/CLAUDE.md) |
+| `IntegrationCore/` | SandboxCore / SandboxDemoTheme / SandboxSwiftUI | [README](IntegrationCore/README.md) · [CLAUDE](IntegrationCore/CLAUDE.md) |
+| `scripts/` | Ruby/Bash: сборка, релиз, генерация | [README](scripts/README.md) · [CLAUDE](scripts/CLAUDE.md) |
+| `SDDSComponentsFixtures/` | Тестовые фикстуры для компонентов | [README](SDDSComponentsFixtures/README.md) |
+| `Vendor/InputMask/` | Git submodule (RedMadRobot input-mask-ios) | [README](Vendor/README.md) |
+
+**Как устроена документация:** `README.md` пакета — источник правды (что это, структура, сборка,
+использование). `CLAUDE.md` рядом — тонкая надстройка только с тем, что нужно агенту: грабли,
+коммит-скоуп, ссылка на README. Не дублируй содержимое README в CLAUDE.md.
 
 ## Команды
 
 Сборка XCFrameworks (всё или список модулей):
 ```sh
 ruby ./scripts/build_xcframeworks.rb -d . -w SDDS.xcworkspace
-ruby ./scripts/build_xcframeworks.rb -d . -w SDDS.xcworkspace -m SDDSSwiftUI,SDDSIcons
+ruby ./scripts/build_xcframeworks.rb -d . -w SDDS.xcworkspace -m SDDSComponents,SDDSIcons
 ```
 Артефакты — в `/build` (в `.gitignore`).
 
@@ -110,10 +114,9 @@ ruby scripts/run_tests.rb        # swift test для DesignSystemBuilder + xcode
 
 ## Локальный AI-режим (важно для биллинга)
 
-Вся агентная работа — только в **интерактивном Claude Code** (подписка), без метерного API.
-Правила — в [.claude/memory/local-mode-billing.md](.claude/memory/local-mode-billing.md).
-Кратко: держи `ANTHROPIC_API_KEY` **unset**; не используй `claude -p` / headless; никаких
-GitHub Actions и метерных вызовов.
+Держи `ANTHROPIC_API_KEY` **unset**; не используй `claude -p` / headless. Полное описание
+инфраструктуры и правил — [docs/AI_WORKFLOW.md](docs/AI_WORKFLOW.md), детали биллинга —
+[.claude/memory/local-mode-billing.md](.claude/memory/local-mode-billing.md).
 
 ## Память команды
 
@@ -123,8 +126,9 @@ GitHub Actions и метерных вызовов.
 
 ## Процесс
 
+- Сборка и всё, что с ней связано — [docs/BUILD.md](docs/BUILD.md).
 - Локальный цикл работы — [docs/LOCAL_WORKFLOW.md](docs/LOCAL_WORKFLOW.md).
 - Как ставить задачу агенту — [docs/TASK_GUIDE.md](docs/TASK_GUIDE.md).
 - Необязательный локальный бэклог — [docs/BACKLOG.md](docs/BACKLOG.md).
 - Документационный бандл (как собрать и отдать в dsbuilder) — [docs/DOCS_BUNDLE.md](docs/DOCS_BUNDLE.md).
-- Контракт переносимости пакетов/знаний — [project.yml](project.yml).
+- Контракт переносимости пакетов/знаний — [docs/project.yml](docs/project.yml).

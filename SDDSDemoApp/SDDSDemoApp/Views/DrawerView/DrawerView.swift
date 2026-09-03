@@ -28,7 +28,7 @@ struct DrawerView: View {
                         }
                         Spacer()
                     }
-                    
+
                     HStack {
                         Spacer()
                         BasicButton(
@@ -45,7 +45,7 @@ struct DrawerView: View {
             }
             .listRowBackgroundForSubtheme(viewModel.subtheme, colorScheme: colorScheme)
             .listRowInsets(.init())
-            
+
             Section {
                 variationTypeSelectionView
                 VariationsView(viewModel: viewModel)
@@ -61,7 +61,7 @@ struct DrawerView: View {
             }
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
-        
+
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .drawer(
             isPresented: $isDrawerPresented,
@@ -99,7 +99,7 @@ struct DrawerView: View {
         )
         .navigationBarHidden(true)
     }
-    
+
     @ViewBuilder
     private var header: some View {
         if viewModel.showHeader {
@@ -108,7 +108,7 @@ struct DrawerView: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private var footer: some View {
         if viewModel.showFooter {
@@ -117,7 +117,7 @@ struct DrawerView: View {
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     private var list: some View {
         SDDSList(
@@ -131,7 +131,7 @@ struct DrawerView: View {
             appearance: viewModel.theme.listNormalVariations.first?.appearance ?? ListAppearance()
         )
     }
-    
+
     private var alignmentSelectionView: some View {
         HStack {
             Text("Alignment")
@@ -148,19 +148,19 @@ struct DrawerView: View {
             }
         }
     }
-    
+
     private var headerToggle: some View {
         Toggle("Header", isOn: $viewModel.showHeader)
     }
-    
+
     private var footerToggle: some View {
         Toggle("Footer", isOn: $viewModel.showFooter)
     }
-    
+
     private var overlayToggle: some View {
         Toggle("Show Overlay", isOn: $viewModel.showOverlay)
     }
-    
+
     private var closePlacementSelectionView: some View {
         HStack {
             Text("Close Placement")
@@ -178,15 +178,15 @@ struct DrawerView: View {
             }
         }
     }
-    
+
     private var moveContentToggle: some View {
         Toggle("Move Content", isOn: $viewModel.moveContentEnabled)
     }
-    
+
     private var peekOffsetToggle: some View {
         Toggle("Peek Offset", isOn: $viewModel.peekOffsetEnabled)
     }
-    
+
     private var variationTypeSelectionView: some View {
         HStack {
             Text("Variation Type")
@@ -210,4 +210,3 @@ struct DrawerView: View {
         DrawerView()
     }
 }
-

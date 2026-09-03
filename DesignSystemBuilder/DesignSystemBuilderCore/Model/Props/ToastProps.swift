@@ -17,4 +17,4 @@ struct ToastProps: MergeableConfiguration, Codable {
     var paddingEnd: KeyValue<Double>?
     var paddingTop: KeyValue<Double>?
     var paddingBottom: KeyValue<Double>?
-} 
+}

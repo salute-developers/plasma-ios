@@ -9,15 +9,15 @@ extension VerticalAlignment {
             context[VerticalAlignment.center]
         }
     }
-    
+
     static let titleCenter = VerticalAlignment(NoteTitleCenterAlignment.self)
-    
+
     struct NoteContentCenterAlignment: AlignmentID {
         static func defaultValue(in context: ViewDimensions) -> CGFloat {
             context[VerticalAlignment.center]
         }
     }
-    
+
     static let contentCenterGuide = VerticalAlignment(NoteContentCenterAlignment.self)
 }
 
@@ -54,27 +54,27 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
     private let contentBefore: ContentBefore
     private let action: Action
     private let onClose: (() -> Void)?
-    
+
     private var size: NoteSizeConfiguration {
         appearance.size
     }
-    
+
     private var isContentBeforeEmpty: Bool {
         ContentBefore.self == EmptyView.self
     }
-    
+
     private var shouldShowContentBefore: Bool {
         !isContentBeforeEmpty
     }
-    
+
     private var shouldShowCloseButton: Bool {
         size.closeSize > 0 && onClose != nil
     }
-    
+
     private var isActionEmpty: Bool {
         Action.self == EmptyView.self
     }
-    
+
     /**
      Инициализатор с ContentBefore и Action
      
@@ -98,7 +98,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
         self.action = action()
         self.onClose = onClose
     }
-    
+
     public var body: some View {
         ZStack(alignment: .topTrailing) {
             mainContent
@@ -106,7 +106,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
                 .padding(.top, size.paddingTop)
                 .padding(.trailing, size.paddingEnd)
                 .padding(.bottom, size.paddingBottom)
-            
+
             if shouldShowCloseButton {
                 closeButton
             }
@@ -116,7 +116,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
                 .shape(pathDrawer: size.shape)
         )
     }
-    
+
     @ViewBuilder
     private var mainContent: some View {
         if shouldShowContentBefore {
@@ -143,7 +143,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
-    
+
     @ViewBuilder
     private var contentBeforeView: some View {
         Group {
@@ -156,22 +156,22 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
         }
         .tint(appearance.iconColor.color(for: colorScheme, subtheme: subtheme))
     }
-    
+
     private var textContent: some View {
         VStack(alignment: .leading, spacing: 0) {
             titleAndText
-            
+
             if !isActionEmpty {
                 actionView
                     .padding(.top, size.actionTopMargin)
             }
         }
     }
-    
+
     private var titleAndText: some View {
         VStack(alignment: .leading, spacing: 0) {
             titleView
-            
+
             if let text = text {
                 Text(text)
                     .foregroundColor(appearance.textColor.color(for: colorScheme, subtheme: subtheme))
@@ -182,7 +182,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
         .padding(.bottom, isActionEmpty ? size.actionTopMargin : 0)
         .alignmentGuide(.contentCenterGuide) { d in d[VerticalAlignment.center] }
     }
-    
+
     private var titleView: some View {
         Text(title)
             .foregroundColor(appearance.titleColor.color(for: colorScheme, subtheme: subtheme))
@@ -190,7 +190,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
             .padding(.trailing, shouldShowCloseButton ? size.titlePaddingEnd : 0)
             .alignmentGuide(.titleCenter) { d in d[VerticalAlignment.center] }
     }
-    
+
     @ViewBuilder
     private var actionView: some View {
         action
@@ -198,7 +198,7 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
                 view.environment(\.buttonAppearance, linkButtonAppearance)
             }
     }
-    
+
     @ViewBuilder
     private var closeButton: some View {
         if let closeIcon = appearance.closeIcon {
@@ -218,13 +218,13 @@ public struct SDDSNote<ContentBefore: View, Action: View>: View {
             .padding(.trailing, size.closeEndMargin)
         }
     }
-    
+
     // MARK: - Computed Properties
-    
+
     private var titleTypography: TypographyToken {
         appearance.titleTypography.typography(with: size) ?? .undefined
     }
-    
+
     private var textTypography: TypographyToken {
         appearance.textTypography.typography(with: size) ?? .undefined
     }

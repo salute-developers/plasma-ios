@@ -18,7 +18,7 @@ public struct TextField<IconContent: View, ActionContent: View>: View {
     public let accessibility: TextFieldAccessibility
     public let actionContent: Action<ActionContent>
     public let iconContent: Action<IconContent>
-        
+
     public init(
         value: Binding<TextFieldValue>,
         title: String = "",
@@ -56,7 +56,7 @@ public struct TextField<IconContent: View, ActionContent: View>: View {
         self.iconContent = iconContent
         self.actionContent = actionContent
     }
-    
+
     public var body: some View {
         SDDSTextField(
             value: $value,

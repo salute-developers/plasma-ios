@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class ButtonGroupPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
-    
+
     @MainActor
     func testButtonGroupLDefaultNoGapPlasmaB2C() async throws {
         let appearance = BasicButton.l.default.appearance
@@ -26,7 +26,7 @@ final class ButtonGroupPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance), landscape: true
         )
     }
-    
+
     @MainActor
     func testButtonGroupMDenseDefaultHorizontalPlasmaB2C() async throws {
         let appearance = BasicButton.m.default.appearance
@@ -37,7 +37,7 @@ final class ButtonGroupPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance)
         )
     }
-    
+
     @MainActor
     func testButtonGroupSWideDefaultSegmentedHorizontalPlasmaB2C() async throws {
         let appearance = BasicButton.s.default.appearance
@@ -48,7 +48,7 @@ final class ButtonGroupPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance)
         )
     }
-    
+
     @MainActor
     func testButtonGroupXsGapNoneDefaultVerticalPlasmaB2C() async throws {
         let appearance = BasicButton.xs.default.appearance
@@ -59,7 +59,7 @@ final class ButtonGroupPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
             buttonGroupAppearance: buttonGroupAppearance)
         )
     }
-    
+
     @MainActor
     func testButtonGroupXxsItemCountTenDefaultSegmentedPlasmaB2C() async throws {
         let appearance = BasicButton.xxs.default.appearance
@@ -68,7 +68,7 @@ final class ButtonGroupPlasmaB2CSnapshotTest: PlasmaB2CThemeTestCase {
         try await runSnapshotTest(
             view: ButtonGroupXxsItemCountTenDefaultSegmented(
             appearance: appearance,
-            buttonGroupAppearance: buttonGroupAppearance),landscape: true
+            buttonGroupAppearance: buttonGroupAppearance), landscape: true
         )
     }
 }

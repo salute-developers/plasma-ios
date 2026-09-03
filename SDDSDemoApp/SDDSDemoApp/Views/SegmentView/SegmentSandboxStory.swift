@@ -9,7 +9,6 @@ enum SegmentStory: Story {
     static let title = "Segment"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: SegmentUiState, theme: Theme) -> some View {
         SegmentView(viewModel: SegmentViewModel(theme: theme, uiState: state))

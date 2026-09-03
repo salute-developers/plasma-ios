@@ -15,7 +15,7 @@ import UIKit
 import SwiftUI
 
 final class AccordionSnapshotTest: SDDSServThemeTestCase {
-    
+
     @MainActor
     func testAccordionSolidActionEndSizeLSddsServ() async throws {
         let appearance = AccordionSolidActionEnd.l.appearance
@@ -27,7 +27,7 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionStartSizeMSddsServ() async throws {
         let appearance = AccordionSolidActionStart.m.appearance
@@ -39,11 +39,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionEndSizeSHasDividerSddsServ() async throws {
         let appearance = AccordionClearActionEnd.s.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -52,11 +52,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionStartSizeXsSddsServ() async throws {
         let appearance = AccordionClearActionStart.xs.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -65,11 +65,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionEndSizeLNoTextSddsServ() async throws {
         let appearance = AccordionSolidActionEnd.l.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -78,11 +78,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionEndSizeLAmountTenSddsServ() async throws {
         let appearance = AccordionSolidActionEnd.l.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -91,11 +91,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionStartSizeH2SddsServ() async throws {
         let appearance = AccordionClearActionStart.h2.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -104,11 +104,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionEndSizeH2SddsServ() async throws {
         let appearance = AccordionSolidActionEnd.h2.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -117,11 +117,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionStartSizeH3SddsServ() async throws {
         let appearance = AccordionSolidActionStart.h3.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -130,11 +130,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionEndSizeH4SddsServ() async throws {
         let appearance = AccordionClearActionEnd.h4.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -143,11 +143,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionClearActionStartSizeH5SddsServ() async throws {
         let appearance = AccordionClearActionStart.h5.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {
@@ -156,11 +156,11 @@ final class AccordionSnapshotTest: SDDSServThemeTestCase {
                 }
         )
     }
-    
+
     @MainActor
     func testAccordionSolidActionEndLongTextSizeLSddsServ() async throws {
         let appearance = AccordionSolidActionEnd.l.appearance
-        
+
         try await runSnapshotTest(
             view:
                 ZStack {

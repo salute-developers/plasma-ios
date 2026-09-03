@@ -6,7 +6,7 @@ struct PaginationDotsSnapshotCase: View {
     let selectedIndex: Int
     let totalCount: Int
     let visibleCount: Int
-    
+
     var body: some View {
         ZStack {
             Color(.systemGray6)

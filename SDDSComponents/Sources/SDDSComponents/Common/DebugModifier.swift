@@ -5,7 +5,7 @@ struct DebugModifier: ViewModifier {
     let borderWidth = 0.5
     let color: Color
     let condition: Bool
-    
+
     func body(content: Content) -> some View {
         content
             .applyIf(condition) {

@@ -3,7 +3,7 @@ import Foundation
 public enum NumberMask: Equatable, Hashable {
     case integer
     case decimal(fractionDigits: Int = 2, decimalSeparator: String = ",")
-    
+
     public func format(input: String) -> String {
         let decimalSeparator: String
         switch self {
@@ -12,11 +12,11 @@ public enum NumberMask: Equatable, Hashable {
         case .decimal(_, let separator):
             decimalSeparator = separator
         }
-        
+
         let hasDecimalSeparator = input.contains(",") || input.contains(".")
         var integerDigits = ""
         var fractionDigits = ""
-        
+
         if hasDecimalSeparator {
             let separatorChar = input.contains(",") ? "," : "."
             let parts = input.components(separatedBy: separatorChar)
@@ -28,21 +28,21 @@ public enum NumberMask: Equatable, Hashable {
             let allDigits = input.filter { $0.isNumber }
             integerDigits = allDigits
         }
-        
+
         guard !integerDigits.isEmpty || !fractionDigits.isEmpty else {
             return ""
         }
-        
+
         if case .decimal(let fractionDigitsCount, _) = self, fractionDigitsCount > 0 {
             if hasDecimalSeparator {
                 let trimmedFractionDigits = String(fractionDigits.prefix(fractionDigitsCount))
                 let paddingCount = max(0, fractionDigitsCount - trimmedFractionDigits.count)
                 let finalFractionDigits = trimmedFractionDigits + String(repeating: "0", count: paddingCount)
-                
+
                 if integerDigits.isEmpty {
                     return convertToMaskFormat("0" + decimalSeparator + finalFractionDigits)
                 }
-                
+
                 let formattedInteger = Self.groupIntegerDigitsWithSpaces(integerDigits)
                 return convertToMaskFormat(formattedInteger + decimalSeparator + finalFractionDigits)
             } else {
@@ -54,7 +54,7 @@ public enum NumberMask: Equatable, Hashable {
             return convertToMaskFormat(formattedInteger)
         }
     }
-    
+
     /// Thousands grouping with spaces; works for arbitrarily long digit strings (no `Int` overflow).
     private static func groupIntegerDigitsWithSpaces(_ digits: String) -> String {
         let onlyDigits = digits.filter { $0.isNumber }
@@ -70,11 +70,11 @@ public enum NumberMask: Equatable, Hashable {
         }
         return String(chars.reversed())
     }
-    
+
     private func convertToMaskFormat(_ formattedString: String) -> String {
         var result = ""
         var currentGroup = ""
-        
+
         for char in formattedString {
             if char.isNumber {
                 currentGroup.append(char)
@@ -90,7 +90,7 @@ public enum NumberMask: Equatable, Hashable {
                 result.append(char)
             }
         }
-        
+
         if !currentGroup.isEmpty {
             if currentGroup.count == 1 {
                 result += "[0]"
@@ -98,10 +98,10 @@ public enum NumberMask: Equatable, Hashable {
                 result += "[\(String(repeating: "0", count: currentGroup.count))]"
             }
         }
-        
+
         return result
     }
-    
+
     public var placeholder: String {
         switch self {
         case .integer:
@@ -112,4 +112,3 @@ public enum NumberMask: Equatable, Hashable {
         }
     }
 }
-

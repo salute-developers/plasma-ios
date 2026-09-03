@@ -9,11 +9,11 @@ public extension LinearGradient {
         let startY = sin(angleInRadians + .pi) * 0.5 + 0.5
         let endX = cos(angleInRadians) * 0.5 + 0.5
         let endY = sin(angleInRadians) * 0.5 + 0.5
-        
+
         let stops = zip(colors, locations).map { color, location in
             Gradient.Stop(color: color, location: location)
         }
-        
+
         return SwiftUI.LinearGradient(
             gradient: Gradient(stops: stops),
             startPoint: UnitPoint(x: startX, y: startY),
@@ -37,7 +37,6 @@ public extension RadialGradient {
         )
     }
 }
-
 
 public extension AngularGradient {
     var gradient: SwiftUI.AngularGradient {

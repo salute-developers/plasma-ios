@@ -74,7 +74,7 @@ public struct SDDSList: View {
     private let lastItem: AnyView?
     private let onItemTap: ((Int) -> Void)?
     @State private var scrollOffset: CGFloat = 0
-    
+
     public init<RightContent: View>(
         items: [SDDSListItem<RightContent>],
         contentHeight: Binding<CGFloat> = .constant(0),
@@ -91,7 +91,7 @@ public struct SDDSList: View {
         self.lastItem = nil
         self.onItemTap = onItemTap
     }
-    
+
     public init<RightContent: View, LastItem: View>(
         items: [SDDSListItem<RightContent>],
         contentHeight: Binding<CGFloat> = .constant(0),
@@ -109,7 +109,7 @@ public struct SDDSList: View {
         self.lastItem = AnyView(lastItem())
         self.onItemTap = onItemTap
     }
-    
+
     public var body: some View {
         VStack(spacing: appearance.size.gap) {
             ForEach(items.indices, id: \.self) { index in
@@ -122,7 +122,7 @@ public struct SDDSList: View {
                         .environment(\.subtheme, subtheme)
                 }
             }
-            
+
             if let lastItem = lastItem {
                 lastItem
             }
@@ -170,7 +170,7 @@ public struct SDDSList: View {
                     let dividerHeight: CGFloat = showDividers ? appearance.dividerAppearance.thickness : 0
                     let topPadding = appearance.size.paddingTop
                     let bottomPadding = appearance.size.paddingBottom
-                    
+
                     var currentY: CGFloat = topPadding
                     for index in 0..<items.count {
                         let itemTop = currentY
@@ -188,19 +188,18 @@ public struct SDDSList: View {
                             currentY += appearance.size.gap
                         }
                     }
-                    
+
                     if adjustedY > currentY + bottomPadding {
                         return
                     }
                 }
         )
     }
-    
+
     var appearance: ListAppearance {
         _appearance ?? environmentAppearance
     }
-    
-    
+
     private var scrollbarData: ScrollBarData {
         .init(
             hasTrack: true,
@@ -233,7 +232,7 @@ extension SDDSList {
         self.lastItem = nil
         self.onItemTap = nil
     }
-    
+
     public init<RightContent: View, LastItem: View>(
         appearance: ListAppearance? = nil,
         showDividers: Bool = false,

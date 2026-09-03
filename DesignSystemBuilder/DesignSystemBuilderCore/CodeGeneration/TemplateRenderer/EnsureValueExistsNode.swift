@@ -7,7 +7,7 @@ class EnsureValueExistsNode: EnsureValueNode {
             throw TemplateSyntaxError("ensure_value_exists tag requires exactly one argument")
         }
         let variableName = arguments[0]
-        
+
         let flatContext = context.flatten()
         if let value = getValue(forKeyPath: variableName, from: flatContext) {
             print("Value for \(variableName) found: \(value)")

@@ -21,13 +21,12 @@ import SwiftUI
  ## Пример использования
 
  ```swift
- // Простой чип
+ // @sample: SDDSComponentsFixtures/Samples/Chip/SDDSChip_Simple.swift
  SDDSChip(
      title: "Label",
      isEnabled: true,
-     iconImage: Image.image("chipIcon"),
-     buttonImage: Image.image("chipClose"),
-     appearance: Chip.m.pilled.accent.appearance,
+     iconImage: nil,
+     buttonImage: nil,
      removeAction: {}
  )
  ```
@@ -40,7 +39,7 @@ public struct SDDSChip: View {
     private let _appearance: ChipAppearance?
     let accessibility: ChipAccessibility
     let removeAction: () -> Void
-    
+
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.chipAppearance) private var environmentAppearance
@@ -73,7 +72,7 @@ public struct SDDSChip: View {
         self.accessibility = accessibility
         self.removeAction = removeAction
     }
-    
+
     /**
      Инициализатор для создания чипа на основе данных структуры `ChipData`.
      
@@ -89,7 +88,7 @@ public struct SDDSChip: View {
         self.accessibility = data.accessibility
         self.removeAction = data.removeAction
     }
-    
+
     public init(data: ChipData, appearance: ChipAppearance) {
         self.title = data.title
         self.isEnabled = data.isEnabled
@@ -99,7 +98,7 @@ public struct SDDSChip: View {
         self.accessibility = data.accessibility
         self.removeAction = data.removeAction
     }
-    
+
     public var body: some View {
         HStack(spacing: 0) {
             Spacer()
@@ -117,7 +116,7 @@ public struct SDDSChip: View {
                 Spacer()
                     .frame(width: appearance.size.contentStartPadding)
             }
-            
+
             Text(title)
                 .lineLimit(1)
                 .typography(appearance.titleTypography.typography(with: appearance.size) ?? .undefined)
@@ -127,7 +126,7 @@ public struct SDDSChip: View {
                 )
                 .accessibilityLabel(Text(accessibility.titleLabel))
                 .accessibilityValue(Text(title))
-            
+
             if let contentEnd = buttonImage {
                 Spacer()
                     .frame(width: appearance.size.contentEndPadding)
@@ -159,25 +158,25 @@ public struct SDDSChip: View {
         )
         .accessibilityElement(children: .combine)
     }
-    
+
     private var textWidth: CGFloat {
         let titleTypography = appearance.titleTypography.typography(with: appearance.size) ?? .undefined
         let textWidth = title.size(withAttributes: [.font: titleTypography.uiFont]).width
-        
+
         return textWidth
     }
-    
+
     private var borderRadius: CGFloat {
         return appearance.size.cornerRadius
     }
-    
+
     private func handleRemove() {
         guard isEnabled else {
             return
         }
         removeAction()
     }
-    
+
     var appearance: ChipAppearance {
         _appearance ?? environmentAppearance
     }

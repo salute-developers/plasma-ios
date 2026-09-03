@@ -18,4 +18,4 @@ struct ModalAppearance: CodeGenerationAppearance {
         self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
         self.closeColor = ColorTokenContextBuilder(props.closeColor).context
     }
-} 
+}

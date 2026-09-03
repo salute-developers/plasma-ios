@@ -3,9 +3,9 @@ import SwiftUI
 struct AutoCloseModifier: ViewModifier {
     let duration: TimeInterval?
     let onClose: (() -> Void)?
-    
+
     @State private var autoCloseTimer: Timer?
-    
+
     func body(content: Content) -> some View {
         content
             .onAppear {
@@ -26,4 +26,4 @@ extension View {
     func autoClose(duration: TimeInterval?, onClose: (() -> Void)? = nil) -> some View {
         modifier(AutoCloseModifier(duration: duration, onClose: onClose))
     }
-} 
+}

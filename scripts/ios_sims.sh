@@ -61,7 +61,7 @@ function localize { ## Localize iOS simulator to Russian using template plist
 
   local device_home="$HOME/Library/Developer/CoreSimulator/Devices/${device_udid}"
   local global_prefs_plist="$device_home/data/Library/Preferences/.GlobalPreferences.plist"
-  local template_plist="$GIT_ROOT/templates/simulator/GlobalPreferences.plist"
+  local template_plist="$GIT_ROOT/scripts/templates/simulator/GlobalPreferences.plist"
 
   mkdir -p "$(dirname "$global_prefs_plist")"
   cp -f "$template_plist" "$global_prefs_plist"

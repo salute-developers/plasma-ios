@@ -8,15 +8,15 @@ enum DropDownMenuLayout: String, CaseIterable {
 
 final class DropdownMenuVariationProvider: VariationProvider {
     typealias Appearance = DropdownMenuAppearance
-    
+
     var theme: Theme
     var layout: DropDownMenuLayout = .normal
-    
+
     init(theme: Theme = .sdddsServTheme, layout: DropDownMenuLayout = .normal) {
         self.theme = theme
         self.layout = layout
     }
-    
+
     var variations: [Variation<DropdownMenuAppearance>] {
         switch layout {
         case .normal:
@@ -25,7 +25,7 @@ final class DropdownMenuVariationProvider: VariationProvider {
             theme.dropdownMenuTightVariations
         }
     }
-    
+
     var itemVariations: [Variation<ListItemAppearance>] {
         switch layout {
         case .normal:
@@ -34,7 +34,7 @@ final class DropdownMenuVariationProvider: VariationProvider {
             theme.dropdownItemTightVariations
         }
     }
-    
+
     var defaultValue: DropdownMenuAppearance {
         variations.first?.appearance ?? DropdownMenuAppearance()
     }

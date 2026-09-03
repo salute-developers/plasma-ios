@@ -2,7 +2,7 @@ import Foundation
 
 struct SwitchProps: MergeableConfiguration, Codable {
     typealias Props = SwitchProps
-    
+
     var textPadding: KeyValue<Double>?
     var labelStyle: KeyValue<String>?
     var descriptionStyle: KeyValue<String>?

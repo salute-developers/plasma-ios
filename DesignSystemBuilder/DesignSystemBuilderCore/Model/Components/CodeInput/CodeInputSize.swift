@@ -4,7 +4,7 @@ import SwiftUI
 struct CodeInputSize: CodeGenerationSize {
     typealias Variation = CodeInputConfiguration.Variation
     typealias Props = CodeInputProps
-    
+
     var itemHeight: String?
     var itemWidth: String?
     var dotSize: String?
@@ -12,11 +12,11 @@ struct CodeInputSize: CodeGenerationSize {
     var itemSpacing: String?
     var groupSpacing: String?
     var captionPadding: String?
-    
+
     init(variation: CodeInputConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
-    
+
     init(props: CodeInputProps, id: String? = nil, nullify: Bool = false) {
         self.itemHeight = CGFloatContextBuilder(props.itemHeight?.value, nullify: nullify).context
         self.itemWidth = CGFloatContextBuilder(props.itemWidth?.value, nullify: nullify).context
@@ -26,7 +26,7 @@ struct CodeInputSize: CodeGenerationSize {
         self.groupSpacing = CGFloatContextBuilder(props.groupSpacing?.value, nullify: nullify).context
         self.captionPadding = CGFloatContextBuilder(props.captionPadding?.value, nullify: nullify).context
     }
-    
+
     init() {
         self.itemHeight = CGFloat.defaultContext
         self.itemWidth = CGFloat.defaultContext

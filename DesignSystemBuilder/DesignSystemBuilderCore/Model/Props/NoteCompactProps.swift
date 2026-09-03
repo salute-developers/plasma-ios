@@ -2,18 +2,18 @@ import Foundation
 
 struct NoteCompactProps: MergeableConfiguration, Codable {
     typealias Props = NoteCompactProps
-    
+
     // Colors
     var backgroundColor: ColorKeyValue?
     var iconColor: ColorKeyValue?
     var closeColor: ColorKeyValue?
     var titleColor: ColorKeyValue?
     var textColor: ColorKeyValue?
-    
+
     // Typography
     var titleStyle: KeyValue<String>?
     var textStyle: KeyValue<String>?
-    
+
     // Dimensions
     var shape: ShapeKeyValue?
     var iconSize: KeyValue<Double>?
@@ -27,14 +27,13 @@ struct NoteCompactProps: MergeableConfiguration, Codable {
     var actionEndMargin: KeyValue<Double>?
     var closeStartMargin: KeyValue<Double>?
     var closeSize: KeyValue<Double>?
-    
+
     // Enum values
     var contentBeforeArrangement: KeyValue<String>?
-    
+
     // Icon
     var closeIcon: KeyValue<String>?
-    
+
     // Nested component styles
     var linkButtonStyle: ComponentStyleKeyValue<ButtonProps>?
 }
-

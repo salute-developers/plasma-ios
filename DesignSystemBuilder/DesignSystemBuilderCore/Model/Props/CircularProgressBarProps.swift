@@ -2,7 +2,7 @@ import Foundation
 
 struct CircularProgressBarProps: MergeableConfiguration, Codable {
     typealias Props = CircularProgressBarProps
-    
+
     var width: KeyValue<Double>?
     var height: KeyValue<Double>?
     var trackThickness: KeyValue<Double>?
@@ -12,4 +12,4 @@ struct CircularProgressBarProps: MergeableConfiguration, Codable {
     var valueEnabled: KeyValue<Bool>?
     var trackColor: ColorKeyValue?
     var indicatorColor: ColorKeyValue?
-} 
+}

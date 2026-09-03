@@ -28,7 +28,7 @@ public struct ToolbarSize: ToolbarSizeConfiguration {
     public let slotPadding: CGFloat
     public let dividerMargin: CGFloat
     public let orientation: TabsOrientation
-    
+
     public init(
         paddingStart: CGFloat = 0,
         paddingEnd: CGFloat = 0,
@@ -48,7 +48,7 @@ public struct ToolbarSize: ToolbarSizeConfiguration {
         self.dividerMargin = dividerMargin
         self.orientation = orientation
     }
-    
+
     public var debugDescription: String {
         "ToolbarSize"
     }

@@ -52,7 +52,7 @@ public struct WheelSize: WheelSizeConfiguration {
     public let selectionIndicatorPaddingBottom: CGFloat
     public let selectionIndicatorPaddingStart: CGFloat
     public let selectionIndicatorPaddingEnd: CGFloat
-    
+
     public init(
         itemTextAfterPadding: CGFloat = 0,
         itemMinSpacing: CGFloat = 0,
@@ -82,7 +82,7 @@ public struct WheelSize: WheelSizeConfiguration {
         self.selectionIndicatorPaddingStart = selectionIndicatorPaddingStart
         self.selectionIndicatorPaddingEnd = selectionIndicatorPaddingEnd
     }
-    
+
     public var debugDescription: String {
         return "WheelSize"
     }

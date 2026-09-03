@@ -7,7 +7,7 @@ import SDDSApiInfo
 public struct CardAppearance {
     public var size: CardSizeConfiguration
     public var backgroundColor: ColorToken
-    
+
     public init(
         backgroundColor: ColorToken = .clearColor,
         size: CardSizeConfiguration = DefaultCardSize()

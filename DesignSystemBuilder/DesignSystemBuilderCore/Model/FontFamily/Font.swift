@@ -13,12 +13,12 @@ struct Font: Codable {
         case ultralight
         case normal
     }
-    
+
     public enum Style: String, Codable {
         case normal
         case italic
     }
-    
+
     let link: URL
     let weight: Weight
     let style: Style

@@ -40,7 +40,7 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
             updateOptions()
         }
     }
-    
+
     @Published var disabled: Bool = false
     @Published var readOnly: Bool = false
     @Published var isDropdownPresented: Bool = false
@@ -48,12 +48,12 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
     @Published var showEmptyState: Bool = false
     @Published var showHeader: Bool = true
     @Published var showFooter: Bool = false
-    
+
     @Published private(set) var options: [SelectOption] = []
     @Published private var selectedIDs: Set<UUID> = []
-    
+
     private let dataStateManager = SelectDataStateManager(mode: .single)
-    
+
     private let baseItems: [SelectOption] = [
         SelectOption(id: UUID(), title: "Москва"),
         SelectOption(id: UUID(), title: "Санкт-Петербург"),
@@ -62,11 +62,11 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
         SelectOption(id: UUID(), title: "Екатеринбург"),
         SelectOption(id: UUID(), title: "Калининград")
     ]
-    
+
     var displayedOptions: [SelectOption] {
         showEmptyState ? [] : options
     }
-    
+
     var displayText: String {
         let selectedItems = options.filter { selectedIDs.contains($0.id) }
         switch mode {
@@ -77,7 +77,7 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
             return value.isEmpty ? "Город" : value
         }
     }
-    
+
     var displayChips: [ChipData] {
         guard mode == .multiple else { return [] }
         let chipAppearance = appearance.textFieldAppearance.chipAppearance
@@ -95,7 +95,7 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
                 )
             }
     }
-    
+
     init(theme: Theme = .sdddsServTheme, uiState: SelectUiState = .init()) {
         super.init(
             variationProvider: SelectVariationProvider(theme: theme, layout: uiState.layout, mode: uiState.mode),
@@ -122,7 +122,7 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
         }
         applySandboxVariationAppearance(variant: uiState.variant, appearance: uiState.appearance)
     }
-    
+
     func handleTap(at index: Int) {
         guard index < options.count else { return }
         let result = dataStateManager.handleTap(
@@ -133,7 +133,7 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
         selectedIDs = result.selectedIDs
         updateOptions()
     }
-    
+
     private func updateOptions() {
         options = baseItems.map { item in
             SelectOption(
@@ -147,4 +147,3 @@ final class SelectViewModel: ComponentViewModel<SelectVariationProvider> {
         }
     }
 }
-

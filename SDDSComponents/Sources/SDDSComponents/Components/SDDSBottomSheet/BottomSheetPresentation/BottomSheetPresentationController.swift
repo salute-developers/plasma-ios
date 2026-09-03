@@ -1,57 +1,57 @@
 import UIKit
 
 typealias OnBottomSheetScrollChange = (CGFloat) -> Void
-typealias OnChangeDetent = (BottomSheetDetent?) -> ()
+typealias OnChangeDetent = (BottomSheetDetent?) -> Void
 
 final class BottomSheetPresentationController: UIPresentationController {
     var onBottomSheetScrollChange: OnBottomSheetScrollChange?
     var onChangeDetent: OnChangeDetent?
     var onDismiss: (() -> Void)?
-    
+
     // MARK: - Настройки затемнения
     var isDimmingEnabled: Bool = true
     var dimmingAlpha: CGFloat = 0.5
     var dimmingAlphaWhenFull: CGFloat = 1.0
     var dimmingAlphaWhenInitial: CGFloat = 0.0
-    
+
     private var dimmingView: UIView?
     private var panGestureRecognizer: UIPanGestureRecognizer
     private var isDismissEnabled: Bool = true
-    
+
     // MARK: - Настройки detents
     private var detents: [BottomSheetDetent] = []
     private var supportsFullScreen: Bool = false
     private var startsInFullScreen: Bool = false
-        
+
     // MARK: - Текущее смещение контента
     private var initialHeight: CGFloat = 0
     private var currentHeight: CGFloat = 0
     private var isDragging: Bool = false
     private var isAnimating: Bool = false
     private var isFullScreen: Bool = false
-    
+
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         panGestureRecognizer = UIPanGestureRecognizer(target: nil, action: nil)
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
         setupDimmingView()
         setupPanGesture()
     }
-    
+
     func setDetents(_ detents: [BottomSheetDetent]) {
         self.detents = detents
         self.supportsFullScreen = detents.contains(.fullScreen)
         self.startsInFullScreen = detents == [.fullScreen]
-        
+
         if startsInFullScreen {
             isFullScreen = true
         }
     }
-    
+
     private func setupDimmingView() {
         dimmingView = PassThroughView()
         dimmingView?.backgroundColor = UIColor(white: 0, alpha: 0.5)
         dimmingView?.alpha = dimmingAlphaWhenInitial
-        
+
         if let passThroughView = dimmingView as? PassThroughView {
             passThroughView.onTap = { [weak self] in
                 self?.presentedViewController.dismiss(animated: true) {
@@ -60,34 +60,34 @@ final class BottomSheetPresentationController: UIPresentationController {
             }
         }
     }
-    
+
     private func setupPanGesture() {
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         presentedViewController.view.addGestureRecognizer(panGestureRecognizer)
     }
-    
+
     @objc private func handleTapGesture() {
         onDismiss?()
     }
-    
+
     func setDimmingAlpha(_ alpha: CGFloat) {
         dimmingAlpha = alpha
         if isDimmingEnabled {
             dimmingView?.alpha = alpha
         }
     }
-    
+
     func setDimmingAlphaWhenFull(_ alpha: CGFloat) {
         dimmingAlphaWhenFull = alpha
     }
-    
+
     func setDimmingAlphaWhenInitial(_ alpha: CGFloat) {
         dimmingAlphaWhenInitial = alpha
     }
-    
+
     private func updateScrollProgress() {
         guard let containerView = containerView else { return }
-        
+
         let progress: CGFloat
         if supportsFullScreen {
             let maxHeight = containerView.bounds.height - containerView.safeAreaInsets.top
@@ -96,17 +96,17 @@ final class BottomSheetPresentationController: UIPresentationController {
         } else {
             progress = 0
         }
-        
+
         onBottomSheetScrollChange?(max(0, min(1, progress)))
     }
-    
+
     @objc private func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
         guard let containerView = containerView else { return }
-        
+
         let safeAreaInsets = containerView.safeAreaInsets
         let translation = gesture.translation(in: presentedViewController.view)
         let velocity = gesture.velocity(in: presentedViewController.view)
-        
+
         switch gesture.state {
         case .began:
             if initialHeight == 0 {
@@ -115,8 +115,8 @@ final class BottomSheetPresentationController: UIPresentationController {
             currentHeight = presentedViewController.view.frame.height
             isDragging = true
             isFullScreen = currentHeight >= containerView.bounds.height - safeAreaInsets.top
-            
-        case .changed:            
+
+        case .changed:
             var newHeight: CGFloat = currentHeight
             var newY: CGFloat = 0
             if translation.y < 0 {
@@ -140,37 +140,37 @@ final class BottomSheetPresentationController: UIPresentationController {
                 let offset = max(presentedViewController.view.frame.height - translation.y, 0)
                 newY = containerView.bounds.height - offset
             }
-            
+
             currentHeight = newHeight
             presentedViewController.view.frame.size.height = newHeight
             presentedViewController.view.frame.origin.y = newY
-            
+
             // Обновляем прозрачность затемнения
             if isDimmingEnabled {
                 let progress = (newHeight - initialHeight) / (containerView.bounds.height - safeAreaInsets.top - initialHeight)
                 let alpha = dimmingAlphaWhenInitial + (dimmingAlphaWhenFull - dimmingAlphaWhenInitial) * progress
                 dimmingView?.alpha = alpha
             }
-            
+
             // Обновляем прогресс скролла
             updateScrollProgress()
-            
+
             // Принудительный layout в том же run loop tick, чтобы
             // hostingController.view (header/content/footer) и handle
             // (через handleBottomConstraint) двигались синхронно с frame.
             presentedViewController.view.layoutIfNeeded()
-            
+
         case .ended:
             isDragging = false
             let velocityThreshold: CGFloat = 600
             let heightThreshold = containerView.bounds.height * 0.5
-            
+
             let isQuickSwipeUp = velocity.y < -velocityThreshold
             let isQuickSwipeDown = velocity.y > velocityThreshold
             let isAboveHalfScreen = presentedViewController.view.frame.height > heightThreshold
-            
+
             let snapToFull = (isQuickSwipeUp || isAboveHalfScreen) && supportsFullScreen
-            
+
             if snapToFull && !isQuickSwipeDown {
                 animateToFullState()
             } else if isFullScreen && isQuickSwipeDown {
@@ -183,24 +183,24 @@ final class BottomSheetPresentationController: UIPresentationController {
                 // В остальных случаях возвращаемся в initialState
                 animateToInitialState()
             }
-            
+
         case .cancelled:
             isDragging = false
             animateToInitialState()
-            
+
         default:
             break
         }
     }
-    
+
     private func animateToInitialState() {
         guard containerView != nil else { return }
         isAnimating = true
         onChangeDetent?(.fitContent)
-        
+
         let targetFrame = frameOfPresentedViewInContainerView
         let containerVC = presentedViewController as? BottomSheetContainerViewController
-        
+
         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
             self.presentedViewController.view.frame.origin.y = targetFrame.origin.y
             self.presentedViewController.view.frame.size.height = targetFrame.height
@@ -219,16 +219,16 @@ final class BottomSheetPresentationController: UIPresentationController {
             self.updateScrollProgress()
         })
     }
-    
+
     private func animateToFullState() {
         guard let containerView = containerView else { return }
         isAnimating = true
         onChangeDetent?(.fullScreen)
-        
+
         let safeAreaInsets = containerView.safeAreaInsets
         let targetHeight = containerView.bounds.height - safeAreaInsets.top
         let containerVC = presentedViewController as? BottomSheetContainerViewController
-        
+
         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
             self.presentedViewController.view.frame.origin.y = safeAreaInsets.top
             self.presentedViewController.view.frame.size.height = targetHeight
@@ -245,19 +245,19 @@ final class BottomSheetPresentationController: UIPresentationController {
             self.updateScrollProgress()
         })
     }
-    
+
     private func dismissIfEnabled() {
         guard let containerView = containerView, isDismissEnabled else { return }
         onChangeDetent?(nil)
-        
+
         // Получаем текущую скорость свайпа
         let velocity = panGestureRecognizer.velocity(in: presentedViewController.view)
-        
+
         // Рассчитываем время анимации на основе скорости
         let distance = containerView.bounds.height - presentedViewController.view.frame.origin.y
         let velocityY = abs(velocity.y)
         let duration = min(0.2, distance / velocityY)
-        
+
         UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut) {
             self.presentedViewController.view.frame.origin.y = containerView.bounds.height
             if self.isDimmingEnabled {
@@ -272,15 +272,15 @@ final class BottomSheetPresentationController: UIPresentationController {
             }
         }
     }
-    
+
     override func presentationTransitionWillBegin() {
         guard let containerView = containerView, let dimmingView = dimmingView else { return }
-        
+
         dimmingView.frame = containerView.bounds
         dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    
+
         containerView.insertSubview(dimmingView, at: 0)
-        
+
         if let coordinator = presentedViewController.transitionCoordinator {
             coordinator.animate(alongsideTransition: { _ in
                 if self.isDimmingEnabled {
@@ -291,7 +291,7 @@ final class BottomSheetPresentationController: UIPresentationController {
             dimmingView.alpha = dimmingAlphaWhenInitial
         }
     }
-    
+
     override func dismissalTransitionWillBegin() {
         if let coordinator = presentedViewController.transitionCoordinator {
             coordinator.animate(alongsideTransition: { _ in
@@ -301,26 +301,26 @@ final class BottomSheetPresentationController: UIPresentationController {
             dimmingView?.alpha = dimmingAlphaWhenInitial
         }
     }
-    
+
     override func containerViewWillLayoutSubviews() {
         if !isDragging && !isAnimating {
             presentedViewController.view.frame = frameOfPresentedViewInContainerView
         }
     }
-    
+
     override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
         presentedViewController.view.setNeedsLayout()
         presentedViewController.view.layoutIfNeeded()
-        
+
         let contentSize = presentedViewController.view.systemLayoutSizeFitting(
             CGSize(width: parentSize.width, height: UIView.layoutFittingExpandedSize.height),
             withHorizontalFittingPriority: .required,
             verticalFittingPriority: .fittingSizeLevel
         )
-        
+
         return CGSize(width: parentSize.width, height: min(contentSize.height, parentSize.height))
     }
-    
+
     override var frameOfPresentedViewInContainerView: CGRect {
         guard let containerView = containerView else { return .zero }
         let size = self.size(forChildContentContainer: presentedViewController, withParentContainerSize: containerView.bounds.size)
@@ -330,12 +330,12 @@ final class BottomSheetPresentationController: UIPresentationController {
 
 private final class PassThroughView: UIView {
     var onTap: (() -> Void)?
-    
+
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if let event = event, event.type == .touches {
             onTap?()
         }
-        
+
         return nil
     }
 }

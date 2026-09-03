@@ -9,7 +9,6 @@ enum CodeInputStory: Story {
     static let title = "CodeInput"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: CodeInputUiState, theme: Theme) -> some View {
         CodeInputView(viewModel: CodeInputViewModel(theme: theme, uiState: state))

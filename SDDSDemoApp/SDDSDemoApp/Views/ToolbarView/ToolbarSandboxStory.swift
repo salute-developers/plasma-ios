@@ -9,7 +9,6 @@ enum ToolbarStory: Story {
     static let title = "Toolbar"
     static var componentKey: ComponentKey { ComponentKey(rawValue: id) }
 
-
     @ViewBuilder
     static func content(state: ToolbarUiState, theme: Theme) -> some View {
         ToolbarView(viewModel: ToolbarViewModel(theme: theme, uiState: state))

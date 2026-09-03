@@ -8,19 +8,19 @@ public enum SelectSelectionMode: Hashable {
 
 public final class SDDSSelectState: ObservableObject {
     @Published public var isOpened: Bool
-    
+
     public init(isOpened: Bool = false) {
         self.isOpened = isOpened
     }
-    
+
     public func open() {
         isOpened = true
     }
-    
+
     public func close() {
         isOpened = false
     }
-    
+
     public func toggle() {
         isOpened.toggle()
     }
@@ -35,7 +35,7 @@ public struct SelectSelectionResult {
 public final class SelectDataStateManager {
     public private(set) var mode: SelectSelectionMode
     private var selectedIDs: Set<UUID>
-    
+
     public init(
         mode: SelectSelectionMode = .single,
         selectedIDs: Set<UUID> = []
@@ -43,18 +43,18 @@ public final class SelectDataStateManager {
         self.mode = mode
         self.selectedIDs = selectedIDs
     }
-    
+
     public var selectedOptionIDs: Set<UUID> {
         selectedIDs
     }
-    
+
     public func updateMode(_ mode: SelectSelectionMode) {
         self.mode = mode
         if mode == .single, let first = selectedIDs.first {
             selectedIDs = [first]
         }
     }
-    
+
     @discardableResult
     public func handleTap(
         options: [SelectOption],
@@ -64,14 +64,14 @@ public final class SelectDataStateManager {
         guard !isReadOnly, index >= 0, index < options.count else {
             return .init(selectedIDs: selectedIDs, shouldCloseDropdown: false, didChangeSelection: false)
         }
-        
+
         let option = options[index]
         guard option.isEnabled else {
             return .init(selectedIDs: selectedIDs, shouldCloseDropdown: false, didChangeSelection: false)
         }
-        
+
         let before = selectedIDs
-        
+
         switch mode {
         case .single:
             if selectedIDs.contains(option.id) {
@@ -99,4 +99,3 @@ public final class SelectDataStateManager {
         }
     }
 }
-
