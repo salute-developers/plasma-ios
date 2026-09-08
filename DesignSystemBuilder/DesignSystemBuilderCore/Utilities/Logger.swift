@@ -9,9 +9,15 @@ final class Logger {
         print(String(Array(repeating: " ", count: Constants.outputLinesCount / 4 )) + text)
     }
     
+    /// Прерывает выполнение с кодом 1 и диагностикой в stderr.
+    ///
+    /// Раньше здесь был `fatalError`: CLI падал с трейсом и кодом сигнала, из-за чего
+    /// вызывающая сторона не могла отличить ошибку генерации от краха. Контракт
+    /// платформенного инструмента DS Builder требует 1 на ошибке выполнения.
     class func terminate(_ text: String) -> Never {
         printText(text)
-        fatalError(text)
+        FileHandle.standardError.write(Data((text + "\n").utf8))
+        exit(1)
     }
     
     class func terminate(with error: Error) -> Never {

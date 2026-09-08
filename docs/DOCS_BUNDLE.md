@@ -10,7 +10,7 @@
 
 ## Три зоны ответственности
 
-Граница проходит по каталогу `DesignSystemBuilder/.sdds/temp/docs`:
+Граница проходит по каталогу `Themes/<Тема>Theme/.sdds/temp/docs`:
 
 | Зона | Кто | Что делает |
 | --- | --- | --- |
@@ -21,32 +21,40 @@
 Мы отвечаем только за зону A. Зоны B и C переиспользуются как есть — `swiftui` там
 уже поддержан, дорабатывать ничего не нужно.
 
-> ⚠️ Наш CLI тоже называется `dsbuilder` (`DesignSystemBuilder/build/dsbuilder/dsbuilder`).
-> Ниже «внешний `dsbuilder`» — это бинарник зоны B; наш всегда пишется полным путём.
+> ⚠️ Два CLI с похожими именами: наш — `dsbuilder-ios`
+> (`DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios`), внешний зоны B — `dsbuilder`.
+> Раньше оба назывались `dsbuilder`, поэтому в старых инструкциях наш писался полным путём.
 
 ![Схема пайплайна](assets/docs-bundle-pipeline.png)
 
 ## Быстрый старт
 
+Зону A целиком делает одна команда — она же вызывается делегатом платформы из зоны B:
+
+```bash
+DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios docs aggregate \
+  --sdds "$PWD/Themes/SDDSservTheme/.sdds" --artifact-version 0.12.0 --report
+```
+
+Она извлекает сэмплы, рендерит маркеры и раскладывает дерево в `<sdds>/temp/docs`.
+Корень репозитория, user-слой, сэмплы темы и скриншоты находятся сами — по положению `.sdds`.
+
+Обёртка, которая заодно проверит `ios-api-meta.json` и info-артефакты темы:
+
 ```bash
 scripts/generate_docs_bundle.sh --theme SDDSserv --artifact-version 0.12.0
 ```
 
-Скрипт проверит `ios-api-meta.json` и info-артефакты темы, извлечёт сэмплы (заодно
-перегенерирует реестр) и соберёт дерево в `DesignSystemBuilder/.sdds/temp/docs`.
-Скриншоты он берёт из репозитория — снимать их каждый раз не нужно.
-
 Дальше архив собирает внешний CLI:
 
 ```bash
-<внешний dsbuilder> docs generate \
-  --docs-dir "$PWD/DesignSystemBuilder/.sdds/temp/docs" \
-  --output   "$PWD/DesignSystemBuilder/.sdds/temp/docs-bundle.tar.gz" \
-  --platform swiftui
+dsbuilder docs generate --platform swiftui \
+  --docs-dir "$PWD/Themes/SDDSservTheme/.sdds/temp/docs" \
+  --output   "$PWD/Themes/SDDSservTheme/.sdds/temp/docs-bundle.tar.gz"
 ```
 
-> Пути лучше задавать абсолютными: дефолты CLI (`.sdds/temp/…`) резолвятся от текущей
-> рабочей директории, а наш `.sdds` лежит внутри `DesignSystemBuilder/`.
+С зарегистрированным делегатом платформы этот шаг сам вызывает `dsbuilder-ios docs aggregate`,
+поэтому отдельный запуск зоны A не нужен: достаточно `dsbuilder docs generate` из каталога темы.
 
 ## Что делает каждый шаг
 
@@ -66,7 +74,7 @@ scripts/generate_docs_bundle.sh --theme SDDSserv --artifact-version 0.12.0
 ### 2. `extract` — сэмплы
 
 ```bash
-DesignSystemBuilder/build/dsbuilder/dsbuilder docs extract --repo-root . --report
+DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios docs extract --repo-root . --report
 ```
 
 Ищет `// @DocSample` в `SDDSComponentsFixtures/…/Samples` и `Themes/<Тема>/docs/Samples`
@@ -127,7 +135,7 @@ Android `ProvidedStyleKeys`).
 ### 4. `aggregate` — дерево бандла
 
 ```bash
-DesignSystemBuilder/build/dsbuilder/dsbuilder docs aggregate \
+DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios docs aggregate \
   --repo-root . --theme SDDSserv --screenshots Themes/SDDSservTheme/docs/screenshots
 ```
 
