@@ -9,7 +9,7 @@
 `plasma-ios` — адаптация дизайн-системы **SDDS** (Salute Design System) под iOS:
 - библиотека компонентов на **SwiftUI + UIKit** (`SDDSComponents`);
 - рантайм-ядро токенов темы (`DesignSystemBuilder/SDDSThemeCore`);
-- CLI дизайн-системы `dsbuilder`: генерация тем из токенов DS Builder и сборка
+- CLI дизайн-системы `dsbuilder-ios`: генерация тем из токенов DS Builder и сборка
   документационного бандла (`DesignSystemBuilder`);
 - сгенерированные пакеты тем (`Themes/*`) и демо-песочница (`SDDSDemoApp`).
 
@@ -101,9 +101,10 @@ ruby scripts/run_tests.rb        # swift test для DesignSystemBuilder + xcode
 - `Vendor/InputMask` — submodule: после клона `git submodule update --init`.
 - `.sdds/` эфемерна: токены/палитра выгружаются DS Builder CLI и в git не попадают;
   при пустой `.sdds/` dsbuilder откатывается на zip-снапшот.
-- **Имя `dsbuilder` занято дважды**: наш бинарь и внешний Kotlin/Native CLI
-  `salute-developers/design-system-builder` (он выгружает `.sdds/` и печёт бандл
-  документации из нашего дерева). В скриптах и доке зовём их по явным путям.
+- **Два разных CLI**: наш — `dsbuilder-ios` (этот репозиторий), внешний — `dsbuilder`
+  (Kotlin/Native, `salute-developers/design-system-builder`). Внешний выгружает `.sdds/`,
+  вызывает наш как платформенный инструмент и печёт бандл документации из нашего дерева.
+  Раньше оба назывались `dsbuilder` и затирали друг друга в `PATH`.
 - CLI собирается SwiftPM'ом (`DesignSystemBuilder/Package.swift`), а не из
   `DesignSystemBuilder.xcodeproj` — в проекте остались только `SDDSThemeCore`,
   `SDDSTheme`, `SDDSDemo` и агрегатный таргет XCFramework.

@@ -5,10 +5,10 @@
 #
 #   scripts/release/build_release.sh <tag> [--output <dir>] [--skip-cli]
 #
-#   <tag>        тег релиза (release-01-09-2026): попадает в имена dsbuilder-cli-<tag>.zip
+#   <tag>        тег релиза (release-01-09-2026): попадает в имена dsbuilder-ios-cli-<tag>.zip
 #                и SDDSSources-<tag>.zip
 #   --output     куда сложить ассеты (по умолчанию <repo>/release-artifacts, в .gitignore)
-#   --skip-cli   не собирать dsbuilder (быстрая проверка xcframework'ов)
+#   --skip-cli   не собирать dsbuilder-ios (быстрая проверка xcframework'ов)
 #
 # Шаги: SDDSThemeCore → InputMask/SDDSComponents/SDDSIcons → темы → CLI → архив исходников →
 # zip xcframework'ов → проверка, что все ожидаемые файлы на месте. Git и GitHub скрипт не трогает.
@@ -65,19 +65,19 @@ ruby scripts/build_xcframeworks.rb -d . -w SDDS.xcworkspace
 step "3/7 Темы (Themes/*/*.xcodeproj)"
 ruby scripts/build_themes.rb
 
-step "4/7 dsbuilder CLI"
+step "4/7 dsbuilder-ios CLI"
 if [[ "$SKIP_CLI" -eq 1 ]]; then
   echo "пропущено (--skip-cli)"
 else
   (cd DesignSystemBuilder && ./build_cli.sh)
-  test -x DesignSystemBuilder/build/dsbuilder/dsbuilder || { echo "❌ бинарник dsbuilder не собран" >&2; exit 1; }
+  test -x DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios || { echo "❌ бинарник dsbuilder-ios не собран" >&2; exit 1; }
   test -f DesignSystemBuilder/.sdds/ios-api-meta.json || { echo "❌ ios-api-meta.json не сгенерирован" >&2; exit 1; }
-  CLI_STAGE="DesignSystemBuilder/build/dsbuilder-cli"
+  CLI_STAGE="DesignSystemBuilder/build/dsbuilder-ios-cli"
   rm -rf "$CLI_STAGE" && mkdir -p "$CLI_STAGE"
-  cp DesignSystemBuilder/build/dsbuilder/dsbuilder "$CLI_STAGE/"
+  cp DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios "$CLI_STAGE/"
   cp DesignSystemBuilder/.sdds/ios-api-meta.json "$CLI_STAGE/"
-  # --keepParent: в архиве остаётся папка dsbuilder-cli (так документировано в README).
-  (cd DesignSystemBuilder/build && ditto -c -k --sequesterRsrc --keepParent dsbuilder-cli "$OUTPUT/dsbuilder-cli-$TAG.zip")
+  # --keepParent: в архиве остаётся папка dsbuilder-ios-cli (так документировано в README).
+  (cd DesignSystemBuilder/build && ditto -c -k --sequesterRsrc --keepParent dsbuilder-ios-cli "$OUTPUT/dsbuilder-ios-cli-$TAG.zip")
 fi
 
 step "5/7 Архив исходников SDDSSources-$TAG.zip"
@@ -115,7 +115,7 @@ for theme_project in Themes/*/*.xcodeproj; do
     MISSING+=("$theme_name.xcframework.zip")
   fi
 done
-[[ "$SKIP_CLI" -eq 1 || -f "$OUTPUT/dsbuilder-cli-$TAG.zip" ]] || MISSING+=("dsbuilder-cli-$TAG.zip")
+[[ "$SKIP_CLI" -eq 1 || -f "$OUTPUT/dsbuilder-ios-cli-$TAG.zip" ]] || MISSING+=("dsbuilder-ios-cli-$TAG.zip")
 [[ -f "$OUTPUT/SDDSSources-$TAG.zip" ]] || MISSING+=("SDDSSources-$TAG.zip")
 
 if [[ ${#MISSING[@]} -gt 0 ]]; then
