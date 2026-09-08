@@ -53,13 +53,13 @@ xcodebuild -project SDDSDemoApp.xcodeproj -scheme SDDSDemoApp -destination 'plat
 документационного бандла:
 
 ```
-cd DesignSystemBuilder && ./build_cli.sh      # → build/dsbuilder/dsbuilder
+cd DesignSystemBuilder && ./build_cli.sh      # → build/dsbuilder-ios/dsbuilder-ios
 ```
 
 ```
-./build/dsbuilder/dsbuilder                                   # генерация тем (подкоманда themes)
-./build/dsbuilder/dsbuilder docs extract   --repo-root ..     # сэмплы документации
-./build/dsbuilder/dsbuilder docs aggregate --repo-root .. --theme SDDSserv
+./build/dsbuilder-ios/dsbuilder-ios                                   # генерация тем (подкоманда themes)
+./build/dsbuilder-ios/dsbuilder-ios docs extract   --repo-root ..     # сэмплы документации
+./build/dsbuilder-ios/dsbuilder-ios docs aggregate --repo-root .. --theme SDDSserv
 ```
 
 Отдельный режим — **автономные исходники** (`--standalone`): тема собирается в плоскую папку
@@ -73,7 +73,7 @@ cd DesignSystemBuilder && ./build_cli.sh      # → build/dsbuilder/dsbuilder
 Как получить бинарь CLI и как выглядит конфиг для запуска вне репозитория — см.
 [«Исходники с релиза»](DesignSystemBuilder/README.md#исходники-с-релиза---sources-version).
 Каждый релиз публикует xcframework'и (`SDDSThemeCore`, `InputMask`, `SDDSComponents`, темы;
-иконки идут отдельным релизом `SDDSIcons-v*` через `release_icons.yml`), `dsbuilder-cli-<tag>.zip` (сам CLI) и `SDDSSources-<tag>.zip` (исходники
+иконки идут отдельным релизом `SDDSIcons-v*` через `release_icons.yml`), `dsbuilder-ios-cli-<tag>.zip` (сам CLI) и `SDDSSources-<tag>.zip` (исходники
 SDDS, собирает [scripts/package_sources.sh](scripts/package_sources.sh)). Тот же набор локально
 собирает [scripts/release/build_release.sh](scripts/release/build_release.sh) `<tag>`.
 
