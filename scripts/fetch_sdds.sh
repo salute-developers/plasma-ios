@@ -8,7 +8,8 @@
 #   DSBUILDER_API_KEY          (secret, обязателен)   — project API key; CLI читает его сам из env
 #   DSBUILDER_PROJECT_ID       (нужен для init)       — id проекта DS Builder
 #   DSBUILDER_DESIGN_SYSTEM_ID (нужен для init)       — id дизайн-системы внутри проекта
-#   DSBUILDER_BIN              (опционально)          — путь к бинарю dsbuilder (по умолчанию из PATH)
+#   DSBUILDER_BIN              (опционально)          — путь к бинарю dsbuilder DS Builder CLI
+#                                                       (Kotlin, по умолчанию из PATH; не путать с dsbuilder-ios)
 #   SDDS_PARENT                (опционально)          — родитель папки .sdds (по умолчанию пакет темы PlasmaHomeDS)
 #
 # Что делает:
@@ -43,8 +44,8 @@ fi
 
 if ! command -v "$DSBUILDER_BIN" >/dev/null 2>&1 && [ ! -x "$DSBUILDER_BIN" ]; then
   echo "❌ dsbuilder CLI not found ('$DSBUILDER_BIN')." >&2
-  echo "   Установите: склонируйте salute-developers/design-system-builder-kt и запустите" >&2
-  echo "   dsbuilder-frontend/install-local-cli.sh, либо задайте DSBUILDER_BIN=<путь к бинарю>." >&2
+  echo "   Установите: склонируйте salute-developers/design-system-builder и запустите" >&2
+  echo "   frontend-kt/install-local-cli.sh, либо задайте DSBUILDER_BIN=<путь к бинарю>." >&2
   exit 1
 fi
 
