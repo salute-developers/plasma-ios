@@ -129,12 +129,22 @@ extension View {
             contentEnd: contentEnd
         )
         
-        return self
-            .task(id: isPresented.wrappedValue) {
-                if isPresented.wrappedValue {
-                    showToast(params: params)
+        // AnyView обязателен. В iOS 26 SDK `.task(id:)` резолвится в перегрузку
+        // task(id:name:priority:file:line:), помеченную @_alwaysEmitIntoClient: её
+        // opaque type descriptor не экспортируется ни из SwiftUI.framework, ни из
+        // SDDSComponents (эмитится как private external). Если этот opaque-тип
+        // просачивается в публичный `some View`, приложение ссылается на descriptor
+        // снаружи модуля и падает линковка: "Undefined symbol: opaque type descriptor
+        // for ... View.task(id:name:priority:file:line:)". Стирание типа держит
+        // descriptor внутри модуля. Не убирать без проверки архива на Xcode 26.
+        return AnyView(
+            self
+                .task(id: isPresented.wrappedValue) {
+                    if isPresented.wrappedValue {
+                        showToast(params: params)
+                    }
                 }
-            }
+        )
     }
     
     private func showToast<ContentStart: View, Content: View, ContentEnd: View>(

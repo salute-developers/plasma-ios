@@ -53,7 +53,16 @@ public extension View {
         @ViewBuilder content: @escaping () -> Content
     ) -> some View {
         self.background(
+            // AnyView обязателен. В iOS 26 SDK `.task(id:)` резолвится в перегрузку
+            // task(id:name:priority:file:line:), помеченную @_alwaysEmitIntoClient: её
+            // opaque type descriptor не экспортируется ни из SwiftUI.framework, ни из
+            // SDDSComponents (эмитится как private external). Если этот opaque-тип
+            // просачивается в публичный `some View`, приложение ссылается на descriptor
+            // снаружи модуля и падает линковка: "Undefined symbol: opaque type descriptor
+            // for ... View.task(id:name:priority:file:line:)". Стирание типа держит
+            // descriptor внутри модуля. Не убирать без проверки архива на Xcode 26.
             GeometryReader { geometry in
+                AnyView(
                 Color.clear
                     .onChange(of: isPresented.wrappedValue) { newValue in
                         // Используем асинхронное обновление, чтобы не вызывать перерисовку родительского view
@@ -211,6 +220,7 @@ public extension View {
                             onTriggerTap: onTriggerTap
                         )
                     }
+                )
             }
         )
     }
