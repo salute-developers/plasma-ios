@@ -131,51 +131,41 @@ jobs:
           toTag: HEAD
 
       - name: Debug Changelog
+        env:
+          CHANGELOG: ${{ steps.changelog.outputs.changelog }}
         run: |
           echo "🔍 Changelog debug info:"
           echo "FROM_TAG: ${{ env.FROM_TAG }}"
           echo "TO_TAG: HEAD"
           echo "Changelog output:"
-          echo "${{ steps.changelog.outputs.changelog }}"
-          echo "Changelog length: $(echo "${{ steps.changelog.outputs.changelog }}" | wc -c)"
+          printf '%s\n' "$CHANGELOG"
+          echo "Changelog length: $(printf '%s\n' "$CHANGELOG" | wc -c)"
 
       - name: List pull request
         run: echo "pull_requests --> ${{ steps.changelog.outputs.pull_requests }}"
 
       - name: Create release PR
+        env:
+          CHANGELOG: ${{ steps.changelog.outputs.changelog }}
         run: |
-          changelog='${{ steps.changelog.outputs.changelog }}'
+          changelog="$CHANGELOG"
           
           # Проверяем, есть ли changelog
-          if [[ -n "$changelog" && "$changelog" != "" ]]; then
-            echo "✅ Changelog found, length: $(echo "$changelog" | wc -c)"
-            cat > pr_body.md << EOF
-          ## Release ${{ env.DATE }}
-          
-          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
-          
-          ## Changelog
-          
-          $changelog
-          
-          ---
-          *This PR was created automatically by GitHub Actions*
-          EOF
+          if [[ -n "$changelog" ]]; then
+            echo "✅ Changelog found, length: $(printf '%s\n' "$changelog" | wc -c)"
           else
             echo "⚠️ No changelog found"
-            cat > pr_body.md << EOF
-          ## Release ${{ env.DATE }}
-          
-          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
-          
-          ## Changelog
-          
-          No changes found in this release.
-          
-          ---
-          *This PR was created automatically by GitHub Actions*
-          EOF
+            changelog="No changes found in this release."
           fi
+          
+          {
+            printf '## Release %s\n\n' "${{ env.DATE }}"
+            printf '**Tag to publish release:** `%s`\n\n' "${{ env.NEW_TAG }}"
+            printf '## Changelog\n\n'
+            printf '%s\n\n' "$changelog"
+            printf -- '---\n'
+            printf '*This PR was created automatically by GitHub Actions*\n'
+          } > pr_body.md
           
           gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body-file pr_body.md
 
