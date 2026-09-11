@@ -124,18 +124,18 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                         if !(startContent is EmptyView) {
                             startContent
                                 .frame(width: appearance.size.startContentSize, height: appearance.size.startContentSize)
-                                .foregroundStyle(contentColor(for: appearance.startContentColor))
+                                .fillForeground(style: contentFillStyle(for: appearance.startContentColor))
                                 .padding(.trailing, appearance.size.valuePadding)
                         }
                     }
                     
                     Text(label)
-                        .foregroundStyle(contentColor(for: appearance.labelColor))
+                        .fillForeground(style: contentFillStyle(for: appearance.labelColor))
                         .typography(labelTypography)
                     
                     if let value = value {
                         Text(value)
-                            .foregroundStyle(contentColor(for: appearance.valueColor))
+                            .fillForeground(style: contentFillStyle(for: appearance.valueColor))
                             .typography(valueTypography)
                             .padding(.leading, appearance.size.valuePadding)
                     }
@@ -171,7 +171,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                                 .renderingMode(.template)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: appearance.size.actionIconSize, height: appearance.size.actionIconSize)
-                                .foregroundStyle(actionContentColor(for: appearance.actionColor))
+                                .fillForeground(style: actionContentFillStyle(for: appearance.actionColor))
                                 .padding(.leading, appearance.size.actionPadding)
                         }
                     } else {
@@ -215,20 +215,20 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                         if !(startContent is EmptyView) {
                             startContent
                                 .frame(width: appearance.size.startContentSize, height: appearance.size.startContentSize)
-                                .foregroundStyle(contentColor(for: appearance.startContentColor))
+                                .fillForeground(style: contentFillStyle(for: appearance.startContentColor))
                                 .padding(.trailing, appearance.size.valuePadding)
                         }
                     }
                     
                     // Label
                     Text(label)
-                        .foregroundStyle(contentColor(for: appearance.labelColor))
+                        .fillForeground(style: contentFillStyle(for: appearance.labelColor))
                         .typography(labelTypography)
                     
                     // Value
                     if let value = value {
                         Text(value)
-                            .foregroundStyle(contentColor(for: appearance.valueColor))
+                            .fillForeground(style: contentFillStyle(for: appearance.valueColor))
                             .typography(valueTypography)
                             .padding(.leading, appearance.size.valuePadding)
                     }
@@ -266,7 +266,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                                 .renderingMode(.template)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: appearance.size.actionIconSize, height: appearance.size.actionIconSize)
-                                .foregroundStyle(actionContentColor(for: appearance.actionColor))
+                                .fillForeground(style: actionContentFillStyle(for: appearance.actionColor))
                                 .padding(.leading, appearance.size.actionPadding)
                         }
                     } else {
@@ -293,14 +293,14 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
         appearance.indicatorColor ?? tabsEnvironmentAppearance.indicatorColor
     }
     
-    private func contentColor(for buttonColor: ButtonColor) -> Color {
+    private func contentFillStyle(for fillStyle: StatefulFillStyle) -> FillStyle {
         var activeStates = Set<InteractiveState>()
         if isSelected { activeStates.insert(.selected) }
-        return buttonColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
+        return fillStyle.resolvedValue(for: activeStates)
     }
     
-    private func actionContentColor(for buttonColor: ButtonColor) -> Color {
-        buttonColor.color(for: [], colorScheme: colorScheme, subtheme: subtheme)
+    private func actionContentFillStyle(for fillStyle: StatefulFillStyle) -> FillStyle {
+        fillStyle.resolvedValue(for: Set<InteractiveState>())
     }
     
     private var labelTypography: TypographyToken {
@@ -320,7 +320,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
             if hasStartContent {
                 startContent
                     .frame(width: appearance.size.startContentSize, height: appearance.size.startContentSize)
-                    .foregroundStyle(contentColor(for: appearance.startContentColor))
+                    .fillForeground(style: contentFillStyle(for: appearance.startContentColor))
                     .overlay(alignment: .topTrailing) {
                         if let counterValue = counterValue, let counterAppearance = appearance.counterAppearance {
                             SDDSCounter(
@@ -342,7 +342,7 @@ public struct SDDSTabItem<StartContent: View, ContentRight: View, ActionContent:
                         .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
                         .frame(width: appearance.size.actionIconSize, height: appearance.size.actionIconSize)
-                        .foregroundStyle(actionContentColor(for: appearance.actionColor))
+                        .fillForeground(style: actionContentFillStyle(for: appearance.actionColor))
                         .padding(.leading, appearance.size.actionPadding)
                 } else {
                     actionContent

@@ -37,6 +37,17 @@ public extension FillStyle {
         }
     }
 
+    /// Репрезентативный `ColorToken` для legacy-API, не умеющего в градиенты.
+    /// Для градиента возвращается `.clearColor` — точного токена у него нет.
+    var representativeColorToken: ColorToken {
+        switch self {
+        case .color(let colorToken):
+            return colorToken
+        case .gradient:
+            return .clearColor
+        }
+    }
+
     /// Возвращает репрезентативный сплошной цвет для контекстов, которые не умеют рисовать градиент
     /// (например, цветовые стопы `AngularGradient`). Для градиента берётся его первый фоновый цвет.
     func representativeColor(for colorScheme: ColorScheme, subtheme: SubthemeData = SubthemeData()) -> Color {

@@ -52,7 +52,7 @@
     }
   ],
   "themes_output_dir": "/Users/username/plasma-ios/Themes",
-  "executable_path": "/Users/username/plasma-ios/DesignSystemBuilder/build/dsbuilder/dsbuilder"
+  "executable_path": "/Users/username/plasma-ios/DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios"
 }
 ```
 

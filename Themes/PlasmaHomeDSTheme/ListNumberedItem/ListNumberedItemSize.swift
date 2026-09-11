@@ -20,7 +20,7 @@ struct ListNumberedItemSizeM: ListItemSizeConfiguration {
     var paddingEnd = CGFloat(0.0)
     var paddingStart = CGFloat(0.0)
     var paddingTop = CGFloat(0.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListNumberedItemSize"
     }
@@ -33,7 +33,7 @@ struct ListNumberedItemSizeS: ListItemSizeConfiguration {
     var paddingEnd = CGFloat(0.0)
     var paddingStart = CGFloat(0.0)
     var paddingTop = CGFloat(0.0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListNumberedItemSize"
     }

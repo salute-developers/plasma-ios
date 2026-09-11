@@ -135,14 +135,14 @@ private extension FormItemAppearance {
     static var base: FormItemAppearance {
         var appearance = FormItemAppearance()
         appearance.captionTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.counterColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
+        appearance.counterColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         appearance.counterTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.disableAlpha = 0.4
-        appearance.hintColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
-        appearance.optionalColor = StatefulColor(defaultValue: ColorToken.textDefaultTertiary, values: [])
-        appearance.titleCaptionColor = StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [])
+        appearance.hintColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
+        appearance.optionalColor = StatefulFillStyle(defaultValue: .color(.textDefaultTertiary), values: [])
+        appearance.titleCaptionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         appearance.titleCaptionTypography = FormItemTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.titleColor = StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [])
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         return appearance
     }
 }

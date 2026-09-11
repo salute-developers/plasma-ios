@@ -99,10 +99,10 @@ runs:
 
     - name: Create "changelog_artifacts.md"
       shell: bash
+      env:
+        CHANGELOG_MD: ${{ steps.changelog.outputs.changelog }}
       run: |
-        cat > "${{ env.FILE }}" <<EOF
-        ${{ steps.changelog.outputs.changelog }}
-        EOF
+        printf '%s\n' "$CHANGELOG_MD" > "${{ env.FILE }}"
 
     - name: Debug print changelog_artifacts.md
       shell: bash
@@ -112,9 +112,11 @@ runs:
     
     - name: Debug print changelog JSON
       shell: bash
+      env:
+        CHANGELOG_JSON: ${{ steps.changelog.outputs.changelog_json }}
       run: |
         echo "📋 Changelog JSON:"
-        echo "${{ steps.changelog.outputs.changelog_json }}" | jq . || echo "JSON не найден или невалиден"
+        printf '%s\n' "$CHANGELOG_JSON" | jq . || echo "JSON не найден или невалиден"
 
     - name: Upload "changelog_artifacts.md"
       if: false

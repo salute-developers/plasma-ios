@@ -83,39 +83,39 @@ public struct TabItemHeaderVariation {
 private extension TabItemAppearance {
     static var base: TabItemAppearance {
         var appearance = TabItemAppearance()
-        appearance.actionColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive)
-        ]))
+        appearance.actionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultSecondaryActive))
+        ])
         appearance.actionIcon = Asset.close36.image
-        appearance.endContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
-        ]))
-        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
-        ]))
-        appearance.startContentColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
-        ]))
-        appearance.valueColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultTertiary, values: [
-            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: ColorToken.textDefaultSecondaryActive),
-            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: ColorToken.textDefaultSecondaryHover),
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultTertiaryHover),
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultTertiaryActive),
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultSecondary)
-        ]))
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary))
+        ])
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultPrimaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary))
+        ])
+        appearance.valueColor = StatefulFillStyle(defaultValue: .color(.textDefaultTertiary), values: [
+            .init(states: [InteractiveState.selected, InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.selected, InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultTertiaryHover)),
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultTertiaryActive)),
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultSecondary))
+        ])
         return appearance
     }
 }

@@ -83,11 +83,11 @@ public struct SelectItemSingleNormalVariation {
 private extension SelectItemAppearance {
     static var base: SelectItemAppearance {
         var appearance = SelectItemAppearance()
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.focused], value: ColorToken.surfaceDefaultTransparentSecondary)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.focused], value: .color(.surfaceDefaultTransparentSecondary))
+        ])
         appearance.disabledAlpha = CGFloat(0.4)
-        appearance.iconColor = ColorToken.textDefaultAccent
+        appearance.iconColor = StatefulFillStyle(defaultValue: .color(.textDefaultAccent), values: [])
         appearance.itemType = SelectItemType.single
         return appearance
     }

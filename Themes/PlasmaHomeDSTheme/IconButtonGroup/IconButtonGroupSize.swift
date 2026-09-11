@@ -17,32 +17,32 @@ struct IconButtonGroupSize {
     ] 
 }
 struct IconButtonGroupSizeL: ButtonGroupSizeConfiguration {
-    var externalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var internalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var externalShape = DefaultPathDrawer() as PathDrawer
+    var internalShape = DefaultPathDrawer() as PathDrawer
     var spacing = CGFloat(0)
     public var debugDescription: String {
         return "IconButtonGroupSize"
     }
 }
 struct IconButtonGroupSizeM: ButtonGroupSizeConfiguration {
-    var externalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var internalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var externalShape = DefaultPathDrawer() as PathDrawer
+    var internalShape = DefaultPathDrawer() as PathDrawer
     var spacing = CGFloat(0)
     public var debugDescription: String {
         return "IconButtonGroupSize"
     }
 }
 struct IconButtonGroupSizeS: ButtonGroupSizeConfiguration {
-    var externalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var internalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var externalShape = DefaultPathDrawer() as PathDrawer
+    var internalShape = DefaultPathDrawer() as PathDrawer
     var spacing = CGFloat(0)
     public var debugDescription: String {
         return "IconButtonGroupSize"
     }
 }
 struct IconButtonGroupSizeXs: ButtonGroupSizeConfiguration {
-    var externalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var internalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var externalShape = DefaultPathDrawer() as PathDrawer
+    var internalShape = DefaultPathDrawer() as PathDrawer
     var spacing = CGFloat(0)
     public var debugDescription: String {
         return "IconButtonGroupSize"

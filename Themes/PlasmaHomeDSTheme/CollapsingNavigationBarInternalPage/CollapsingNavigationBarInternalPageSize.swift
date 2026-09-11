@@ -12,7 +12,7 @@ struct CollapsingNavigationBarInternalPageSize {
 }
 struct CollapsingNavigationBarInternalPageSizeDefault: CollapsingNavigationBarSizeConfiguration {
     var backIconMargin = CGFloat(4.0)
-    var bottomShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var bottomShape = DefaultPathDrawer() as PathDrawer
     var descriptionPadding = CGFloat(12.0)
     var descriptionPaddingCollapsed = CGFloat(4.0)
     var horizontalSpacing = CGFloat(8.0)

@@ -11,39 +11,33 @@ public struct SegmentItemAppearance {
     @ApiName("labelStyle")
     public var titleTypography: TypographyConfiguration
     @ApiName("labelColor")
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var titleColor: ButtonColor
+    public var titleColor: StatefulFillStyle
     @ApiName("valueStyle")
     public var subtitleTypography: TypographyConfiguration
     @ApiName("valueColor")
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var subtitleColor: ButtonColor
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var iconColor: ButtonColor
+    public var subtitleColor: StatefulFillStyle
+    public var iconColor: StatefulFillStyle
     @ApiName("startContentColor")
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var startContentColor: ButtonColor
+    public var startContentColor: StatefulFillStyle
     @ApiName("endContentColor")
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var endContentColor: ButtonColor
+    public var endContentColor: StatefulFillStyle
     @ApiName("backgroundColor")
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var backgroundColor: ButtonColor
+    public var backgroundColor: StatefulFillStyle
     public var disabledAlpha: CGFloat
     public var counterAppearance: CounterAppearance
-    
+
     @available(*, deprecated, message: "Don't use it, public method will be removed")
     public init(
         size: SegmentItemSizeConfiguration = DefaultSegmentItemSize(),
         shapeStyle: ComponentShapeStyle = .cornered,
         titleTypography: TypographyConfiguration = .default,
-        titleColor: ButtonColor = ButtonColor(),
+        titleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         subtitleTypography: TypographyConfiguration = .default,
-        subtitleColor: ButtonColor = ButtonColor(),
-        iconColor: ButtonColor = ButtonColor(),
-        startContentColor: ButtonColor = ButtonColor(),
-        endContentColor: ButtonColor = ButtonColor(),
-        backgroundColor: ButtonColor = ButtonColor(),
+        subtitleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        iconColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        startContentColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        endContentColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         counterAppearance: CounterAppearance = CounterAppearance(),
         disabledAlpha: CGFloat = 0
     ) {
@@ -60,17 +54,17 @@ public struct SegmentItemAppearance {
         self.disabledAlpha = disabledAlpha
         self.counterAppearance = counterAppearance
     }
-    
+
     public init(
         size: SegmentItemSizeConfiguration = DefaultSegmentItemSize(),
         shapeStyle: ComponentShapeStyle = .cornered,
         titleTypography: TypographyConfiguration = .default,
-        titleColor: ButtonColor = ButtonColor(),
+        titleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         subtitleTypography: TypographyConfiguration = .default,
-        subtitleColor: ButtonColor = ButtonColor(),
-        startContentColor: ButtonColor = ButtonColor(),
-        endContentColor: ButtonColor = ButtonColor(),
-        backgroundColor: ButtonColor = ButtonColor(),
+        subtitleColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        startContentColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        endContentColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         counterAppearance: CounterAppearance = CounterAppearance(),
         disabledAlpha: CGFloat = 0
     ) {
@@ -85,10 +79,38 @@ public struct SegmentItemAppearance {
         self.backgroundColor = backgroundColor
         self.disabledAlpha = disabledAlpha
         self.counterAppearance = counterAppearance
-        self.iconColor = ButtonColor()
+        self.iconColor = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])
     }
 
-    
+    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
+    public init(
+        size: SegmentItemSizeConfiguration = DefaultSegmentItemSize(),
+        shapeStyle: ComponentShapeStyle = .cornered,
+        titleTypography: TypographyConfiguration = .default,
+        titleColor: ButtonColor = ButtonColor(),
+        subtitleTypography: TypographyConfiguration = .default,
+        subtitleColor: ButtonColor = ButtonColor(),
+        startContentColor: ButtonColor = ButtonColor(),
+        endContentColor: ButtonColor = ButtonColor(),
+        backgroundColor: ButtonColor = ButtonColor(),
+        counterAppearance: CounterAppearance = CounterAppearance(),
+        disabledAlpha: CGFloat = 0
+    ) {
+        self.init(
+            size: size,
+            shapeStyle: shapeStyle,
+            titleTypography: titleTypography,
+            titleColor: titleColor.statefulColor.statefulFillStyle,
+            subtitleTypography: subtitleTypography,
+            subtitleColor: subtitleColor.statefulColor.statefulFillStyle,
+            startContentColor: startContentColor.statefulColor.statefulFillStyle,
+            endContentColor: endContentColor.statefulColor.statefulFillStyle,
+            backgroundColor: backgroundColor.statefulColor.statefulFillStyle,
+            counterAppearance: counterAppearance,
+            disabledAlpha: disabledAlpha
+        )
+    }
 }
 
 extension SegmentItemAppearance: EnvironmentKey {

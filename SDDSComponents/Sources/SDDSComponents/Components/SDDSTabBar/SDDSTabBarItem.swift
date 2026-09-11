@@ -58,7 +58,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
                         content
                     }
                 }
-                .foregroundColor(iconColor.color(for: colorScheme, subtheme: subtheme))
+                .fillForeground(style: iconFillStyle)
                 .frame(width: contentWidth ?? appearance.size.iconSize, height: appearance.size.iconSize)
                 
                 extra
@@ -85,7 +85,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         }
         .frame(minHeight: appearance.size.minHeight)
         .background(
-            backgroundColor.color(for: colorScheme, subtheme: subtheme)
+            FillStyleShape(Rectangle(), style: backgroundFillStyle)
                 .shape(pathDrawer: appearance.size.shape)
         )
         .readSize { size in
@@ -100,7 +100,7 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         } else {
             Text(text)
                 .typography(labelTypography)
-                .foregroundColor(labelColor.color(for: colorScheme, subtheme: subtheme))
+                .fillForeground(style: labelFillStyle)
                 .multilineTextAlignment(.center)
         }
     }
@@ -111,19 +111,19 @@ public struct SDDSTabBarItem<Content: View, Extra: View>: View {
         appearance.labelTypography.typography(with: appearance.size) ?? .undefined
     }
     
-    private var backgroundColor: ColorToken {
+    private var backgroundFillStyle: FillStyle {
         isSelected
-            ? ColorToken.clearColor
+            ? .color(.clearColor)
             : appearance.backgroundColor.resolvedValue(for: Set<InteractiveState>())
     }
     
-    private var iconColor: ColorToken {
+    private var iconFillStyle: FillStyle {
         appearance.iconColor.resolvedValue(
             for: isSelected ? Set([InteractiveState.selected]) : Set<InteractiveState>()
         )
     }
     
-    private var labelColor: ColorToken {
+    private var labelFillStyle: FillStyle {
         appearance.labelColor.resolvedValue(
             for: isSelected ? Set([InteractiveState.selected]) : Set<InteractiveState>()
         )

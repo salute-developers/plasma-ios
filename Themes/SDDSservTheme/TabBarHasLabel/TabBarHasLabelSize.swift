@@ -19,7 +19,7 @@ struct TabBarHasLabelSizeL: TabBarSizeConfiguration {
     var contentPaddingTop = CGFloat(2.0)
     var dividerThickness = CGFloat(0)
     var itemSpacing = CGFloat(2.0)
-    var topShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var topShape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "TabBarHasLabelSize"
     }
@@ -31,7 +31,7 @@ struct TabBarHasLabelSizeM: TabBarSizeConfiguration {
     var contentPaddingTop = CGFloat(2.0)
     var dividerThickness = CGFloat(0)
     var itemSpacing = CGFloat(2.0)
-    var topShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var topShape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "TabBarHasLabelSize"
     }

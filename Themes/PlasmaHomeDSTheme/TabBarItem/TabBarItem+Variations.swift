@@ -18,15 +18,15 @@ public extension GeneralAppearanceVariation<TabBarItem, TabBarItemAppearance, Ta
 
         var appearance = appearance
         appearance.size = size
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: []))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
         appearance.counterAppearance = Counter.xs.negative.appearance
-        appearance.iconColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
-        ]))
+        appearance.iconColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary))
+        ])
         appearance.indicatorAppearance = Indicator.m.negative.appearance
-        appearance.labelColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultSecondary, values: [
-            .init(states: [InteractiveState.selected], value: ColorToken.textDefaultPrimary)
-        ]))
+        appearance.labelColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.selected], value: .color(.textDefaultPrimary))
+        ])
         appearance.labelTypography = TabBarItemTypography(default: AdaptiveTypographyToken.bodyXxsBold.typography).asContainer
     
         return .init(

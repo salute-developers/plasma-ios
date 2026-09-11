@@ -11,10 +11,9 @@ public enum SelectItemType: String, CaseIterable {
 @ApiInfo(components: ["SelectItemMultipleNormal", "SelectItemMultipleTight", "SelectItemSingleNormal", "SelectItemSingleTight"])
 public struct SelectItemAppearance {
     public var itemType: SelectItemType
-    public var iconColor: ColorToken
+    public var iconColor: StatefulFillStyle
     @ApiName("backgroundColor")
-    @available(*, deprecated, message: "ButtonColor is deprecated and will be replaced by StatefulColor in a future release.")
-    public var backgroundColor: ButtonColor
+    public var backgroundColor: StatefulFillStyle
     public var disabledAlpha: CGFloat
     public var cellAppearance: CellAppearance
     public var checkboxAppearance: CheckboxAppearance?
@@ -23,8 +22,8 @@ public struct SelectItemAppearance {
     
     public init(
         itemType: SelectItemType = .single,
-        iconColor: ColorToken = .clearColor,
-        backgroundColor: ButtonColor = ButtonColor(),
+        iconColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
+        backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: []),
         disabledAlpha: CGFloat = 0.4,
         cellAppearance: CellAppearance = .defaultValue,
         checkboxAppearance: CheckboxAppearance? = nil,
@@ -41,7 +40,29 @@ public struct SelectItemAppearance {
         self.size = size
     }
 
-    
+    @available(*, deprecated, message: "ColorToken/ButtonColor are deprecated and will be replaced by StatefulFillStyle in a future release.")
+    @_disfavoredOverload
+    public init(
+        itemType: SelectItemType = .single,
+        iconColor: ColorToken = .clearColor,
+        backgroundColor: ButtonColor = ButtonColor(),
+        disabledAlpha: CGFloat = 0.4,
+        cellAppearance: CellAppearance = .defaultValue,
+        checkboxAppearance: CheckboxAppearance? = nil,
+        icon: Image? = nil,
+        size: SelectItemSizeConfiguration = ZeroSelectItemSize()
+    ) {
+        self.init(
+            itemType: itemType,
+            iconColor: iconColor.fill,
+            backgroundColor: backgroundColor.statefulColor.statefulFillStyle,
+            disabledAlpha: disabledAlpha,
+            cellAppearance: cellAppearance,
+            checkboxAppearance: checkboxAppearance,
+            icon: icon,
+            size: size
+        )
+    }
 }
 
 extension SelectItemAppearance: EnvironmentKey {

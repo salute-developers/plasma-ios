@@ -41,13 +41,13 @@ struct FormItemAppearance: CodeGenerationAppearance {
 
         self.disableAlpha = props.disableAlpha?.value
         self.hintIcon = ImageContextBuilder(props.hintIcon?.value).context
-        self.hintColor = ButtonColorContextBuilder(statefulColor: props.hintColor, outputType: .statefulColor).context
+        self.hintColor = StatefulFillStyleContextBuilder(props.hintColor).context
 
-        self.titleColor = ButtonColorContextBuilder(statefulColor: props.titleColor, outputType: .statefulColor).context
-        self.optionalColor = ButtonColorContextBuilder(statefulColor: props.optionalColor, outputType: .statefulColor).context
-        self.titleCaptionColor = ButtonColorContextBuilder(statefulColor: props.titleCaptionColor, outputType: .statefulColor).context
-        self.captionColor = ButtonColorContextBuilder(statefulColor: props.captionColor, outputType: .statefulColor).context
-        self.counterColor = ButtonColorContextBuilder(statefulColor: props.counterColor, outputType: .statefulColor).context
+        self.titleColor = StatefulFillStyleContextBuilder(props.titleColor).context
+        self.optionalColor = StatefulFillStyleContextBuilder(props.optionalColor).context
+        self.titleCaptionColor = StatefulFillStyleContextBuilder(props.titleCaptionColor).context
+        self.captionColor = StatefulFillStyleContextBuilder(props.captionColor).context
+        self.counterColor = StatefulFillStyleContextBuilder(props.counterColor).context
 
         self.titleTypography = TypographyTokenContextBuilder(string: props.titleStyle?.value, id: id, component: component).context
         self.optionalTypography = TypographyTokenContextBuilder(string: props.optionalStyle?.value, id: id, component: component).context

@@ -204,7 +204,7 @@ public struct SDDSCollapsingNavigationBar<
         collapsedRow
             .shape(pathDrawer: appearance.size.bottomShape)
             .overlay(alignment: .top) {
-                topCornerMask(cornerRadius: cornerRadius(from: appearance.size.bottomShape), backgroundColor: barBackgroundColor.opacity(edgeStackBackgroundOpacity))
+                topCornerMask(cornerRadius: cornerRadius(from: appearance.size.bottomShape), backgroundColor: barBackgroundFillStyle.representativeColor(for: colorScheme, subtheme: subtheme).opacity(edgeStackBackgroundOpacity))
             }
             .shadow(appearance.shadow)
             .background(
@@ -222,7 +222,7 @@ public struct SDDSCollapsingNavigationBar<
                 Button(action: onBackPressed) {
                     backIcon
                         .renderingMode(.template)
-                        .foregroundColor(currentColor(for: appearance.backIconColor))
+                        .fillForeground(style: currentFillStyle(for: appearance.backIconColor))
                         .frame(width: 24, height: 24)
                 }
                 .buttonStyle(.plain)
@@ -396,7 +396,7 @@ public struct SDDSCollapsingNavigationBar<
             Group {
                 collapsedTitle()
                     .typography(appearance.titleTypographyCollapsed.typography(with: appearance.size as Any) ?? .undefined)
-                    .foregroundColor(currentColor(for: appearance.titleColor))
+                    .fillForeground(style: currentFillStyle(for: appearance.titleColor))
                     .multilineTextAlignment(useAbsoluteCentering ? .center : (collapsedTextAlign == .center ? .center : (collapsedTextAlign == .left ? .leading : .trailing)))
             }
             .background(
@@ -408,7 +408,7 @@ public struct SDDSCollapsingNavigationBar<
             Group {
                 collapsedDescription()
                     .typography(appearance.descriptionTypographyCollapsed.typography(with: appearance.size as Any) ?? .undefined)
-                    .foregroundColor(currentColor(for: appearance.descriptionColor))
+                    .fillForeground(style: currentFillStyle(for: appearance.descriptionColor))
                     .multilineTextAlignment(useAbsoluteCentering ? .center : (collapsedTextAlign == .center ? .center : (collapsedTextAlign == .left ? .leading : .trailing)))
             }
             .background(
@@ -465,12 +465,12 @@ public struct SDDSCollapsingNavigationBar<
             VStack(alignment: expandedTextAlign.horizontalAlignment, spacing: appearance.size.descriptionPadding) {
                 expandedTitle()
                     .typography(appearance.titleTypography.typography(with: appearance.size as Any) ?? .undefined)
-                    .foregroundColor(currentColor(for: appearance.titleColor))
+                    .fillForeground(style: currentFillStyle(for: appearance.titleColor))
                     .multilineTextAlignment(expandedTextAlign == .center ? .center : (expandedTextAlign == .left ? .leading : .trailing))
                     .frame(maxWidth: .infinity, alignment: Alignment(horizontal: expandedTextAlign.horizontalAlignment, vertical: .top))
                 expandedDescription()
                     .typography(appearance.descriptionTypography.typography(with: appearance.size as Any) ?? .undefined)
-                    .foregroundColor(currentColor(for: appearance.descriptionColor))
+                    .fillForeground(style: currentFillStyle(for: appearance.descriptionColor))
                     .multilineTextAlignment(expandedTextAlign == .center ? .center : (expandedTextAlign == .left ? .leading : .trailing))
                     .frame(maxWidth: .infinity, alignment: Alignment(horizontal: expandedTextAlign.horizontalAlignment, vertical: .top))
             }
@@ -538,12 +538,12 @@ public struct SDDSCollapsingNavigationBar<
         return Color(uiColor: .systemBackground)
     }
 
-    private var barBackgroundColor: Color {
-        currentColor(for: appearance.backgroundColor)
+    private var barBackgroundFillStyle: FillStyle {
+        currentFillStyle(for: appearance.backgroundColor)
     }
 
-    private func currentColor(for token: ColorToken) -> Color {
-        token.color(for: colorScheme, subtheme: subtheme)
+    private func currentFillStyle(for fillStyle: StatefulFillStyle) -> FillStyle {
+        fillStyle.resolvedValue(for: Set<InteractiveState>())
     }
 
     private func cornerRadius(from pathDrawer: PathDrawer) -> CGFloat {
