@@ -37,7 +37,7 @@
 самодостаточный бинарник в:
 
 ```
-DesignSystemBuilder/build/dsbuilder/dsbuilder
+DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios
 ```
 
 Фреймворка рядом больше нет — файл можно копировать куда угодно.
@@ -57,10 +57,10 @@ DesignSystemBuilder/build/dsbuilder/dsbuilder
 ### Ручная сборка (без скрипта)
 
 ```sh
-swift build --package-path . -c release --product dsbuilder
+swift build --package-path . -c release --product dsbuilder-ios
 
 # бинарник:
-"$(swift build --package-path . -c release --product dsbuilder --show-bin-path)/dsbuilder"
+"$(swift build --package-path . -c release --product dsbuilder-ios --show-bin-path)/dsbuilder-ios"
 ```
 
 ### Требования
@@ -76,15 +76,15 @@ swift build --package-path . -c release --product dsbuilder
 
 ```sh
 # 1. С конфигом по умолчанию (3 темы: SDDSServ, PlasmaB2C, PlasmaHomeDS)
-./build/dsbuilder/dsbuilder
+./build/dsbuilder-ios/dsbuilder-ios
 
 # 2. С внешним JSON-конфигом (обычный путь или URL — оба варианта работают)
-./build/dsbuilder/dsbuilder /path/to/config.json
-./build/dsbuilder/dsbuilder file:///abs/path/to/config.json
+./build/dsbuilder-ios/dsbuilder-ios /path/to/config.json
+./build/dsbuilder-ios/dsbuilder-ios file:///abs/path/to/config.json
 
 # 3. С перенаправлением вывода в свою директорию
-./build/dsbuilder/dsbuilder /path/to/config.json --output /path/to/out
-./build/dsbuilder/dsbuilder -o /path/to/out
+./build/dsbuilder-ios/dsbuilder-ios /path/to/config.json --output /path/to/out
+./build/dsbuilder-ios/dsbuilder-ios -o /path/to/out
 ```
 
 Аргументы CLI:
@@ -115,11 +115,11 @@ swift build --package-path . -c release --product dsbuilder
 
 ```sh
 # 1. Извлечь сэмплы `// @DocSample` в samples.json + сниппеты
-./build/dsbuilder/dsbuilder docs extract --repo-root .. --report \
+./build/dsbuilder-ios/dsbuilder-ios docs extract --repo-root .. --report \
   --emit-registry SDDSComponentsFixtures/Sources/SDDSComponentsFixtures/Generated/DocSamplesRegistry.swift
 
 # 2. Собрать дерево бандла для темы
-./build/dsbuilder/dsbuilder docs aggregate --repo-root .. --theme PlasmaHomeDS \
+./build/dsbuilder-ios/dsbuilder-ios docs aggregate --repo-root .. --theme PlasmaHomeDS \
   --screenshots ../Themes/PlasmaHomeDSTheme/docs/screenshots --report
 ```
 
@@ -217,18 +217,18 @@ cd DesignSystemBuilder
 ./build_cli.sh
 
 # Только токены выбранной темы → ./SDDSStandalone/<ThemeName>ThemeSources
-./build/dsbuilder/dsbuilder file:///path/to/config.json --standalone
+./build/dsbuilder-ios/dsbuilder-ios file:///path/to/config.json --standalone
 
 # Токены + компоненты
-./build/dsbuilder/dsbuilder file:///path/to/config.json --standalone --components
+./build/dsbuilder-ios/dsbuilder-ios file:///path/to/config.json --standalone --components
 
 # В свою директорию
-./build/dsbuilder/dsbuilder file:///path/to/config.json --standalone --components \
+./build/dsbuilder-ios/dsbuilder-ios file:///path/to/config.json --standalone --components \
   --standalone-output /path/to/out
 # → /path/to/out/<ThemeName>ThemeSources
 
 # Токены + компоненты, InputMask вендорится в бандл (полностью автономно)
-./build/dsbuilder/dsbuilder file:///path/to/config.json --standalone --components \
+./build/dsbuilder-ios/dsbuilder-ios file:///path/to/config.json --standalone --components \
   --external-dependencies
 ```
 
@@ -524,7 +524,7 @@ echo 'DSBUILDER_API_KEY=<ключ>' >> .env
 scripts/fetch_sdds.sh        # под капотом: dsbuilder theme fetch
 
 # 4. собрать тему (PlasmaHomeDS пойдёт из .sdds):
-cd DesignSystemBuilder && ./build/dsbuilder/dsbuilder --output /tmp/out
+cd DesignSystemBuilder && ./build/dsbuilder-ios/dsbuilder-ios --output /tmp/out
 ```
 
 - `scripts/fetch_sdds.sh` сам подхватывает `.env`, при отсутствии `config.json`

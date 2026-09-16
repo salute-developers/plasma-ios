@@ -16,7 +16,7 @@ packages:
 
   - dir: DesignSystemBuilder
     type: swift-cli                # macOS CLI `dsbuilder`: генерация тем + докбандл
-    build: "swift build --package-path DesignSystemBuilder -c release --product dsbuilder"
+    build: "swift build --package-path DesignSystemBuilder -c release --product dsbuilder-ios"
     test: "swift test --package-path DesignSystemBuilder"
     lint: "./lint.sh"
 

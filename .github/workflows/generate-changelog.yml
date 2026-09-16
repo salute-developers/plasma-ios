@@ -53,10 +53,10 @@ jobs:
           fromTag: ${{ github.event.inputs.tag_name }}
 
       - name: Create release-changelog.md
+        env:
+          CHANGELOG_MD: ${{ steps.changelog.outputs.changelog }}
         run: |
-          cat > release-changelog.md <<EOF
-          ${{ steps.changelog.outputs.changelog }}
-          EOF
+          printf '%s\n' "$CHANGELOG_MD" > release-changelog.md
 
       - name: Generate Documentation with Changelog
         run: |

@@ -152,10 +152,12 @@ private extension EditableAppearance {
         var appearance = EditableAppearance()
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
-        appearance.iconColorDefault = ColorToken.textDefaultTertiary
-        appearance.iconColorReadonly = ColorToken.textDefaultTertiary
-        appearance.textColorDefault = ColorToken.textDefaultPrimary
-        appearance.textColorReadonly = ColorToken.textDefaultPrimary
+        appearance.iconColor = StatefulFillStyle(defaultValue: .color(.textDefaultTertiary), values: [
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultTertiary))
+        ])
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultPrimary))
+        ])
         return appearance
     }
 }

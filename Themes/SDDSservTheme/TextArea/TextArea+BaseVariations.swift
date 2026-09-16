@@ -169,18 +169,24 @@ private extension TextAreaAppearance {
         appearance.counterTypography = TextAreaTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
         appearance.cursorColor = ColorToken.textDefaultAccent
         appearance.disabledAlpha = 0.4
-        appearance.endContentColor = ColorToken.textDefaultSecondary
+        appearance.endContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultSecondaryActive)),
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultSecondaryHover)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
         appearance.endContentColorReadOnly = ColorToken.textDefaultSecondary.withOpacity(0.4)
         appearance.optionalTitleColor = ColorToken.textDefaultTertiary
-        appearance.placeholderColor = ColorToken.textDefaultSecondary
-        appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
+        appearance.placeholderColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultTertiary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
         appearance.placeholderColorReadOnly = ColorToken.textDefaultSecondary
         appearance.requiredIndicatorColor = ColorToken.surfaceDefaultNegative
         appearance.scrollBarThumbColor = ColorToken.surfaceDefaultTransparentTertiary
         appearance.scrollBarTrackColor = ColorToken.surfaceDefaultTransparentPrimary
         appearance.startContentColor = ColorToken.textDefaultSecondary
-        appearance.textColor = ColorToken.textDefaultPrimary
-        appearance.textColorFocused = ColorToken.textDefaultPrimary
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         return appearance
     }
 }

@@ -14,7 +14,7 @@ struct NavigationBarInternalPageSize {
 }
 struct NavigationBarInternalPageSizeHasbackground: NavigationBarInternalPageSizeConfiguration {
     var backIconMargin = CGFloat(4.0)
-    var bottomShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(16.0)
     var paddingBottom = CGFloat(20.0)
     var paddingEnd = CGFloat(20.0)
@@ -27,7 +27,7 @@ struct NavigationBarInternalPageSizeHasbackground: NavigationBarInternalPageSize
 }
 struct NavigationBarInternalPageSizeNobackground: NavigationBarInternalPageSizeConfiguration {
     var backIconMargin = CGFloat(4.0)
-    var bottomShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(16.0)
     var paddingBottom = CGFloat(20.0)
     var paddingEnd = CGFloat(20.0)

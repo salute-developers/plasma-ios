@@ -120,7 +120,7 @@ public struct SDDSSegment: View {
             }
         }
         .padding(appearance.size.paddings)
-        .background(backgroundColor)
+        .fillBackground(backgroundFillStyle, colorScheme: colorScheme, subtheme: subtheme)
         .shape(pathDrawer: appearance.size.pathDrawer)
         .disabled(isDisabled)
     }
@@ -188,18 +188,18 @@ public struct SDDSSegment: View {
         items.map({ $0.appearance.size.width }).max() ?? 0
     }
     
-    private func currentColor(for counterColor: ButtonColor) -> Color {
+    private func currentFillStyle(for fillStyle: StatefulFillStyle) -> FillStyle {
         var activeStates = Set<InteractiveState>()
         if isHighlighted { activeStates.insert(.pressed) }
         if isHovered { activeStates.insert(.hovered) }
-        return counterColor.color(for: activeStates, colorScheme: colorScheme, subtheme: subtheme)
+        return fillStyle.resolvedValue(for: activeStates)
     }
     
-    private var backgroundColor: Color {
+    private var backgroundFillStyle: FillStyle {
         if let backgroundColor = appearance.backgroundColor, hasBackground {
-            return currentColor(for: backgroundColor)
+            return currentFillStyle(for: backgroundColor)
         }
-        return .clear
+        return .color(.clearColor)
     }
     
     var appearance: SegmentAppearance {

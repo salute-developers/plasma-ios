@@ -5,14 +5,9 @@ struct CodeInputAppearance: CodeGenerationAppearance {
     typealias Props = CodeInputProps
     
     var codeColor: String?
-    var codeColorError: String?
     var captionColor: String?
-    var captionColorError: String?
     var strokeColor: String?
-    var strokeColorError: String?
-    var strokeColorFocused: String?
     var fillColor: String?
-    var fillColorError: String?
     var codeTypography: String?
     var captionTypography: String?
     
@@ -25,15 +20,10 @@ struct CodeInputAppearance: CodeGenerationAppearance {
             return
         }
         
-        self.codeColor = ColorTokenContextBuilder(props.codeColor).context
-        self.codeColorError = ColorTokenContextBuilder(props.codeColor?.value(for: .error)).context
-        self.captionColor = ColorTokenContextBuilder(props.captionColor).context
-        self.captionColorError = ColorTokenContextBuilder(props.captionColor?.value(for: .error)).context
-        self.strokeColor = ColorTokenContextBuilder(props.strokeColor).context
-        self.strokeColorError = ColorTokenContextBuilder(props.strokeColor?.value(for: .error)).context
-        self.strokeColorFocused = ColorTokenContextBuilder(props.strokeColor?.value(for: .focused)).context
-        self.fillColor = ColorTokenContextBuilder(props.fillColor).context
-        self.fillColorError = ColorTokenContextBuilder(props.fillColorError).context
+        self.codeColor = StatefulFillStyleContextBuilder(props.codeColor).context
+        self.captionColor = StatefulFillStyleContextBuilder(props.captionColor).context
+        self.strokeColor = StatefulFillStyleContextBuilder(props.strokeColor).context
+        self.fillColor = StatefulFillStyleContextBuilder(props.fillColor).context
         self.codeTypography = TypographyTokenContextBuilder(string: props.codeStyle?.value, id: id, component: component).context
         self.captionTypography = TypographyTokenContextBuilder(string: props.captionStyle?.value, id: id, component: component).context
     }

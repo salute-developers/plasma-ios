@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # dsbuilder CLI собирается из salute-developers/design-system-builder-kt (Kotlin/Native).
+      # dsbuilder CLI собирается из salute-developers/design-system-builder (Kotlin/Native).
       # Если у вас есть готовый бинарь/release — замените этот шаг на скачивание и
       # `echo "<dir>" >> "$GITHUB_PATH"` (быстрее, чем сборка из исходников).
       - name: Set up JDK
@@ -31,9 +31,9 @@ jobs:
 
       - name: Install dsbuilder CLI
         run: |
-          git clone --depth 1 -b feature/dsbuilder-cli \
-            https://github.com/salute-developers/design-system-builder-kt.git /tmp/dsb
-          (cd /tmp/dsb/dsbuilder-frontend && ./install-local-cli.sh)
+          git clone --depth 1 \
+            https://github.com/salute-developers/design-system-builder.git /tmp/dsb
+          (cd /tmp/dsb/frontend-kt && ./install-local-cli.sh)
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Fetch .sdds

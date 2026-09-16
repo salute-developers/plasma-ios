@@ -11,7 +11,7 @@
 - `build_inputmask.rb`, `build_integrationcore_xcframeworks.rb`, `build_themes.rb` — сборка
   отдельных частей.
 - `release/build_release.sh <tag>` — все ассеты релиза в `release-artifacts/`: SDDSThemeCore,
-  InputMask, SDDSComponents, темы, `dsbuilder-cli-<tag>.zip`, `SDDSSources-<tag>.zip`. SDDSIcons
+  InputMask, SDDSComponents, темы, `dsbuilder-ios-cli-<tag>.zip`, `SDDSSources-<tag>.zip`. SDDSIcons
   собирается только как зависимость тем: иконки публикует `release_icons.yml` по тегу `SDDSIcons-v*`.
   Тот же скрипт запускает `.github/workflows/publish-release.yml`; `--skip-cli` — без dsbuilder.
 

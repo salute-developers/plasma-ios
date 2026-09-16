@@ -3355,61 +3355,115 @@ private extension TextFieldAppearance {
     
     var `default`: TextFieldAppearance {
         var appearance = self
-        appearance.captionColor = ColorToken.textDefaultSecondary
-        appearance.captionColorFocused = ColorToken.textDefaultSecondary
-        appearance.lineColor = ColorToken.surfaceDefaultTransparentTertiary
-        appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
-        appearance.placeholderColor = ColorToken.textDefaultSecondary
-        appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
-        appearance.startContentColor = ColorToken.textDefaultSecondary
-        appearance.startContentColorFocused = ColorToken.textDefaultSecondary
-        appearance.textColor = ColorToken.textDefaultPrimary
-        appearance.textColorFocused = ColorToken.textDefaultPrimary
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
+        appearance.lineColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentTertiary), values: [
+            .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary)),
+            .init(states: [InteractiveState.readonly, InteractiveState.activated], value: .color(.surfaceDefaultTransparentPrimary))
+        ])
+        appearance.placeholderColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultTertiary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
+            .init(states: [InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary))
+        ])
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultPrimary))
+        ])
         return appearance
     }
     
     var error: TextFieldAppearance {
         var appearance = self
-        appearance.captionColor = ColorToken.textDefaultNegative
-        appearance.captionColorFocused = ColorToken.textDefaultSecondary
-        appearance.lineColor = ColorToken.surfaceDefaultNegative
-        appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
-        appearance.placeholderColor = ColorToken.textDefaultNegative
-        appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
-        appearance.startContentColor = ColorToken.textDefaultNegative
-        appearance.startContentColorFocused = ColorToken.textDefaultSecondary
-        appearance.textColor = ColorToken.textDefaultNegative
-        appearance.textColorFocused = ColorToken.textDefaultPrimary
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultNegative), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
+        appearance.lineColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultNegative), values: [
+            .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary)),
+            .init(states: [InteractiveState.readonly, InteractiveState.activated], value: .color(.surfaceDefaultTransparentPrimary))
+        ])
+        appearance.placeholderColor = StatefulFillStyle(defaultValue: .color(.textDefaultNegative), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultTertiary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultNegative), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary))
+        ])
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultNegative), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultPrimary))
+        ])
         return appearance
     }
     
     var success: TextFieldAppearance {
         var appearance = self
-        appearance.captionColor = ColorToken.textDefaultPositive
-        appearance.captionColorFocused = ColorToken.textDefaultSecondary
-        appearance.lineColor = ColorToken.surfaceDefaultPositive
-        appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
-        appearance.placeholderColor = ColorToken.textDefaultPositive
-        appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
-        appearance.startContentColor = ColorToken.textDefaultPositive
-        appearance.startContentColorFocused = ColorToken.textDefaultSecondary
-        appearance.textColor = ColorToken.textDefaultPositive
-        appearance.textColorFocused = ColorToken.textDefaultPrimary
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultPositive), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
+        appearance.lineColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultPositive), values: [
+            .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary)),
+            .init(states: [InteractiveState.readonly, InteractiveState.activated], value: .color(.surfaceDefaultTransparentPrimary))
+        ])
+        appearance.placeholderColor = StatefulFillStyle(defaultValue: .color(.textDefaultPositive), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultTertiary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultPositive), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary))
+        ])
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultPositive), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultPrimary))
+        ])
         return appearance
     }
     
     var warning: TextFieldAppearance {
         var appearance = self
-        appearance.captionColor = ColorToken.textDefaultWarning
-        appearance.captionColorFocused = ColorToken.textDefaultSecondary
-        appearance.lineColor = ColorToken.surfaceDefaultWarning
-        appearance.lineColorFocused = ColorToken.surfaceDefaultAccent
-        appearance.placeholderColor = ColorToken.textDefaultWarning
-        appearance.placeholderColorFocused = ColorToken.textDefaultTertiary
-        appearance.startContentColor = ColorToken.textDefaultWarning
-        appearance.startContentColorFocused = ColorToken.textDefaultSecondary
-        appearance.textColor = ColorToken.textDefaultWarning
-        appearance.textColorFocused = ColorToken.textDefaultPrimary
+        appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultWarning), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
+        appearance.lineColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultWarning), values: [
+            .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultAccent)),
+            .init(states: [InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary)),
+            .init(states: [InteractiveState.readonly, InteractiveState.activated], value: .color(.surfaceDefaultTransparentPrimary))
+        ])
+        appearance.placeholderColor = StatefulFillStyle(defaultValue: .color(.textDefaultWarning), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultTertiary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultSecondary))
+        ])
+        appearance.startContentColor = StatefulFillStyle(defaultValue: .color(.textDefaultWarning), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultSecondary)),
+            .init(states: [InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.surfaceDefaultTransparentPrimary))
+        ])
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultWarning), values: [
+            .init(states: [InteractiveState.activated], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.readonly], value: .color(.textDefaultPrimary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.textDefaultPrimary))
+        ])
         return appearance
     }
     

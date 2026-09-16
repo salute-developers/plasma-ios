@@ -24,7 +24,7 @@ struct ListNormalSizeL: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListNormalSize"
     }
@@ -35,7 +35,7 @@ struct ListNormalSizeM: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListNormalSize"
     }
@@ -46,7 +46,7 @@ struct ListNormalSizeS: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListNormalSize"
     }
@@ -57,7 +57,7 @@ struct ListNormalSizeXl: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListNormalSize"
     }
@@ -68,7 +68,7 @@ struct ListNormalSizeXs: ListSizeConfiguration {
     var paddingEnd = CGFloat(0)
     var paddingStart = CGFloat(0)
     var paddingTop = CGFloat(0)
-    var shape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var shape = DefaultPathDrawer() as PathDrawer
     public var debugDescription: String {
         return "ListNormalSize"
     }

@@ -1,21 +1,20 @@
 #!/bin/bash
 # Сборка дерева документационного бандла iOS для dsbuilder docs generate --platform swiftui.
-# Конвейер (паритет с Android documentationExtract/documentationAggregate):
-#   1. ios-api-meta.json           (generate_api_meta.sh — если ещё нет)
-#   2. info-артефакты theme-builder (config-info-ios.json + config-info-tokens-ios.json —
-#      генерятся вместе с темой; скрипт проверяет их наличие)
-#   3. extract   — samples.json + сниппеты из // @DocSample
-#   4. aggregate — .sdds/temp/docs/{content,structure-*,meta,assets}
+#
+# Обёртка над `dsbuilder-ios docs aggregate --sdds`: одна команда CLI извлекает сэмплы
+# (`// @DocSample`), рендерит маркеры и раскладывает дерево. Скрипт добавляет к ней только
+# проверку предусловий и генерацию ios-api-meta.json.
 #
 # Скриншоты сэмплов хранятся в репозитории (Themes/<Тема>Theme/docs/screenshots)
-# и подхватываются отсюда — как на Android, где png лежат в docs-модуле темы.
-# Переснять их: см. DocSampleScreenshotTests.
+# и подхватываются CLI автоматически. Переснять их: см. DocSampleScreenshotTests.
 #
 # Использование:
 #   scripts/generate_docs_bundle.sh --theme PlasmaHomeDS [--artifact-version 0.12.0]
 #
+# Результат: Themes/<Тема>Theme/.sdds/temp/docs
+#
 # Дальше (вне этого репо): dsbuilder docs generate --platform swiftui \
-#   --docs-dir DesignSystemBuilder/.sdds/temp/docs
+#   --docs-dir Themes/<Тема>Theme/.sdds/temp/docs
 
 set -euo pipefail
 
@@ -24,18 +23,16 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
 THEME=""
-ARTIFACT_VERSION="0.0.0"
 EXTRA_ARGS=()
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --theme) THEME="$2"; shift 2 ;;
-    --artifact-version) ARTIFACT_VERSION="$2"; shift 2 ;;
     *) EXTRA_ARGS+=("$1"); shift ;;
   esac
 done
 
 if [[ -z "$THEME" ]]; then
-  echo "usage: $0 --theme <Name> [--artifact-version <v>] [прочие флаги aggregate]" >&2
+  echo "usage: $0 --theme <Name> [--artifact-version <v>] [прочие флаги docs aggregate]" >&2
   exit 2
 fi
 
@@ -53,31 +50,11 @@ for f in config-info-ios.json config-info-tokens-ios.json; do
   fi
 done
 
-echo "▸ Сборка dsbuilder"
-swift build --package-path DesignSystemBuilder -c release --product dsbuilder
-BIN="$(swift build --package-path DesignSystemBuilder -c release --product dsbuilder --show-bin-path)/dsbuilder"
+echo "▸ Сборка dsbuilder-ios"
+swift build --package-path DesignSystemBuilder -c release --product dsbuilder-ios
+BIN="$(swift build --package-path DesignSystemBuilder -c release --product dsbuilder-ios --show-bin-path)/dsbuilder-ios"
 
-THEME_SAMPLES="Themes/${THEME}Theme/docs/Samples"
-EXTRACT_ARGS=(docs extract --repo-root "$REPO_ROOT" --report
-  --emit-registry SDDSComponentsFixtures/Sources/SDDSComponentsFixtures/Generated/DocSamplesRegistry.swift)
-if [[ -d "$THEME_SAMPLES" ]]; then
-  EXTRACT_ARGS+=(--theme-samples "$THEME_SAMPLES" --theme-module "${THEME}Theme")
-fi
-echo "▸ Извлечение сэмплов"
-"$BIN" "${EXTRACT_ARGS[@]}"
+echo "▸ Извлечение сэмплов и агрегация бандла"
+"$BIN" docs aggregate --sdds "$REPO_ROOT/$THEME_SDDS" --report ${EXTRA_ARGS[@]+"${EXTRA_ARGS[@]}"}
 
-USER_DOCS="Themes/${THEME}Theme/docs/override-docs"
-SCREENSHOTS="Themes/${THEME}Theme/docs/screenshots"
-AGGREGATE_ARGS=(docs aggregate --repo-root "$REPO_ROOT" --theme "$THEME" --artifact-version "$ARTIFACT_VERSION" --report)
-if [[ -d "$USER_DOCS" ]]; then
-  AGGREGATE_ARGS+=(--user-docs "$USER_DOCS")
-fi
-if [[ -d "$SCREENSHOTS" ]]; then
-  AGGREGATE_ARGS+=(--screenshots "$SCREENSHOTS")
-else
-  echo "⚠️  $SCREENSHOTS не найден — бандл соберётся без скриншотов"
-fi
-echo "▸ Агрегация бандла"
-"$BIN" "${AGGREGATE_ARGS[@]}" ${EXTRA_ARGS[@]+"${EXTRA_ARGS[@]}"}
-
-echo "✅ Готово: DesignSystemBuilder/.sdds/temp/docs"
+echo "✅ Готово: $THEME_SDDS/temp/docs"

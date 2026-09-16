@@ -9,15 +9,15 @@ public struct CollapsingNavigationBarMainPage {
         var appearance = CollapsingNavigationBarAppearance.base
         appearance.size = CollapsingNavigationBarMainPageSize.`default`
         appearance.actionButtonAppearance = IconButton.s.secondary.appearance
-        appearance.actionEndColor = ColorToken.textDefaultPrimary
-        appearance.actionStartColor = ColorToken.textDefaultPrimary
-        appearance.backgroundColor = ColorToken.surfaceDefaultClear
-        appearance.descriptionColor = ColorToken.textDefaultSecondary
+        appearance.actionEndColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.actionStartColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
+        appearance.descriptionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         appearance.descriptionTypography = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.descriptionTypographyCollapsed = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.textColor = ColorToken.textDefaultPrimary
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         appearance.textTypography = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.headerH5Normal.typography).asContainer
-        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         appearance.titleTypography = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.headerH2Normal.typography).asContainer
         appearance.titleTypographyCollapsed = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
 
@@ -42,15 +42,15 @@ private extension CollapsingNavigationBarAppearance {
     static var base: CollapsingNavigationBarAppearance {
         var appearance = CollapsingNavigationBarAppearance()
         appearance.actionButtonAppearance = IconButton.s.secondary.appearance
-        appearance.actionEndColor = ColorToken.textDefaultPrimary
-        appearance.actionStartColor = ColorToken.textDefaultPrimary
-        appearance.backgroundColor = ColorToken.surfaceDefaultClear
-        appearance.descriptionColor = ColorToken.textDefaultSecondary
+        appearance.actionEndColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.actionStartColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
+        appearance.descriptionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         appearance.descriptionTypography = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.descriptionTypographyCollapsed = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.textColor = ColorToken.textDefaultPrimary
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         appearance.textTypography = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.headerH5Normal.typography).asContainer
-        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         appearance.titleTypography = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.headerH2Normal.typography).asContainer
         appearance.titleTypographyCollapsed = CollapsingNavigationBarMainPageTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         return appearance

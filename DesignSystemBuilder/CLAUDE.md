@@ -1,17 +1,21 @@
 # CLAUDE.md — DesignSystemBuilder
 
-`dsbuilder` — единый macOS CLI дизайн-системы SDDS под iOS. Две задачи в одном бинаре:
+`dsbuilder-ios` — единый macOS CLI дизайн-системы SDDS под iOS. Две задачи в одном бинаре:
 
 - **`themes`** (подкоманда по умолчанию) — берёт схему темы и палитру, декодирует JSON и по
   Stencil-шаблонам генерирует токены (цвета, типографику, тени, формы, отступы, градиенты)
   и вариации компонентов в `Themes/<Name>Theme`.
-- **`docs extract` / `docs aggregate`** — собирают дерево документационного бандла:
-  сканируют `// @DocSample`, рендерят маркеры и раскладывают контент в `.sdds/temp/docs`
-  (см. [../docs/DOCS_BUNDLE.md](../docs/DOCS_BUNDLE.md)).
+- **`theme generate --sdds <dir>`** — то же самое для одной темы, описанной локальной `.sdds`
+  (её наполняет `dsbuilder theme fetch`). JSON-конфиг не нужен: имя темы, выход и схема
+  компонентов выводятся из директории. Так команду вызывает делегат платформы.
+- **`docs aggregate --sdds <dir>`** — собирает дерево документационного бандла целиком:
+  сканирует `// @DocSample`, рендерит маркеры и раскладывает контент в `<sdds>/temp/docs`
+  (см. [../docs/DOCS_BUNDLE.md](../docs/DOCS_BUNDLE.md)). Прежняя пара `docs extract` +
+  `docs aggregate --theme` осталась для ручных прогонов с нестандартными путями.
 
 > Не путать с внешним `dsbuilder` из `salute-developers/design-system-builder` (Kotlin/Native):
-> тот выгружает `.sdds/` и печёт готовый бандл из подготовленного нами дерева. Имена совпадают —
-> в скриптах зовём оба по явным путям.
+> тот выгружает `.sdds/`, вызывает наш бинарь как платформенный инструмент (`theme generate`,
+> `docs aggregate`) и печёт готовый бандл из подготовленного нами дерева.
 
 ## Структура
 
@@ -43,10 +47,10 @@
 ./build_cli.sh --run docs extract --repo-root ..
 ./build_cli.sh --help
 ```
-Результат: `DesignSystemBuilder/build/dsbuilder/dsbuilder` — самодостаточный бинарник,
+Результат: `DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios` — самодостаточный бинарник,
 фреймворка рядом больше нет. `build/` в `.gitignore`.
 
-Напрямую через SwiftPM: `swift build --package-path DesignSystemBuilder -c release --product dsbuilder`.
+Напрямую через SwiftPM: `swift build --package-path DesignSystemBuilder -c release --product dsbuilder-ios`.
 
 Кастомный выходной каталог — опция `-o/--output`.
 

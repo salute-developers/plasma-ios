@@ -4,7 +4,7 @@ set -euo pipefail
 
 usage() {
   cat <<'EOF'
-build_cli.sh — собирает CLI-бинарник dsbuilder (Design System Builder).
+build_cli.sh — собирает CLI-бинарник dsbuilder-ios (Design System Builder).
 
 Использование:
   ./build_cli.sh                 Release-сборка (по умолчанию)
@@ -17,14 +17,14 @@ build_cli.sh — собирает CLI-бинарник dsbuilder (Design System 
   ./build_cli.sh --run docs extract --repo-root ..
                                  подкоманды документационного бандла
 
-Результат: DesignSystemBuilder/build/dsbuilder/dsbuilder
+Результат: DesignSystemBuilder/build/dsbuilder-ios/dsbuilder-ios
 EOF
 }
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIGURATION="release"
-OUTPUT_DIR="$SCRIPT_DIR/build/dsbuilder"
-OUTPUT_BIN="$OUTPUT_DIR/dsbuilder"
+OUTPUT_DIR="$SCRIPT_DIR/build/dsbuilder-ios"
+OUTPUT_BIN="$OUTPUT_DIR/dsbuilder-ios"
 
 DO_RUN=0
 RUN_ARGS=()
@@ -47,10 +47,10 @@ if ! META_OUTPUT=$("$SCRIPT_DIR/../scripts/generate_api_meta.sh" 2>&1); then
     exit 1
 fi
 
-echo "▶ Сборка dsbuilder ($CONFIGURATION)…"
-swift build --package-path "$SCRIPT_DIR" -c "$CONFIGURATION" --product dsbuilder
+echo "▶ Сборка dsbuilder-ios ($CONFIGURATION)…"
+swift build --package-path "$SCRIPT_DIR" -c "$CONFIGURATION" --product dsbuilder-ios
 
-BUILT_BIN="$(swift build --package-path "$SCRIPT_DIR" -c "$CONFIGURATION" --product dsbuilder --show-bin-path)/dsbuilder"
+BUILT_BIN="$(swift build --package-path "$SCRIPT_DIR" -c "$CONFIGURATION" --product dsbuilder-ios --show-bin-path)/dsbuilder-ios"
 if [[ ! -x "$BUILT_BIN" ]]; then
   echo "✗ Бинарник не найден по пути $BUILT_BIN" >&2
   exit 1
@@ -66,6 +66,6 @@ file "$OUTPUT_BIN"
 
 if [[ "$DO_RUN" -eq 1 ]]; then
   echo ""
-  echo "▶ Запуск dsbuilder…"
+  echo "▶ Запуск dsbuilder-ios…"
   "$OUTPUT_BIN" ${RUN_ARGS[@]+"${RUN_ARGS[@]}"}
 fi

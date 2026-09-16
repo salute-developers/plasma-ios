@@ -51,11 +51,13 @@ jobs:
       
       - name: Debug raw changelog from mikepenz action
         shell: bash
+        env:
+          RAW_CHANGELOG: ${{ steps.build-changelog.outputs.changelog }}
         run: |
           echo "🔍 Debug: Raw changelog from mikepenz action (первые 1000 символов):"
-          echo "${{ steps.build-changelog.outputs.changelog }}" | head -c 1000 || echo "Changelog пуст или не найден"
+          printf '%s\n' "$RAW_CHANGELOG" | head -c 1000 || echo "Changelog пуст или не найден"
           echo ""
-          echo "🔍 Длина changelog: $(echo "${{ steps.build-changelog.outputs.changelog }}" | wc -c) символов"
+          echo "🔍 Длина changelog: $(printf '%s\n' "$RAW_CHANGELOG" | wc -c) символов"
   deploy:
     name: Deploy docs
     needs: changelog
@@ -117,10 +119,10 @@ jobs:
       - name: Create release-changelog.md
         if: steps.check_module.outputs.should_deploy == 'true'
         shell: bash
+        env:
+          CHANGELOG_MD: ${{ needs.changelog.outputs.content }}
         run: |
-          cat > "${{ github.workspace }}/release-changelog.md" <<EOF
-          ${{ needs.changelog.outputs.content }}
-          EOF
+          printf '%s\n' "$CHANGELOG_MD" > "${{ github.workspace }}/release-changelog.md"
           echo "🔍 Debug: release-changelog.md создан, размер: $(wc -c < "${{ github.workspace }}/release-changelog.md") байт"
           echo "🔍 Первые 100 строк release-changelog.md:"
           head -100 "${{ github.workspace }}/release-changelog.md" || echo "Файл пуст или не найден"
@@ -128,10 +130,10 @@ jobs:
       - name: Create release-changelog.json
         if: steps.check_module.outputs.should_deploy == 'true'
         shell: bash
+        env:
+          CHANGELOG_JSON: ${{ needs.changelog.outputs.changelog_json }}
         run: |
-          cat > "${{ github.workspace }}/release-changelog.json" <<EOF
-          ${{ needs.changelog.outputs.changelog_json }}
-          EOF
+          printf '%s\n' "$CHANGELOG_JSON" > "${{ github.workspace }}/release-changelog.json"
           echo "🔍 Debug: release-changelog.json создан, размер: $(wc -c < "${{ github.workspace }}/release-changelog.json") байт"
           echo "🔍 Changelog JSON:"
           cat "${{ github.workspace }}/release-changelog.json" | jq . || echo "JSON не найден или невалиден"

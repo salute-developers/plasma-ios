@@ -86,7 +86,7 @@ Themes/<Name>Theme/.sdds/config-info-tokens-ios.json
 ```sh
 cd DesignSystemBuilder
 ./build_cli.sh                                   # ожидаем ** BUILD SUCCEEDED **
-./build/dsbuilder/dsbuilder <config.json> --output /tmp/out
+./build/dsbuilder-ios/dsbuilder-ios <config.json> --output /tmp/out
 ```
 
 Признак успеха в логе:

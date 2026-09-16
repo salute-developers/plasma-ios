@@ -19,40 +19,40 @@ struct BasicButtonGroupSize {
     ] 
 }
 struct BasicButtonGroupSizeL: ButtonGroupSizeConfiguration {
-    var externalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var internalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var externalShape = DefaultPathDrawer() as PathDrawer
+    var internalShape = DefaultPathDrawer() as PathDrawer
     var spacing = CGFloat(0)
     public var debugDescription: String {
         return "BasicButtonGroupSize"
     }
 }
 struct BasicButtonGroupSizeM: ButtonGroupSizeConfiguration {
-    var externalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var internalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var externalShape = DefaultPathDrawer() as PathDrawer
+    var internalShape = DefaultPathDrawer() as PathDrawer
     var spacing = CGFloat(0)
     public var debugDescription: String {
         return "BasicButtonGroupSize"
     }
 }
 struct BasicButtonGroupSizeS: ButtonGroupSizeConfiguration {
-    var externalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var internalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var externalShape = DefaultPathDrawer() as PathDrawer
+    var internalShape = DefaultPathDrawer() as PathDrawer
     var spacing = CGFloat(0)
     public var debugDescription: String {
         return "BasicButtonGroupSize"
     }
 }
 struct BasicButtonGroupSizeXs: ButtonGroupSizeConfiguration {
-    var externalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var internalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var externalShape = DefaultPathDrawer() as PathDrawer
+    var internalShape = DefaultPathDrawer() as PathDrawer
     var spacing = CGFloat(0)
     public var debugDescription: String {
         return "BasicButtonGroupSize"
     }
 }
 struct BasicButtonGroupSizeXxs: ButtonGroupSizeConfiguration {
-    var externalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
-    var internalShape = DefaultPathDrawer() as PathDrawer as PathDrawer
+    var externalShape = DefaultPathDrawer() as PathDrawer
+    var internalShape = DefaultPathDrawer() as PathDrawer
     var spacing = CGFloat(0)
     public var debugDescription: String {
         return "BasicButtonGroupSize"

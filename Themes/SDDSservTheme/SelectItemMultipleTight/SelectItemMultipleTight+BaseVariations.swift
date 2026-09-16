@@ -83,9 +83,9 @@ public struct SelectItemMultipleTightVariation {
 private extension SelectItemAppearance {
     static var base: SelectItemAppearance {
         var appearance = SelectItemAppearance()
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultClear, values: [
-            .init(states: [InteractiveState.focused], value: ColorToken.surfaceDefaultTransparentSecondary)
-        ]))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [
+            .init(states: [InteractiveState.focused], value: .color(.surfaceDefaultTransparentSecondary))
+        ])
         appearance.disabledAlpha = CGFloat(0.4)
         appearance.itemType = SelectItemType.multiple
         return appearance

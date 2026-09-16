@@ -44,8 +44,9 @@ public struct PaginationDotsHorizontalVariation {
 private extension PaginationDotsAppearance {
     static var base: PaginationDotsAppearance {
         var appearance = PaginationDotsAppearance()
-        appearance.dotBackgroundColor = ColorToken.surfaceDefaultTransparentSecondary
-        appearance.dotBackgroundColorActivated = ColorToken.surfaceDefaultSolidDefault
+        appearance.dotBackgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [
+            .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultSolidDefault))
+        ])
         return appearance
     }
 }

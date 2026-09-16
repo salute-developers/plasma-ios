@@ -22,19 +22,29 @@ public extension View {
             content: content
         )
         
-        return ZStack {
-            self
-            
-            if isPresented.wrappedValue {
-                color(useNativeBlackout: useNativeBlackout)
-                .ignoresSafeArea()
+        // AnyView обязателен. В iOS 26 SDK `.task(id:)` резолвится в перегрузку
+        // task(id:name:priority:file:line:), помеченную @_alwaysEmitIntoClient: её
+        // opaque type descriptor не экспортируется ни из SwiftUI.framework, ни из
+        // SDDSComponents (эмитится как private external). Если этот opaque-тип
+        // просачивается в публичный `some View`, приложение ссылается на descriptor
+        // снаружи модуля и падает линковка: "Undefined symbol: opaque type descriptor
+        // for ... View.task(id:name:priority:file:line:)". Стирание типа держит
+        // descriptor внутри модуля. Не убирать без проверки архива на Xcode 26.
+        return AnyView(
+            ZStack {
+                self
+                
+                if isPresented.wrappedValue {
+                    color(useNativeBlackout: useNativeBlackout)
+                    .ignoresSafeArea()
+                }
             }
-        }
-        .task(id: isPresented.wrappedValue) {
-            if isPresented.wrappedValue {
-                showModal(params: params)
+            .task(id: isPresented.wrappedValue) {
+                if isPresented.wrappedValue {
+                    showModal(params: params)
+                }
             }
-        }
+        )
     }
     
     private func color(useNativeBlackout: Bool) -> Color {

@@ -91,7 +91,7 @@ public struct SDDSEditable<IconContent: View>: View {
                             PlaceholderTextField(
                                 text: $text,
                                 isFocused: $isFocused,
-                                textColor: textColor.color(for: colorScheme, subtheme: subtheme).opacity(readonlyContentOpacity),
+                                textColor: textFillStyle.representativeColor(for: colorScheme, subtheme: subtheme).opacity(readonlyContentOpacity),
                                 textAlignment: textAlign,
                                 cursorColor: appearance.cursorColor.color(for: colorScheme, subtheme: subtheme),
                                 textTypography: typography,
@@ -131,7 +131,7 @@ public struct SDDSEditable<IconContent: View>: View {
                     .focused($isMultilineTextEditorFocused)
                     .font(Font(typography.uiFont))
                     .multilineTextAlignment(textAlign)
-                    .foregroundColor(textColor.color(for: colorScheme, subtheme: subtheme).opacity(readonlyContentOpacity))
+                    .foregroundColor(textFillStyle.representativeColor(for: colorScheme, subtheme: subtheme).opacity(readonlyContentOpacity))
                     .hideTextEditorScrollBackgroundIfAvailable()
                     .background(Color.clear)
                     .tint(appearance.cursorColor.color(for: colorScheme, subtheme: subtheme))
@@ -181,13 +181,13 @@ public struct SDDSEditable<IconContent: View>: View {
                     }
                 } label: {
                     iconContent
-                        .foregroundColor(iconColor.color(for: colorScheme, subtheme: subtheme).opacity(readonlyContentOpacity))
+                        .foregroundColor(iconFillStyle.representativeColor(for: colorScheme, subtheme: subtheme).opacity(readonlyContentOpacity))
                         .frame(width: iconWidth, height: iconWidth)
                 }
                 .buttonStyle(.plain)
             } else {
                 iconContent
-                    .foregroundColor(iconColor.color(for: colorScheme, subtheme: subtheme).opacity(readonlyContentOpacity))
+                    .foregroundColor(iconFillStyle.representativeColor(for: colorScheme, subtheme: subtheme).opacity(readonlyContentOpacity))
                     .frame(width: iconWidth, height: iconWidth)
                     .allowsHitTesting(false)
             }
@@ -282,12 +282,16 @@ public struct SDDSEditable<IconContent: View>: View {
         iconWidth > 0 && IconContent.self != EmptyView.self
     }
     
-    private var textColor: ColorToken {
-        readOnly ? appearance.textColorReadonly : appearance.textColorDefault
+    private var activeStates: Set<InteractiveState> {
+        readOnly ? Set([InteractiveState.readonly]) : Set<InteractiveState>()
     }
     
-    private var iconColor: ColorToken {
-        readOnly ? appearance.iconColorReadonly : appearance.iconColorDefault
+    private var textFillStyle: FillStyle {
+        appearance.textColor.resolvedValue(for: activeStates)
+    }
+    
+    private var iconFillStyle: FillStyle {
+        appearance.iconColor.resolvedValue(for: activeStates)
     }
 
     private var singleLineTextFieldIdentifier: String {

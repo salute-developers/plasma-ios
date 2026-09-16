@@ -1,0 +1,81 @@
+name: "Rebase develop onto main"
+
+# По процессу после вливания релизного PR в main ветка develop переводится на main через
+# rebase. Вручную это регулярно забывают, и develop уезжает от main. Воркфлоу делает это
+# автоматически после каждого push в main (релиз, hotfix).
+#
+# Rebase переписывает историю develop, поэтому пуш идёт с --force-with-lease: если кто-то
+# успел запушить в develop между checkout и push, пуш отклонится и джоба упадёт, а не затрёт
+# чужие коммиты. При конфликте rebase отменяется, джоба падает с инструкцией — конфликт
+# разрешает человек.
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: rebase-develop-onto-main
+  cancel-in-progress: false
+
+jobs:
+  rebase:
+    name: Rebase develop onto main
+    runs-on: ubuntu-latest
+    environment: sdds
+    permissions:
+      contents: write
+    env:
+      # PAT, а не github.token: пуш встроенным токеном не запускает CI на develop, а нам
+      # нужно, чтобы сборка/тесты после rebase прогнались.
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    steps:
+      - name: Checkout develop
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Configure git
+        run: |
+          # Локальный конфиг клона: глобальный конфиг раннера не трогаем.
+          git config user.email "salutedevs@gmail.com"
+          git config user.name "Salute iOS Team"
+
+      - name: Rebase develop onto main
+        id: rebase
+        run: |
+          git fetch origin main
+          if git merge-base --is-ancestor origin/main HEAD; then
+            echo "develop уже стоит на main, делать нечего"
+            echo "result=noop" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          BEFORE=$(git rev-parse HEAD)
+          if ! git rebase origin/main; then
+            git rebase --abort
+            echo "result=conflict" >> "$GITHUB_OUTPUT"
+            echo "::error::Конфликт при rebase develop на main. Сделай руками: git fetch origin && git checkout develop && git rebase origin/main, разреши конфликты и запушь с --force-with-lease."
+            exit 1
+          fi
+          echo "result=rebased" >> "$GITHUB_OUTPUT"
+          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
+          echo "after=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Push develop
+        if: steps.rebase.outputs.result == 'rebased'
+        run: git push --force-with-lease=develop:${{ steps.rebase.outputs.before }} origin HEAD:develop
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Rebase develop onto main"
+            echo "Результат: **${{ steps.rebase.outputs.result }}**"
+            if [ "${{ steps.rebase.outputs.result }}" = "rebased" ]; then
+              echo "develop: \`${{ steps.rebase.outputs.before }}\` → \`${{ steps.rebase.outputs.after }}\`"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

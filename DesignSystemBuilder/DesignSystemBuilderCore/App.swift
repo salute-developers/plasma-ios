@@ -164,10 +164,14 @@ public final class App {
     /// Пытается прочитать локальный `.sdds`-источник темы. Возвращает nil, если у
     /// темы не задан `sddsConfigPath` либо `.sdds` отсутствует/неполон.
     private func sddsThemeSource(themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration) -> SddsThemeSource? {
-        guard let relative = themeConfig.sddsConfigPath, !relative.isEmpty else {
+        guard let path = themeConfig.sddsConfigPath, !path.isEmpty else {
             return nil
         }
-        let configURL = repoRootURL.appending(path: relative)
+        // Путь из конфига — относительный от корня репо. Абсолютный приходит от
+        // `theme generate --sdds`, который запускается вне дерева сборки.
+        let configURL = path.hasPrefix("/")
+            ? URL(fileURLWithPath: path)
+            : repoRootURL.appending(path: path)
         // Базовая директория — родитель папки `.sdds`; относительно неё
         // резолвятся пути из config.json (`.sdds/<tenant>`, `.sdds/tenants/palette.json`).
         let baseDirectory = configURL.deletingLastPathComponent().deletingLastPathComponent()

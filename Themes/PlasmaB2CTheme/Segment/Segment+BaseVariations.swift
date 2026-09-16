@@ -88,7 +88,7 @@ public struct SegmentVariation {
 private extension SegmentAppearance {
     static var base: SegmentAppearance {
         var appearance = SegmentAppearance()
-        appearance.backgroundColor = ButtonColor(StatefulColor(defaultValue: ColorToken.surfaceDefaultTransparentSecondary, values: []))
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
         appearance.disabledAlpha = CGFloat(0)
         return appearance
     }

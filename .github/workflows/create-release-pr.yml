@@ -59,6 +59,17 @@ jobs:
           echo "Running changed-modules script..."
           scripts/changed-modules.sh "${{ env.FROM_TAG }}"
 
+      # Релизную ветку режем до бампа: она база и для bump-PR, и для релизного PR.
+      # Пушим ref напрямую из origin/develop, не трогая HEAD — дальше шаги считают
+      # changed-modules и changelog от того же HEAD, что и раньше.
+      - name: Create release branch
+        id: release_branch
+        run: |
+          BRANCH_NAME="release/${{ env.SAFE_DATE }}"
+          git push origin "origin/develop:refs/heads/$BRANCH_NAME"
+          echo "branch_name=$BRANCH_NAME" >> "$GITHUB_OUTPUT"
+          echo "Release branch is $BRANCH_NAME"
+
       - name: Create version bump branch
         id: bump_branch
         run: |
@@ -94,7 +105,7 @@ jobs:
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Create PR to develop
+      - name: Create PR to release branch
         if: steps.commit_bump.outputs.has_changes == 'true'
         run: |
           # Prepare PR body
@@ -103,14 +114,14 @@ jobs:
           gh pr create \
             --title "chore: Bump versions for changed modules" \
             --body "$PR_BODY" \
-            --base develop \
+            --base ${{ steps.release_branch.outputs.branch_name }} \
             --head ${{ steps.bump_branch.outputs.branch }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Skip PR to develop
+      - name: Skip PR to release branch
         if: steps.commit_bump.outputs.has_changes != 'true'
-        run: echo "No version changes detected, skipping PR to develop."
+        run: echo "No version changes detected, skipping version bump PR."
 
       - name: Build Changelog
         id: changelog
@@ -120,59 +131,41 @@ jobs:
           toTag: HEAD
 
       - name: Debug Changelog
+        env:
+          CHANGELOG: ${{ steps.changelog.outputs.changelog }}
         run: |
           echo "🔍 Changelog debug info:"
           echo "FROM_TAG: ${{ env.FROM_TAG }}"
           echo "TO_TAG: HEAD"
           echo "Changelog output:"
-          echo "${{ steps.changelog.outputs.changelog }}"
-          echo "Changelog length: $(echo "${{ steps.changelog.outputs.changelog }}" | wc -c)"
+          printf '%s\n' "$CHANGELOG"
+          echo "Changelog length: $(printf '%s\n' "$CHANGELOG" | wc -c)"
 
       - name: List pull request
         run: echo "pull_requests --> ${{ steps.changelog.outputs.pull_requests }}"
 
-      - name: Create release branch
-        id: release_branch
-        run: |
-          BRANCH_NAME="release/${{ env.SAFE_DATE }}"
-          git checkout -b "$BRANCH_NAME" origin/develop
-          git push origin "$BRANCH_NAME"
-          echo "branch_name=$BRANCH_NAME" >> "$GITHUB_OUTPUT"    
-
       - name: Create release PR
+        env:
+          CHANGELOG: ${{ steps.changelog.outputs.changelog }}
         run: |
-          changelog='${{ steps.changelog.outputs.changelog }}'
+          changelog="$CHANGELOG"
           
           # Проверяем, есть ли changelog
-          if [[ -n "$changelog" && "$changelog" != "" ]]; then
-            echo "✅ Changelog found, length: $(echo "$changelog" | wc -c)"
-            cat > pr_body.md << EOF
-          ## Release ${{ env.DATE }}
-          
-          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
-          
-          ## Changelog
-          
-          $changelog
-          
-          ---
-          *This PR was created automatically by GitHub Actions*
-          EOF
+          if [[ -n "$changelog" ]]; then
+            echo "✅ Changelog found, length: $(printf '%s\n' "$changelog" | wc -c)"
           else
             echo "⚠️ No changelog found"
-            cat > pr_body.md << EOF
-          ## Release ${{ env.DATE }}
-          
-          **Tag to publish release:** \`${{ env.NEW_TAG }}\`
-          
-          ## Changelog
-          
-          No changes found in this release.
-          
-          ---
-          *This PR was created automatically by GitHub Actions*
-          EOF
+            changelog="No changes found in this release."
           fi
+          
+          {
+            printf '## Release %s\n\n' "${{ env.DATE }}"
+            printf '**Tag to publish release:** `%s`\n\n' "${{ env.NEW_TAG }}"
+            printf '## Changelog\n\n'
+            printf '%s\n\n' "$changelog"
+            printf -- '---\n'
+            printf '*This PR was created automatically by GitHub Actions*\n'
+          } > pr_body.md
           
           gh pr create --base main --head ${{ steps.release_branch.outputs.branch_name }} --title "Release by ${{ env.DATE }}" --body-file pr_body.md
 

@@ -22,17 +22,17 @@ public extension GeneralAppearanceVariation<CollapsingNavigationBarInternalPage,
         var appearance = appearance
         appearance.size = size
         appearance.actionButtonAppearance = IconButton.s.secondary.appearance
-        appearance.actionEndColor = ColorToken.textDefaultPrimary
-        appearance.actionStartColor = ColorToken.textDefaultPrimary
+        appearance.actionEndColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.actionStartColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         appearance.backIcon = Asset.chevronLeft24.image
-        appearance.backIconColor = ColorToken.textDefaultPrimary
-        appearance.backgroundColor = ColorToken.surfaceDefaultClear
-        appearance.descriptionColor = ColorToken.textDefaultSecondary
+        appearance.backIconColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
+        appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultClear), values: [])
+        appearance.descriptionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [])
         appearance.descriptionTypography = CollapsingNavigationBarInternalPageTypography(default: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
         appearance.descriptionTypographyCollapsed = CollapsingNavigationBarInternalPageTypography(default: AdaptiveTypographyToken.bodyXsNormal.typography).asContainer
-        appearance.textColor = ColorToken.textDefaultPrimary
+        appearance.textColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         appearance.textTypography = CollapsingNavigationBarInternalPageTypography(default: AdaptiveTypographyToken.headerH5Normal.typography).asContainer
-        appearance.titleColor = ColorToken.textDefaultPrimary
+        appearance.titleColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [])
         appearance.titleTypography = CollapsingNavigationBarInternalPageTypography(default: AdaptiveTypographyToken.headerH2Normal.typography).asContainer
         appearance.titleTypographyCollapsed = CollapsingNavigationBarInternalPageTypography(default: AdaptiveTypographyToken.bodyMNormal.typography).asContainer
     

@@ -90,10 +90,10 @@ public struct TabsDefaultVariation {
 private extension TabsAppearance {
     static var base: TabsAppearance {
         var appearance = TabsAppearance()
-        appearance.disclosureColor = ButtonColor(StatefulColor(defaultValue: ColorToken.textDefaultPrimary, values: [
-            .init(states: [InteractiveState.hovered], value: ColorToken.textDefaultPrimaryHover),
-            .init(states: [InteractiveState.pressed], value: ColorToken.textDefaultPrimaryActive)
-        ]))
+        appearance.disclosureColor = StatefulFillStyle(defaultValue: .color(.textDefaultPrimary), values: [
+            .init(states: [InteractiveState.hovered], value: .color(.textDefaultPrimaryHover)),
+            .init(states: [InteractiveState.pressed], value: .color(.textDefaultPrimaryActive))
+        ])
         appearance.dividerAppearance = Divider.default.appearance
         appearance.indicatorColor = ColorToken.surfaceDefaultSolidDefault
         appearance.overflowNextIcon = Asset.disclosureRightOutline24.image

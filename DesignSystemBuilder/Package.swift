@@ -4,7 +4,12 @@ import PackageDescription
 // Единый CLI дизайн-системы: генерация тем + документационный бандл.
 // Раньше это были два бинаря (DesignSystemBuilder на xcodebuild и
 // Tools/SDDSDocsAggregator на SwiftPM); теперь один самодостаточный
-// исполняемый файл `dsbuilder` без внешнего фреймворка рядом.
+// исполняемый файл `dsbuilder-ios` без внешнего фреймворка рядом.
+//
+// Имя продукта — `dsbuilder-ios`, а не `dsbuilder`: последнее занято CLI
+// дизайн-системы из salute-developers/design-system-builder, который вызывает
+// этот бинарь как платформенный инструмент. Два `dsbuilder` в одном PATH
+// затирали бы друг друга.
 //
 // Xcode-проект в этой же директории остаётся: из него собираются
 // SDDSThemeCore.xcframework, SDDSTheme и SDDSDemo — SwiftPM XCFramework
@@ -13,7 +18,7 @@ let package = Package(
     name: "DesignSystemBuilder",
     platforms: [.macOS(.v13)],
     products: [
-        .executable(name: "dsbuilder", targets: ["DesignSystemBuilderCLI"])
+        .executable(name: "dsbuilder-ios", targets: ["DesignSystemBuilderCLI"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.7.0"),
