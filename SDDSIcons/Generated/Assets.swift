@@ -435,6 +435,18 @@ public enum Asset {
   public static let blankFill16 = ImageAsset(name: "BlankFill16")
   public static let blankFill24 = ImageAsset(name: "BlankFill24")
   public static let blankFill36 = ImageAsset(name: "BlankFill36")
+  public static let blankGenerateAltFill16 = ImageAsset(name: "BlankGenerateAltFill16")
+  public static let blankGenerateAltFill24 = ImageAsset(name: "BlankGenerateAltFill24")
+  public static let blankGenerateAltFill36 = ImageAsset(name: "BlankGenerateAltFill36")
+  public static let blankGenerateAltOutline16 = ImageAsset(name: "BlankGenerateAltOutline16")
+  public static let blankGenerateAltOutline24 = ImageAsset(name: "BlankGenerateAltOutline24")
+  public static let blankGenerateAltOutline36 = ImageAsset(name: "BlankGenerateAltOutline36")
+  public static let blankGenerateFill16 = ImageAsset(name: "BlankGenerateFill16")
+  public static let blankGenerateFill24 = ImageAsset(name: "BlankGenerateFill24")
+  public static let blankGenerateFill36 = ImageAsset(name: "BlankGenerateFill36")
+  public static let blankGenerateOutline16 = ImageAsset(name: "BlankGenerateOutline16")
+  public static let blankGenerateOutline24 = ImageAsset(name: "BlankGenerateOutline24")
+  public static let blankGenerateOutline36 = ImageAsset(name: "BlankGenerateOutline36")
   public static let blankJpgFill16 = ImageAsset(name: "BlankJpgFill16")
   public static let blankJpgFill24 = ImageAsset(name: "BlankJpgFill24")
   public static let blankJpgFill36 = ImageAsset(name: "BlankJpgFill36")
@@ -2349,6 +2361,12 @@ public enum Asset {
   public static let menu16 = ImageAsset(name: "Menu16")
   public static let menu24 = ImageAsset(name: "Menu24")
   public static let menu36 = ImageAsset(name: "Menu36")
+  public static let messageAddFill16 = ImageAsset(name: "MessageAddFill16")
+  public static let messageAddFill24 = ImageAsset(name: "MessageAddFill24")
+  public static let messageAddFill36 = ImageAsset(name: "MessageAddFill36")
+  public static let messageAddOutline16 = ImageAsset(name: "MessageAddOutline16")
+  public static let messageAddOutline24 = ImageAsset(name: "MessageAddOutline24")
+  public static let messageAddOutline36 = ImageAsset(name: "MessageAddOutline36")
   public static let messageAltFill16 = ImageAsset(name: "MessageAltFill16")
   public static let messageAltFill24 = ImageAsset(name: "MessageAltFill24")
   public static let messageAltFill36 = ImageAsset(name: "MessageAltFill36")
@@ -2964,6 +2982,12 @@ public enum Asset {
   public static let profileSquareOutline16 = ImageAsset(name: "ProfileSquareOutline16")
   public static let profileSquareOutline24 = ImageAsset(name: "ProfileSquareOutline24")
   public static let profileSquareOutline36 = ImageAsset(name: "ProfileSquareOutline36")
+  public static let profileUnpinFill16 = ImageAsset(name: "ProfileUnpinFill16")
+  public static let profileUnpinFill24 = ImageAsset(name: "ProfileUnpinFill24")
+  public static let profileUnpinFill36 = ImageAsset(name: "ProfileUnpinFill36")
+  public static let profileUnpinOutline16 = ImageAsset(name: "ProfileUnpinOutline16")
+  public static let profileUnpinOutline24 = ImageAsset(name: "ProfileUnpinOutline24")
+  public static let profileUnpinOutline36 = ImageAsset(name: "ProfileUnpinOutline36")
   public static let qrCode16 = ImageAsset(name: "QRCode16")
   public static let qrCode24 = ImageAsset(name: "QRCode24")
   public static let qrCode36 = ImageAsset(name: "QRCode36")
@@ -3321,6 +3345,12 @@ public enum Asset {
   public static let scissorsFill16 = ImageAsset(name: "ScissorsFill16")
   public static let scissorsFill24 = ImageAsset(name: "ScissorsFill24")
   public static let scissorsFill36 = ImageAsset(name: "ScissorsFill36")
+  public static let screenShareErrorFill16 = ImageAsset(name: "ScreenShareErrorFill16")
+  public static let screenShareErrorFill24 = ImageAsset(name: "ScreenShareErrorFill24")
+  public static let screenShareErrorFill36 = ImageAsset(name: "ScreenShareErrorFill36")
+  public static let screenShareErrorOutline16 = ImageAsset(name: "ScreenShareErrorOutline16")
+  public static let screenShareErrorOutline24 = ImageAsset(name: "ScreenShareErrorOutline24")
+  public static let screenShareErrorOutline36 = ImageAsset(name: "ScreenShareErrorOutline36")
   public static let screenSharePinFill16 = ImageAsset(name: "ScreenSharePinFill16")
   public static let screenSharePinFill24 = ImageAsset(name: "ScreenSharePinFill24")
   public static let screenSharePinFill36 = ImageAsset(name: "ScreenSharePinFill36")
@@ -3348,6 +3378,12 @@ public enum Asset {
   public static let search16 = ImageAsset(name: "Search16")
   public static let search24 = ImageAsset(name: "Search24")
   public static let search36 = ImageAsset(name: "Search36")
+  public static let searchAIFill16 = ImageAsset(name: "SearchAIFill16")
+  public static let searchAIFill24 = ImageAsset(name: "SearchAIFill24")
+  public static let searchAIFill36 = ImageAsset(name: "SearchAIFill36")
+  public static let searchAIOutline16 = ImageAsset(name: "SearchAIOutline16")
+  public static let searchAIOutline24 = ImageAsset(name: "SearchAIOutline24")
+  public static let searchAIOutline36 = ImageAsset(name: "SearchAIOutline36")
   public static let searchError16 = ImageAsset(name: "SearchError16")
   public static let searchError24 = ImageAsset(name: "SearchError24")
   public static let searchError36 = ImageAsset(name: "SearchError36")
@@ -3540,6 +3576,15 @@ public enum Asset {
   public static let spacingVertical16 = ImageAsset(name: "SpacingVertical16")
   public static let spacingVertical24 = ImageAsset(name: "SpacingVertical24")
   public static let spacingVertical36 = ImageAsset(name: "SpacingVertical36")
+  public static let speedHighOutline16 = ImageAsset(name: "SpeedHighOutline16")
+  public static let speedHighOutline24 = ImageAsset(name: "SpeedHighOutline24")
+  public static let speedHighOutline36 = ImageAsset(name: "SpeedHighOutline36")
+  public static let speedLowOutline16 = ImageAsset(name: "SpeedLowOutline16")
+  public static let speedLowOutline24 = ImageAsset(name: "SpeedLowOutline24")
+  public static let speedLowOutline36 = ImageAsset(name: "SpeedLowOutline36")
+  public static let speedMediumOutline16 = ImageAsset(name: "SpeedMediumOutline16")
+  public static let speedMediumOutline24 = ImageAsset(name: "SpeedMediumOutline24")
+  public static let speedMediumOutline36 = ImageAsset(name: "SpeedMediumOutline36")
   public static let speedometerFill16 = ImageAsset(name: "SpeedometerFill16")
   public static let speedometerFill24 = ImageAsset(name: "SpeedometerFill24")
   public static let speedometerFill36 = ImageAsset(name: "SpeedometerFill36")
@@ -3771,6 +3816,15 @@ public enum Asset {
   public static let text16 = ImageAsset(name: "Text16")
   public static let text24 = ImageAsset(name: "Text24")
   public static let text36 = ImageAsset(name: "Text36")
+  public static let textAlignCenterOutline16 = ImageAsset(name: "TextAlignCenterOutline16")
+  public static let textAlignCenterOutline24 = ImageAsset(name: "TextAlignCenterOutline24")
+  public static let textAlignCenterOutline36 = ImageAsset(name: "TextAlignCenterOutline36")
+  public static let textAlignLeftOutline16 = ImageAsset(name: "TextAlignLeftOutline16")
+  public static let textAlignLeftOutline24 = ImageAsset(name: "TextAlignLeftOutline24")
+  public static let textAlignLeftOutline36 = ImageAsset(name: "TextAlignLeftOutline36")
+  public static let textAlignRightOutline16 = ImageAsset(name: "TextAlignRightOutline16")
+  public static let textAlignRightOutline24 = ImageAsset(name: "TextAlignRightOutline24")
+  public static let textAlignRightOutline36 = ImageAsset(name: "TextAlignRightOutline36")
   public static let textUnderline16 = ImageAsset(name: "TextUnderline16")
   public static let textUnderline24 = ImageAsset(name: "TextUnderline24")
   public static let textUnderline36 = ImageAsset(name: "TextUnderline36")
@@ -4535,6 +4589,10 @@ public enum IconName: String, Codable, Hashable {
   case blankDocFill
   case blankDocOutline
   case blankFill
+  case blankGenerateAltFill
+  case blankGenerateAltOutline
+  case blankGenerateFill
+  case blankGenerateOutline
   case blankJpgFill
   case blankJpgOutline
   case blankOutline
@@ -5173,6 +5231,8 @@ public enum IconName: String, Codable, Hashable {
   case megaphoneOutline
   case mention
   case menu
+  case messageAddFill
+  case messageAddOutline
   case messageAltFill
   case messageAltOutline
   case messageAttentionFill
@@ -5378,6 +5438,8 @@ public enum IconName: String, Codable, Hashable {
   case profilePlusOutline
   case profileSquareFill
   case profileSquareOutline
+  case profileUnpinFill
+  case profileUnpinOutline
   case qrCode
   case queueDashFill
   case queueDashOutline
@@ -5497,6 +5559,8 @@ public enum IconName: String, Codable, Hashable {
   case scene3dFill
   case scene3dOutline
   case scissorsFill
+  case screenShareErrorFill
+  case screenShareErrorOutline
   case screenSharePinFill
   case screenSharePinOutline
   case screenShareUnpinFill
@@ -5506,6 +5570,8 @@ public enum IconName: String, Codable, Hashable {
   case sctivityFill
   case sctivityOutline
   case search
+  case searchAIFill
+  case searchAIOutline
   case searchError
   case searchFill
   case securityCameraFill
@@ -5570,6 +5636,9 @@ public enum IconName: String, Codable, Hashable {
   case space
   case spacingHorizontal
   case spacingVertical
+  case speedHighOutline
+  case speedLowOutline
+  case speedMediumOutline
   case speedometerFill
   case speedometerOutline
   case squareFill
@@ -5647,6 +5716,9 @@ public enum IconName: String, Codable, Hashable {
   case taskHorizOutline
   case telegramFill
   case text
+  case textAlignCenterOutline
+  case textAlignLeftOutline
+  case textAlignRightOutline
   case textUnderline
   case thermometerFill
   case thermometerOutline
@@ -5953,6 +6025,10 @@ extension IconName: CaseIterable {
     blankDocFill
     blankDocOutline
     blankFill
+    blankGenerateAltFill
+    blankGenerateAltOutline
+    blankGenerateFill
+    blankGenerateOutline
     blankJpgFill
     blankJpgOutline
     blankOutline
@@ -6591,6 +6667,8 @@ extension IconName: CaseIterable {
     megaphoneOutline
     mention
     menu
+    messageAddFill
+    messageAddOutline
     messageAltFill
     messageAltOutline
     messageAttentionFill
@@ -6796,6 +6874,8 @@ extension IconName: CaseIterable {
     profilePlusOutline
     profileSquareFill
     profileSquareOutline
+    profileUnpinFill
+    profileUnpinOutline
     qrCode
     queueDashFill
     queueDashOutline
@@ -6915,6 +6995,8 @@ extension IconName: CaseIterable {
     scene3dFill
     scene3dOutline
     scissorsFill
+    screenShareErrorFill
+    screenShareErrorOutline
     screenSharePinFill
     screenSharePinOutline
     screenShareUnpinFill
@@ -6924,6 +7006,8 @@ extension IconName: CaseIterable {
     sctivityFill
     sctivityOutline
     search
+    searchAIFill
+    searchAIOutline
     searchError
     searchFill
     securityCameraFill
@@ -6988,6 +7072,9 @@ extension IconName: CaseIterable {
     space
     spacingHorizontal
     spacingVertical
+    speedHighOutline
+    speedLowOutline
+    speedMediumOutline
     speedometerFill
     speedometerOutline
     squareFill
@@ -7065,6 +7152,9 @@ extension IconName: CaseIterable {
     taskHorizOutline
     telegramFill
     text
+    textAlignCenterOutline
+    textAlignLeftOutline
+    textAlignRightOutline
     textUnderline
     thermometerFill
     thermometerOutline
