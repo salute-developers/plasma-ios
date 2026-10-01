@@ -353,7 +353,13 @@ public final class App {
         // на несуществующий тип `<Component>Styles`.
         // Конфиг темы берётся per-theme из theme-converter; темы без компонента
         // дают 404 и просто пропускаются ниже.
+        // Состав ограничен индексом ДС, если он есть: иначе у дизайн-системы без компонента
+        // всё равно сгенерируется его binding-API — конфиг нашёлся бы в theme-converter.
+        let indexed = ComponentIndex.exists(themeConfig: themeConfig)
         for component in CodeGenerationComponent.allCases {
+            if indexed, ComponentIndex.entry(for: component, themeConfig: themeConfig) == nil {
+                continue
+            }
             guard let appearanceType = component.appearanceIfKnown,
                   let raw = rawComponentConfig(component: component, themeConfig: themeConfig),
                   let bindings = raw.bindings, !bindings.isEmpty else {
@@ -602,6 +608,13 @@ extension App {
 
     private func generateComponentVariations(themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration) -> [Command] {
         let index = ComponentIndex.entries(themeConfig: themeConfig)
+        // Дизайн-система без компонентов — штатная ситуация (их заводят отдельно), поэтому
+        // пустой индекс означает «генерировать нечего», а не «генерировать всё подряд».
+        // Отсутствие индекса — другое дело: там генератор работает по своему списку.
+        guard !index.isEmpty || !ComponentIndex.exists(themeConfig: themeConfig) else {
+            Logger.printText("🧩 \(themeConfig.name): the design system has no components — nothing to generate")
+            return []
+        }
         let components = index.isEmpty
             ? CodeGenerationComponent.supportedComponents
             : CodeGenerationComponent.supportedComponents.filter { ComponentIndex.entry(for: $0, themeConfig: themeConfig) != nil }

@@ -5,9 +5,13 @@
 - **`themes`** (подкоманда по умолчанию) — берёт схему темы и палитру, декодирует JSON и по
   Stencil-шаблонам генерирует токены (цвета, типографику, тени, формы, отступы, градиенты)
   и вариации компонентов в `Themes/<Name>Theme`.
-- **`theme generate --sdds <dir>`** — то же самое для одной темы, описанной локальной `.sdds`
-  (её наполняет `dsbuilder theme fetch`). JSON-конфиг не нужен: имя темы, выход и схема
-  компонентов выводятся из директории. Так команду вызывает делегат платформы.
+- **`theme generate --sdds <dir>`** — токены, шрифты и мета токенов для одной темы, описанной
+  локальной `.sdds` (её наполняет `dsbuilder theme fetch`). JSON-конфиг не нужен: имя темы,
+  выход и схема компонентов выводятся из директории. Так команду вызывает делегат платформы.
+- **`components generate --sdds <dir>`** — вариации компонентов, код binding-API и
+  `config-info-ios.json`. Отдельная команда: тема и компоненты независимы, как
+  `generateComposeTheme` и `generateComposeComponents` на Android. Прежний совмещённый проход
+  одной командой — `theme generate --with-components`; `themes` работает как раньше.
 - **`docs aggregate --sdds <dir>`** — собирает дерево документационного бандла целиком:
   сканирует `// @DocSample`, рендерит маркеры и раскладывает контент в `<sdds>/temp/docs`
   (см. [../docs/DOCS_BUNDLE.md](../docs/DOCS_BUNDLE.md)). Прежняя пара `docs extract` +
@@ -20,7 +24,8 @@
 ## Структура
 
 - `DesignSystemBuilderCLI/` — точка входа (`main.swift`) и подкоманды
-  (`GenerateThemes.swift`, `DocsCommands.swift`).
+  (`GenerateThemes.swift`, `ThemeCommands.swift`, `ComponentsCommands.swift`,
+  `DocsCommands.swift`); общие опции генерации — `SddsGeneration.swift`.
 - `DesignSystemBuilderCore/` — логика генерации тем (`App.swift`), Stencil-шаблоны.
 - `DocsAggregatorCore/` — сканер сэмплов, рендер маркеров и раскладка докбандла.
 - `SDDSThemeCore/` — рантайм-типы токенов (портируемое ядро) — см.
@@ -73,9 +78,11 @@
 
 ## Что откуда берётся
 
-- Состав компонентов темы и имена файлов конфигов — из индекса DS
-  `components/<theme>/meta.json` (theme-converter). Генерятся только вариации, которые
-  в теме есть; чего iOS не умеет — печатается в лог.
+- Состав компонентов темы и имена файлов конфигов — из индекса DS `meta.json`. Источник:
+  сначала локальный пакет `.sdds/components`, который выгружает DS Builder CLI, затем
+  theme-converter `components/<theme>/meta.json`. Генерятся только вариации, которые
+  в теме есть; чего iOS не умеет — печатается в лог. Директория `.sdds/components` без
+  `meta.json` — ошибка: это оборванная выгрузка, а не повод уйти в сеть.
 - Значения enum-свойств — из меты (`valueEnum`): case'ы, их id в конфиге и дефолт
   задаются аннотациями на самом enum'е, отдельного реестра в генераторе нет.
 - Имена `*Appearance`/`*SizeConfiguration` — из `.sdds/ios-api-meta.json` (см.
@@ -107,6 +114,9 @@ ruby ../scripts/run_tests.rb   # то же самое из корня репоз
 ## Грабли
 
 - Генерация тем перезаписывает `Themes/<Name>Theme/` — правь шаблоны/токены, не результат.
+- `ios-api-meta.json` нужна только генерации компонентов; `theme generate` работает без неё.
+- `--format` (swiftlint --fix) по умолчанию выключен: пакеты тем коммитятся как есть, и
+  включение переформатировало бы их целиком — это отдельная регенерация всех тем.
 - Полный конвейер «токены → пакеты тем → Xcode-проекты» — `scripts/generate_themes/` +
   `scripts/create_project/` (см. [../scripts/CLAUDE.md](../scripts/CLAUDE.md)).
 - Меняешь публичное appearance-API в `SDDSComponents`? Регенерируй темы и убедись, что
