@@ -74,7 +74,15 @@ struct Scanner {
                                    valueEnum: valueEnum(named: property.simpleType)))
                 continue
             }
-            // 2) Терминальный токен-тип — лист.
+            // 2) enum из дерева — лист-`value`: перечисление важнее эвристики по имени
+            // типа (`DrawerCloseIconPlacement` — это выбор варианта, а не иконка).
+            if let nested = table.types[property.simpleType], nested.kind == .enumeration,
+               TypeCategory.exactCategory(simpleType: property.simpleType) == nil {
+                params.append(leaf(property: property, id: id, category: "value", group: group, file: decl.file,
+                                   valueEnum: valueEnum(named: property.simpleType)))
+                continue
+            }
+            // 3) Терминальный токен-тип — лист.
             if let category = TypeCategory.terminalCategory(simpleType: property.simpleType) {
                 params.append(leaf(property: property, id: id, category: category, group: group, file: decl.file,
                                    valueEnum: valueEnum(named: property.simpleType)))
@@ -118,9 +126,12 @@ struct Scanner {
         (decl.kind == .structOrClass || decl.kind == .proto) && !decl.properties.isEmpty && !decl.ignored
     }
 
+    /// Категория `iconSize` в мету не попадает: наружу это обычный `dimension` с пометкой
+    /// `sizeFromIcon`, по которой генератор знает, что значение лежит в имени иконки.
     private func leaf(property: PropertyDecl, id: String, category: String, group: String, file: String, valueEnum: ValueEnum? = nil) -> Param {
-        Param(
-            type: category,
+        let sizeFromIcon = category == "iconSize"
+        return Param(
+            type: sizeFromIcon ? "dimension" : category,
             id: id,
             methodName: property.name,
             paramName: property.name,
@@ -137,6 +148,7 @@ struct Scanner {
             rawNumber: property.rawNumber ? true : nil,
             alwaysEmit: property.alwaysEmit ? true : nil,
             stateOnly: property.stateOnly ? true : nil,
+            sizeFromIcon: sizeFromIcon ? true : nil,
             explicitId: property.apiNameOverride != nil || property.copyOf != nil,
             sourceFile: file,
             sourceLine: property.line

@@ -14,6 +14,7 @@ public struct SelectItemAppearance {
     public var iconColor: StatefulFillStyle
     @ApiName("backgroundColor")
     public var backgroundColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     public var cellAppearance: CellAppearance
     public var checkboxAppearance: CheckboxAppearance?

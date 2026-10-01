@@ -15,6 +15,7 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     public var titleColor: StatefulFillStyle
     @ApiName("descriptionColor")
     public var subtitleColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     @available(*, deprecated, message: "use 'toggleColor' instead")
     public var color: StatefulFillStyle

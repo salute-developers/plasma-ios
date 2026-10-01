@@ -76,6 +76,11 @@ struct ApiMetaParam: Codable {
     let rawNumber: Bool?
     let alwaysEmit: Bool?
     let stateOnly: Bool?
+    /// Размер берётся из имени иконки конфига (`close.24` → 24), а не из числа.
+    let sizeFromIcon: Bool?
+
+    /// Свойство — размер иконки: тип обычный `dimension`, но значение лежит в имени иконки.
+    var isIconSize: Bool { sizeFromIcon == true }
 
     var isUnmapped: Bool { unmapped == true || methodName.isEmpty }
     var componentState: ComponentState? { state.flatMap(ComponentState.init(rawValue:)) }

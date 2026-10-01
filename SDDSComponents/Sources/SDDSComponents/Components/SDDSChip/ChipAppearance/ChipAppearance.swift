@@ -28,6 +28,7 @@ public struct ChipAppearance: Hashable {
     @ApiName("contentEndColor")
     public var buttonTintColor: StatefulFillStyle
     public var backgroundColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
 
     public init(

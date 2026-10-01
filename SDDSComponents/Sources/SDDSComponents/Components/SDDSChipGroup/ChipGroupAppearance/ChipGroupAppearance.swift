@@ -15,6 +15,7 @@ public struct ChipGroupAppearance {
     public var size: ChipGroupSizeConfiguration
     public var chipAppearance: ChipAppearance
     public var gap: ChipGroupGap
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     
     public init(

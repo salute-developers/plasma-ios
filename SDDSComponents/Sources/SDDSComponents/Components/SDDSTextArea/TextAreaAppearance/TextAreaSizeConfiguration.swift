@@ -20,6 +20,7 @@ public protocol TextAreaSizeConfiguration: CustomDebugStringConvertible {
     var captionBottomPadding: CGFloat { get }
     var optionalPadding: CGFloat { get }
     @ApiName("shape")
+    @ApiType(.shape)
     var cornerRadius: CGFloat { get }
     @ApiName("endContentPadding")
     var iconActionPadding: CGFloat { get }
