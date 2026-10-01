@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo(components: ["TextFieldClear"])
+@ApiInfo
 public struct TextFieldAppearance {
     let id = UUID()
     public var size: TextFieldSizeConfiguration

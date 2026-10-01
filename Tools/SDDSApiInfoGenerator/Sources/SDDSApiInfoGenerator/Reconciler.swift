@@ -141,7 +141,6 @@ struct Reconciler {
             qualifiedName: meta.qualifiedName,
             styleQualifiedName: meta.styleQualifiedName,
             sizeQualifiedName: meta.sizeQualifiedName,
-            components: meta.components,
             resolvedTypes: meta.resolvedTypes,
             stateEnum: meta.stateEnum,
             params: newParams

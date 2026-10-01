@@ -15,7 +15,7 @@ import SDDSApiInfo
     - backgroundColor: Цвет чипа.
     - disabledAlpha: Прозрачность чипа в выключенном состоянии.
  */
-@ApiInfo(components: ["EmbeddedChip"])
+@ApiInfo
 public struct ChipAppearance: Hashable {
     let id = UUID()
     public var size: ChipSizeConfiguration

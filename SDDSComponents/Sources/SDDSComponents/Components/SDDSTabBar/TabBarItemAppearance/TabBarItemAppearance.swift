@@ -15,7 +15,7 @@ import SDDSApiInfo
     - indicatorAppearance: Стиль индикатора
     - size: Конфигурация размеров и отступов элемента
  */
-@ApiInfo(components: ["TabBarItemClear", "TabBarItemSolid"])
+@ApiInfo
 public struct TabBarItemAppearance: Hashable {
     let id = UUID()
     @ApiName("labelColor")

@@ -27,16 +27,21 @@ struct Scanner {
             expand(typeName: name, group: "root", depth: 0, visited: &visited, into: &params)
 
             let resolved = Set(params.map { $0.valueQualifiedType }).sorted()
-            result.append(ComponentApiMeta(
-                componentName: componentName,
-                qualifiedName: "\(moduleName).\(name)",
-                styleQualifiedName: "\(moduleName).\(name)",
-                sizeQualifiedName: sizeType(of: decl).map { "\(moduleName).\($0)" },
-                components: decl.components.isEmpty ? nil : decl.components.sorted(),
-                resolvedTypes: resolved,
-                stateEnum: stateEnum(for: decl),
-                params: params
-            ))
+            // Запись на компонент, как в мете Android: один `*Appearance` может обслуживать
+            // несколько компонентов дизайн-системы (`ButtonAppearance` → BasicButton,
+            // IconButton, LinkButton), и каждый получает собственную запись с тем же API.
+            let componentNames = decl.components.isEmpty ? [componentName] : decl.components.sorted()
+            for component in componentNames {
+                result.append(ComponentApiMeta(
+                    componentName: component,
+                    qualifiedName: "\(moduleName).\(name)",
+                    styleQualifiedName: "\(moduleName).\(name)",
+                    sizeQualifiedName: sizeType(of: decl).map { "\(moduleName).\($0)" },
+                    resolvedTypes: resolved,
+                    stateEnum: stateEnum(for: decl),
+                    params: params
+                ))
+            }
         }
         return result.sorted { $0.componentName < $1.componentName }
     }

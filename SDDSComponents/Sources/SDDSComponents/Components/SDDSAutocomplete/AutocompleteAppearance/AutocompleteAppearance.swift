@@ -13,7 +13,7 @@ import SDDSApiInfo
     - textFieldAppearance: Настройки внешнего вида текстового поля
     - size: Конфигурация размеров компонента
  */
-@ApiInfo(components: ["AutocompleteNormal", "AutocompleteTight"])
+@ApiInfo
 public struct AutocompleteAppearance: Hashable {
     let id = UUID()
     public var dropdownAppearance: DropdownMenuAppearance

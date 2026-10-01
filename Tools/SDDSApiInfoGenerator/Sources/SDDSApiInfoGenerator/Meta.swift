@@ -10,12 +10,19 @@ struct ComponentApiMeta: Codable {
     let qualifiedName: String
     let styleQualifiedName: String
     let sizeQualifiedName: String?
-    /// Имена компонентов, генерящихся из этого типа (`@ApiInfo(components:)`).
-    /// Нужны генератору, чтобы по имени компонента найти общую запись меты.
-    let components: [String]?
     let resolvedTypes: [String]
     let stateEnum: StateEnum?
     let params: [Param]
+
+    /// Имя `*Appearance`-типа без суффикса: `SDDSComponents.ButtonAppearance` → `Button`.
+    ///
+    /// Props-модели и override'ы заведены на тип, а не на компонент: один `ButtonAppearance`
+    /// обслуживает BasicButton, IconButton и LinkButton, и `ButtonProps` у них общий.
+    var appearanceBaseName: String {
+        let simple = qualifiedName.components(separatedBy: ".").last ?? qualifiedName
+        let suffix = "Appearance"
+        return simple.hasSuffix(suffix) ? String(simple.dropLast(suffix.count)) : simple
+    }
 }
 
 /// enum кастомных состояний компонента.

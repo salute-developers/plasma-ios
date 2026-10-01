@@ -18,7 +18,7 @@ import SDDSApiInfo
  )
  ```
  */
-@ApiInfo(components: ["NotificationCompact", "NotificationLoose"])
+@ApiInfo
 public struct NotificationAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

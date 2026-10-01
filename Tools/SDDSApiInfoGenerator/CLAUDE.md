@@ -26,7 +26,7 @@ SwiftSyntax-тул: генератор **`ios-api-meta.json`** — iOS-анал�
 | Android | iOS |
 |---|---|
 | `@ApiInfo` (маркер билдера, **opt-in**) | `@ApiInfo` на `*Appearance` (или `@ApiComponent("<Name>")`) |
-| `@ApiInfo(components = [...])` | `@ApiInfo(components: ["<Component>", …])` — какие компоненты генерятся из этого типа (`BadgeClear`/`IconBadge` → `BadgeAppearance`) |
+| `@ApiInfo(components = [...])` | `@ApiInfo(components: ["<Component>", …])` — компоненты дизайн-системы, которые обслуживает этот тип (`ButtonAppearance` → BasicButton, IconButton, LinkButton). Каждый получает в мете собственную запись — как на Android, где запись соответствует компоненту, а не билдеру стиля. Если компонент один и называется как тип, список не нужен: хватает голого `@ApiInfo` |
 | `@ApiName(name)` (id ≠ имя функции) | `@ApiName("<id>")` на property |
 | `@ApiStateSet` (enum состояний) | `@ApiStateEnum("<EnumName>")` на struct |
 | skip-методы | `@ApiIgnore` на property/struct |

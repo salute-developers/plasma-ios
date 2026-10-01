@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo(components: ["AccordionClearActionEnd", "AccordionClearActionStart", "AccordionSolidActionEnd", "AccordionSolidActionStart"])
+@ApiInfo
 public struct AccordionAppearance: Hashable {
     let id = UUID()
     @ApiName("accordionItemStyle")

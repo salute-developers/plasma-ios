@@ -12,7 +12,7 @@ import SDDSApiInfo
     - tabBarItemAppearance: Стиль элементов таб-бара
     - size: Конфигурация размеров и отступов островка таб-бара
  */
-@ApiInfo(components: ["TabBar", "TabBarIslandClear", "TabBarIslandHasLabel", "TabBarIslandHasLabelClear"])
+@ApiInfo
 public struct TabBarIslandAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

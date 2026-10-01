@@ -156,11 +156,11 @@ var components: [ComponentApiMeta] = []
 var reports: [ReconcileReport] = []
 let reconciler = Reconciler()
 for meta in scanned {
-    if let fields = propsCatalog?.fields(forComponent: meta.componentName), !fields.isEmpty {
+    if let fields = propsCatalog?.fields(forComponent: meta.appearanceBaseName), !fields.isEmpty {
         let (reconciled, report) = reconciler.reconcile(
             meta: meta,
             fields: fields,
-            overrides: overrides[meta.componentName] ?? [:]
+            overrides: overrides[meta.appearanceBaseName] ?? overrides[meta.componentName] ?? [:]
         )
         components.append(reconciled)
         reports.append(report)

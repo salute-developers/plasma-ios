@@ -5,7 +5,6 @@ struct ApiMetaComponent: Codable {
     let qualifiedName: String
     let styleQualifiedName: String
     let sizeQualifiedName: String?
-    let components: [String]?
     let resolvedTypes: [String]
     let stateEnum: ApiMetaStateEnum?
     let params: [ApiMetaParam]
@@ -93,8 +92,6 @@ final class ApiMetaStore {
     static let shared = ApiMetaStore()
 
     private(set) var byComponent: [String: ApiMetaComponent] = [:]
-    /// Имя компонента → имя записи меты, из которой он генерится (`IconBadgeClear` → `Badge`).
-    private var ownerByComponent: [String: String] = [:]
     private(set) var isLoaded = false
 
     private init() {}
@@ -106,12 +103,6 @@ final class ApiMetaStore {
             return false
         }
         byComponent = Dictionary(components.map { ($0.componentName, $0) }, uniquingKeysWith: { first, _ in first })
-        ownerByComponent = Dictionary(
-            components.flatMap { entry in
-                (entry.components ?? []).map { ($0, entry.componentName) }
-            },
-            uniquingKeysWith: { first, _ in first }
-        )
         isLoaded = true
         return true
     }
@@ -120,10 +111,4 @@ final class ApiMetaStore {
         byComponent[name]
     }
 
-    /// Запись меты, из которой генерится компонент. Явно заявленная связка
-    /// (`@ApiInfo(components:)`) важнее одноимённой записи: компонент `TabBar`
-    /// генерится из `TabBarIslandAppearance`, хотя `TabBarAppearance` тоже есть.
-    func componentName(for component: String) -> String? {
-        ownerByComponent[component] ?? (byComponent[component] != nil ? component : nil)
-    }
 }

@@ -85,6 +85,10 @@
   `meta.json` — ошибка: это оборванная выгрузка, а не повод уйти в сеть.
 - Значения enum-свойств — из меты (`valueEnum`): case'ы, их id в конфиге и дефолт
   задаются аннотациями на самом enum'е, отдельного реестра в генераторе нет.
+- `ios-api-meta.json` описывает компоненты: одна запись — один компонент, как в
+  `uikit-compose-api-meta.json` на Android. Какая вариация генерации какому компоненту
+  принадлежит, объявлено в `CodeGenerationComponent+MetaComponent.swift` — из имён это
+  не выводится (`ListNumberedItem` принадлежит `ListItem`, а не `List`).
 - Имена `*Appearance`/`*SizeConfiguration` — из `.sdds/ios-api-meta.json` (см.
   [../Tools/SDDSApiInfoGenerator/CLAUDE.md](../Tools/SDDSApiInfoGenerator/CLAUDE.md)),
   руками в генераторе не дублируются.
