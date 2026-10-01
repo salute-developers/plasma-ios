@@ -7,6 +7,7 @@ public protocol SpinnerSizeConfiguration: SizeConfiguration, CustomDebugStringCo
     var size: CGFloat { get }
     var padding: CGFloat { get }
     @ApiAlwaysEmit
+    @ApiType(.float)
     var angle: CGFloat { get }
 }
 

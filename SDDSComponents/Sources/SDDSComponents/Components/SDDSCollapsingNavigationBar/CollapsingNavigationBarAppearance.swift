@@ -7,7 +7,7 @@ import SDDSApiInfo
  `CollapsingNavigationBarAppearance` определяет внешний вид компонента SDDSCollapsingNavigationBar.
  Кнопка «назад» отображается, когда задан `backIcon`.
  */
-@ApiInfo(components: ["CollapsingNavigationBarInternalPage", "CollapsingNavigationBarMainPage"])
+@ApiInfo
 public struct CollapsingNavigationBarAppearance {
     // Цвета
     public var backIconColor: StatefulFillStyle

@@ -7,6 +7,7 @@ import SDDSApiInfo
 public struct FormItemAppearance {
     public var size: FormItemSizeConfiguration
     @ApiRawNumber
+    @ApiType(.float)
     public var disableAlpha: CGFloat
 
     public var hintIcon: Image?

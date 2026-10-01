@@ -33,6 +33,7 @@ public struct SwitchAppearance: Hashable {
     public var toggleTrackBorderColor: StatefulFillStyle
     @ApiName("toggleThumbColor")
     public var toggleThumbColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     
     @available(*, deprecated, message: "Don't use it, public method will be removed")

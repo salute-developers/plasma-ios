@@ -28,6 +28,7 @@ public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
     public var titleColor: StatefulFillStyle
     @ApiName("descriptionColor")
     public var subtitleColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     
     public init(

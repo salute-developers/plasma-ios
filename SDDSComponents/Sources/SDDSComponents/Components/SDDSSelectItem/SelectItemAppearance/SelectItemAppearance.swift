@@ -8,12 +8,13 @@ public enum SelectItemType: String, CaseIterable {
     case multiple
 }
 
-@ApiInfo(components: ["SelectItemMultipleNormal", "SelectItemMultipleTight", "SelectItemSingleNormal", "SelectItemSingleTight"])
+@ApiInfo
 public struct SelectItemAppearance {
     public var itemType: SelectItemType
     public var iconColor: StatefulFillStyle
     @ApiName("backgroundColor")
     public var backgroundColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     public var cellAppearance: CellAppearance
     public var checkboxAppearance: CheckboxAppearance?

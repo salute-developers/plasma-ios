@@ -14,6 +14,7 @@ public protocol AccordionItemSizeConfiguration: SizeConfiguration, CustomDebugSt
     var contentPaddingBottom: CGFloat { get }
     var iconPadding: CGFloat { get }
     var iconPlacement: AccordionItemPlacement { get }
+    @ApiType(.float)
     var iconRotation: CGFloat { get }
 }
 

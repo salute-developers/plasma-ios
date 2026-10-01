@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo(components: ["TextAreaClear"])
+@ApiInfo
 public struct TextAreaAppearance {
     public var id = UUID()
     public var size: TextAreaSizeConfiguration

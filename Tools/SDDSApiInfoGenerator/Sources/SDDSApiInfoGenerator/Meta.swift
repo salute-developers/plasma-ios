@@ -10,12 +10,19 @@ struct ComponentApiMeta: Codable {
     let qualifiedName: String
     let styleQualifiedName: String
     let sizeQualifiedName: String?
-    /// Имена компонентов, генерящихся из этого типа (`@ApiInfo(components:)`).
-    /// Нужны генератору, чтобы по имени компонента найти общую запись меты.
-    let components: [String]?
     let resolvedTypes: [String]
     let stateEnum: StateEnum?
     let params: [Param]
+
+    /// Имя `*Appearance`-типа без суффикса: `SDDSComponents.ButtonAppearance` → `Button`.
+    ///
+    /// Props-модели и override'ы заведены на тип, а не на компонент: один `ButtonAppearance`
+    /// обслуживает BasicButton, IconButton и LinkButton, и `ButtonProps` у них общий.
+    var appearanceBaseName: String {
+        let simple = qualifiedName.components(separatedBy: ".").last ?? qualifiedName
+        let suffix = "Appearance"
+        return simple.hasSuffix(suffix) ? String(simple.dropLast(suffix.count)) : simple
+    }
 }
 
 /// enum кастомных состояний компонента.
@@ -46,7 +53,7 @@ struct ValueEnum: Codable {
 /// Одно настраиваемое свойство компонента.
 struct Param: Codable {
     /// Категория (`color`/`shape`/`typography`/`dimension`/`shadow`/`icon`/
-    /// `component_style`/`boolean`/`int`/`float`/`value`).
+    /// `component_style`/`boolean`/`int`/`float`/`value`) — словарь тот же, что у Android.
     let type: String
     let id: String
     /// Имя stored-property (iOS-аналог `methodName` билдера).
@@ -79,6 +86,10 @@ struct Param: Codable {
     let alwaysEmit: Bool?
     /// Значение берётся только из состояния `state`, без отката на базовое значение ключа.
     let stateOnly: Bool?
+    /// Размер берётся из имени иконки в конфиге (`close.24` → 24), а не из числового значения.
+    /// Тип при этом обычный `dimension`: отдельной категории для размера иконки нет — на Android
+    /// такого типа тоже нет, размер там несёт сам `ImageSource`.
+    let sizeFromIcon: Bool?
 
     var explicitId: Bool = false
 
@@ -89,19 +100,21 @@ struct Param: Codable {
     private enum CodingKeys: String, CodingKey {
         case type, id, methodName, paramName, paramQualifiedType, paramSimpleType, valueQualifiedType, group, unmapped
         case state, copyOf, valueEnum, fromVariation, markupValue, markupZero, rawNumber, alwaysEmit, stateOnly
+        case sizeFromIcon
     }
 
     init(type: String, id: String, methodName: String, paramName: String,
          paramQualifiedType: String, paramSimpleType: String, valueQualifiedType: String, group: String,
          unmapped: Bool? = nil, state: String? = nil, copyOf: String? = nil, valueEnum: ValueEnum? = nil, fromVariation: Bool? = nil, markupValue: String? = nil, markupZero: String? = nil,
-         rawNumber: Bool? = nil, alwaysEmit: Bool? = nil, stateOnly: Bool? = nil,
+         rawNumber: Bool? = nil, alwaysEmit: Bool? = nil, stateOnly: Bool? = nil, sizeFromIcon: Bool? = nil,
          explicitId: Bool = false, sourceFile: String? = nil, sourceLine: Int? = nil) {
         self.type = type; self.id = id; self.methodName = methodName; self.paramName = paramName
         self.paramQualifiedType = paramQualifiedType; self.paramSimpleType = paramSimpleType
         self.valueQualifiedType = valueQualifiedType; self.group = group
         self.unmapped = unmapped
         self.state = state; self.copyOf = copyOf; self.valueEnum = valueEnum; self.fromVariation = fromVariation; self.markupValue = markupValue; self.markupZero = markupZero
-        self.rawNumber = rawNumber; self.alwaysEmit = alwaysEmit; self.stateOnly = stateOnly; self.explicitId = explicitId
+        self.rawNumber = rawNumber; self.alwaysEmit = alwaysEmit; self.stateOnly = stateOnly
+        self.sizeFromIcon = sizeFromIcon; self.explicitId = explicitId
         self.sourceFile = sourceFile; self.sourceLine = sourceLine
     }
 }

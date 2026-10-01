@@ -383,9 +383,7 @@ extension CodeGenerationComponent {
     /// (`@ApiInfo(components:)` на `*Appearance`) и приезжает в `ios-api-meta.json`,
     /// потому что вывести её из данных нельзя: группировка DS другая — `badge` и
     /// `icon-badge` там разные компоненты, а на iOS это один `BadgeAppearance`.
-    var metaName: String {
-        ApiMetaStore.shared.componentName(for: rawValue) ?? rawValue
-    }
+    var metaName: String { metaComponentName }
 
     private var meta: ApiMetaComponent {
         guard let meta = ApiMetaStore.shared.component(metaName) else {

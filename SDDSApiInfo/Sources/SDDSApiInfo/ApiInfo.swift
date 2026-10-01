@@ -11,6 +11,9 @@ public enum ApiState {
 public enum ApiValueType {
     case value
     case color
+    /// Безразмерный коэффициент: альфа, множитель, угол. На Android это `float`,
+    /// на iOS тип тот же `CGFloat`, что и у размеров, поэтому различаем разметкой.
+    case float
     case shape
     case shadow
     case icon

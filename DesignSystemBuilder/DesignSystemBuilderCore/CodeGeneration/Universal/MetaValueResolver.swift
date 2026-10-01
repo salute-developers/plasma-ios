@@ -9,12 +9,16 @@ enum MetaValueResolver {
     private static let forcedEnumTypes: Set<String> = ["DrawerCloseIconPlacement"]
 
     static func category(for param: ApiMetaParam, declared: String?) -> String {
-        if param.type == "iconSize" { return param.type }
+        if param.isIconSize { return iconSizeCategory }
         if forcedEnumTypes.contains(param.paramSimpleType) { return "value" }
         if param.paramSimpleType == "TypographyConfiguration" { return "typography" }
         if param.paramSimpleType == "PathDrawer" { return "shape" }
         return declared.flatMap { configCategories.contains($0) ? $0 : nil } ?? param.type
     }
+
+    /// Внутренняя категория размера иконки. В мету не попадает (там `dimension`):
+    /// словарь типов совпадает с Android, где отдельного размера иконки нет вовсе.
+    static let iconSizeCategory = "iconSize"
 
     static let configCategories: Set<String> = ["color", "shape", "shadow", "icon", "typography", "component_style"]
 

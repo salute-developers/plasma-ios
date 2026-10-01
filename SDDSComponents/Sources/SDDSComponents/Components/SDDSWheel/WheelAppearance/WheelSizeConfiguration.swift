@@ -19,6 +19,7 @@ public protocol WheelSizeConfiguration: CustomDebugStringConvertible {
     @ApiName("controlIconDown")
     var controlIconDownSize: CGFloat { get }
     var selectionIndicatorEnabled: Bool { get }
+    @ApiType(.shape)
     var selectionIndicatorShape: CGFloat { get }
     var selectionIndicatorPaddingTop: CGFloat { get }
     var selectionIndicatorPaddingBottom: CGFloat { get }
