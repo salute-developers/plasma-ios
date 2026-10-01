@@ -75,10 +75,58 @@
 | 6 | Пер-платформенные таски для documentation | На iOS платформа одна (`swiftui`), `docs aggregate --sdds` уже платформенная | Не требуется |
 | 7 | Compose/View как две платформы | UIKit-вариации генерируются вместе со SwiftUI, отдельной платформы нет | Не требуется |
 | 8 | Резолюция `.sdds` вверх по дереву | У iOS путь приходит от CLI (`--sdds`), поиск вверх делает `dsbuilder` | Уже есть |
-| 9 | Именование info-файлов по платформе | У iOS `config-info-ios.json` + `config-info-tokens-ios.json` против Android `config-info-<platform>.json` + `theme-info-<platform>.json` — расходится конвенция имени «theme-info» | Отдельная задача, если нужен паритет имён |
+| 9 | Разделение меты между тасками | `config-info-ios.json` пишет `components generate`, `config-info-tokens-ios.json` — `theme generate` (см. часть 3) | **Делаем в этой задаче** |
+| 9a | Именование info-файлов по платформе | iOS `config-info-tokens-ios.json` против Android `theme-info-<platform>.json` — расходится само имя | Отдельная задача, если нужен паритет имён |
 | 10 | Несколько appearance у компонента, `platform` у properties (#80) | iOS-генератор исходит из одного `*Appearance` на компонент (DS делит basic/icon/link button — маппинг ручной) | Отдельная задача, оценить после перехода на `.sdds/components` |
 | 11 | ДС без компонентов (#84) | `components generate` на пустом наборе должен завершаться успешно и внятно, а не падать | Учесть в приёмке п.1 |
 | 12 | Гайды для потребителей CLI (#930) | README по iOS-флоу в dsbuilder (PR #73) + раздел про `components generate` после этой задачи | Дописать по завершении |
+
+## Часть 3. Спорные места разделения — как они решены на Android
+
+Три вопроса, которые возникают при разведении одного прохода на два, в Android-плагине уже
+закрыты; берём те же ответы.
+
+### Кто пишет мету
+
+Разделена по тому же шву, что и генерация: `GenerateComponentsTask` пишет components-info
+(`writeComposeOutputInfo`/`writeViewSystemOutputInfo` → `config-info-<platform>.json`), а
+`GenerateThemeTask` — theme-info (`ThemeInfoGenerator` → `theme-info-<platform>.json`).
+
+На iOS мета **уже лежит в двух файлах**, просто оба пишутся на шаге темы:
+
+| Файл iOS | Что описывает | Android-аналог | Куда уходит после разделения |
+|---|---|---|---|
+| `config-info-ios.json` | состав компонентов темы, `styleApi`, вариации | `config-info-<platform>.json` | в `components generate` |
+| `config-info-tokens-ios.json` | токены темы | `theme-info-<platform>.json` | остаётся в `theme generate` |
+
+Следствие: `docs aggregate` требует оба файла, поэтому после разделения бандл документации
+собирается только после обеих команд. Это совпадает с Android, где documentation-таска читает
+и `componentsInfoFile`, и `themeInfoFile`.
+
+### Зависят ли команды друг от друга
+
+Нет. `generateComposeTheme` и `generateComposeComponents` не связаны `dependsOn`; порядок задан
+только для документации — `documentationExtract` объявляет `mustRunAfter` обеих generation-тасок,
+то есть «если обе запускаются в одной сборке, иди после них», а не «запусти их».
+
+Зато у компонентной таски есть собственная входная зависимость: `GenerateComponentsTask.dependsOn
+(readUikitComposeApiMeta, readUikitApiMeta)` — ей нужна api-мета, теме нет. Прямой аналог на iOS:
+`ios-api-meta.json` (сейчас грузится в общем `App.run()` через `loadApiMeta()`) нужен именно
+`components generate`; `theme generate` должен работать без него.
+
+Для iOS отсюда следует: общий префикс (`PrepareDirectoriesCommand`, резолв источника `.sdds`,
+установка шрифтов) обе команды выполняют сами, не вызывая друг друга, — иначе `components
+generate` на чистой папке упадёт.
+
+### Как форматируется результат
+
+Не внутри генератора: `generateTask.finalizedBy(spotlessApply)` плюс `mustRunAfter` на всех
+`spotless*`-тасках (без этого Gradle ругается на implicit dependency). То есть форматирование —
+внешний шаг, навешенный на каждую generation-таску.
+
+Аналог на iOS: прогон `swiftformat`/`swiftlint --fix` по сгенерированному дереву после каждой
+из двух команд; Gradle-обвязки у нас нет, поэтому шаг вызывается самим инструментом или
+обёрткой в `scripts/`.
 
 ## Ключевой риск
 
