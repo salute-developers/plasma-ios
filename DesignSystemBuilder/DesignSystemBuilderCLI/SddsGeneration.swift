@@ -28,6 +28,12 @@ struct SddsGenerationOptions: ParsableArguments {
     @Option(name: .long, help: "Подмена семейства шрифтов: none | system-sf-pro.")
     var fontFamilyOverride: FontFamilyOption = .none
 
+    @Flag(name: .long,
+          help: """
+          Отформатировать сгенерированный код через swiftlint --fix (аналог spotlessApply           на Android). По умолчанию выключено: пакеты тем в репозитории коммитятся как есть,           и форматирование изменило бы их целиком.
+          """)
+    var format: Bool = false
+
     /// Ошибки аргументов отдают код 2 — их видно до того, как что-то сгенерировано.
     func validate() throws {
         let directory = Self.absoluteURL(sdds)
@@ -38,6 +44,23 @@ struct SddsGenerationOptions: ParsableArguments {
         }
         guard FileManager.default.fileExists(atPath: Self.configURL(sddsDirectory: directory).path()) else {
             throw ValidationError("config.json not found in \(directory.path()). Run `dsbuilder init` there first.")
+        }
+    }
+
+    /// Пакет компонентов из `.sdds` должен быть пригоден: директория без `meta.json` —
+    /// это оборванная выгрузка, и молча уходить за конфигами в сеть в таком случае нельзя.
+    func validateComponentsPackage() throws {
+        let componentsDirectory = Self.absoluteURL(sdds).appending(component: "components")
+        var isDirectory: ObjCBool = false
+        guard FileManager.default.fileExists(atPath: componentsDirectory.path(), isDirectory: &isDirectory),
+              isDirectory.boolValue else {
+            return
+        }
+        let meta = componentsDirectory.appending(component: "meta.json")
+        guard FileManager.default.fileExists(atPath: meta.path()) else {
+            throw CleanFailure(
+                "\(componentsDirectory.path()) has no meta.json. Run `dsbuilder components fetch` there again."
+            )
         }
     }
 
@@ -77,6 +100,10 @@ struct SddsGenerationOptions: ParsableArguments {
         ]
 
         App(config: config, sourcePath: #file, outputPath: outputURL.path(), scope: scope).run()
+
+        if format {
+            SwiftLintFormatter.fix(directory: outputURL)
+        }
     }
 
     /// Имя темы: явное, иначе из имени папки рядом с `.sdds` (`PlasmaHomeDSTheme` → `PlasmaHomeDS`).

@@ -29,6 +29,7 @@ extension Components {
         @OptionGroup var options: SddsGenerationOptions
 
         func run() throws {
+            try options.validateComponentsPackage()
             try options.run(scope: .components)
         }
     }
