@@ -25,6 +25,7 @@ public struct TextFieldAppearance {
     public var cursorColor: ColorToken
     @ApiName("disableAlpha")
     @ApiRawNumber
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     public var endContentColor: StatefulFillStyle
     public var endContentColorReadOnly: ColorToken?

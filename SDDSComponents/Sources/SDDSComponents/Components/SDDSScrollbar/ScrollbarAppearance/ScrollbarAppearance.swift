@@ -12,7 +12,7 @@ import SDDSApiInfo
     - trackColor: Цвет трека скроллбара.
     - shape: Форма скроллбара.
  */
-@ApiInfo
+@ApiInfo(components: ["ScrollBar"])
 public struct ScrollbarAppearance: Hashable {
     let id = UUID()
     public var size: ScrollbarSizeConfiguration

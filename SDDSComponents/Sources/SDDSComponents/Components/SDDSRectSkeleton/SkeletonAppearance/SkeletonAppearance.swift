@@ -27,6 +27,7 @@ public struct SkeletonAppearance {
     public var shape: PathDrawer
     public var gradient: StatefulFillStyle
     public var size: SkeletonSizeConfiguration
+    @ApiType(.float)
     public var duration: Double
     public var textTypography: TypographyConfiguration
     

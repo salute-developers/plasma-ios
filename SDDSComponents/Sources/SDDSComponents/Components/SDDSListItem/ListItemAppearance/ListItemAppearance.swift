@@ -15,6 +15,7 @@ public struct ListItemAppearance: Hashable {
     public var disclosureIconColor: StatefulFillStyle
     public var disclosureIcon: Image?
     public var backgroundColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     public var counterAppearance: CounterAppearance?
     public var size: ListItemSizeConfiguration

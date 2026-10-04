@@ -18,6 +18,10 @@ extension CodeGenerationComponent {
     }
 
     private static let componentByVariation: [CodeGenerationComponent: String] = [
+        .radiobox: "RadioBox",
+        .radioboxGroup: "RadioBoxGroup",
+        .checkbox: "CheckBox",
+        .checkboxGroup: "CheckBoxGroup",
         .textFieldClear: "TextField",
         .textAreaClear: "TextArea",
         .chipGroupDense: "ChipGroup",
@@ -51,7 +55,7 @@ extension CodeGenerationComponent {
         .listTight: "List",
         .listNumbered: "List",
         .listNumberedItem: "ListItem",
-        .scrollbar: "Scrollbar",
+        .scrollbar: "ScrollBar",
         .accordionItemSolidActionStart: "AccordionItem",
         .accordionItemSolidActionEnd: "AccordionItem",
         .accordionItemClearActionStart: "AccordionItem",
@@ -92,8 +96,8 @@ extension CodeGenerationComponent {
         .autocompleteTight: "Autocomplete",
         .collapsingNavigationBarInternalPage: "CollapsingNavigationBar",
         .collapsingNavigationBarMainPage: "CollapsingNavigationBar",
-        .toolbarHorizontal: "Toolbar",
-        .toolbarVertical: "Toolbar",
+        .toolbarHorizontal: "ToolBar",
+        .toolbarVertical: "ToolBar",
         .paginationDotsHorizontal: "PaginationDots",
         .paginationDotsVertical: "PaginationDots",
     ]

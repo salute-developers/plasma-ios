@@ -12,7 +12,7 @@ struct TextFieldProps: MergeableConfiguration, Codable {
     var captionPlacement: KeyValue<String>?
     var counterPlacement: KeyValue<String>?
     var captionStyle: KeyValue<String>?
-    var counterStyle: KeyValue<String>?
+    var counterStyle: TypographyKeyValue?
     var chipGroupStyle: KeyValue<String>?
     var valueColor: ColorKeyValue?
     var valueColorReadOnly: ColorKeyValue?
@@ -47,13 +47,13 @@ struct TextFieldProps: MergeableConfiguration, Codable {
     var startContentSize: KeyValue<Double>?
     var endContentSize: KeyValue<Double>?
     var valueStyle: KeyValue<String>?
-    var placeholderStyle: KeyValue<String>?
+    var placeholderStyle: TypographyKeyValue?
     var fieldType: KeyValue<String>?
     var indicatorSize: KeyValue<Double>?
     var labelColor: ColorKeyValue?
     var labelPadding: KeyValue<Double>?
     var labelStyle: KeyValue<String>?
-    var optionalStyle: KeyValue<String>?
+    var optionalStyle: TypographyKeyValue?
     var indicatorOffsetX: KeyValue<Double>?
     var indicatorOffsetY: KeyValue<Double>?
     var scrollBarThickness: KeyValue<Double>?

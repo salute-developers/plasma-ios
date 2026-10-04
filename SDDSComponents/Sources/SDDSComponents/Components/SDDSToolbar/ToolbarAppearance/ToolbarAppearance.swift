@@ -6,7 +6,7 @@ import SDDSApiInfo
 /**
  `ToolbarAppearance` определяет внешний вид компонента Toolbar.
  */
-@ApiInfo
+@ApiInfo(components: ["ToolBar"])
 public struct ToolbarAppearance: Hashable {
     private let id = UUID()
     

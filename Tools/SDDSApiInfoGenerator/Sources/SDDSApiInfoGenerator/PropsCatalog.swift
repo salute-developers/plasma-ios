@@ -51,6 +51,7 @@ final class PropsCatalog {
         case "ColorKeyValue": return "color"
         case "ShapeKeyValue": return "shape"
         case "ShadowKeyValue": return "shadow"
+        case "TypographyKeyValue": return "typography"
         case "ComponentStyleKeyValue": return "component_style"
         case "KeyValue":
             switch generic {

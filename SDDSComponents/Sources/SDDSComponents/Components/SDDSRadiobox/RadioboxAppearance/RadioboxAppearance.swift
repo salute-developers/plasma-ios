@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSApiInfo
 @_exported import SDDSThemeCore
 
-@ApiInfo
+@ApiInfo(components: ["RadioBox"])
 public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
     @available(*, deprecated, message: "use 'toggleColor' instead")

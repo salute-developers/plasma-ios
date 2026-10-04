@@ -3,7 +3,7 @@ import SDDSApiInfo
 import SwiftUI
 @_exported import SDDSThemeCore
 
-@ApiInfo
+@ApiInfo(components: ["CheckBox"])
 public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
     public var size: SelectionControlSizeConfiguration
