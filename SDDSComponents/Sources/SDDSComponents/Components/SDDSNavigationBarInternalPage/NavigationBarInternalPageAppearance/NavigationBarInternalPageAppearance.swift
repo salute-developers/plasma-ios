@@ -6,7 +6,7 @@ import SDDSApiInfo
 /**
  `NavigationBarInternalPageAppearance` определяет внешний вид компонента NavigationBarInternalPage.
  */
-@ApiInfo
+@ApiInfo(components: ["NavigationBar"])
 public struct NavigationBarInternalPageAppearance {
     // Цвета
     public var backIconColor: ColorToken

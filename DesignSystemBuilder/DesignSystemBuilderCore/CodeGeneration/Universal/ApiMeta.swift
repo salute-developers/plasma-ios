@@ -5,12 +5,31 @@ struct ApiMetaComponent: Codable {
     let qualifiedName: String
     let styleQualifiedName: String
     let sizeQualifiedName: String?
+    /// Реализации стиля, если у компонента их несколько (`TabBar` и `TabBarIsland`).
+    let styles: [ApiMetaStyle]?
     let resolvedTypes: [String]
     let stateEnum: ApiMetaStateEnum?
     let params: [ApiMetaParam]
 
     var appearanceType: String { Self.simpleName(qualifiedName) }
     var sizeType: String? { sizeQualifiedName.map(Self.simpleName) }
+
+    /// Запись, суженная до одной реализации: её `*Appearance`, её размеры и только те
+    /// свойства, которые в ней есть. Для компонента с одной реализацией — он сам.
+    func style(named name: String) -> ApiMetaComponent {
+        guard let styles, let style = styles.first(where: { $0.name == name }) else { return self }
+
+        return ApiMetaComponent(
+            componentName: componentName,
+            qualifiedName: style.styleQualifiedName,
+            styleQualifiedName: style.styleQualifiedName,
+            sizeQualifiedName: style.sizeQualifiedName,
+            styles: styles,
+            resolvedTypes: resolvedTypes,
+            stateEnum: stateEnum,
+            params: params.filter { $0.styles?.contains(name) ?? true }
+        )
+    }
 
     private static func simpleName(_ qualified: String) -> String {
         qualified.components(separatedBy: ".").last ?? qualified
@@ -56,6 +75,13 @@ struct ApiMetaStateEnum: Codable {
     }
 }
 
+/// Одна реализация стиля компонента.
+struct ApiMetaStyle: Codable {
+    let name: String
+    let styleQualifiedName: String
+    let sizeQualifiedName: String?
+}
+
 struct ApiMetaParam: Codable {
     let type: String
     let id: String
@@ -75,6 +101,8 @@ struct ApiMetaParam: Codable {
     let rawNumber: Bool?
     let alwaysEmit: Bool?
     let stateOnly: Bool?
+    /// Реализации, в которых есть это свойство; `nil` — есть во всех.
+    let styles: [String]?
     /// Размер берётся из имени иконки конфига (`close.24` → 24), а не из числа.
     let sizeFromIcon: Bool?
 

@@ -18,6 +18,10 @@ extension CodeGenerationComponent {
     }
 
     private static let componentByVariation: [CodeGenerationComponent: String] = [
+        .navigationBarInternalPage: "NavigationBar",
+        .navigationBarMainPage: "NavigationBar",
+        .tabBarIslandHasLabelSolid: "TabBar",
+        .tabBarIslandSolid: "TabBar",
         .radiobox: "RadioBox",
         .radioboxGroup: "RadioBoxGroup",
         .checkbox: "CheckBox",
@@ -66,11 +70,10 @@ extension CodeGenerationComponent {
         .accordionClearActionEnd: "Accordion",
         .tabBarItemSolid: "TabBarItem",
         .tabBarItemClear: "TabBarItem",
-        .tabBarIslandClear: "TabBarIsland",
-        .tabBarIslandHasLabelSolid: "TabBarIsland",
-        .tabBarIslandHasLabelClear: "TabBarIsland",
+        .tabBarIslandClear: "TabBar",
+        .tabBarIslandHasLabelClear: "TabBar",
         .tabBarSolid: "TabBar",
-        .tabBar: "TabBarIsland",
+        .tabBar: "TabBar",
         .tabBarClear: "TabBar",
         .tabBarHasLabelSolid: "TabBar",
         .tabBarHasLabelClear: "TabBar",
@@ -100,5 +103,26 @@ extension CodeGenerationComponent {
         .toolbarVertical: "ToolBar",
         .paginationDotsHorizontal: "PaginationDots",
         .paginationDotsVertical: "PaginationDots",
+    ]
+
+    /// Реализация стиля, по которой генерится вариация. Нужна там, где один компонент
+    /// дизайн-системы описан несколькими `*Appearance`: островной `TabBar` и внутренняя
+    /// страница `NavigationBar` — те же компоненты, но со своими типами и свойствами.
+    var metaStyleName: String {
+        Self.styleByVariation[self] ?? metaComponentName
+    }
+
+    private static let styleByVariation: [CodeGenerationComponent: String] = [
+        .tabBar: "TabBarIsland",
+        .tabBarIslandSolid: "TabBarIsland",
+        .tabBarIslandClear: "TabBarIsland",
+        .tabBarIslandHasLabelSolid: "TabBarIsland",
+        .tabBarIslandHasLabelClear: "TabBarIsland",
+        .tabBarClear: "TabBar",
+        .tabBarSolid: "TabBar",
+        .tabBarHasLabelSolid: "TabBar",
+        .tabBarHasLabelClear: "TabBar",
+        .navigationBarMainPage: "NavigationBarMainPage",
+        .navigationBarInternalPage: "NavigationBarInternalPage",
     ]
 }
