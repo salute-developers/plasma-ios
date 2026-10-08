@@ -21,7 +21,7 @@ struct UniversalAppearance: CodeGenerationAppearance {
 
     init(props: UniversalProps?, id: String?, component: CodeGenerationComponent) {
         var out: [String: String] = [:]
-        if let props, let meta = ApiMetaStore.shared.component(component.metaName)?.style(named: component.metaStyleName) {
+        if let props, let meta = ApiMetaStore.shared.component(component.metaName) {
             let rootParams = meta.params.filter { $0.isRoot && !$0.isUnmapped }
             for param in rootParams {
                 if let value = MetaValueResolver.resolve(
@@ -61,7 +61,7 @@ struct UniversalSize: CodeGenerationSize {
     init() {
         var out: [String: String] = [:]
         if let component = UniversalRuntime.currentComponent,
-           let meta = ApiMetaStore.shared.component(component.metaName)?.style(named: component.metaStyleName) {
+           let meta = ApiMetaStore.shared.component(component.metaName) {
             let sizeParams = meta.params.filter { $0.isSize && !$0.isUnmapped }
 
             for param in sizeParams {
@@ -107,7 +107,7 @@ struct UniversalSize: CodeGenerationSize {
     init(props: UniversalProps, id: String?, nullify: Bool) {
         var out: [String: String] = [:]
         if let component = UniversalRuntime.currentComponent,
-           let meta = ApiMetaStore.shared.component(component.metaName)?.style(named: component.metaStyleName) {
+           let meta = ApiMetaStore.shared.component(component.metaName) {
             let sizeParams = meta.params.filter { $0.isSize && !$0.isUnmapped }
 
             for param in sizeParams {

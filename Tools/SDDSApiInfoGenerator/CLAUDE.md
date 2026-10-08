@@ -31,7 +31,6 @@ SwiftSyntax-тул: генератор **`ios-api-meta.json`** — iOS-анал�
 | `@ApiStateSet` (enum состояний) | `@ApiStateEnum("<EnumName>")` на struct |
 | skip-методы | `@ApiIgnore` на property/struct |
 | — | `@ApiType(.iconSize)` — размер берётся из имени иконки (`close.24` → 24); в мете это `dimension` с флагом `sizeFromIcon`, отдельного типа наружу нет |
-| — | `@ApiType(.integer)` — целое значение дизайн-системы; Swift-тип может быть и `Double` |
 | — | `@ApiType(.float)` — безразмерный коэффициент (альфа, множитель, угол): на iOS это тот же `CGFloat`, что и размер, различаем разметкой |
 | — | `@ApiType(.shape)` — форма, заданная радиусом (`CGFloat`), а не рисовальщиком пути |
 | — | `@ApiName("<id>", state: .checked)` — значение из состояния конфига |

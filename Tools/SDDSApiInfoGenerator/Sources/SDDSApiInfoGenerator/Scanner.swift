@@ -39,76 +39,11 @@ struct Scanner {
                     sizeQualifiedName: sizeType(of: decl).map { "\(moduleName).\($0)" },
                     resolvedTypes: resolved,
                     stateEnum: stateEnum(for: decl),
-                    styles: nil,
                     params: params
                 ))
             }
         }
         return result.sorted { $0.componentName < $1.componentName }
-    }
-
-    /// Сливает записи с одним именем компонента: на iOS один компонент дизайн-системы
-    /// может быть описан несколькими `*Appearance` (`tab-bar` — обычный и островной).
-    ///
-    /// Параметры объединяются, и те, что есть не во всех реализациях, помечаются списком
-    /// реализаций — иначе генератор присвоил бы островному стилю чужие свойства.
-    static func merge(_ records: [ComponentApiMeta]) -> [ComponentApiMeta] {
-        var byComponent: [String: [ComponentApiMeta]] = [:]
-        var order: [String] = []
-        for record in records {
-            if byComponent[record.componentName] == nil { order.append(record.componentName) }
-            byComponent[record.componentName, default: []].append(record)
-        }
-
-        return order.compactMap { name -> ComponentApiMeta? in
-            guard let records = byComponent[name], let single = records.first else { return nil }
-            guard records.count > 1 else { return single }
-
-            // Основной стиль — одноимённый компоненту: от него берутся qualifiedName
-            // и sizeQualifiedName записи, чтобы обычный вариант оставался вариантом по умолчанию.
-            let group = records.sorted { lhs, _ in Self.styleName(of: lhs) == name }
-            guard let first = group.first else { return nil }
-            let styles = group.map { record in
-                Style(
-                    name: Self.styleName(of: record),
-                    styleQualifiedName: record.styleQualifiedName,
-                    sizeQualifiedName: record.sizeQualifiedName
-                )
-            }
-            let names = styles.map { $0.name }
-
-            var merged: [Param] = []
-            var seen: [String: Int] = [:]
-            for (index, record) in group.enumerated() {
-                for param in record.params {
-                    let key = "\(param.group)|\(param.id)|\(param.methodName)|\(param.state ?? "")"
-                    if let position = seen[key] {
-                        merged[position] = merged[position].adding(style: names[index], of: names)
-                        continue
-                    }
-                    seen[key] = merged.count
-                    merged.append(param.adding(style: names[index], of: names))
-                }
-            }
-
-            return ComponentApiMeta(
-                componentName: name,
-                qualifiedName: first.qualifiedName,
-                styleQualifiedName: first.styleQualifiedName,
-                sizeQualifiedName: first.sizeQualifiedName,
-                resolvedTypes: Set(group.flatMap { $0.resolvedTypes }).sorted(),
-                stateEnum: first.stateEnum,
-                styles: styles,
-                params: merged.map { $0.collapsingStyles(of: names) }
-            )
-        }
-    }
-
-    /// Имя реализации — её `*Appearance`-тип без суффикса.
-    private static func styleName(of record: ComponentApiMeta) -> String {
-        let simple = record.styleQualifiedName.components(separatedBy: ".").last ?? record.styleQualifiedName
-        let suffix = "Appearance"
-        return simple.hasSuffix(suffix) ? String(simple.dropLast(suffix.count)) : simple
     }
 
     private func sizeType(of decl: TypeDecl) -> String? {

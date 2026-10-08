@@ -386,7 +386,7 @@ extension CodeGenerationComponent {
     var metaName: String { metaComponentName }
 
     private var meta: ApiMetaComponent {
-        guard let meta = ApiMetaStore.shared.component(metaName)?.style(named: metaStyleName) else {
+        guard let meta = ApiMetaStore.shared.component(metaName) else {
             Logger.terminate("Component \(rawValue) is missing from ios-api-meta.json (looked up as \(metaName))")
         }
         return meta
@@ -400,7 +400,7 @@ extension CodeGenerationComponent {
     /// (мета config-info), где отсутствие записи в api-мете значит «пропустить»,
     /// а не «уронить генерацию».
     var appearanceIfKnown: String? {
-        ApiMetaStore.shared.component(metaName)?.style(named: metaStyleName).appearanceType
+        ApiMetaStore.shared.component(metaName)?.appearanceType
     }
 
     var sizeConfiguration: String {

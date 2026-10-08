@@ -88,10 +88,7 @@
 - `ios-api-meta.json` описывает компоненты: одна запись — один компонент, как в
   `uikit-compose-api-meta.json` на Android. Какая вариация генерации какому компоненту
   принадлежит, объявлено в `CodeGenerationComponent+MetaComponent.swift` — из имён это
-  не выводится (`ListNumberedItem` принадлежит `ListItem`, а не `List`). Если компонент
-  описан несколькими `*Appearance` (`tab-bar` — обычный и островной, `navigation-bar` —
-  главная и внутренняя страница), запись всё равно одна: реализации перечислены в `styles`,
-  а свойства, которые есть не во всех, помечены списком реализаций.
+  не выводится (`ListNumberedItem` принадлежит `ListItem`, а не `List`).
 - Имена `*Appearance`/`*SizeConfiguration` — из `.sdds/ios-api-meta.json` (см.
   [../Tools/SDDSApiInfoGenerator/CLAUDE.md](../Tools/SDDSApiInfoGenerator/CLAUDE.md)),
   руками в генераторе не дублируются.
@@ -99,8 +96,7 @@
   `@ApiInfo(components: [...])` на `*Appearance`, как на Android — и приезжает в мету.
   Вывести её из данных нельзя: группировка по типам iOS не совпадает с группировкой DS
   (у DS `basic-button`/`icon-button` — разные компоненты, на iOS это один
-  `ButtonAppearance`; и наоборот, один DS `tab-bar` — это `TabBarAppearance` и
-  `TabBarIslandAppearance`, и оба объявляют компонент `TabBar`).
+  `ButtonAppearance`; и наоборот, один DS `tab-bar` — это `TabBar` и `TabBarIsland`).
 
 ## Источник темы
 

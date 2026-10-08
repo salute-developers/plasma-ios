@@ -6,7 +6,7 @@ import SDDSApiInfo
 /**
  `NavigationBarMainPageAppearance` определяет внешний вид компонента NavigationBarMainPage.
  */
-@ApiInfo(components: ["NavigationBar"])
+@ApiInfo
 public struct NavigationBarMainPageAppearance {
     // Цвета
     public var actionStartColor: ColorToken

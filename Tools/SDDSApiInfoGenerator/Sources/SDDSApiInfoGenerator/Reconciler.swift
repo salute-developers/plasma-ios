@@ -69,8 +69,7 @@ struct Reconciler {
                     paramQualifiedType: match.paramQualifiedType, paramSimpleType: match.paramSimpleType,
                     valueQualifiedType: match.valueQualifiedType, group: match.group,
                     state: match.state, copyOf: match.copyOf, valueEnum: match.valueEnum, fromVariation: match.fromVariation, markupValue: match.markupValue, markupZero: match.markupZero,
-                    rawNumber: match.rawNumber, alwaysEmit: match.alwaysEmit, stateOnly: match.stateOnly,
-                    sizeFromIcon: match.sizeFromIcon, styles: match.styles
+                    rawNumber: match.rawNumber, alwaysEmit: match.alwaysEmit, stateOnly: match.stateOnly
                 ))
                 continue
             }
@@ -83,8 +82,7 @@ struct Reconciler {
                     paramQualifiedType: match.paramQualifiedType, paramSimpleType: match.paramSimpleType,
                     valueQualifiedType: match.valueQualifiedType, group: match.group,
                     state: match.state, copyOf: match.copyOf, valueEnum: match.valueEnum, fromVariation: match.fromVariation, markupValue: match.markupValue, markupZero: match.markupZero,
-                    rawNumber: match.rawNumber, alwaysEmit: match.alwaysEmit, stateOnly: match.stateOnly,
-                    sizeFromIcon: match.sizeFromIcon, styles: match.styles
+                    rawNumber: match.rawNumber, alwaysEmit: match.alwaysEmit, stateOnly: match.stateOnly
                 ))
                 continue
             }
@@ -107,9 +105,7 @@ struct Reconciler {
                     markupZero: match.markupZero,
                     rawNumber: match.rawNumber,
                     alwaysEmit: match.alwaysEmit,
-                    stateOnly: match.stateOnly,
-                    sizeFromIcon: match.sizeFromIcon,
-                    styles: match.styles
+                    stateOnly: match.stateOnly
                 ))
             } else {
                 gaps.append(field.id)
@@ -147,7 +143,6 @@ struct Reconciler {
             sizeQualifiedName: meta.sizeQualifiedName,
             resolvedTypes: meta.resolvedTypes,
             stateEnum: meta.stateEnum,
-            styles: meta.styles,
             params: newParams
         )
         let report = ReconcileReport(

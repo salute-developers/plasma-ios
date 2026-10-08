@@ -184,17 +184,13 @@ if wantReport && !reports.isEmpty {
 
 let encoder = JSONEncoder()
 encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
-// Сверка идёт по стилю (Props заведены на `*Appearance`), а слияние — после неё:
-// иначе объединённая запись не нашла бы Props ни одного из своих стилей.
-let merged = Scanner.merge(components)
-
-let data = try encoder.encode(merged)
+let data = try encoder.encode(components)
 
 if let outputPath {
     try data.write(to: URL(fileURLWithPath: outputPath))
-    FileHandle.standardError.write(Data("ok: \(merged.count) компонентов из \(fileCount) файлов → \(outputPath)\n".utf8))
+    FileHandle.standardError.write(Data("ok: \(components.count) компонентов из \(fileCount) файлов → \(outputPath)\n".utf8))
 } else {
     FileHandle.standardOutput.write(data)
     FileHandle.standardOutput.write(Data("\n".utf8))
-    FileHandle.standardError.write(Data("ok: \(merged.count) компонентов из \(fileCount) файлов\n".utf8))
+    FileHandle.standardError.write(Data("ok: \(components.count) компонентов из \(fileCount) файлов\n".utf8))
 }
