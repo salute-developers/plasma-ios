@@ -88,7 +88,7 @@ struct UniversalSize: CodeGenerationSize {
         case "boolean":
             return "Bool(false)"
         case "integer", "int":
-            return Int.defaultContext
+            return param.paramSimpleType == "Int" ? Int.defaultContext : CGFloat.defaultContext
         case "iconSize":
             return CGFloat.defaultContext
         case "shadow":
