@@ -181,7 +181,8 @@ struct TabBarHasLabelSolidLShadowAccentCounter: View {
                         extra: AnyView(counterForTest)
                     )
                 },
-                selectedIndex: $selectedIndex
+                selectedIndex: $selectedIndex,
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
