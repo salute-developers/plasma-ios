@@ -178,11 +178,6 @@ public extension EnvironmentValues {
         set { self[TabBarItemAppearance.self] = newValue }
     }
     
-    var tabBarIslandAppearance: TabBarIslandAppearance {
-        get { self[TabBarIslandAppearance.self] }
-        set { self[TabBarIslandAppearance.self] = newValue }
-    }
-    
     var tabBarAppearance: TabBarAppearance {
         get { self[TabBarAppearance.self] }
         set { self[TabBarAppearance.self] = newValue }

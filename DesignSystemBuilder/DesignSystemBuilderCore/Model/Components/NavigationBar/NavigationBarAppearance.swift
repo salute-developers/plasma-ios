@@ -1,8 +1,8 @@
 import Foundation
 
-struct NavigationBarInternalPageAppearance: CodeGenerationAppearance {
-    typealias Variation = NavigationBarInternalPageConfiguration.Variation
-    typealias Props = NavigationBarInternalPageProps
+struct NavigationBarAppearance: CodeGenerationAppearance {
+    typealias Variation = NavigationBarConfiguration.Variation
+    typealias Props = NavigationBarProps
     
     var backIconColor: String?
     var actionStartColor: String?
@@ -13,11 +13,11 @@ struct NavigationBarInternalPageAppearance: CodeGenerationAppearance {
     var shadow: String?
     var textTypography: String?
     
-    init(variation: NavigationBarInternalPageConfiguration.Variation, component: CodeGenerationComponent) {
+    init(variation: NavigationBarConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
     
-    init(props: NavigationBarInternalPageProps?, id: String? = nil, component: CodeGenerationComponent) {
+    init(props: NavigationBarProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return
         }

@@ -12,6 +12,10 @@ struct TabBarProps: MergeableConfiguration, Codable {
     var backgroundBlurColor: ColorKeyValue?
     var backgroundBlurRadius: KeyValue<Double>?
     var topShape: ShapeKeyValue?
+    // Островной вариант: своя нижняя форма и отступы от краёв экрана.
+    var bottomShape: ShapeKeyValue?
+    var paddingStart: KeyValue<Double>?
+    var paddingEnd: KeyValue<Double>?
     var shadow: ShadowKeyValue?
     var dividerThickness: KeyValue<Double>?
     var dividerColor: ColorKeyValue?

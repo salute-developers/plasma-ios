@@ -104,7 +104,7 @@ struct TabBarHasLabelSolidLAccentIndicator: View {
  PLASMA-T2185
  */
 struct TabBarIslandClearLShadowDefault: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
     
     var body: some View {
@@ -135,7 +135,7 @@ struct TabBarIslandClearLShadowDefault: View {
  PLASMA-T2186
  */
 struct TabBarIslandHasLabelClearLShadowSecondaryCounter: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
     
     var body: some View {
@@ -194,7 +194,7 @@ struct TabBarHasLabelSolidLShadowAccentCounter: View {
  PLASMA-T2188
  */
 struct TabBarIslandSolidLDefaultCounter: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
     
     var body: some View {
@@ -578,7 +578,7 @@ struct TabBarSolidLShadowRoundedDefault: View {
  TabBarIsland с indicator
  */
 struct TabBarIslandIndicator: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     @State var selectedIndex: Int = 1
     
     var body: some View {
@@ -602,7 +602,7 @@ struct TabBarIslandIndicator: View {
  TabBarIsland с customWeight
  */
 struct TabBarIslandCustomWeight: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     var customWidthEnabled: Bool = true
     @State var selectedIndex: Int = 1
     

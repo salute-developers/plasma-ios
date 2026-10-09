@@ -96,7 +96,8 @@
   `@ApiInfo(components: [...])` на `*Appearance`, как на Android — и приезжает в мету.
   Вывести её из данных нельзя: группировка по типам iOS не совпадает с группировкой DS
   (у DS `basic-button`/`icon-button` — разные компоненты, на iOS это один
-  `ButtonAppearance`; и наоборот, один DS `tab-bar` — это `TabBar` и `TabBarIsland`).
+  `ButtonAppearance`; `bottom-sheet` на iOS зовётся `BottomSheetAppearance`, а в мете
+  обязан называться `ModalBottomSheet`, как на Android).
 
 ## Источник темы
 

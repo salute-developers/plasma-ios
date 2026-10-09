@@ -11,6 +11,9 @@ struct TabBarSize: CodeGenerationSize {
     var contentPaddingBottom: String?
     var itemSpacing: String?
     var topShape: String?
+    var bottomShape: String?
+    var paddingStart: String?
+    var paddingEnd: String?
     var dividerThickness: String?
     
     init(variation: TabBarConfiguration.Variation, nullify: Bool = false) {
@@ -24,6 +27,9 @@ struct TabBarSize: CodeGenerationSize {
         self.contentPaddingBottom = CGFloatContextBuilder(props.contentPaddingBottom?.value, nullify: nullify).context
         self.itemSpacing = CGFloatContextBuilder(props.itemSpacing?.value, nullify: nullify).context
         self.topShape = PathDrawerContextBuilder(shape: props.topShape, nullify: nullify).context
+        self.bottomShape = PathDrawerContextBuilder(shape: props.bottomShape, nullify: nullify).context
+        self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
+        self.paddingEnd = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context
         self.dividerThickness = CGFloatContextBuilder(props.dividerThickness?.value, nullify: nullify).context
     }
     
@@ -34,6 +40,9 @@ struct TabBarSize: CodeGenerationSize {
         self.contentPaddingBottom = CGFloat.defaultContext
         self.itemSpacing = CGFloat.defaultContext
         self.topShape = PathDrawerContextBuilder.defaultContext
+        self.bottomShape = PathDrawerContextBuilder.defaultContext
+        self.paddingStart = CGFloat.defaultContext
+        self.paddingEnd = CGFloat.defaultContext
         self.dividerThickness = CGFloat.defaultContext
     }
 }

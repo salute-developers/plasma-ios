@@ -3,9 +3,12 @@ import SwiftUI
 @_exported import SDDSThemeCore
 
 /**
- `NavigationBarInternalPageSizeConfiguration` определяет размеры и отступы компонента NavigationBarInternalPage.
+ `NavigationBarSizeConfiguration` определяет размеры и отступы компонента NavigationBar.
+
+ Конфигурация общая для обоих типов панели: `backIconMargin` используется только
+ внутренней страницей, у главной кнопки «назад» нет.
  */
-public protocol NavigationBarInternalPageSizeConfiguration {
+public protocol NavigationBarSizeConfiguration {
     var backIconMargin: CGFloat { get }
     var paddingStart: CGFloat { get }
     var paddingEnd: CGFloat { get }
@@ -16,10 +19,15 @@ public protocol NavigationBarInternalPageSizeConfiguration {
     var bottomShape: PathDrawer { get }
 }
 
+/// Кнопка «назад» есть только у внутренней страницы — главная её отступ не задаёт.
+public extension NavigationBarSizeConfiguration {
+    var backIconMargin: CGFloat { 0 }
+}
+
 /**
- Базовая реализация `NavigationBarInternalPageSizeConfiguration`.
+ Базовая реализация `NavigationBarSizeConfiguration`.
  */
-public struct NavigationBarInternalPageSize: NavigationBarInternalPageSizeConfiguration {
+public struct NavigationBarSize: NavigationBarSizeConfiguration {
     public let backIconMargin: CGFloat
     public let paddingStart: CGFloat
     public let paddingEnd: CGFloat
@@ -28,7 +36,7 @@ public struct NavigationBarInternalPageSize: NavigationBarInternalPageSizeConfig
     public let horizontalSpacing: CGFloat
     public let textBlockTopMargin: CGFloat
     public let bottomShape: PathDrawer
-    
+
     public init(
         backIconMargin: CGFloat = 0,
         paddingStart: CGFloat = 0,
@@ -49,4 +57,3 @@ public struct NavigationBarInternalPageSize: NavigationBarInternalPageSizeConfig
         self.bottomShape = bottomShape
     }
 }
-

@@ -18,6 +18,9 @@ extension CodeGenerationComponent {
     }
 
     private static let componentByVariation: [CodeGenerationComponent: String] = [
+        .navigationBarMainPage: "NavigationBar",
+        .navigationBarInternalPage: "NavigationBar",
+        .bottomSheet: "ModalBottomSheet",
         .radiobox: "RadioBox",
         .radioboxGroup: "RadioBoxGroup",
         .checkbox: "CheckBox",
@@ -66,11 +69,12 @@ extension CodeGenerationComponent {
         .accordionClearActionEnd: "Accordion",
         .tabBarItemSolid: "TabBarItem",
         .tabBarItemClear: "TabBarItem",
-        .tabBarIslandClear: "TabBarIsland",
-        .tabBarIslandHasLabelSolid: "TabBarIsland",
-        .tabBarIslandHasLabelClear: "TabBarIsland",
+        .tabBarIslandSolid: "TabBar",
+        .tabBarIslandClear: "TabBar",
+        .tabBarIslandHasLabelSolid: "TabBar",
+        .tabBarIslandHasLabelClear: "TabBar",
         .tabBarSolid: "TabBar",
-        .tabBar: "TabBarIsland",
+        .tabBar: "TabBar",
         .tabBarClear: "TabBar",
         .tabBarHasLabelSolid: "TabBar",
         .tabBarHasLabelClear: "TabBar",

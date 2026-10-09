@@ -13,7 +13,7 @@ import SDDSThemeCore
 
  ## Окружение
 
- - `tabBarAppearance` / `tabBarIslandAppearance`: внешний вид соответствующего типа,
+ - `tabBarAppearance` / `tabBarAppearance`: внешний вид соответствующего типа,
    когда appearance не передан явно
  - `colorScheme`: Цветовая схема (light/dark)
  - `safeAreaInsets`: Отступы безопасной зоны устройства
@@ -114,7 +114,7 @@ public struct SDDSTabBar: View {
     // MARK: - Island
 
     @ViewBuilder
-    private func island(appearance: TabBarIslandAppearance) -> some View {
+    private func island(appearance: TabBarAppearance) -> some View {
         content(
             itemSpacing: appearance.size.itemSpacing,
             contentPaddingStart: appearance.size.contentPaddingStart,
@@ -131,7 +131,7 @@ public struct SDDSTabBar: View {
 
     /// Фон острова рисуется двумя половинами: у верхней своя форма, у нижней своя.
     @ViewBuilder
-    private func islandBackground(appearance: TabBarIslandAppearance) -> some View {
+    private func islandBackground(appearance: TabBarAppearance) -> some View {
         GeometryReader { geometry in
             ZStack(alignment: .top) {
                 background(color: appearance.backgroundColor)

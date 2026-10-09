@@ -1,9 +1,9 @@
 import Foundation
 import SwiftUI
 
-struct NavigationBarInternalPageSize: CodeGenerationSize {
-    typealias Variation = NavigationBarInternalPageConfiguration.Variation
-    typealias Props = NavigationBarInternalPageProps
+struct NavigationBarSize: CodeGenerationSize {
+    typealias Variation = NavigationBarConfiguration.Variation
+    typealias Props = NavigationBarProps
     
     var backIconMargin: String?
     var paddingStart: String?
@@ -14,11 +14,11 @@ struct NavigationBarInternalPageSize: CodeGenerationSize {
     var textBlockTopMargin: String?
     var bottomShape: String?
     
-    init(variation: NavigationBarInternalPageConfiguration.Variation, nullify: Bool = false) {
+    init(variation: NavigationBarConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
     
-    init(props: NavigationBarInternalPageProps, id: String? = nil, nullify: Bool = false) {
+    init(props: NavigationBarProps, id: String? = nil, nullify: Bool = false) {
         self.backIconMargin = CGFloatContextBuilder(props.backIconMargin?.value, nullify: nullify).context
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
         self.paddingEnd = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context

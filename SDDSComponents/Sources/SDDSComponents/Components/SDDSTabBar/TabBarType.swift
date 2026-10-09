@@ -8,5 +8,5 @@ public enum TabBarType {
     case bar(appearance: TabBarAppearance)
 
     /// Плавающий островной таб-бар с отступами от краёв
-    case island(appearance: TabBarIslandAppearance)
+    case island(appearance: TabBarAppearance)
 }

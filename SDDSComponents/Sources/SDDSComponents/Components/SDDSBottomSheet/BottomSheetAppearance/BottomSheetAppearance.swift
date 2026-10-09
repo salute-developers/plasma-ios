@@ -3,7 +3,7 @@ import Foundation
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo
+@ApiInfo(components: ["ModalBottomSheet"])
 public struct BottomSheetAppearance {
     @ApiValue("BottomSheetSizeDefault()", zero: "BottomSheetSizeDefault()")
     public var size: BottomSheetSizeConfiguration

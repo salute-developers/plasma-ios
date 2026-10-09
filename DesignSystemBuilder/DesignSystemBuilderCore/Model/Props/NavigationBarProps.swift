@@ -1,7 +1,7 @@
 import Foundation
 
-struct NavigationBarInternalPageProps: MergeableConfiguration, Codable {
-    typealias Props = NavigationBarInternalPageProps
+struct NavigationBarProps: MergeableConfiguration, Codable {
+    typealias Props = NavigationBarProps
     
     // Цвета
     var backIconColor: ColorKeyValue?

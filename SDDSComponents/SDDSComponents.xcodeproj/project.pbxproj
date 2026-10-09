@@ -139,8 +139,6 @@
 		8131E8502E4BAF8700FED868 /* TabBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E84C2E4BAF8700FED868 /* TabBarAppearance.swift */; };
 		8131E85D2E4C507700FED868 /* TabBarItemAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8582E4C507700FED868 /* TabBarItemAppearance.swift */; };
 		8131E85E2E4C507700FED868 /* TabBarItemSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8592E4C507700FED868 /* TabBarItemSizeConfiguration.swift */; };
-		8131E8612E4C507700FED868 /* TabBarIslandAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8562E4C507700FED868 /* TabBarIslandAppearance.swift */; };
-		8131E8622E4C507700FED868 /* TabBarIslandSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8572E4C507700FED868 /* TabBarIslandSizeConfiguration.swift */; };
 		8131E8672E4C556A00FED868 /* SDDSTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E8662E4C556A00FED868 /* SDDSTabBarItem.swift */; };
 		8131E86B2E4C6F8E00FED868 /* SDDSTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E86A2E4C6F8E00FED868 /* SDDSTabBar.swift */; };
 		8131E86D2E4C6F9800FED868 /* TabBarItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131E86C2E4C6F9800FED868 /* TabBarItemData.swift */; };
@@ -275,14 +273,12 @@
 		8183DDB72EB2AB3100610A9A /* NavigationBarTextPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA22EB2AB3100610A9A /* NavigationBarTextPlacement.swift */; };
 		8183DDB82EB2AB3100610A9A /* NavigationBarTextAlign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA12EB2AB3100610A9A /* NavigationBarTextAlign.swift */; };
 		8183DDB92EB2AB3100610A9A /* NavigationBarContentPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA02EB2AB3100610A9A /* NavigationBarContentPlacement.swift */; };
-		8183DDBA2EB2AB3100610A9A /* NavigationBarMainPageSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAB2EB2AB3100610A9A /* NavigationBarMainPageSizeConfiguration.swift */; };
-		8183DDBB2EB2AB3100610A9A /* NavigationBarInternalPageSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA72EB2AB3100610A9A /* NavigationBarInternalPageSizeConfiguration.swift */; };
 		8183DDBC2EB2AB3100610A9A /* WheelDividerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAF2EB2AB3100610A9A /* WheelDividerStyle.swift */; };
-		8183DDBD2EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA62EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift */; };
-		8183DDBE2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAA2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift */; };
 		8183DDBF2EB2AB3100610A9A /* WheelSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDB12EB2AB3100610A9A /* WheelSizeConfiguration.swift */; };
 		8183DDC02EB2AB3100610A9A /* WheelAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDAE2EB2AB3100610A9A /* WheelAppearance.swift */; };
 		8183DDC12EB2AB3100610A9A /* NavigationBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDA32EB2AB3100610A9A /* NavigationBarType.swift */; };
+		8183DD921EB2AB3100610A02 /* NavigationBarSizeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DD931EB2AB3100610A02 /* NavigationBarSizeConfiguration.swift */; };
+		8183DD901EB2AB3100610A01 /* NavigationBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DD911EB2AB3100610A01 /* NavigationBarAppearance.swift */; };
 		8183DDC22EB2AB3100610A9A /* WheelItemAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183DDB02EB2AB3100610A9A /* WheelItemAlignment.swift */; };
 		81881ADA2F99112B004AA1A0 /* CarouselCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81881AD92F99112B004AA1A0 /* CarouselCollectionView.swift */; };
 		81881AE42F991132004AA1A0 /* HostingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81881AE32F991132004AA1A0 /* HostingCarouselCell.swift */; };
@@ -654,8 +650,6 @@
 		812DB76F2D57B50A00D3F4A3 /* TextAreaClearPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaClearPreview.swift; sourceTree = "<group>"; };
 		8131E84C2E4BAF8700FED868 /* TabBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAppearance.swift; sourceTree = "<group>"; };
 		8131E84D2E4BAF8700FED868 /* TabBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSizeConfiguration.swift; sourceTree = "<group>"; };
-		8131E8562E4C507700FED868 /* TabBarIslandAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandAppearance.swift; sourceTree = "<group>"; };
-		8131E8572E4C507700FED868 /* TabBarIslandSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandSizeConfiguration.swift; sourceTree = "<group>"; };
 		8131E8582E4C507700FED868 /* TabBarItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemAppearance.swift; sourceTree = "<group>"; };
 		8131E8592E4C507700FED868 /* TabBarItemSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemSizeConfiguration.swift; sourceTree = "<group>"; };
 		8131E8662E4C556A00FED868 /* SDDSTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSTabBarItem.swift; sourceTree = "<group>"; };
@@ -799,11 +793,9 @@
 		8183DDA12EB2AB3100610A9A /* NavigationBarTextAlign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTextAlign.swift; sourceTree = "<group>"; };
 		8183DDA22EB2AB3100610A9A /* NavigationBarTextPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTextPlacement.swift; sourceTree = "<group>"; };
 		8183DDA32EB2AB3100610A9A /* NavigationBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarType.swift; sourceTree = "<group>"; };
+		8183DD931EB2AB3100610A02 /* NavigationBarSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarSizeConfiguration.swift; sourceTree = "<group>"; };
+		8183DD911EB2AB3100610A01 /* NavigationBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarAppearance.swift; sourceTree = "<group>"; };
 		8183DDA42EB2AB3100610A9A /* SDDSNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDDSNavigationBar.swift; sourceTree = "<group>"; };
-		8183DDA62EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageAppearance.swift; sourceTree = "<group>"; };
-		8183DDA72EB2AB3100610A9A /* NavigationBarInternalPageSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageSizeConfiguration.swift; sourceTree = "<group>"; };
-		8183DDAA2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageAppearance.swift; sourceTree = "<group>"; };
-		8183DDAB2EB2AB3100610A9A /* NavigationBarMainPageSizeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageSizeConfiguration.swift; sourceTree = "<group>"; };
 		8183DDAE2EB2AB3100610A9A /* WheelAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelAppearance.swift; sourceTree = "<group>"; };
 		8183DDAF2EB2AB3100610A9A /* WheelDividerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelDividerStyle.swift; sourceTree = "<group>"; };
 		8183DDB02EB2AB3100610A9A /* WheelItemAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelItemAlignment.swift; sourceTree = "<group>"; };
@@ -1120,10 +1112,6 @@
 		81E956B02ED7897200229705 /* LoaderSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSize.swift; sourceTree = "<group>"; };
 		81E956B22ED7897200229705 /* ModalAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAppearance.swift; sourceTree = "<group>"; };
 		81E956B32ED7897200229705 /* ModalSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSize.swift; sourceTree = "<group>"; };
-		81E956B52ED7897200229705 /* NavigationBarInternalPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageAppearance.swift; sourceTree = "<group>"; };
-		81E956B62ED7897200229705 /* NavigationBarInternalPageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageSize.swift; sourceTree = "<group>"; };
-		81E956B82ED7897200229705 /* NavigationBarMainPageAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageAppearance.swift; sourceTree = "<group>"; };
-		81E956B92ED7897200229705 /* NavigationBarMainPageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageSize.swift; sourceTree = "<group>"; };
 		81E956BB2ED7897200229705 /* NoteAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppearance.swift; sourceTree = "<group>"; };
 		81E956BC2ED7897200229705 /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		81E956BE2ED7897200229705 /* NoteCompactAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactAppearance.swift; sourceTree = "<group>"; };
@@ -1156,8 +1144,6 @@
 		81E956E62ED7897200229705 /* SwitchSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSize.swift; sourceTree = "<group>"; };
 		81E956E82ED7897200229705 /* TabBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAppearance.swift; sourceTree = "<group>"; };
 		81E956E92ED7897200229705 /* TabBarSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSize.swift; sourceTree = "<group>"; };
-		81E956EB2ED7897200229705 /* TabBarIslandAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandAppearance.swift; sourceTree = "<group>"; };
-		81E956EC2ED7897200229705 /* TabBarIslandSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandSize.swift; sourceTree = "<group>"; };
 		81E956EE2ED7897200229705 /* TabBarItemAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemAppearance.swift; sourceTree = "<group>"; };
 		81E956EF2ED7897200229705 /* TabBarItemSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemSize.swift; sourceTree = "<group>"; };
 		81E956F12ED7897200229705 /* TabItemDefaultAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemDefaultAppearance.swift; sourceTree = "<group>"; };
@@ -1203,8 +1189,6 @@
 		81E957232ED7897200229705 /* ListProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProps.swift; sourceTree = "<group>"; };
 		81E957242ED7897200229705 /* LoaderProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderProps.swift; sourceTree = "<group>"; };
 		81E957252ED7897200229705 /* ModalProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProps.swift; sourceTree = "<group>"; };
-		81E957262ED7897200229705 /* NavigationBarInternalPageProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarInternalPageProps.swift; sourceTree = "<group>"; };
-		81E957272ED7897200229705 /* NavigationBarMainPageProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarMainPageProps.swift; sourceTree = "<group>"; };
 		81E957282ED7897200229705 /* NoteCompactProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCompactProps.swift; sourceTree = "<group>"; };
 		81E957292ED7897200229705 /* NoteProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProps.swift; sourceTree = "<group>"; };
 		81E9572A2ED7897200229705 /* NotificationContentProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationContentProps.swift; sourceTree = "<group>"; };
@@ -1220,7 +1204,6 @@
 		81E957342ED7897200229705 /* SkeletonProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonProps.swift; sourceTree = "<group>"; };
 		81E957352ED7897200229705 /* SpinnerProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerProps.swift; sourceTree = "<group>"; };
 		81E957362ED7897200229705 /* SwitchProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchProps.swift; sourceTree = "<group>"; };
-		81E957372ED7897200229705 /* TabBarIslandProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIslandProps.swift; sourceTree = "<group>"; };
 		81E957382ED7897200229705 /* TabBarItemProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemProps.swift; sourceTree = "<group>"; };
 		81E957392ED7897200229705 /* TabBarProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarProps.swift; sourceTree = "<group>"; };
 		81E9573A2ED7897200229705 /* TabItemDefaultProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemDefaultProps.swift; sourceTree = "<group>"; };
@@ -1918,8 +1901,6 @@
 		8131E8652E4C50A200FED868 /* TabBarIslandAppearance */ = {
 			isa = PBXGroup;
 			children = (
-				8131E8562E4C507700FED868 /* TabBarIslandAppearance.swift */,
-				8131E8572E4C507700FED868 /* TabBarIslandSizeConfiguration.swift */,
 			);
 			path = TabBarIslandAppearance;
 			sourceTree = "<group>";
@@ -2445,6 +2426,8 @@
 				8183DDA12EB2AB3100610A9A /* NavigationBarTextAlign.swift */,
 				8183DDA22EB2AB3100610A9A /* NavigationBarTextPlacement.swift */,
 				8183DDA32EB2AB3100610A9A /* NavigationBarType.swift */,
+				8183DD931EB2AB3100610A02 /* NavigationBarSizeConfiguration.swift */,
+				8183DD911EB2AB3100610A01 /* NavigationBarAppearance.swift */,
 				8183DDA42EB2AB3100610A9A /* SDDSNavigationBar.swift */,
 			);
 			path = SDDSNavigationBar;
@@ -2453,8 +2436,6 @@
 		8183DDA82EB2AB3100610A9A /* NavigationBarInternalPageAppearance */ = {
 			isa = PBXGroup;
 			children = (
-				8183DDA62EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift */,
-				8183DDA72EB2AB3100610A9A /* NavigationBarInternalPageSizeConfiguration.swift */,
 			);
 			path = NavigationBarInternalPageAppearance;
 			sourceTree = "<group>";
@@ -2470,8 +2451,6 @@
 		8183DDAC2EB2AB3100610A9A /* NavigationBarMainPageAppearance */ = {
 			isa = PBXGroup;
 			children = (
-				8183DDAA2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift */,
-				8183DDAB2EB2AB3100610A9A /* NavigationBarMainPageSizeConfiguration.swift */,
 			);
 			path = NavigationBarMainPageAppearance;
 			sourceTree = "<group>";
@@ -3716,8 +3695,6 @@
 		81E956B72ED7897200229705 /* NavigationBarInternalPage */ = {
 			isa = PBXGroup;
 			children = (
-				81E956B52ED7897200229705 /* NavigationBarInternalPageAppearance.swift */,
-				81E956B62ED7897200229705 /* NavigationBarInternalPageSize.swift */,
 			);
 			path = NavigationBarInternalPage;
 			sourceTree = "<group>";
@@ -3725,8 +3702,6 @@
 		81E956BA2ED7897200229705 /* NavigationBarMainPage */ = {
 			isa = PBXGroup;
 			children = (
-				81E956B82ED7897200229705 /* NavigationBarMainPageAppearance.swift */,
-				81E956B92ED7897200229705 /* NavigationBarMainPageSize.swift */,
 			);
 			path = NavigationBarMainPage;
 			sourceTree = "<group>";
@@ -3878,8 +3853,6 @@
 		81E956ED2ED7897200229705 /* TabBarIsland */ = {
 			isa = PBXGroup;
 			children = (
-				81E956EB2ED7897200229705 /* TabBarIslandAppearance.swift */,
-				81E956EC2ED7897200229705 /* TabBarIslandSize.swift */,
 			);
 			path = TabBarIsland;
 			sourceTree = "<group>";
@@ -4063,8 +4036,6 @@
 				81E957232ED7897200229705 /* ListProps.swift */,
 				81E957242ED7897200229705 /* LoaderProps.swift */,
 				81E957252ED7897200229705 /* ModalProps.swift */,
-				81E957262ED7897200229705 /* NavigationBarInternalPageProps.swift */,
-				81E957272ED7897200229705 /* NavigationBarMainPageProps.swift */,
 				81E957282ED7897200229705 /* NoteCompactProps.swift */,
 				81E957292ED7897200229705 /* NoteProps.swift */,
 				81E9572A2ED7897200229705 /* NotificationContentProps.swift */,
@@ -4080,7 +4051,6 @@
 				81E957342ED7897200229705 /* SkeletonProps.swift */,
 				81E957352ED7897200229705 /* SpinnerProps.swift */,
 				81E957362ED7897200229705 /* SwitchProps.swift */,
-				81E957372ED7897200229705 /* TabBarIslandProps.swift */,
 				81E957382ED7897200229705 /* TabBarItemProps.swift */,
 				81E957392ED7897200229705 /* TabBarProps.swift */,
 				81E9573A2ED7897200229705 /* TabItemDefaultProps.swift */,
@@ -4885,11 +4855,7 @@
 				8183DDB72EB2AB3100610A9A /* NavigationBarTextPlacement.swift in Sources */,
 				8183DDB82EB2AB3100610A9A /* NavigationBarTextAlign.swift in Sources */,
 				8183DDB92EB2AB3100610A9A /* NavigationBarContentPlacement.swift in Sources */,
-				8183DDBA2EB2AB3100610A9A /* NavigationBarMainPageSizeConfiguration.swift in Sources */,
-				8183DDBB2EB2AB3100610A9A /* NavigationBarInternalPageSizeConfiguration.swift in Sources */,
 				8183DDBC2EB2AB3100610A9A /* WheelDividerStyle.swift in Sources */,
-				8183DDBD2EB2AB3100610A9A /* NavigationBarInternalPageAppearance.swift in Sources */,
-				8183DDBE2EB2AB3100610A9A /* NavigationBarMainPageAppearance.swift in Sources */,
 				81E9C1B52ED79000229705 /* CollapsingNavigationBarAppearance.swift in Sources */,
 				81E32B162FBF37DD000AEA10 /* FormItemLayout.swift in Sources */,
 				81E32B172FBF37DD000AEA10 /* SDDSFormItem.swift in Sources */,
@@ -4906,6 +4872,8 @@
 				8183DDBF2EB2AB3100610A9A /* WheelSizeConfiguration.swift in Sources */,
 				8183DDC02EB2AB3100610A9A /* WheelAppearance.swift in Sources */,
 				8183DDC12EB2AB3100610A9A /* NavigationBarType.swift in Sources */,
+				8183DD921EB2AB3100610A02 /* NavigationBarSizeConfiguration.swift in Sources */,
+				8183DD901EB2AB3100610A01 /* NavigationBarAppearance.swift in Sources */,
 				8183DDC22EB2AB3100610A9A /* WheelItemAlignment.swift in Sources */,
 				81763B1A2D6DFB3B00904D4A /* OneSizeTypography.swift in Sources */,
 				81A079012DA3FB0F00260DC9 /* ScrollView+ScrollbarModifier.swift in Sources */,
@@ -5124,8 +5092,6 @@
 				812DB7422D57B43900D3F4A3 /* TextAreaSizeConfiguration.swift in Sources */,
 				8131E85D2E4C507700FED868 /* TabBarItemAppearance.swift in Sources */,
 				8131E85E2E4C507700FED868 /* TabBarItemSizeConfiguration.swift in Sources */,
-				8131E8612E4C507700FED868 /* TabBarIslandAppearance.swift in Sources */,
-				8131E8622E4C507700FED868 /* TabBarIslandSizeConfiguration.swift in Sources */,
 				812DB7512D57B44100D3F4A3 /* TextFieldSizeConfiguration.swift in Sources */,
 				812DB73A2D57B43900D3F4A3 /* TextAreaClear.swift in Sources */,
 				81685C292CFF884B00278446 /* SwitchAccessibility.swift in Sources */,
