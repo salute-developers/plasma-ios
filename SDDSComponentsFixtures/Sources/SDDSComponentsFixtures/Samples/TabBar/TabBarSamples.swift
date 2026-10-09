@@ -14,7 +14,7 @@ struct SDDSTabBar_Simple: View {
         return SDDSTabBar(
             items: items,
             selectedIndex: $selectedIndex,
-            appearance: TabBar.l.appearance
+            type: .bar(appearance: TabBar.l.appearance)
         )
     }
 }

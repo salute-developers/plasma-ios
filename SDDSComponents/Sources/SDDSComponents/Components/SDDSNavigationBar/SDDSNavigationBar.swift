@@ -23,8 +23,7 @@ import SwiftUI
  
  ## Окружение
  
- - `navigationBarMainPageAppearance`: Настройки внешнего вида для главной страницы
- - `navigationBarInternalPageAppearance`: Настройки внешнего вида для внутренней страницы
+ - `navigationBarAppearance`: Настройки внешнего вида панели
  
  ## Пример использования
  
@@ -139,7 +138,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
     // MARK: - Main Page
     
     @ViewBuilder
-    private func mainPageNavigation(appearance: NavigationBarMainPageAppearance) -> some View {
+    private func mainPageNavigation(appearance: NavigationBarAppearance) -> some View {
         VStack(spacing: appearance.size.textBlockTopMargin) {
             if textPlacement == .bottom {
                 // Actions сверху
@@ -174,7 +173,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
     // MARK: - Internal Page
     
     @ViewBuilder
-    private func internalPageNavigation(appearance: NavigationBarInternalPageAppearance) -> some View {
+    private func internalPageNavigation(appearance: NavigationBarAppearance) -> some View {
         VStack(spacing: appearance.size.textBlockTopMargin) {
             if textPlacement == .bottom {
                 // Actions сверху (с back button)
@@ -256,7 +255,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
     private func titleContent(
         textColor: ColorToken,
         textTypography: TypographyConfiguration,
-        size: NavigationBarMainPageSizeConfiguration,
+        size: NavigationBarSizeConfiguration,
         actionStartColor: ColorToken,
         actionEndColor: ColorToken
     ) -> some View {
@@ -277,7 +276,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
     private func titleContentWithInlineContent(
         textColor: ColorToken,
         textTypography: TypographyConfiguration,
-        size: NavigationBarMainPageSizeConfiguration,
+        size: NavigationBarSizeConfiguration,
         actionStartColor: ColorToken,
         actionEndColor: ColorToken
     ) -> some View {
@@ -298,51 +297,6 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
         }
     }
     
-    @ViewBuilder
-    private func titleContent(
-        textColor: ColorToken,
-        textTypography: TypographyConfiguration,
-        size: NavigationBarInternalPageSizeConfiguration,
-        actionStartColor: ColorToken,
-        actionEndColor: ColorToken
-    ) -> some View {
-        HStack(spacing: 8) {
-            if let icon = icon {
-                icon
-                    .renderingMode(.template)
-                    .foregroundColor(currentColor(for: textColor))
-            }
-            
-            Text(title)
-                .typography(textTypography.typography(with: size) ?? .undefined)
-                .foregroundColor(currentColor(for: textColor))
-        }
-    }
-    
-    @ViewBuilder
-    private func titleContentWithInlineContent(
-        textColor: ColorToken,
-        textTypography: TypographyConfiguration,
-        size: NavigationBarInternalPageSizeConfiguration,
-        actionStartColor: ColorToken,
-        actionEndColor: ColorToken
-    ) -> some View {
-        HStack(spacing: 8) {
-            if let icon = icon {
-                icon
-                    .renderingMode(.template)
-                    .foregroundColor(currentColor(for: textColor))
-            }
-            
-            Text(title)
-                .typography(textTypography.typography(with: size) ?? .undefined)
-                .foregroundColor(currentColor(for: textColor))
-            
-            content()
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
-        }
-    }
     
     // MARK: - Inline Layouts
     
@@ -350,7 +304,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
     private func inlineLayout(
         textColor: ColorToken,
         textTypography: TypographyConfiguration,
-        size: NavigationBarMainPageSizeConfiguration,
+        size: NavigationBarSizeConfiguration,
         actionStartColor: ColorToken,
         actionEndColor: ColorToken
     ) -> some View {
@@ -424,7 +378,7 @@ public struct SDDSNavigationBar<ActionStart: View, ActionEnd: View, Content: Vie
     private func inlineLayoutWithBackButton(
         textColor: ColorToken,
         textTypography: TypographyConfiguration,
-        size: NavigationBarInternalPageSizeConfiguration,
+        size: NavigationBarSizeConfiguration,
         actionStartColor: ColorToken,
         actionEndColor: ColorToken,
         backIcon: Image?,

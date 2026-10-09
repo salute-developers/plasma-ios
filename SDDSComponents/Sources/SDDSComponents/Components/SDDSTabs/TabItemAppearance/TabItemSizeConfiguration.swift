@@ -23,6 +23,7 @@ import SwiftUI
     - counterOffsetY: Смещение счетчика по Y
  */
 public protocol TabItemSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
+    @ApiType(.float)
     var disableAlpha: CGFloat { get }
     var minHeight: CGFloat { get }
     var startContentSize: CGFloat { get }

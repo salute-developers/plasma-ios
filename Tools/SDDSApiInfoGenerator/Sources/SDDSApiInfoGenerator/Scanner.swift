@@ -27,16 +27,21 @@ struct Scanner {
             expand(typeName: name, group: "root", depth: 0, visited: &visited, into: &params)
 
             let resolved = Set(params.map { $0.valueQualifiedType }).sorted()
-            result.append(ComponentApiMeta(
-                componentName: componentName,
-                qualifiedName: "\(moduleName).\(name)",
-                styleQualifiedName: "\(moduleName).\(name)",
-                sizeQualifiedName: sizeType(of: decl).map { "\(moduleName).\($0)" },
-                components: decl.components.isEmpty ? nil : decl.components.sorted(),
-                resolvedTypes: resolved,
-                stateEnum: stateEnum(for: decl),
-                params: params
-            ))
+            // Запись на компонент, как в мете Android: один `*Appearance` может обслуживать
+            // несколько компонентов дизайн-системы (`ButtonAppearance` → BasicButton,
+            // IconButton, LinkButton), и каждый получает собственную запись с тем же API.
+            let componentNames = decl.components.isEmpty ? [componentName] : decl.components.sorted()
+            for component in componentNames {
+                result.append(ComponentApiMeta(
+                    componentName: component,
+                    qualifiedName: "\(moduleName).\(name)",
+                    styleQualifiedName: "\(moduleName).\(name)",
+                    sizeQualifiedName: sizeType(of: decl).map { "\(moduleName).\($0)" },
+                    resolvedTypes: resolved,
+                    stateEnum: stateEnum(for: decl),
+                    params: params
+                ))
+            }
         }
         return result.sorted { $0.componentName < $1.componentName }
     }
@@ -74,7 +79,15 @@ struct Scanner {
                                    valueEnum: valueEnum(named: property.simpleType)))
                 continue
             }
-            // 2) Терминальный токен-тип — лист.
+            // 2) enum из дерева — лист-`value`: перечисление важнее эвристики по имени
+            // типа (`DrawerCloseIconPlacement` — это выбор варианта, а не иконка).
+            if let nested = table.types[property.simpleType], nested.kind == .enumeration,
+               TypeCategory.exactCategory(simpleType: property.simpleType) == nil {
+                params.append(leaf(property: property, id: id, category: "value", group: group, file: decl.file,
+                                   valueEnum: valueEnum(named: property.simpleType)))
+                continue
+            }
+            // 3) Терминальный токен-тип — лист.
             if let category = TypeCategory.terminalCategory(simpleType: property.simpleType) {
                 params.append(leaf(property: property, id: id, category: category, group: group, file: decl.file,
                                    valueEnum: valueEnum(named: property.simpleType)))
@@ -118,10 +131,17 @@ struct Scanner {
         (decl.kind == .structOrClass || decl.kind == .proto) && !decl.properties.isEmpty && !decl.ignored
     }
 
+    /// Категория `iconSize` в мету не попадает: наружу это обычный `dimension` с пометкой
+    /// `sizeFromIconId`, по которой генератор знает, что значение лежит в имени иконки.
+    ///
+    /// Id у такого свойства собственный — имя самого свойства, а не размеченного им ключа
+    /// конфига: ключ уже занят иконкой, а свойство компонента в базе уникально по имени
+    /// и несёт ровно один тип.
     private func leaf(property: PropertyDecl, id: String, category: String, group: String, file: String, valueEnum: ValueEnum? = nil) -> Param {
-        Param(
-            type: category,
-            id: id,
+        let sizeFromIcon = category == "iconSize"
+        return Param(
+            type: sizeFromIcon ? "dimension" : category,
+            id: sizeFromIcon ? property.name : id,
             methodName: property.name,
             paramName: property.name,
             paramQualifiedType: property.qualifiedType,
@@ -137,6 +157,7 @@ struct Scanner {
             rawNumber: property.rawNumber ? true : nil,
             alwaysEmit: property.alwaysEmit ? true : nil,
             stateOnly: property.stateOnly ? true : nil,
+            sizeFromIconId: sizeFromIcon ? id : nil,
             explicitId: property.apiNameOverride != nil || property.copyOf != nil,
             sourceFile: file,
             sourceLine: property.line
@@ -155,12 +176,22 @@ struct Scanner {
     }
 
     private func stateEnum(for decl: TypeDecl) -> StateEnum? {
-        guard let enumName = decl.stateEnumName,
-              let enumDecl = table.types[enumName], enumDecl.kind == .enumeration else { return nil }
+        if let enumName = decl.stateEnumName,
+           let enumDecl = table.types[enumName], enumDecl.kind == .enumeration {
+            return StateEnum(
+                qualifiedName: "\(moduleName).\(enumName)",
+                simpleName: enumName,
+                values: enumDecl.enumCases.map {
+                    StateEnum.Value(name: $0.name, configName: $0.id.isEmpty ? SyntaxSupport.configStateName($0.name) : $0.id)
+                }
+            )
+        }
+        // Состояния, размеченные перечислением, — отдельного Swift-типа у них нет.
+        guard !decl.states.isEmpty else { return nil }
         return StateEnum(
-            qualifiedName: "\(moduleName).\(enumName)",
-            simpleName: enumName,
-            values: enumDecl.enumCases.map { StateEnum.Value(name: $0.name) }
+            qualifiedName: nil,
+            simpleName: nil,
+            values: decl.states.sorted().map { StateEnum.Value(name: $0, configName: $0) }
         )
     }
 }

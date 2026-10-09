@@ -5,9 +5,9 @@ import SDDSThemeCore
 import SDDSIcons
 
 
-public extension GeneralAppearanceVariation<NavigationBarInternalPage, NavigationBarInternalPageAppearance, NavigationBarInternalPageVariation.Default> {
+public extension GeneralAppearanceVariation<NavigationBarInternalPage, NavigationBarAppearance, NavigationBarInternalPageVariation.Default> {
     
-    var `default`: ComponentAppearanceVariation<NavigationBarInternalPage, NavigationBarInternalPageAppearance> {
+    var `default`: ComponentAppearanceVariation<NavigationBarInternalPage, NavigationBarAppearance> {
         var size =  NavigationBarInternalPageAnySize(size: appearance.size)
         size.backIconMargin = CGFloat(4.0)
         size.horizontalSpacing = CGFloat(8.0)
@@ -46,7 +46,7 @@ public extension GeneralAppearanceVariation<NavigationBarInternalPage, Navigatio
 }
 
 
-public extension ComponentAppearanceVariation<NavigationBarInternalPage, NavigationBarInternalPageAppearance> {
+public extension ComponentAppearanceVariation<NavigationBarInternalPage, NavigationBarAppearance> {
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -58,7 +58,7 @@ public extension ComponentAppearanceVariation<NavigationBarInternalPage, Navigat
     }
 }
 
-private extension NavigationBarInternalPageAppearance {
+private extension NavigationBarAppearance {
     
 }
 

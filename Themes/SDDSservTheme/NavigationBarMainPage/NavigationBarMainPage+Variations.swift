@@ -5,9 +5,9 @@ import SDDSThemeCore
 import SDDSIcons
 
 
-public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.Hasbackground> {
+public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.Hasbackground> {
     
-    var hasBackground: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.Hasbackground> {
+    var hasBackground: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.Hasbackground> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -20,7 +20,7 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
         )
     }
     
-    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance> {
+    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
         size.bottomShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
 
@@ -33,7 +33,7 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
         )
     }
     
-    var shadow: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.HasbackgroundShadow> {
+    var shadow: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.HasbackgroundShadow> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -58,9 +58,9 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
     
 }
 
-public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.HasbackgroundRounded> {
+public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.HasbackgroundRounded> {
     
-    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance> {
+    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
         size.bottomShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
 
@@ -85,9 +85,9 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
     
 }
 
-public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.HasbackgroundShadow> {
+public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.HasbackgroundShadow> {
     
-    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance> {
+    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
         size.bottomShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
 
@@ -100,7 +100,7 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
         )
     }
     
-    var shadow: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.HasbackgroundShadow> {
+    var shadow: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.HasbackgroundShadow> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -125,9 +125,9 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
     
 }
 
-public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.HasbackgroundShadowRounded> {
+public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.HasbackgroundShadowRounded> {
     
-    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance> {
+    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
         size.bottomShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
 
@@ -152,9 +152,9 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
     
 }
 
-public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.Nobackground> {
+public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.Nobackground> {
     
-    var noBackground: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.Nobackground> {
+    var noBackground: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.Nobackground> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -167,7 +167,7 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
         )
     }
     
-    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance> {
+    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
         size.bottomShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
 
@@ -192,9 +192,9 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
     
 }
 
-public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.NobackgroundRounded> {
+public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.NobackgroundRounded> {
     
-    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance> {
+    var rounded: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance> {
         var size =  NavigationBarMainPageAnySize(size: appearance.size)
         size.bottomShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundL.cornerRadius) as PathDrawer
 
@@ -220,7 +220,7 @@ public extension GeneralAppearanceVariation<NavigationBarMainPage, NavigationBar
 }
 
 
-public extension ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance> {
+public extension ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance> {
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -232,7 +232,7 @@ public extension ComponentAppearanceVariation<NavigationBarMainPage, NavigationB
     }
 }
 
-private extension NavigationBarMainPageAppearance {
+private extension NavigationBarAppearance {
     
 }
 

@@ -18,7 +18,6 @@ struct ChipGroupDenseSize {
 }
 struct ChipGroupDenseSizeL: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)
     var lineSpacing = CGFloat(2.0)
     var maxColumns = Int(0)
@@ -28,7 +27,6 @@ struct ChipGroupDenseSizeL: ChipGroupSizeConfiguration {
 }
 struct ChipGroupDenseSizeM: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)
     var lineSpacing = CGFloat(2.0)
     var maxColumns = Int(0)
@@ -38,7 +36,6 @@ struct ChipGroupDenseSizeM: ChipGroupSizeConfiguration {
 }
 struct ChipGroupDenseSizeS: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)
     var lineSpacing = CGFloat(2.0)
     var maxColumns = Int(0)
@@ -48,7 +45,6 @@ struct ChipGroupDenseSizeS: ChipGroupSizeConfiguration {
 }
 struct ChipGroupDenseSizeXs: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)
     var lineSpacing = CGFloat(2.0)
     var maxColumns = Int(0)
@@ -59,7 +55,6 @@ struct ChipGroupDenseSizeXs: ChipGroupSizeConfiguration {
 
 struct ChipGroupDenseAnySize: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(0)
     var lineSpacing = CGFloat(0)
     var maxColumns = Int(0)

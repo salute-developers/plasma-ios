@@ -22,11 +22,12 @@ import SDDSApiInfo
  )
  ```
  */
-@ApiInfo(components: ["RectSkeleton", "TextSkeleton", "TextSkeletonBody", "TextSkeletonDisplay", "TextSkeletonHeader", "TextSkeletonText"])
+@ApiInfo(components: ["RectSkeleton", "TextSkeleton"])
 public struct SkeletonAppearance {
     public var shape: PathDrawer
     public var gradient: StatefulFillStyle
     public var size: SkeletonSizeConfiguration
+    @ApiType(.integer)
     public var duration: Double
     public var textTypography: TypographyConfiguration
     

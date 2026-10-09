@@ -19,6 +19,4 @@ struct TabsDefaultProps: MergeableConfiguration, Codable {
     var minSpacing: KeyValue<Double>?
     var orientation: KeyValue<String>?
     var disclosureIcon: KeyValue<String>?
-    var overflowIconSize: KeyValue<Double>?
-    var disclosureIconSize: KeyValue<Double>?
 }

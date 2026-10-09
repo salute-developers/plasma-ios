@@ -20,7 +20,6 @@ struct EmbeddedChipGroupWideSize {
 }
 struct EmbeddedChipGroupWideSizeL: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(8.0)
     var lineSpacing = CGFloat(8.0)
     var maxColumns = Int(0)
@@ -30,7 +29,6 @@ struct EmbeddedChipGroupWideSizeL: ChipGroupSizeConfiguration {
 }
 struct EmbeddedChipGroupWideSizeM: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(8.0)
     var lineSpacing = CGFloat(8.0)
     var maxColumns = Int(0)
@@ -40,7 +38,6 @@ struct EmbeddedChipGroupWideSizeM: ChipGroupSizeConfiguration {
 }
 struct EmbeddedChipGroupWideSizeS: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(8.0)
     var lineSpacing = CGFloat(8.0)
     var maxColumns = Int(0)
@@ -50,7 +47,6 @@ struct EmbeddedChipGroupWideSizeS: ChipGroupSizeConfiguration {
 }
 struct EmbeddedChipGroupWideSizeXl: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(8.0)
     var lineSpacing = CGFloat(8.0)
     var maxColumns = Int(0)
@@ -60,7 +56,6 @@ struct EmbeddedChipGroupWideSizeXl: ChipGroupSizeConfiguration {
 }
 struct EmbeddedChipGroupWideSizeXs: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(8.0)
     var lineSpacing = CGFloat(8.0)
     var maxColumns = Int(0)
@@ -71,7 +66,6 @@ struct EmbeddedChipGroupWideSizeXs: ChipGroupSizeConfiguration {
 
 struct EmbeddedChipGroupWideAnySize: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(0)
     var lineSpacing = CGFloat(0)
     var maxColumns = Int(0)

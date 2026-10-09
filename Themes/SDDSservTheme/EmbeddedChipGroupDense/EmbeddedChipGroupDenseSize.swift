@@ -20,7 +20,6 @@ struct EmbeddedChipGroupDenseSize {
 }
 struct EmbeddedChipGroupDenseSizeL: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)
     var lineSpacing = CGFloat(2.0)
     var maxColumns = Int(0)
@@ -30,7 +29,6 @@ struct EmbeddedChipGroupDenseSizeL: ChipGroupSizeConfiguration {
 }
 struct EmbeddedChipGroupDenseSizeM: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)
     var lineSpacing = CGFloat(2.0)
     var maxColumns = Int(0)
@@ -40,7 +38,6 @@ struct EmbeddedChipGroupDenseSizeM: ChipGroupSizeConfiguration {
 }
 struct EmbeddedChipGroupDenseSizeS: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)
     var lineSpacing = CGFloat(2.0)
     var maxColumns = Int(0)
@@ -50,7 +47,6 @@ struct EmbeddedChipGroupDenseSizeS: ChipGroupSizeConfiguration {
 }
 struct EmbeddedChipGroupDenseSizeXl: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)
     var lineSpacing = CGFloat(2.0)
     var maxColumns = Int(0)
@@ -60,7 +56,6 @@ struct EmbeddedChipGroupDenseSizeXl: ChipGroupSizeConfiguration {
 }
 struct EmbeddedChipGroupDenseSizeXs: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(2.0)
     var lineSpacing = CGFloat(2.0)
     var maxColumns = Int(0)
@@ -71,7 +66,6 @@ struct EmbeddedChipGroupDenseSizeXs: ChipGroupSizeConfiguration {
 
 struct EmbeddedChipGroupDenseAnySize: ChipGroupSizeConfiguration {
     var alignment = ChipGroupAlignment.left
-    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
     var gap = CGFloat(0)
     var lineSpacing = CGFloat(0)
     var maxColumns = Int(0)

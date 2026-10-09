@@ -25,10 +25,10 @@ struct TabBarIslandView: View {
         }
         .environment(\.subtheme, viewModel.theme.subtheme(viewModel.subtheme))
         
-        .tabBarIsland(
+        .tabBar(
             items: viewModel.tabBarItems,
             selectedIndex: $viewModel.selectedIndex,
-            appearance: viewModel.appearance
+            type: .island(appearance: viewModel.appearance)
         )
         .navigationTitle("TabBar Island")
     }

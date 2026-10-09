@@ -5,9 +5,9 @@ import SDDSThemeCore
 import SDDSIcons
 
 
-public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.L> {
+public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.L> {
     
-    var l: GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.L> {
+    var l: GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.L> {
         var size =  TabBarIslandClearAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -19,7 +19,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
         )
     }
     
-    var shadow: GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.LShadow> {
+    var shadow: GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.LShadow> {
         var size =  TabBarIslandClearAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -32,7 +32,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
         )
     }
     
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
+    var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.l.default.appearance
         
@@ -41,7 +41,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
+    var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.l.accent.appearance
         
@@ -50,7 +50,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
+    var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.l.secondary.appearance
         
@@ -59,7 +59,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var variation: Variation<TabBarIslandAppearance> {
+    var variation: Variation<TabBarAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -74,9 +74,9 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
     
 }
 
-public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.LShadow> {
+public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.LShadow> {
     
-    var shadow: GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.LShadow> {
+    var shadow: GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.LShadow> {
         var size =  TabBarIslandClearAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -89,7 +89,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
         )
     }
     
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
+    var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.l.default.appearance
         
@@ -98,7 +98,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
+    var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.l.accent.appearance
         
@@ -107,7 +107,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
+    var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.l.secondary.appearance
         
@@ -116,7 +116,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var variation: Variation<TabBarIslandAppearance> {
+    var variation: Variation<TabBarAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -131,9 +131,9 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
     
 }
 
-public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.M> {
+public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.M> {
     
-    var m: GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.M> {
+    var m: GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.M> {
         var size =  TabBarIslandClearAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -145,7 +145,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
         )
     }
     
-    var shadow: GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.MShadow> {
+    var shadow: GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.MShadow> {
         var size =  TabBarIslandClearAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -158,7 +158,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
         )
     }
     
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
+    var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.m.default.appearance
         
@@ -167,7 +167,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
+    var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.m.accent.appearance
         
@@ -176,7 +176,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
+    var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.m.secondary.appearance
         
@@ -185,7 +185,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var variation: Variation<TabBarIslandAppearance> {
+    var variation: Variation<TabBarAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -200,9 +200,9 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
     
 }
 
-public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.MShadow> {
+public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.MShadow> {
     
-    var shadow: GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance, TabBarIslandClearVariation.MShadow> {
+    var shadow: GeneralAppearanceVariation<TabBarIslandClear, TabBarAppearance, TabBarIslandClearVariation.MShadow> {
         var size =  TabBarIslandClearAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -215,7 +215,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
         )
     }
     
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
+    var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.m.default.appearance
         
@@ -224,7 +224,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
+    var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.m.accent.appearance
         
@@ -233,7 +233,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
+    var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemClear.m.secondary.appearance
         
@@ -242,7 +242,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
             appearance: appearance
         )
     }
-    var variation: Variation<TabBarIslandAppearance> {
+    var variation: Variation<TabBarAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -258,7 +258,7 @@ public extension GeneralAppearanceVariation<TabBarIslandClear, TabBarIslandAppea
 }
 
 
-public extension ComponentAppearanceVariation<TabBarIslandClear, TabBarIslandAppearance> {
+public extension ComponentAppearanceVariation<TabBarIslandClear, TabBarAppearance> {
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -270,7 +270,7 @@ public extension ComponentAppearanceVariation<TabBarIslandClear, TabBarIslandApp
     }
 }
 
-private extension TabBarIslandAppearance {
+private extension TabBarAppearance {
     
 }
 

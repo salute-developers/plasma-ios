@@ -261,9 +261,8 @@ extension CodeGenerationComponent {
             GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .tabBarItemClear:
             GenerateComponentCommand<TabBarItemProps, TabBarItemAppearance, TabBarItemSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar:
-            GenerateComponentCommand<TabBarIslandProps, TabBarIslandAppearance, TabBarIslandSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
-        case .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
+        case .tabBarIslandSolid, .tabBarIslandClear, .tabBarIslandHasLabelSolid, .tabBarIslandHasLabelClear, .tabBar,
+             .tabBarSolid, .tabBarClear, .tabBarHasLabelSolid, .tabBarHasLabelClear:
             GenerateComponentCommand<TabBarProps, TabBarAppearance, TabBarSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
         case .codeInput:
             GenerateComponentCommand<CodeInputProps, CodeInputAppearance, CodeInputSize>(component: self, outputDirectoryURL: outputURL, themeConfig: themeConfig)
@@ -292,13 +291,13 @@ extension CodeGenerationComponent {
                 themeConfig: themeConfig
             )
         case .navigationBarMainPage:
-            GenerateComponentCommand<NavigationBarMainPageProps, NavigationBarMainPageAppearance, NavigationBarMainPageSize>(
+            GenerateComponentCommand<NavigationBarProps, NavigationBarAppearance, NavigationBarSize>(
                 component: self, 
                 outputDirectoryURL: outputURL, 
                 themeConfig: themeConfig
             )
         case .navigationBarInternalPage:
-            GenerateComponentCommand<NavigationBarInternalPageProps, NavigationBarInternalPageAppearance, NavigationBarInternalPageSize>(
+            GenerateComponentCommand<NavigationBarProps, NavigationBarAppearance, NavigationBarSize>(
                 component: self, 
                 outputDirectoryURL: outputURL, 
                 themeConfig: themeConfig
@@ -383,9 +382,7 @@ extension CodeGenerationComponent {
     /// (`@ApiInfo(components:)` на `*Appearance`) и приезжает в `ios-api-meta.json`,
     /// потому что вывести её из данных нельзя: группировка DS другая — `badge` и
     /// `icon-badge` там разные компоненты, а на iOS это один `BadgeAppearance`.
-    var metaName: String {
-        ApiMetaStore.shared.componentName(for: rawValue) ?? rawValue
-    }
+    var metaName: String { metaComponentName }
 
     private var meta: ApiMetaComponent {
         guard let meta = ApiMetaStore.shared.component(metaName) else {

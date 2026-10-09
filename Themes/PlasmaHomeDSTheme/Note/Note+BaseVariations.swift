@@ -45,7 +45,7 @@ private extension NoteAppearance {
     static var base: NoteAppearance {
         var appearance = NoteAppearance()
         appearance.closeColor = ColorToken.textDefaultSecondary
-        appearance.textColor = ColorToken.textDefaultPrimary
+        appearance.textColor = ColorToken.textDefaultSecondary
         appearance.textTypography = NoteTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = NoteTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer

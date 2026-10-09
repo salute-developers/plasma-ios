@@ -25,7 +25,7 @@ struct UniversalAppearance: CodeGenerationAppearance {
             let rootParams = meta.params.filter { $0.isRoot && !$0.isUnmapped }
             for param in rootParams {
                 if let value = MetaValueResolver.resolve(
-                    param: param, raw: props[param.id], id: id, component: component, nullify: true, props: props
+                    param: param, raw: props[param.configId], id: id, component: component, nullify: true, props: props
                 ), !value.isEmpty {
                     out[param.methodName] = value
                 }
@@ -88,7 +88,7 @@ struct UniversalSize: CodeGenerationSize {
         case "boolean":
             return "Bool(false)"
         case "integer", "int":
-            return Int.defaultContext
+            return param.paramSimpleType == "Int" ? Int.defaultContext : CGFloat.defaultContext
         case "iconSize":
             return CGFloat.defaultContext
         case "shadow":
@@ -112,7 +112,7 @@ struct UniversalSize: CodeGenerationSize {
 
             for param in sizeParams {
                 if let value = MetaValueResolver.resolve(
-                    param: param, raw: props[param.id], id: id, component: component, nullify: nullify, props: props
+                    param: param, raw: props[param.configId], id: id, component: component, nullify: nullify, props: props
                 ), !value.isEmpty {
                     out[param.methodName] = value
                 }

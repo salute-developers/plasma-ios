@@ -20,7 +20,7 @@ import SDDSApiInfo
     - disclosureTextTypography: Типографика текста disclosure
     - disclosureIcon: Иконка disclosure (для IconTabs)
  */
-@ApiInfo(components: ["IconTabs", "TabsDefault", "TabsHeader"])
+@ApiInfo
 public struct TabsAppearance: Hashable {
     let id = UUID()
     public var size: TabsSizeConfiguration

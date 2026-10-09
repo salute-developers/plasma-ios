@@ -1175,8 +1175,8 @@ private extension TextFieldAppearance {
         var appearance = self
         appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentPrimary), values: [
             .init(states: [InteractiveState.activated], value: .color(.surfaceDefaultTransparentSecondary)),
-            .init(states: [InteractiveState.readonly], value: .color(.surfaceDefaultSolidPrimary)),
-            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.surfaceDefaultSolidPrimary))
+            .init(states: [InteractiveState.readonly], value: .color(.surfaceInverseTransparentPrimary)),
+            .init(states: [InteractiveState.activated, InteractiveState.readonly], value: .color(.surfaceInverseTransparentPrimary))
         ])
         appearance.captionColor = StatefulFillStyle(defaultValue: .color(.textDefaultSecondary), values: [
             .init(states: [InteractiveState.readonly], value: .color(.textDefaultSecondary))

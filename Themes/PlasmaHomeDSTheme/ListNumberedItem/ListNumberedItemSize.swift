@@ -14,7 +14,7 @@ struct ListNumberedItemSize {
 }
 struct ListNumberedItemSizeM: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(0)
-    var contentPaddingStart = CGFloat(6.0)
+    var contentPaddingStart = CGFloat(8.0)
     var height = CGFloat(0)
     var paddingBottom = CGFloat(0.0)
     var paddingEnd = CGFloat(0.0)
@@ -27,7 +27,7 @@ struct ListNumberedItemSizeM: ListItemSizeConfiguration {
 }
 struct ListNumberedItemSizeS: ListItemSizeConfiguration {
     var contentPaddingEnd = CGFloat(0)
-    var contentPaddingStart = CGFloat(6.0)
+    var contentPaddingStart = CGFloat(8.0)
     var height = CGFloat(0)
     var paddingBottom = CGFloat(0.0)
     var paddingEnd = CGFloat(0.0)

@@ -24,7 +24,7 @@ struct PaginationDotsSize: CodeGenerationSize {
         self.dotWidthActivated = CGFloatContextBuilder(props.dotWidth?.value(for: .activated), nullify: nullify).context
         self.dotHeight = CGFloatContextBuilder(props.dotHeight?.value, nullify: nullify).context
         self.dotHeightActivated = CGFloatContextBuilder(props.dotHeight?.value(for: .activated), nullify: nullify).context
-        self.edgeCount = PaginationDotsEdgeCountContextBuilder(value: props.edgeCount?.value, nullify: nullify).context
+        self.edgeCount = PaginationDotsEdgeCountContextBuilder(value: props.edgeCount?.value?.value, nullify: nullify).context
     }
     
     init() {
@@ -40,18 +40,18 @@ struct PaginationDotsSize: CodeGenerationSize {
 }
 
 final class PaginationDotsEdgeCountContextBuilder: CodeGenerationContextBuilder {
-    let value: String?
+    let value: Double?
     let nullify: Bool
     
-    init(value: String?, nullify: Bool = false) {
+    init(value: Double?, nullify: Bool = false) {
         self.value = value
         self.nullify = nullify
     }
     
     var context: String? {
-        guard let value = value, let intValue = Int(value) else {
+        guard let value = value else {
             return nullify ? nil : Int.defaultContext
         }
-        return "Int(\(intValue))"
+        return "Int(\(Int(value)))"
     }
 }

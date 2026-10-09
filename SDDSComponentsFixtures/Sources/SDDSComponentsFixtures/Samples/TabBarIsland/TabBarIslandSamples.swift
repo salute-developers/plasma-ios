@@ -11,10 +11,10 @@ struct SDDSTabBarIsland_Simple: View {
             TabBarItemData(content: nil, text: "Tab 1"),
             TabBarItemData(content: nil, text: "Tab 2")
         ]
-        return SDDSTabBarIsland(
+        return SDDSTabBar(
             items: items,
             selectedIndex: $selectedIndex,
-            appearance: TabBarIsland.l.appearance
+            type: .island(appearance: TabBarIsland.l.appearance)
         )
     }
 }

@@ -3,7 +3,8 @@ import SDDSApiInfo
 import SwiftUI
 @_exported import SDDSThemeCore
 
-@ApiInfo
+@ApiInfo(components: ["CheckBox"])
+@ApiStates(.checked, .indeterminate)
 public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
     public var size: SelectionControlSizeConfiguration
@@ -15,6 +16,7 @@ public struct CheckboxAppearance: SelectionControlAppearance, Hashable {
     public var titleColor: StatefulFillStyle
     @ApiName("descriptionColor")
     public var subtitleColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     @available(*, deprecated, message: "use 'toggleColor' instead")
     public var color: StatefulFillStyle

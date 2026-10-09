@@ -4,29 +4,33 @@ import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 /**
- `NavigationBarInternalPageAppearance` определяет внешний вид компонента NavigationBarInternalPage.
+ `NavigationBarAppearance` определяет внешний вид компонента NavigationBar.
+
+ Внешний вид общий для обоих типов панели: `backIcon` и `backIconColor` использует
+ только внутренняя страница, у главной кнопки «назад» нет.
  */
 @ApiInfo
-public struct NavigationBarInternalPageAppearance {
+@ApiStates(.textInlined)
+public struct NavigationBarAppearance {
     // Цвета
     public var backIconColor: ColorToken
     public var actionStartColor: ColorToken
     public var actionEndColor: ColorToken
     public var textColor: ColorToken
     public var backgroundColor: ColorToken
-    
+
     // Иконка
     public var backIcon: Image?
-    
+
     // Типографика
     public var textTypography: TypographyConfiguration
-    
+
     // Тень
     public var shadow: ShadowToken
-    
+
     // Размеры
-    public var size: NavigationBarInternalPageSizeConfiguration
-    
+    public var size: NavigationBarSizeConfiguration
+
     public init(
         backIconColor: ColorToken = .clearColor,
         actionStartColor: ColorToken = .clearColor,
@@ -36,7 +40,7 @@ public struct NavigationBarInternalPageAppearance {
         backIcon: Image? = nil,
         textTypography: TypographyConfiguration = .default,
         shadow: ShadowToken = ShadowToken(),
-        size: NavigationBarInternalPageSizeConfiguration = NavigationBarInternalPageSize()
+        size: NavigationBarSizeConfiguration = NavigationBarSize()
     ) {
         self.backIconColor = backIconColor
         self.actionStartColor = actionStartColor
@@ -52,15 +56,15 @@ public struct NavigationBarInternalPageAppearance {
 
 // MARK: - Environment Key
 
-extension NavigationBarInternalPageAppearance: EnvironmentKey {
+extension NavigationBarAppearance: EnvironmentKey {
     public static var defaultValue: Self {
-        NavigationBarInternalPageAppearance()
+        NavigationBarAppearance()
     }
 }
 
 public extension EnvironmentValues {
-    var navigationBarInternalPageAppearance: NavigationBarInternalPageAppearance {
-        get { self[NavigationBarInternalPageAppearance.self] }
-        set { self[NavigationBarInternalPageAppearance.self] = newValue }
+    var navigationBarAppearance: NavigationBarAppearance {
+        get { self[NavigationBarAppearance.self] }
+        set { self[NavigationBarAppearance.self] = newValue }
     }
 }

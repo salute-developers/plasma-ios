@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSApiInfo
 @_exported import SDDSThemeCore
 
-@ApiInfo(components: ["SegmentItemCounter"])
+@ApiInfo
 public struct CounterAppearance: Modifiable {
     public typealias ModifiableType = Self
     

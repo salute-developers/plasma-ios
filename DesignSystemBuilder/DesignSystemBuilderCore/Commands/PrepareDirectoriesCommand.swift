@@ -25,7 +25,7 @@ final class PrepareDirectoriesCommand: Command {
     private func prepareDirectory(url: URL) {
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: url.path()) {
-            try? fileManager.createDirectory(at: url, withIntermediateDirectories: false)
+            try? fileManager.createDirectory(at: url, withIntermediateDirectories: true)
         }
     }
 }

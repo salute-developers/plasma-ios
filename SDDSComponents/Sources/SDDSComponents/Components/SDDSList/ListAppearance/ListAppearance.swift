@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo(components: ["DropdownMenuListNormal", "DropdownMenuListTight", "ListNormal", "ListNumbered", "ListTight"])
+@ApiInfo
 public struct ListAppearance: Hashable {
     let id = UUID()
     public var listItemAppearance: ListItemAppearance

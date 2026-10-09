@@ -28,7 +28,7 @@ final class NavigationBarViewModel: ComponentViewModel<NavigationBarMainPageVari
         case .mainPage:
             return .mainPage(appearance: appearance)
         case .internalPage:
-            return .internalPage(appearance: internalPageViewModel?.appearance ?? NavigationBarInternalPageAppearance())
+            return .internalPage(appearance: internalPageViewModel?.appearance ?? NavigationBarAppearance())
         }
     }
     

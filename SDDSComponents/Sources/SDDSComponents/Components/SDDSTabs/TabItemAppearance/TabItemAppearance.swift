@@ -19,7 +19,7 @@ import SDDSApiInfo
     - actionIcon: Иконка действия
     - indicatorColor: Цвет индикатора выбора (опционально, если nil - берется из TabsAppearance)
  */
-@ApiInfo(components: ["IconTabItem", "TabItemDefault", "TabItemHeader"])
+@ApiInfo(components: ["IconTabItem", "TabItem"])
 public struct TabItemAppearance: Hashable {
     let id = UUID()
     public var size: TabItemSizeConfiguration

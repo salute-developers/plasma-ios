@@ -1,28 +1,30 @@
 import SwiftUI
 
 public extension View {
-    /// Добавляет TabBar внизу view с фоном, который заполняет нижнюю safe area
+    /// Добавляет TabBar внизу view.
+    ///
+    /// Для `.bar` фон заполняет нижнюю safe area, `.island` отступает от краёв.
     /// - Parameters:
     ///   - items: Массив TabBarItemData для отображения
     ///   - selectedIndex: Binding к текущему выбранному индексу таба
-    ///   - appearance: TabBarAppearance для стилизации
+    ///   - type: Тип таб-бара с соответствующим appearance
     ///   - subtheme: SubthemeData для применения субтемы
     /// - Returns: View с TabBar, расположенным внизу
     func tabBar(
         items: [TabBarItemData],
         selectedIndex: Binding<Int>,
-        appearance: TabBarAppearance,
+        type: TabBarType,
         subtheme: SubthemeData = SubthemeData()
     ) -> some View {
         GeometryReader { geometry in
             ZStack(alignment: .bottom) {
                 self
-                
+
                 VStack(spacing: 0) {
                     SDDSTabBar(
                         items: items,
                         selectedIndex: selectedIndex,
-                        appearance: appearance
+                        type: type
                     )
                     .environment(\.safeAreaInsets, geometry.safeAreaInsets)
                     .environment(\.subtheme, subtheme)
@@ -30,6 +32,5 @@ public extension View {
             }
             .ignoresSafeArea(edges: .bottom)
         }
-
     }
 }

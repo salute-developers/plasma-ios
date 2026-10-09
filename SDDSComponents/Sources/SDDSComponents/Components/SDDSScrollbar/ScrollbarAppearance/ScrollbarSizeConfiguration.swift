@@ -8,6 +8,7 @@ import SDDSApiInfo
  */
 public protocol ScrollbarSizeConfiguration {
     var width: CGFloat { get }
+    @ApiType(.float)
     var hoverExpandFactor: CGFloat { get }
     @ApiAlwaysEmit
     var shape: PathDrawer { get }

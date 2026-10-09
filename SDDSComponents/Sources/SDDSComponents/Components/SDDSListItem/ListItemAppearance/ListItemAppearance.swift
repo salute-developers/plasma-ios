@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSApiInfo
 @_exported import SDDSThemeCore
 
-@ApiInfo(components: ["DropdownMenuItemNormal", "DropdownMenuItemTight", "ListItemNormal", "ListItemTight", "ListNumberedItem"])
+@ApiInfo
 public struct ListItemAppearance: Hashable {
     let id = UUID()
     public var labelTypography: TypographyConfiguration
@@ -15,6 +15,7 @@ public struct ListItemAppearance: Hashable {
     public var disclosureIconColor: StatefulFillStyle
     public var disclosureIcon: Image?
     public var backgroundColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     public var counterAppearance: CounterAppearance?
     public var size: ListItemSizeConfiguration

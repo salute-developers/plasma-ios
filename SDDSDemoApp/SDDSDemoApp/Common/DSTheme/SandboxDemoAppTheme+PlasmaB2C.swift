@@ -563,25 +563,25 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         
     }
     
-    public var tabBarIslandSolidVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandSolidVariations: [Variation<TabBarAppearance>] {
         
             PlasmaB2CTheme.TabBarIsland.all
         
     }
     
-    public var tabBarIslandClearVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandClearVariations: [Variation<TabBarAppearance>] {
         
             PlasmaB2CTheme.TabBarIslandClear.all
         
     }
     
-    public var tabBarIslandHasLabelClearVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandHasLabelClearVariations: [Variation<TabBarAppearance>] {
         
             PlasmaB2CTheme.TabBarIslandHasLabelClear.all
         
     }
     
-    public var tabBarIslandHasLabelSolidVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandHasLabelSolidVariations: [Variation<TabBarAppearance>] {
         
             PlasmaB2CTheme.TabBarIslandHasLabel.all
         
@@ -593,7 +593,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         
     }
     
-    public var tabBarVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarVariations: [Variation<TabBarAppearance>] {
         
             []
         
@@ -641,7 +641,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         
     }
     
-    public var navigationBarMainPageVariations: [Variation<NavigationBarMainPageAppearance>] {
+    public var navigationBarMainPageVariations: [Variation<NavigationBarAppearance>] {
         
             return []
         
@@ -653,7 +653,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         
     }
     
-    public var navigationBarInternalPageVariations: [Variation<NavigationBarInternalPageAppearance>] {
+    public var navigationBarInternalPageVariations: [Variation<NavigationBarAppearance>] {
         
             return []
         

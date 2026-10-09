@@ -5,8 +5,8 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct TabBarIsland {
-    public static var l: GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.L> {
-        var appearance = TabBarIslandAppearance.base
+    public static var l: GeneralAppearanceVariation<TabBarIsland, TabBarAppearance, TabBarIslandVariation.L> {
+        var appearance = TabBarAppearance.base
         appearance.size = TabBarIslandSize.l
 
         return .init(
@@ -14,8 +14,8 @@ public struct TabBarIsland {
             appearance: appearance
         )
     }
-    public static var m: GeneralAppearanceVariation<TabBarIsland, TabBarIslandAppearance, TabBarIslandVariation.M> {
-        var appearance = TabBarIslandAppearance.base
+    public static var m: GeneralAppearanceVariation<TabBarIsland, TabBarAppearance, TabBarIslandVariation.M> {
+        var appearance = TabBarAppearance.base
         appearance.size = TabBarIslandSize.m
 
         return .init(
@@ -24,7 +24,7 @@ public struct TabBarIsland {
         )
     }
     
-    public static var all: [Variation<TabBarIslandAppearance>] {
+    public static var all: [Variation<TabBarAppearance>] {
         [
             TabBarIsland.l.variation,
             TabBarIsland.l.shadow.variation,
@@ -41,9 +41,9 @@ public struct TabBarIslandVariation {
     public struct MShadow {}
 }
 
-private extension TabBarIslandAppearance {
-    static var base: TabBarIslandAppearance {
-        var appearance = TabBarIslandAppearance()
+private extension TabBarAppearance {
+    static var base: TabBarAppearance {
+        var appearance = TabBarAppearance()
         appearance.backgroundColor = ColorToken.surfaceDefaultSolidCard
         return appearance
     }

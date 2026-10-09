@@ -45,7 +45,7 @@ private extension NoteCompactAppearance {
     static var base: NoteCompactAppearance {
         var appearance = NoteCompactAppearance()
         appearance.closeColor = ColorToken.textDefaultSecondary
-        appearance.textColor = ColorToken.textDefaultPrimary
+        appearance.textColor = ColorToken.textDefaultSecondary
         appearance.textTypography = NoteCompactTypography(oneSize: AdaptiveTypographyToken.bodySNormal.typography).asContainer
         appearance.titleColor = ColorToken.textDefaultPrimary
         appearance.titleTypography = NoteCompactTypography(oneSize: AdaptiveTypographyToken.bodyMNormal.typography).asContainer

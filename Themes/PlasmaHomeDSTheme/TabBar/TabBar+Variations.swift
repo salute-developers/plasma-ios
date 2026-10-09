@@ -5,9 +5,9 @@ import SDDSThemeCore
 import SDDSIcons
 
 
-public extension GeneralAppearanceVariation<TabBar, TabBarIslandAppearance, TabBarVariation.Default> {
+public extension GeneralAppearanceVariation<TabBar, TabBarAppearance, TabBarVariation.Default> {
     
-    var `default`: ComponentAppearanceVariation<TabBar, TabBarIslandAppearance> {
+    var `default`: ComponentAppearanceVariation<TabBar, TabBarAppearance> {
         var size =  TabBarAnySize(size: appearance.size)
         size.bottomShape = CornerRadiusDrawer(cornerRadius: ShapeToken.roundXxl.cornerRadius) as PathDrawer
         size.contentPaddingBottom = CGFloat(2.0)
@@ -45,7 +45,7 @@ public extension GeneralAppearanceVariation<TabBar, TabBarIslandAppearance, TabB
 }
 
 
-public extension ComponentAppearanceVariation<TabBar, TabBarIslandAppearance> {
+public extension ComponentAppearanceVariation<TabBar, TabBarAppearance> {
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -57,7 +57,7 @@ public extension ComponentAppearanceVariation<TabBar, TabBarIslandAppearance> {
     }
 }
 
-private extension TabBarIslandAppearance {
+private extension TabBarAppearance {
     
 }
 

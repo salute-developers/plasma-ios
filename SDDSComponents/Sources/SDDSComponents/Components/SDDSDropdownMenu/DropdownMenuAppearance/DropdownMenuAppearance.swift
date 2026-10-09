@@ -16,7 +16,7 @@ import SDDSApiInfo
     - shadow: Тень меню
     - size: Конфигурация размеров меню
  */
-@ApiInfo(components: ["DropdownMenuNormal", "DropdownMenuTight"])
+@ApiInfo
 public struct DropdownMenuAppearance: Hashable {
     let id = UUID()
     public var listAppearance: ListAppearance

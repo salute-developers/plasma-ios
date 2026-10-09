@@ -10,7 +10,7 @@ enum TabBarIslandType: String, CaseIterable {
 }
 
 final class TabBarIslandVariationProvider: VariationProvider {
-    typealias Appearance = TabBarIslandAppearance
+    typealias Appearance = TabBarAppearance
     
     var theme: Theme
     var tabBarIslandType: TabBarIslandType
@@ -20,7 +20,7 @@ final class TabBarIslandVariationProvider: VariationProvider {
         self.tabBarIslandType = tabBarIslandType
     }
     
-    var variations: [Variation<TabBarIslandAppearance>] {
+    var variations: [Variation<TabBarAppearance>] {
         switch tabBarIslandType {
         case .tabbar:
             theme.tabBarVariations
@@ -35,7 +35,7 @@ final class TabBarIslandVariationProvider: VariationProvider {
         }
     }
     
-    var defaultValue: TabBarIslandAppearance {
-        TabBarIslandAppearance.defaultValue
+    var defaultValue: TabBarAppearance {
+        TabBarAppearance.defaultValue
     }
 }

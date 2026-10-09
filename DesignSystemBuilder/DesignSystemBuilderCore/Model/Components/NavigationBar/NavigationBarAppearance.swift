@@ -1,30 +1,36 @@
 import Foundation
 
-struct NavigationBarMainPageAppearance: CodeGenerationAppearance {
-    typealias Variation = NavigationBarMainPageConfiguration.Variation
-    typealias Props = NavigationBarMainPageProps
+struct NavigationBarAppearance: CodeGenerationAppearance {
+    typealias Variation = NavigationBarConfiguration.Variation
+    typealias Props = NavigationBarProps
     
+    var backIconColor: String?
     var actionStartColor: String?
     var actionEndColor: String?
     var textColor: String?
     var backgroundColor: String?
+    var backIcon: String?
     var shadow: String?
     var textTypography: String?
     
-    init(variation: NavigationBarMainPageConfiguration.Variation, component: CodeGenerationComponent) {
+    init(variation: NavigationBarConfiguration.Variation, component: CodeGenerationComponent) {
         self.init(props: variation.props, id: variation.id, component: component)
     }
     
-    init(props: NavigationBarMainPageProps?, id: String? = nil, component: CodeGenerationComponent) {
+    init(props: NavigationBarProps?, id: String? = nil, component: CodeGenerationComponent) {
         guard let props = props else {
             return
         }
         
         // Цвета
+        self.backIconColor = ColorTokenContextBuilder(props.backIconColor).context
         self.actionStartColor = ColorTokenContextBuilder(props.actionStartColor).context
         self.actionEndColor = ColorTokenContextBuilder(props.actionEndColor).context
         self.textColor = ColorTokenContextBuilder(props.textColor).context
         self.backgroundColor = ColorTokenContextBuilder(props.backgroundColor).context
+        
+        // Иконка
+        self.backIcon = ImageContextBuilder(props.backIcon?.value).context
         
         // Тень
         self.shadow = ShadowTokenContextBuilder(shadow: props.shadow).context

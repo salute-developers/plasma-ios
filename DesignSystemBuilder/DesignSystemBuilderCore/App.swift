@@ -34,6 +34,10 @@ public final class App {
     /// GitHub-репозиторий с релизами (`owner/repo`) для `--sources-version`.
     let sourcesRepository: String?
 
+    /// Что генерировать: только тему, только компоненты или всё сразу.
+    /// `.all` сохраняет поведение, которое было до разделения команд.
+    let scope: GenerationScope
+
     /// Корень исходников, распакованных из релизного архива. Заполняется один раз
     /// в `run()`, до генерации тем.
     private var fetchedSourcesRootURL: URL?
@@ -50,7 +54,8 @@ public final class App {
         sourcesRootPath: String? = nil,
         sourcesVersion: String? = nil,
         sourcesArchiveURLString: String? = nil,
-        sourcesRepository: String? = nil
+        sourcesRepository: String? = nil,
+        scope: GenerationScope = .all
     ) {
         self.config = config
         self.sourcePath = sourcePath
@@ -64,6 +69,7 @@ public final class App {
         self.sourcesVersion = sourcesVersion
         self.sourcesArchiveURLString = sourcesArchiveURLString
         self.sourcesRepository = sourcesRepository
+        self.scope = scope
     }
 
     /// Разрешённый источник темы. Зеркалит Android `ThemeSourceResolver`:
@@ -126,7 +132,8 @@ public final class App {
         let paletteURL = paletteLocalURL(config: config, themeConfig: themeConfig)
         generateBaseTheme(themeConfig: themeConfig, schemeDirectory: schemeDirectory, paletteURL: paletteURL)
 
-        for tenant in themeConfig.tenants {
+        // Тенанты добавляют только наборы токенов, компонентов у них нет.
+        for tenant in themeConfig.tenants where scope.includesTheme {
             Logger.printText("🎨 Generating tenant \(tenant.name) for \(themeConfig.name)...")
             executeTenantCommands(config: config, themeConfig: themeConfig, tenant: tenant)
         }
@@ -193,7 +200,7 @@ public final class App {
 
         generateBaseTheme(themeConfig: themeConfig, schemeDirectory: schemeDirectory, paletteURL: sddsSource.paletteURL)
 
-        for tenant in sddsSource.tenants.dropFirst() {
+        for tenant in sddsSource.tenants.dropFirst() where scope.includesTheme {
             Logger.printText("🎨 Generating tenant \(tenant.displayName) for \(themeConfig.name)...")
             guard let tenantSchemeDirectory = SchemeDirectory.make(fromUnpackedDirectory: tenant.directory) else {
                 Logger.terminate("No scheme directory in .sdds for tenant \(tenant.displayName)")
@@ -230,7 +237,7 @@ public final class App {
             return
         }
 
-        var commands: [Command] = [
+        var commands: [Command] = scope.includesTheme ? [
             InstallFontsCommand(
                 fontFamiliesContainer: fontFamiliesContainer,
                 fontsURL: fontsURL(config: themeConfig),
@@ -240,20 +247,22 @@ public final class App {
                 themePlistURL: themePlistURL(config: themeConfig),
                 fontFamilyOverride: themeConfig.fontFamilyOverride
             )
-        ]
-        commands.append(contentsOf: tokenCommands(
-            themeConfig: themeConfig,
-            schemeDirectory: schemeDirectory,
-            metaScheme: metaScheme,
-            fontFamiliesContainer: fontFamiliesContainer,
-            paletteURL: paletteURL,
-            tenantSuffix: nil
-        ))
+        ] : []
+        if scope.includesTheme {
+            commands.append(contentsOf: tokenCommands(
+                themeConfig: themeConfig,
+                schemeDirectory: schemeDirectory,
+                metaScheme: metaScheme,
+                fontFamiliesContainer: fontFamiliesContainer,
+                paletteURL: paletteURL,
+                tenantSuffix: nil
+            ))
+        }
         // Вариации компонентов генерит только обычный режим. Standalone их не генерит:
         // компонентный слой бандла берётся из готового пакета темы (`themePackageDir`),
         // а свежая генерация здесь всё равно не использовалась бы и тянула бы
         // `ComponentConfigSource` от compile-time пути (ломает запуск вне репо).
-        if !standalone {
+        if !standalone, scope.includesComponents {
             commands.append(contentsOf: generateComponentVariations(themeConfig: themeConfig))
         }
 
@@ -261,14 +270,21 @@ public final class App {
 
         guard !standalone else { return }
 
-        generateTokensMeta(
-            themeConfig: themeConfig,
-            schemeDirectory: schemeDirectory,
-            metaScheme: metaScheme,
-            paletteURL: paletteURL,
-            fontFamiliesContainer: fontFamiliesContainer
-        )
-        generateBindingArtifacts(themeConfig: themeConfig)
+        // Мета делится по тому же шву, что и генерация: токены описывает тема,
+        // состав компонентов и их styleApi — компоненты (как на Android, где
+        // theme-info пишет GenerateThemeTask, а config-info — GenerateComponentsTask).
+        if scope.includesTheme {
+            generateTokensMeta(
+                themeConfig: themeConfig,
+                schemeDirectory: schemeDirectory,
+                metaScheme: metaScheme,
+                paletteURL: paletteURL,
+                fontFamiliesContainer: fontFamiliesContainer
+            )
+        }
+        if scope.includesComponents {
+            generateBindingArtifacts(themeConfig: themeConfig)
+        }
     }
 
     private func generateTokensMeta(
@@ -337,7 +353,13 @@ public final class App {
         // на несуществующий тип `<Component>Styles`.
         // Конфиг темы берётся per-theme из theme-converter; темы без компонента
         // дают 404 и просто пропускаются ниже.
+        // Состав ограничен индексом ДС, если он есть: иначе у дизайн-системы без компонента
+        // всё равно сгенерируется его binding-API — конфиг нашёлся бы в theme-converter.
+        let indexed = ComponentIndex.exists(themeConfig: themeConfig)
         for component in CodeGenerationComponent.allCases {
+            if indexed, ComponentIndex.entry(for: component, themeConfig: themeConfig) == nil {
+                continue
+            }
             guard let appearanceType = component.appearanceIfKnown,
                   let raw = rawComponentConfig(component: component, themeConfig: themeConfig),
                   let bindings = raw.bindings, !bindings.isEmpty else {
@@ -586,6 +608,13 @@ extension App {
 
     private func generateComponentVariations(themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration) -> [Command] {
         let index = ComponentIndex.entries(themeConfig: themeConfig)
+        // Дизайн-система без компонентов — штатная ситуация (их заводят отдельно), поэтому
+        // пустой индекс означает «генерировать нечего», а не «генерировать всё подряд».
+        // Отсутствие индекса — другое дело: там генератор работает по своему списку.
+        guard !index.isEmpty || !ComponentIndex.exists(themeConfig: themeConfig) else {
+            Logger.printText("🧩 \(themeConfig.name): the design system has no components — nothing to generate")
+            return []
+        }
         let components = index.isEmpty
             ? CodeGenerationComponent.supportedComponents
             : CodeGenerationComponent.supportedComponents.filter { ComponentIndex.entry(for: $0, themeConfig: themeConfig) != nil }
@@ -838,7 +867,9 @@ extension App: Runnable {
         Logger.printLine()
 
         ComponentConfigSource.localDirectory = designSystemBuilderURL
-        if !standalone { loadApiMeta() }
+        // Мету API стилей читают генераторы компонентов; теме она не нужна, поэтому
+        // `theme generate` работает и без `ios-api-meta.json` рядом с бинарём.
+        if !standalone, scope.includesComponents { loadApiMeta() }
         fetchSourcesIfNeeded()
 
         for themeConfig in config.themes {

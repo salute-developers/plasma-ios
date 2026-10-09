@@ -5,7 +5,6 @@ struct ApiMetaComponent: Codable {
     let qualifiedName: String
     let styleQualifiedName: String
     let sizeQualifiedName: String?
-    let components: [String]?
     let resolvedTypes: [String]
     let stateEnum: ApiMetaStateEnum?
     let params: [ApiMetaParam]
@@ -47,14 +46,22 @@ struct ApiMetaValueEnum: Codable {
     }
 }
 
+/// Собственные состояния компонента. Swift-типа у набора может не быть — тогда
+/// `qualifiedName`/`simpleName` пусты, а состояния перечислены разметкой.
 struct ApiMetaStateEnum: Codable {
-    let qualifiedName: String
-    let simpleName: String
+    let qualifiedName: String?
+    let simpleName: String?
     let values: [Value]
 
     struct Value: Codable {
         let name: String
+        let configName: String?
+
+        /// Имя в той форме, в какой состояние встречается в конфигурации оформления.
+        var configId: String { configName ?? name }
     }
+
+    var configIds: Set<String> { Set(values.map { $0.configId }) }
 }
 
 struct ApiMetaParam: Codable {
@@ -76,6 +83,15 @@ struct ApiMetaParam: Codable {
     let rawNumber: Bool?
     let alwaysEmit: Bool?
     let stateOnly: Bool?
+    /// Id свойства конфига, из имени иконки которого берётся размер (`close.24` → 24).
+    /// Собственный `id` у такого свойства свой: ключ конфига уже занят самой иконкой.
+    let sizeFromIconId: String?
+
+    /// Свойство — размер иконки: тип обычный `dimension`, но значение лежит в имени иконки.
+    var isIconSize: Bool { sizeFromIconId != nil }
+
+    /// Ключ, под которым значение свойства лежит в конфигурации оформления.
+    var configId: String { sizeFromIconId ?? id }
 
     var isUnmapped: Bool { unmapped == true || methodName.isEmpty }
     var componentState: ComponentState? { state.flatMap(ComponentState.init(rawValue:)) }
@@ -88,8 +104,6 @@ final class ApiMetaStore {
     static let shared = ApiMetaStore()
 
     private(set) var byComponent: [String: ApiMetaComponent] = [:]
-    /// Имя компонента → имя записи меты, из которой он генерится (`IconBadgeClear` → `Badge`).
-    private var ownerByComponent: [String: String] = [:]
     private(set) var isLoaded = false
 
     private init() {}
@@ -101,12 +115,6 @@ final class ApiMetaStore {
             return false
         }
         byComponent = Dictionary(components.map { ($0.componentName, $0) }, uniquingKeysWith: { first, _ in first })
-        ownerByComponent = Dictionary(
-            components.flatMap { entry in
-                (entry.components ?? []).map { ($0, entry.componentName) }
-            },
-            uniquingKeysWith: { first, _ in first }
-        )
         isLoaded = true
         return true
     }
@@ -115,10 +123,4 @@ final class ApiMetaStore {
         byComponent[name]
     }
 
-    /// Запись меты, из которой генерится компонент. Явно заявленная связка
-    /// (`@ApiInfo(components:)`) важнее одноимённой записи: компонент `TabBar`
-    /// генерится из `TabBarIslandAppearance`, хотя `TabBarAppearance` тоже есть.
-    func componentName(for component: String) -> String? {
-        ownerByComponent[component] ?? (byComponent[component] != nil ? component : nil)
-    }
 }

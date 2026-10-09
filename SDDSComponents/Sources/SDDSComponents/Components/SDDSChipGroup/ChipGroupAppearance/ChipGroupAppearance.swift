@@ -10,11 +10,12 @@ import SDDSApiInfo
     - chipAppearance: Внешний вид отдельных чипов в группе (цвета, шрифты, скругления).
     - gap: Отступ между чипами в группе.
  */
-@ApiInfo(components: ["ChipGroupDense", "ChipGroupWide", "EmbeddedChipGroupDense", "EmbeddedChipGroupWide"])
+@ApiInfo
 public struct ChipGroupAppearance {
     public var size: ChipGroupSizeConfiguration
     public var chipAppearance: ChipAppearance
     public var gap: ChipGroupGap
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     
     public init(

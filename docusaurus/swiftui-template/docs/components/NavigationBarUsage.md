@@ -99,8 +99,8 @@ SDDSNavigationBar(
 
 Тип навигационной панели определяет её внешний вид и функциональность:
 
-- **`.mainPage(appearance: NavigationBarMainPageAppearance)`** — главная страница приложения без кнопки "назад"
-- **`.internalPage(appearance: NavigationBarInternalPageAppearance)`** — внутренняя страница с кнопкой "назад" слева
+- **`.mainPage(appearance: NavigationBarAppearance)`** — главная страница приложения без кнопки "назад"
+- **`.internalPage(appearance: NavigationBarAppearance)`** — внутренняя страница с кнопкой "назад" слева
 
 ## NavigationBarTextPlacement
 
@@ -126,45 +126,32 @@ SDDSNavigationBar(
 
 ## Окружение
 
-- `navigationBarMainPageAppearance`: Стандартные настройки внешнего вида для главной страницы
-- `navigationBarInternalPageAppearance`: Стандартные настройки внешнего вида для внутренней страницы
+- `navigationBarAppearance`: Стандартные настройки внешнего вида панели
 
-## NavigationBarMainPageAppearance
+## NavigationBarAppearance
 
-Определяет внешний вид главной страницы:
+Внешний вид общий для обоих типов панели. `backIcon` и `backIconColor` использует
+только внутренняя страница — у главной кнопки «назад» нет.
 
 | Параметр | Тип | Описание |
 |----------|-----|----------|
+| `backIconColor` | `ColorToken` | Цвет иконки кнопки "назад" (только `.internalPage`) |
+| `backIcon` | `Image?` | Иконка кнопки "назад" (только `.internalPage`) |
 | `actionStartColor` | `ColorToken` | Цвет левого action |
 | `actionEndColor` | `ColorToken` | Цвет правого action |
 | `textColor` | `ColorToken` | Цвет заголовка |
 | `backgroundColor` | `ColorToken` | Цвет фона |
 | `textTypography` | `TypographyConfiguration` | Типографика заголовка |
 | `shadow` | `ShadowToken` | Тень панели |
-| `size` | `NavigationBarMainPageSizeConfiguration` | Размеры и отступы |
-
-## NavigationBarInternalPageAppearance
-
-Определяет внешний вид внутренней страницы:
-
-| Параметр | Тип | Описание |
-|----------|-----|----------|
-| `backIconColor` | `ColorToken` | Цвет иконки кнопки "назад" |
-| `backIcon` | `Image?` | Иконка кнопки "назад" |
-| `actionStartColor` | `ColorToken` | Цвет левого action |
-| `actionEndColor` | `ColorToken` | Цвет правого action |
-| `textColor` | `ColorToken` | Цвет заголовка |
-| `backgroundColor` | `ColorToken` | Цвет фона |
-| `textTypography` | `TypographyConfiguration` | Типографика заголовка |
-| `shadow` | `ShadowToken` | Тень панели |
-| `size` | `NavigationBarInternalPageSizeConfiguration` | Размеры и отступы |
+| `size` | `NavigationBarSizeConfiguration` | Размеры и отступы |
 
 ## Size Configuration
 
-### NavigationBarMainPageSizeConfiguration
+### NavigationBarSizeConfiguration
 
 | Параметр | Тип | Описание |
 |----------|-----|----------|
+| `backIconMargin` | `CGFloat` | Отступ между кнопкой "назад" и left action (только `.internalPage`) |
 | `paddingStart` | `CGFloat` | Отступ слева |
 | `paddingEnd` | `CGFloat` | Отступ справа |
 | `paddingTop` | `CGFloat` | Отступ сверху |
@@ -172,14 +159,6 @@ SDDSNavigationBar(
 | `horizontalSpacing` | `CGFloat` | Расстояние между actions когда они рядом |
 | `textBlockTopMargin` | `CGFloat` | Отступ сверху для блока текста |
 | `bottomShape` | `PathDrawer` | Форма нижней границы |
-
-### NavigationBarInternalPageSizeConfiguration
-
-Включает все параметры из `NavigationBarMainPageSizeConfiguration`, плюс:
-
-| Параметр | Тип | Описание |
-|----------|-----|----------|
-| `backIconMargin` | `CGFloat` | Отступ между кнопкой "назад" и left action |
 
 ## Особенности
 
