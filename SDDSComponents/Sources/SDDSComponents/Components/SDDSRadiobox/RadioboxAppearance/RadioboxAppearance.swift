@@ -4,6 +4,7 @@ import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 @ApiInfo(components: ["RadioBox"])
+@ApiStates(.checked)
 public struct RadioboxAppearance: SelectionControlAppearance, Hashable {
     let id = UUID()
     @available(*, deprecated, message: "use 'toggleColor' instead")

@@ -10,6 +10,7 @@ import SDDSApiInfo
  только внутренняя страница, у главной кнопки «назад» нет.
  */
 @ApiInfo
+@ApiStates(.textInlined)
 public struct NavigationBarAppearance {
     // Цвета
     public var backIconColor: ColorToken

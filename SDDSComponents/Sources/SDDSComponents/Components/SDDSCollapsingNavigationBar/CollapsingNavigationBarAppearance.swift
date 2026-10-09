@@ -8,6 +8,7 @@ import SDDSApiInfo
  Кнопка «назад» отображается, когда задан `backIcon`.
  */
 @ApiInfo
+@ApiStates(.collapsed)
 public struct CollapsingNavigationBarAppearance {
     // Цвета
     public var backIconColor: StatefulFillStyle

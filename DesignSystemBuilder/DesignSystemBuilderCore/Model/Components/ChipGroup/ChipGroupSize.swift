@@ -6,7 +6,6 @@ struct ChipGroupSize: CodeGenerationSize {
     
     var gap: String?
     var lineSpacing: String?
-    var funcinsets: String?
     var maxColumns: String?
     var alignment: String?
     
@@ -20,7 +19,6 @@ struct ChipGroupSize: CodeGenerationSize {
         self.lineSpacing = CGFloatContextBuilder(props.lineSpacing?.value, nullify: nullify).context
         self.maxColumns = Int.defaultContext
         self.alignment = "ChipGroupAlignment.left"
-        self.funcinsets = "(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }"
     }
     
     init() {
@@ -28,6 +26,5 @@ struct ChipGroupSize: CodeGenerationSize {
         self.lineSpacing = CGFloat.defaultContext
         self.maxColumns = Int.defaultContext
         self.alignment = "ChipGroupAlignment.left"
-        self.funcinsets = "(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }"
     }
 }

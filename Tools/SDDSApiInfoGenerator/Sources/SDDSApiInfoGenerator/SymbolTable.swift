@@ -42,6 +42,8 @@ struct TypeDecl {
     let enumCases: [EnumCaseDecl]
     let componentOverride: String?
     let stateEnumName: String?
+    /// Собственные состояния компонента из `@ApiStates` — в форме конфигурации (`text-inlined`).
+    let states: [String]
     let ignored: Bool
     let apiInfo: Bool
     /// Имена компонентов, которые генерятся из этого типа (`@ApiInfo(components:)`).
@@ -75,6 +77,7 @@ struct MarkerSet {
     var apiInfo = false
     var component: String?
     var stateEnum: String?
+    var states: [String] = []
     var apiName: String?
     var state: String?
     var type: String?
@@ -97,6 +100,20 @@ enum SyntaxSupport {
     private static let categoryNames: [String: String] = [
         "componentStyle": "component_style"
     ]
+
+    /// Имя состояния в форме конфигурации оформления: `textInlined` → `text-inlined`.
+    static func configStateName(_ name: String) -> String {
+        var result = ""
+        for character in name {
+            if character.isUppercase {
+                result += "-"
+                result += character.lowercased()
+            } else {
+                result.append(character)
+            }
+        }
+        return result
+    }
 
     static func markers(from attributes: AttributeListSyntax) -> MarkerSet {
         var result = MarkerSet()
@@ -138,6 +155,8 @@ enum SyntaxSupport {
                 result.component = arguments.first?.value
             case "ApiStateEnum":
                 result.stateEnum = arguments.first?.value
+            case "ApiStates":
+                result.states += arguments.map { SyntaxSupport.configStateName($0.value) }
             case "ApiCopy":
                 result.copyOf = arguments.first?.value
             case "ApiType":
@@ -258,6 +277,7 @@ private final class SymbolCollector: SyntaxVisitor {
             enumCases: cases,
             componentOverride: markers.component,
             stateEnumName: markers.stateEnum,
+            states: markers.states,
             ignored: markers.ignored,
             apiInfo: markers.apiInfo,
             components: markers.components,
@@ -343,6 +363,7 @@ private final class SymbolCollector: SyntaxVisitor {
             enumCases: [],
             componentOverride: markers.component,
             stateEnumName: markers.stateEnum,
+            states: markers.states,
             ignored: markers.ignored,
             apiInfo: markers.apiInfo,
             components: markers.components,

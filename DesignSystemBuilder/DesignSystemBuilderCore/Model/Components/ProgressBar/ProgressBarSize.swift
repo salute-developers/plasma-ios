@@ -8,8 +8,6 @@ struct ProgressBarSize: CodeGenerationSize {
     var indicatorHeight: String?
     var indicatorPathDrawer: String?
     var pathDrawer: String?
-    var cornerRadius: String?
-    var indicatorCornerRadius: String?
     
     init(variation: ComponentConfiguration<ProgressBarProps>.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
@@ -20,8 +18,6 @@ struct ProgressBarSize: CodeGenerationSize {
         self.indicatorHeight = CGFloatContextBuilder(props.indicatorHeight?.value, nullify: nullify).context
         self.indicatorPathDrawer = PathDrawerContextBuilder(shape: props.indicatorShape, nullify: nullify).context
         self.pathDrawer = PathDrawerContextBuilder(shape: props.backgroundShape, nullify: nullify).context
-        self.cornerRadius = CGFloat.defaultContext
-        self.indicatorCornerRadius = CGFloat.defaultContext
     }
     
     init() {
@@ -29,7 +25,5 @@ struct ProgressBarSize: CodeGenerationSize {
         self.indicatorHeight = CGFloat.defaultContext
         self.indicatorPathDrawer = PathDrawerContextBuilder.defaultContext
         self.pathDrawer = PathDrawerContextBuilder.defaultContext
-        self.cornerRadius = CGFloat.defaultContext
-        self.indicatorCornerRadius = CGFloat.defaultContext
     }
 }

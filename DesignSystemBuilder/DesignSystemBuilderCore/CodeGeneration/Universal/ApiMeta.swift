@@ -46,14 +46,22 @@ struct ApiMetaValueEnum: Codable {
     }
 }
 
+/// Собственные состояния компонента. Swift-типа у набора может не быть — тогда
+/// `qualifiedName`/`simpleName` пусты, а состояния перечислены разметкой.
 struct ApiMetaStateEnum: Codable {
-    let qualifiedName: String
-    let simpleName: String
+    let qualifiedName: String?
+    let simpleName: String?
     let values: [Value]
 
     struct Value: Codable {
         let name: String
+        let configName: String?
+
+        /// Имя в той форме, в какой состояние встречается в конфигурации оформления.
+        var configId: String { configName ?? name }
     }
+
+    var configIds: Set<String> { Set(values.map { $0.configId }) }
 }
 
 struct ApiMetaParam: Codable {
@@ -75,11 +83,15 @@ struct ApiMetaParam: Codable {
     let rawNumber: Bool?
     let alwaysEmit: Bool?
     let stateOnly: Bool?
-    /// Размер берётся из имени иконки конфига (`close.24` → 24), а не из числа.
-    let sizeFromIcon: Bool?
+    /// Id свойства конфига, из имени иконки которого берётся размер (`close.24` → 24).
+    /// Собственный `id` у такого свойства свой: ключ конфига уже занят самой иконкой.
+    let sizeFromIconId: String?
 
     /// Свойство — размер иконки: тип обычный `dimension`, но значение лежит в имени иконки.
-    var isIconSize: Bool { sizeFromIcon == true }
+    var isIconSize: Bool { sizeFromIconId != nil }
+
+    /// Ключ, под которым значение свойства лежит в конфигурации оформления.
+    var configId: String { sizeFromIconId ?? id }
 
     var isUnmapped: Bool { unmapped == true || methodName.isEmpty }
     var componentState: ComponentState? { state.flatMap(ComponentState.init(rawValue:)) }

@@ -132,12 +132,16 @@ struct Scanner {
     }
 
     /// Категория `iconSize` в мету не попадает: наружу это обычный `dimension` с пометкой
-    /// `sizeFromIcon`, по которой генератор знает, что значение лежит в имени иконки.
+    /// `sizeFromIconId`, по которой генератор знает, что значение лежит в имени иконки.
+    ///
+    /// Id у такого свойства собственный — имя самого свойства, а не размеченного им ключа
+    /// конфига: ключ уже занят иконкой, а свойство компонента в базе уникально по имени
+    /// и несёт ровно один тип.
     private func leaf(property: PropertyDecl, id: String, category: String, group: String, file: String, valueEnum: ValueEnum? = nil) -> Param {
         let sizeFromIcon = category == "iconSize"
         return Param(
             type: sizeFromIcon ? "dimension" : category,
-            id: id,
+            id: sizeFromIcon ? property.name : id,
             methodName: property.name,
             paramName: property.name,
             paramQualifiedType: property.qualifiedType,
@@ -153,7 +157,7 @@ struct Scanner {
             rawNumber: property.rawNumber ? true : nil,
             alwaysEmit: property.alwaysEmit ? true : nil,
             stateOnly: property.stateOnly ? true : nil,
-            sizeFromIcon: sizeFromIcon ? true : nil,
+            sizeFromIconId: sizeFromIcon ? id : nil,
             explicitId: property.apiNameOverride != nil || property.copyOf != nil,
             sourceFile: file,
             sourceLine: property.line
@@ -172,12 +176,22 @@ struct Scanner {
     }
 
     private func stateEnum(for decl: TypeDecl) -> StateEnum? {
-        guard let enumName = decl.stateEnumName,
-              let enumDecl = table.types[enumName], enumDecl.kind == .enumeration else { return nil }
+        if let enumName = decl.stateEnumName,
+           let enumDecl = table.types[enumName], enumDecl.kind == .enumeration {
+            return StateEnum(
+                qualifiedName: "\(moduleName).\(enumName)",
+                simpleName: enumName,
+                values: enumDecl.enumCases.map {
+                    StateEnum.Value(name: $0.name, configName: $0.id.isEmpty ? SyntaxSupport.configStateName($0.name) : $0.id)
+                }
+            )
+        }
+        // Состояния, размеченные перечислением, — отдельного Swift-типа у них нет.
+        guard !decl.states.isEmpty else { return nil }
         return StateEnum(
-            qualifiedName: "\(moduleName).\(enumName)",
-            simpleName: enumName,
-            values: enumDecl.enumCases.map { StateEnum.Value(name: $0.name) }
+            qualifiedName: nil,
+            simpleName: nil,
+            values: decl.states.sorted().map { StateEnum.Value(name: $0, configName: $0) }
         )
     }
 }

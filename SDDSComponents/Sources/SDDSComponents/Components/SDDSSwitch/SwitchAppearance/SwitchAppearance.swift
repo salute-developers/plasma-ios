@@ -15,6 +15,7 @@ import SDDSApiInfo
     - tintColor: Цвет переключателя, когда он включен.
  */
 @ApiInfo
+@ApiStates(.checked)
 public struct SwitchAppearance: Hashable {
     let id = UUID()
     public var size: SwitchSizeConfiguration

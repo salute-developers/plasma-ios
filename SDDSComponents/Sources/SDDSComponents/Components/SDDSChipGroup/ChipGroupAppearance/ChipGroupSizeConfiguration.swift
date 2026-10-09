@@ -12,7 +12,7 @@ import SwiftUI
  */
 public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugStringConvertible {
     @available(*, deprecated, message: "use 'appearance' instead")
-    @ApiValue("(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }")
+    @ApiIgnore()
     func insets(for gap: ChipGroupGap) -> EdgeInsets
     @ApiValue("Int(0)", zero: "Int(0)")
     var maxColumns: Int { get }
@@ -20,6 +20,12 @@ public protocol ChipGroupSizeConfiguration: SizeConfiguration, CustomDebugString
     var alignment: ChipGroupAlignment { get }
     var gap: CGFloat { get }
     var lineSpacing: CGFloat { get }
+}
+
+/// Функция депрекейтнута и в конфигурациях оформления её нет: генерация её не печатает,
+/// поэтому реализацию даёт сам протокол.
+public extension ChipGroupSizeConfiguration {
+    func insets(for gap: ChipGroupGap) -> EdgeInsets { EdgeInsets() }
 }
 
 public struct ZeroChipGroupSize: ChipGroupSizeConfiguration {
