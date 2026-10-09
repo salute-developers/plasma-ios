@@ -9,7 +9,7 @@ public extension GeneralAppearanceVariation<ListNumberedItem, ListItemAppearance
     
     var m: ComponentAppearanceVariation<ListNumberedItem, ListItemAppearance> {
         var size =  ListNumberedItemAnySize(size: appearance.size)
-        size.contentPaddingStart = CGFloat(6.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.paddingBottom = CGFloat(0.0)
         size.paddingEnd = CGFloat(0.0)
         size.paddingStart = CGFloat(0.0)
@@ -43,7 +43,7 @@ public extension GeneralAppearanceVariation<ListNumberedItem, ListItemAppearance
     
     var s: ComponentAppearanceVariation<ListNumberedItem, ListItemAppearance> {
         var size =  ListNumberedItemAnySize(size: appearance.size)
-        size.contentPaddingStart = CGFloat(6.0)
+        size.contentPaddingStart = CGFloat(8.0)
         size.paddingBottom = CGFloat(0.0)
         size.paddingEnd = CGFloat(0.0)
         size.paddingStart = CGFloat(0.0)

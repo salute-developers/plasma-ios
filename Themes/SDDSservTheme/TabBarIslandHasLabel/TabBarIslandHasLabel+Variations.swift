@@ -5,9 +5,9 @@ import SDDSThemeCore
 import SDDSIcons
 
 
-public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.L> {
+public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.L> {
     
-    var l: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.L> {
+    var l: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.L> {
         var size =  TabBarIslandHasLabelAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -19,7 +19,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
         )
     }
     
-    var shadow: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.LShadow> {
+    var shadow: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.LShadow> {
         var size =  TabBarIslandHasLabelAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -32,7 +32,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
         )
     }
     
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
+    var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.l.label.default.appearance
         
@@ -41,7 +41,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
+    var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.l.label.accent.appearance
         
@@ -50,7 +50,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
+    var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.l.label.secondary.appearance
         
@@ -59,7 +59,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var variation: Variation<TabBarIslandAppearance> {
+    var variation: Variation<TabBarAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -74,9 +74,9 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
     
 }
 
-public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.LShadow> {
+public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.LShadow> {
     
-    var shadow: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.LShadow> {
+    var shadow: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.LShadow> {
         var size =  TabBarIslandHasLabelAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -89,7 +89,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
         )
     }
     
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
+    var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.l.label.default.appearance
         
@@ -98,7 +98,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
+    var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.l.label.accent.appearance
         
@@ -107,7 +107,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
+    var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.l.label.secondary.appearance
         
@@ -116,7 +116,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var variation: Variation<TabBarIslandAppearance> {
+    var variation: Variation<TabBarAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -131,9 +131,9 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
     
 }
 
-public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.M> {
+public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.M> {
     
-    var m: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.M> {
+    var m: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.M> {
         var size =  TabBarIslandHasLabelAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -145,7 +145,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
         )
     }
     
-    var shadow: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.MShadow> {
+    var shadow: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.MShadow> {
         var size =  TabBarIslandHasLabelAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -158,7 +158,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
         )
     }
     
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
+    var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.m.label.default.appearance
         
@@ -167,7 +167,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
+    var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.m.label.accent.appearance
         
@@ -176,7 +176,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
+    var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.m.label.secondary.appearance
         
@@ -185,7 +185,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var variation: Variation<TabBarIslandAppearance> {
+    var variation: Variation<TabBarAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -200,9 +200,9 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
     
 }
 
-public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.MShadow> {
+public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.MShadow> {
     
-    var shadow: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance, TabBarIslandHasLabelVariation.MShadow> {
+    var shadow: GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance, TabBarIslandHasLabelVariation.MShadow> {
         var size =  TabBarIslandHasLabelAnySize(size: appearance.size)
 
         var appearance = appearance
@@ -215,7 +215,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
         )
     }
     
-    var `default`: AppearanceVariation<TabBarIslandAppearance> {
+    var `default`: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.m.label.default.appearance
         
@@ -224,7 +224,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var accent: AppearanceVariation<TabBarIslandAppearance> {
+    var accent: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.m.label.accent.appearance
         
@@ -233,7 +233,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var secondary: AppearanceVariation<TabBarIslandAppearance> {
+    var secondary: AppearanceVariation<TabBarAppearance> {
         var appearance = appearance
         appearance.tabBarItemAppearance = TabBarItemSolid.m.label.secondary.appearance
         
@@ -242,7 +242,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
             appearance: appearance
         )
     }
-    var variation: Variation<TabBarIslandAppearance> {
+    var variation: Variation<TabBarAppearance> {
         .init(
             originalVariation: self,
             styles: [
@@ -258,7 +258,7 @@ public extension GeneralAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAp
 }
 
 
-public extension ComponentAppearanceVariation<TabBarIslandHasLabel, TabBarIslandAppearance> {
+public extension ComponentAppearanceVariation<TabBarIslandHasLabel, TabBarAppearance> {
     var variation: Variation<Appearance> {
         .init(
             originalVariation: self,
@@ -270,7 +270,7 @@ public extension ComponentAppearanceVariation<TabBarIslandHasLabel, TabBarIsland
     }
 }
 
-private extension TabBarIslandAppearance {
+private extension TabBarAppearance {
     
 }
 

@@ -962,7 +962,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
     
-    public var tabBarIslandSolidVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandSolidVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarIsland.all
@@ -973,7 +973,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
     
-    public var tabBarIslandClearVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandClearVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarIslandClear.all
@@ -984,7 +984,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
     
-    public var tabBarIslandHasLabelClearVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandHasLabelClearVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarIslandHasLabelClear.all
@@ -995,7 +995,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
     
-    public var tabBarIslandHasLabelSolidVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarIslandHasLabelSolidVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             SDDSServTheme.TabBarIslandHasLabel.all
@@ -1017,7 +1017,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
     
-    public var tabBarVariations: [Variation<TabBarIslandAppearance>] {
+    public var tabBarVariations: [Variation<TabBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             []
@@ -1105,7 +1105,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
     
-    public var navigationBarMainPageVariations: [Variation<NavigationBarMainPageAppearance>] {
+    public var navigationBarMainPageVariations: [Variation<NavigationBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.NavigationBarMainPage.all
@@ -1127,7 +1127,7 @@ public enum SandboxDemoAppTheme: String, CaseIterable {
         }
     }
     
-    public var navigationBarInternalPageVariations: [Variation<NavigationBarInternalPageAppearance>] {
+    public var navigationBarInternalPageVariations: [Variation<NavigationBarAppearance>] {
         switch self {
         case .sdddsServTheme:
             return SDDSServTheme.NavigationBarInternalPage.all

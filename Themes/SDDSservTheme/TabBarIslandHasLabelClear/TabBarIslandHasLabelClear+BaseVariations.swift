@@ -5,8 +5,8 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct TabBarIslandHasLabelClear {
-    public static var l: GeneralAppearanceVariation<TabBarIslandHasLabelClear, TabBarIslandAppearance, TabBarIslandHasLabelClearVariation.L> {
-        var appearance = TabBarIslandAppearance.base
+    public static var l: GeneralAppearanceVariation<TabBarIslandHasLabelClear, TabBarAppearance, TabBarIslandHasLabelClearVariation.L> {
+        var appearance = TabBarAppearance.base
         appearance.size = TabBarIslandHasLabelClearSize.l
 
         return .init(
@@ -14,8 +14,8 @@ public struct TabBarIslandHasLabelClear {
             appearance: appearance
         )
     }
-    public static var m: GeneralAppearanceVariation<TabBarIslandHasLabelClear, TabBarIslandAppearance, TabBarIslandHasLabelClearVariation.M> {
-        var appearance = TabBarIslandAppearance.base
+    public static var m: GeneralAppearanceVariation<TabBarIslandHasLabelClear, TabBarAppearance, TabBarIslandHasLabelClearVariation.M> {
+        var appearance = TabBarAppearance.base
         appearance.size = TabBarIslandHasLabelClearSize.m
 
         return .init(
@@ -24,7 +24,7 @@ public struct TabBarIslandHasLabelClear {
         )
     }
     
-    public static var all: [Variation<TabBarIslandAppearance>] {
+    public static var all: [Variation<TabBarAppearance>] {
         [
             TabBarIslandHasLabelClear.l.variation,
             TabBarIslandHasLabelClear.l.shadow.variation,
@@ -41,9 +41,9 @@ public struct TabBarIslandHasLabelClearVariation {
     public struct MShadow {}
 }
 
-private extension TabBarIslandAppearance {
-    static var base: TabBarIslandAppearance {
-        var appearance = TabBarIslandAppearance()
+private extension TabBarAppearance {
+    static var base: TabBarAppearance {
+        var appearance = TabBarAppearance()
         appearance.backgroundColor = ColorToken.surfaceDefaultSolidCard
         return appearance
     }
