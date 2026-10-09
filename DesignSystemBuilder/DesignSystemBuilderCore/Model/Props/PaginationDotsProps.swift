@@ -9,5 +9,5 @@ struct PaginationDotsProps: MergeableConfiguration, Codable {
     var dotBackgroundColor: ColorKeyValue?
     var dotWidth: KeyValue<Double>?
     var dotHeight: KeyValue<Double>?
-    var edgeCount: KeyValue<String>?
+    var edgeCount: KeyValue<IntegerValue>?
 }
