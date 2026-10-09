@@ -8,7 +8,6 @@ public struct Segment {
     public static var l: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.L> {
         var appearance = SegmentAppearance.base
         appearance.size = SegmentSize.l
-        appearance.disabledAlpha = CGFloat(0)
 
         return .init(
             name: "l",
@@ -18,7 +17,6 @@ public struct Segment {
     public static var m: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.M> {
         var appearance = SegmentAppearance.base
         appearance.size = SegmentSize.m
-        appearance.disabledAlpha = CGFloat(0)
 
         return .init(
             name: "m",
@@ -28,7 +26,6 @@ public struct Segment {
     public static var s: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.S> {
         var appearance = SegmentAppearance.base
         appearance.size = SegmentSize.s
-        appearance.disabledAlpha = CGFloat(0)
 
         return .init(
             name: "s",
@@ -38,7 +35,6 @@ public struct Segment {
     public static var xl: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.Xl> {
         var appearance = SegmentAppearance.base
         appearance.size = SegmentSize.xl
-        appearance.disabledAlpha = CGFloat(0)
 
         return .init(
             name: "xl",
@@ -48,7 +44,6 @@ public struct Segment {
     public static var xs: GeneralAppearanceVariation<Segment, SegmentAppearance, SegmentVariation.Xs> {
         var appearance = SegmentAppearance.base
         appearance.size = SegmentSize.xs
-        appearance.disabledAlpha = CGFloat(0)
 
         return .init(
             name: "xs",
@@ -89,7 +84,6 @@ private extension SegmentAppearance {
     static var base: SegmentAppearance {
         var appearance = SegmentAppearance()
         appearance.backgroundColor = StatefulFillStyle(defaultValue: .color(.surfaceDefaultTransparentSecondary), values: [])
-        appearance.disabledAlpha = CGFloat(0)
         return appearance
     }
 }
