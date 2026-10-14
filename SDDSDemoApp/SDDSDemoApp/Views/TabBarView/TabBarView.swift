@@ -91,16 +91,16 @@ private struct TabBarContainerModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if viewModel.usesIslandTabBar {
-            content.tabBarIsland(
+            content.tabBar(
                 items: viewModel.tabBarItems,
                 selectedIndex: $viewModel.selectedIndex,
-                appearance: viewModel.tabBarIslandAppearance
+                type: .island(appearance: viewModel.tabBarIslandAppearance)
             )
         } else {
             content.tabBar(
                 items: viewModel.tabBarItems,
                 selectedIndex: $viewModel.selectedIndex,
-                appearance: viewModel.appearance,
+                type: .bar(appearance: viewModel.appearance),
                 subtheme: viewModel.theme.subtheme(viewModel.subtheme)
             )
         }

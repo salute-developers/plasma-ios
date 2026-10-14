@@ -7,7 +7,8 @@ import SDDSApiInfo
  `CollapsingNavigationBarAppearance` определяет внешний вид компонента SDDSCollapsingNavigationBar.
  Кнопка «назад» отображается, когда задан `backIcon`.
  */
-@ApiInfo(components: ["CollapsingNavigationBarInternalPage", "CollapsingNavigationBarMainPage"])
+@ApiInfo
+@ApiStates(.collapsed)
 public struct CollapsingNavigationBarAppearance {
     // Цвета
     public var backIconColor: StatefulFillStyle
@@ -32,11 +33,16 @@ public struct CollapsingNavigationBarAppearance {
     public var titleTypography: TypographyConfiguration
     @ApiName("titleStyle", state: .collapsed)
     public var titleTypographyCollapsed: TypographyConfiguration
+    /// Агрегат рантайма: те же значения, что у `titleStyle`/`descriptionStyle` по состояниям,
+    /// собранные в один `StatefulValue`. Конфигурации оформления его не несут, а раскрытие
+    /// контейнера тащило в мету его внутренности (`applyTypography`, `original`).
+    @ApiIgnore()
     public var titleStatefulTypography: StatefulValue<TypographyConfiguration>
     @ApiName("descriptionStyle")
     public var descriptionTypography: TypographyConfiguration
     @ApiName("descriptionStyle", state: .collapsed)
     public var descriptionTypographyCollapsed: TypographyConfiguration
+    @ApiIgnore()
     public var descriptionStatefulTypography: StatefulValue<TypographyConfiguration>
 
     // Тень

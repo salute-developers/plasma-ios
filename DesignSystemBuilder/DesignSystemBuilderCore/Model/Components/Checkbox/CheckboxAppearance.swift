@@ -12,7 +12,6 @@ struct CheckboxAppearance: CodeGenerationAppearance {
     var subtitleColor: String? = nil
     var toggleColorChecked: String? = nil
     var toggleColorIndeterminate: String? = nil
-    var toggleIndeterminateColor: String? = nil
     var disabledAlpha: String? = nil
     
     init(variation: CheckboxConfiguration.Variation, component: CodeGenerationComponent) {
@@ -31,7 +30,6 @@ struct CheckboxAppearance: CodeGenerationAppearance {
         self.subtitleColor = StatefulFillStyleContextBuilder(props.descriptionColor, hasDefault: true).context
         self.toggleColorChecked = StatefulFillStyleContextBuilder(props.toggleIconColor, hasDefault: true).context
         self.toggleColorIndeterminate = StatefulFillStyleContextBuilder(props.toggleIconColor, hasDefault: true).context
-        self.toggleIndeterminateColor = StatefulFillStyleContextBuilder(props.toggleIndeterminateIconColor, hasDefault: true).context
         self.disabledAlpha = CGFloatContextBuilder(props.disableAlpha?.value, nullify: true).context
     }
 }

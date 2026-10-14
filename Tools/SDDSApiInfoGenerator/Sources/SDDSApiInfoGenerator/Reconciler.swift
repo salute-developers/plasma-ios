@@ -141,7 +141,6 @@ struct Reconciler {
             qualifiedName: meta.qualifiedName,
             styleQualifiedName: meta.styleQualifiedName,
             sizeQualifiedName: meta.sizeQualifiedName,
-            components: meta.components,
             resolvedTypes: meta.resolvedTypes,
             stateEnum: meta.stateEnum,
             params: newParams
@@ -162,6 +161,13 @@ struct Reconciler {
         let fnorm = Self.normalize(field.id)
         let fbase = Self.base(fnorm)
 
+        // Есть ли свойство, названное ровно как config-id и той же категории: тогда разметка
+        // на чужом свойстве в спор не вступает. В `TextField` разметка перекрёстная
+        // (`boxPaddingBottom` висит на `boxPaddingTop`), и там выигрывать должно имя.
+        let hasSameNamedParam = index.values.contains { params in
+            params.contains { $0.state == nil && Self.normalize($0.methodName) == fnorm && $0.type == field.category }
+        }
+
         var best: Param?
         var bestScore = 0
         for (_, params) in index {
@@ -171,7 +177,21 @@ struct Reconciler {
                 let pnorm = Self.normalize(param.methodName)
                 let pbase = Self.base(pnorm)
                 var score = 0
-                if pnorm == fnorm { score = 100 }
+                // Явная разметка (`@ApiName("<id>")`) — это и есть ответ на вопрос «какому
+                // config-id принадлежит свойство», и она должна побеждать догадку по базе
+                // имени: иначе `handleShape` уходит в `handleColor`, потому что у них общая
+                // основа `handle`, а размеченный `handlePathDrawer` остаётся не у дел.
+                // Явная разметка (`@ApiName("<id>")`) той же категории бьёт догадку по общей
+                // основе имени — иначе `handleShape` уходит в `handleColor`, а размеченный
+                // `handlePathDrawer` остаётся не у дел, — но уступает одноимённому свойству
+                // той же категории: в `TextField` разметка перекрёстная (`boxPaddingBottom`
+                // висит на `boxPaddingTop`), и там выигрывать должно совпадение имён.
+                // Без совпадения категории бонуса нет: у `Avatar.background` размечена альфа,
+                // а сам цвет — нет.
+                if param.explicitId, Self.normalize(param.id) == fnorm, param.type == field.category,
+                   !hasSameNamedParam {
+                    score = 105
+                } else if pnorm == fnorm { score = 100 }
                 else if pbase == fbase && !fbase.isEmpty { score = 80 }
                 else if !fbase.isEmpty && (pbase.contains(fbase) || fbase.contains(pbase)) { score = 40 }
                 if param.type == field.category { score += 15 }

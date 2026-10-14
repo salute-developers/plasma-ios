@@ -7,5 +7,4 @@ struct SkeletonProps: MergeableConfiguration, Codable {
     var shape: ShapeKeyValue?
     var gradient: ColorKeyValue?
     var duration: KeyValue<Double>?
-    var hoverExpandFactor: KeyValue<Double>?
 }

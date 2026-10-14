@@ -5,8 +5,8 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct NavigationBarInternalPage {
-    public static var `default`: ComponentAppearanceVariation<NavigationBarInternalPage, NavigationBarInternalPageAppearance> {
-        var appearance = NavigationBarInternalPageAppearance.base
+    public static var `default`: ComponentAppearanceVariation<NavigationBarInternalPage, NavigationBarAppearance> {
+        var appearance = NavigationBarAppearance.base
         appearance.size = NavigationBarInternalPageSize.`default`
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
@@ -22,7 +22,7 @@ public struct NavigationBarInternalPage {
         )
     }
     
-    public static var all: [Variation<NavigationBarInternalPageAppearance>] {
+    public static var all: [Variation<NavigationBarAppearance>] {
         [
             NavigationBarInternalPage.default.variation,
         ]
@@ -33,9 +33,9 @@ public struct NavigationBarInternalPageVariation {
     public struct Default {}
 }
 
-private extension NavigationBarInternalPageAppearance {
-    static var base: NavigationBarInternalPageAppearance {
-        var appearance = NavigationBarInternalPageAppearance()
+private extension NavigationBarAppearance {
+    static var base: NavigationBarAppearance {
+        var appearance = NavigationBarAppearance()
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
         appearance.backIcon = Asset.chevronLeft24.image

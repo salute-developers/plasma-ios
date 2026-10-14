@@ -9,12 +9,16 @@ enum MetaValueResolver {
     private static let forcedEnumTypes: Set<String> = ["DrawerCloseIconPlacement"]
 
     static func category(for param: ApiMetaParam, declared: String?) -> String {
-        if param.type == "iconSize" { return param.type }
+        if param.isIconSize { return iconSizeCategory }
         if forcedEnumTypes.contains(param.paramSimpleType) { return "value" }
         if param.paramSimpleType == "TypographyConfiguration" { return "typography" }
         if param.paramSimpleType == "PathDrawer" { return "shape" }
         return declared.flatMap { configCategories.contains($0) ? $0 : nil } ?? param.type
     }
+
+    /// Внутренняя категория размера иконки. В мету не попадает (там `dimension`):
+    /// словарь типов совпадает с Android, где отдельного размера иконки нет вовсе.
+    static let iconSizeCategory = "iconSize"
 
     static let configCategories: Set<String> = ["color", "shape", "shadow", "icon", "typography", "component_style"]
 
@@ -72,13 +76,13 @@ enum MetaValueResolver {
         case "boolean":
             return BoolContextBuilder(raw?.decoded(KeyValue<Bool>.self)?.value, nullify: nullify).context
         case "integer", "int":
-            if component.metaName == "PaginationDots", param.methodName == "edgeCount" {
-                return PaginationDotsEdgeCountContextBuilder(
-                    value: raw?.decoded(KeyValue<String>.self)?.value, nullify: nullify
-                ).context
+            // Целое в дизайн-системе не значит целое в Swift: `duration` объявлен `Double`,
+            // и `Int(5000)` туда не присвоится. Ориентируемся на тип свойства.
+            guard param.paramSimpleType == "Int" else {
+                return CGFloatContextBuilder(raw?.decoded(KeyValue<Double>.self)?.value, nullify: nullify).context
             }
-            if let value = raw?.decoded(KeyValue<Double>.self)?.value {
-                return "Int(\(Int(value)))"
+            if let value = raw?.decoded(KeyValue<IntegerValue>.self)?.value {
+                return "Int(\(Int(value.value)))"
             }
             return nullify ? nil : "Int(0)"
         case "value":

@@ -20,7 +20,7 @@ struct NavigationBarInternalPageTypography: GeneralTypographyConfiguration {
         self.noBackground = oneSize
     }
     
-    func typography(with size: NavigationBarInternalPageSizeConfiguration) -> TypographyToken? {
+    func typography(with size: NavigationBarSizeConfiguration) -> TypographyToken? {
         if size is NavigationBarInternalPageAnySize {
             return hasBackground
         }

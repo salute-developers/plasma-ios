@@ -7,6 +7,7 @@ import SDDSApiInfo
  `CodeInputAppearance` определяет внешний вид компонента CodeInput.
  */
 @ApiInfo
+@ApiStates(.error)
 public struct CodeInputAppearance {
     public var codeColor: StatefulFillStyle
     public var captionColor: StatefulFillStyle

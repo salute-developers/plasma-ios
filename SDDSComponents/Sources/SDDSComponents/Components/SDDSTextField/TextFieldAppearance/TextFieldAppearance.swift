@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo(components: ["TextFieldClear"])
+@ApiInfo
 public struct TextFieldAppearance {
     let id = UUID()
     public var size: TextFieldSizeConfiguration
@@ -25,6 +25,7 @@ public struct TextFieldAppearance {
     public var cursorColor: ColorToken
     @ApiName("disableAlpha")
     @ApiRawNumber
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     public var endContentColor: StatefulFillStyle
     public var endContentColorReadOnly: ColorToken?

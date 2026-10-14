@@ -12,9 +12,22 @@ enum ComponentIndex {
         let components: [Entry]
     }
 
-    private static var cache: [String: [String: Entry]] = [:]
+    private static var cache: [String: [String: Entry]?] = [:]
 
     static func entries(themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration) -> [String: Entry] {
+        resolved(themeConfig: themeConfig) ?? [:]
+    }
+
+    /// Есть ли у темы индекс вообще. Пустой индекс (дизайн-система без компонентов) и
+    /// отсутствующий индекс — разные вещи: во втором случае генератор работает по своему
+    /// списку поддерживаемых компонентов, в первом генерировать нечего.
+    static func exists(themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration) -> Bool {
+        resolved(themeConfig: themeConfig) != nil
+    }
+
+    private static func resolved(
+        themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration
+    ) -> [String: Entry]? {
         if let cached = cache[themeConfig.name] { return cached }
         let entries = load(themeConfig: themeConfig)
         cache[themeConfig.name] = entries
@@ -43,10 +56,10 @@ enum ComponentIndex {
         value.lowercased().filter { $0.isLetter || $0.isNumber }
     }
 
-    private static func load(themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration) -> [String: Entry] {
+    private static func load(themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration) -> [String: Entry]? {
         guard let data = ComponentConfigSource.data(filename: "meta.json", themeConfig: themeConfig),
               let index = try? JSONDecoder().decode(Index.self, from: data) else {
-            return [:]
+            return nil
         }
         return Dictionary(index.components.map { (normalize($0.styleName), $0) }, uniquingKeysWith: { first, _ in first })
     }

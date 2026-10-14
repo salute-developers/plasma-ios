@@ -7,12 +7,12 @@ struct NavigationBarInternalPageSize {
     static let hasBackground = NavigationBarInternalPageSizeHasbackground()
     static let noBackground = NavigationBarInternalPageSizeNobackground()
 
-    static let all: [NavigationBarInternalPageSizeConfiguration] = [
+    static let all: [NavigationBarSizeConfiguration] = [
         NavigationBarInternalPageSize.hasBackground,
         NavigationBarInternalPageSize.noBackground,
     ] 
 }
-struct NavigationBarInternalPageSizeHasbackground: NavigationBarInternalPageSizeConfiguration {
+struct NavigationBarInternalPageSizeHasbackground: NavigationBarSizeConfiguration {
     var backIconMargin = CGFloat(4.0)
     var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(16.0)
@@ -25,7 +25,7 @@ struct NavigationBarInternalPageSizeHasbackground: NavigationBarInternalPageSize
         return "NavigationBarInternalPageSize"
     }
 }
-struct NavigationBarInternalPageSizeNobackground: NavigationBarInternalPageSizeConfiguration {
+struct NavigationBarInternalPageSizeNobackground: NavigationBarSizeConfiguration {
     var backIconMargin = CGFloat(4.0)
     var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(16.0)
@@ -39,7 +39,7 @@ struct NavigationBarInternalPageSizeNobackground: NavigationBarInternalPageSizeC
     }
 }
 
-struct NavigationBarInternalPageAnySize: NavigationBarInternalPageSizeConfiguration {
+struct NavigationBarInternalPageAnySize: NavigationBarSizeConfiguration {
     var backIconMargin = CGFloat(0)
     var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(0)
@@ -49,7 +49,7 @@ struct NavigationBarInternalPageAnySize: NavigationBarInternalPageSizeConfigurat
     var paddingTop = CGFloat(0)
     var textBlockTopMargin = CGFloat(0)
 
-    init(size: NavigationBarInternalPageSizeConfiguration) {
+    init(size: NavigationBarSizeConfiguration) {
         self.backIconMargin = size.backIconMargin
         self.bottomShape = size.bottomShape
         self.horizontalSpacing = size.horizontalSpacing

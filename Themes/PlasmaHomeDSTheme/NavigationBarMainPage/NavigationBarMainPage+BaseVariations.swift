@@ -5,8 +5,8 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct NavigationBarMainPage {
-    public static var `default`: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance> {
-        var appearance = NavigationBarMainPageAppearance.base
+    public static var `default`: ComponentAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance> {
+        var appearance = NavigationBarAppearance.base
         appearance.size = NavigationBarMainPageSize.`default`
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
@@ -20,7 +20,7 @@ public struct NavigationBarMainPage {
         )
     }
     
-    public static var all: [Variation<NavigationBarMainPageAppearance>] {
+    public static var all: [Variation<NavigationBarAppearance>] {
         [
             NavigationBarMainPage.default.variation,
         ]
@@ -31,9 +31,9 @@ public struct NavigationBarMainPageVariation {
     public struct Default {}
 }
 
-private extension NavigationBarMainPageAppearance {
-    static var base: NavigationBarMainPageAppearance {
-        var appearance = NavigationBarMainPageAppearance()
+private extension NavigationBarAppearance {
+    static var base: NavigationBarAppearance {
+        var appearance = NavigationBarAppearance()
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
         appearance.backgroundColor = ColorToken.surfaceDefaultClear

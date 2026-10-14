@@ -21,7 +21,7 @@ public struct SegmentAppearance {
     public var backgroundColor: StatefulFillStyle?
     public var segmentItemAppearance: SegmentItemAppearance
     @available(*, deprecated, message: "Don't use it, public method will be removed")
-    @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
+    @ApiIgnore()
     public var disabledAlpha: CGFloat
 
     /**

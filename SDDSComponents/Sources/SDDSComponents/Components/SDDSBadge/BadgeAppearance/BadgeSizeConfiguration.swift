@@ -16,6 +16,7 @@ public protocol BadgeSizeConfiguration {
     @ApiName("endContentMargin")
     var endContentPadding: CGFloat { get }
     @ApiName("shape")
+    @ApiType(.shape)
     var cornerRadius: CGFloat { get }
 }
 

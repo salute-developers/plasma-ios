@@ -23,6 +23,7 @@ public struct SegmentItemAppearance {
     public var endContentColor: StatefulFillStyle
     @ApiName("backgroundColor")
     public var backgroundColor: StatefulFillStyle
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     public var counterAppearance: CounterAppearance
 

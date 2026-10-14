@@ -16,7 +16,7 @@ struct NavigationBarInternalPageTypography: GeneralTypographyConfiguration {
         self.`default` = oneSize
     }
     
-    func typography(with size: NavigationBarInternalPageSizeConfiguration) -> TypographyToken? {
+    func typography(with size: NavigationBarSizeConfiguration) -> TypographyToken? {
         if size is NavigationBarInternalPageAnySize {
             return `default`
         }

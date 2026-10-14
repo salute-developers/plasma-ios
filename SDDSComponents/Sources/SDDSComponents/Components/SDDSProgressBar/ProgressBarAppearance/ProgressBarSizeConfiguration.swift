@@ -21,11 +21,18 @@ public protocol ProgressBarSizeConfiguration: SizeConfiguration, CustomDebugStri
     @ApiName("backgroundShape")
     var pathDrawer: PathDrawer { get }
     @available(*, deprecated, message: "use 'pathDrawer' instead")
-    @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
+    @ApiIgnore()
     var cornerRadius: CGFloat { get }
     @available(*, deprecated, message: "use 'indicatorPathDrawer' instead")
-    @ApiValue("CGFloat(0)", zero: "CGFloat(0)")
+    @ApiIgnore()
     var indicatorCornerRadius: CGFloat { get }
+}
+
+/// Радиусы заменены на `PathDrawer` и в конфигурациях оформления их нет: генерация их
+/// не печатает, поэтому значение даёт сам протокол.
+public extension ProgressBarSizeConfiguration {
+    var cornerRadius: CGFloat { 0 }
+    var indicatorCornerRadius: CGFloat { 0 }
 }
 
 public struct ZeroProgressBarSize: ProgressBarSizeConfiguration {

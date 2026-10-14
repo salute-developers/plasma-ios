@@ -35,10 +35,10 @@ final class TabBarViewModel: ComponentViewModel<TabBarVariationProvider> {
         !theme.tabBarVariations.isEmpty && variations.isEmpty
     }
 
-    var tabBarIslandAppearance: TabBarIslandAppearance {
+    var tabBarIslandAppearance: TabBarAppearance {
         theme.tabBarVariations.first?.styles.first?.appearance
             ?? theme.tabBarVariations.first?.appearance
-            ?? TabBarIslandAppearance.defaultValue
+            ?? TabBarAppearance.defaultValue
     }
 
     var tabBarItems: [TabBarItemData] {

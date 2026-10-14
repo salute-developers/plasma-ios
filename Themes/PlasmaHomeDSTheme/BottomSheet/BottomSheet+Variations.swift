@@ -23,7 +23,6 @@ public extension GeneralAppearanceVariation<BottomSheet, BottomSheetAppearance, 
         appearance.backgroundColor = ColorToken.surfaceDefaultSolidCard
         appearance.handleColor = ColorToken.surfaceDefaultSolidTertiary
         appearance.handlePlacement = BottomSheetHandlePlacement.inner
-        appearance.size = BottomSheetSizeDefault()
     
         return .init(
             name: "default",
