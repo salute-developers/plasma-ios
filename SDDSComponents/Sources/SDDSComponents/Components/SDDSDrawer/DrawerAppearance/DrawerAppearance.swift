@@ -6,7 +6,7 @@ import SDDSApiInfo
 /**
  `DrawerAppearance` определяет внешний вид компонента Drawer.
  */
-@ApiInfo(components: ["DrawerCloseInner", "DrawerCloseNone", "DrawerCloseOuter"])
+@ApiInfo
 public struct DrawerAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken

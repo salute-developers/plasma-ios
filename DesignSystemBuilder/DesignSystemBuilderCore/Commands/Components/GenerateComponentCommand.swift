@@ -2,12 +2,19 @@ import Foundation
 import Stencil
 
 /// Источник конфигов компонентов. Резолвит конфиг:
-/// 1) локальный файл рядом с dsbuilder (напр. `carousel_config.json`),
-/// 2) per-theme из theme-converter (`components/<scheme>/<file>`).
-/// Конфиги binding'ов (form_item и т.п.) берутся из theme-converter per-theme —
-/// у каждой темы там свой конфиг. `localDirectory` ставится в `App.run()`.
+/// 1) пакет компонентов дизайн-системы в `.sdds/components`, который наполняет DS Builder CLI,
+/// 2) локальный файл рядом с dsbuilder (напр. `carousel_config.json`),
+/// 3) per-theme из theme-converter (`components/<scheme>/<file>`).
+///
+/// Порядок зеркалит Android: там `.sdds/components` — источник по умолчанию, а скачивание
+/// пакета остаётся только для тем с явно заданным source. Конфиги binding'ов (form_item и т.п.)
+/// у тем без локального пакета по-прежнему приезжают из theme-converter.
+/// `localDirectory` ставится в `App.run()`.
 enum ComponentConfigSource {
     static var localDirectory: URL?
+
+    /// Имя директории пакета компонентов внутри `.sdds`.
+    static let sddsComponentsDirectoryName = "components"
 
     private static var cache: [String: Data?] = [:]
 
@@ -29,10 +36,30 @@ enum ComponentConfigSource {
         return data
     }
 
+    /// Пакет компонентов дизайн-системы рядом с `config.json`, если тема описана локальной `.sdds`.
+    static func sddsComponentsDirectory(
+        themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration
+    ) -> URL? {
+        guard let sddsConfigPath = themeConfig.sddsConfigPath else { return nil }
+        let directory = URL(fileURLWithPath: sddsConfigPath)
+            .deletingLastPathComponent()
+            .appending(component: sddsComponentsDirectoryName)
+        var isDirectory: ObjCBool = false
+        guard FileManager.default.fileExists(atPath: directory.path(), isDirectory: &isDirectory),
+              isDirectory.boolValue else {
+            return nil
+        }
+        return directory
+    }
+
     private static func load(
         filename: String,
         themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration
     ) -> Data? {
+        if let sddsComponents = sddsComponentsDirectory(themeConfig: themeConfig),
+           let data = try? Data(contentsOf: sddsComponents.appending(component: filename)) {
+            return data
+        }
         if let localDirectory = localDirectory,
            let data = try? Data(contentsOf: localDirectory.appending(component: filename)) {
             return data

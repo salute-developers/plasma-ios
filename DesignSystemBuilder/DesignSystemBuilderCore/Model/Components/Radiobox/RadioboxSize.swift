@@ -12,8 +12,6 @@ struct RadioboxSize: CodeGenerationSize {
     var togglePathDrawer: String?
     var lineWidth: String?
     var togglePaddings: String?
-    var toggleIndeterminateIconWidth: String?
-    var toggleIndeterminateIconHeight: String?
     
     init(variation: ComponentConfiguration<RadioboxProps>.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
@@ -29,8 +27,6 @@ struct RadioboxSize: CodeGenerationSize {
         self.togglePathDrawer = PathDrawerContextBuilder(shape: props.shape, nullify: nullify).context
         self.lineWidth = CGFloatContextBuilder(props.toggleBorderWidth?.value, nullify: nullify).context
         self.togglePaddings = CGFloatContextBuilder(props.togglePadding?.value, nullify: nullify).context
-        self.toggleIndeterminateIconWidth = CGFloatContextBuilder(props.toggleIndeterminateWidth?.value, nullify: nullify).context
-        self.toggleIndeterminateIconHeight = CGFloatContextBuilder(props.toggleIndeterminateHeight?.value, nullify: nullify).context
     }
     
     init() {
@@ -43,7 +39,5 @@ struct RadioboxSize: CodeGenerationSize {
         self.togglePathDrawer = PathDrawerContextBuilder.defaultContext
         self.lineWidth = CGFloat.defaultContext
         self.togglePaddings = CGFloat.defaultContext
-        self.toggleIndeterminateIconWidth = CGFloat.defaultContext
-        self.toggleIndeterminateIconHeight = CGFloat.defaultContext
     }
 }

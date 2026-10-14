@@ -16,7 +16,7 @@ struct TabBarTypography: GeneralTypographyConfiguration {
         self.`default` = oneSize
     }
     
-    func typography(with size: TabBarIslandSizeConfiguration) -> TypographyToken? {
+    func typography(with size: TabBarSizeConfiguration) -> TypographyToken? {
         if size is TabBarAnySize {
             return `default`
         }

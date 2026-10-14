@@ -5,8 +5,8 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct NavigationBarMainPage {
-    public static var hasBackground: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.Hasbackground> {
-        var appearance = NavigationBarMainPageAppearance.base
+    public static var hasBackground: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.Hasbackground> {
+        var appearance = NavigationBarAppearance.base
         appearance.size = NavigationBarMainPageSize.hasBackground
         appearance.backgroundColor = ColorToken.surfaceDefaultSolidCard
 
@@ -15,8 +15,8 @@ public struct NavigationBarMainPage {
             appearance: appearance
         )
     }
-    public static var noBackground: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarMainPageAppearance, NavigationBarMainPageVariation.Nobackground> {
-        var appearance = NavigationBarMainPageAppearance.base
+    public static var noBackground: GeneralAppearanceVariation<NavigationBarMainPage, NavigationBarAppearance, NavigationBarMainPageVariation.Nobackground> {
+        var appearance = NavigationBarAppearance.base
         appearance.size = NavigationBarMainPageSize.noBackground
         appearance.backgroundColor = ColorToken.surfaceDefaultClear
 
@@ -26,7 +26,7 @@ public struct NavigationBarMainPage {
         )
     }
     
-    public static var all: [Variation<NavigationBarMainPageAppearance>] {
+    public static var all: [Variation<NavigationBarAppearance>] {
         [
             NavigationBarMainPage.hasBackground.variation,
             NavigationBarMainPage.hasBackground.rounded.variation,
@@ -47,9 +47,9 @@ public struct NavigationBarMainPageVariation {
     public struct NobackgroundRounded {}
 }
 
-private extension NavigationBarMainPageAppearance {
-    static var base: NavigationBarMainPageAppearance {
-        var appearance = NavigationBarMainPageAppearance()
+private extension NavigationBarAppearance {
+    static var base: NavigationBarAppearance {
+        var appearance = NavigationBarAppearance()
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
         appearance.textColor = ColorToken.textDefaultPrimary

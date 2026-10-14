@@ -10,7 +10,7 @@ public struct Divider {
         appearance.size = DividerSize.`default`
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentTertiary
         appearance.shape = CircleDrawer() as PathDrawer
-        appearance.thickness = CGFloat(1.0)
+        appearance.thickness = CGFloat(0.5)
 
         return .init(
             name: "`default`",
@@ -34,7 +34,7 @@ private extension DividerAppearance {
         var appearance = DividerAppearance()
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentTertiary
         appearance.shape = CircleDrawer() as PathDrawer
-        appearance.thickness = CGFloat(1.0)
+        appearance.thickness = CGFloat(0.5)
         return appearance
     }
 }

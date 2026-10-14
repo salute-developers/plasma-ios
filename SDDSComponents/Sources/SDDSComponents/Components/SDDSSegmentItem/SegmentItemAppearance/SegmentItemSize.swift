@@ -10,6 +10,7 @@ public protocol SegmentItemSizeConfiguration: SizeConfiguration, CustomDebugStri
     @ApiName("counterMargin")
     var counterPadding: CGFloat { get }
     @ApiName("shape")
+    @ApiType(.shape)
     var cornerRadius: CGFloat { get }
     @ApiValue("size(startContentSize, startContentSize)")
     var iconSize: CGSize { get }

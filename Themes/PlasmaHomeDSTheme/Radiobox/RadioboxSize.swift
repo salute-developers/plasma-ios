@@ -20,8 +20,6 @@ struct RadioboxSizeL: SelectionControlSizeConfiguration {
     var lineWidth = CGFloat(2.0)
     var toggleCheckedIconHeight = CGFloat(10.0)
     var toggleCheckedIconWidth = CGFloat(10.0)
-    var toggleIndeterminateIconHeight = CGFloat(0)
-    var toggleIndeterminateIconWidth = CGFloat(0)
     var togglePaddings = CGFloat(1.0)
     var togglePathDrawer = CircleDrawer() as PathDrawer
     var verticalGap = CGFloat(2.0)
@@ -36,8 +34,6 @@ struct RadioboxSizeM: SelectionControlSizeConfiguration {
     var lineWidth = CGFloat(2.0)
     var toggleCheckedIconHeight = CGFloat(10.0)
     var toggleCheckedIconWidth = CGFloat(10.0)
-    var toggleIndeterminateIconHeight = CGFloat(0)
-    var toggleIndeterminateIconWidth = CGFloat(0)
     var togglePaddings = CGFloat(1.0)
     var togglePathDrawer = CircleDrawer() as PathDrawer
     var verticalGap = CGFloat(2.0)
@@ -52,8 +48,6 @@ struct RadioboxSizeS: SelectionControlSizeConfiguration {
     var lineWidth = CGFloat(1.5)
     var toggleCheckedIconHeight = CGFloat(8.0)
     var toggleCheckedIconWidth = CGFloat(8.0)
-    var toggleIndeterminateIconHeight = CGFloat(0)
-    var toggleIndeterminateIconWidth = CGFloat(0)
     var togglePaddings = CGFloat(1.0)
     var togglePathDrawer = CircleDrawer() as PathDrawer
     var verticalGap = CGFloat(2.0)
@@ -69,8 +63,6 @@ struct RadioboxAnySize: SelectionControlSizeConfiguration {
     var lineWidth = CGFloat(0)
     var toggleCheckedIconHeight = CGFloat(0)
     var toggleCheckedIconWidth = CGFloat(0)
-    var toggleIndeterminateIconHeight = CGFloat(0)
-    var toggleIndeterminateIconWidth = CGFloat(0)
     var togglePaddings = CGFloat(0)
     var togglePathDrawer = DefaultPathDrawer() as PathDrawer
     var verticalGap = CGFloat(0)
@@ -82,8 +74,6 @@ struct RadioboxAnySize: SelectionControlSizeConfiguration {
         self.lineWidth = size.lineWidth
         self.toggleCheckedIconHeight = size.toggleCheckedIconHeight
         self.toggleCheckedIconWidth = size.toggleCheckedIconWidth
-        self.toggleIndeterminateIconHeight = size.toggleIndeterminateIconHeight
-        self.toggleIndeterminateIconWidth = size.toggleIndeterminateIconWidth
         self.togglePaddings = size.togglePaddings
         self.togglePathDrawer = size.togglePathDrawer
         self.verticalGap = size.verticalGap

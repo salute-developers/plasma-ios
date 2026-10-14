@@ -45,6 +45,15 @@
           "revision": "c5d11a805e765f52ba34ec7284bd4fcd6ba68615",
           "version": "1.7.0"
         }
+      },
+      {
+        "package": "swift-syntax",
+        "repositoryURL": "https://github.com/swiftlang/swift-syntax.git",
+        "state": {
+          "branch": null,
+          "revision": "f99ae8aa18f0cf0d53481901f88a0991dc3bd4a2",
+          "version": "601.0.1"
+        }
       }
     ]
   },

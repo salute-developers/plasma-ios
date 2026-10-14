@@ -10,7 +10,9 @@ extension FileWriter {
 
         do {
             if !fileManager.fileExists(atPath: outputURL.path()) {
-                try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: false)
+                // С промежуточными: `components generate` может быть первой командой в пустом
+                // `--output`, и каталога темы над каталогом компонента ещё не существует.
+                try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true)
             }
             
             var outputURL = outputURL

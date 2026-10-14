@@ -32,7 +32,7 @@ struct TabBarClearLDefaultExtraTypeNone: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -62,7 +62,7 @@ struct TabBarHasLabelClearMSecondaryCounter: View {
                     )
                 },
                 selectedIndex: $selecetedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -92,7 +92,7 @@ struct TabBarHasLabelSolidLAccentIndicator: View {
                     )
                 },
                 selectedIndex: $selecetedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -104,14 +104,14 @@ struct TabBarHasLabelSolidLAccentIndicator: View {
  PLASMA-T2185
  */
 struct TabBarIslandClearLShadowDefault: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
     
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3)
                 .ignoresSafeArea()
-            SDDSTabBarIsland(
+            SDDSTabBar(
                 items: (0..<5).map { index in
                     TabBarItemData(
                         content: AnyView(iconForTest),
@@ -122,7 +122,7 @@ struct TabBarIslandClearLShadowDefault: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .island(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -135,13 +135,13 @@ struct TabBarIslandClearLShadowDefault: View {
  PLASMA-T2186
  */
 struct TabBarIslandHasLabelClearLShadowSecondaryCounter: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
     
     var body: some View {
         ZStack {
             Color.gray.opacity(0.3).ignoresSafeArea()
-            SDDSTabBarIsland(
+            SDDSTabBar(
                 items: (0..<5).map { index in
                     TabBarItemData(
                         content: AnyView(iconForTest),
@@ -152,7 +152,7 @@ struct TabBarIslandHasLabelClearLShadowSecondaryCounter: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .island(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -181,7 +181,8 @@ struct TabBarHasLabelSolidLShadowAccentCounter: View {
                         extra: AnyView(counterForTest)
                     )
                 },
-                selectedIndex: $selectedIndex
+                selectedIndex: $selectedIndex,
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -193,11 +194,11 @@ struct TabBarHasLabelSolidLShadowAccentCounter: View {
  PLASMA-T2188
  */
 struct TabBarIslandSolidLDefaultCounter: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     @State var selectedIndex: Int = 0
     
     var body: some View {
-        SDDSTabBarIsland(
+        SDDSTabBar(
             items: (0..<6).map { index in
                 TabBarItemData(
                     content: AnyView(iconForTest),
@@ -208,7 +209,7 @@ struct TabBarIslandSolidLDefaultCounter: View {
                 )
             },
             selectedIndex: $selectedIndex,
-            appearance: appearance
+            type: .island(appearance: appearance)
         )
     }
 }
@@ -235,7 +236,7 @@ struct TabBarSolidLRoundedDefaultIndicator: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -265,7 +266,7 @@ struct TabBarClearMRoundedSecondaryCounter: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -295,7 +296,7 @@ struct TabBarHasLabelClearLRoundedAccentCounter: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -325,7 +326,7 @@ struct TabBarHasLabelSolidLDividerDefaultCounter: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -355,7 +356,7 @@ struct TabBarSolidLDividerSecondarytCounter: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -385,7 +386,7 @@ struct TabBarClearLDividerAccenttCounter: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -415,7 +416,7 @@ struct TabBarClearLDividerRoundedDefault: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -445,7 +446,7 @@ struct TabBarClearLDividerRoundedSecondary: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -475,7 +476,7 @@ struct TabBarSolidLDividerRoundedAccent: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -505,7 +506,7 @@ struct TabBarSolidLShadowRoundedAccent: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -535,7 +536,7 @@ struct TabBarSolidLShadowRoundedSecondary: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -565,7 +566,7 @@ struct TabBarSolidLShadowRoundedDefault: View {
                     )
                 },
                 selectedIndex: $selectedIndex,
-                appearance: appearance
+                type: .bar(appearance: appearance)
             )
         }
         .padding([.top, .bottom], 12)
@@ -577,11 +578,11 @@ struct TabBarSolidLShadowRoundedDefault: View {
  TabBarIsland с indicator
  */
 struct TabBarIslandIndicator: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     @State var selectedIndex: Int = 1
     
     var body: some View {
-        SDDSTabBarIsland(
+        SDDSTabBar(
             items: (0..<3).map { index in
                 TabBarItemData(
                     content: AnyView(iconForTest),
@@ -592,7 +593,7 @@ struct TabBarIslandIndicator: View {
                 )
             },
             selectedIndex: $selectedIndex,
-            appearance: appearance
+            type: .island(appearance: appearance)
         )
     }
 }
@@ -601,15 +602,15 @@ struct TabBarIslandIndicator: View {
  TabBarIsland с customWeight
  */
 struct TabBarIslandCustomWeight: View {
-    var appearance: TabBarIslandAppearance
+    var appearance: TabBarAppearance
     var customWidthEnabled: Bool = true
     @State var selectedIndex: Int = 1
     
     var body: some View {
-        SDDSTabBarIsland(
+        SDDSTabBar(
             items: tabBarItems,
             selectedIndex: $selectedIndex,
-            appearance: appearance
+            type: .island(appearance: appearance)
         )
     }
     

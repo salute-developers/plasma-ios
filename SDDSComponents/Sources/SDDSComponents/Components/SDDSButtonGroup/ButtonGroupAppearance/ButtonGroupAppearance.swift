@@ -6,7 +6,7 @@ import SDDSApiInfo
 /**
  `ButtonGroupAppearance` определяет внешний вид компонента ButtonGroup.
  */
-@ApiInfo(components: ["BasicButtonGroup", "IconButtonGroup"])
+@ApiInfo
 public struct ButtonGroupAppearance {
     public var buttonAppearance: ButtonAppearance?
     public var size: ButtonGroupSizeConfiguration

@@ -8,37 +8,37 @@ import SDDSThemeCore
  - Parameters:
     - items: Массив элементов табов (TabBarItemData)
     - selectedIndex: Binding к текущему выбранному индексу таба
-    - appearance: Параметры внешнего вида таб-бара (опционально)
+    - type: Тип таб-бара (`.bar` или `.island`) с соответствующим appearance
     - onTabSelected: Callback при выборе таба (опционально)
 
  ## Окружение
- 
- - `tabBarAppearance`: Стандартные настройки внешнего вида таб-бара
+
+ - `tabBarAppearance` / `tabBarAppearance`: внешний вид соответствующего типа,
+   когда appearance не передан явно
  - `colorScheme`: Цветовая схема (light/dark)
  - `safeAreaInsets`: Отступы безопасной зоны устройства
 
  ## Особенности
- - Автоматически заполняет нижнюю safe area фоновым цветом
+ - `.bar` заполняет нижнюю safe area фоновым цветом и рисует divider сверху
+ - `.island` отступает от краёв экрана и скругляется сверху и снизу
  - Поддерживает настраиваемые размеры и отступы для элементов
- - Включает divider сверху с правильной формой компонента
- - Адаптивный дизайн с учетом скругленных углов
  - Поддержка кастомных иконок и текста для каждого таба
 
  ## Примеры использования
 
  ```swift
- // Базовый таб-бар
+ // Таб-бар во всю ширину
  SDDSTabBar(
      items: tabBarItems,
      selectedIndex: $selectedIndex,
-     appearance: TabBar.m.default.appearance
+     type: .bar(appearance: TabBar.m.default.appearance)
  )
- 
- // Таб-бар с кастомным callback
+
+ // Островной таб-бар с кастомным callback
  SDDSTabBar(
      items: tabBarItems,
      selectedIndex: $selectedIndex,
-     appearance: TabBar.l.accent.appearance,
+     type: .island(appearance: TabBarIsland.m.default.appearance),
      onTabSelected: { index in
          print("Выбран таб: \(index)")
      }
@@ -46,51 +46,59 @@ import SDDSThemeCore
  ```
  */
 public struct SDDSTabBar: View {
-    @Environment(\.tabBarAppearance) private var environmentAppearance
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.subtheme) private var subtheme
     @Environment(\.safeAreaInsets) private var safeAreaInsets
-    
+
     @State private var contentSize: CGSize = .zero
-    private let _appearance: TabBarAppearance?
+    private let type: TabBarType
     private let items: [TabBarItemData]
     @Binding private var selectedIndex: Int
     private let onTabSelected: ((Int) -> Void)?
-    
+
     public init(
         items: [TabBarItemData],
         selectedIndex: Binding<Int>,
-        appearance: TabBarAppearance? = nil,
+        type: TabBarType,
         onTabSelected: ((Int) -> Void)? = nil
     ) {
         self.items = items
         self._selectedIndex = selectedIndex
-        self._appearance = appearance
+        self.type = type
         self.onTabSelected = onTabSelected
     }
-    
+
     public var body: some View {
+        switch type {
+        case .bar(let appearance):
+            bar(appearance: appearance)
+        case .island(let appearance):
+            island(appearance: appearance)
+        }
+    }
+
+    // MARK: - Bar
+
+    @ViewBuilder
+    private func bar(appearance: TabBarAppearance) -> some View {
         VStack(spacing: 0) {
-            TabBarContent(
-                items: items,
-                selectedIndex: $selectedIndex,
+            content(
                 itemSpacing: appearance.size.itemSpacing,
                 contentPaddingStart: appearance.size.contentPaddingStart,
                 contentPaddingEnd: appearance.size.contentPaddingEnd,
                 contentPaddingTop: appearance.size.contentPaddingTop,
                 contentPaddingBottom: appearance.size.contentPaddingBottom,
-                tabBarItemAppearance: appearance.tabBarItemAppearance,
-                onTabSelected: onTabSelected
+                tabBarItemAppearance: appearance.tabBarItemAppearance
             )
-            
+
             Rectangle()
                 .fill(.clear)
                 .frame(maxWidth: .infinity)
                 .frame(height: safeAreaInsets.bottom)
         }
         .frame(maxWidth: .infinity)
-        .background(backgroundLayers)
-        .shape(pathDrawer: topPathDrawer)
+        .background(background(color: appearance.backgroundColor))
+        .shape(pathDrawer: topPathDrawer(for: appearance.size.topShape))
         .readSize { size in
             self.contentSize = size
         }
@@ -98,34 +106,87 @@ public struct SDDSTabBar: View {
             Rectangle()
                 .fill(appearance.dividerColor.color(for: colorScheme, subtheme: subtheme))
                 .frame(height: appearance.size.dividerThickness + contentSize.height)
-                .shape(pathDrawer: topPathDrawer)
+                .shape(pathDrawer: topPathDrawer(for: appearance.size.topShape))
         }
         .shadow(appearance.shadow)
     }
-    
-    // MARK: - Background Layers
-    
+
+    // MARK: - Island
+
     @ViewBuilder
-    private var backgroundLayers: some View {
-        Rectangle()
-            .fill(backgroundColor.color(for: colorScheme, subtheme: subtheme))
+    private func island(appearance: TabBarAppearance) -> some View {
+        content(
+            itemSpacing: appearance.size.itemSpacing,
+            contentPaddingStart: appearance.size.contentPaddingStart,
+            contentPaddingEnd: appearance.size.contentPaddingEnd,
+            contentPaddingTop: appearance.size.contentPaddingTop,
+            contentPaddingBottom: appearance.size.contentPaddingBottom,
+            tabBarItemAppearance: appearance.tabBarItemAppearance
+        )
+        .background(islandBackground(appearance: appearance))
+        .padding([.leading], appearance.size.paddingStart)
+        .padding([.trailing], appearance.size.paddingEnd)
+        .shadow(appearance.shadow)
     }
-    
-    // MARK: - Computed Properties
-    
-    private var topPathDrawer: PathDrawer {
-        if let drawer = appearance.size.topShape as? CornerRadiusDrawer {
-            return CornerRadiusDrawer(cornerRadius: drawer.cornerRadius, cornerType: .specific(CornerRadiusDrawerType.top))
-        } else {
-            return appearance.size.topShape
+
+    /// Фон острова рисуется двумя половинами: у верхней своя форма, у нижней своя.
+    @ViewBuilder
+    private func islandBackground(appearance: TabBarAppearance) -> some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .top) {
+                background(color: appearance.backgroundColor)
+                    .shape(pathDrawer: topPathDrawer(for: appearance.size.topShape))
+                    .frame(height: geometry.size.height / 2)
+
+                background(color: appearance.backgroundColor)
+                    .shape(pathDrawer: bottomPathDrawer(for: appearance.size.bottomShape, fallback: appearance.size.topShape))
+                    .frame(height: geometry.size.height / 2)
+                    .offset(y: geometry.size.height / 2)
+            }
         }
     }
-    
-    private var appearance: TabBarAppearance {
-        _appearance ?? environmentAppearance
+
+    // MARK: - Shared
+
+    @ViewBuilder
+    private func content(
+        itemSpacing: CGFloat,
+        contentPaddingStart: CGFloat,
+        contentPaddingEnd: CGFloat,
+        contentPaddingTop: CGFloat,
+        contentPaddingBottom: CGFloat,
+        tabBarItemAppearance: TabBarItemAppearance
+    ) -> some View {
+        TabBarContent(
+            items: items,
+            selectedIndex: $selectedIndex,
+            itemSpacing: itemSpacing,
+            contentPaddingStart: contentPaddingStart,
+            contentPaddingEnd: contentPaddingEnd,
+            contentPaddingTop: contentPaddingTop,
+            contentPaddingBottom: contentPaddingBottom,
+            tabBarItemAppearance: tabBarItemAppearance,
+            onTabSelected: onTabSelected
+        )
     }
-    
-    private var backgroundColor: ColorToken {
-        appearance.backgroundColor
+
+    @ViewBuilder
+    private func background(color: ColorToken) -> some View {
+        Rectangle()
+            .fill(color.color(for: colorScheme, subtheme: subtheme))
+    }
+
+    private func topPathDrawer(for shape: PathDrawer) -> PathDrawer {
+        guard let drawer = shape as? CornerRadiusDrawer else {
+            return shape
+        }
+        return CornerRadiusDrawer(cornerRadius: drawer.cornerRadius, cornerType: .specific(CornerRadiusDrawerType.top))
+    }
+
+    private func bottomPathDrawer(for shape: PathDrawer, fallback: PathDrawer) -> PathDrawer {
+        guard let drawer = shape as? CornerRadiusDrawer else {
+            return fallback
+        }
+        return CornerRadiusDrawer(cornerRadius: drawer.cornerRadius, cornerType: .specific(CornerRadiusDrawerType.bottom))
     }
 }

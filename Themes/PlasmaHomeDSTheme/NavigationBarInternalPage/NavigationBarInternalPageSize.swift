@@ -6,11 +6,11 @@ import SDDSThemeCore
 struct NavigationBarInternalPageSize {
     static let `default` = NavigationBarInternalPageSizeDefault()
 
-    static let all: [NavigationBarInternalPageSizeConfiguration] = [
+    static let all: [NavigationBarSizeConfiguration] = [
         NavigationBarInternalPageSize.`default`,
     ] 
 }
-struct NavigationBarInternalPageSizeDefault: NavigationBarInternalPageSizeConfiguration {
+struct NavigationBarInternalPageSizeDefault: NavigationBarSizeConfiguration {
     var backIconMargin = CGFloat(4.0)
     var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(8.0)
@@ -24,7 +24,7 @@ struct NavigationBarInternalPageSizeDefault: NavigationBarInternalPageSizeConfig
     }
 }
 
-struct NavigationBarInternalPageAnySize: NavigationBarInternalPageSizeConfiguration {
+struct NavigationBarInternalPageAnySize: NavigationBarSizeConfiguration {
     var backIconMargin = CGFloat(0)
     var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(0)
@@ -34,7 +34,7 @@ struct NavigationBarInternalPageAnySize: NavigationBarInternalPageSizeConfigurat
     var paddingTop = CGFloat(0)
     var textBlockTopMargin = CGFloat(0)
 
-    init(size: NavigationBarInternalPageSizeConfiguration) {
+    init(size: NavigationBarSizeConfiguration) {
         self.backIconMargin = size.backIconMargin
         self.bottomShape = size.bottomShape
         self.horizontalSpacing = size.horizontalSpacing

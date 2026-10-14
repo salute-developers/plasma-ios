@@ -5,7 +5,6 @@ struct SegmentAppearance: CodeGenerationAppearance {
     typealias Props = SegmentProps
     
     var backgroundColor: String?
-    var disabledAlpha: String?
     var segmentItemAppearance: String?
     
     init(variation: SegmentConfiguration.Variation, component: CodeGenerationComponent) {
@@ -17,7 +16,6 @@ struct SegmentAppearance: CodeGenerationAppearance {
             return
         }
         
-        self.disabledAlpha = CGFloat.defaultContext
         self.backgroundColor = StatefulFillStyleContextBuilder(props.backgroundColor).context
         
         if let segmentItemStyle = props.segmentItemStyle?.value {

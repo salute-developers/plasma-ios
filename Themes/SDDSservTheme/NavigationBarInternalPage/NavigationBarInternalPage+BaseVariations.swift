@@ -5,8 +5,8 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct NavigationBarInternalPage {
-    public static var hasBackground: GeneralAppearanceVariation<NavigationBarInternalPage, NavigationBarInternalPageAppearance, NavigationBarInternalPageVariation.Hasbackground> {
-        var appearance = NavigationBarInternalPageAppearance.base
+    public static var hasBackground: GeneralAppearanceVariation<NavigationBarInternalPage, NavigationBarAppearance, NavigationBarInternalPageVariation.Hasbackground> {
+        var appearance = NavigationBarAppearance.base
         appearance.size = NavigationBarInternalPageSize.hasBackground
         appearance.backgroundColor = ColorToken.surfaceDefaultSolidCard
 
@@ -15,8 +15,8 @@ public struct NavigationBarInternalPage {
             appearance: appearance
         )
     }
-    public static var noBackground: GeneralAppearanceVariation<NavigationBarInternalPage, NavigationBarInternalPageAppearance, NavigationBarInternalPageVariation.Nobackground> {
-        var appearance = NavigationBarInternalPageAppearance.base
+    public static var noBackground: GeneralAppearanceVariation<NavigationBarInternalPage, NavigationBarAppearance, NavigationBarInternalPageVariation.Nobackground> {
+        var appearance = NavigationBarAppearance.base
         appearance.size = NavigationBarInternalPageSize.noBackground
         appearance.backgroundColor = ColorToken.surfaceDefaultClear
 
@@ -26,7 +26,7 @@ public struct NavigationBarInternalPage {
         )
     }
     
-    public static var all: [Variation<NavigationBarInternalPageAppearance>] {
+    public static var all: [Variation<NavigationBarAppearance>] {
         [
             NavigationBarInternalPage.hasBackground.variation,
             NavigationBarInternalPage.hasBackground.rounded.variation,
@@ -47,9 +47,9 @@ public struct NavigationBarInternalPageVariation {
     public struct NobackgroundRounded {}
 }
 
-private extension NavigationBarInternalPageAppearance {
-    static var base: NavigationBarInternalPageAppearance {
-        var appearance = NavigationBarInternalPageAppearance()
+private extension NavigationBarAppearance {
+    static var base: NavigationBarAppearance {
+        var appearance = NavigationBarAppearance()
         appearance.actionEndColor = ColorToken.textDefaultPrimary
         appearance.actionStartColor = ColorToken.textDefaultPrimary
         appearance.backIcon = Asset.disclosureLeftOutline24.image

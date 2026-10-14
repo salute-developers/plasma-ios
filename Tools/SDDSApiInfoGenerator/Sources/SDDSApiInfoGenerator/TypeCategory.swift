@@ -19,6 +19,8 @@ enum TypeCategory {
         "TypographyConfiguration": "typography",
         "TextStyle": "typography",
         "ShapeToken": "shape",
+        // Форма на iOS описывается рисовальщиком пути; у Android тот же параметр — Shape.
+        "PathDrawer": "shape",
         "ShadowToken": "shadow",
         "Image": "icon"
     ]
@@ -34,7 +36,7 @@ enum TypeCategory {
         "Angle": "dimension",
         "Float": "float",
         "Bool": "boolean",
-        "Int": "int",
+        "Int": "integer",
         "String": "value",
         "TextAlignment": "value",
         "Alignment": "value",
@@ -54,6 +56,13 @@ enum TypeCategory {
         ("Icon", "icon"),
         ("Image", "icon")
     ]
+
+    /// Категория, заданная точным именем типа, без эвристик по подстроке.
+    /// Нужна, чтобы отличить «знаем этот тип» от «угадали по имени»: имя enum'а
+    /// запросто содержит `Icon` или `Color`, не будучи иконкой или цветом.
+    static func exactCategory(simpleType: String) -> String? {
+        terminalExact[simpleType] ?? scalarExact[simpleType]
+    }
 
     /// Возвращает категорию для «листа», либо `nil`, если тип стоит попробовать
     /// раскрыть рекурсивно (композит).

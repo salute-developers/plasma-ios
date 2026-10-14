@@ -7,6 +7,7 @@ import SDDSApiInfo
  `CodeFieldAppearance` определяет внешний вид компонента CodeField.
  */
 @ApiInfo
+@ApiStates(.error)
 public struct CodeFieldAppearance {
     public var valueColor: StatefulFillStyle
     public var backgroundColor: StatefulFillStyle

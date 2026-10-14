@@ -5,9 +5,9 @@ import Foundation
  */
 public enum NavigationBarType {
     /// Главная страница
-    case mainPage(appearance: NavigationBarMainPageAppearance)
+    case mainPage(appearance: NavigationBarAppearance)
     
     /// Внутренняя страница с кнопкой "назад"
-    case internalPage(appearance: NavigationBarInternalPageAppearance)
+    case internalPage(appearance: NavigationBarAppearance)
 }
 

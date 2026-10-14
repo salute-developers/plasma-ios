@@ -3,7 +3,7 @@ import Foundation
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo(components: ["CardClear", "CardSolid"])
+@ApiInfo
 public struct CardAppearance {
     public var size: CardSizeConfiguration
     public var backgroundColor: ColorToken

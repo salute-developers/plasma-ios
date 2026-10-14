@@ -19,6 +19,7 @@ public struct ProgressBarAppearance: Hashable {
     public var tintFillStyle: FillStyle
     @ApiName("backgroundColor")
     public var trackColor: ColorToken
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     
     public init(

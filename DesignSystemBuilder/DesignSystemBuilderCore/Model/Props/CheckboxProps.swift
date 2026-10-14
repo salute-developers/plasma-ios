@@ -11,13 +11,10 @@ struct CheckboxProps: MergeableConfiguration, Codable {
     var toggleIconHeight: KeyValue<Double>?
     var textPadding: KeyValue<Double>?
     var descriptionPadding: KeyValue<Double>?
-    var toggleIndeterminateWidth: KeyValue<Double>?
-    var toggleIndeterminateHeight: KeyValue<Double>?
     var disableAlpha: KeyValue<Double>?
     var labelStyle: KeyValue<String>?
     var descriptionStyle: KeyValue<String>?
     var shape: ShapeKeyValue?
-    var toggleIndeterminateIconColor: ColorKeyValue?
     var toggleColor: ColorKeyValue?
     var toggleBorderColor: ColorKeyValue?
     var labelColor: ColorKeyValue?

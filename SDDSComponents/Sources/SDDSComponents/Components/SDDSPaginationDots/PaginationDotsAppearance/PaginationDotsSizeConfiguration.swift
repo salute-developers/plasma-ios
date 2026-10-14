@@ -16,6 +16,7 @@ public protocol PaginationDotsSizeConfiguration {
     @ApiName("dotWidth", state: .activated)
     var dotWidthActivated: CGFloat { get }
     var edgeCount: Int { get }
+    @ApiType(.float)
     var edgeShrinkFactor: CGFloat { get }
     var gap: CGFloat { get }
     var orientation: PaginationDotsOrientation { get }

@@ -3,7 +3,7 @@ title: TabBarIsland
 sidebar_label: TabBarIsland
 ---
 
-`SDDSTabBarIsland` — компонент для отображения плавающей панели навигации с табами.
+Плавающая панель навигации с табами — это `SDDSTabBar` с типом `.island`.
 
 ## Примеры использования
 
@@ -16,20 +16,20 @@ sidebar_label: TabBarIsland
 ### Островок с кастомным внешним видом
 
 ```swift
-SDDSTabBarIsland(
+SDDSTabBar(
     items: tabBarItems,
     selectedIndex: $selectedIndex,
-    appearance: TabBarIsland.m.default.appearance
+    type: .island(appearance: TabBarIsland.m.default.appearance)
 )
 ```
 
 ### Островок с обработчиком событий
 
 ```swift
-SDDSTabBarIsland(
+SDDSTabBar(
     items: tabBarItems,
     selectedIndex: $selectedIndex,
-    appearance: TabBarIsland.l.accent.appearance,
+    type: .island(appearance: TabBarIsland.l.accent.appearance),
     onTabSelected: { index in
         print("Выбран таб: \(index)")
     }
@@ -65,17 +65,17 @@ let tabBarItems: [TabBarItemData] = [
 |----------|-----|----------|
 | `items` | `[TabBarItemData]` | Массив элементов табов |
 | `selectedIndex` | `Binding<Int>` | Индекс выбранной вкладки |
-| `appearance` | `TabBarIslandAppearance?` | Параметры внешнего вида островка |
+| `type` | `TabBarType` | `.island(appearance:)` для плавающего варианта |
 | `onTabSelected` | `((Int) -> Void)?` | Callback при выборе таба |
 
-## TabBarIslandAppearance
+## TabBarAppearance
 
 | Параметр | Тип | Описание |
 |----------|-----|----------|
 | `backgroundColor` | `ColorToken` | Цвет фона островка |
 | `shadow` | `ShadowToken` | Тень островка |
 | `tabBarItemAppearance` | `TabBarItemAppearance` | Стиль элементов таб-бара |
-| `size` | `TabBarIslandSizeConfiguration` | Конфигурация размеров и отступов |
+| `size` | `TabBarSizeConfiguration` | Конфигурация размеров и отступов |
 
 ## Стилизация
 
@@ -141,7 +141,7 @@ TabBarIsland(
 TabBarIsland(
     selectedTab: $selectedTab,
     tabs: tabs,
-    appearance: TabBarIslandAppearance(
+    appearance: TabBarAppearance(
         padding: 12,
         cornerRadius: 20
     )

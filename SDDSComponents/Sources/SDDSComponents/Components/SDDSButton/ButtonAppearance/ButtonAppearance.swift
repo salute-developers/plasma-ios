@@ -77,11 +77,13 @@ public struct ButtonAppearance {
     /**
      Прозрачность кнопки, когда она отключена.
      */
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
 
     /**
      Прозрачность кнопки, когда она находится в состоянии загрузки.
      */
+    @ApiType(.float)
     public var loadingAlpha: CGFloat
 
     /**
