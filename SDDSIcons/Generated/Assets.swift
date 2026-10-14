@@ -2610,6 +2610,12 @@ public enum Asset {
   public static let nextOutline16 = ImageAsset(name: "NextOutline16")
   public static let nextOutline24 = ImageAsset(name: "NextOutline24")
   public static let nextOutline36 = ImageAsset(name: "NextOutline36")
+  public static let noiseCancellationFill16 = ImageAsset(name: "NoiseCancellationFill16")
+  public static let noiseCancellationFill24 = ImageAsset(name: "NoiseCancellationFill24")
+  public static let noiseCancellationFill36 = ImageAsset(name: "NoiseCancellationFill36")
+  public static let noiseCancellationOutline16 = ImageAsset(name: "NoiseCancellationOutline16")
+  public static let noiseCancellationOutline24 = ImageAsset(name: "NoiseCancellationOutline24")
+  public static let noiseCancellationOutline36 = ImageAsset(name: "NoiseCancellationOutline36")
   public static let noteFill16 = ImageAsset(name: "NoteFill16")
   public static let noteFill24 = ImageAsset(name: "NoteFill24")
   public static let noteFill36 = ImageAsset(name: "NoteFill36")
@@ -3180,6 +3186,9 @@ public enum Asset {
   public static let save16 = ImageAsset(name: "Save16")
   public static let save24 = ImageAsset(name: "Save24")
   public static let save36 = ImageAsset(name: "Save36")
+  public static let saveFill16 = ImageAsset(name: "SaveFill16")
+  public static let saveFill24 = ImageAsset(name: "SaveFill24")
+  public static let saveFill36 = ImageAsset(name: "SaveFill36")
   public static let sb16 = ImageAsset(name: "Sb16")
   public static let sb24 = ImageAsset(name: "Sb24")
   public static let sb36 = ImageAsset(name: "Sb36")
@@ -3567,6 +3576,9 @@ public enum Asset {
   public static let sortSmallBig16 = ImageAsset(name: "SortSmallBig16")
   public static let sortSmallBig24 = ImageAsset(name: "SortSmallBig24")
   public static let sortSmallBig36 = ImageAsset(name: "SortSmallBig36")
+  public static let soundNoiseOutline16 = ImageAsset(name: "SoundNoiseOutline16")
+  public static let soundNoiseOutline24 = ImageAsset(name: "SoundNoiseOutline24")
+  public static let soundNoiseOutline36 = ImageAsset(name: "SoundNoiseOutline36")
   public static let space16 = ImageAsset(name: "Space16")
   public static let space24 = ImageAsset(name: "Space24")
   public static let space36 = ImageAsset(name: "Space36")
@@ -3936,6 +3948,12 @@ public enum Asset {
   public static let translateOutline16 = ImageAsset(name: "TranslateOutline16")
   public static let translateOutline24 = ImageAsset(name: "TranslateOutline24")
   public static let translateOutline36 = ImageAsset(name: "TranslateOutline36")
+  public static let transparencyFill16 = ImageAsset(name: "TransparencyFill16")
+  public static let transparencyFill24 = ImageAsset(name: "TransparencyFill24")
+  public static let transparencyFill36 = ImageAsset(name: "TransparencyFill36")
+  public static let transparencyOutline16 = ImageAsset(name: "TransparencyOutline16")
+  public static let transparencyOutline24 = ImageAsset(name: "TransparencyOutline24")
+  public static let transparencyOutline36 = ImageAsset(name: "TransparencyOutline36")
   public static let trashFill16 = ImageAsset(name: "TrashFill16")
   public static let trashFill24 = ImageAsset(name: "TrashFill24")
   public static let trashFill36 = ImageAsset(name: "TrashFill36")
@@ -5314,6 +5332,8 @@ public enum IconName: String, Codable, Hashable {
   case newsPaperOutline
   case nextFill
   case nextOutline
+  case noiseCancellationFill
+  case noiseCancellationOutline
   case noteFill
   case noteOutline
   case notebookDownloadFill
@@ -5504,6 +5524,7 @@ public enum IconName: String, Codable, Hashable {
   case saluteFill
   case saluteOutline
   case save
+  case saveFill
   case sb
   case sbBoom
   case sbBoomCast
@@ -5633,6 +5654,7 @@ public enum IconName: String, Codable, Hashable {
   case sortAlphabetDesc
   case sortBigSmall
   case sortSmallBig
+  case soundNoiseOutline
   case space
   case spacingHorizontal
   case spacingVertical
@@ -5756,6 +5778,8 @@ public enum IconName: String, Codable, Hashable {
   case transcriptionVoiceTextOutline
   case translateFill
   case translateOutline
+  case transparencyFill
+  case transparencyOutline
   case trashFill
   case trashOutline
   case travelCarFill
@@ -6750,6 +6774,8 @@ extension IconName: CaseIterable {
     newsPaperOutline
     nextFill
     nextOutline
+    noiseCancellationFill
+    noiseCancellationOutline
     noteFill
     noteOutline
     notebookDownloadFill
@@ -6940,6 +6966,7 @@ extension IconName: CaseIterable {
     saluteFill
     saluteOutline
     save
+    saveFill
     sb
     sbBoom
     sbBoomCast
@@ -7069,6 +7096,7 @@ extension IconName: CaseIterable {
     sortAlphabetDesc
     sortBigSmall
     sortSmallBig
+    soundNoiseOutline
     space
     spacingHorizontal
     spacingVertical
@@ -7192,6 +7220,8 @@ extension IconName: CaseIterable {
     transcriptionVoiceTextOutline
     translateFill
     translateOutline
+    transparencyFill
+    transparencyOutline
     trashFill
     trashOutline
     travelCarFill
