@@ -10,7 +10,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var l: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.L> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -25,7 +24,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.LPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -74,7 +72,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.LPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -123,7 +120,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var m: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.M> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -138,7 +134,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.MPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -187,7 +182,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.MPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -236,7 +230,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.SPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -251,7 +244,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var s: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.S> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -300,7 +292,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.SPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -349,7 +340,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XsPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -364,7 +354,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var xs: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.Xs> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -413,7 +402,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XsPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -462,7 +450,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XxsPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -477,7 +464,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var xxs: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.Xxs> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -526,7 +512,6 @@ public extension GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, 
     var pilled: GeneralAppearanceVariation<ChipGroupWide, ChipGroupAppearance, ChipGroupWideVariation.XxsPilled> {
         var size =  ChipGroupWideAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance

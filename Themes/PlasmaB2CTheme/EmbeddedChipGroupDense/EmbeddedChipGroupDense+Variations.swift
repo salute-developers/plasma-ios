@@ -10,7 +10,6 @@ public extension GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupApp
     var l: GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupAppearance, EmbeddedChipGroupDenseVariation.L> {
         var size =  EmbeddedChipGroupDenseAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -99,7 +98,6 @@ public extension GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupApp
     var m: GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupAppearance, EmbeddedChipGroupDenseVariation.M> {
         var size =  EmbeddedChipGroupDenseAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -188,7 +186,6 @@ public extension GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupApp
     var s: GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupAppearance, EmbeddedChipGroupDenseVariation.S> {
         var size =  EmbeddedChipGroupDenseAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -277,7 +274,6 @@ public extension GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupApp
     var xl: GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupAppearance, EmbeddedChipGroupDenseVariation.Xl> {
         var size =  EmbeddedChipGroupDenseAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance
@@ -366,7 +362,6 @@ public extension GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupApp
     var xs: GeneralAppearanceVariation<EmbeddedChipGroupDense, ChipGroupAppearance, EmbeddedChipGroupDenseVariation.Xs> {
         var size =  EmbeddedChipGroupDenseAnySize(size: appearance.size)
         size.alignment = ChipGroupAlignment.left
-        size.insets(for: .dense)
         size.maxColumns = Int(0)
 
         var appearance = appearance

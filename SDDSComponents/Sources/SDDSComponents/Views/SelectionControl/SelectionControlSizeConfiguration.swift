@@ -30,6 +30,14 @@ public protocol SelectionControlSizeConfiguration: SizeConfiguration, CustomDebu
     var togglePaddings: CGFloat { get }
 }
 
+/// Неопределённое состояние есть у чекбокса, но не у радиокнопки: протокол размеров общий,
+/// а в конфигурациях оформления радиокнопки состояния `indeterminate` нет, поэтому генерация
+/// этих размеров для неё не печатает.
+public extension SelectionControlSizeConfiguration {
+    var toggleIndeterminateIconWidth: CGFloat { 0 }
+    var toggleIndeterminateIconHeight: CGFloat { 0 }
+}
+
 public struct ZeroSelectionControlSize: SelectionControlSizeConfiguration {
     public var height: CGFloat { 0 }
     public var width: CGFloat { 0 }

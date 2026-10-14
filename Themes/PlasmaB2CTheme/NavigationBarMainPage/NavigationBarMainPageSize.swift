@@ -7,12 +7,13 @@ struct NavigationBarMainPageSize {
     static let hasBackground = NavigationBarMainPageSizeHasbackground()
     static let noBackground = NavigationBarMainPageSizeNobackground()
 
-    static let all: [NavigationBarMainPageSizeConfiguration] = [
+    static let all: [NavigationBarSizeConfiguration] = [
         NavigationBarMainPageSize.hasBackground,
         NavigationBarMainPageSize.noBackground,
     ] 
 }
-struct NavigationBarMainPageSizeHasbackground: NavigationBarMainPageSizeConfiguration {
+struct NavigationBarMainPageSizeHasbackground: NavigationBarSizeConfiguration {
+    var backIconMargin = CGFloat(0)
     var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(16.0)
     var paddingBottom = CGFloat(20.0)
@@ -24,7 +25,8 @@ struct NavigationBarMainPageSizeHasbackground: NavigationBarMainPageSizeConfigur
         return "NavigationBarMainPageSize"
     }
 }
-struct NavigationBarMainPageSizeNobackground: NavigationBarMainPageSizeConfiguration {
+struct NavigationBarMainPageSizeNobackground: NavigationBarSizeConfiguration {
+    var backIconMargin = CGFloat(0)
     var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(16.0)
     var paddingBottom = CGFloat(20.0)
@@ -37,7 +39,8 @@ struct NavigationBarMainPageSizeNobackground: NavigationBarMainPageSizeConfigura
     }
 }
 
-struct NavigationBarMainPageAnySize: NavigationBarMainPageSizeConfiguration {
+struct NavigationBarMainPageAnySize: NavigationBarSizeConfiguration {
+    var backIconMargin = CGFloat(0)
     var bottomShape = DefaultPathDrawer() as PathDrawer
     var horizontalSpacing = CGFloat(0)
     var paddingBottom = CGFloat(0)
@@ -46,7 +49,8 @@ struct NavigationBarMainPageAnySize: NavigationBarMainPageSizeConfiguration {
     var paddingTop = CGFloat(0)
     var textBlockTopMargin = CGFloat(0)
 
-    init(size: NavigationBarMainPageSizeConfiguration) {
+    init(size: NavigationBarSizeConfiguration) {
+        self.backIconMargin = size.backIconMargin
         self.bottomShape = size.bottomShape
         self.horizontalSpacing = size.horizontalSpacing
         self.paddingBottom = size.paddingBottom

@@ -16,6 +16,7 @@ public protocol TextFieldSizeConfiguration: CustomDebugStringConvertible {
     var captionTopPadding: CGFloat { get }
     var optionalPadding: CGFloat { get }
     @ApiName("shape")
+    @ApiType(.shape)
     var cornerRadius: CGFloat { get }
     @ApiName("startContentPadding")
     var iconPadding: CGFloat { get }

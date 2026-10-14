@@ -3,7 +3,8 @@ import Foundation
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo(components: ["AvatarIndicator"])
+@ApiInfo
+@ApiStates(.inactive)
 public struct IndicatorAppearance {
     public var size: IndicatorSizeConfiguration = DefaultIndicatorSize()
     public var backgroundColor: StatefulFillStyle = StatefulFillStyle(defaultValue: .color(.clearColor), values: [])

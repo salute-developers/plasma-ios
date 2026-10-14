@@ -5,8 +5,8 @@ import SDDSThemeCore
 import SDDSIcons
 
 public struct TabBar {
-    public static var `default`: ComponentAppearanceVariation<TabBar, TabBarIslandAppearance> {
-        var appearance = TabBarIslandAppearance.base
+    public static var `default`: ComponentAppearanceVariation<TabBar, TabBarAppearance> {
+        var appearance = TabBarAppearance.base
         appearance.size = TabBarSize.`default`
         appearance.backgroundBlurColor = ColorToken.surfaceDefaultTransparentSecondary
         appearance.backgroundBlurRadius = CGFloat(50.0)
@@ -19,7 +19,7 @@ public struct TabBar {
         )
     }
     
-    public static var all: [Variation<TabBarIslandAppearance>] {
+    public static var all: [Variation<TabBarAppearance>] {
         [
             TabBar.default.variation,
         ]
@@ -30,9 +30,9 @@ public struct TabBarVariation {
     public struct Default {}
 }
 
-private extension TabBarIslandAppearance {
-    static var base: TabBarIslandAppearance {
-        var appearance = TabBarIslandAppearance()
+private extension TabBarAppearance {
+    static var base: TabBarAppearance {
+        var appearance = TabBarAppearance()
         appearance.backgroundBlurColor = ColorToken.surfaceDefaultTransparentSecondary
         appearance.backgroundBlurRadius = CGFloat(50.0)
         appearance.backgroundColor = ColorToken.surfaceDefaultSolidTertiary

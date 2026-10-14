@@ -20,8 +20,8 @@ public struct AvatarAppearance: Hashable {
     public var size: AvatarSizeConfiguration
     public var textFillStyle: FillStyle
     public var backgroundFillStyle: FillStyle
-    @ApiName("background")
     @ApiValue("alpha(background)")
+    @ApiType(.float)
     public var backgroundOpacity: CGFloat
     @ApiName("activeStatusColor")
     public var onlineStatusColor: ColorToken

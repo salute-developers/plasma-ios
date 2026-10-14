@@ -11,6 +11,7 @@ public struct EditableAppearance {
     public var iconColor: StatefulFillStyle
     public var cursorColor: ColorToken
     @ApiRawNumber
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     @ApiName("textStyle")
     public var textTypography: TypographyConfiguration

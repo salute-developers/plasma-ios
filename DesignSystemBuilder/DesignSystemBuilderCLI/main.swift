@@ -17,7 +17,7 @@ struct DesignSystemBuilder: ParsableCommand {
         commandName: "dsbuilder-ios",
         abstract: "CLI дизайн-системы SDDS под iOS: генерация тем и документационный бандл.",
         version: dsBuilderIosVersion,
-        subcommands: [GenerateThemes.self, Theme.self, Docs.self],
+        subcommands: [GenerateThemes.self, Theme.self, Components.self, Docs.self],
         defaultSubcommand: GenerateThemes.self
     )
 }

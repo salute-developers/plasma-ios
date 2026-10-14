@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo(components: ["TextAreaClear"])
+@ApiInfo
 public struct TextAreaAppearance {
     public var id = UUID()
     public var size: TextAreaSizeConfiguration
@@ -30,6 +30,7 @@ public struct TextAreaAppearance {
     public var cursorColor: ColorToken
     @ApiName("disableAlpha")
     @ApiRawNumber
+    @ApiType(.float)
     public var disabledAlpha: CGFloat
     public var endContentColor: StatefulFillStyle
     public var endContentColorReadOnly: ColorToken?

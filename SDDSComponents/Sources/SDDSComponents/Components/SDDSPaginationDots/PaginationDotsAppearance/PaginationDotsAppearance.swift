@@ -3,7 +3,7 @@ import SwiftUI
 import SDDSThemeCore
 import SDDSApiInfo
 
-@ApiInfo(components: ["PaginationDotsHorizontal", "PaginationDotsVertical"])
+@ApiInfo
 public struct PaginationDotsAppearance {
     public var size: PaginationDotsSizeConfiguration = DefaultPaginationDotsSize()
     @ApiName("dotBackgroundColor")

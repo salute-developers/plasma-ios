@@ -29,6 +29,7 @@ public protocol ChipSizeConfiguration: SizeConfiguration, CustomDebugStringConve
     var contentEndPadding: CGFloat { get }
     var height: CGFloat { get }
     @ApiName("shape")
+    @ApiType(.shape)
     var cornerRadius: CGFloat { get }
 }
 

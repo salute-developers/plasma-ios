@@ -18,7 +18,7 @@ import SDDSIcons
  PLASMA-T2339
  */
 struct NavBarMainPageNoBackgroundInlineCenterInline: View {
-    var appearance = NavigationBarMainPageAppearance()
+    var appearance = NavigationBarAppearance()
     
     var body: some View {
         SDDSNavigationBar(
@@ -47,7 +47,7 @@ struct NavBarMainPageNoBackgroundInlineCenterInline: View {
  PLASMA-T2340
  */
 struct NavBarInternalPageNoBackgroundRounded: View {
-    var appearance = NavigationBarInternalPageAppearance()
+    var appearance = NavigationBarAppearance()
     var body: some View {
         SDDSNavigationBar(
             type: .internalPage(appearance: appearance),
@@ -76,7 +76,7 @@ struct NavBarInternalPageNoBackgroundRounded: View {
  PLASMA-T2341
  */
 struct NavBarInternalPageHasBackgroundLongTextContent: View {
-    var appearance = NavigationBarInternalPageAppearance()
+    var appearance = NavigationBarAppearance()
     var body: some View {
         SDDSNavigationBar(
             type: .internalPage(appearance: appearance),
@@ -101,7 +101,7 @@ struct NavBarInternalPageHasBackgroundLongTextContent: View {
  PLASMA-T2342
  */
 struct NavBarInternalPageHasBackgroundRoundedNoContent: View {
-    var appearance = NavigationBarInternalPageAppearance()
+    var appearance = NavigationBarAppearance()
     var body: some View {
         SDDSNavigationBar(
             type: .internalPage(appearance: appearance),
@@ -124,7 +124,7 @@ struct NavBarInternalPageHasBackgroundRoundedNoContent: View {
  PLASMA-T2343
  */
 struct NavBarInternalPageHasBackgroundShadow: View {
-    var appearance = NavigationBarInternalPageAppearance()
+    var appearance = NavigationBarAppearance()
     var body: some View {
         SDDSNavigationBar(
             type: .internalPage(appearance: appearance),
@@ -154,7 +154,7 @@ struct NavBarInternalPageHasBackgroundShadow: View {
  PLASMA-T2344
  */
 struct NavBarInternalPageHasBackgroundShadowRounded: View {
-    var appearance = NavigationBarInternalPageAppearance()
+    var appearance = NavigationBarAppearance()
     var body: some View {
         SDDSNavigationBar(
             type: .internalPage(appearance: appearance),

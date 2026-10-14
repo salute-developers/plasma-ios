@@ -4,7 +4,7 @@ import SDDSThemeCore
 
 /**
  `TabBarContent` представляет собой общий контент для таб-бара, который может быть переиспользован
- в различных типах таб-баров (SDDSTabBar, SDDSTabBarIsland).
+ в обоих типах таб-бара (`.bar` и `.island`).
  */
 public struct TabBarContent: View {
     private let items: [TabBarItemData]

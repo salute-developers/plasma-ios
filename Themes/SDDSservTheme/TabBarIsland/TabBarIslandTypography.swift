@@ -20,7 +20,7 @@ struct TabBarIslandTypography: GeneralTypographyConfiguration {
         self.m = oneSize
     }
     
-    func typography(with size: TabBarIslandSizeConfiguration) -> TypographyToken? {
+    func typography(with size: TabBarSizeConfiguration) -> TypographyToken? {
         if size is TabBarIslandAnySize {
             return l
         }

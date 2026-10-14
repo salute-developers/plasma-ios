@@ -1,10 +1,11 @@
 import Foundation
 import SwiftUI
 
-struct NavigationBarMainPageSize: CodeGenerationSize {
-    typealias Variation = NavigationBarMainPageConfiguration.Variation
-    typealias Props = NavigationBarMainPageProps
+struct NavigationBarSize: CodeGenerationSize {
+    typealias Variation = NavigationBarConfiguration.Variation
+    typealias Props = NavigationBarProps
     
+    var backIconMargin: String?
     var paddingStart: String?
     var paddingEnd: String?
     var paddingTop: String?
@@ -13,11 +14,12 @@ struct NavigationBarMainPageSize: CodeGenerationSize {
     var textBlockTopMargin: String?
     var bottomShape: String?
     
-    init(variation: NavigationBarMainPageConfiguration.Variation, nullify: Bool = false) {
+    init(variation: NavigationBarConfiguration.Variation, nullify: Bool = false) {
         self.init(props: variation.props, id: variation.id, nullify: nullify)
     }
     
-    init(props: NavigationBarMainPageProps, id: String? = nil, nullify: Bool = false) {
+    init(props: NavigationBarProps, id: String? = nil, nullify: Bool = false) {
+        self.backIconMargin = CGFloatContextBuilder(props.backIconMargin?.value, nullify: nullify).context
         self.paddingStart = CGFloatContextBuilder(props.paddingStart?.value, nullify: nullify).context
         self.paddingEnd = CGFloatContextBuilder(props.paddingEnd?.value, nullify: nullify).context
         self.paddingTop = CGFloatContextBuilder(props.paddingTop?.value, nullify: nullify).context
@@ -28,6 +30,7 @@ struct NavigationBarMainPageSize: CodeGenerationSize {
     }
     
     init() {
+        self.backIconMargin = CGFloat.defaultContext
         self.paddingStart = CGFloat.defaultContext
         self.paddingEnd = CGFloat.defaultContext
         self.paddingTop = CGFloat.defaultContext

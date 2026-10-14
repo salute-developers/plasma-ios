@@ -14,7 +14,7 @@ public extension GeneralAppearanceVariation<Divider, DividerAppearance, DividerV
         appearance.size = size
         appearance.backgroundColor = ColorToken.surfaceDefaultTransparentTertiary
         appearance.shape = CircleDrawer() as PathDrawer
-        appearance.thickness = CGFloat(1.0)
+        appearance.thickness = CGFloat(0.5)
     
         return .init(
             name: "default",

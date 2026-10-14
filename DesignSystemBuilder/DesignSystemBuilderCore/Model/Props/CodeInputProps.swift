@@ -8,7 +8,6 @@ struct CodeInputProps: MergeableConfiguration, Codable {
     var captionColor: ColorKeyValue?
     var strokeColor: ColorKeyValue?
     var fillColor: ColorKeyValue?
-    var fillColorError: ColorKeyValue?
     
     // Размеры
     var itemHeight: KeyValue<Double>?

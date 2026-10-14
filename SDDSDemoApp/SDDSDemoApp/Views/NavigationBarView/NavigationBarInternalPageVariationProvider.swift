@@ -2,7 +2,7 @@ import Foundation
 import SDDSComponents
 
 final class NavigationBarInternalPageVariationProvider: VariationProvider {
-    typealias Appearance = NavigationBarInternalPageAppearance
+    typealias Appearance = NavigationBarAppearance
     
     var theme: Theme
     
@@ -10,12 +10,12 @@ final class NavigationBarInternalPageVariationProvider: VariationProvider {
         self.theme = theme
     }
     
-    var variations: [Variation<NavigationBarInternalPageAppearance>] {
+    var variations: [Variation<NavigationBarAppearance>] {
         theme.navigationBarInternalPageVariations
     }
     
-    var defaultValue: NavigationBarInternalPageAppearance {
-        NavigationBarInternalPageAppearance()
+    var defaultValue: NavigationBarAppearance {
+        NavigationBarAppearance()
     }
 }
 

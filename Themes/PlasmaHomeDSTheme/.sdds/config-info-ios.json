@@ -11958,6 +11958,42 @@
       ]
     },
     {
+      "coreName" : "ScrollBar",
+      "key" : "scroll-bar",
+      "props" : [
+        {
+          "name" : "size",
+          "values" : [
+            "s",
+            "m"
+          ]
+        }
+      ],
+      "styleName" : "ScrollBar",
+      "variations" : [
+        {
+          "name" : "s",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "s"
+            }
+          ],
+          "reference" : "ScrollBar.S"
+        },
+        {
+          "name" : "m",
+          "props" : [
+            {
+              "name" : "size",
+              "value" : "m"
+            }
+          ],
+          "reference" : "ScrollBar.M"
+        }
+      ]
+    },
+    {
       "coreName" : "Spinner",
       "key" : "spinner",
       "props" : [

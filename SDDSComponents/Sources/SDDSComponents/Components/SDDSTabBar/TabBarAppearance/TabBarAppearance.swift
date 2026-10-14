@@ -13,7 +13,7 @@ import SDDSApiInfo
     - tabBarItemAppearance: Стиль элементов таб-бара
     - size: Конфигурация размеров и отступов таб-бара
  */
-@ApiInfo(components: ["TabBarClear", "TabBarHasLabel", "TabBarHasLabelClear", "TabBarSolid"])
+@ApiInfo
 public struct TabBarAppearance: Hashable {
     let id = UUID()
     public var backgroundColor: ColorToken
