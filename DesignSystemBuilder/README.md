@@ -165,6 +165,28 @@ SDDS_TYPED_GENERATOR=1 ./build_cli.sh --run
 используется типизированный. Сейчас так генерируются 118 из 120 компонентов —
 исключения `CollapsingNavigationBar*` (типизированная модель устарела).
 
+### Версия iOS Core в DS Builder
+
+DS Builder хранит мету по версиям Core: у каждой ДС для iOS выбран канал (`stable`/`dev`)
+и конкретная версия либо `latest` канала. Новую версию регистрирует системный администратор
+DS Builder, отправляя мету с координатами `sdds-swiftui/swiftui/<версия SDDSComponents>`:
+
+```sh
+export DSBUILDER_API_URL=https://...
+dsbuilder auth login --username <admin>
+./scripts/import_api_meta.sh --core-version 0.34.0 --channel stable --regenerate   # план
+./scripts/import_api_meta.sh --core-version 0.34.0 --channel stable --apply        # запись
+```
+
+Версию и канал скрипт не угадывает, они обязательны. Релиз неизменяем: те же координаты
+с другой метой DS Builder отклонит, поэтому изменённая мета регистрируется под новой версией.
+Для промежуточных сборок используйте канал `dev` и dev-метку версии.
+
+`dsbuilder components fetch` кладёт в `.sdds/components/core-context.json` версию и SHA-256
+меты Core, выбранного для ДС. `components generate` сверяет с ним свою `ios-api-meta.json`
+и при расхождении печатает предупреждение: стили могут не совпасть с настройками ДС,
+нужен `dsbuilder-ios`, собранный под эту версию Core. Генерацию это не останавливает.
+
 ### Куда пишется результат
 
 **Сгенерированные темы** (`<ThemeName>Theme`):

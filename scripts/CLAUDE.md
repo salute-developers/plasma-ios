@@ -34,6 +34,11 @@
   Идентификаторы/ключ — из окружения (`DSBUILDER_API_KEY`, `DSBUILDER_PROJECT_ID`,
   `DSBUILDER_DESIGN_SYSTEM_ID`); токены/палитра в `.gitignore`.
 
+- `generate_api_meta.sh` — мета API стилей `DesignSystemBuilder/.sdds/ios-api-meta.json`.
+- `import_api_meta.sh --core-version <v> --channel stable|dev [--apply]` — регистрирует эту мету
+  в DS Builder как версию iOS Core (`sdds-swiftui`) через внешний `dsbuilder components import-api`.
+  Нужны `DSBUILDER_API_URL` и сессия системного администратора; без `--apply` — dry run.
+
 ## Релиз / версии
 
 - `bump-versions.sh`, `bump_version.rb`, `update_versions_archived.rb` — версии модулей.

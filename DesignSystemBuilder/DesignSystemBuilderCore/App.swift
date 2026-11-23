@@ -171,18 +171,25 @@ public final class App {
     /// Пытается прочитать локальный `.sdds`-источник темы. Возвращает nil, если у
     /// темы не задан `sddsConfigPath` либо `.sdds` отсутствует/неполон.
     private func sddsThemeSource(themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration) -> SddsThemeSource? {
+        guard let configURL = sddsConfigURL(themeConfig: themeConfig) else {
+            return nil
+        }
+        // Базовая директория — родитель папки `.sdds`; относительно неё
+        // резолвятся пути из config.json (`.sdds/<tenant>`, `.sdds/tenants/palette.json`).
+        let baseDirectory = configURL.deletingLastPathComponent().deletingLastPathComponent()
+        return SddsThemeSourceReader(configURL: configURL, baseDirectory: baseDirectory).read()
+    }
+
+    /// `config.json` локального `.sdds` темы, если он задан.
+    private func sddsConfigURL(themeConfig: DesignSystemBuilderConfiguration.ThemeConfiguration) -> URL? {
         guard let path = themeConfig.sddsConfigPath, !path.isEmpty else {
             return nil
         }
         // Путь из конфига — относительный от корня репо. Абсолютный приходит от
         // `theme generate --sdds`, который запускается вне дерева сборки.
-        let configURL = path.hasPrefix("/")
+        return path.hasPrefix("/")
             ? URL(fileURLWithPath: path)
             : repoRootURL.appending(path: path)
-        // Базовая директория — родитель папки `.sdds`; относительно неё
-        // резолвятся пути из config.json (`.sdds/<tenant>`, `.sdds/tenants/palette.json`).
-        let baseDirectory = configURL.deletingLastPathComponent().deletingLastPathComponent()
-        return SddsThemeSourceReader(configURL: configURL, baseDirectory: baseDirectory).read()
     }
 
     private func executeSddsCommands(
@@ -593,9 +600,24 @@ extension App {
         let candidates = apiMetaCandidates
         for url in candidates where ApiMetaStore.shared.load(from: url) {
             Logger.printText("📐 Loaded styles API meta: \(ApiMetaStore.shared.byComponent.count) components")
+            warnAboutCoreMismatch(metaURL: url)
             return
         }
         Logger.terminate("Styles API meta not found in \(candidates.map { $0.path() }.joined(separator: ", ")). In the repo run scripts/generate_api_meta.sh; a released CLI expects ios-api-meta.json next to the binary")
+    }
+
+    /// Предупреждает, если мета отличается от iOS Core, выбранного для ДС в DS Builder.
+    private func warnAboutCoreMismatch(metaURL: URL) {
+        guard let metaData = try? Data(contentsOf: metaURL) else { return }
+        for themeConfig in config.themes {
+            guard let configURL = sddsConfigURL(themeConfig: themeConfig) else { continue }
+            let contextURL = CoreContextCheck.contextURL(sddsConfigURL: configURL)
+            let outcome = CoreContextCheck.compare(metaData: metaData, contextURL: contextURL)
+            if let warning = CoreContextCheck.warning(for: outcome, metaURL: metaURL, contextURL: contextURL) {
+                Logger.printText(warning)
+                FileHandle.standardError.write(Data((warning + "\n").utf8))
+            }
+        }
     }
 
     private var apiMetaCandidates: [URL] {
