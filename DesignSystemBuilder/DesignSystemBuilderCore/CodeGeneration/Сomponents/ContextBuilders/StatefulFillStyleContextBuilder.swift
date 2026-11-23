@@ -33,7 +33,7 @@ final class StatefulFillStyleContextBuilder: CodeGenerationContextBuilder {
         guard let fillStyleContext = FillStyleContextBuilder(statefulSource, hasDefault: false).context else {
             return nil
         }
-        let states = state.state?.map { "InteractiveState.\($0.rawValue)" } ?? []
+        let states = state.state?.map { "InteractiveState.\($0.swiftCaseName)" } ?? []
         let statesContext = states.isEmpty ? "[]" : "[\(states.joined(separator: ", "))]"
         return ".init(states: \(statesContext), value: \(fillStyleContext))"
     }

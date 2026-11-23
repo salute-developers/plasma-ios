@@ -13,6 +13,11 @@ enum ComponentState: String, Codable, CaseIterable {
     case collapsed
     case inactive
     case textInlined = "text-inlined"
+
+    /// Имя Swift-case отличается от имени в JSON для text-inlined.
+    var swiftCaseName: String {
+        self == .textInlined ? "textInlined" : rawValue
+    }
 }
 
 struct StatefulValueDTO<T> {

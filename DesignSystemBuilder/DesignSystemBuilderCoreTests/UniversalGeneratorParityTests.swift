@@ -3,6 +3,22 @@ import XCTest
 
 final class UniversalGeneratorParityTests: XCTestCase {
 
+    func testEveryAdvertisedInteractionStateGeneratesSwiftCase() throws {
+        for state in ComponentState.allCases {
+            let json = """
+            {"type":"color","default":"text.default.primary","states":[{"state":["\(state.rawValue)"],"value":"text.default.secondary"}]}
+            """
+            let value = try JSONDecoder().decode(ColorKeyValue.self, from: Data(json.utf8))
+            let expectedCase = state == .textInlined ? "textInlined" : state.rawValue
+            let color = try XCTUnwrap(ButtonColorContextBuilder(statefulColor: value, outputType: .statefulColor).context)
+            let fill = try XCTUnwrap(StatefulFillStyleContextBuilder(value).context)
+            XCTAssertTrue(color.contains("InteractiveState.\(expectedCase)"), color)
+            XCTAssertTrue(fill.contains("InteractiveState.\(expectedCase)"), fill)
+            XCTAssertFalse(color.contains("InteractiveState.text-inlined"))
+            XCTAssertFalse(fill.contains("InteractiveState.text-inlined"))
+        }
+    }
+
     private let component = CodeGenerationComponent.formItem
 
     private let configJSON = """

@@ -32,6 +32,7 @@ struct EnumCaseDecl {
     let name: String
     let id: String
     let isDefault: Bool
+    var rawValue: String? = nil
 }
 
 struct TypeDecl {
@@ -265,7 +266,10 @@ private final class SymbolCollector: SyntaxVisitor {
                 cases.append(EnumCaseDecl(
                     name: name,
                     id: caseMarkers.apiName ?? name,
-                    isDefault: caseMarkers.isDefault
+                    isDefault: caseMarkers.isDefault,
+                    rawValue: element.rawValue?.value.as(StringLiteralExprSyntax.self)?.segments.compactMap {
+                        $0.as(StringSegmentSyntax.self)?.content.text
+                    }.joined()
                 ))
             }
         }

@@ -19,6 +19,8 @@ if args.contains("--help") || args.contains("-h") {
       --output  <file>          Куда писать JSON (default: stdout)
       --module  <name>          Имя модуля для qualifiedName (default: SDDSComponents)
       --only    <A,B,...>       Ограничить набор компонентов (по имени компонента или типа)
+      --runtime-states <file>   Исходник InteractiveState
+      --generator-states <file> Исходник ComponentState
       --report                  Печатать диагностику сверки (matched/gaps/drift) в stderr
       --help                    Показать справку
     """)
@@ -180,6 +182,20 @@ if wantReport && !reports.isEmpty {
         if !report.drift.isEmpty { line += " | drift: \(report.drift.joined(separator: ","))" }
         FileHandle.standardError.write(Data((line + "\n").utf8))
     }
+}
+
+let runtimeStatesPath = argValue("--runtime-states", in: args)
+    ?? "DesignSystemBuilder/SDDSThemeCore/Sources/SDDSThemeCore/Common/StatefulValue.swift"
+let generatorStatesPath = argValue("--generator-states", in: args)
+    ?? "DesignSystemBuilder/DesignSystemBuilderCore/Model/ComponentConfiguration/KeyValue.swift"
+let stateSupport = try StateSupport.load(
+    runtimeSource: String(contentsOfFile: runtimeStatesPath, encoding: .utf8),
+    generatorSource: String(contentsOfFile: generatorStatesPath, encoding: .utf8)
+)
+components = components.map { meta in
+    var enriched = meta
+    enriched.stateSupport = stateSupport
+    return enriched
 }
 
 let encoder = JSONEncoder()
