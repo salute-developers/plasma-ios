@@ -1,4 +1,5 @@
 import XCTest
+import ThemeCoreStatefulValues
 @testable import DesignSystemBuilderCore
 
 /// Инварианты `ios-api-meta.json`, которые проверяет импорт в базу дизайн-системы.
@@ -145,9 +146,7 @@ final class ApiMetaInvariantsTests: XCTestCase {
     }
 
     /// Состояния взаимодействия: словарь общий для всех компонентов, платформа их не объявляет.
-    private static let interactionStates: Set<String> = [
-        "pressed", "hovered", "focused", "selected", "activated", "readonly", "disabled",
-    ]
+    private static let interactionStates = Set(InteractiveState.interactionStates.map(\.rawValue))
 
     private static func states(in json: Any) -> Set<String> {
         switch json {

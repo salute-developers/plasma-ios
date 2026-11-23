@@ -1,5 +1,4 @@
 import Foundation
-import SwiftUI
 
 public protocol ValueState {
     var stateKey: String { get }
@@ -18,6 +17,9 @@ public enum InteractiveState: String, CaseIterable, Codable, Hashable, ValueStat
     case collapsed
     case inactive
     case textInlined = "text-inlined"
+
+    /// Общие состояния взаимодействия; остальные случаи относятся к отдельным компонентам.
+    public static let interactionStates: [InteractiveState] = [.pressed, .hovered, .focused, .selected, .activated]
 
     public var stateKey: String { rawValue }
 }
@@ -55,9 +57,11 @@ public struct StatefulValue<Value> {
     }
 
     public func resolvedValue(for activeStates: Set<String>, default fallback: Value? = nil) -> Value {
-        if let matched = values.first(where: { $0.states.isSubset(of: activeStates) }) {
-            return matched.value
+        var matched: Item?
+        for item in values where item.states.isSubset(of: activeStates) {
+            if item.states.count > (matched?.states.count ?? -1) { matched = item }
         }
+        if let matched { return matched.value }
         return fallback ?? resolvedDefaultValue()
     }
 
@@ -79,21 +83,4 @@ extension StatefulValue.Item: Equatable where Value: Equatable {}
 extension StatefulValue.Item: Hashable where Value: Hashable {}
 extension StatefulValue: Equatable where Value: Equatable {}
 extension StatefulValue: Hashable where Value: Hashable {}
-
-public typealias StatefulColor = StatefulValue<ColorToken>
-
-public extension StatefulValue where Value == ColorToken {
-    init() {
-        self.init(defaultValue: ColorToken())
-    }
-
-    func color(
-        for activeStates: Set<InteractiveState>,
-        colorScheme: ColorScheme,
-        subtheme: SubthemeData = SubthemeData()
-    ) -> Color {
-        _ = subtheme
-        return resolvedValue(for: activeStates).color(for: colorScheme)
-    }
-}
 

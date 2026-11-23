@@ -6,6 +6,7 @@ public enum ApiState {
     case focused
     case indeterminate
     case inactive
+    case readonly
     case textInlined
 }
 

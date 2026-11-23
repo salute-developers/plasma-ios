@@ -19,11 +19,31 @@ struct StateSupport: Codable, Equatable {
                 throw StateSupportError.unsupportedState(entry.name)
             }
         }
-        return StateSupport(interactionStates: generator.enumCases.map { $0.rawValue ?? $0.name }, combinations: true)
+        guard let interactions = runtime.interactionStates, !interactions.isEmpty,
+              Set(interactions).count == interactions.count else {
+            throw StateSupportError.missingInteractionStates
+        }
+        let runtimeByName = Dictionary(uniqueKeysWithValues: runtime.enumCases.map { ($0.name, $0.rawValue ?? $0.name) })
+        let names = try interactions.map { name -> String in
+            guard let rawName = runtimeByName[name], generator.enumCases.contains(where: { $0.name == name }) else {
+                throw StateSupportError.unsupportedState(name)
+            }
+            return rawName
+        }
+        return StateSupport(interactionStates: names, combinations: true)
     }
 }
 
-enum StateSupportError: Error {
+enum StateSupportError: LocalizedError {
     case missingEnums
+    case missingInteractionStates
     case unsupportedState(String)
+
+    var errorDescription: String? {
+        switch self {
+        case .missingEnums: return "Expected InteractiveState and ComponentState declarations."
+        case .missingInteractionStates: return "InteractiveState must declare a non-empty, unique interactionStates array."
+        case .unsupportedState(let name): return "State '\(name)' is not supported by both runtime and generator."
+        }
+    }
 }

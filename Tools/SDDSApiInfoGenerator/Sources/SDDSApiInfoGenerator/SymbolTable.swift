@@ -41,6 +41,7 @@ struct TypeDecl {
     let kind: Kind
     let properties: [PropertyDecl]
     let enumCases: [EnumCaseDecl]
+    let interactionStates: [String]?
     let componentOverride: String?
     let stateEnumName: String?
     /// Собственные состояния компонента из `@ApiStates` — в форме конфигурации (`text-inlined`).
@@ -279,6 +280,15 @@ private final class SymbolCollector: SyntaxVisitor {
             kind: .enumeration,
             properties: [],
             enumCases: cases,
+            interactionStates: node.memberBlock.members.compactMap { member -> [String]? in
+                guard let variable = member.decl.as(VariableDeclSyntax.self), isStatic(variable) else { return nil }
+                guard let binding = variable.bindings.first,
+                      binding.pattern.as(IdentifierPatternSyntax.self)?.identifier.text == "interactionStates",
+                      let array = binding.initializer?.value.as(ArrayExprSyntax.self) else { return nil }
+                return array.elements.map { element in
+                    element.expression.as(MemberAccessExprSyntax.self)?.declName.baseName.text ?? ""
+                }
+            }.first,
             componentOverride: markers.component,
             stateEnumName: markers.stateEnum,
             states: markers.states,
@@ -365,6 +375,7 @@ private final class SymbolCollector: SyntaxVisitor {
             kind: kind,
             properties: properties,
             enumCases: [],
+            interactionStates: nil,
             componentOverride: markers.component,
             stateEnumName: markers.stateEnum,
             states: markers.states,

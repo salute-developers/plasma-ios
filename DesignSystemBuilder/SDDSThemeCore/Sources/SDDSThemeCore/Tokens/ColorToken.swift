@@ -27,3 +27,20 @@ public struct ColorToken: Hashable {
         hasher.combine(lightColor)
     }
 }
+
+public typealias StatefulColor = StatefulValue<ColorToken>
+
+public extension StatefulValue where Value == ColorToken {
+    init() {
+        self.init(defaultValue: ColorToken())
+    }
+
+    func color(
+        for activeStates: Set<InteractiveState>,
+        colorScheme: ColorScheme,
+        subtheme: SubthemeData = SubthemeData()
+    ) -> Color {
+        _ = subtheme
+        return resolvedValue(for: activeStates).color(for: colorScheme)
+    }
+}
