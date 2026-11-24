@@ -19,6 +19,8 @@ if args.contains("--help") || args.contains("-h") {
       --output  <file>          Куда писать JSON (default: stdout)
       --module  <name>          Имя модуля для qualifiedName (default: SDDSComponents)
       --only    <A,B,...>       Ограничить набор компонентов (по имени компонента или типа)
+      --runtime-states <file>   Исходник InteractiveState (обязательно)
+      --generator-states <file> Исходник ComponentState (обязательно)
       --report                  Печатать диагностику сверки (matched/gaps/drift) в stderr
       --help                    Показать справку
     """)
@@ -180,6 +182,27 @@ if wantReport && !reports.isEmpty {
         if !report.drift.isEmpty { line += " | drift: \(report.drift.joined(separator: ","))" }
         FileHandle.standardError.write(Data((line + "\n").utf8))
     }
+}
+
+let stateSupport: StateSupport
+do {
+    guard let runtimePath = argValue("--runtime-states", in: args), !runtimePath.hasPrefix("--"),
+          let generatorPath = argValue("--generator-states", in: args), !generatorPath.hasPrefix("--") else {
+        throw NSError(domain: "sdds-api-info", code: 2, userInfo: [NSLocalizedDescriptionKey:
+            "Required options: --runtime-states <file> and --generator-states <file>. See --help."])
+    }
+    stateSupport = try StateSupport.load(
+        runtimeSource: String(contentsOfFile: runtimePath, encoding: .utf8),
+        generatorSource: String(contentsOfFile: generatorPath, encoding: .utf8)
+    )
+} catch {
+    FileHandle.standardError.write(Data("error: \(error.localizedDescription)\n".utf8))
+    exit(2)
+}
+components = components.map { meta in
+    var enriched = meta
+    enriched.stateSupport = stateSupport
+    return enriched
 }
 
 let encoder = JSONEncoder()

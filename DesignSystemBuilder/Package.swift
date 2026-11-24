@@ -38,6 +38,17 @@ let package = Package(
             path: "SDDSThemeCore/Sources/SDDSThemeCore",
             sources: ["Tokens/TypographyToken.swift"]
         ),
+        .target(
+            name: "ThemeCoreStatefulValues",
+            path: "SDDSThemeCore/Sources/SDDSThemeCore/Common",
+            exclude: ["ThemeStyle.swift"],
+            sources: ["StatefulValue.swift"]
+        ),
+        .testTarget(
+            name: "ThemeCoreStatefulValuesTests",
+            dependencies: ["ThemeCoreStatefulValues"],
+            path: "ThemeCoreStatefulValuesTests"
+        ),
         // Генерация тем: токены, вариации компонентов, info-артефакты.
         .target(
             name: "DesignSystemBuilderCore",
@@ -73,6 +84,7 @@ let package = Package(
             name: "DesignSystemBuilderCoreTests",
             dependencies: [
                 "DesignSystemBuilderCore",
+                "ThemeCoreStatefulValues",
                 .product(name: "OHHTTPStubs", package: "OHHTTPStubs"),
                 .product(name: "OHHTTPStubsSwift", package: "OHHTTPStubs")
             ],
