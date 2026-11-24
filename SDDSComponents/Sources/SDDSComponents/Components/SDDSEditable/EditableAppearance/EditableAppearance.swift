@@ -4,6 +4,7 @@ import SDDSApiInfo
 @_exported import SDDSThemeCore
 
 @ApiInfo
+@ApiStates(.readonly)
 public struct EditableAppearance {
     @ApiName("textColor")
     public var textColor: StatefulFillStyle

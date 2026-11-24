@@ -1,7 +1,36 @@
 import XCTest
+import ThemeCoreStatefulValues
 @testable import DesignSystemBuilderCore
 
 final class UniversalGeneratorParityTests: XCTestCase {
+
+    func testEveryAdvertisedInteractionStateGeneratesSwiftCase() throws {
+        for state in ComponentState.allCases {
+            let json = """
+            {"type":"color","default":"text.default.primary","states":[{"state":["\(state.rawValue)"],"value":"text.default.secondary"}]}
+            """
+            let value = try JSONDecoder().decode(ColorKeyValue.self, from: Data(json.utf8))
+            let runtimeCase = try XCTUnwrap(InteractiveState.allCases.first { $0.rawValue == state.rawValue })
+            let expectedCase = String(describing: runtimeCase)
+            let color = try XCTUnwrap(ButtonColorContextBuilder(statefulColor: value, outputType: .statefulColor).context)
+            let fill = try XCTUnwrap(StatefulFillStyleContextBuilder(value).context)
+            XCTAssertTrue(color.contains("InteractiveState.\(expectedCase)"), color)
+            XCTAssertTrue(fill.contains("InteractiveState.\(expectedCase)"), fill)
+            XCTAssertFalse(color.contains("InteractiveState.text-inlined"))
+            XCTAssertFalse(fill.contains("InteractiveState.text-inlined"))
+        }
+    }
+
+    func testGeneratorDTOUsesMostSpecificStateInEitherOrder() {
+        let single = StatefulValueDTO<String>.Item(states: [.pressed], value: "single")
+        let pair = StatefulValueDTO<String>.Item(states: [.pressed, .selected], value: "pair")
+        for values in [[single, pair], [pair, single]] {
+            let dto = StatefulValueDTO(defaultValue: "base", values: values)
+            XCTAssertEqual(dto.value(for: [.pressed, .selected]), "pair")
+            XCTAssertEqual(dto.value(for: [.pressed]), "single")
+            XCTAssertEqual(dto.value(for: [.hovered]), "base")
+        }
+    }
 
     private let component = CodeGenerationComponent.formItem
 

@@ -13,6 +13,7 @@ struct ComponentApiMeta: Codable {
     let resolvedTypes: [String]
     let stateEnum: StateEnum?
     let params: [Param]
+    var stateSupport: StateSupport? = nil
 
     /// Имя `*Appearance`-типа без суффикса: `SDDSComponents.ButtonAppearance` → `Button`.
     ///

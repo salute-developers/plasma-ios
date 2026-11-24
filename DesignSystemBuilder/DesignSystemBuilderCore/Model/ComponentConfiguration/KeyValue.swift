@@ -13,6 +13,11 @@ enum ComponentState: String, Codable, CaseIterable {
     case collapsed
     case inactive
     case textInlined = "text-inlined"
+
+    /// Имя Swift-case независимо от raw value в конфигурации.
+    var swiftCaseName: String {
+        String(describing: self)
+    }
 }
 
 struct StatefulValueDTO<T> {
@@ -26,9 +31,11 @@ struct StatefulValueDTO<T> {
 
     func value(for activeStates: [ComponentState]) -> T? {
         let stateSet = Set(activeStates)
-        if let match = values.first(where: { $0.states.isSubset(of: stateSet) }) {
-            return match.value
+        var match: Item?
+        for item in values where item.states.isSubset(of: stateSet) {
+            if item.states.count > (match?.states.count ?? -1) { match = item }
         }
+        if let match { return match.value }
         return defaultValue ?? values.first(where: { $0.states.isEmpty })?.value ?? values.first?.value
     }
 }

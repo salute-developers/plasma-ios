@@ -24,14 +24,18 @@ if ! swift build --package-path "$TOOL_DIR" -c release >"$BUILD_LOG" 2>&1; then
     exit 1
 fi
 BIN="$TOOL_DIR/.build/release/SDDSApiInfoGenerator"
+STATE_ARGS=(
+    --runtime-states "$REPO_ROOT/DesignSystemBuilder/SDDSThemeCore/Sources/SDDSThemeCore/Common/StatefulValue.swift"
+    --generator-states "$REPO_ROOT/DesignSystemBuilder/DesignSystemBuilderCore/Model/ComponentConfiguration/KeyValue.swift"
+)
 
 if [[ "${1:-}" == "--only" ]]; then
     # Подмножество → в stdout с диагностикой сверки в stderr (удобно для ревью).
-    "$BIN" --sources "$SOURCES" --props "$PROPS" --only "${2:-}" --report
+    "$BIN" "${STATE_ARGS[@]}" --sources "$SOURCES" --props "$PROPS" --only "${2:-}" --report
     exit 0
 fi
 
 echo "==> Скан $SOURCES (+ сверка с Props, + override'ы)"
 mkdir -p "$(dirname "$OUTPUT")"
-"$BIN" --sources "$SOURCES" --props "$PROPS" --output "$OUTPUT" --report
+"$BIN" "${STATE_ARGS[@]}" --sources "$SOURCES" --props "$PROPS" --output "$OUTPUT" --report
 echo "==> Готово: $OUTPUT"

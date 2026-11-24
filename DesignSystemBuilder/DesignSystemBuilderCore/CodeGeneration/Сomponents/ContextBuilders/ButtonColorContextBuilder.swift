@@ -83,7 +83,7 @@ final class ButtonColorContextBuilder: CodeGenerationContextBuilder {
         guard let colorToken = ColorTokenContextBuilder(state, hasDefault: false).context else {
             return nil
         }
-        let stateCases = state.state?.map { "InteractiveState.\($0.rawValue)" } ?? []
+        let stateCases = state.state?.map { "InteractiveState.\($0.swiftCaseName)" } ?? []
         let stateContext = stateCases.isEmpty ? "[]" : "[\(stateCases.joined(separator: ", "))]"
         return ".init(states: \(stateContext), value: \(colorToken))"
     }
