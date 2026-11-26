@@ -1,6 +1,5 @@
 import Foundation
 import Stencil
-import PathKit
 import SwiftUI
 
 private enum Tag: String {
@@ -49,11 +48,7 @@ final class TemplateRenderer: Renderable {
         registerFilters(ext: ext)
         registerTags(ext: ext)
         
-        guard let templatesURL = Bundle.module.url(forResource: template.rawValue, withExtension: "stencil")?.deletingLastPathComponent() else {
-            return .error(.codeGeneration(.templateLoadingFailed))
-        }
-        let templatesPath = templatesURL.path()
-        let stencilEnvironment = Environment(loader: FileSystemLoader(paths: [Path(templatesPath)]), extensions: [ext])
+        let stencilEnvironment = Environment(loader: DictionaryLoader(templates: StencilTemplate.embeddedSources), extensions: [ext])
         
         guard let template = try? stencilEnvironment.loadTemplate(name: template.withStencilExt) else {
             return .error(.codeGeneration(.templateLoadingFailed))

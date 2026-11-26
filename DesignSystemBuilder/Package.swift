@@ -60,7 +60,9 @@ let package = Package(
             ],
             path: "DesignSystemBuilderCore",
             exclude: ["DesignSystemBuilderCore.docc"],
-            resources: [.process("Stencil")]
+            // Шаблоны вшиваются в код, а не кладутся в ресурсный бандл: релиз — один бинарь,
+            // `Bundle.module` рядом с ним не найдёт `DesignSystemBuilder_DesignSystemBuilderCore.bundle`.
+            resources: [.embedInCode("Stencil")]
         ),
         // Документационный бандл: скан `// @DocSample`, рендер маркеров, layout.
         .target(

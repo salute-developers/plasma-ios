@@ -56,6 +56,16 @@ if [[ ! -x "$BUILT_BIN" ]]; then
   exit 1
 fi
 
+# В релиз едет только бинарь. Таргет с `.process`/`.copy`-ресурсами получает аксессор
+# `Bundle.module`, который ищет `<Package>_<Target>.bundle` рядом с бинарём или по пути сборки,
+# зашитому в бинарь, и падает в fatalError на чужой машине. Ресурсы вшиваем `.embedInCode`.
+if strings "$BUILT_BIN" | grep -E '/[^/]+_[^/]+\.bundle$' >/dev/null; then
+  echo "✗ dsbuilder-ios зависит от ресурсного бандла SwiftPM (Bundle.module):" >&2
+  strings "$BUILT_BIN" | grep -E '/[^/]+_[^/]+\.bundle$' | sort -u >&2
+  echo "  Бандл не попадает в релиз; вшейте ресурсы через .embedInCode в Package.swift." >&2
+  exit 1
+fi
+
 rm -rf "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_DIR"
 cp -f "$BUILT_BIN" "$OUTPUT_BIN"

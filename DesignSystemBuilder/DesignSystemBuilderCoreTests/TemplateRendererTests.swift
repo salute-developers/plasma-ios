@@ -64,7 +64,26 @@ final class TemplateRendererTests: XCTestCase {
         default:
             XCTFail("Expected failure in rendering due to manipulated JSON")
         }
-        
+
+    }
+
+    /// Релизный бинарь едет без ресурсного бандла: каждый шаблон должен быть вшит в код
+    /// и совпадать с файлом в `DesignSystemBuilderCore/Stencil`.
+    func testEveryTemplateIsEmbeddedVerbatim() throws {
+        let stencilDirectory = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .appendingPathComponent("DesignSystemBuilderCore/Stencil")
+        let files = try XCTUnwrap(FileManager.default.enumerator(at: stencilDirectory, includingPropertiesForKeys: nil))
+            .compactMap { $0 as? URL }
+            .filter { $0.pathExtension == "stencil" }
+        let filesByName = Dictionary(files.map { ($0.lastPathComponent, $0) }, uniquingKeysWith: { first, _ in first })
+
+        for template in StencilTemplate.allCases {
+            let file = try XCTUnwrap(filesByName[template.withStencilExt], "\(template.withStencilExt) is missing in \(stencilDirectory.path)")
+            XCTAssertFalse(template.source.isEmpty, "\(template.withStencilExt) is not embedded")
+            XCTAssertEqual(template.source, try String(contentsOf: file, encoding: .utf8), "\(template.withStencilExt) differs from the embedded copy")
+        }
     }
 }
 
