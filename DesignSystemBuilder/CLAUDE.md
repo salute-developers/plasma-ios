@@ -126,4 +126,9 @@ ruby ../scripts/run_tests.rb   # то же самое из корня репоз
   `scripts/create_project/` (см. [../scripts/CLAUDE.md](../scripts/CLAUDE.md)).
 - Меняешь публичное appearance-API в `SDDSComponents`? Регенерируй темы и убедись, что
   шаблоны/типы совпадают.
+- Релиз — один бинарь без ресурсного бандла SwiftPM. Stencil-шаблоны вшиты в код
+  (`.embedInCode("Stencil")`, `StencilTemplate.source`); новый шаблон — файл в
+  `DesignSystemBuilderCore/Stencil` + case в `StencilTemplate`. `.process`/`.copy`-ресурсы
+  в таргетах CLI (`Bundle.module`) запрещены: на машине пользователя бинарь упадёт в
+  `resource_bundle_accessor` fatalError, `build_cli.sh` такую сборку отклоняет.
 - Коммит-скоуп: `sdds-icore/theme-builder`.
